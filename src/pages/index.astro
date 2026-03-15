@@ -15,12 +15,13 @@ const variants = [
 ];
 
 const timeline = [
-  { year: '2022', event: 'WES performed at HK Children\'s Hospital. STRC deletion (paternal) + VUS missense (maternal) identified.' },
-  { year: '2023', event: 'WES report updated with parental testing confirmation. Compound heterozygous STRC.' },
-  { year: 'Jan 2026', event: 'Iranfar et al. publish dual AAV gene therapy restoring hearing in STRC mouse model (DFNB16).', highlight: true },
-  { year: 'Mar 2026', event: 'AlphaMissense analysis: E1659A scored 0.9016 (Likely Pathogenic). VUS reclassification evidence generated.', highlight: true },
-  { year: '2025-26', event: 'OTOF gene therapy trials show 11/12 children improved hearing (DB-OTO, NEJM 2025). Precedent for inner ear gene therapy.' },
-  { year: '~2028-29', event: 'Expected first-in-human STRC gene therapy trial. Patient will be 7-8 years old, within eligibility window.', future: true },
+  { year: 'Dec 2021', event: 'Shubina-Oleinik et al. (Science Advances): First dual-AAV STRC gene therapy in mice. Proof of concept. DOI: 10.1126/sciadv.abi7629' },
+  { year: 'Dec 2022', event: 'WES performed at HK Children\'s Hospital. STRC deletion (paternal) + VUS missense (maternal) identified. Lab No: 23C7500174.' },
+  { year: 'Dec 2023', event: 'WES report updated with parental testing confirmation. Compound heterozygous STRC.' },
+  { year: '2025', event: 'OTOF gene therapy trials: 11/12 children improved hearing (DB-OTO, NEJM 2025). 3 achieved normal hearing. Precedent for inner ear gene therapy.' },
+  { year: 'Jan 2026', event: 'Iranfar et al. (Clinical and Translational Medicine): Dual AAV9-PHP.eB restores hearing to near-normal thresholds in STRC mice. 60% OHC transduction. Frequency discrimination recovered up to 100 days. DOI: 10.1002/ctm2.70571', highlight: true },
+  { year: 'Mar 2026', event: 'AlphaMissense analysis: E1659A scored 0.9016 (Likely Pathogenic). ACMG reclassification evidence: PM3 + PP3_Moderate + PM2_Supporting = Likely Pathogenic.', highlight: true },
+  { year: '~2028-29', event: 'Expected first-in-human STRC gene therapy trial. Patient will be 7-8 years old. Note: therapeutic window in mice = P0-P5; in humans likely wider but early intervention critical.', future: true },
 ];
 ---
 
@@ -194,6 +195,40 @@ const timeline = [
     </div>
   </section>
 
+  <!-- IRANFAR 2026 KEY DATA -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Iranfar et al. 2026 - Key Results</h2>
+      <p class="text-sm text-neutral-400 mb-6">
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12784207/" target="_blank" rel="noopener">PMC12784207</a> | 
+        DOI: <a href="https://doi.org/10.1002/ctm2.70571" target="_blank" rel="noopener">10.1002/ctm2.70571</a> | 
+        Clinical and Translational Medicine, Jan 2026
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Vector</div>
+          <div class="text-sm font-semibold mt-1">Dual AAV9-PHP.eB</div>
+          <div class="text-xs text-neutral-400 mt-1">STRC cDNA split at nt 2775/2776 (exon 8-9 junction). Both halves within 4.7kb AAV packaging limit.</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">OHC Transduction</div>
+          <div class="text-sm font-semibold mt-1 text-green-400">55-64%</div>
+          <div class="text-xs text-neutral-400 mt-1">Apical 64.2%, medial 55.4%, basal 58.7%. Comparable to wildtype STRC expression.</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Hearing Recovery</div>
+          <div class="text-sm font-semibold mt-1 text-green-400">Near-normal thresholds</div>
+          <div class="text-xs text-neutral-400 mt-1">DPOAE + ABR restored. Frequency discrimination recovered (Go/No-Go behavioral testing, 100 days post-treatment).</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Therapeutic Window</div>
+          <div class="text-sm font-semibold mt-1 text-orange-400">P0-P5 (mice)</div>
+          <div class="text-xs text-neutral-400 mt-1">After P5, OHC transduction drops below 5%. Authors note: adult treatment may require different AAV serotype.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GENE THERAPY TIMELINE -->
   <section id="therapy" class="px-6 py-16 border-t border-white/5">
     <div class="max-w-4xl mx-auto">
@@ -246,36 +281,77 @@ grep "CA  GLU A1659" strc.pdb  # pLDDT = 95.69</pre>
 
   <!-- 3Dmol.js init -->
   <script is:inline>
-  const pdbUrl = 'https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb';
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch(pdbUrl).then(r => r.text()).then(pdb => {
-      // Full protein viewer
-      const v1 = $3Dmol.createViewer('viewer-full', {backgroundColor: '#0a0a0a'});
-      v1.addModel(pdb, 'pdb');
-      v1.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:50, max:100}}});
-      v1.setStyle({resi: 1659}, {sphere: {color: '#e74c3c', radius: 2}});
-      v1.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 12});
-      v1.zoomTo();
-      v1.render();
-      v1.spin('y', 0.5);
+  (function() {
+    const pdbUrl = 'https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb';
+    let pdbData = null;
 
-      // Close-up viewer
-      const v2 = $3Dmol.createViewer('viewer-close', {backgroundColor: '#0a0a0a'});
-      v2.addModel(pdb, 'pdb');
-      v2.setStyle({}, {cartoon: {color: '#333', opacity: 0.2}});
-      v2.setStyle({resi: [1650,1651,1652,1653,1654,1655,1656,1657,1658,1659,1660,1661,1662,1663,1664,1665,1666,1667,1668]}, {
-        cartoon: {color: '#4a9eff'},
-        stick: {colorscheme: 'default', radius: 0.12}
-      });
-      v2.setStyle({resi: 1659}, {
-        stick: {color: '#e74c3c', radius: 0.2},
-        sphere: {color: '#e74c3c', radius: 0.6}
-      });
-      v2.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 14});
-      v2.zoomTo({resi: [1654,1655,1656,1657,1658,1659,1660,1661,1662,1663,1664]});
-      v2.render();
-    });
-  });
+    function initViewers() {
+      if (typeof $3Dmol === 'undefined') {
+        setTimeout(initViewers, 200);
+        return;
+      }
+      
+      const el1 = document.getElementById('viewer-full');
+      const el2 = document.getElementById('viewer-close');
+      if (!el1 || !el2) { setTimeout(initViewers, 200); return; }
+
+      // Show loading
+      el1.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading 3D structure (1.3MB)...</div>';
+      el2.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading...</div>';
+      
+      fetch(pdbUrl)
+        .then(function(r) { return r.text(); })
+        .then(function(pdb) {
+          pdbData = pdb;
+          
+          // Clear loading text
+          el1.innerHTML = '';
+          el2.innerHTML = '';
+
+          // Full protein viewer
+          var v1 = $3Dmol.createViewer(el1, {backgroundColor: '#0a0a0a'});
+          v1.addModel(pdb, 'pdb');
+          v1.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:50, max:100}}});
+          v1.setStyle({resi: 1659}, {sphere: {color: '#e74c3c', radius: 2}});
+          v1.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 12});
+          v1.zoomTo();
+          v1.render();
+          v1.spin('y', 0.3);
+
+          // Close-up viewer
+          var v2 = $3Dmol.createViewer(el2, {backgroundColor: '#0a0a0a'});
+          v2.addModel(pdb, 'pdb');
+          v2.setStyle({}, {cartoon: {color: '#333', opacity: 0.15}});
+          var nearResidues = [];
+          for (var i = 1650; i <= 1668; i++) nearResidues.push(i);
+          v2.setStyle({resi: nearResidues}, {
+            cartoon: {color: '#4a9eff'},
+            stick: {colorscheme: 'default', radius: 0.12}
+          });
+          v2.setStyle({resi: 1659}, {
+            stick: {color: '#e74c3c', radius: 0.25},
+            sphere: {color: '#e74c3c', radius: 0.7}
+          });
+          v2.addLabel('E1659 (Glu)', {
+            position: {resi: 1659},
+            backgroundColor: '#e74c3c',
+            fontColor: '#fff',
+            fontSize: 13,
+            borderThickness: 1
+          });
+          v2.zoomTo({resi: nearResidues});
+          v2.render();
+        })
+        .catch(function(err) {
+          el1.innerHTML = '<div style="color:#e74c3c;padding:20px;font-size:12px;">Failed to load structure: ' + err.message + '</div>';
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initViewers);
+    } else {
+      initViewers();
+    }
+  })();
   </script>
 </Layout>
