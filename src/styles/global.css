@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #050505;
+  color: #e5e5e5;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #e74c3c; color: #fff; }
+a { color: #8ab4f8; text-decoration: none; }
+a:hover { text-decoration: underline; }

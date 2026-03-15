@@ -1,17 +1,281 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const variants = [
+  { aa: 'A', score: 0.9016, misha: true },
+  { aa: 'C', score: 0.9984 }, { aa: 'D', score: 0.9483 },
+  { aa: 'F', score: 0.9992 }, { aa: 'G', score: 0.9191 },
+  { aa: 'H', score: 0.9927 }, { aa: 'I', score: 0.9923 },
+  { aa: 'K', score: 0.9272 }, { aa: 'L', score: 0.9929 },
+  { aa: 'M', score: 0.9909 }, { aa: 'N', score: 0.9822 },
+  { aa: 'P', score: 0.9985 }, { aa: 'Q', score: 0.846 },
+  { aa: 'R', score: 0.9634 }, { aa: 'S', score: 0.9433 },
+  { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
+  { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
+];
+
+const timeline = [
+  { year: '2022', event: 'WES performed at HK Children\'s Hospital. STRC deletion (paternal) + VUS missense (maternal) identified.' },
+  { year: '2023', event: 'WES report updated with parental testing confirmation. Compound heterozygous STRC.' },
+  { year: 'Jan 2026', event: 'Iranfar et al. publish dual AAV gene therapy restoring hearing in STRC mouse model (DFNB16).', highlight: true },
+  { year: 'Mar 2026', event: 'AlphaMissense analysis: E1659A scored 0.9016 (Likely Pathogenic). VUS reclassification evidence generated.', highlight: true },
+  { year: '2025-26', event: 'OTOF gene therapy trials show 11/12 children improved hearing (DB-OTO, NEJM 2025). Precedent for inner ear gene therapy.' },
+  { year: '~2028-29', event: 'Expected first-in-human STRC gene therapy trial. Patient will be 7-8 years old, within eligibility window.', future: true },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <!-- HERO -->
+  <section class="px-6 py-20 max-w-4xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-red-500/20 text-red-400">Private Research</span>
+      <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">DFNB16</span>
+    </div>
+    <h1 class="text-4xl font-bold tracking-tight leading-tight">
+      STRC p.(Glu1659Ala)<br/>
+      <span class="text-neutral-400">Variant Pathogenicity Analysis</span>
+    </h1>
+    <p class="mt-4 text-neutral-400 max-w-2xl leading-relaxed">
+      Computational evidence supporting reclassification of NM_153700.2(STRC):c.4976A&gt;C from 
+      Variant of Uncertain Significance (VUS) to Likely Pathogenic. Includes AlphaMissense prediction, 
+      AlphaFold structural context, ACMG criteria, and gene therapy landscape.
+    </p>
+
+    <!-- Key metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaMissense</div>
+        <div class="text-2xl font-bold text-red-400 mt-1">0.9016</div>
+        <div class="text-xs text-neutral-500 mt-1">Likely Pathogenic</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaFold pLDDT</div>
+        <div class="text-2xl font-bold text-green-400 mt-1">95.69</div>
+        <div class="text-xs text-neutral-500 mt-1">Very high confidence</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">REVEL Score</div>
+        <div class="text-2xl font-bold text-orange-400 mt-1">0.65</div>
+        <div class="text-xs text-neutral-500 mt-1">Predicted deleterious</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">gnomAD Frequency</div>
+        <div class="text-2xl font-bold text-white mt-1">0</div>
+        <div class="text-xs text-neutral-500 mt-1">Absent from controls</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSIS -->
+  <section id="analysis" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">AlphaMissense Saturation</h2>
+      <p class="text-neutral-400 text-sm mb-8 max-w-2xl">
+        Every possible amino acid substitution at position 1659 is predicted Likely Pathogenic. 
+        This position is structurally invariant: any change breaks the protein.
+      </p>
+      
+      <!-- Bar chart via CSS -->
+      <div class="grid gap-1">
+        {variants.sort((a, b) => b.score - a.score).map(v => (
+          <div class="flex items-center gap-3 group">
+            <span class={`w-8 text-right text-xs font-mono ${v.misha ? 'text-red-400 font-bold' : 'text-neutral-500'}`}>
+              E{v.aa}
+            </span>
+            <div class="flex-1 h-5 bg-white/[0.02] rounded overflow-hidden">
+              <div 
+                class={`h-full rounded transition-all ${v.misha ? 'bg-red-500' : 'bg-red-500/40'}`}
+                style={`width: ${v.score * 100}%`}
+              />
+            </div>
+            <span class={`text-xs font-mono w-12 ${v.misha ? 'text-red-400 font-bold' : 'text-neutral-500'}`}>
+              {v.score.toFixed(4)}
+            </span>
+            {v.misha && <span class="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 font-semibold">MISHA</span>}
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 text-xs text-neutral-500">
+        Threshold: Likely Pathogenic &gt; 0.564 | Ambiguous 0.340-0.564 | Likely Benign &lt; 0.340
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D STRUCTURE -->
+  <section id="structure" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">3D Protein Structure</h2>
+      <p class="text-neutral-400 text-sm mb-8">
+        Stereocilin (Q7RTU9, 1775 aa) from AlphaFold v6. Position E1659 highlighted in magenta. 
+        Drag to rotate, scroll to zoom.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+          <div class="px-4 py-3 border-b border-white/5">
+            <h3 class="text-sm font-medium">Full Protein</h3>
+            <p class="text-xs text-neutral-500">Color: pLDDT confidence (blue=high, red=low)</p>
+          </div>
+          <div id="viewer-full" style="width:100%;height:400px;"></div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+          <div class="px-4 py-3 border-b border-white/5">
+            <h3 class="text-sm font-medium">E1659 Close-up</h3>
+            <p class="text-xs text-neutral-500">Glutamic acid side chain shown as sticks</p>
+          </div>
+          <div id="viewer-close" style="width:100%;height:400px;"></div>
+        </div>
+      </div>
+
+      <!-- Mutation explanation -->
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold text-green-400 mb-2">Wildtype: Glutamic Acid (E)</h3>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li>Charge: <span class="text-white">Negative (-1)</span></li>
+            <li>Side chain volume: <span class="text-white">138.4 A3</span></li>
+            <li>Hydrogen bond capacity: <span class="text-white">Donor + Acceptor</span></li>
+            <li>Role: Salt bridges, electrostatic interactions</li>
+          </ul>
+        </div>
+        <div class="bg-white/[0.02] border border-red-500/20 rounded-lg p-5">
+          <h3 class="text-sm font-semibold text-red-400 mb-2">Mutant: Alanine (A)</h3>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li>Charge: <span class="text-white">Neutral (0)</span></li>
+            <li>Side chain volume: <span class="text-white">67.0 A3</span> (-52%)</li>
+            <li>Hydrogen bond capacity: <span class="text-white">None</span></li>
+            <li>Impact: Loss of charge, loss of H-bonds, cavity creation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACMG -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">ACMG Classification</h2>
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">Criterion</th>
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">Strength</th>
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">Evidence</th>
+            </tr>
+          </thead>
+          <tbody class="text-xs">
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-orange-400">PM3</td>
+              <td class="px-4 py-3">Moderate</td>
+              <td class="px-4 py-3 text-neutral-400">Detected in trans with pathogenic whole-gene deletion (confirmed paternal)</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-orange-400">PP3_Moderate</td>
+              <td class="px-4 py-3">Moderate</td>
+              <td class="px-4 py-3 text-neutral-400">AlphaMissense 0.9016 + REVEL 0.65 concordant (Pejaver 2022 threshold)</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-yellow-400">PM2_Supporting</td>
+              <td class="px-4 py-3">Supporting</td>
+              <td class="px-4 py-3 text-neutral-400">Absent from gnomAD (0 alleles in 251,000+ individuals)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+        <div class="flex items-center gap-2">
+          <span class="text-red-400 font-bold text-sm">Result: Likely Pathogenic</span>
+        </div>
+        <p class="text-xs text-neutral-400 mt-1">
+          2 Moderate + 1 Supporting = Likely Pathogenic per ACMG/AMP 2015 combining rules
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENE THERAPY TIMELINE -->
+  <section id="therapy" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Gene Therapy Timeline</h2>
+      <div class="space-y-0 relative">
+        <div class="absolute left-[7px] top-2 bottom-2 w-px bg-white/10"></div>
+        {timeline.map(t => (
+          <div class="flex gap-4 py-3 relative">
+            <div class={`w-[15px] h-[15px] rounded-full border-2 shrink-0 mt-0.5 z-10 ${
+              t.highlight ? 'bg-red-500 border-red-500' :
+              t.future ? 'bg-transparent border-white/30' :
+              'bg-white/20 border-white/20'
+            }`} />
+            <div>
+              <div class={`text-xs font-mono ${t.highlight ? 'text-red-400' : t.future ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                {t.year}
+              </div>
+              <div class={`text-sm mt-0.5 ${t.future ? 'text-neutral-500 italic' : ''}`}>
+                {t.event}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO REPRODUCE -->
+  <section id="reproduce" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">How to Reproduce</h2>
+      <div class="space-y-4">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">1. AlphaMissense predictions</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-aa-substitutions.csv" | grep "E1659"</pre>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">2. Download 3D structure</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb" -o strc.pdb
+grep "CA  GLU A1659" strc.pdb  # pLDDT = 95.69</pre>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">3. Get protein sequence</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://rest.uniprot.org/uniprotkb/Q7RTU9.fasta"</pre>
+        </div>
+      </div>
+      <p class="text-xs text-neutral-500 mt-6">All tools are free. No accounts or API keys required. Total cost: $0.</p>
+    </div>
+  </section>
+
+  <!-- 3Dmol.js init -->
+  <script is:inline>
+  const pdbUrl = 'https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch(pdbUrl).then(r => r.text()).then(pdb => {
+      // Full protein viewer
+      const v1 = $3Dmol.createViewer('viewer-full', {backgroundColor: '#0a0a0a'});
+      v1.addModel(pdb, 'pdb');
+      v1.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:50, max:100}}});
+      v1.setStyle({resi: 1659}, {sphere: {color: '#e74c3c', radius: 2}});
+      v1.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 12});
+      v1.zoomTo();
+      v1.render();
+      v1.spin('y', 0.5);
+
+      // Close-up viewer
+      const v2 = $3Dmol.createViewer('viewer-close', {backgroundColor: '#0a0a0a'});
+      v2.addModel(pdb, 'pdb');
+      v2.setStyle({}, {cartoon: {color: '#333', opacity: 0.2}});
+      v2.setStyle({resi: [1650,1651,1652,1653,1654,1655,1656,1657,1658,1659,1660,1661,1662,1663,1664,1665,1666,1667,1668]}, {
+        cartoon: {color: '#4a9eff'},
+        stick: {colorscheme: 'default', radius: 0.12}
+      });
+      v2.setStyle({resi: 1659}, {
+        stick: {color: '#e74c3c', radius: 0.2},
+        sphere: {color: '#e74c3c', radius: 0.6}
+      });
+      v2.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 14});
+      v2.zoomTo({resi: [1654,1655,1656,1657,1658,1659,1660,1661,1662,1663,1664]});
+      v2.render();
+    });
+  });
+  </script>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import '../styles/global.css'
+const { title = 'STRC Research — Misha' } = Astro.props;
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+</head>
+<body>
+  <nav class="border-b border-white/5 px-6 py-3 flex items-center justify-between">
+    <a href="/" class="font-semibold text-sm tracking-tight text-white no-underline hover:no-underline">
+      STRC Research
+    </a>
+    <div class="flex gap-6 text-xs text-neutral-400">
+      <a href="/#analysis" class="hover:text-white transition-colors no-underline">Analysis</a>
+      <a href="/#structure" class="hover:text-white transition-colors no-underline">3D Structure</a>
+      <a href="/#therapy" class="hover:text-white transition-colors no-underline">Gene Therapy</a>
+      <a href="/#reproduce" class="hover:text-white transition-colors no-underline">Reproduce</a>
+    </div>
+  </nav>
+  <slot />
+  <footer class="border-t border-white/5 px-6 py-8 text-center text-xs text-neutral-500">
+    Private research documentation. Not for distribution.<br/>
+    Last updated: {new Date().toISOString().split('T')[0]}
+  </footer>
+</body>
+</html>
