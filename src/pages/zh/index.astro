@@ -1,0 +1,449 @@
+---
+import Layout from '../../layouts/LayoutZh.astro';
+
+const variants = [
+  { aa: 'A', score: 0.9016, misha: true },
+  { aa: 'C', score: 0.9984 }, { aa: 'D', score: 0.9483 },
+  { aa: 'F', score: 0.9992 }, { aa: 'G', score: 0.9191 },
+  { aa: 'H', score: 0.9927 }, { aa: 'I', score: 0.9923 },
+  { aa: 'K', score: 0.9272 }, { aa: 'L', score: 0.9929 },
+  { aa: 'M', score: 0.9909 }, { aa: 'N', score: 0.9822 },
+  { aa: 'P', score: 0.9985 }, { aa: 'Q', score: 0.846 },
+  { aa: 'R', score: 0.9634 }, { aa: 'S', score: 0.9433 },
+  { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
+  { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
+];
+
+const timeline = [
+  { year: '2021年12月', event: 'Shubina-Oleinik 等 (Science Advances)：首次在小鼠中开展双 AAV STRC 基因治疗，概念验证。DOI: 10.1126/sciadv.abi7629' },
+  { year: '2022年12月', event: '在香港儿童医院进行全外显子组测序 (WES)。检出 STRC 缺失（父源）+ 意义未明变异 (VUS) 错义突变（母源）。实验室编号：23C7500174。' },
+  { year: '2023年12月', event: 'WES 报告更新，亲本验证完成。确认复合杂合 STRC。' },
+  { year: '2025年', event: 'OTOF 基因治疗临床试验：12 名儿童中 11 名听力改善 (DB-OTO, NEJM 2025)，3 名恢复正常听力。内耳基因治疗先例确立。' },
+  { year: '2026年1月', event: 'Iranfar 等 (Clinical and Translational Medicine)：双 AAV9-PHP.eB 在 STRC 小鼠中将听力恢复至接近正常阈值。外毛细胞转导率 60%。频率辨别能力恢复至治疗后 100 天。DOI: 10.1002/ctm2.70571', highlight: true },
+  { year: '2026年3月', event: 'AlphaMissense 分析：E1659A 评分 0.9016（可能致病）。ACMG 重新分类证据：PM3 + PP3_Moderate + PM2_Supporting = 可能致病。', highlight: true },
+  { year: '约2028-2029年', event: '预计首次人体 STRC 基因治疗临床试验。届时患者将为 7-8 岁。注：小鼠治疗窗口为 P0-P5；人类窗口可能更宽，但早期干预至关重要。', future: true },
+];
+---
+
+<Layout>
+  <!-- 英雄区 -->
+  <section class="px-6 py-20 max-w-4xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-red-500/20 text-red-400">私人研究</span>
+      <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">DFNB16</span>
+    </div>
+    <h1 class="text-4xl font-bold tracking-tight leading-tight">
+      STRC p.(Glu1659Ala)<br/>
+      <span class="text-neutral-400">变异致病性分析</span>
+    </h1>
+    <p class="mt-4 text-neutral-400 max-w-2xl leading-relaxed">
+      支持将 NM_153700.2(STRC):c.4976A&gt;C 从意义未明变异 (VUS) 重新分类为可能致病的计算学证据。
+      包含 AlphaMissense 预测、AlphaFold 结构背景、ACMG 标准及基因治疗研究进展。
+    </p>
+
+    <!-- 关键指标 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaMissense</div>
+        <div class="text-2xl font-bold text-red-400 mt-1">0.9016</div>
+        <div class="text-xs text-neutral-500 mt-1">可能致病</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaFold pLDDT</div>
+        <div class="text-2xl font-bold text-green-400 mt-1">95.69</div>
+        <div class="text-xs text-neutral-500 mt-1">极高可信度</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">REVEL 评分</div>
+        <div class="text-2xl font-bold text-orange-400 mt-1">0.65</div>
+        <div class="text-xs text-neutral-500 mt-1">预测有害</div>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
+        <div class="text-[10px] text-neutral-500 uppercase tracking-wider">gnomAD 频率</div>
+        <div class="text-2xl font-bold text-white mt-1">0</div>
+        <div class="text-xs text-neutral-500 mt-1">对照人群中未见</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分析 -->
+  <section id="analysis" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">AlphaMissense 饱和分析</h2>
+      <p class="text-neutral-400 text-sm mb-8 max-w-2xl">
+        第 1659 位所有可能的氨基酸替换均预测为可能致病。
+        该位点结构不变性极高：任何替换均会破坏蛋白质功能。
+      </p>
+      
+      <!-- CSS 条形图 -->
+      <div class="grid gap-1">
+        {variants.sort((a, b) => b.score - a.score).map(v => (
+          <div class="flex items-center gap-3 group">
+            <span class={`w-8 text-right text-xs font-mono ${v.misha ? 'text-red-400 font-bold' : 'text-neutral-500'}`}>
+              E{v.aa}
+            </span>
+            <div class="flex-1 h-5 bg-white/[0.02] rounded overflow-hidden">
+              <div 
+                class={`h-full rounded transition-all ${v.misha ? 'bg-red-500' : 'bg-red-500/40'}`}
+                style={`width: ${v.score * 100}%`}
+              />
+            </div>
+            <span class={`text-xs font-mono w-12 ${v.misha ? 'text-red-400 font-bold' : 'text-neutral-500'}`}>
+              {v.score.toFixed(4)}
+            </span>
+            {v.misha && <span class="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 font-semibold">MISHA</span>}
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 text-xs text-neutral-500">
+        阈值：可能致病 &gt; 0.564 | 不确定 0.340-0.564 | 可能良性 &lt; 0.340
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D 结构 -->
+  <section id="structure" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">蛋白质三维结构</h2>
+      <p class="text-neutral-400 text-sm mb-8">
+        纤毛蛋白 (Q7RTU9，1775 个氨基酸)，来源于 AlphaFold v6。E1659 位点以洋红色高亮显示。
+        拖动可旋转，滚动可缩放。
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+          <div class="px-4 py-3 border-b border-white/5">
+            <h3 class="text-sm font-medium">完整蛋白质</h3>
+            <p class="text-xs text-neutral-500">颜色：pLDDT 可信度（蓝色=高，红色=低）</p>
+          </div>
+          <div id="viewer-full" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+          <div class="px-4 py-3 border-b border-white/5">
+            <h3 class="text-sm font-medium">E1659 近景视图</h3>
+            <p class="text-xs text-neutral-500">谷氨酸侧链以棒状模型显示</p>
+          </div>
+          <div id="viewer-close" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
+        </div>
+      </div>
+
+      <!-- 突变说明 -->
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold text-green-400 mb-2">野生型：谷氨酸 (E)</h3>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li>电荷：<span class="text-white">负电荷 (-1)</span></li>
+            <li>侧链体积：<span class="text-white">138.4 A3</span></li>
+            <li>氢键能力：<span class="text-white">供体 + 受体</span></li>
+            <li>作用：盐桥、静电相互作用</li>
+          </ul>
+        </div>
+        <div class="bg-white/[0.02] border border-red-500/20 rounded-lg p-5">
+          <h3 class="text-sm font-semibold text-red-400 mb-2">突变型：丙氨酸 (A)</h3>
+          <ul class="text-xs text-neutral-400 space-y-1">
+            <li>电荷：<span class="text-white">中性 (0)</span></li>
+            <li>侧链体积：<span class="text-white">67.0 A3</span> (-52%)</li>
+            <li>氢键能力：<span class="text-white">无</span></li>
+            <li>影响：电荷丧失、氢键消失、空腔形成</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACMG -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">ACMG 分类</h2>
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">标准</th>
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">证据强度</th>
+              <th class="text-left px-4 py-3 text-neutral-400 font-medium">证据说明</th>
+            </tr>
+          </thead>
+          <tbody class="text-xs">
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-orange-400">PM3</td>
+              <td class="px-4 py-3">中等</td>
+              <td class="px-4 py-3 text-neutral-400">与经确认的父源全基因缺失（致病性）呈反式检出</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-orange-400">PP3_Moderate</td>
+              <td class="px-4 py-3">中等</td>
+              <td class="px-4 py-3 text-neutral-400">AlphaMissense 0.9016 与 REVEL 0.65 预测一致（Pejaver 2022 阈值）</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-3 font-mono text-yellow-400">PM2_Supporting</td>
+              <td class="px-4 py-3">支持性</td>
+              <td class="px-4 py-3 text-neutral-400">gnomAD 中未见（251,000+ 个体中 0 个等位基因）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+        <div class="flex items-center gap-2">
+          <span class="text-red-400 font-bold text-sm">结论：可能致病</span>
+        </div>
+        <p class="text-xs text-neutral-400 mt-1">
+          2 条中等证据 + 1 条支持性证据 = 可能致病（依据 ACMG/AMP 2015 组合规则）
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IRANFAR 2026 关键数据 -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Iranfar 等 2026 — 关键结果</h2>
+      <p class="text-sm text-neutral-400 mb-6">
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12784207/" target="_blank" rel="noopener">PMC12784207</a> | 
+        DOI: <a href="https://doi.org/10.1002/ctm2.70571" target="_blank" rel="noopener">10.1002/ctm2.70571</a> | 
+        Clinical and Translational Medicine，2026年1月
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">载体</div>
+          <div class="text-sm font-semibold mt-1">双 AAV9-PHP.eB</div>
+          <div class="text-xs text-neutral-400 mt-1">STRC cDNA 在 nt 2775/2776（外显子 8-9 连接处）拆分，两段均在 4.7kb AAV 包装上限内。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">外毛细胞转导率</div>
+          <div class="text-sm font-semibold mt-1 text-green-400">55–64%</div>
+          <div class="text-xs text-neutral-400 mt-1">顶转 64.2%，中转 55.4%，基转 58.7%。与野生型 STRC 表达水平相当。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">听力恢复</div>
+          <div class="text-sm font-semibold mt-1 text-green-400">接近正常阈值</div>
+          <div class="text-xs text-neutral-400 mt-1">DPOAE 与 ABR 均已恢复。频率辨别能力恢复（Go/No-Go 行为测试，治疗后 100 天）。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-[10px] text-neutral-500 uppercase tracking-wider">治疗窗口期</div>
+          <div class="text-sm font-semibold mt-1 text-orange-400">P0–P5（小鼠）</div>
+          <div class="text-xs text-neutral-400 mt-1">P5 后外毛细胞转导率降至 5% 以下。作者指出：成体治疗可能需要不同 AAV 血清型。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 基因治疗时间线 -->
+  <section id="therapy" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">基因治疗时间线</h2>
+      <div class="space-y-0 relative">
+        <div class="absolute left-[7px] top-2 bottom-2 w-px bg-white/10"></div>
+        {timeline.map(t => (
+          <div class="flex gap-4 py-3 relative">
+            <div class={`w-[15px] h-[15px] rounded-full border-2 shrink-0 mt-0.5 z-10 ${
+              t.highlight ? 'bg-red-500 border-red-500' :
+              t.future ? 'bg-transparent border-white/30' :
+              'bg-white/20 border-white/20'
+            }`} />
+            <div>
+              <div class={`text-xs font-mono ${t.highlight ? 'text-red-400' : t.future ? 'text-neutral-500' : 'text-neutral-400'}`}>
+                {t.year}
+              </div>
+              <div class={`text-sm mt-0.5 ${t.future ? 'text-neutral-500 italic' : ''}`}>
+                {t.event}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 假基因问题 -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">AlphaMissense 对 STRC 的重要意义</h2>
+      <div class="bg-orange-500/10 border border-orange-500/20 rounded-lg p-5 mb-6">
+        <h3 class="text-sm font-semibold text-orange-400 mb-2">STRC 假基因问题</h3>
+        <p class="text-sm text-neutral-300 leading-relaxed">
+          STRC 在 15 号染色体 q15.3 区域存在一个几乎完全相同的假基因（STRCP1）。
+          这导致大多数标准计算工具无法对 STRC 变异给出可靠结果：
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs text-red-400 font-semibold mb-1">SIFT</div>
+          <div class="text-xs text-neutral-400">E1659A 返回空值。由于假基因干扰，无法可靠比对 STRC 序列。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs text-red-400 font-semibold mb-1">PolyPhen-2</div>
+          <div class="text-xs text-neutral-400">返回空值。同样存在假基因比对问题。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs text-red-400 font-semibold mb-1">CADD</div>
+          <div class="text-xs text-neutral-400">该位点无评分。假基因导致基因组坐标映射受影响。</div>
+        </div>
+        <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+          <div class="text-xs text-green-400 font-semibold mb-1">AlphaMissense</div>
+          <div class="text-xs text-neutral-400">可用。采用蛋白质结构预测（AlphaFold），不依赖基因组序列比对，不受假基因干扰。评分：0.9016。</div>
+        </div>
+      </div>
+      <p class="text-xs text-neutral-500 mt-4">
+        AlphaMissense 对 STRC 具有独特价值，因为它从蛋白质结构预测致病性，
+        绕过了序列比对步骤——正是该步骤导致假基因 STRCP1 令其他工具失效。
+        REVEL（0.65）也提供了一致的预测，其集成方法在一定程度上缓解了此问题。
+      </p>
+    </div>
+  </section>
+
+  <!-- 临床试验 -->
+  <section class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">在研临床试验</h2>
+      <div class="mb-6">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-yellow-500/20 text-yellow-400 font-semibold">目前暂无 STRC 临床试验</span>
+          </div>
+          <p class="text-xs text-neutral-400">
+            截至 2026 年 3 月，尚无专门针对 STRC/DFNB16 基因治疗的注册临床试验。
+            临床前证据（Iranfar 2026、Shubina-Oleinik 2021）支持其可行性。
+            预计首次人体试验将于 2028-2029 年开展。
+          </p>
+        </div>
+        <h3 class="text-xs font-semibold text-neutral-400 uppercase tracking-wider mt-6 mb-3">相关：内耳基因治疗试验</h3>
+        <div class="space-y-2">
+          <a href="https://clinicaltrials.gov/study/NCT05788536" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 no-underline hover:border-white/10 transition-colors">
+            <div class="flex items-center justify-between gap-2">
+              <div>
+                <div class="text-sm font-medium text-white">DB-OTO（Regeneron/Decibel）</div>
+                <div class="text-xs text-neutral-400 mt-0.5">针对 OTOF 听力损失的 AAV 基因治疗。1/2 期。12 名儿童中 11 名改善，3 名恢复正常听力。</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold shrink-0">招募中</span>
+            </div>
+            <div class="text-[10px] text-neutral-500 mt-2 font-mono">NCT05788536</div>
+          </a>
+          <a href="https://clinicaltrials.gov/study/NCT05901480" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 no-underline hover:border-white/10 transition-colors">
+            <div class="flex items-center justify-between gap-2">
+              <div>
+                <div class="text-sm font-medium text-white">OTOV101（上海/复旦大学）</div>
+                <div class="text-xs text-neutral-400 mt-0.5">针对 OTOF 听力损失的双 AAV 治疗。中国首创临床试验，首批患者已于 2023 年接受治疗。</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-400 font-semibold shrink-0">进行中</span>
+            </div>
+            <div class="text-[10px] text-neutral-500 mt-2 font-mono">NCT05901480</div>
+          </a>
+          <a href="https://clinicaltrials.gov/study/NCT03996824" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 no-underline hover:border-white/10 transition-colors">
+            <div class="flex items-center justify-between gap-2">
+              <div>
+                <div class="text-sm font-medium text-white">病毒转导研究（INSERM）</div>
+                <div class="text-xs text-neutral-400 mt-0.5">人类听觉感觉细胞转导研究，为未来基因治疗载体奠定基础。</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold shrink-0">招募中</span>
+            </div>
+            <div class="text-[10px] text-neutral-500 mt-2 font-mono">NCT03996824</div>
+          </a>
+        </div>
+        <p class="text-xs text-neutral-500 mt-4">
+          来源：<a href="https://clinicaltrials.gov/search?term=hearing+loss+gene+therapy+AAV" target="_blank" rel="noopener">ClinicalTrials.gov</a>。
+          这些 OTOF 试验为 STRC 基因治疗确立了先例和监管路径。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 重现方法 -->
+  <section id="reproduce" class="px-6 py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">重现分析步骤</h2>
+      <div class="space-y-4">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">1. 获取 AlphaMissense 预测数据</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-aa-substitutions.csv" | grep "E1659"</pre>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">2. 下载三维结构</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb" -o strc.pdb
+grep "CA  GLU A1659" strc.pdb  # pLDDT = 95.69</pre>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <h3 class="text-sm font-semibold mb-2">3. 获取蛋白质序列</h3>
+          <pre class="text-xs bg-black/50 p-3 rounded overflow-x-auto font-mono text-green-400">curl "https://rest.uniprot.org/uniprotkb/Q7RTU9.fasta"</pre>
+        </div>
+      </div>
+      <p class="text-xs text-neutral-500 mt-6">所有工具均免费。无需注册账户或 API 密钥。总成本：$0。</p>
+    </div>
+  </section>
+
+  <!-- 3Dmol.js 初始化 -->
+  <script is:inline>
+  (function() {
+    const pdbUrl = 'https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb';
+    let pdbData = null;
+
+    function initViewers() {
+      if (typeof $3Dmol === 'undefined') {
+        setTimeout(initViewers, 200);
+        return;
+      }
+      
+      const el1 = document.getElementById('viewer-full');
+      const el2 = document.getElementById('viewer-close');
+      if (!el1 || !el2) { setTimeout(initViewers, 200); return; }
+
+      // Show loading
+      el1.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading 3D structure (1.3MB)...</div>';
+      el2.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading...</div>';
+      
+      fetch(pdbUrl)
+        .then(function(r) { return r.text(); })
+        .then(function(pdb) {
+          pdbData = pdb;
+          
+          // Clear loading text
+          el1.innerHTML = '';
+          el2.innerHTML = '';
+
+          // Full protein viewer
+          var v1 = $3Dmol.createViewer(el1, {backgroundColor: '#0a0a0a'});
+          v1.addModel(pdb, 'pdb');
+          v1.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:50, max:100}}});
+          v1.setStyle({resi: 1659}, {sphere: {color: '#e74c3c', radius: 2}});
+          v1.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 12});
+          v1.zoomTo();
+          v1.render();
+          v1.spin('y', 0.3);
+
+          // Close-up viewer
+          var v2 = $3Dmol.createViewer(el2, {backgroundColor: '#0a0a0a'});
+          v2.addModel(pdb, 'pdb');
+          v2.setStyle({}, {cartoon: {color: '#333', opacity: 0.15}});
+          var nearResidues = [];
+          for (var i = 1650; i <= 1668; i++) nearResidues.push(i);
+          v2.setStyle({resi: nearResidues}, {
+            cartoon: {color: '#4a9eff'},
+            stick: {colorscheme: 'default', radius: 0.12}
+          });
+          v2.setStyle({resi: 1659}, {
+            stick: {color: '#e74c3c', radius: 0.25},
+            sphere: {color: '#e74c3c', radius: 0.7}
+          });
+          v2.addLabel('E1659 (Glu)', {
+            position: {resi: 1659},
+            backgroundColor: '#e74c3c',
+            fontColor: '#fff',
+            fontSize: 13,
+            borderThickness: 1
+          });
+          v2.zoomTo({resi: nearResidues});
+          v2.render();
+        })
+        .catch(function(err) {
+          el1.innerHTML = '<div style="color:#e74c3c;padding:20px;font-size:12px;">Failed to load structure: ' + err.message + '</div>';
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initViewers);
+    } else {
+      initViewers();
+    }
+  })();
+  </script>
+</Layout>
