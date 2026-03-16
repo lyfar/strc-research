@@ -1,0 +1,192 @@
+---
+// Cómo lo hice: Pasos 1-7 (metodología de reclasificación) (ES)
+---
+<section id="reproduce" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-2">Cómo lo hice</h2>
+    <p class="text-neutral-400 text-sm mb-8">
+      Soy un padre sin formación científica. Trabajo en tecnología y producción creativa.
+      Esto es exactamente lo que hice, paso a paso, para que cualquiera en la misma situación pueda reproducirlo.
+    </p>
+
+    <div class="space-y-6">
+      <!-- Paso 1 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+          <h3 class="text-sm font-semibold">Comencé con el informe genético de mi hijo</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          El informe WES de Michael del Hospital Infantil de Hong Kong (Nº de lab: 23C7500174, diciembre 2022) listaba dos variantes STRC.
+          Una estaba etiquetada como «Patogénica» (una deleción génica completa de su padre, confirmada por MLPA). La otra estaba etiquetada
+          como «Variante de significado incierto» (un cambio de letra de su madre, confirmado por secuenciación Sanger):
+          <span class="font-mono text-neutral-300">NM_153700.2:c.4976A>C p.(Glu1659Ala)</span>.
+          Necesitaba saber: ¿es realmente dañina esta segunda variante?
+        </p>
+        <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded">
+          <strong>Lo que necesitas:</strong> el informe de la prueba genética de tu hijo con la nomenclatura exacta de la variante (nombre del gen, notación c., notación p.).
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+          <h3 class="text-sm font-semibold">Encontré la proteína en AlphaFold</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          Busqué «STRC» en UniProt y encontré que el ID de la estereocilina es <span class="font-mono text-neutral-300">Q7RTU9</span>.
+          Luego fui a AlphaFold y encontré la estructura 3D predicha de la proteína.
+          La puntuación de confianza (pLDDT) en la posición 1659 era 95,69 de 100, lo que significa que la predicción de estructura en ese punto es muy fiable.
+        </p>
+        <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded space-y-1">
+          <div><strong>Paso A:</strong> Ir a <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="text-blue-400">uniprot.org</a>, buscar el nombre de tu gen, anotar el ID de acceso UniProt</div>
+          <div><strong>Paso B:</strong> Ir a <a href="https://alphafold.ebi.ac.uk/entry/Q7RTU9" target="_blank" rel="noopener" class="text-blue-400">alphafold.ebi.ac.uk/entry/[TU_ID]</a>, verificar el pLDDT en la posición de tu variante</div>
+        </div>
+        <div class="mt-3 grid grid-cols-2 gap-2">
+          <div class="bg-black/40 rounded border border-white/10 p-3">
+            <div class="text-[10px] text-blue-400 font-semibold mb-1">uniprot.org</div>
+            <div class="text-xs text-white font-mono mb-1">Q7RTU9 · STRC_HUMAN</div>
+            <div class="text-[10px] text-neutral-400">Estereocilina · 1.775 aa</div>
+            <div class="text-[10px] text-neutral-500 mt-1">Gen: STRC · Organismo: Homo sapiens</div>
+          </div>
+          <div class="bg-black/40 rounded border border-white/10 p-3">
+            <div class="text-[10px] text-blue-400 font-semibold mb-1">alphafold.ebi.ac.uk</div>
+            <div class="text-xs text-white font-mono mb-1">AF-Q7RTU9-F1 (v6)</div>
+            <div class="text-[10px] text-neutral-400">pLDDT en pos. 1659: <span class="text-green-400 font-bold">95,69</span></div>
+            <div class="text-[10px] text-neutral-500 mt-1">Estructura de muy alta confianza</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-red-500/20 flex items-center justify-center text-xs font-bold text-red-400 shrink-0">3</span>
+          <h3 class="text-sm font-semibold">Usé AlphaMissense (el descubrimiento clave)</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          AlphaMissense es una herramienta de Google DeepMind que predice si una mutación proteica es dañina.
+          Descargué el archivo de predicciones para la estereocilina y busqué «E1659A»
+          (E = ácido glutámico, el aminoácido original; A = alanina, la variante de Michael).
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed mb-3">
+          <strong>El resultado: 0,9016 de 1,0 (Probablemente patogénica).</strong> Cualquier puntuación por encima de 0,564 se considera
+          probablemente dañina. Luego verifiqué los otros 19 cambios posibles en la posición 1659. Cada uno puntuó por encima de 0,846.
+          Esto significa que la posición 1659 es estructuralmente crítica: cualquier cambio deteriora la proteína.
+        </p>
+        <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded space-y-1">
+          <div><strong>Cómo:</strong> Descargar <a href="https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-aa-substitutions.csv" target="_blank" rel="noopener" class="text-blue-400">este archivo CSV</a> (predicciones AlphaMissense para STRC)</div>
+          <div><strong>Luego:</strong> Abrir en Excel o Google Sheets, buscar tu variante (ej. «E1659A»). Puntuación &gt; 0,564 = Probablemente patogénica</div>
+          <div><strong>Para otros genes:</strong> Reemplazar Q7RTU9 con el ID UniProt de tu proteína en la URL</div>
+        </div>
+        <div class="mt-3 bg-black/40 rounded border border-white/10 p-3 overflow-x-auto">
+          <div class="text-[10px] text-blue-400 font-semibold mb-2">AF-Q7RTU9-F1-aa-substitutions.csv (filtrado)</div>
+          <table class="text-[11px] font-mono min-w-[320px]">
+            <tr class="text-neutral-500"><td class="pr-4 py-0.5">protein_variant</td><td class="pr-4">am_pathogenicity</td><td>am_class</td></tr>
+            <tr class="text-red-400 font-bold"><td class="pr-4 py-0.5">E1659A</td><td class="pr-4">0.9016</td><td>LPath</td></tr>
+            <tr class="text-neutral-400"><td class="pr-4 py-0.5">E1659D</td><td class="pr-4">0.9483</td><td>LPath</td></tr>
+            <tr class="text-neutral-400"><td class="pr-4 py-0.5">E1659G</td><td class="pr-4">0.9191</td><td>LPath</td></tr>
+            <tr class="text-neutral-500"><td class="pr-4 py-0.5" colspan="3">... 19 sustituciones en total: LPath (0,846-0,999)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">4</span>
+          <h3 class="text-sm font-semibold">Verifiqué la conservación evolutiva</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          Si una posición es importante para la proteína, debería ser el mismo aminoácido en diferentes especies.
+          Descargué secuencias de estereocilina de 9 mamíferos en UniProt (humano, ratón, rata, vaca, mono, cerdo, perro, murciélago, oso)
+          y busqué el motivo alrededor de la posición 1659 en cada uno.
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed mb-3">
+          <strong>Resultado: 100% conservado.</strong> Las 9 especies tienen ácido glutámico (E) en esta posición.
+          El motivo de 13 residuos circundante (PEIFTEIGTIAAG) es idéntico a lo largo de ~80 millones de años de evolución.
+          Esta es evidencia PP1 de Apoyo bajo criterios ACMG.
+        </p>
+        <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded space-y-1">
+          <div><strong>Cómo:</strong> Ir a <a href="https://www.uniprot.org/uniprotkb/Q7RTU9/entry#sequences" target="_blank" rel="noopener" class="text-blue-400">secuencias ortólogas de UniProt</a></div>
+          <div><strong>Luego:</strong> Descargar FASTA para cada especie, buscar un motivo único cerca de la posición de tu variante</div>
+          <div><strong>Atajo:</strong> Si el aminoácido + residuos circundantes son idénticos en mamíferos, la posición está conservada</div>
+        </div>
+      </div>
+
+      <!-- Paso 5 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">5</span>
+          <h3 class="text-sm font-semibold">Probé las herramientas estándar (fallaron)</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          Normalmente, los genetistas usan SIFT, PolyPhen-2 y CADD para verificar variantes. Los probé todos a través de
+          <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-blue-400">la API VEP de Ensembl</a>.
+          Todos devolvieron nada para esta variante.
+        </p>
+        <p class="text-xs text-neutral-400 leading-relaxed">
+          La razón: STRC tiene un «gemelo» casi idéntico adyacente en el cromosoma 15 (un pseudogén llamado STRCP1) que confunde
+          las herramientas basadas en alineamiento de secuencias. Por eso AlphaMissense es especialmente importante para STRC: funciona desde
+          la estructura 3D de la proteína, no desde la secuencia de ADN, por lo que el pseudogén no lo afecta.
+        </p>
+        <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded mt-3 space-y-1">
+          <div><strong>Verifica el tuyo:</strong> <a href="https://rest.ensembl.org/vep/human/hgvs/NM_153700.2:c.4976A%3EC?content-type=application/json" target="_blank" rel="noopener" class="text-blue-400">API VEP de Ensembl para esta variante</a> (no devuelve SIFT/PolyPhen)</div>
+          <div><strong>Nota:</strong> Si tu gen no tiene pseudogén, SIFT/PolyPhen pueden funcionar. Verifica tu gen en NCBI primero</div>
+        </div>
+      </div>
+
+      <!-- Paso 6 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">6</span>
+          <h3 class="text-sm font-semibold">Apliqué las reglas de clasificación ACMG</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-2">
+          Las <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4544753/" target="_blank" rel="noopener" class="text-blue-400">directrices ACMG/AMP (Richards et al., 2015)</a>
+          son el marco estándar que los genetistas usan para clasificar variantes. Cada pieza de evidencia recibe un código y nivel de fuerza.
+          Aprendí las reglas y las apliqué:
+        </p>
+        <ul class="text-xs text-neutral-400 mt-2 space-y-2">
+          <li><span class="text-orange-400 font-mono">PM3</span> (Moderada): La variante fue encontrada <em>en trans</em> con una deleción patogénica conocida (una de cada padre, confirmada por pruebas parentales). <a href="https://clinicalgenome.org/working-groups/sequence-variant-interpretation/" target="_blank" rel="noopener" class="text-blue-400">Reglas ClinGen SVI</a></li>
+          <li><span class="text-orange-400 font-mono">PP3_Moderada</span> (Moderada): Dos herramientas computacionales concordantes predicen patogenicidad: AlphaMissense (0,9016) + REVEL (0,65). Actualizado de Apoyo a Moderada según <a href="https://pubmed.ncbi.nlm.nih.gov/36413997/" target="_blank" rel="noopener" class="text-blue-400">Pejaver et al. 2022</a></li>
+          <li><span class="text-yellow-400 font-mono">PM2_Apoyo</span> (Apoyo): Ausente en <a href="https://gnomad.broadinstitute.org" target="_blank" rel="noopener" class="text-blue-400">gnomAD</a> (0 alelos en 251.000+ individuos)</li>
+          <li><span class="text-yellow-400 font-mono">PP1_Apoyo</span> (Apoyo): Posición 100% conservada en 9 especies de mamíferos (ver Paso 4)</li>
+        </ul>
+        <p class="text-xs text-neutral-300 mt-3">
+          <strong>2 Moderadas + 2 Apoyo = Probablemente patogénica.</strong> Según las <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4544753/table/Tab5/" target="_blank" rel="noopener" class="text-blue-400">reglas de combinación ACMG (Tabla 5)</a>, esto cumple el umbral para la clasificación Probablemente patogénica.
+        </p>
+      </div>
+
+      <!-- Paso 7 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">7</span>
+          <h3 class="text-sm font-semibold">Escribí al hospital</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed">
+          Compilé toda la evidencia en una carta formal dirigida al Laboratorio de Patología Química del
+          Hospital Infantil de Hong Kong, solicitando una revisión de reclasificación de la variante de VUS a Probablemente patogénica.
+          Adjunté los datos de AlphaMissense, el análisis de conservación y el desglose de los criterios ACMG.
+          También construí este sitio web para que la evidencia sea transparente, reproducible y accesible para cualquiera que revise el caso.
+        </p>
+      </div>
+
+      <!-- Paso 8 -->
+      <div class="bg-white/[0.02] border border-blue-500/10 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400 shrink-0">8</span>
+          <h3 class="text-sm font-semibold">Qué sucede después</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed">
+          Si el hospital acepta la reclasificación, el diagnóstico molecular de Michael quedará confirmado:
+          STRC bialélico patogénico (DFNB16). Este es un prerrequisito para futuros ensayos clínicos de terapia génica.
+          La terapia génica dual-AAV ya ha restaurado la audición en ratones deficientes en STRC
+          (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12784207/" target="_blank" rel="noopener" class="text-blue-400">Iranfar et al., enero 2026</a>).
+          Se esperan ensayos en humanos dentro de 2-3 años. Michael tendrá 7-8 años.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+// STRCにAlphaMissenseが重要な理由（偽遺伝子問題）(JA)
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">STRCにAlphaMissenseが不可欠な理由</h2>
+    <div class="bg-orange-500/10 border border-orange-500/20 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold text-orange-400 mb-2">STRC偽遺伝子問題</h3>
+      <p class="text-sm text-neutral-300 leading-relaxed">
+        STRCには第15染色体15q15.3上に隣接する、ほぼ同一の偽遺伝子（STRCP1）があります。
+        このため、ほとんどの標準的な計算ツールがSTRCバリアントに対して失敗するか、信頼性の低い結果を返します：
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">SIFT</div>
+        <div class="text-xs text-neutral-400">E1659AにNullを返します。偽遺伝子のためSTRCを確実にアライメントできません。</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">PolyPhen-2</div>
+        <div class="text-xs text-neutral-400">Nullを返します。同じ偽遺伝子アライメント問題。</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">CADD</div>
+        <div class="text-xs text-neutral-400">この位置のスコアなし。偽遺伝子によりゲノム座標マッピングが影響を受けます。</div>
+      </div>
+      <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+        <div class="text-xs text-green-400 font-semibold mb-1">AlphaMissense</div>
+        <div class="text-xs text-neutral-400">機能します。タンパク質構造予測（AlphaFold）を使用し、ゲノムアライメントではありません。偽遺伝子の干渉に影響されません。スコア：0.9016。</div>
+      </div>
+    </div>
+    <p class="text-xs text-neutral-500 mt-4">
+      AlphaMissenseはSTRCに特に価値があります。なぜなら、タンパク質構造から病原性を予測するため、
+      偽遺伝子STRCP1が他のツールを失敗させる配列アライメントステップを回避できるからです。
+      REVEL（0.65）もこの問題を部分的に緩和するアンサンブルアプローチを使用した一致した予測を提供します。
+    </p>
+  </div>
+</section>

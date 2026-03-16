@@ -1,0 +1,105 @@
+---
+// 1文字だけ修正できるか？(JA)
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">1文字だけ修正できるか？</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">計算論的</span>
+    </div>
+    <p class="text-neutral-400 text-sm mb-6">
+      STRC遺伝子全体（5,325 bp）を置換する代わりに、変異した1塩基だけを修正できたらどうでしょうか？
+      3種類の遺伝子編集ツールがあります。マイケルの特定のバリアントについてそれぞれを確認しました。
+    </p>
+
+    <!-- 3つの編集器の視覚的説明 -->
+    <div class="space-y-3 mb-6">
+      <!-- 必要なもの -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+        <div class="text-xs font-semibold text-neutral-300 mb-2">マイケルの変異：1文字の誤り</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="text-neutral-500">正常：</span>
+          <span class="text-neutral-400">...AATTT<span class="text-green-400 font-bold text-sm">A</span>CAGTG...</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="text-neutral-500">マイケル：</span>
+          <span class="text-neutral-400">...AATTT<span class="text-red-400 font-bold text-sm">C</span>CAGTG...</span>
+        </div>
+        <div class="text-[10px] text-neutral-500 mt-2">CをAに戻す必要があります。これはC&gt;A塩基転換と呼ばれます。</div>
+      </div>
+
+      <!-- 3つのツール比較 -->
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-red-400 mb-1">CBE（シトシン塩基編集器）</div>
+          <div class="text-[10px] text-neutral-500 mb-2">できること：</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">C</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">T</span>
+            <span class="text-[10px] text-neutral-500 ml-1">のみ</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">C→Aが必要。CBEはC→Tしかできません。</div>
+          <div class="text-xs text-red-400 font-semibold">このバリアントを修正できない</div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-red-400 mb-1">ABE（アデニン塩基編集器）</div>
+          <div class="text-[10px] text-neutral-500 mb-2">できること：</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">A</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">G</span>
+            <span class="text-[10px] text-neutral-500 ml-1">のみ</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">方向が違います。ここでは無関係。</div>
+          <div class="text-xs text-red-400 font-semibold">このバリアントを修正できない</div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-green-400 mb-1">プライム編集器</div>
+          <div class="text-[10px] text-neutral-500 mb-2">できること：</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">任意</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">任意</span>
+            <span class="text-[10px] text-neutral-500 ml-1">（12種類全て）</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">C→A含む。近くにPAMサイトが必要。</div>
+          <div class="text-xs text-green-400 font-semibold">このバリアントを修正できる</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAMサイト解析 -->
+    <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4 mb-4">
+      <div class="text-xs font-semibold text-green-400 mb-2">PAMサイト発見：バリアントから4 bp</div>
+      <p class="text-xs text-neutral-400 mb-3">
+        プライム編集には標的付近に「着陸地点」（PAMサイト、NGG配列）が必要です。
+        <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-blue-400">Ensembl REST API</a>
+        からバリアント周辺のゲノム配列をダウンロードし、バリアントから15 bp以内のNGGモチーフを検索しました。
+      </p>
+      <div class="bg-black/40 rounded p-3 overflow-x-auto">
+        <div class="text-[11px] font-mono text-neutral-500 leading-relaxed whitespace-nowrap">
+          <span class="text-neutral-600">chr15:43600521-43600581 (GRCh38)</span><br/>
+          CCCAGCTCCCCACCTGCTATGGTGCC<span class="text-yellow-400 font-bold underline">CC</span>AATTT<span class="text-red-400 font-bold">[C]</span>AGTGAAGATCTCAGG<br/>
+          <span class="text-neutral-700">..........................PAM↑....↑バリアント</span><br/>
+          <span class="text-neutral-700">..........................4 bp離れている</span>
+        </div>
+      </div>
+      <div class="text-[10px] text-neutral-500 mt-2">
+        <strong>発見方法：</strong>Ensembl APIがゲノム配列を返します。位置43600551から15 bp以内で「CC」（NGG PAMの相補鎖）を検索。
+        4 bp離れた位置に1つ発見。最適なプライム編集ウィンドウ（0-13 bp）内です。
+      </div>
+    </div>
+
+    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+      <p class="text-xs text-neutral-300">
+        <strong>現実確認：</strong>プライム編集はまだ内耳有毛細胞においてin vivoでは試験されていません。
+        蝸牛深部の外有毛細胞へのプライム編集器 + ガイドRNAの送達は未解決の課題です。
+        しかし、この解析はマイケルの特定のバリアントが技術的にターゲット可能であることを確認しています。
+        送達が解決されれば（現在活発に研究されている分野）、この変異をDNAレベルで修正できます。
+      </p>
+    </div>
+  </div>
+</section>

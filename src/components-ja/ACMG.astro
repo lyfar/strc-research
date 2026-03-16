@@ -1,0 +1,49 @@
+---
+// ACMG分類 (JA)
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">ACMG分類</h2>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto">
+      <table class="w-full min-w-[500px] text-sm">
+        <thead>
+          <tr class="border-b border-white/5">
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">基準</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">強度</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">根拠</th>
+          </tr>
+        </thead>
+        <tbody class="text-xs">
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-orange-400">PM3</td>
+            <td class="px-4 py-3">中等度</td>
+            <td class="px-4 py-3 text-neutral-400">既知の病原性全遺伝子欠失（父方確認）とトランスで検出</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-orange-400">PP3_中等度</td>
+            <td class="px-4 py-3">中等度</td>
+            <td class="px-4 py-3 text-neutral-400">AlphaMissense 0.9016 + REVEL 0.65 一致（Pejaver 2022閾値）</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-yellow-400">PM2_補助的</td>
+            <td class="px-4 py-3">補助的</td>
+            <td class="px-4 py-3 text-neutral-400">gnomADに不在（251,000人以上で0アレル）</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-yellow-400">PP1_補助的</td>
+            <td class="px-4 py-3">補助的</td>
+            <td class="px-4 py-3 text-neutral-400">E1659は9哺乳類種で100%保存（約8000万年）。同一モチーフ PEIFTEIGTIAAG。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+      <div class="flex items-center gap-2">
+        <span class="text-red-400 font-bold text-sm">結果：病原性の可能性が高い</span>
+      </div>
+      <p class="text-xs text-neutral-400 mt-1">
+        中等度2つ + 補助的2つ = ACMG/AMP 2015の組み合わせ規則に従い「病原性の可能性が高い」
+      </p>
+    </div>
+  </div>
+</section>
