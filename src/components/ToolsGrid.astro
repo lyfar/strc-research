@@ -1,53 +1,56 @@
 ---
 // Tools grid + closing text
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <section class="px-6 pb-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
     <div class="mt-8 bg-white/[0.02] border border-white/5 rounded-lg p-5">
-      <h3 class="text-sm font-semibold mb-2">Tools used</h3>
+      <h3 class="text-sm font-semibold mb-2">{t('toolsgrid.title')}</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
         <a href="https://openclaw.ai" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">OpenClaw</div>
-          <div>AI agent (open source)</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.openclaw.name')}</div>
+          <div>{t('toolsgrid.openclaw.desc')}</div>
         </a>
         <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">Claude Opus 4.6</div>
-          <div>AI model (Anthropic)</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.claude.name')}</div>
+          <div>{t('toolsgrid.claude.desc')}</div>
         </a>
         <a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">AlphaFold DB</div>
-          <div>3D structures + pLDDT</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.alphafold.name')}</div>
+          <div>{t('toolsgrid.alphafold.desc')}</div>
         </a>
         <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">AlphaMissense</div>
-          <div>Variant pathogenicity</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.alphamissense.name')}</div>
+          <div>{t('toolsgrid.alphamissense.desc')}</div>
         </a>
         <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">AlphaFold 3 Server</div>
-          <div>Protein complex prediction</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.af3.name')}</div>
+          <div>{t('toolsgrid.af3.desc')}</div>
         </a>
         <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">UniProt</div>
-          <div>Protein sequences + orthologs</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.uniprot.name')}</div>
+          <div>{t('toolsgrid.uniprot.desc')}</div>
         </a>
         <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">Ensembl REST API</div>
-          <div>Genomic coordinates + VEP</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.ensembl.name')}</div>
+          <div>{t('toolsgrid.ensembl.desc')}</div>
         </a>
         <a href="https://gnomad.broadinstitute.org" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">gnomAD</div>
-          <div>Population frequencies</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.gnomad.name')}</div>
+          <div>{t('toolsgrid.gnomad.desc')}</div>
         </a>
         <a href="https://clinicaltrials.gov" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">ClinicalTrials.gov</div>
-          <div>Trial monitoring</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.clinicaltrials.name')}</div>
+          <div>{t('toolsgrid.clinicaltrials.desc')}</div>
         </a>
         <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener" class="no-underline text-neutral-400 hover:text-white transition-colors">
-          <div class="font-medium text-neutral-300">PubMed / PMC</div>
-          <div>Research papers (open access)</div>
+          <div class="font-medium text-neutral-300">{t('toolsgrid.pubmed.name')}</div>
+          <div>{t('toolsgrid.pubmed.desc')}</div>
         </a>
       </div>
-      <p class="text-xs text-neutral-500 mt-4">OpenClaw is open source (free). Claude Opus 4.6 is available via Anthropic API (pay per use). All scientific databases are free and open access. AlphaFold 3 Server requires a Google account.</p>
+      <p class="text-xs text-neutral-500 mt-4">{t('toolsgrid.footnote')}</p>
     </div>
   </div>
 </section>

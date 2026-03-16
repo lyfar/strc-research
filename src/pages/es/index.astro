@@ -1,16 +1,19 @@
 ---
-import LayoutEs from '../../layouts/LayoutEs.astro';
+import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
-import AlphaMissense from '../../components-es/AlphaMissense.astro';
-import Conservation from '../../components-es/Conservation.astro';
-import Structure3D from '../../components-es/Structure3D.astro';
-import Pseudogene from '../../components-es/Pseudogene.astro';
-import ACMG from '../../components-es/ACMG.astro';
-import MiniSTRC from '../../components-es/MiniSTRC.astro';
-import PrimeEditing from '../../components-es/PrimeEditing.astro';
-import MethodReclass from '../../components-es/MethodReclass.astro';
-import MethodResearch from '../../components-es/MethodResearch.astro';
-import ToolsGrid from '../../components-es/ToolsGrid.astro';
+import AlphaMissense from '../../components/AlphaMissense.astro';
+import Conservation from '../../components/Conservation.astro';
+import Structure3D from '../../components/Structure3D.astro';
+import Pseudogene from '../../components/Pseudogene.astro';
+import ACMG from '../../components/ACMG.astro';
+import MiniSTRC from '../../components/MiniSTRC.astro';
+import AF3Results from '../../components/AF3Results.astro';
+import PrimeEditing from '../../components/PrimeEditing.astro';
+import MethodReclass from '../../components/MethodReclass.astro';
+import MethodResearch from '../../components/MethodResearch.astro';
+import ToolsGrid from '../../components/ToolsGrid.astro';
+
+const lang = 'es';
 
 const variants = [
   { aa: 'A', score: 0.9016, misha: true },
@@ -24,20 +27,10 @@ const variants = [
   { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
   { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
 ];
-
-const timeline = [
-  { year: 'Dic. 2021', event: 'Shubina-Oleinik et al. (Science Advances): Primera terapia génica STRC dual-AAV en ratones. Prueba de concepto. DOI: 10.1126/sciadv.abi7629' },
-  { year: 'Dic. 2022', event: 'WES realizado en el Hospital Infantil de Hong Kong. Deleción STRC (paterna) + variante de significado incierto (materna) identificadas. Nº de lab: 23C7500174.' },
-  { year: 'Dic. 2023', event: 'Informe WES actualizado con confirmación de pruebas parentales. STRC heterocigoto compuesto confirmado.' },
-  { year: '2025', event: 'Ensayos de terapia génica OTOF: 11/12 niños mejoraron la audición (DB-OTO, NEJM 2025). 3 alcanzaron audición normal. Precedente para terapia génica del oído interno.' },
-  { year: 'Ene. 2026', event: 'Iranfar et al. (Clinical and Translational Medicine): Dual AAV9-PHP.eB restaura la audición a umbrales casi normales en ratones STRC. 60% de transducción de células ciliadas externas. Discriminación frecuencial recuperada hasta 100 días. DOI: 10.1002/ctm2.70571', highlight: true },
-  { year: 'Mar. 2026', event: 'Análisis AlphaMissense: E1659A puntuación 0,9016 (Probablemente patogénica). Evidencia ACMG de reclasificación: PM3 + PP3_Moderada + PM2_Apoyo = Probablemente patogénica.', highlight: true },
-  { year: '~2028-29', event: 'Primer ensayo clínico de terapia génica STRC en humanos esperado. El paciente tendrá 7-8 años. Nota: la ventana terapéutica en ratones = P0-P5; en humanos probablemente más amplia, pero la intervención temprana es crítica.', future: true },
-];
 ---
 
-<LayoutEs>
-  <Hero lang="es" />
+<Layout lang={lang}>
+  <Hero lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PARTE 1: EVIDENCIA DE RECLASIFICACIÓN -->
@@ -50,11 +43,11 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <AlphaMissense variants={variants} />
-  <Conservation />
-  <Structure3D />
-  <Pseudogene />
-  <ACMG />
+  <AlphaMissense variants={variants} lang={lang} />
+  <Conservation lang={lang} />
+  <Structure3D lang={lang} />
+  <Pseudogene lang={lang} />
+  <ACMG lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PARTE 2: HIPÓTESIS DE INVESTIGACIÓN -->
@@ -67,8 +60,9 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MiniSTRC />
-  <PrimeEditing />
+  <MiniSTRC lang={lang} />
+  <AF3Results lang={lang} />
+  <PrimeEditing lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PARTE 3: METODOLOGÍA -->
@@ -81,7 +75,7 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MethodReclass />
-  <MethodResearch />
-  <ToolsGrid />
-</LayoutEs>
+  <MethodReclass lang={lang} />
+  <MethodResearch lang={lang} />
+  <ToolsGrid lang={lang} />
+</Layout>

@@ -13,6 +13,8 @@ import MethodReclass from '../components/MethodReclass.astro';
 import MethodResearch from '../components/MethodResearch.astro';
 import ToolsGrid from '../components/ToolsGrid.astro';
 
+const lang = 'en';
+
 const variants = [
   { aa: 'A', score: 0.9016, misha: true },
   { aa: 'C', score: 0.9984 }, { aa: 'D', score: 0.9483 },
@@ -25,20 +27,10 @@ const variants = [
   { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
   { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
 ];
-
-const timeline = [
-  { year: 'Dec 2021', event: 'Shubina-Oleinik et al. (Science Advances): First dual-AAV STRC gene therapy in mice. Proof of concept. DOI: 10.1126/sciadv.abi7629' },
-  { year: 'Dec 2022', event: 'WES performed at HK Children\'s Hospital. STRC deletion (paternal) + VUS missense (maternal) identified. Lab No: 23C7500174.' },
-  { year: 'Dec 2023', event: 'WES report updated with parental testing confirmation. Compound heterozygous STRC.' },
-  { year: '2025', event: 'OTOF gene therapy trials: 11/12 children improved hearing (DB-OTO, NEJM 2025). 3 achieved normal hearing. Precedent for inner ear gene therapy.' },
-  { year: 'Jan 2026', event: 'Iranfar et al. (Clinical and Translational Medicine): Dual AAV9-PHP.eB restores hearing to near-normal thresholds in STRC mice. 60% OHC transduction. Frequency discrimination recovered up to 100 days. DOI: 10.1002/ctm2.70571', highlight: true },
-  { year: 'Mar 2026', event: 'AlphaMissense analysis: E1659A scored 0.9016 (Likely Pathogenic). ACMG reclassification evidence: PM3 + PP3_Moderate + PM2_Supporting = Likely Pathogenic.', highlight: true },
-  { year: '~2028-29', event: 'Expected first-in-human STRC gene therapy trial. Patient will be 7-8 years old. Note: therapeutic window in mice = P0-P5; in humans likely wider but early intervention critical.', future: true },
-];
 ---
 
-<Layout>
-  <Hero lang="en" />
+<Layout lang={lang}>
+  <Hero lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PART 1: RECLASSIFICATION EVIDENCE -->
@@ -51,11 +43,11 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <AlphaMissense variants={variants} />
-  <Conservation />
-  <Structure3D />
-  <Pseudogene />
-  <ACMG />
+  <AlphaMissense variants={variants} lang={lang} />
+  <Conservation lang={lang} />
+  <Structure3D lang={lang} />
+  <Pseudogene lang={lang} />
+  <ACMG lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PART 2: RESEARCH HYPOTHESES -->
@@ -68,22 +60,21 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MiniSTRC />
-  <AF3Results />
-  <PrimeEditing />
+  <MiniSTRC lang={lang} />
+  <AF3Results lang={lang} />
+  <PrimeEditing lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- PART 3: METHODOLOGY -->
   <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
     <div class="max-w-4xl mx-auto">
-      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 3</span>
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 3 — Methodology</span>
       <h2 class="text-lg font-bold mt-1">How I Did This</h2>
-      <p class="text-xs text-neutral-400 mt-1">Step-by-step methodology so anyone can reproduce these results</p>
     </div>
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MethodReclass />
-  <MethodResearch />
-  <ToolsGrid />
+  <MethodReclass lang={lang} />
+  <MethodResearch lang={lang} />
+  <ToolsGrid lang={lang} />
 </Layout>

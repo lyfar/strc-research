@@ -1,38 +1,55 @@
 ---
 import '../styles/global.css'
-const { title = 'STRC Research — Misha' } = Astro.props;
+import { useTranslations } from '../lib/i18n';
+const { title, lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const siteTitle = title || t('layout.site_title');
+
+// Language-specific font
+const fontLink = lang === 'zh'
+  ? '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />'
+  : lang === 'ja'
+  ? '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />'
+  : '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />';
+
+const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
+
+// Nav base path
+const base = lang === 'en' ? '' : `/${lang}`;
 ---
-<html lang="en">
+<html lang={htmlLang}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>{title}</title>
+  <title>{siteTitle}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <Fragment set:html={fontLink} />
   <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+  {(lang === 'zh' || lang === 'ja') && <style>{`body { font-family: ${lang === 'zh' ? "'Noto Sans SC'" : "'Noto Sans JP'"}, 'Inter', -apple-system, sans-serif; }`}</style>}
 </head>
 <body>
   <nav class="border-b border-white/5 px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-    <a href="/" class="font-semibold text-sm tracking-tight text-white no-underline hover:no-underline shrink-0">
-      STRC Research
+    <a href={base + '/'} class="font-semibold text-sm tracking-tight text-white no-underline hover:no-underline shrink-0">
+      {t('layout.site_title')}
     </a>
     <div class="hidden sm:flex gap-5 text-xs text-neutral-400">
-      <a href="/#analysis" class="hover:text-white transition-colors no-underline">Evidence</a>
-      <a href="/#mini-strc" class="hover:text-white transition-colors no-underline">Research</a>
-      <a href="/#reproduce" class="hover:text-white transition-colors no-underline">Method</a>
+      <a href={base + '/#analysis'} class="hover:text-white transition-colors no-underline">{t('layout.nav.evidence')}</a>
+      <a href={base + '/#mini-strc'} class="hover:text-white transition-colors no-underline">{t('layout.nav.research')}</a>
+      <a href={base + '/#reproduce'} class="hover:text-white transition-colors no-underline">{t('layout.nav.method')}</a>
     </div>
     <div class="flex gap-1 text-xs shrink-0">
-      <a href="/" class="px-2 py-1 rounded bg-white/10 text-white no-underline">EN</a>
-      <a href="/zh/" class="px-2 py-1 rounded text-neutral-500 hover:text-white no-underline transition-colors">中文</a>
-      <a href="/fr/" class="px-2 py-1 rounded text-neutral-500 hover:text-white no-underline transition-colors">FR</a>
-      <a href="/es/" class="px-2 py-1 rounded text-neutral-500 hover:text-white no-underline transition-colors">ES</a>
-      <a href="/ja/" class="px-2 py-1 rounded text-neutral-500 hover:text-white no-underline transition-colors">JA</a>
+      <a href="/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'en' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>EN</a>
+      <a href="/zh/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'zh' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>中文</a>
+      <a href="/fr/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'fr' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>FR</a>
+      <a href="/es/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'es' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>ES</a>
+      <a href="/ja/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'ja' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>JA</a>
     </div>
   </nav>
   <slot />
   <footer class="border-t border-white/5 px-6 py-8 text-center text-xs text-neutral-500">
-    Open research. MIT License. Reproduce freely.<br/>
+    {t('layout.footer')}<br/>
     Last updated: {new Date().toISOString().split('T')[0]}
   </footer>
 </body>

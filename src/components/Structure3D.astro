@@ -1,26 +1,28 @@
 ---
 // 3D Protein Structure section + mutation explanation cards + 3Dmol.js script
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <section id="structure" class="px-6 py-16 border-t border-white/5">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">3D Protein Structure</h2>
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('structure3d.title')}</h2>
     <p class="text-neutral-400 text-sm mb-8">
-      Stereocilin (Q7RTU9, 1775 aa) from AlphaFold v6. Position E1659 highlighted in magenta. 
-      Drag to rotate, scroll to zoom.
+      {t('structure3d.desc')}
     </p>
     
     <div class="grid md:grid-cols-2 gap-6">
       <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
         <div class="px-4 py-3 border-b border-white/5">
-          <h3 class="text-sm font-medium">Full Protein</h3>
-          <p class="text-xs text-neutral-500">Color: pLDDT confidence (blue=high, red=low)</p>
+          <h3 class="text-sm font-medium">{t('structure3d.panel1.title')}</h3>
+          <p class="text-xs text-neutral-500">{t('structure3d.panel1.sub')}</p>
         </div>
         <div id="viewer-full" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
       </div>
       <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
         <div class="px-4 py-3 border-b border-white/5">
-          <h3 class="text-sm font-medium">E1659 Close-up</h3>
-          <p class="text-xs text-neutral-500">Glutamic acid side chain shown as sticks</p>
+          <h3 class="text-sm font-medium">{t('structure3d.panel2.title')}</h3>
+          <p class="text-xs text-neutral-500">{t('structure3d.panel2.sub')}</p>
         </div>
         <div id="viewer-close" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
       </div>
@@ -29,21 +31,21 @@
     <!-- Mutation explanation -->
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
-        <h3 class="text-sm font-semibold text-green-400 mb-2">Wildtype: Glutamic Acid (E)</h3>
+        <h3 class="text-sm font-semibold text-green-400 mb-2">{t('structure3d.wt.title')}</h3>
         <ul class="text-xs text-neutral-400 space-y-1">
-          <li>Charge: <span class="text-white">Negative (-1)</span></li>
-          <li>Side chain volume: <span class="text-white">138.4 A3</span></li>
-          <li>Hydrogen bond capacity: <span class="text-white">Donor + Acceptor</span></li>
-          <li>Role: Salt bridges, electrostatic interactions</li>
+          <li set:html={t('structure3d.wt.charge')} />
+          <li set:html={t('structure3d.wt.volume')} />
+          <li set:html={t('structure3d.wt.hbond')} />
+          <li>{t('structure3d.wt.role')}</li>
         </ul>
       </div>
       <div class="bg-white/[0.02] border border-red-500/20 rounded-lg p-5">
-        <h3 class="text-sm font-semibold text-red-400 mb-2">Mutant: Alanine (A)</h3>
+        <h3 class="text-sm font-semibold text-red-400 mb-2">{t('structure3d.mut.title')}</h3>
         <ul class="text-xs text-neutral-400 space-y-1">
-          <li>Charge: <span class="text-white">Neutral (0)</span></li>
-          <li>Side chain volume: <span class="text-white">67.0 A3</span> (-52%)</li>
-          <li>Hydrogen bond capacity: <span class="text-white">None</span></li>
-          <li>Impact: Loss of charge, loss of H-bonds, cavity creation</li>
+          <li set:html={t('structure3d.mut.charge')} />
+          <li set:html={t('structure3d.mut.volume')} />
+          <li set:html={t('structure3d.mut.hbond')} />
+          <li>{t('structure3d.mut.impact')}</li>
         </ul>
       </div>
     </div>

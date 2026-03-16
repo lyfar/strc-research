@@ -13,15 +13,55 @@ const t = useTranslations(lang);
   <div class="grid md:grid-cols-[1fr_320px] gap-10 items-start">
     <div>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-        {t('hero.title')}<br/>
-        <span class="text-neutral-400">{t('hero.subtitle')}</span>
+        STRC c.4976 <span class="text-green-400 line-through opacity-60">A</span><span class="text-red-400">C</span>
       </h1>
+      <p class="text-sm text-neutral-400 mt-2">I asked AI what that means. Came up with a variant pathogenicity analysis and a new hypothesis.</p>
       <div class="mt-6 space-y-3 text-sm text-neutral-300 leading-relaxed">
         <p set:html={t('hero.p1')} />
         <p set:html={t('hero.p2')} />
         <p set:html={t('hero.p3')} />
         <p set:html={t('hero.p4')} />
-        <p class="text-neutral-500" set:html={t('hero.p5')} />
+      </div>
+
+      <!-- Listen / Watch -->
+      <div class="mt-5 flex flex-wrap gap-3">
+        <details class="group">
+          <summary class="cursor-pointer text-[11px] text-neutral-500 hover:text-white transition-colors flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/></svg>
+            Listen to this page
+            <span class="text-neutral-600 text-[9px]">NotebookLM</span>
+          </summary>
+          <div class="mt-2">
+            <audio controls preload="none" class="w-full max-w-md h-8" style="filter: invert(0.85) hue-rotate(180deg);">
+              <source src="/media/podcast.m4a" type="audio/mp4" />
+            </audio>
+          </div>
+        </details>
+        <details class="group">
+          <summary class="cursor-pointer text-[11px] text-neutral-500 hover:text-white transition-colors flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+            Watch video overview
+            <span class="text-neutral-600 text-[9px]">NotebookLM</span>
+          </summary>
+          <div class="mt-2">
+            <video controls preload="none" class="w-full max-w-lg rounded-lg" poster="/images/egor-misha.jpg">
+              <source src="/media/video.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </details>
+      </div>
+
+      <!-- Powered by + cost (single line) -->
+      <div class="mt-6 text-[11px] text-neutral-500 leading-relaxed">
+        <span class="text-neutral-600">Built with</span>
+        <a href="https://openclaw.ai" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">OpenClaw</a> (free, open source) +
+        <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">Claude Opus 4.6</a> (API, ~$50-100) +
+        <a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">AlphaFold</a> +
+        <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">AlphaFold 3</a> +
+        <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">AlphaMissense</a> +
+        <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">UniProt</a> +
+        <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-neutral-400 hover:text-white no-underline">Ensembl</a>
+        <span class="text-neutral-600">(all free)</span>
       </div>
     </div>
     <div class="order-first md:order-last">
@@ -54,48 +94,5 @@ const t = useTranslations(lang);
     </div>
   </div>
 
-  <!-- Timeline: horizontal on desktop, vertical on mobile -->
-  <div class="mt-6 bg-white/[0.02] border border-white/5 rounded-lg p-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="relative">
-        <div class="flex items-center gap-2 mb-1">
-          <div class="w-2 h-2 rounded-full bg-white/40 shrink-0"></div>
-          <span class="text-[10px] text-neutral-500 font-mono">Day 1, evening</span>
-        </div>
-        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">AlphaMissense, conservation, ACMG, pseudogene, letter, site live.</p>
-      </div>
-      <div class="relative">
-        <div class="flex items-center gap-2 mb-1">
-          <div class="w-2 h-2 rounded-full bg-green-500 shrink-0"></div>
-          <span class="text-[10px] text-green-400/80 font-mono">Day 2, morning</span>
-        </div>
-        <p class="text-[10px] text-green-400/60 leading-relaxed pl-4">Researcher response received.</p>
-      </div>
-      <div class="relative">
-        <div class="flex items-center gap-2 mb-1">
-          <div class="w-2 h-2 rounded-full bg-purple-500 shrink-0"></div>
-          <span class="text-[10px] text-neutral-500 font-mono">Day 2, afternoon</span>
-        </div>
-        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">Mini-STRC, prime editing, 6 AF3 experiments, 5 languages, 3 letters, GitHub.</p>
-      </div>
-      <div class="relative">
-        <div class="flex items-center gap-2 mb-1">
-          <div class="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
-          <span class="text-[10px] text-neutral-500 font-mono">Submitted</span>
-        </div>
-        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">Reclassification request to HK Children's Hospital.</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- Powered by -->
-  <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
-    <span class="text-[10px] text-neutral-600 uppercase tracking-wider">{t('hero.poweredby')}</span>
-    <a href="https://openclaw.ai" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">OpenClaw <span class="text-neutral-600">(AI Agent)</span></a>
-    <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">Claude Opus 4.6</a>
-    <a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold</a>
-    <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaMissense</a>
-    <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold 3</a>
-    <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">UniProt</a>
-  </div>
 </section>

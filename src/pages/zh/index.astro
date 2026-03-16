@@ -1,16 +1,19 @@
 ---
-import LayoutZh from '../../layouts/LayoutZh.astro';
+import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
-import AlphaMissense from '../../components-zh/AlphaMissense.astro';
-import Conservation from '../../components-zh/Conservation.astro';
-import Structure3D from '../../components-zh/Structure3D.astro';
-import Pseudogene from '../../components-zh/Pseudogene.astro';
-import ACMG from '../../components-zh/ACMG.astro';
-import MiniSTRC from '../../components-zh/MiniSTRC.astro';
-import PrimeEditing from '../../components-zh/PrimeEditing.astro';
-import MethodReclass from '../../components-zh/MethodReclass.astro';
-import MethodResearch from '../../components-zh/MethodResearch.astro';
-import ToolsGrid from '../../components-zh/ToolsGrid.astro';
+import AlphaMissense from '../../components/AlphaMissense.astro';
+import Conservation from '../../components/Conservation.astro';
+import Structure3D from '../../components/Structure3D.astro';
+import Pseudogene from '../../components/Pseudogene.astro';
+import ACMG from '../../components/ACMG.astro';
+import MiniSTRC from '../../components/MiniSTRC.astro';
+import AF3Results from '../../components/AF3Results.astro';
+import PrimeEditing from '../../components/PrimeEditing.astro';
+import MethodReclass from '../../components/MethodReclass.astro';
+import MethodResearch from '../../components/MethodResearch.astro';
+import ToolsGrid from '../../components/ToolsGrid.astro';
+
+const lang = 'zh';
 
 const variants = [
   { aa: 'A', score: 0.9016, misha: true },
@@ -24,20 +27,10 @@ const variants = [
   { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
   { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
 ];
-
-const timeline = [
-  { year: '2021年12月', event: 'Shubina-Oleinik et al.（Science Advances）：首次在小鼠中进行双AAV STRC基因治疗，概念验证。DOI: 10.1126/sciadv.abi7629' },
-  { year: '2022年12月', event: '在香港儿童医院进行全外显子组测序（WES）。检测到STRC缺失（父系）及意义不明变异（VUS）错义突变（母系）。实验室编号：23C7500174。' },
-  { year: '2023年12月', event: 'WES报告更新，经亲本检测确认为复合杂合STRC。' },
-  { year: '2025年', event: 'OTOF基因治疗试验：12名儿童中11名听力改善（DB-OTO，NEJM 2025），3名恢复正常听力。为内耳基因治疗建立先例。' },
-  { year: '2026年1月', event: 'Iranfar et al.（Clinical and Translational Medicine）：双AAV9-PHP.eB在STRC小鼠中将听力恢复至接近正常阈值。60%外毛细胞转导。频率辨别能力在100天内恢复。DOI: 10.1002/ctm2.70571', highlight: true },
-  { year: '2026年3月', event: 'AlphaMissense分析：E1659A评分0.9016（可能致病）。ACMG重分类证据：PM3 + PP3_Moderate + PM2_Supporting = 可能致病。', highlight: true },
-  { year: '约2028-29年', event: '预计首次人体STRC基因治疗试验。患者届时将为7-8岁。注：小鼠治疗窗口期为P0-P5；人类可能更宽，但早期干预至关重要。', future: true },
-];
 ---
 
-<LayoutZh>
-  <Hero lang="zh" />
+<Layout lang={lang}>
+  <Hero lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- 第一部分：重分类证据 -->
@@ -50,11 +43,11 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <AlphaMissense variants={variants} />
-  <Conservation />
-  <Structure3D />
-  <Pseudogene />
-  <ACMG />
+  <AlphaMissense variants={variants} lang={lang} />
+  <Conservation lang={lang} />
+  <Structure3D lang={lang} />
+  <Pseudogene lang={lang} />
+  <ACMG lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- 第二部分：研究假说 -->
@@ -67,8 +60,9 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MiniSTRC />
-  <PrimeEditing />
+  <MiniSTRC lang={lang} />
+  <AF3Results lang={lang} />
+  <PrimeEditing lang={lang} />
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- 第三部分：研究方法 -->
@@ -81,7 +75,7 @@ const timeline = [
   </section>
   <!-- ═══════════════════════════════════════════ -->
 
-  <MethodReclass />
-  <MethodResearch />
-  <ToolsGrid />
-</LayoutZh>
+  <MethodReclass lang={lang} />
+  <MethodResearch lang={lang} />
+  <ToolsGrid lang={lang} />
+</Layout>

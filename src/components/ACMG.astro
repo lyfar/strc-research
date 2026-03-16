@@ -1,48 +1,51 @@
 ---
 // ACMG Classification section
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <section class="px-6 py-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">ACMG Classification</h2>
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('acmg.title')}</h2>
     <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto">
       <table class="w-full min-w-[500px] text-sm">
         <thead>
           <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-3 text-neutral-400 font-medium">Criterion</th>
-            <th class="text-left px-4 py-3 text-neutral-400 font-medium">Strength</th>
-            <th class="text-left px-4 py-3 text-neutral-400 font-medium">Evidence</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">{t('acmg.col_criterion')}</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">{t('acmg.col_strength')}</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">{t('acmg.col_evidence')}</th>
           </tr>
         </thead>
         <tbody class="text-xs">
           <tr class="border-b border-white/5">
             <td class="px-4 py-3 font-mono text-orange-400">PM3</td>
-            <td class="px-4 py-3">Moderate</td>
-            <td class="px-4 py-3 text-neutral-400">Detected in trans with pathogenic whole-gene deletion (confirmed paternal)</td>
+            <td class="px-4 py-3">{t('acmg.pm3.strength')}</td>
+            <td class="px-4 py-3 text-neutral-400">{t('acmg.pm3.evidence')}</td>
           </tr>
           <tr class="border-b border-white/5">
             <td class="px-4 py-3 font-mono text-orange-400">PP3_Moderate</td>
-            <td class="px-4 py-3">Moderate</td>
-            <td class="px-4 py-3 text-neutral-400">AlphaMissense 0.9016 + REVEL 0.65 concordant (Pejaver 2022 threshold)</td>
+            <td class="px-4 py-3">{t('acmg.pp3.strength')}</td>
+            <td class="px-4 py-3 text-neutral-400">{t('acmg.pp3.evidence')}</td>
           </tr>
           <tr class="border-b border-white/5">
             <td class="px-4 py-3 font-mono text-yellow-400">PM2_Supporting</td>
-            <td class="px-4 py-3">Supporting</td>
-            <td class="px-4 py-3 text-neutral-400">Absent from gnomAD (0 alleles in 251,000+ individuals)</td>
+            <td class="px-4 py-3">{t('acmg.pm2.strength')}</td>
+            <td class="px-4 py-3 text-neutral-400">{t('acmg.pm2.evidence')}</td>
           </tr>
           <tr>
             <td class="px-4 py-3 font-mono text-yellow-400">PP1_Supporting</td>
-            <td class="px-4 py-3">Supporting</td>
-            <td class="px-4 py-3 text-neutral-400">E1659 100% conserved across 9 mammalian species (~80M years). Identical motif PEIFTEIGTIAAG.</td>
+            <td class="px-4 py-3">{t('acmg.pp1.strength')}</td>
+            <td class="px-4 py-3 text-neutral-400">{t('acmg.pp1.evidence')}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
       <div class="flex items-center gap-2">
-        <span class="text-red-400 font-bold text-sm">Result: Likely Pathogenic</span>
+        <span class="text-red-400 font-bold text-sm">{t('acmg.result.label')}</span>
       </div>
       <p class="text-xs text-neutral-400 mt-1">
-        2 Moderate + 2 Supporting = Likely Pathogenic per ACMG/AMP 2015 combining rules
+        {t('acmg.result.desc')}
       </p>
     </div>
   </div>

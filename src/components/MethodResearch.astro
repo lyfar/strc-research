@@ -1,148 +1,111 @@
 ---
-// Beyond reclassification: Steps 8-11
+// Beyond reclassification: Research methodology steps
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <section class="px-6 pb-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
-    <!-- Part B header -->
-    <div class="mt-12 mb-8">
-      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Beyond reclassification</span>
-      <h3 class="text-base font-bold mt-1">The questions didn't stop</h3>
-      <p class="text-xs text-neutral-400 mt-2 max-w-2xl leading-relaxed">
-        Reclassification is the immediate goal. But once you start asking questions, you can't stop. 
-        Can we make the gene smaller? Fix just one letter? What if we test it computationally before anyone spends 
-        a dollar on a lab? These aren't genius insights. They're obvious questions. 
-        The difference is having an AI agent that can actually go look for the answers.
-      </p>
+    <div class="mt-12 mb-6">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">{t('methodresearch.beyond_label')}</span>
+      <h3 class="text-base font-bold mt-1">{t('methodresearch.beyond_title')}</h3>
+      <p class="text-xs text-neutral-400 mt-2 max-w-2xl leading-relaxed">{t('methodresearch.beyond_desc')}</p>
     </div>
 
     <div class="space-y-6 mb-8">
-      <!-- Step 8 -->
-      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">8</span>
-          <h3 class="text-sm font-semibold">I asked: could CRISPR fix just this one letter?</h3>
-        </div>
-        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          Instead of replacing the whole gene, what if we could fix just the one wrong letter? 
-          Claude downloaded the genomic sequence around Michael's variant from 
-          <a href="https://rest.ensembl.org" target="_blank" rel="noopener">Ensembl</a> 
-          and checked whether gene editing tools could target it.
-        </p>
-        <p class="text-xs text-neutral-300 leading-relaxed">
-          <strong>Base editing (CBE/ABE): cannot fix this variant</strong> (C>A transversion is outside their range).
-          <strong>Prime editing: feasible.</strong> Claude found a suitable PAM site just 4 base pairs from the mutation. 
-          A prime editor could theoretically correct the single base change, though this approach has not yet been tested in inner ear cells.
-        </p>
-      </div>
-
-      <!-- Step 9 -->
-      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">9</span>
-          <h3 class="text-sm font-semibold">I asked: can we make the gene shorter to fit in one virus?</h3>
-        </div>
-        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          Current gene therapy for STRC requires two viruses (dual-AAV) because the gene is too long for one. 
-          Two viruses means lower efficiency: both must enter the same cell.
-          Claude analyzed the AlphaFold structure and identified that the first ~600 amino acids have very low structural confidence (pLDDT below 50), 
-          suggesting they may not form a stable structure and might be dispensable.
-        </p>
-        <p class="text-xs text-neutral-300 leading-relaxed">
-          <strong>If those regions are removed, the remaining "mini-stereocilin" (1328 aa, 3984 bp) fits in a single AAV vector.</strong> 
-          This is a computational hypothesis. It needs lab testing. But the precedent exists: 
-          micro-dystrophin (removing non-essential parts of dystrophin) is now in Phase 3 clinical trials for muscular dystrophy.
-        </p>
-      </div>
-
-      <!-- Step 10 -->
+      <!-- Step 8 (10 in sequence) -->
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">10</span>
-          <h3 class="text-sm font-semibold">I asked: do these proteins actually touch?</h3>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step8.title')}</h3>
         </div>
-        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          To test the mini-STRC idea further, We submitted a job to 
-          <a href="https://alphafoldserver.com" target="_blank" rel="noopener">AlphaFold 3 Server</a> 
-          to predict the 3D structure of stereocilin bound to its interaction partner TMEM145 
-          (a protein recently discovered to be essential for stereocilin's function, Nature Communications 2025).
-        </p>
-        <p class="text-xs text-neutral-300 leading-relaxed mb-3">
-          <strong>First results received (Job 1).</strong> ipTM = 0.47, pTM = 0.48. Low confidence in direct binding.
-          PAE matrix analysis shows best cross-chain contacts at N-terminal residues 174-185 (but still poor at 8.6 A).
-        </p>
-        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          I then submitted 5 more jobs to systematically test the mini-STRC hypothesis:
-        </p>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3" set:html={t('methodresearch.step8.body1')} />
+        <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('methodresearch.step8.body2')} />
+      </div>
+
+      <!-- Step 9 (11 in sequence) -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">11</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step9.title')}</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t('methodresearch.step9.body1')}</p>
+        <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('methodresearch.step9.body2')} />
+      </div>
+
+      <!-- Step 10 (12 in sequence) -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">12</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step10.title')}</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3" set:html={t('methodresearch.step10.body1')} />
+        <p class="text-xs text-neutral-300 leading-relaxed mb-3" set:html={t('methodresearch.step10.body2')} />
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t('methodresearch.step10.body3')}</p>
         <div class="overflow-x-auto">
           <table class="text-[11px] w-full min-w-[500px]">
             <tr class="border-b border-white/10">
-              <th class="text-left py-1.5 pr-2 text-neutral-500">#</th>
-              <th class="text-left py-1.5 pr-2 text-neutral-500">Experiment</th>
-              <th class="text-left py-1.5 pr-2 text-neutral-500">Status</th>
-              <th class="text-left py-1.5 text-neutral-500">Tests</th>
+              <th class="text-left py-1.5 pr-2 text-neutral-500">{t('methodresearch.step10.col_num')}</th>
+              <th class="text-left py-1.5 pr-2 text-neutral-500">{t('methodresearch.step10.col_exp')}</th>
+              <th class="text-left py-1.5 pr-2 text-neutral-500">{t('methodresearch.step10.col_status')}</th>
+              <th class="text-left py-1.5 text-neutral-500">{t('methodresearch.step10.col_tests')}</th>
             </tr>
             <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">1</td>
-              <td class="py-1.5 pr-2">Full STRC + TMEM145</td>
-              <td class="py-1.5 pr-2 text-green-400">Done (ipTM 0.47)</td>
-              <td class="py-1.5 text-neutral-400">Baseline interaction</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job1_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job1_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job1_tests')}</td>
             </tr>
             <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">2</td>
-              <td class="py-1.5 pr-2">Mini-STRC + TMEM145</td>
-              <td class="py-1.5 pr-2 text-green-400">Done (ipTM 0.43)</td>
-              <td class="py-1.5 text-neutral-400">N-terminal dispensable (0.43 vs 0.47 baseline)</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job2_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job2_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job2_tests')}</td>
             </tr>
             <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">3</td>
-              <td class="py-1.5 pr-2">STRC E1659A mutant (solo)</td>
-              <td class="py-1.5 pr-2 text-yellow-400">In progress</td>
-              <td class="py-1.5 text-neutral-400">Does Misha's mutation break the fold?</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job3_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job3_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job3_tests')}</td>
             </tr>
             <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">4</td>
-              <td class="py-1.5 pr-2">STRC wildtype (solo)</td>
-              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.63)</td>
-              <td class="py-1.5 text-neutral-400">Baseline: 16% disordered (N-term drags it down)</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job4_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job4_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job4_tests')}</td>
             </tr>
             <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">5</td>
-              <td class="py-1.5 pr-2">Mini-STRC solo</td>
-              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.81)</td>
-              <td class="py-1.5 text-neutral-400">YES! Mini-STRC folds excellently (7% disordered)</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job5_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job5_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job5_tests')}</td>
             </tr>
             <tr>
               <td class="py-1.5 pr-2 text-neutral-500">6</td>
-              <td class="py-1.5 pr-2">N-terminal solo (1-615)</td>
-              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.27)</td>
-              <td class="py-1.5 text-neutral-400">CONFIRMED: 38% disordered, pTM 0.27</td>
+              <td class="py-1.5 pr-2">{t('methodresearch.step10.job6_name')}</td>
+              <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job6_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job6_tests')}</td>
             </tr>
           </table>
         </div>
         <div class="mt-3 text-xs text-neutral-500 bg-black/30 p-3 rounded">
           <a href="https://alphafoldserver.com/fold/739cbeb76239c7c8" target="_blank" rel="noopener" class="text-blue-400">Job 1</a> · 
+          <a href="https://alphafoldserver.com/fold/1bdcb17b9bcb4a6c" target="_blank" rel="noopener" class="text-blue-400">Job 3</a> · 
           <a href="https://alphafoldserver.com/fold/1f78a8dd5afe06b2" target="_blank" rel="noopener" class="text-blue-400">Job 2</a> · 
           <a href="https://alphafoldserver.com/fold/1578cf5e5548ebb7" target="_blank" rel="noopener" class="text-blue-400">Job 4</a> · 
           <a href="https://alphafoldserver.com/fold/2c71cca0a405ee3c" target="_blank" rel="noopener" class="text-blue-400">Job 5</a> · 
-          <a href="https://alphafoldserver.com/fold/162f48c90aeb8a24" target="_blank" rel="noopener" class="text-blue-400">Job 6</a> · 
-          Jobs 2-5 results will be linked as they complete.
+          <a href="https://alphafoldserver.com/fold/162f48c90aeb8a24" target="_blank" rel="noopener" class="text-blue-400">Job 6</a>
         </div>
       </div>
 
-      <!-- Step 11 -->
+      <!-- Step 11 (13 in sequence) -->
       <div class="bg-white/[0.02] border border-blue-500/10 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
-          <span class="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400 shrink-0">11</span>
-          <h3 class="text-sm font-semibold">I wrote to the researchers</h3>
+          <span class="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400 shrink-0">13</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step11.title')}</h3>
         </div>
-        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          I emailed the leading researchers working on STRC gene therapy at institutions in the US, France, and China. 
-          I shared the reclassification evidence, the mini-STRC hypothesis, and a link to this website.
-        </p>
-        <p class="text-xs text-neutral-300 leading-relaxed">
-          I received encouraging responses confirming the computational approach is sound 
-          and that the analysis has been shared with research teams working on STRC gene therapy.
-        </p>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-2">{t('methodresearch.step11.body1')}</p>
+        <p class="text-xs text-neutral-300 leading-relaxed">{t('methodresearch.step11.body2')}</p>
       </div>
     </div>
   </div>
