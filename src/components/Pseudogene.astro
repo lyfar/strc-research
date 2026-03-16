@@ -1,0 +1,38 @@
+---
+// Why AlphaMissense Matters for STRC (Pseudogene Problem)
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Why AlphaMissense Matters for STRC</h2>
+    <div class="bg-orange-500/10 border border-orange-500/20 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold text-orange-400 mb-2">The STRC Pseudogene Problem</h3>
+      <p class="text-sm text-neutral-300 leading-relaxed">
+        STRC has a nearly identical pseudogene (STRCP1) located adjacent on chromosome 15q15.3. 
+        This causes most standard computational tools to fail or return unreliable results for STRC variants:
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">SIFT</div>
+        <div class="text-xs text-neutral-400">Returns null for E1659A. Cannot reliably align STRC due to pseudogene.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">PolyPhen-2</div>
+        <div class="text-xs text-neutral-400">Returns null. Same pseudogene alignment issue.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">CADD</div>
+        <div class="text-xs text-neutral-400">No score available for this position. Genomic coordinate mapping affected by pseudogene.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+        <div class="text-xs text-green-400 font-semibold mb-1">AlphaMissense</div>
+        <div class="text-xs text-neutral-400">Works. Uses protein structure prediction (AlphaFold), not genomic alignment. Immune to pseudogene interference. Score: 0.9016.</div>
+      </div>
+    </div>
+    <p class="text-xs text-neutral-500 mt-4">
+      AlphaMissense is uniquely valuable for STRC because it predicts pathogenicity from protein structure, 
+      bypassing the sequence-alignment step where pseudogene STRCP1 causes other tools to fail. 
+      REVEL (0.65) also provides a concordant prediction, using an ensemble approach that partially mitigates this issue.
+    </p>
+  </div>
+</section>

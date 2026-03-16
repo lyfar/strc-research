@@ -1,0 +1,87 @@
+---
+// Hero: intro + photo + key metrics
+---
+<section class="px-6 py-16 md:py-20 max-w-6xl mx-auto">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-red-500/20 text-red-400">Private Research</span>
+    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">DFNB16</span>
+  </div>
+
+  <div class="grid md:grid-cols-[1fr_320px] gap-10 items-start">
+    <!-- Text -->
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+        STRC p.(Glu1659Ala)<br/>
+        <span class="text-neutral-400">Variant Pathogenicity Analysis</span>
+      </h1>
+
+      <div class="mt-6 space-y-3 text-sm text-neutral-300 leading-relaxed">
+        <p>
+          My son Michael is 4 and doesn't hear well. His genetic test says he has two broken copies of the STRC gene. 
+          One is confirmed pathogenic. The other is "Variant of Uncertain Significance." That classification blocks 
+          him from future gene therapy trials.
+        </p>
+        <p>
+          I'm not a geneticist. I work in technology and teach AI at universities. 
+          So I used AI tools to investigate the variant myself. I found computational evidence for reclassification, 
+          confirmed the position is conserved across all mammals, and discovered that standard genetic tools fail 
+          for this gene due to a pseudogene. I submitted a formal reclassification request to the hospital.
+        </p>
+        <p>
+          Then I kept going. I analyzed whether a shorter protein could fit in a single gene therapy vector. 
+          I checked if CRISPR could fix the specific mutation. I wrote to researchers who pioneered STRC gene therapy. 
+          I received encouraging responses.
+        </p>
+        <p class="text-neutral-500">
+          This site documents everything. Every tool, every result, every step. 
+          So any parent in the same situation can reproduce it. Total cost: $0.
+        </p>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="order-first md:order-last">
+      <img 
+        src="/images/egor-misha.jpg" 
+        alt="Egor and Michael" 
+        class="rounded-xl w-full md:sticky md:top-24 shadow-2xl shadow-black/50"
+        loading="eager"
+      />
+      <p class="text-[10px] text-neutral-600 mt-2 text-center">Egor and Michael, Hong Kong</p>
+    </div>
+  </div>
+
+  <!-- Key metrics -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-10">
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaMissense</div>
+      <div class="text-xl font-bold text-red-400 mt-1">0.9016</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Likely Pathogenic</div>
+    </div>
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaFold pLDDT</div>
+      <div class="text-xl font-bold text-green-400 mt-1">95.69</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Very high confidence</div>
+    </div>
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">REVEL</div>
+      <div class="text-xl font-bold text-orange-400 mt-1">0.65</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Deleterious</div>
+    </div>
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">gnomAD</div>
+      <div class="text-xl font-bold text-white mt-1">0</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Absent from controls</div>
+    </div>
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Conservation</div>
+      <div class="text-xl font-bold text-green-400 mt-1">9/9</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Mammals conserved</div>
+    </div>
+    <div class="bg-white/[0.03] border border-white/5 rounded-lg p-3">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Expert Review</div>
+      <div class="text-xl font-bold text-green-400 mt-1">Positive</div>
+      <div class="text-[10px] text-neutral-500 mt-0.5">Shared with teams</div>
+    </div>
+  </div>
+</section>

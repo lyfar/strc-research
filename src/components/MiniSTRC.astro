@@ -1,0 +1,147 @@
+---
+// Mini-STRC Hypothesis section
+---
+<section id="mini-strc" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Mini-STRC Hypothesis</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">NEW</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-yellow-500/20 text-yellow-400 font-semibold">COMPUTATIONAL</span>
+    </div>
+    <p class="text-neutral-400 text-sm mb-8 max-w-2xl">
+      Current STRC gene therapy requires two AAV vectors because the gene (5325 bp) exceeds the single-AAV 
+      packaging limit (~4400 bp usable). AlphaFold structural analysis suggests a single-vector approach may be possible.
+    </p>
+
+    <!-- The problem -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold mb-3">The packaging problem</h3>
+      <div class="flex items-center gap-3 text-xs mb-4">
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-neutral-400">Full STRC cDNA</span>
+            <span class="text-red-400 font-mono">5325 bp</span>
+          </div>
+          <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+            <div class="h-full bg-red-500/60 rounded-full" style="width:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-xs mb-4">
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-neutral-400">AAV limit (with promoter/ITR)</span>
+            <span class="text-yellow-400 font-mono">~4400 bp</span>
+          </div>
+          <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+            <div class="h-full bg-yellow-500/60 rounded-full" style="width:82.6%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-xs">
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-neutral-400">Mini-STRC (predicted)</span>
+            <span class="text-green-400 font-mono font-bold">3984 bp</span>
+          </div>
+          <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+            <div class="h-full bg-green-500/60 rounded-full" style="width:74.8%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AlphaFold insight -->
+    <div class="bg-white/[0.02] border border-purple-500/20 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold mb-3">What AlphaFold reveals</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+        AlphaFold predicts stereocilin's structure with varying confidence along the protein. 
+        The N-terminal region (residues 1-615) has very low confidence (pLDDT &lt; 50), indicating 
+        it is likely intrinsically disordered with no stable 3D structure. The functional core 
+        starts around residue 616.
+      </p>
+      
+      <!-- pLDDT profile visualization -->
+      <div class="relative h-20 bg-black/30 rounded overflow-hidden mb-3">
+        <div class="absolute inset-0 flex items-end">
+          <!-- Simplified pLDDT bars -->
+          <div style="width:6.3%;height:17%" class="bg-red-500/60" title="1-114: avg pLDDT 30.6"></div>
+          <div style="width:1%;height:55%" class="bg-yellow-500/40" title="115-131"></div>
+          <div style="width:6.8%;height:21%" class="bg-red-500/60" title="132-251: avg pLDDT 37.0"></div>
+          <div style="width:3.3%;height:60%" class="bg-yellow-500/40" title="252-308"></div>
+          <div style="width:4.5%;height:25%" class="bg-red-500/50" title="309-387: disordered"></div>
+          <div style="width:3.5%;height:55%" class="bg-yellow-500/40" title="388-448"></div>
+          <div style="width:2.1%;height:27%" class="bg-red-500/50" title="449-485: disordered"></div>
+          <div style="width:0.6%;height:55%" class="bg-yellow-500/40" title="486-495"></div>
+          <div style="width:6.8%;height:18%" class="bg-red-500/60" title="496-615: avg pLDDT 31.1"></div>
+          <div style="width:3.8%;height:60%" class="bg-yellow-500/50" title="616-682"></div>
+          <div style="width:22.1%;height:78%" class="bg-blue-500/60" title="663-1074: LRR domain"></div>
+          <div style="width:39.2%;height:85%" class="bg-blue-500/70" title="1075-1775: C-terminal"></div>
+        </div>
+        <!-- Position 1659 marker -->
+        <div class="absolute bottom-0 bg-red-500" style="left:93.5%;width:2px;height:100%;"></div>
+        <div class="absolute top-0 text-[9px] text-red-400 font-mono" style="left:90%;">E1659</div>
+        <!-- Cutoff line -->
+        <div class="absolute bottom-0 border-l-2 border-dashed border-green-500/50" style="left:34.7%;height:100%;"></div>
+        <div class="absolute bottom-1 text-[9px] text-green-400 font-mono" style="left:28%;">cut here</div>
+      </div>
+      
+      <div class="flex justify-between text-[10px] text-neutral-500 mb-4">
+        <span>1</span>
+        <span>N-terminal (disordered)</span>
+        <span>LRR domain</span>
+        <span>C-terminal (functional core)</span>
+        <span>1775</span>
+      </div>
+    </div>
+
+    <!-- What to remove / what to keep -->
+    <div class="grid md:grid-cols-2 gap-4 mb-6">
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <h3 class="text-xs font-semibold text-red-400 mb-2">Remove (447 aa, 1341 bp)</h3>
+        <ul class="text-xs text-neutral-400 space-y-1.5">
+          <li><span class="font-mono text-neutral-500">23-114</span> N-terminal disordered (pLDDT 30.6)</li>
+          <li><span class="font-mono text-neutral-500">132-251</span> Disordered region (pLDDT 37.0)</li>
+          <li><span class="font-mono text-neutral-500">309-387</span> Disordered loops (pLDDT 38-47)</li>
+          <li><span class="font-mono text-neutral-500">449-485</span> Disordered loop (pLDDT 47.5)</li>
+          <li><span class="font-mono text-neutral-500">496-615</span> Large disordered region (pLDDT 31.1)</li>
+        </ul>
+        <p class="text-[10px] text-neutral-500 mt-2">All regions have pLDDT &lt; 50 (no stable structure predicted)</p>
+      </div>
+      <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+        <h3 class="text-xs font-semibold text-green-400 mb-2">Keep (1328 aa, 3984 bp)</h3>
+        <ul class="text-xs text-neutral-400 space-y-1.5">
+          <li><span class="font-mono text-neutral-500">1-22</span> Signal peptide (secretion)</li>
+          <li><span class="font-mono text-neutral-500">616-1074</span> LRR domain (protein interactions)</li>
+          <li><span class="font-mono text-neutral-500">1075-1775</span> C-terminal (tectorial membrane attachment)</li>
+          <li><span class="font-mono text-neutral-500">1659</span> Misha's variant position (preserved)</li>
+          <li>8 glycosylation sites in functional core preserved</li>
+        </ul>
+        <p class="text-[10px] text-green-400 mt-2 font-semibold">3984 bp fits in single AAV (&lt;4400 bp limit)</p>
+      </div>
+    </div>
+
+    <!-- Precedent -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold mb-2">Precedent: micro-dystrophin</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        This approach has proven precedent. The dystrophin gene (11,000 bp) was too large for any AAV. 
+        Researchers created "micro-dystrophin" by removing non-essential spectrin-like repeats, fitting it into 
+        a single AAV. This is now in Phase 3 clinical trials (Sarepta SRP-9001). The same principle: 
+        identify the structural core, remove disordered/redundant regions, preserve function. 
+        Nobody has tried this for STRC yet.
+      </p>
+    </div>
+
+    <!-- Caveat -->
+    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+      <p class="text-xs text-neutral-300">
+        <strong>Important:</strong> This is a computational hypothesis based on AlphaFold structural predictions. 
+        It requires experimental validation: does mini-stereocilin fold correctly? Does it localize to stereocilia tips? 
+        Does it form horizontal top connectors and tectorial membrane attachments? 
+        These questions need wet-lab work. But the structural data strongly suggests the N-terminal region 
+        is dispensable, and a single-AAV mini-STRC approach deserves investigation.
+      </p>
+    </div>
+  </div>
+</section>

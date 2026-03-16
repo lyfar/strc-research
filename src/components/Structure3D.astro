@@ -1,0 +1,128 @@
+---
+// 3D Protein Structure section + mutation explanation cards + 3Dmol.js script
+---
+<section id="structure" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">3D Protein Structure</h2>
+    <p class="text-neutral-400 text-sm mb-8">
+      Stereocilin (Q7RTU9, 1775 aa) from AlphaFold v6. Position E1659 highlighted in magenta. 
+      Drag to rotate, scroll to zoom.
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+        <div class="px-4 py-3 border-b border-white/5">
+          <h3 class="text-sm font-medium">Full Protein</h3>
+          <p class="text-xs text-neutral-500">Color: pLDDT confidence (blue=high, red=low)</p>
+        </div>
+        <div id="viewer-full" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden">
+        <div class="px-4 py-3 border-b border-white/5">
+          <h3 class="text-sm font-medium">E1659 Close-up</h3>
+          <p class="text-xs text-neutral-500">Glutamic acid side chain shown as sticks</p>
+        </div>
+        <div id="viewer-close" style="width:100%;height:400px;position:relative;overflow:hidden;"></div>
+      </div>
+    </div>
+
+    <!-- Mutation explanation -->
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-green-400 mb-2">Wildtype: Glutamic Acid (E)</h3>
+        <ul class="text-xs text-neutral-400 space-y-1">
+          <li>Charge: <span class="text-white">Negative (-1)</span></li>
+          <li>Side chain volume: <span class="text-white">138.4 A3</span></li>
+          <li>Hydrogen bond capacity: <span class="text-white">Donor + Acceptor</span></li>
+          <li>Role: Salt bridges, electrostatic interactions</li>
+        </ul>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/20 rounded-lg p-5">
+        <h3 class="text-sm font-semibold text-red-400 mb-2">Mutant: Alanine (A)</h3>
+        <ul class="text-xs text-neutral-400 space-y-1">
+          <li>Charge: <span class="text-white">Neutral (0)</span></li>
+          <li>Side chain volume: <span class="text-white">67.0 A3</span> (-52%)</li>
+          <li>Hydrogen bond capacity: <span class="text-white">None</span></li>
+          <li>Impact: Loss of charge, loss of H-bonds, cavity creation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3Dmol.js init -->
+<script is:inline>
+(function() {
+  const pdbUrl = 'https://alphafold.ebi.ac.uk/files/AF-Q7RTU9-F1-model_v6.pdb';
+  let pdbData = null;
+
+  function initViewers() {
+    if (typeof $3Dmol === 'undefined') {
+      setTimeout(initViewers, 200);
+      return;
+    }
+    
+    const el1 = document.getElementById('viewer-full');
+    const el2 = document.getElementById('viewer-close');
+    if (!el1 || !el2) { setTimeout(initViewers, 200); return; }
+
+    // Show loading
+    el1.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading 3D structure (1.3MB)...</div>';
+    el2.innerHTML = '<div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;">Loading...</div>';
+    
+    fetch(pdbUrl)
+      .then(function(r) { return r.text(); })
+      .then(function(pdb) {
+        pdbData = pdb;
+        
+        // Clear loading text
+        el1.innerHTML = '';
+        el2.innerHTML = '';
+
+        // Full protein viewer
+        var v1 = $3Dmol.createViewer(el1, {backgroundColor: '#0a0a0a'});
+        v1.addModel(pdb, 'pdb');
+        v1.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:50, max:100}}});
+        v1.setStyle({resi: 1659}, {sphere: {color: '#e74c3c', radius: 2}});
+        v1.addLabel('E1659', {position: {resi: 1659}, backgroundColor: '#e74c3c', fontColor: '#fff', fontSize: 12});
+        v1.zoomTo();
+        v1.render();
+        v1.spin('y', 0.3);
+
+        // Close-up viewer
+        var v2 = $3Dmol.createViewer(el2, {backgroundColor: '#0a0a0a'});
+        v2.addModel(pdb, 'pdb');
+        v2.setStyle({}, {cartoon: {color: '#333', opacity: 0.15}});
+        var nearResidues = [];
+
+        for (var i = 1650; i <= 1668; i++) nearResidues.push(i);
+        v2.setStyle({resi: nearResidues}, {
+          cartoon: {color: '#4a9eff'},
+          stick: {colorscheme: 'default', radius: 0.12}
+        });
+        v2.setStyle({resi: 1659}, {
+          stick: {color: '#e74c3c', radius: 0.25},
+          sphere: {color: '#e74c3c', radius: 0.7}
+        });
+        v2.addLabel('E1659 (Glu)', {
+          position: {resi: 1659},
+          backgroundColor: '#e74c3c',
+          fontColor: '#fff',
+          fontSize: 13,
+          borderThickness: 1
+        });
+        v2.zoomTo({resi: nearResidues});
+        v2.render();
+      })
+      .catch(function(err) {
+        el1.innerHTML = '<div style="color:#e74c3c;padding:20px;font-size:12px;">Failed to load structure: ' + err.message + '</div>';
+      });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initViewers);
+  } else {
+    initViewers();
+  }
+})();
+</script>

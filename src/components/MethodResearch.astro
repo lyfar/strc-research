@@ -1,0 +1,91 @@
+---
+// Beyond reclassification: Steps 8-11
+---
+<section class="px-6 pb-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <!-- Part B header -->
+    <div class="mt-12 mb-8">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Beyond reclassification</span>
+      <h3 class="text-base font-bold mt-1">I couldn't stop there</h3>
+      <p class="text-xs text-neutral-400 mt-2 max-w-2xl leading-relaxed">
+        Once I understood how to read protein structures, I realized I could go further. 
+        I'm not a geneticist, but these tools exist, they're free, and my son's future might depend on someone asking the right questions. 
+        So I kept going.
+      </p>
+    </div>
+
+    <div class="space-y-6 mb-8">
+      <!-- Step 8 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">8</span>
+          <h3 class="text-sm font-semibold">I checked if CRISPR could fix the mutation directly</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          Instead of replacing the whole gene, what if we could fix just the one wrong letter? 
+          I downloaded the genomic sequence around Michael's variant from 
+          <a href="https://rest.ensembl.org" target="_blank" rel="noopener">Ensembl</a> 
+          and checked whether gene editing tools could target it.
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed">
+          <strong>Base editing (CBE/ABE): cannot fix this variant</strong> (C>A transversion is outside their range).
+          <strong>Prime editing: feasible.</strong> I found a suitable PAM site just 4 base pairs from the mutation. 
+          A prime editor could theoretically correct the single base change, though this approach has not yet been tested in inner ear cells.
+        </p>
+      </div>
+
+      <!-- Step 9 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">9</span>
+          <h3 class="text-sm font-semibold">I asked: can the gene fit in a single virus?</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          Current gene therapy for STRC requires two viruses (dual-AAV) because the gene is too long for one. 
+          Two viruses means lower efficiency: both must enter the same cell.
+          I analyzed the AlphaFold structure and noticed that the first ~600 amino acids have very low structural confidence (pLDDT below 50), 
+          suggesting they may not form a stable structure and might be dispensable.
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed">
+          <strong>If those regions are removed, the remaining "mini-stereocilin" (1328 aa, 3984 bp) fits in a single AAV vector.</strong> 
+          This is a computational hypothesis. It needs lab testing. But the precedent exists: 
+          micro-dystrophin (removing non-essential parts of dystrophin) is now in Phase 3 clinical trials for muscular dystrophy.
+        </p>
+      </div>
+
+      <!-- Step 10 -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-purple-500/20 flex items-center justify-center text-xs font-bold text-purple-400 shrink-0">10</span>
+          <h3 class="text-sm font-semibold">I predicted the protein-protein interaction (AlphaFold 3)</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          To test the mini-STRC idea further, I submitted a job to 
+          <a href="https://alphafoldserver.com" target="_blank" rel="noopener">AlphaFold 3 Server</a> 
+          to predict the 3D structure of stereocilin bound to its interaction partner TMEM145 
+          (a protein recently discovered to be essential for stereocilin's function, Nature Communications 2025).
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed">
+          <strong>Status: awaiting results.</strong> If the N-terminal region doesn't participate in the TMEM145 interaction, 
+          it strengthens the case for mini-STRC. Results will be added here when available.
+        </p>
+      </div>
+
+      <!-- Step 11 -->
+      <div class="bg-white/[0.02] border border-blue-500/10 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400 shrink-0">11</span>
+          <h3 class="text-sm font-semibold">I wrote to the researchers</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          I emailed the leading researchers working on STRC gene therapy at institutions in the US, France, and China. 
+          I shared the reclassification evidence, the mini-STRC hypothesis, and a link to this website.
+        </p>
+        <p class="text-xs text-neutral-300 leading-relaxed">
+          I received encouraging responses confirming the computational approach is sound 
+          and that the analysis has been shared with research teams working on STRC gene therapy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

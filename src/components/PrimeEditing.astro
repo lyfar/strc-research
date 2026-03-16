@@ -1,0 +1,106 @@
+---
+// Prime Editing Feasibility section
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Could We Fix Just the One Letter?</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">COMPUTATIONAL</span>
+    </div>
+    <p class="text-neutral-400 text-sm mb-6">
+      Instead of replacing the entire STRC gene (5325 bp), what if we could correct just the single mutated base? 
+      There are three types of gene editing tools. I checked each one against Michael's specific variant.
+    </p>
+
+    <!-- Visual explanation of the three editors -->
+    <div class="space-y-3 mb-6">
+      <!-- What we need -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+        <div class="text-xs font-semibold text-neutral-300 mb-2">Michael's mutation: one wrong letter</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="text-neutral-500">Healthy:</span>
+          <span class="text-neutral-400">...AATTT<span class="text-green-400 font-bold text-sm">A</span>CAGTG...</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="text-neutral-500">Michael:</span>
+          <span class="text-neutral-400">...AATTT<span class="text-red-400 font-bold text-sm">C</span>CAGTG...</span>
+        </div>
+        <div class="text-[10px] text-neutral-500 mt-2">We need to change C back to A. This is called a C>A transversion.</div>
+      </div>
+
+      <!-- Three tools comparison -->
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-red-400 mb-1">CBE (Cytosine Base Editor)</div>
+          <div class="text-[10px] text-neutral-500 mb-2">What it does:</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">C</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">T</span>
+            <span class="text-[10px] text-neutral-500 ml-1">only</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">We need C→A. CBE can only do C→T.</div>
+          <div class="text-xs text-red-400 font-semibold">Cannot fix this variant</div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-red-400 mb-1">ABE (Adenine Base Editor)</div>
+          <div class="text-[10px] text-neutral-500 mb-2">What it does:</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">A</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">G</span>
+            <span class="text-[10px] text-neutral-500 ml-1">only</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">Wrong direction entirely. Irrelevant here.</div>
+          <div class="text-xs text-red-400 font-semibold">Cannot fix this variant</div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+          <div class="text-xs font-semibold text-green-400 mb-1">Prime Editor</div>
+          <div class="text-[10px] text-neutral-500 mb-2">What it does:</div>
+          <div class="flex items-center gap-2 font-mono text-xs mb-2">
+            <span class="text-neutral-400">any</span>
+            <span class="text-neutral-500">→</span>
+            <span class="text-neutral-300">any</span>
+            <span class="text-[10px] text-neutral-500 ml-1">(all 12 substitutions)</span>
+          </div>
+          <div class="text-[10px] text-neutral-400 mb-2">C→A included. Needs a PAM site nearby.</div>
+          <div class="text-xs text-green-400 font-semibold">CAN fix this variant</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAM site analysis -->
+    <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4 mb-4">
+      <div class="text-xs font-semibold text-green-400 mb-2">PAM site found: 4 bp from variant</div>
+      <p class="text-xs text-neutral-400 mb-3">
+        Prime editing requires a "landing pad" (PAM site, NGG sequence) near the target. 
+        I downloaded the genomic sequence from 
+        <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-blue-400">Ensembl REST API</a> 
+        and searched for NGG motifs within 15 bp of the variant.
+      </p>
+      <div class="bg-black/40 rounded p-3 overflow-x-auto">
+        <div class="text-[11px] font-mono text-neutral-500 leading-relaxed whitespace-nowrap">
+          <span class="text-neutral-600">chr15:43600521-43600581 (GRCh38)</span><br/>
+          CCCAGCTCCCCACCTGCTATGGTGCC<span class="text-yellow-400 font-bold underline">CC</span>AATTT<span class="text-red-400 font-bold">[C]</span>AGTGAAGATCTCAGG<br/>
+          <span class="text-neutral-700">..........................PAM↑....↑variant</span><br/>
+          <span class="text-neutral-700">..........................4bp apart</span>
+        </div>
+      </div>
+      <div class="text-[10px] text-neutral-500 mt-2">
+        <strong>How I found this:</strong> Ensembl API returns the genomic sequence. I searched for "CC" (reverse complement of NGG PAM) 
+        within 15bp of position 43600551. Found one at 4bp distance. This is within the optimal prime editing window (0-13bp).
+      </div>
+    </div>
+
+    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+      <p class="text-xs text-neutral-300">
+        <strong>Reality check:</strong> Prime editing has not been tested in inner ear hair cells in vivo. 
+        Delivering the prime editor + guide RNA to outer hair cells deep in the cochlea is an unsolved challenge. 
+        But this analysis confirms that Michael's specific variant is technically targetable. 
+        If delivery is solved (an active area of research), this mutation can be corrected at the DNA level.
+      </p>
+    </div>
+  </div>
+</section>
