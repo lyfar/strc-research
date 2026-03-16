@@ -26,21 +26,55 @@ const t = useTranslations(lang);
       <!-- Listen / Watch -->
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <!-- Audio -->
-        <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3">
-          <div class="text-xs text-neutral-300 mb-1">Listen to podcast</div>
-          <div class="text-[10px] text-neutral-600 mb-2">AI-generated · NotebookLM</div>
-          <audio controls preload="metadata" src="/media/podcast.mp3" class="w-full h-8" style="filter:brightness(0.7)"></audio>
+        <div id="audio-card" class="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors">
+          <div id="audio-icon" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xs text-neutral-300">Listen to podcast</div>
+            <div class="text-[10px] text-neutral-600">AI-generated · NotebookLM</div>
+            <div class="h-1 bg-white/5 rounded-full mt-1.5" id="audio-bar">
+              <div id="audio-progress" class="h-full bg-white/30 rounded-full" style="width:0%"></div>
+            </div>
+          </div>
+          <span id="audio-time" class="text-[10px] text-neutral-600 font-mono shrink-0"></span>
         </div>
+        <audio id="podcast-audio" preload="metadata" src="/media/podcast.mp3"></audio>
 
         <!-- Video -->
-        <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors" onclick="document.getElementById('video-lightbox').classList.remove('hidden');document.getElementById('lightbox-video').play()">
-          <div class="text-xs text-neutral-300 mb-1">Watch video overview</div>
-          <div class="text-[10px] text-neutral-600 mb-2">AI-generated · NotebookLM</div>
-          <div class="flex items-center justify-center h-8 bg-white/5 rounded">
-            <svg class="w-4 h-4 text-neutral-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+        <div class="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors" onclick="document.getElementById('video-lightbox').classList.remove('hidden');document.getElementById('lightbox-video').play()">
+          <div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-neutral-300">Watch video overview</div>
+            <div class="text-[10px] text-neutral-600">AI-generated · NotebookLM</div>
           </div>
         </div>
       </div>
+
+      <!-- Audio script -->
+      <script is:inline>
+      document.addEventListener('DOMContentLoaded', function(){
+        var card=document.getElementById('audio-card');
+        var icon=document.getElementById('audio-icon');
+        var a=document.getElementById('podcast-audio');
+        var prog=document.getElementById('audio-progress');
+        var time=document.getElementById('audio-time');
+        var bar=document.getElementById('audio-bar');
+        if(!card||!a) return;
+        var playSvg='<svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>';
+        var pauseSvg='<svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/></svg>';
+        card.addEventListener('click',function(){
+          if(a.paused){a.play();icon.innerHTML=pauseSvg}
+          else{a.pause();icon.innerHTML=playSvg}
+        });
+        bar.addEventListener('click',function(e){e.stopPropagation();if(a.duration){a.currentTime=(e.offsetX/bar.offsetWidth)*a.duration}});
+        a.addEventListener('timeupdate',function(){if(a.duration){prog.style.width=(a.currentTime/a.duration*100)+'%';var m=Math.floor(a.currentTime/60),s=Math.floor(a.currentTime%60);var tm=Math.floor(a.duration/60),ts=Math.floor(a.duration%60);time.textContent=m+':'+(s<10?'0':'')+s+'/'+tm+':'+(ts<10?'0':'')+ts}});
+        a.addEventListener('loadedmetadata',function(){var tm=Math.floor(a.duration/60),ts=Math.floor(a.duration%60);time.textContent='0:00/'+tm+':'+(ts<10?'0':'')+ts});
+        a.addEventListener('ended',function(){icon.innerHTML=playSvg;prog.style.width='0%'});
+      });
+      </script>
 
       <!-- Video lightbox (full viewport) -->
       <div id="video-lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onclick="this.classList.add('hidden');document.getElementById('lightbox-video').pause()">
