@@ -1,0 +1,49 @@
+---
+// ACMG Classification section
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">ACMG分类</h2>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto">
+      <table class="w-full min-w-[500px] text-sm">
+        <thead>
+          <tr class="border-b border-white/5">
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">标准</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">强度</th>
+            <th class="text-left px-4 py-3 text-neutral-400 font-medium">证据</th>
+          </tr>
+        </thead>
+        <tbody class="text-xs">
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-orange-400">PM3</td>
+            <td class="px-4 py-3">中等</td>
+            <td class="px-4 py-3 text-neutral-400">与致病性全基因缺失呈反式检出（已确认为父系来源）</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-orange-400">PP3_Moderate</td>
+            <td class="px-4 py-3">中等</td>
+            <td class="px-4 py-3 text-neutral-400">AlphaMissense 0.9016 + REVEL 0.65 一致预测（Pejaver 2022阈值）</td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-3 font-mono text-yellow-400">PM2_Supporting</td>
+            <td class="px-4 py-3">支持</td>
+            <td class="px-4 py-3 text-neutral-400">gnomAD中未见（251,000+个体中等位基因频率为0）</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-mono text-yellow-400">PP1_Supporting</td>
+            <td class="px-4 py-3">支持</td>
+            <td class="px-4 py-3 text-neutral-400">E1659在9个哺乳动物物种中100%保守（约8000万年）。基序PEIFTEIGTIAAG完全相同。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+      <div class="flex items-center gap-2">
+        <span class="text-red-400 font-bold text-sm">结论：可能致病</span>
+      </div>
+      <p class="text-xs text-neutral-400 mt-1">
+        2项中等证据 + 2项支持证据 = 按ACMG/AMP 2015联合规则达到可能致病阈值
+      </p>
+    </div>
+  </div>
+</section>

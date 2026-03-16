@@ -1,0 +1,87 @@
+---
+import LayoutEs from '../../layouts/LayoutEs.astro';
+import Hero from '../../components-es/Hero.astro';
+import AlphaMissense from '../../components-es/AlphaMissense.astro';
+import Conservation from '../../components-es/Conservation.astro';
+import Structure3D from '../../components-es/Structure3D.astro';
+import Pseudogene from '../../components-es/Pseudogene.astro';
+import ACMG from '../../components-es/ACMG.astro';
+import MiniSTRC from '../../components-es/MiniSTRC.astro';
+import PrimeEditing from '../../components-es/PrimeEditing.astro';
+import MethodReclass from '../../components-es/MethodReclass.astro';
+import MethodResearch from '../../components-es/MethodResearch.astro';
+import ToolsGrid from '../../components-es/ToolsGrid.astro';
+
+const variants = [
+  { aa: 'A', score: 0.9016, misha: true },
+  { aa: 'C', score: 0.9984 }, { aa: 'D', score: 0.9483 },
+  { aa: 'F', score: 0.9992 }, { aa: 'G', score: 0.9191 },
+  { aa: 'H', score: 0.9927 }, { aa: 'I', score: 0.9923 },
+  { aa: 'K', score: 0.9272 }, { aa: 'L', score: 0.9929 },
+  { aa: 'M', score: 0.9909 }, { aa: 'N', score: 0.9822 },
+  { aa: 'P', score: 0.9985 }, { aa: 'Q', score: 0.846 },
+  { aa: 'R', score: 0.9634 }, { aa: 'S', score: 0.9433 },
+  { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
+  { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
+];
+
+const timeline = [
+  { year: 'Dic. 2021', event: 'Shubina-Oleinik et al. (Science Advances): Primera terapia génica STRC dual-AAV en ratones. Prueba de concepto. DOI: 10.1126/sciadv.abi7629' },
+  { year: 'Dic. 2022', event: 'WES realizado en el Hospital Infantil de Hong Kong. Deleción STRC (paterna) + variante de significado incierto (materna) identificadas. Nº de lab: 23C7500174.' },
+  { year: 'Dic. 2023', event: 'Informe WES actualizado con confirmación de pruebas parentales. STRC heterocigoto compuesto confirmado.' },
+  { year: '2025', event: 'Ensayos de terapia génica OTOF: 11/12 niños mejoraron la audición (DB-OTO, NEJM 2025). 3 alcanzaron audición normal. Precedente para terapia génica del oído interno.' },
+  { year: 'Ene. 2026', event: 'Iranfar et al. (Clinical and Translational Medicine): Dual AAV9-PHP.eB restaura la audición a umbrales casi normales en ratones STRC. 60% de transducción de células ciliadas externas. Discriminación frecuencial recuperada hasta 100 días. DOI: 10.1002/ctm2.70571', highlight: true },
+  { year: 'Mar. 2026', event: 'Análisis AlphaMissense: E1659A puntuación 0,9016 (Probablemente patogénica). Evidencia ACMG de reclasificación: PM3 + PP3_Moderada + PM2_Apoyo = Probablemente patogénica.', highlight: true },
+  { year: '~2028-29', event: 'Primer ensayo clínico de terapia génica STRC en humanos esperado. El paciente tendrá 7-8 años. Nota: la ventana terapéutica en ratones = P0-P5; en humanos probablemente más amplia, pero la intervención temprana es crítica.', future: true },
+];
+---
+
+<LayoutEs>
+  <Hero />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- PARTE 1: EVIDENCIA DE RECLASIFICACIÓN -->
+  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Parte 1</span>
+      <h2 class="text-lg font-bold mt-1">Evidencia de reclasificación</h2>
+      <p class="text-xs text-neutral-400 mt-1">Evidencia computacional que respalda la reclasificación de VUS a Probablemente patogénica para NM_153700.2:c.4976A>C p.(Glu1659Ala)</p>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════ -->
+
+  <AlphaMissense variants={variants} />
+  <Conservation />
+  <Structure3D />
+  <Pseudogene />
+  <ACMG />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- PARTE 2: HIPÓTESIS DE INVESTIGACIÓN -->
+  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Parte 2</span>
+      <h2 class="text-lg font-bold mt-1">Hipótesis de investigación</h2>
+      <p class="text-xs text-neutral-400 mt-1">Hipótesis computacionales para acelerar la terapia génica STRC. Requieren validación experimental.</p>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════ -->
+
+  <MiniSTRC />
+  <PrimeEditing />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- PARTE 3: METODOLOGÍA -->
+  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Parte 3</span>
+      <h2 class="text-lg font-bold mt-1">Cómo lo hice</h2>
+      <p class="text-xs text-neutral-400 mt-1">Metodología paso a paso para que cualquiera pueda reproducir estos resultados</p>
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════ -->
+
+  <MethodReclass />
+  <MethodResearch />
+  <ToolsGrid />
+</LayoutEs>

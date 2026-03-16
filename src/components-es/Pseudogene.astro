@@ -1,0 +1,38 @@
+---
+// Por qué AlphaMissense es importante para STRC (problema del pseudogén) (ES)
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Por qué AlphaMissense es esencial para STRC</h2>
+    <div class="bg-orange-500/10 border border-orange-500/20 rounded-lg p-5 mb-6">
+      <h3 class="text-sm font-semibold text-orange-400 mb-2">El problema del pseudogén STRC</h3>
+      <p class="text-sm text-neutral-300 leading-relaxed">
+        STRC tiene un pseudogén casi idéntico (STRCP1) ubicado adyacente en el cromosoma 15q15.3.
+        Esto hace que la mayoría de las herramientas computacionales estándar fallen o devuelvan resultados poco fiables para las variantes STRC:
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">SIFT</div>
+        <div class="text-xs text-neutral-400">Devuelve null para E1659A. No puede alinear STRC de forma fiable debido al pseudogén.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">PolyPhen-2</div>
+        <div class="text-xs text-neutral-400">Devuelve null. Mismo problema de alineamiento por el pseudogén.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+        <div class="text-xs text-red-400 font-semibold mb-1">CADD</div>
+        <div class="text-xs text-neutral-400">No hay puntuación disponible para esta posición. La cartografía de coordenadas genómicas se ve afectada por el pseudogén.</div>
+      </div>
+      <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-4">
+        <div class="text-xs text-green-400 font-semibold mb-1">AlphaMissense</div>
+        <div class="text-xs text-neutral-400">Funciona. Utiliza predicción de estructura proteica (AlphaFold), no alineamiento genómico. Inmune a la interferencia del pseudogén. Puntuación: 0,9016.</div>
+      </div>
+    </div>
+    <p class="text-xs text-neutral-500 mt-4">
+      AlphaMissense es especialmente valioso para STRC porque predice la patogenicidad a partir de la estructura proteica,
+      evitando el paso de alineamiento de secuencias donde el pseudogén STRCP1 hace fallar a otras herramientas.
+      REVEL (0,65) también proporciona una predicción concordante, utilizando un enfoque de conjunto que mitiga parcialmente este problema.
+    </p>
+  </div>
+</section>
