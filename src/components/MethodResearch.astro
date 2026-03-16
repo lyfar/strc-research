@@ -66,17 +66,64 @@
           (a protein recently discovered to be essential for stereocilin's function, Nature Communications 2025).
         </p>
         <p class="text-xs text-neutral-300 leading-relaxed mb-3">
-          <strong>Results received.</strong> ipTM = 0.47, pTM = 0.48. AlphaFold 3 shows <strong>low confidence</strong> 
-          in a direct STRC-TMEM145 dimer interaction (ipTM > 0.8 would indicate confident binding).
+          <strong>First results received (Job 1).</strong> ipTM = 0.47, pTM = 0.48. Low confidence in direct binding.
+          PAE matrix analysis shows best cross-chain contacts at N-terminal residues 174-185 (but still poor at 8.6 A).
         </p>
-        <p class="text-xs text-neutral-400 leading-relaxed">
-          This likely means the two proteins don't interact as a simple pair. They may require additional partners, 
-          or their interaction may be membrane-dependent (TMEM145 is a transmembrane protein). For the mini-STRC hypothesis, 
-          this is a neutral result: the N-terminal region is not predicted to be at an interaction interface, 
-          but neither is any other region with high confidence.
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3">
+          I then submitted 5 more jobs to systematically test the mini-STRC hypothesis:
         </p>
+        <div class="overflow-x-auto">
+          <table class="text-[11px] w-full min-w-[500px]">
+            <tr class="border-b border-white/10">
+              <th class="text-left py-1.5 pr-2 text-neutral-500">#</th>
+              <th class="text-left py-1.5 pr-2 text-neutral-500">Experiment</th>
+              <th class="text-left py-1.5 pr-2 text-neutral-500">Status</th>
+              <th class="text-left py-1.5 text-neutral-500">Tests</th>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-1.5 pr-2 text-neutral-500">1</td>
+              <td class="py-1.5 pr-2">Full STRC + TMEM145</td>
+              <td class="py-1.5 pr-2 text-green-400">Done (ipTM 0.47)</td>
+              <td class="py-1.5 text-neutral-400">Baseline interaction</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-1.5 pr-2 text-neutral-500">2</td>
+              <td class="py-1.5 pr-2">Mini-STRC + TMEM145</td>
+              <td class="py-1.5 pr-2 text-yellow-400">In progress</td>
+              <td class="py-1.5 text-neutral-400">Is N-terminal needed for binding?</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-1.5 pr-2 text-neutral-500">3</td>
+              <td class="py-1.5 pr-2">STRC E1659A mutant (solo)</td>
+              <td class="py-1.5 pr-2 text-yellow-400">In progress</td>
+              <td class="py-1.5 text-neutral-400">Does Misha's mutation break the fold?</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-1.5 pr-2 text-neutral-500">4</td>
+              <td class="py-1.5 pr-2">STRC wildtype (solo)</td>
+              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.63)</td>
+              <td class="py-1.5 text-neutral-400">Baseline: 16% disordered (N-term drags it down)</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-1.5 pr-2 text-neutral-500">5</td>
+              <td class="py-1.5 pr-2">Mini-STRC solo</td>
+              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.81)</td>
+              <td class="py-1.5 text-neutral-400">YES! Mini-STRC folds excellently (7% disordered)</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 pr-2 text-neutral-500">6</td>
+              <td class="py-1.5 pr-2">N-terminal solo (1-615)</td>
+              <td class="py-1.5 pr-2 text-green-400">Done (pTM 0.27)</td>
+              <td class="py-1.5 text-neutral-400">CONFIRMED: 38% disordered, pTM 0.27</td>
+            </tr>
+          </table>
+        </div>
         <div class="mt-3 text-xs text-neutral-500 bg-black/30 p-3 rounded">
-          <a href="https://alphafoldserver.com/fold/739cbeb76239c7c8" target="_blank" rel="noopener" class="text-blue-400">View full AlphaFold 3 results</a> (requires Google login)
+          <a href="https://alphafoldserver.com/fold/739cbeb76239c7c8" target="_blank" rel="noopener" class="text-blue-400">Job 1</a> · 
+          <a href="https://alphafoldserver.com/fold/1578cf5e5548ebb7" target="_blank" rel="noopener" class="text-blue-400">Job 4</a> · 
+          <a href="https://alphafoldserver.com/fold/2c71cca0a405ee3c" target="_blank" rel="noopener" class="text-blue-400">Job 5</a> · 
+          <a href="https://alphafoldserver.com/fold/162f48c90aeb8a24" target="_blank" rel="noopener" class="text-blue-400">Job 6</a> · 
+          Jobs 2-5 results will be linked as they complete.
         </div>
       </div>
 

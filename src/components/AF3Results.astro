@@ -1,0 +1,149 @@
+---
+// AlphaFold 3 Experiment Results — 6 jobs with 3D viewers
+---
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">AlphaFold 3 Experiments</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">6 JOBS</span>
+    </div>
+    <p class="text-neutral-400 text-sm mb-8">
+      Systematic computational testing of the mini-STRC hypothesis and variant impact. 
+      3D models rendered live from AlphaFold 3 CIF files. Drag to rotate, scroll to zoom.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- Job 1 -->
+      <a href="https://alphafoldserver.com/fold/739cbeb76239c7c8" target="_blank" rel="noopener" class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden no-underline group hover:border-white/10 transition-colors">
+        <div id="v-job1" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-white">Full STRC + TMEM145</span>
+            <span class="text-xs font-mono text-yellow-400">ipTM 0.47</span>
+          </div>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">Low confidence interaction. Best cross-chain PAE: 8.6 A at N-terminal.</p>
+        </div>
+      </a>
+
+      <!-- Job 2: placeholder -->
+      <div class="bg-white/[0.02] border border-dashed border-white/10 rounded-lg overflow-hidden">
+        <div style="width:100%;height:200px;" class="flex items-center justify-center bg-white/[0.01]">
+          <div class="text-center"><div class="text-xl text-neutral-600">&#9203;</div><div class="text-[10px] text-neutral-600 mt-1">Computing...</div></div>
+        </div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-neutral-500">Mini-STRC + TMEM145</span>
+            <span class="text-xs font-mono text-neutral-600">pending</span>
+          </div>
+          <p class="text-[10px] text-neutral-600 leading-relaxed">Does removing N-terminal affect binding?</p>
+        </div>
+      </div>
+
+      <!-- Job 3: placeholder -->
+      <div class="bg-white/[0.02] border border-dashed border-white/10 rounded-lg overflow-hidden">
+        <div style="width:100%;height:200px;" class="flex items-center justify-center bg-white/[0.01]">
+          <div class="text-center"><div class="text-xl text-neutral-600">&#9203;</div><div class="text-[10px] text-neutral-600 mt-1">Computing...</div></div>
+        </div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-neutral-500">STRC E1659A mutant</span>
+            <span class="text-xs font-mono text-neutral-600">pending</span>
+          </div>
+          <p class="text-[10px] text-neutral-600 leading-relaxed">Does Misha's mutation break the fold?</p>
+        </div>
+      </div>
+
+      <!-- Job 4 -->
+      <a href="https://alphafoldserver.com/fold/1578cf5e5548ebb7" target="_blank" rel="noopener" class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden no-underline group hover:border-white/10 transition-colors">
+        <div id="v-job4" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-white">STRC wildtype (control)</span>
+            <span class="text-xs font-mono text-neutral-300">pTM 0.63</span>
+          </div>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">Full protein. N-terminal drags score down (16% disordered).</p>
+        </div>
+      </a>
+
+      <!-- Job 5 -->
+      <a href="https://alphafoldserver.com/fold/2c71cca0a405ee3c" target="_blank" rel="noopener" class="bg-white/[0.02] border border-green-500/20 rounded-lg overflow-hidden no-underline group hover:border-green-500/30 transition-colors">
+        <div id="v-job5" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-green-400">Mini-STRC (no N-term)</span>
+            <span class="text-xs font-mono text-green-400 font-bold">pTM 0.81</span>
+          </div>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">Truncated protein folds excellently. 7% disordered. Key result.</p>
+        </div>
+      </a>
+
+      <!-- Job 6 -->
+      <a href="https://alphafoldserver.com/fold/162f48c90aeb8a24" target="_blank" rel="noopener" class="bg-white/[0.02] border border-red-500/20 rounded-lg overflow-hidden no-underline group hover:border-red-500/30 transition-colors">
+        <div id="v-job6" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-semibold text-red-400">N-terminal only (1-615)</span>
+            <span class="text-xs font-mono text-red-400 font-bold">pTM 0.27</span>
+          </div>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">Confirmed disordered. 38% unstructured. Safe to remove.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-6 bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <h3 class="text-xs font-semibold text-neutral-300 mb-2">Key finding</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        Mini-STRC (without N-terminal) achieves <strong class="text-green-400">pTM 0.81</strong>, significantly better than full-length wildtype 
+        (<strong class="text-neutral-300">pTM 0.63</strong>). The removed N-terminal region scores only <strong class="text-red-400">pTM 0.27</strong> 
+        with 38% disorder. Removing the disordered N-terminal produces a better-folding protein that fits in a single AAV vector.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 3Dmol.js viewers for AF3 results -->
+<script is:inline>
+(function() {
+  function initAF3Viewers() {
+    if (typeof $3Dmol === 'undefined') { setTimeout(initAF3Viewers, 300); return; }
+
+    var jobs = [
+      { id: 'v-job1', url: '/models/job1-full-complex.cif', multichain: true },
+      { id: 'v-job4', url: '/models/job4-wildtype.cif', multichain: false },
+      { id: 'v-job5', url: '/models/job5-mini-strc.cif', multichain: false },
+      { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },
+    ];
+
+    jobs.forEach(function(job) {
+      var el = document.getElementById(job.id);
+      if (!el) return;
+      el.innerHTML = '<div style="color:#333;display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;">Loading...</div>';
+
+      fetch(job.url).then(function(r) { return r.text(); }).then(function(data) {
+        el.innerHTML = '';
+        var v = $3Dmol.createViewer(el, {backgroundColor: '#080808'});
+        v.addModel(data, 'cif');
+        if (job.multichain) {
+          v.setStyle({chain: 'A'}, {cartoon: {color: '#4a9eff'}});
+          v.setStyle({chain: 'B'}, {cartoon: {color: '#f59e0b'}});
+        } else {
+          v.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:30, max:100}}});
+        }
+        v.zoomTo();
+        v.render();
+        v.spin('y', 0.3);
+      }).catch(function() {
+        el.innerHTML = '<div style="color:#555;text-align:center;padding:20px;font-size:10px;">Failed to load</div>';
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAF3Viewers);
+  } else {
+    initAF3Viewers();
+  }
+})();
+</script>
