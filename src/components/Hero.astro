@@ -66,24 +66,40 @@ const t = useTranslations(lang);
 
       <!-- Audio player script -->
       <script is:inline>
-      (function(){
-        var btn=document.getElementById('audio-btn'),a=document.getElementById('podcast-audio'),
-            prog=document.getElementById('audio-progress'),time=document.getElementById('audio-time'),
-            bar=document.getElementById('audio-bar'),
-            playI=document.getElementById('play-icon'),pauseI=document.getElementById('pause-icon');
-        if(!btn||!a)return;
+      document.addEventListener('DOMContentLoaded', function(){
+        var btn=document.getElementById('audio-btn');
+        var a=document.getElementById('podcast-audio');
+        var prog=document.getElementById('audio-progress');
+        var time=document.getElementById('audio-time');
+        var bar=document.getElementById('audio-bar');
+        var playI=document.getElementById('play-icon');
+        var pauseI=document.getElementById('pause-icon');
+        if(!btn||!a) return;
         function showPlay(){playI.classList.remove('hidden');pauseI.classList.add('hidden')}
         function showPause(){playI.classList.add('hidden');pauseI.classList.remove('hidden')}
-        btn.onclick=function(){if(a.paused){a.play();showPause()}else{a.pause();showPlay()}};
-        bar.onclick=function(e){var r=e.offsetX/bar.offsetWidth;a.currentTime=r*a.duration};
-        a.ontimeupdate=function(){
-          if(a.duration){prog.style.width=(a.currentTime/a.duration*100)+'%';
-          var m=Math.floor(a.currentTime/60),s=Math.floor(a.currentTime%60);
+        btn.addEventListener('click', function(e){
+          e.preventDefault();
+          if(a.paused){a.play().then(function(){showPause()}).catch(function(){})}
+          else{a.pause();showPlay()}
+        });
+        if(bar) bar.addEventListener('click', function(e){
+          e.stopPropagation();
+          if(a.duration){var r=e.offsetX/bar.offsetWidth;a.currentTime=r*a.duration}
+        });
+        a.addEventListener('timeupdate', function(){
+          if(a.duration){
+            prog.style.width=(a.currentTime/a.duration*100)+'%';
+            var m=Math.floor(a.currentTime/60),s=Math.floor(a.currentTime%60);
+            var tm=Math.floor(a.duration/60),ts=Math.floor(a.duration%60);
+            time.textContent=m+':'+(s<10?'0':'')+s+'/'+tm+':'+(ts<10?'0':'')+ts;
+          }
+        });
+        a.addEventListener('loadedmetadata', function(){
           var tm=Math.floor(a.duration/60),ts=Math.floor(a.duration%60);
-          time.textContent=m+':'+(s<10?'0':'')+s+' / '+tm+':'+(ts<10?'0':'')+ts;}
-        };
-        a.onended=function(){showPlay();prog.style.width='0%'};
-      })();
+          time.textContent='0:00/'+tm+':'+(ts<10?'0':'')+ts;
+        });
+        a.addEventListener('ended', function(){showPlay();prog.style.width='0%'});
+      });
       </script>
 
       <!-- Powered by + cost (single line) -->
