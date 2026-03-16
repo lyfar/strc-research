@@ -24,31 +24,31 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Listen / Watch -->
-      <div class="mt-5 flex flex-wrap gap-3">
-        <details class="group">
-          <summary class="cursor-pointer text-[11px] text-neutral-500 hover:text-white transition-colors flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/></svg>
-            Listen to this page
-            <span class="text-neutral-600 text-[9px]">NotebookLM</span>
-          </summary>
-          <div class="mt-2">
-            <audio controls preload="none" class="w-full max-w-md h-8" style="filter: invert(0.85) hue-rotate(180deg);">
-              <source src="/media/podcast.mp3" type="audio/mpeg" />
-            </audio>
-          </div>
-        </details>
-        <details class="group">
-          <summary class="cursor-pointer text-[11px] text-neutral-500 hover:text-white transition-colors flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
-            Watch video overview
-            <span class="text-neutral-600 text-[9px]">NotebookLM</span>
-          </summary>
-          <div class="mt-2">
-            <video controls preload="none" class="w-full max-w-lg rounded-lg" poster="/images/egor-misha.jpg">
-              <source src="/media/video.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </details>
+      <div class="mt-5 flex flex-wrap items-center gap-3">
+        <!-- Audio: inline mini player -->
+        <div class="flex items-center gap-2 bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5" id="audio-player">
+          <button onclick="var a=document.getElementById('podcast-audio');if(a.paused){a.play();this.textContent='⏸'}else{a.pause();this.textContent='▶'}" class="text-white text-xs w-5 h-5 flex items-center justify-center">▶</button>
+          <span class="text-[11px] text-neutral-400">Listen to this page</span>
+          <span class="text-neutral-600 text-[9px]">NotebookLM</span>
+          <audio id="podcast-audio" preload="none" src="/media/podcast.mp3"></audio>
+        </div>
+
+        <!-- Video: lightbox trigger -->
+        <button onclick="document.getElementById('video-lightbox').classList.remove('hidden');document.getElementById('lightbox-video').play()" class="flex items-center gap-1.5 text-[11px] text-neutral-500 hover:text-white transition-colors bg-white/[0.03] border border-white/5 rounded-full px-3 py-1.5 cursor-pointer">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+          Watch video overview
+          <span class="text-neutral-600 text-[9px]">NotebookLM</span>
+        </button>
+      </div>
+
+      <!-- Video lightbox -->
+      <div id="video-lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onclick="this.classList.add('hidden');document.getElementById('lightbox-video').pause()">
+        <div class="relative max-w-sm w-full mx-4" onclick="event.stopPropagation()">
+          <button onclick="document.getElementById('video-lightbox').classList.add('hidden');document.getElementById('lightbox-video').pause()" class="absolute -top-8 right-0 text-white/60 hover:text-white text-sm">✕ Close</button>
+          <video id="lightbox-video" controls preload="none" class="w-full rounded-lg shadow-2xl" playsinline>
+            <source src="/media/video.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
 
       <!-- Powered by + cost (single line) -->
