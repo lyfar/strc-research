@@ -7,97 +7,106 @@
       <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">AlphaFold 3 Experiments</h2>
       <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">6 JOBS</span>
     </div>
-    <p class="text-neutral-400 text-sm mb-8">
-      Systematic computational testing of the mini-STRC hypothesis and variant impact. 
-      3D models rendered live from AlphaFold 3 CIF files. Drag to rotate, scroll to zoom.
+    <p class="text-neutral-400 text-sm mb-8 max-w-3xl">
+      Each question came from the previous answer. Drag to rotate, scroll to zoom.
     </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 
       <!-- Job 1 -->
       <a href="https://alphafoldserver.com/fold/739cbeb76239c7c8" target="_blank" rel="noopener" class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden no-underline group hover:border-white/10 transition-colors">
-        <div id="v-job1" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div id="v-job1" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-white">Full STRC + TMEM145</span>
+          <div class="text-[10px] text-neutral-500 mb-1">Question 1</div>
+          <div class="text-xs font-semibold text-white mb-1">Do STRC and TMEM145 actually interact?</div>
+          <div class="flex items-center gap-2 mb-2">
             <span class="text-xs font-mono text-yellow-400">ipTM 0.47</span>
+            <span class="text-[10px] text-neutral-500">Low confidence</span>
           </div>
-          <p class="text-[10px] text-neutral-500 leading-relaxed">Low confidence interaction. Best cross-chain PAE: 8.6 A at N-terminal.</p>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">Barely. The closest contact was in the N-terminal (the part we want to cut). But even that was poor: 8.6 A PAE.</p>
         </div>
       </a>
 
-      <!-- Job 2: placeholder -->
-      <div class="bg-white/[0.02] border border-dashed border-white/10 rounded-lg overflow-hidden">
-        <div style="width:100%;height:200px;" class="flex items-center justify-center bg-white/[0.01]">
-          <div class="text-center"><div class="text-xl text-neutral-600">&#9203;</div><div class="text-[10px] text-neutral-600 mt-1">Computing...</div></div>
-        </div>
+      <!-- Job 2 -->
+      <a href="https://alphafoldserver.com/fold/1f78a8dd5afe06b2" target="_blank" rel="noopener" class="bg-white/[0.02] border border-green-500/20 rounded-lg overflow-hidden no-underline group hover:border-green-500/30 transition-colors">
+        <div id="v-job2" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-neutral-500">Mini-STRC + TMEM145</span>
-            <span class="text-xs font-mono text-neutral-600">pending</span>
+          <div class="text-[10px] text-neutral-500 mb-1">Question 2</div>
+          <div class="text-xs font-semibold text-green-400 mb-1">If we cut the N-terminal, does binding get worse?</div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-mono text-green-400">ipTM 0.43</span>
+            <span class="text-[10px] text-neutral-500">vs 0.47 baseline</span>
           </div>
-          <p class="text-[10px] text-neutral-600 leading-relaxed">Does removing N-terminal affect binding?</p>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">No. Basically the same. N-terminal doesn't matter for binding. Mini-STRC chain pTM actually improved: 0.70 vs 0.53.</p>
         </div>
-      </div>
+      </a>
 
       <!-- Job 3: placeholder -->
       <div class="bg-white/[0.02] border border-dashed border-white/10 rounded-lg overflow-hidden">
-        <div style="width:100%;height:200px;" class="flex items-center justify-center bg-white/[0.01]">
+        <div style="width:100%;height:180px;" class="flex items-center justify-center bg-white/[0.01]">
           <div class="text-center"><div class="text-xl text-neutral-600">&#9203;</div><div class="text-[10px] text-neutral-600 mt-1">Computing...</div></div>
         </div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-neutral-500">STRC E1659A mutant</span>
+          <div class="text-[10px] text-neutral-600 mb-1">Question 3</div>
+          <div class="text-xs font-semibold text-neutral-500 mb-1">Does Michael's mutation break the fold?</div>
+          <div class="flex items-center gap-2 mb-2">
             <span class="text-xs font-mono text-neutral-600">pending</span>
           </div>
-          <p class="text-[10px] text-neutral-600 leading-relaxed">Does Misha's mutation break the fold?</p>
+          <p class="text-[10px] text-neutral-600 leading-relaxed">The direct structural test. If pTM drops vs wildtype (0.63), E1659A destabilizes the protein.</p>
         </div>
       </div>
 
       <!-- Job 4 -->
       <a href="https://alphafoldserver.com/fold/1578cf5e5548ebb7" target="_blank" rel="noopener" class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden no-underline group hover:border-white/10 transition-colors">
-        <div id="v-job4" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div id="v-job4" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-white">STRC wildtype (control)</span>
+          <div class="text-[10px] text-neutral-500 mb-1">Question 4</div>
+          <div class="text-xs font-semibold text-white mb-1">What does the healthy protein look like?</div>
+          <div class="flex items-center gap-2 mb-2">
             <span class="text-xs font-mono text-neutral-300">pTM 0.63</span>
+            <span class="text-[10px] text-neutral-500">16% disordered</span>
           </div>
-          <p class="text-[10px] text-neutral-500 leading-relaxed">Full protein. N-terminal drags score down (16% disordered).</p>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">Decent, but the N-terminal drags it down. You can see it: the top-left PAE block is light green (bad). That's the N-terminal.</p>
         </div>
       </a>
 
       <!-- Job 5 -->
       <a href="https://alphafoldserver.com/fold/2c71cca0a405ee3c" target="_blank" rel="noopener" class="bg-white/[0.02] border border-green-500/20 rounded-lg overflow-hidden no-underline group hover:border-green-500/30 transition-colors">
-        <div id="v-job5" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div id="v-job5" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-green-400">Mini-STRC (no N-term)</span>
+          <div class="text-[10px] text-neutral-500 mb-1">Question 5</div>
+          <div class="text-xs font-semibold text-green-400 mb-1">What about without the N-terminal?</div>
+          <div class="flex items-center gap-2 mb-2">
             <span class="text-xs font-mono text-green-400 font-bold">pTM 0.81</span>
+            <span class="text-[10px] text-neutral-400">7% disordered</span>
           </div>
-          <p class="text-[10px] text-neutral-400 leading-relaxed">Truncated protein folds excellently. 7% disordered. Key result.</p>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">Better. Much better. The protein is cleaner, tighter, more confident. Fits in a single AAV. This is the key result.</p>
         </div>
       </a>
 
       <!-- Job 6 -->
       <a href="https://alphafoldserver.com/fold/162f48c90aeb8a24" target="_blank" rel="noopener" class="bg-white/[0.02] border border-red-500/20 rounded-lg overflow-hidden no-underline group hover:border-red-500/30 transition-colors">
-        <div id="v-job6" style="width:100%;height:200px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div id="v-job6" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
         <div class="p-3">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-xs font-semibold text-red-400">N-terminal only (1-615)</span>
+          <div class="text-[10px] text-neutral-500 mb-1">Question 6</div>
+          <div class="text-xs font-semibold text-red-400 mb-1">Is the N-terminal really disordered?</div>
+          <div class="flex items-center gap-2 mb-2">
             <span class="text-xs font-mono text-red-400 font-bold">pTM 0.27</span>
+            <span class="text-[10px] text-neutral-400">38% disordered</span>
           </div>
-          <p class="text-[10px] text-neutral-400 leading-relaxed">Confirmed disordered. 38% unstructured. Safe to remove.</p>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">Yes. Structural noise. AlphaFold 3 can't predict a stable fold because there isn't one. Safe to remove.</p>
         </div>
       </a>
     </div>
 
     <!-- Summary -->
     <div class="mt-6 bg-white/[0.02] border border-white/5 rounded-lg p-4">
-      <h3 class="text-xs font-semibold text-neutral-300 mb-2">Key finding</h3>
+      <h3 class="text-xs font-semibold text-neutral-300 mb-2">What this means</h3>
       <p class="text-xs text-neutral-400 leading-relaxed">
-        Mini-STRC (without N-terminal) achieves <strong class="text-green-400">pTM 0.81</strong>, significantly better than full-length wildtype 
-        (<strong class="text-neutral-300">pTM 0.63</strong>). The removed N-terminal region scores only <strong class="text-red-400">pTM 0.27</strong> 
-        with 38% disorder. Removing the disordered N-terminal produces a better-folding protein that fits in a single AAV vector.
+        Mini-STRC without N-terminal: <strong class="text-green-400">pTM 0.81</strong>. 
+        Full wildtype: <strong class="text-neutral-300">pTM 0.63</strong>. 
+        N-terminal alone: <strong class="text-red-400">pTM 0.27</strong>. 
+        The N-terminal is dead weight. Removing it makes the protein fold better and fit in a single AAV vector (3546 bp vs 5325 bp).
       </p>
     </div>
   </div>
@@ -111,6 +120,7 @@
 
     var jobs = [
       { id: 'v-job1', url: '/models/job1-full-complex.cif', multichain: true },
+      { id: 'v-job2', url: '/models/job2-mini-complex.cif', multichain: true },
       { id: 'v-job4', url: '/models/job4-wildtype.cif', multichain: false },
       { id: 'v-job5', url: '/models/job5-mini-strc.cif', multichain: false },
       { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },

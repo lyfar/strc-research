@@ -5,8 +5,11 @@
   <div class="max-w-4xl mx-auto">
     <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-2">How I Did This</h2>
     <p class="text-neutral-400 text-sm mb-8">
-      I'm a father with no scientific training. I work in technology and creative production. 
-      Here is exactly what I did, step by step, so anyone in the same situation can do it too.
+      No genetics degree. No lab access. No budget. Just a laptop, a phone, and an AI agent 
+      (<a href="https://openclaw.ai" target="_blank" rel="noopener" class="text-blue-400">OpenClaw</a> + 
+      <strong class="text-neutral-300">Claude Opus 4.6</strong>) that can actually do things: download files, 
+      search databases, parse data, build sites. My job was asking questions. Good ones. 
+      Here's exactly what I asked and what came back.
     </p>
     
     <div class="space-y-6">
@@ -32,11 +35,11 @@
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">2</span>
-          <h3 class="text-sm font-semibold">I found the protein in AlphaFold</h3>
+          <h3 class="text-sm font-semibold">I asked: where is this protein?</h3>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          I searched for "STRC" on UniProt and found that stereocilin's ID is <span class="font-mono text-neutral-300">Q7RTU9</span>. 
-          Then I went to AlphaFold and found the predicted 3D structure of the protein. 
+          I asked Claude to look up the STRC protein. It searched UniProt and found the ID: <span class="font-mono text-neutral-300">Q7RTU9</span>. 
+          Claude then pointed me to AlphaFold, which has the predicted 3D structure. 
           The confidence score (pLDDT) at position 1659 was 95.69 out of 100, meaning the structure prediction at this spot is very reliable.
         </p>
         <div class="text-xs text-neutral-500 bg-black/30 p-3 rounded space-y-1">
@@ -63,11 +66,11 @@
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-red-500/20 flex items-center justify-center text-xs font-bold text-red-400 shrink-0">3</span>
-          <h3 class="text-sm font-semibold">I checked AlphaMissense (the key discovery)</h3>
+          <h3 class="text-sm font-semibold">I asked: is this mutation harmful? (the key discovery)</h3>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-3">
           AlphaMissense is a tool by Google DeepMind that predicts whether a protein mutation is harmful. 
-          I downloaded the predictions file for stereocilin and searched for "E1659A" 
+          Claude downloaded the AlphaMissense predictions file for stereocilin and searched for "E1659A" 
           (E = Glutamic acid, the original amino acid; A = Alanine, Michael's variant).
         </p>
         <p class="text-xs text-neutral-300 leading-relaxed mb-3">
@@ -96,11 +99,11 @@
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">4</span>
-          <h3 class="text-sm font-semibold">I checked evolutionary conservation</h3>
+          <h3 class="text-sm font-semibold">I asked: is this position important across species?</h3>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-3">
           If a position is important for the protein, it should be the same amino acid across different species. 
-          I downloaded stereocilin sequences from 9 mammals on UniProt (human, mouse, rat, cow, monkey, pig, dog, bat, bear) 
+          Claude pulled stereocilin sequences from 9 mammals on UniProt (human, mouse, rat, cow, monkey, pig, dog, bat, bear) 
           and searched for the motif around position 1659 in each.
         </p>
         <p class="text-xs text-neutral-300 leading-relaxed mb-3">
@@ -119,10 +122,10 @@
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">5</span>
-          <h3 class="text-sm font-semibold">I tried the standard tools (they failed)</h3>
+          <h3 class="text-sm font-semibold">We tried the standard tools (they failed)</h3>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-3">
-          Normally, geneticists use SIFT, PolyPhen-2, and CADD to check variants. I tried all three through the 
+          Normally, geneticists use SIFT, PolyPhen-2, and CADD to check variants. Claude tried all three through the 
           <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-blue-400">Ensembl VEP API</a>.
           They all returned nothing for this variant.
         </p>
@@ -141,7 +144,7 @@
       <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
         <div class="flex items-center gap-2 mb-3">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">6</span>
-          <h3 class="text-sm font-semibold">I applied the ACMG classification rules</h3>
+          <h3 class="text-sm font-semibold">I asked: does this add up to a reclassification?</h3>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-2">
           <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4544753/" target="_blank" rel="noopener" class="text-blue-400">ACMG/AMP guidelines (Richards et al., 2015)</a> 

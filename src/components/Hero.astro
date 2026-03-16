@@ -1,89 +1,101 @@
 ---
-// Hero: intro + photo + key metrics
+// Hero: intro + photo + metrics + timeline + powered by
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 <section class="px-6 py-16 md:py-20 max-w-6xl mx-auto">
   <div class="flex items-center gap-3 mb-6">
-    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-green-500/20 text-green-400">Father's AI Research</span>
-    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">DFNB16</span>
+    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-green-500/20 text-green-400">{t('hero.badge1')}</span>
+    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">{t('hero.badge2')}</span>
   </div>
 
   <div class="grid md:grid-cols-[1fr_320px] gap-10 items-start">
-    <!-- Text -->
     <div>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-        STRC p.(Glu1659Ala)<br/>
-        <span class="text-neutral-400">Variant Pathogenicity Analysis</span>
+        {t('hero.title')}<br/>
+        <span class="text-neutral-400">{t('hero.subtitle')}</span>
       </h1>
-
       <div class="mt-6 space-y-3 text-sm text-neutral-300 leading-relaxed">
-        <p>
-          My son Michael is 4 and doesn't hear well. His genetic test says he has two broken copies of the STRC gene. 
-          One is confirmed pathogenic. The other is "Variant of Uncertain Significance." That classification blocks 
-          him from future gene therapy trials.
-        </p>
-        <p>
-          I'm not a geneticist. I work in technology, creative production, and 
-          <a href="https://www.lyfar.com/blog/hku-masterclass-ai-scientific-research" target="_blank" rel="noopener" class="text-blue-400 no-underline hover:underline">AI education</a>. 
-          So I used AI tools to investigate the variant myself. I found computational evidence for reclassification, 
-          confirmed the position is conserved across all mammals, and discovered that standard genetic tools fail 
-          for this gene due to a pseudogene. I submitted a formal reclassification request to the hospital.
-        </p>
-        <p>
-          Then I kept going. I analyzed whether a shorter protein could fit in a single gene therapy vector. 
-          I checked if CRISPR could fix the specific mutation. I wrote to researchers who pioneered STRC gene therapy. 
-          I received encouraging responses.
-        </p>
-        <p class="text-neutral-500">
-          This site documents everything. Every tool, every result, every step. 
-          So any parent in the same situation can reproduce it. Total cost: a $20/month Claude subscription.
-        </p>
+        <p set:html={t('hero.p1')} />
+        <p set:html={t('hero.p2')} />
+        <p set:html={t('hero.p3')} />
+        <p set:html={t('hero.p4')} />
+        <p class="text-neutral-500" set:html={t('hero.p5')} />
       </div>
     </div>
-
-    <!-- Photo -->
     <div class="order-first md:order-last">
-      <img 
-        src="/images/egor-misha.jpg" 
-        alt="Egor and Michael" 
-        class="rounded-xl w-full md:sticky md:top-24 shadow-2xl shadow-black/50"
-        loading="eager"
-      />
-      <p class="text-[10px] text-neutral-600 mt-2 text-center">Egor and Michael, Hong Kong</p>
+      <img src="/images/egor-misha.jpg" alt={t('hero.photo.alt')} class="rounded-xl w-full md:sticky md:top-24 shadow-2xl shadow-black/50" loading="eager" />
+      <p class="text-[10px] text-neutral-600 mt-2 text-center">{t('hero.photo.caption')}</p>
     </div>
-  </div>
-
-  <!-- Powered by -->
-  <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-    <span class="text-[10px] text-neutral-600 uppercase tracking-wider">Powered by</span>
-    <a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold</a>
-    <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaMissense</a>
-    <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold 3</a>
-    <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">Claude <span class="text-neutral-600">(Anthropic)</span></a>
-    <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">UniProt</a>
-    <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">Ensembl</a>
   </div>
 
   <!-- Key metrics -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
     <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
-      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaMissense</div>
-      <div class="text-2xl font-bold text-red-400 mt-1">0.9016</div>
-      <div class="text-xs text-neutral-500 mt-1">Likely Pathogenic</div>
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">{t('hero.metric1.label')}</div>
+      <div class="text-2xl font-bold text-red-400 mt-1">{t('hero.metric1.value')}</div>
+      <div class="text-xs text-neutral-500 mt-1">{t('hero.metric1.desc')}</div>
     </div>
     <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
-      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">AlphaFold pLDDT</div>
-      <div class="text-2xl font-bold text-green-400 mt-1">95.69</div>
-      <div class="text-xs text-neutral-500 mt-1">Very high confidence</div>
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">{t('hero.metric2.label')}</div>
+      <div class="text-2xl font-bold text-green-400 mt-1">{t('hero.metric2.value')}</div>
+      <div class="text-xs text-neutral-500 mt-1">{t('hero.metric2.desc')}</div>
     </div>
     <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
-      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">REVEL Score</div>
-      <div class="text-2xl font-bold text-orange-400 mt-1">0.65</div>
-      <div class="text-xs text-neutral-500 mt-1">Predicted deleterious</div>
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">{t('hero.metric3.label')}</div>
+      <div class="text-2xl font-bold text-orange-400 mt-1">{t('hero.metric3.value')}</div>
+      <div class="text-xs text-neutral-500 mt-1">{t('hero.metric3.desc')}</div>
     </div>
     <div class="bg-white/[0.03] border border-white/5 rounded-lg p-4">
-      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">Conservation</div>
-      <div class="text-2xl font-bold text-green-400 mt-1">9/9</div>
-      <div class="text-xs text-neutral-500 mt-1">Mammals conserved</div>
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider">{t('hero.metric4.label')}</div>
+      <div class="text-2xl font-bold text-green-400 mt-1">{t('hero.metric4.value')}</div>
+      <div class="text-xs text-neutral-500 mt-1">{t('hero.metric4.desc')}</div>
     </div>
+  </div>
+
+  <!-- Timeline: horizontal on desktop, vertical on mobile -->
+  <div class="mt-6 bg-white/[0.02] border border-white/5 rounded-lg p-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="relative">
+        <div class="flex items-center gap-2 mb-1">
+          <div class="w-2 h-2 rounded-full bg-white/40 shrink-0"></div>
+          <span class="text-[10px] text-neutral-500 font-mono">Day 1, evening</span>
+        </div>
+        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">AlphaMissense, conservation, ACMG, pseudogene, letter, site live.</p>
+      </div>
+      <div class="relative">
+        <div class="flex items-center gap-2 mb-1">
+          <div class="w-2 h-2 rounded-full bg-green-500 shrink-0"></div>
+          <span class="text-[10px] text-green-400/80 font-mono">Day 2, morning</span>
+        </div>
+        <p class="text-[10px] text-green-400/60 leading-relaxed pl-4">Researcher response received.</p>
+      </div>
+      <div class="relative">
+        <div class="flex items-center gap-2 mb-1">
+          <div class="w-2 h-2 rounded-full bg-purple-500 shrink-0"></div>
+          <span class="text-[10px] text-neutral-500 font-mono">Day 2, afternoon</span>
+        </div>
+        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">Mini-STRC, prime editing, 6 AF3 experiments, 5 languages, 3 letters, GitHub.</p>
+      </div>
+      <div class="relative">
+        <div class="flex items-center gap-2 mb-1">
+          <div class="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
+          <span class="text-[10px] text-neutral-500 font-mono">Submitted</span>
+        </div>
+        <p class="text-[10px] text-neutral-400 leading-relaxed pl-4">Reclassification request to HK Children's Hospital.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Powered by -->
+  <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+    <span class="text-[10px] text-neutral-600 uppercase tracking-wider">{t('hero.poweredby')}</span>
+    <a href="https://openclaw.ai" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">OpenClaw <span class="text-neutral-600">(AI Agent)</span></a>
+    <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">Claude Opus 4.6</a>
+    <a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold</a>
+    <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaMissense</a>
+    <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">AlphaFold 3</a>
+    <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline font-medium">UniProt</a>
   </div>
 </section>
