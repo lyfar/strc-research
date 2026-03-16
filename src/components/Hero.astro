@@ -26,7 +26,7 @@ const t = useTranslations(lang);
       <!-- Listen / Watch -->
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <!-- Audio -->
-        <button id="audio-btn" class="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors text-left">
+        <div id="audio-btn" class="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors">
           <div class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full shrink-0">
             <svg id="play-icon" class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
             <svg id="pause-icon" class="w-3.5 h-3.5 text-white hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/></svg>
@@ -39,8 +39,8 @@ const t = useTranslations(lang);
             </div>
           </div>
           <span id="audio-time" class="text-[10px] text-neutral-600 font-mono shrink-0"></span>
-          <audio id="podcast-audio" preload="metadata" src="/media/podcast.mp3"></audio>
-        </button>
+        </div>
+        <audio id="podcast-audio" preload="metadata" src="/media/podcast.mp3"></audio>
 
         <!-- Video -->
         <button onclick="document.getElementById('video-lightbox').classList.remove('hidden');document.getElementById('lightbox-video').play()" class="flex items-center gap-3 bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 cursor-pointer hover:border-white/10 transition-colors text-left">
