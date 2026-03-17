@@ -80,11 +80,23 @@ const t = useTranslations(lang);
               <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job5_status')}</td>
               <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job5_tests')}</td>
             </tr>
-            <tr>
+            <tr class="border-b border-white/5">
               <td class="py-1.5 pr-2 text-neutral-500">6</td>
               <td class="py-1.5 pr-2">{t('methodresearch.step10.job6_name')}</td>
               <td class="py-1.5 pr-2 text-green-400">{t('methodresearch.step10.job6_status')}</td>
               <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job6_tests')}</td>
+            </tr>
+            <tr class="border-b border-cyan-500/10 bg-cyan-500/[0.02]">
+              <td class="py-1.5 pr-2 text-cyan-500">7</td>
+              <td class="py-1.5 pr-2 text-cyan-300">{t('methodresearch.step10.job7_name')}</td>
+              <td class="py-1.5 pr-2 text-yellow-400">{t('methodresearch.step10.job7_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job7_tests')}</td>
+            </tr>
+            <tr class="bg-cyan-500/[0.02]">
+              <td class="py-1.5 pr-2 text-cyan-500">8</td>
+              <td class="py-1.5 pr-2 text-cyan-300">{t('methodresearch.step10.job8_name')}</td>
+              <td class="py-1.5 pr-2 text-yellow-400">{t('methodresearch.step10.job8_status')}</td>
+              <td class="py-1.5 text-neutral-400">{t('methodresearch.step10.job8_tests')}</td>
             </tr>
           </table>
         </div>
@@ -106,6 +118,45 @@ const t = useTranslations(lang);
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed mb-2">{t('methodresearch.step11.body1')}</p>
         <p class="text-xs text-neutral-300 leading-relaxed">{t('methodresearch.step11.body2')}</p>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="mt-12 mb-6">
+      <span class="text-[10px] uppercase tracking-widest text-cyan-500 font-semibold">{t('methodresearch.day3_label')}</span>
+      <h3 class="text-base font-bold mt-1">{t('methodresearch.day3_title')}</h3>
+      <p class="text-xs text-neutral-400 mt-2 max-w-2xl leading-relaxed">{t('methodresearch.day3_desc')}</p>
+    </div>
+
+    <div class="space-y-6 mb-8">
+      <!-- Step 12 (14 in sequence): Sonogenetic hypothesis -->
+      <div class="bg-white/[0.02] border border-cyan-500/10 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-cyan-500/20 flex items-center justify-center text-xs font-bold text-cyan-400 shrink-0">14</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step12.title')}</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3" set:html={t('methodresearch.step12.body1')} />
+        <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('methodresearch.step12.body2')} />
+      </div>
+
+      <!-- Step 13 (15 in sequence): ODE model -->
+      <div class="bg-white/[0.02] border border-cyan-500/10 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-cyan-500/20 flex items-center justify-center text-xs font-bold text-cyan-400 shrink-0">15</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step13.title')}</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3" set:html={t('methodresearch.step13.body1')} />
+        <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('methodresearch.step13.body2')} />
+      </div>
+
+      <!-- Step 14 (16 in sequence): New AF3 jobs -->
+      <div class="bg-white/[0.02] border border-cyan-500/10 rounded-lg p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-7 h-7 rounded-full bg-cyan-500/20 flex items-center justify-center text-xs font-bold text-cyan-400 shrink-0">16</span>
+          <h3 class="text-sm font-semibold">{t('methodresearch.step14.title')}</h3>
+        </div>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-3" set:html={t('methodresearch.step14.body1')} />
+        <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('methodresearch.step14.body2')} />
       </div>
     </div>
   </div>
