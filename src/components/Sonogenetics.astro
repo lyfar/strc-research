@@ -13,6 +13,17 @@ const t = useTranslations(lang);
     </div>
     <p class="text-neutral-400 text-sm mb-8 max-w-3xl">{t('sono.desc')}</p>
 
+    <!-- Plain language intro -->
+    <div class="bg-white/[0.03] border border-white/10 rounded-lg p-5 mb-8">
+      <h3 class="text-sm font-semibold text-white mb-3">{t('sono.plain.title')}</h3>
+      <div class="space-y-3 text-xs leading-relaxed">
+        <p class="text-neutral-300">{t('sono.plain.p1')}</p>
+        <p class="text-neutral-300" set:html={t('sono.plain.p2')} />
+        <p class="text-neutral-300" set:html={t('sono.plain.p3')} />
+        <p class="text-neutral-400">{t('sono.plain.p4')}</p>
+      </div>
+    </div>
+
     <!-- The Insight -->
     <div class="bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-5 mb-6">
       <h3 class="text-sm font-semibold text-cyan-400 mb-3">{t('sono.insight.title')}</h3>

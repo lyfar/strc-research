@@ -99,6 +99,20 @@ const t = useTranslations(lang);
           <p class="text-[10px] text-neutral-400 leading-relaxed">{t('af3results.job6.desc')}</p>
         </div>
       </a>
+      <!-- Job 8: NFATC1 + CnA + CnB (Day 3) -->
+      <a href="https://alphafoldserver.com/fold/1f78a8dd5afe06b2" target="_blank" rel="noopener" class="bg-white/[0.02] border border-cyan-500/20 rounded-lg overflow-hidden no-underline group hover:border-cyan-500/30 transition-colors relative">
+        <span class="absolute top-2 right-2 px-1.5 py-0.5 text-[9px] rounded bg-cyan-500/20 text-cyan-400 font-semibold z-10">DAY 3</span>
+        <div id="v-job8" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="text-[10px] text-cyan-500 mb-1">Cascade Validation</div>
+          <div class="text-xs font-semibold text-cyan-400 mb-1">{t('af3results.job8.title')}</div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-mono text-cyan-400 font-bold">{t('af3results.job8.score')}</span>
+            <span class="text-[10px] text-neutral-400">50% disordered</span>
+          </div>
+          <p class="text-[10px] text-neutral-400 leading-relaxed">{t('af3results.job8.desc')}</p>
+        </div>
+      </a>
     </div>
 
     <!-- Summary -->
@@ -122,6 +136,7 @@ const t = useTranslations(lang);
       { id: 'v-job4', url: '/models/job4-wildtype.cif', multichain: false },
       { id: 'v-job5', url: '/models/job5-mini-strc.cif', multichain: false },
       { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },
+      { id: 'v-job8', url: '/models/job8-nfatc1-calcineurin.cif', multichain: true, threeChain: true },
     ];
 
     jobs.forEach(function(job) {
@@ -133,7 +148,11 @@ const t = useTranslations(lang);
         el.innerHTML = '';
         var v = $3Dmol.createViewer(el, {backgroundColor: '#080808'});
         v.addModel(data, 'cif');
-        if (job.multichain) {
+        if (job.threeChain) {
+          v.setStyle({chain: 'A'}, {cartoon: {color: '#22d3ee'}});
+          v.setStyle({chain: 'B'}, {cartoon: {color: '#4a9eff'}});
+          v.setStyle({chain: 'C'}, {cartoon: {color: '#a78bfa'}});
+        } else if (job.multichain) {
           v.setStyle({chain: 'A'}, {cartoon: {color: '#4a9eff'}});
           v.setStyle({chain: 'B'}, {cartoon: {color: '#f59e0b'}});
         } else {

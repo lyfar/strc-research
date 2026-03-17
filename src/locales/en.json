@@ -320,13 +320,19 @@
   "sono.badge_comp": "COMPUTATIONAL",
   "sono.desc": "What if the gene therapy construct could turn itself on only when the child hears sound? A mechanosensitive promoter that uses the ear's own signaling cascade to regulate stereocilin production. Sound activates the therapy. Silence turns it off. Self-dosing gene therapy.",
 
+  "sono.plain.title": "The simple version",
+  "sono.plain.p1": "Current gene therapy approaches for STRC use a promoter that is always ON. Once the virus delivers the gene, the cell produces stereocilin constantly, whether the ear is active or not. There is no way to control the dose after injection.",
+  "sono.plain.p2": "Our hypothesis: <strong>use a promoter that only turns ON when the child hears sound</strong>. The child already wears a hearing aid. The hearing aid amplifies normal everyday sounds. Those sounds physically move the tiny hair-like structures (stereocilia) in the ear. When stereocilia move, calcium ions rush into the cell. This is a natural process that happens every time you hear anything.",
+  "sono.plain.p3": "We put a genetic \"switch\" (called an NFAT promoter) in front of the therapeutic gene. This switch only activates when calcium levels rise — which only happens when sound is present. <strong>Hearing aid ON = gene ON. Hearing aid OFF (sleeping) = gene OFF.</strong> The protein accumulates over days until the ear has enough to hear properly.",
+  "sono.plain.p4": "This is not science fiction. The individual pieces all exist: (1) the NFAT switch has been proven in living cells with 62x activation and zero leakage (Wu et al. 2023), (2) calcium signaling in hair cells is textbook physiology, (3) mini-STRC fits in a single virus. Nobody has combined them for inner ear gene therapy yet. That's our hypothesis.",
+
   "sono.insight.title": "The core insight: hair cells are already sound sensors",
   "sono.insight.p1": "Outer hair cells have <strong>mechanotransduction (MET) channels</strong> at their stereocilia tips. Sound deflects stereocilia, MET channels open, Ca²⁺ floods in. This calcium influx activates calcineurin, which dephosphorylates NFAT transcription factors, sending them to the nucleus. This is a natural signaling cascade that already exists in every hair cell.",
   "sono.insight.p2": "By placing mini-STRC under a <strong>synthetic 6xNFAT promoter</strong> (6 copies of the NFAT response element + minimal promoter), we create a construct where <strong>sound itself drives stereocilin production</strong>. The louder the sound, the more protein is made. In silence, the promoter stays off. This is the same approach used in <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC10584809/' target='_blank' rel='noopener' class='text-blue-400'>sonogenetics</a> (Wu et al., Nature Communications 2023), where ultrasound activates gene expression through mechanosensitive channels with 62-fold induction and zero leakage over 3 weeks.",
 
   "sono.cascade.title": "The signaling cascade: sound to protein",
   "sono.cascade.s1.title": "Sound deflects stereocilia",
-  "sono.cascade.s1.desc": "A hearing aid amplifies ambient sound to 60-80 dB SPL. Sound waves deflect OHC stereocilia bundles, opening MET channels at their tips.",
+  "sono.cascade.s1.desc": "A hearing aid amplifies ambient sound to 60-80 dB SPL. This is normal everyday volume — conversation, music, street noise. Sound waves deflect OHC stereocilia bundles, opening MET channels at their tips. No special frequencies or \"therapy sounds\" needed — just regular hearing aid use.",
   "sono.cascade.s2.title": "Ca²⁺ enters the apical compartment",
   "sono.cascade.s2.desc": "MET channels are non-selective cation channels with ~15% Ca²⁺ permeability. Ca²⁺ concentrates in the small apical volume (~0.05 pL) near the cuticular plate, reaching 500-900 nM.",
   "sono.cascade.s3.title": "Calcineurin activates, NFAT translocates",
@@ -349,6 +355,10 @@
   "sono.literature.ref2": "Tomida et al. (2003). <em>NFAT functions as a working memory of Ca²⁺ signals in decoding Ca²⁺ dynamics.</em> EMBO J 22:3825-3832. NFAT nuclear translocation kinetics. <a href='https://doi.org/10.1093/emboj/cdg381' target='_blank' class='text-blue-400'>doi</a>",
   "sono.literature.ref3": "Fettiplace & Kim (2014). <em>The physiology of mechanoelectrical transduction channels in hearing.</em> Physiological Reviews 94:951-986. MET channel properties. <a href='https://doi.org/10.1152/physrev.00038.2013' target='_blank' class='text-blue-400'>doi</a>",
   "sono.literature.ref4": "Iranfar et al. (2026). <em>Dual-vector gene therapy restores cochlear amplification and auditory sensitivity in a mouse model of DFNB16 hearing loss.</em> Science Advances. <strong>First STRC gene therapy in mice.</strong> <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC12784207/' target='_blank' class='text-blue-400'>PMC</a>",
+
+  "af3results.job8.title": "NFATC1 + Calcineurin A + B",
+  "af3results.job8.score": "ipTM 0.73 · pTM 0.59",
+  "af3results.job8.desc": "Positive control: validates the calcineurin-NFAT cascade. CnA-CnB ipTM 0.91 (known complex). NFAT-CnA ipTM 0.72 (substrate recognition). NFAT disorder-to-order transition confirmed.",
 
   "sono.caveat": "<strong>Important:</strong> This is a computational hypothesis. No one has combined a mechanosensitive NFAT promoter with inner ear gene therapy. The signaling cascade (MET → Ca²⁺ → calcineurin → NFAT) is well-established in hair cells, and sonogenetic promoters are proven in other cell types. But whether this specific construct would work in vivo requires experimental validation. The ODE model below provides quantitative support.",
 
