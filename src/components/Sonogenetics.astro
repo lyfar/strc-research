@@ -1,5 +1,5 @@
 ---
-// Day 3: Sonogenetic STRC Hypothesis — mechanosensitive promoter for self-dosing gene therapy
+// Day 3: Sonogenetic STRC Hypothesis — one clear narrative
 import { useTranslations } from '../lib/i18n';
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
@@ -9,73 +9,49 @@ const t = useTranslations(lang);
     <div class="flex items-center gap-2 mb-2">
       <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('sono.title')}</h2>
       <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/20 text-cyan-400 font-semibold">DAY 3</span>
-      <span class="px-1.5 py-0.5 text-[10px] rounded bg-yellow-500/20 text-yellow-400 font-semibold">{t('sono.badge_comp')}</span>
-    </div>
-    <p class="text-neutral-400 text-sm mb-8 max-w-3xl">{t('sono.desc')}</p>
-
-    <!-- Plain language intro -->
-    <div class="bg-white/[0.03] border border-white/10 rounded-lg p-5 mb-8">
-      <h3 class="text-sm font-semibold text-white mb-3">{t('sono.plain.title')}</h3>
-      <div class="space-y-3 text-xs leading-relaxed">
-        <p class="text-neutral-300">{t('sono.plain.p1')}</p>
-        <p class="text-neutral-300" set:html={t('sono.plain.p2')} />
-        <p class="text-neutral-300" set:html={t('sono.plain.p3')} />
-        <p class="text-neutral-400">{t('sono.plain.p4')}</p>
-      </div>
     </div>
 
-    <!-- The Insight -->
-    <div class="bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold text-cyan-400 mb-3">{t('sono.insight.title')}</h3>
-      <p class="text-xs text-neutral-300 leading-relaxed mb-3" set:html={t('sono.insight.p1')} />
-      <p class="text-xs text-neutral-400 leading-relaxed" set:html={t('sono.insight.p2')} />
+    <!-- THE STORY: one block, one narrative -->
+    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-8">
+      <p set:html={t('sono.story.p1')} />
+      <p set:html={t('sono.story.p2')} />
+      <p set:html={t('sono.story.p3')} />
+      <p set:html={t('sono.story.p4')} />
     </div>
 
-    <!-- How It Works: 5-step cascade -->
+    <!-- HOW IT WORKS: visual cascade, compact -->
     <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold mb-4">{t('sono.cascade.title')}</h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-[10px] font-bold text-cyan-400 shrink-0 mt-0.5">1</span>
-          <div>
-            <div class="text-xs font-semibold text-white">{t('sono.cascade.s1.title')}</div>
-            <p class="text-[11px] text-neutral-400 mt-0.5">{t('sono.cascade.s1.desc')}</p>
-          </div>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('sono.cascade.title')}</h3>
+      <div class="flex flex-col sm:flex-row items-stretch gap-2 text-center text-[11px]">
+        <div class="flex-1 bg-cyan-900/20 border border-cyan-500/10 rounded-lg p-3">
+          <div class="text-lg mb-1">🔊</div>
+          <div class="text-cyan-400 font-semibold">{t('sono.cascade.c1.title')}</div>
+          <div class="text-neutral-500 mt-1">{t('sono.cascade.c1.desc')}</div>
         </div>
-        <div class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-[10px] font-bold text-cyan-400 shrink-0 mt-0.5">2</span>
-          <div>
-            <div class="text-xs font-semibold text-white">{t('sono.cascade.s2.title')}</div>
-            <p class="text-[11px] text-neutral-400 mt-0.5">{t('sono.cascade.s2.desc')}</p>
-          </div>
+        <div class="hidden sm:flex items-center text-neutral-600">→</div>
+        <div class="flex-1 bg-cyan-900/20 border border-cyan-500/10 rounded-lg p-3">
+          <div class="text-lg mb-1">🧬</div>
+          <div class="text-cyan-400 font-semibold">{t('sono.cascade.c2.title')}</div>
+          <div class="text-neutral-500 mt-1">{t('sono.cascade.c2.desc')}</div>
         </div>
-        <div class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-[10px] font-bold text-cyan-400 shrink-0 mt-0.5">3</span>
-          <div>
-            <div class="text-xs font-semibold text-white">{t('sono.cascade.s3.title')}</div>
-            <p class="text-[11px] text-neutral-400 mt-0.5">{t('sono.cascade.s3.desc')}</p>
-          </div>
+        <div class="hidden sm:flex items-center text-neutral-600">→</div>
+        <div class="flex-1 bg-cyan-900/20 border border-cyan-500/10 rounded-lg p-3">
+          <div class="text-lg mb-1">⚡</div>
+          <div class="text-cyan-400 font-semibold">{t('sono.cascade.c3.title')}</div>
+          <div class="text-neutral-500 mt-1">{t('sono.cascade.c3.desc')}</div>
         </div>
-        <div class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center text-[10px] font-bold text-cyan-400 shrink-0 mt-0.5">4</span>
-          <div>
-            <div class="text-xs font-semibold text-white">{t('sono.cascade.s4.title')}</div>
-            <p class="text-[11px] text-neutral-400 mt-0.5">{t('sono.cascade.s4.desc')}</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-[10px] font-bold text-green-400 shrink-0 mt-0.5">5</span>
-          <div>
-            <div class="text-xs font-semibold text-green-400">{t('sono.cascade.s5.title')}</div>
-            <p class="text-[11px] text-neutral-400 mt-0.5">{t('sono.cascade.s5.desc')}</p>
-          </div>
+        <div class="hidden sm:flex items-center text-neutral-600">→</div>
+        <div class="flex-1 bg-green-900/20 border border-green-500/10 rounded-lg p-3">
+          <div class="text-lg mb-1">✅</div>
+          <div class="text-green-400 font-semibold">{t('sono.cascade.c4.title')}</div>
+          <div class="text-neutral-500 mt-1">{t('sono.cascade.c4.desc')}</div>
         </div>
       </div>
     </div>
 
-    <!-- AAV Vector Construct -->
+    <!-- AAV Vector Construct — compact bar -->
     <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold mb-3">{t('sono.construct.title')}</h3>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('sono.construct.title')}</h3>
       <div class="bg-black/40 rounded-lg p-4 font-mono text-xs overflow-x-auto mb-3">
         <div class="flex items-center gap-0 min-w-[500px]">
           <div class="bg-neutral-700 text-neutral-300 px-2 py-1.5 rounded-l text-center" style="min-width:50px">
@@ -110,15 +86,9 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <!-- Key advantage: self-dosing -->
-    <div class="bg-green-500/5 border border-green-500/20 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold text-green-400 mb-2">{t('sono.selfdose.title')}</h3>
-      <p class="text-xs text-neutral-300 leading-relaxed" set:html={t('sono.selfdose.desc')} />
-    </div>
-
-    <!-- Literature support -->
+    <!-- Literature — compact, inline -->
     <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold mb-3">{t('sono.literature.title')}</h3>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('sono.literature.title')}</h3>
       <div class="space-y-2 text-xs text-neutral-400">
         <div class="flex items-start gap-2">
           <span class="text-neutral-600 shrink-0">[1]</span>
@@ -139,9 +109,7 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <!-- Caveat -->
-    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
-      <p class="text-xs text-neutral-300" set:html={t('sono.caveat')} />
-    </div>
+    <!-- Caveat — one line -->
+    <p class="text-xs text-neutral-500 italic">{t('sono.caveat_short')}</p>
   </div>
 </section>
