@@ -35,9 +35,9 @@ const base = lang === 'en' ? '' : `/${lang}`;
       {t('layout.site_title')}
     </a>
     <div class="hidden sm:flex gap-5 text-xs text-neutral-400">
-      <a href={base + '/#analysis'} class="hover:text-white transition-colors no-underline">{t('layout.nav.evidence')}</a>
-      <a href={base + '/#mini-strc'} class="hover:text-white transition-colors no-underline">{t('layout.nav.research')}</a>
-      <a href={base + '/#reproduce'} class="hover:text-white transition-colors no-underline">{t('layout.nav.method')}</a>
+      <a href={base + '/reclassification'} class="hover:text-white transition-colors no-underline">{t('layout.nav.evidence')}</a>
+      <a href={base + '/hypotheses'} class="hover:text-white transition-colors no-underline">{t('layout.nav.research')}</a>
+      <a href={base + '/methodology'} class="hover:text-white transition-colors no-underline">{t('layout.nav.method')}</a>
     </div>
     <div class="flex gap-1 text-xs shrink-0">
       <a href="/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'en' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>EN</a>

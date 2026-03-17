@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MethodReclass from '../../components/MethodReclass.astro';
+import MethodResearch from '../../components/MethodResearch.astro';
+import ToolsGrid from '../../components/ToolsGrid.astro';
+
+const lang = 'zh';
+---
+
+<Layout lang={lang}>
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/zh/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Home</a>
+  </div>
+  <section class="px-6 pt-6 pb-4">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 3 — Methodology</span>
+      <h2 class="text-lg font-bold mt-1">How I Did This</h2>
+    </div>
+  </section>
+  <MethodReclass lang={lang} />
+  <MethodResearch lang={lang} />
+  <ToolsGrid lang={lang} />
+  <div class="px-6 py-8 max-w-4xl mx-auto">
+    <a href="/zh/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Home</a>
+  </div>
+</Layout>

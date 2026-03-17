@@ -1,0 +1,18 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import MiniSTRC from '../../../components/MiniSTRC.astro';
+import AF3Results from '../../../components/AF3Results.astro';
+
+const lang = 'ru';
+---
+
+<Layout lang={lang}>
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/ru/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+  <MiniSTRC lang={lang} />
+  <AF3Results lang={lang} />
+  <div class="px-6 py-8 max-w-4xl mx-auto">
+    <a href="/ru/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+</Layout>

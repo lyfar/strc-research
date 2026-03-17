@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AlphaMissense from '../../components/AlphaMissense.astro';
+import Conservation from '../../components/Conservation.astro';
+import Structure3D from '../../components/Structure3D.astro';
+import Pseudogene from '../../components/Pseudogene.astro';
+import ACMG from '../../components/ACMG.astro';
+import { variants } from '../../data/variants';
+
+const lang = 'zh';
+---
+
+<Layout lang={lang}>
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/zh/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Home</a>
+  </div>
+  <section class="px-6 pt-6 pb-4">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 1</span>
+      <h2 class="text-lg font-bold mt-1">Reclassification Evidence</h2>
+      <p class="text-xs text-neutral-400 mt-1">NM_153700.2:c.4976A&gt;C p.(Glu1659Ala)</p>
+    </div>
+  </section>
+  <AlphaMissense variants={variants} lang={lang} />
+  <Conservation lang={lang} />
+  <Structure3D lang={lang} />
+  <Pseudogene lang={lang} />
+  <ACMG lang={lang} />
+  <div class="px-6 py-8 max-w-4xl mx-auto">
+    <a href="/zh/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Home</a>
+  </div>
+</Layout>

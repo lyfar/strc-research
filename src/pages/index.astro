@@ -1,86 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import AlphaMissense from '../components/AlphaMissense.astro';
-import Conservation from '../components/Conservation.astro';
-import Structure3D from '../components/Structure3D.astro';
-import Pseudogene from '../components/Pseudogene.astro';
-import ACMG from '../components/ACMG.astro';
-import MiniSTRC from '../components/MiniSTRC.astro';
-import AF3Results from '../components/AF3Results.astro';
-import PrimeEditing from '../components/PrimeEditing.astro';
-import Sonogenetics from '../components/Sonogenetics.astro';
-import ODEModel from '../components/ODEModel.astro';
-import Delivery from '../components/Delivery.astro';
-import MethodReclass from '../components/MethodReclass.astro';
-import MethodResearch from '../components/MethodResearch.astro';
-import ToolsGrid from '../components/ToolsGrid.astro';
+import { useTranslations } from '../lib/i18n';
 
 const lang = 'en';
-
-const variants = [
-  { aa: 'A', score: 0.9016, misha: true },
-  { aa: 'C', score: 0.9984 }, { aa: 'D', score: 0.9483 },
-  { aa: 'F', score: 0.9992 }, { aa: 'G', score: 0.9191 },
-  { aa: 'H', score: 0.9927 }, { aa: 'I', score: 0.9923 },
-  { aa: 'K', score: 0.9272 }, { aa: 'L', score: 0.9929 },
-  { aa: 'M', score: 0.9909 }, { aa: 'N', score: 0.9822 },
-  { aa: 'P', score: 0.9985 }, { aa: 'Q', score: 0.846 },
-  { aa: 'R', score: 0.9634 }, { aa: 'S', score: 0.9433 },
-  { aa: 'T', score: 0.9666 }, { aa: 'V', score: 0.9664 },
-  { aa: 'W', score: 0.9997 }, { aa: 'Y', score: 0.9981 },
-];
+const t = useTranslations(lang);
 ---
 
 <Layout lang={lang}>
   <Hero lang={lang} />
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- PART 1: RECLASSIFICATION EVIDENCE -->
-  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
+  <!-- Navigation Cards -->
+  <section class="px-6 py-12 border-t border-white/5">
     <div class="max-w-4xl mx-auto">
-      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 1</span>
-      <h2 class="text-lg font-bold mt-1">Reclassification Evidence</h2>
-      <p class="text-xs text-neutral-400 mt-1">Computational evidence supporting VUS to Likely Pathogenic reclassification for NM_153700.2:c.4976A>C p.(Glu1659Ala)</p>
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-6">Explore the Research</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+
+        <!-- Reclassification -->
+        <a href="/reclassification" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-red-500/20 text-red-400 font-semibold uppercase tracking-wider">Part 1</span>
+          </div>
+          <h3 class="text-sm font-semibold text-white mb-2 group-hover:text-white/90">{t('page.part1.title')}</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed">{t('page.part1.desc')}</p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">AlphaMissense</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Conservation</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Structure3D</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">ACMG</span>
+          </div>
+        </a>
+
+        <!-- Hypotheses -->
+        <a href="/hypotheses" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold uppercase tracking-wider">Part 2</span>
+          </div>
+          <h3 class="text-sm font-semibold text-white mb-2 group-hover:text-white/90">{t('page.part2.title')}</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed">{t('page.part2.desc')}</p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Mini-STRC</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Prime Editing</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Delivery</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">+4 more</span>
+          </div>
+        </a>
+
+        <!-- Methodology -->
+        <a href="/methodology" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-400 font-semibold uppercase tracking-wider">Part 3</span>
+          </div>
+          <h3 class="text-sm font-semibold text-white mb-2 group-hover:text-white/90">{t('page.part3.title')}</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed">{t('page.part3.desc')}</p>
+          <div class="mt-4 flex flex-wrap gap-1">
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Methods</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Tools</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Reproducibility</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
-  <!-- ═══════════════════════════════════════════ -->
-
-  <AlphaMissense variants={variants} lang={lang} />
-  <Conservation lang={lang} />
-  <Structure3D lang={lang} />
-  <Pseudogene lang={lang} />
-  <ACMG lang={lang} />
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- PART 2: RESEARCH HYPOTHESES -->
-  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
-    <div class="max-w-4xl mx-auto">
-      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 2</span>
-      <h2 class="text-lg font-bold mt-1">Research Hypotheses</h2>
-      <p class="text-xs text-neutral-400 mt-1">Computational hypotheses for accelerating STRC gene therapy. These require experimental validation.</p>
-    </div>
-  </section>
-  <!-- ═══════════════════════════════════════════ -->
-
-  <MiniSTRC lang={lang} />
-  <AF3Results lang={lang} />
-  <PrimeEditing lang={lang} />
-  <Sonogenetics lang={lang} />
-  <ODEModel lang={lang} />
-  <Delivery lang={lang} />
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- PART 3: METHODOLOGY -->
-  <section class="px-6 pt-12 pb-4 border-t-2 border-white/10">
-    <div class="max-w-4xl mx-auto">
-      <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 3 — Methodology</span>
-      <h2 class="text-lg font-bold mt-1">How I Did This</h2>
-    </div>
-  </section>
-  <!-- ═══════════════════════════════════════════ -->
-
-  <MethodReclass lang={lang} />
-  <MethodResearch lang={lang} />
-  <ToolsGrid lang={lang} />
 </Layout>

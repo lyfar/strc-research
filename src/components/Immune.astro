@@ -1,0 +1,131 @@
+---
+// Immune Response hypothesis
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const seroData = [
+  { key: 'immune.sero.aav1', label: 'AAV1', pct: 67 },
+  { key: 'immune.sero.aav2', label: 'AAV2', pct: 72 },
+  { key: 'immune.sero.aav5', label: 'AAV5', pct: 40 },
+  { key: 'immune.sero.aav8', label: 'AAV8', pct: 38 },
+  { key: 'immune.sero.aav9', label: 'AAV9', pct: 47 },
+  { key: 'immune.sero.anc80', label: 'Anc80L65', pct: 20 },
+];
+---
+<section id="immune" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('immune.title')}</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-400 font-semibold">{t('immune.badge')}</span>
+    </div>
+
+    <!-- Story -->
+    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+      <p set:html={t('immune.story.p1')} />
+      <p set:html={t('immune.story.p2')} />
+      <p set:html={t('immune.story.p3')} />
+    </div>
+
+    <!-- NAb timeline -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">{t('immune.timeline.title')}</h3>
+      <p class="text-xs text-neutral-400 mb-4">{t('immune.timeline.desc')}</p>
+      <div class="space-y-2 text-xs text-neutral-400">
+        <div class="flex items-start gap-3">
+          <span class="text-red-400 font-mono shrink-0">Peak</span>
+          <span set:html={t('immune.timeline.peak')} />
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 font-mono shrink-0">Mem.</span>
+          <span set:html={t('immune.timeline.memory')} />
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-green-400 font-mono shrink-0">Win.</span>
+          <span set:html={t('immune.timeline.window')} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Seroprevalence bars -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">{t('immune.sero.title')}</h3>
+      <p class="text-xs text-neutral-400 mb-4">{t('immune.sero.desc')}</p>
+      <div class="space-y-3">
+        {seroData.map((item) => (
+          <div>
+            <div class="flex items-center justify-between mb-1 text-xs">
+              <span class="text-neutral-300 font-mono">{item.label}</span>
+              <span class="text-neutral-400">{item.pct}%</span>
+            </div>
+            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+              <div
+                class={`h-full rounded-full ${item.pct >= 60 ? 'bg-red-500/60' : item.pct >= 40 ? 'bg-amber-500/60' : 'bg-green-500/60'}`}
+                style={`width:${item.pct}%`}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-3 space-y-1 text-xs text-neutral-400">
+        <p set:html={t('immune.sero.pediatric')} />
+        <p class="text-[10px] text-neutral-500 italic">{t('immune.sero.source')}</p>
+      </div>
+    </div>
+
+    <!-- Vehicle comparison table -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('immune.compare.title')}</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-left text-neutral-500 text-[10px] uppercase tracking-wider border-b border-white/5">
+              <th class="pb-2 pr-4">{t('immune.compare.col1')}</th>
+              <th class="pb-2 pr-4 text-blue-400/70">{t('immune.compare.col2')}</th>
+              <th class="pb-2 pr-4 text-purple-400/70">{t('immune.compare.col3')}</th>
+              <th class="pb-2 text-emerald-400/70">{t('immune.compare.col4')}</th>
+            </tr>
+          </thead>
+          <tbody class="text-neutral-400">
+            {[1,2,3,4,5,6].map((i) => (
+              <tr class="border-t border-white/5">
+                <td class="py-2 pr-4 text-neutral-300">{t(`immune.compare.r${i}.prop`)}</td>
+                <td class="py-2 pr-4 text-blue-300/80">{t(`immune.compare.r${i}.aav`)}</td>
+                <td class="py-2 pr-4 text-purple-300/80">{t(`immune.compare.r${i}.lnp`)}</td>
+                <td class="py-2 text-emerald-300/80">{t(`immune.compare.r${i}.exo`)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STRC implications -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('immune.implication.title')}</h3>
+      <div class="space-y-3 text-sm text-neutral-300 leading-relaxed">
+        <p set:html={t('immune.implication.p1')} />
+        <p set:html={t('immune.implication.p2')} />
+        <p set:html={t('immune.implication.p3')} />
+      </div>
+    </div>
+
+    <!-- Code link -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-6">
+      <div class="flex items-center gap-3">
+        <span class="text-lg">🧮</span>
+        <div>
+          <div class="text-xs font-semibold text-neutral-300">{t('immune.code.title')}</div>
+          <a href="https://github.com/lyfar/strc-research/blob/master/immune_response_model.py"
+             target="_blank" rel="noopener"
+             class="text-xs text-blue-400 hover:underline">{t('immune.code.link')}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caveat -->
+    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+      <p class="text-xs text-neutral-300" set:html={t('immune.caveat')} />
+    </div>
+  </div>
+</section>

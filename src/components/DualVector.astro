@@ -1,0 +1,143 @@
+---
+// Day 3: Dual-Vector vs Single-Vector Stochastic Model
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+// Titer sweep data from model output
+const titerSweep = [
+  { titer: '10¹⁰', single: 0.3, dual: 0.0, gap: 0.3 },
+  { titer: '3×10¹⁰', single: 0.9, dual: 0.0, gap: 0.9 },
+  { titer: '10¹¹', single: 2.9, dual: 0.0, gap: 2.9 },
+  { titer: '3×10¹¹', single: 9.0, dual: 0.1, gap: 9.0 },
+  { titer: '10¹²', single: 25.8, dual: 0.5, gap: 25.3 },
+  { titer: '3.75×10¹²', single: 67.4, dual: 1.2, gap: 66.2 },
+  { titer: '10¹³', single: 94.9, dual: 27.7, gap: 67.3 },
+  { titer: '3×10¹³', single: 100.0, dual: 82.0, gap: 18.0 },
+];
+---
+<section id="dual-vector" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400" set:html={t('dualvec.title')} />
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold" set:html={t('dualvec.badge')} />
+    </div>
+
+    <!-- Story -->
+    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+      <p set:html={t('dualvec.story.p1')} />
+      <p set:html={t('dualvec.story.p2')} />
+      <p set:html={t('dualvec.story.p3')} />
+    </div>
+
+    <!-- The Math -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4" set:html={t('dualvec.math.title')} />
+      <div class="space-y-3 text-xs text-neutral-400 leading-relaxed">
+        <p set:html={t('dualvec.math.poisson')} />
+        <p set:html={t('dualvec.math.dual')} />
+        <p set:html={t('dualvec.math.recombo')} />
+      </div>
+    </div>
+
+    <!-- Calibration -->
+    <div class="bg-white/[0.02] border border-emerald-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-emerald-400/60 mb-3" set:html={t('dualvec.calib.title')} />
+      <p class="text-xs text-neutral-400 leading-relaxed mb-2" set:html={t('dualvec.calib.desc')} />
+      <p class="text-[10px] text-neutral-500 italic" set:html={t('dualvec.calib.source')} />
+    </div>
+
+    <!-- Results: side-by-side comparison -->
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4" set:html={t('dualvec.result.title')} />
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <!-- Single vector -->
+      <div class="border border-emerald-500/20 bg-emerald-950/10 rounded-lg p-5">
+        <div class="text-[10px] text-emerald-400 font-semibold uppercase tracking-wider mb-3" set:html={t('dualvec.result.h1')} />
+        <div class="space-y-3">
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.moi.label')} />
+            <div class="text-sm font-mono text-emerald-300" set:html={t('dualvec.result.moi1')} />
+          </div>
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.p.label')} />
+            <div class="text-2xl font-bold text-emerald-400" set:html={t('dualvec.result.p1')} />
+          </div>
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.n.label')} />
+            <div class="text-sm font-mono text-emerald-300" set:html={t('dualvec.result.n1')} />
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual vector -->
+      <div class="border border-red-500/20 bg-red-950/10 rounded-lg p-5">
+        <div class="text-[10px] text-red-400 font-semibold uppercase tracking-wider mb-3" set:html={t('dualvec.result.h2')} />
+        <div class="space-y-3">
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.moi.label')} />
+            <div class="text-sm font-mono text-red-300" set:html={t('dualvec.result.moi2')} />
+          </div>
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.p.label')} />
+            <div class="text-2xl font-bold text-red-400" set:html={t('dualvec.result.p2')} />
+          </div>
+          <div>
+            <div class="text-[10px] text-neutral-500" set:html={t('dualvec.result.n.label')} />
+            <div class="text-sm font-mono text-red-300" set:html={t('dualvec.result.n2')} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advantage ratio -->
+    <div class="bg-white/[0.02] border border-purple-500/20 rounded-lg p-5 mb-8 text-center">
+      <div class="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">Single-vector advantage</div>
+      <div class="text-4xl font-bold text-purple-400" set:html={t('dualvec.result.ratio')} />
+      <p class="text-xs text-neutral-400 mt-3 text-left leading-relaxed" set:html={t('dualvec.result.note')} />
+    </div>
+
+    <!-- Titer sweep table -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2" set:html={t('dualvec.sweep.title')} />
+      <p class="text-xs text-neutral-400 leading-relaxed mb-4" set:html={t('dualvec.sweep.desc')} />
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-neutral-500 text-left border-b border-white/5">
+              <th class="py-2 pr-4 font-medium" set:html={t('dualvec.sweep.col1')} />
+              <th class="py-2 pr-4 font-medium text-emerald-400/60" set:html={t('dualvec.sweep.col2')} />
+              <th class="py-2 pr-4 font-medium text-red-400/60" set:html={t('dualvec.sweep.col3')} />
+              <th class="py-2 font-medium text-purple-400/60" set:html={t('dualvec.sweep.col4')} />
+            </tr>
+          </thead>
+          <tbody>
+            {titerSweep.map((row) => (
+              <tr class={`border-b border-white/[0.03] ${row.titer === '3.75×10¹²' ? 'bg-white/[0.03]' : ''}`}>
+                <td class="py-1.5 pr-4 font-mono text-neutral-300">
+                  {row.titer}
+                  {row.titer === '3.75×10¹²' && <span class="ml-1 text-[9px] text-amber-400">← clinical</span>}
+                </td>
+                <td class="py-1.5 pr-4 text-emerald-400">{row.single}%</td>
+                <td class="py-1.5 pr-4 text-red-400">{row.dual}%</td>
+                <td class="py-1.5 text-purple-400 font-medium">{row.gap > 0 ? `+${row.gap}%` : '0%'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Code link -->
+    <div class="flex items-center gap-2 text-xs text-neutral-500 mb-4">
+      <span>📄</span>
+      <span set:html={t('dualvec.code.title')} />
+      <a href="https://github.com/lyfar/strc-research/blob/master/dual_vs_single_vector.py" target="_blank" class="text-blue-400 hover:underline" set:html={t('dualvec.code.link')} />
+    </div>
+
+    <!-- Caveat -->
+    <div class="bg-amber-950/10 border border-amber-500/10 rounded-lg p-4 text-xs text-neutral-400 leading-relaxed">
+      <span class="text-amber-400/60 font-semibold">⚠</span>
+      <span set:html={t('dualvec.caveat')} />
+    </div>
+  </div>
+</section>

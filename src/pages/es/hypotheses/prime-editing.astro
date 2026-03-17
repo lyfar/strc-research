@@ -1,0 +1,16 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PrimeEditing from '../../../components/PrimeEditing.astro';
+
+const lang = 'es';
+---
+
+<Layout lang={lang}>
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/es/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+  <PrimeEditing lang={lang} />
+  <div class="px-6 py-8 max-w-4xl mx-auto">
+    <a href="/es/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+</Layout>

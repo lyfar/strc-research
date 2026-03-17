@@ -1,0 +1,126 @@
+---
+// Electrostatics: Why E1659A Is Pathogenic
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<section id="electrostatics" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('elec.title')}</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-400 font-semibold">{t('elec.badge')}</span>
+    </div>
+
+    <!-- Story -->
+    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+      <p set:html={t('elec.story.p1')} />
+      <p set:html={t('elec.story.p2')} />
+      <p set:html={t('elec.story.p3')} />
+    </div>
+
+    <!-- Properties comparison table -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('elec.table.title')}</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-left text-neutral-500 text-[10px] uppercase tracking-wider border-b border-white/5">
+              <th class="pb-2 pr-4">{t('elec.table.property')}</th>
+              <th class="pb-2 pr-4 text-emerald-400/70">{t('elec.table.wildtype')}</th>
+              <th class="pb-2 pr-4 text-red-400/70">{t('elec.table.mutant')}</th>
+              <th class="pb-2">{t('elec.table.impact')}</th>
+            </tr>
+          </thead>
+          <tbody class="text-neutral-400">
+            <tr class="border-t border-white/5">
+              <td class="py-2 pr-4 text-neutral-300">{t('elec.table.r1.prop')}</td>
+              <td class="py-2 pr-4 text-emerald-400 font-mono" set:html={t('elec.table.r1.wt')} />
+              <td class="py-2 pr-4 text-red-400 font-mono">{t('elec.table.r1.mut')}</td>
+              <td class="py-2 text-neutral-400">{t('elec.table.r1.impact')}</td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="py-2 pr-4 text-neutral-300">{t('elec.table.r2.prop')}</td>
+              <td class="py-2 pr-4 text-emerald-400 font-mono">{t('elec.table.r2.wt')}</td>
+              <td class="py-2 pr-4 text-red-400 font-mono">{t('elec.table.r2.mut')}</td>
+              <td class="py-2 text-neutral-400">{t('elec.table.r2.impact')}</td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="py-2 pr-4 text-neutral-300">{t('elec.table.r3.prop')}</td>
+              <td class="py-2 pr-4 text-emerald-400 font-mono" set:html={t('elec.table.r3.wt')} />
+              <td class="py-2 pr-4 text-red-400 font-mono" set:html={t('elec.table.r3.mut')} />
+              <td class="py-2 text-neutral-400" set:html={t('elec.table.r3.impact')} />
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="py-2 pr-4 text-neutral-300">{t('elec.table.r4.prop')}</td>
+              <td class="py-2 pr-4 text-emerald-400 font-mono">{t('elec.table.r4.wt')}</td>
+              <td class="py-2 pr-4 text-red-400 font-mono">{t('elec.table.r4.mut')}</td>
+              <td class="py-2 text-neutral-400">{t('elec.table.r4.impact')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Energy budget table -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">{t('elec.energy.title')}</h3>
+      <p class="text-xs text-neutral-400 mb-4">{t('elec.energy.desc')}</p>
+      <div class="space-y-2 text-xs">
+        <div class="flex items-center justify-between py-1.5 border-b border-white/5">
+          <span class="text-neutral-400">{t('elec.energy.r1')}</span>
+          <span class="font-mono text-red-400">{t('elec.energy.v1')}</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-white/5">
+          <span class="text-neutral-400" set:html={t('elec.energy.r2')} />
+          <span class="font-mono text-red-400">{t('elec.energy.v2')}</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-white/5">
+          <span class="text-neutral-400">{t('elec.energy.r3')}</span>
+          <span class="font-mono text-red-400">{t('elec.energy.v3')}</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-white/5">
+          <span class="text-neutral-400">{t('elec.energy.r4')}</span>
+          <span class="font-mono text-red-400">{t('elec.energy.v4')}</span>
+        </div>
+        <div class="flex items-center justify-between py-2 bg-red-950/20 rounded px-2 -mx-2 mt-1">
+          <span class="font-semibold text-neutral-200">{t('elec.energy.total')}</span>
+          <span class="font-mono font-bold text-red-400 text-base">{t('elec.energy.total.v')}</span>
+        </div>
+      </div>
+      <p class="text-xs text-neutral-400 mt-3" set:html={t('elec.energy.kd')} />
+      <p class="text-[11px] text-neutral-500 mt-1 italic" set:html={t('elec.energy.note')} />
+    </div>
+
+    <!-- Structure-function paradox -->
+    <div class="bg-white/[0.02] border border-purple-500/20 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-purple-400/70 mb-4">{t('elec.paradox.title')}</h3>
+      <div class="space-y-3 text-sm text-neutral-300 leading-relaxed">
+        <p set:html={t('elec.paradox.p1')} />
+        <p set:html={t('elec.paradox.p2')} />
+        <p set:html={t('elec.paradox.p3')} />
+      </div>
+    </div>
+
+    <!-- Clinical correlation -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('elec.clinical.title')}</h3>
+      <div class="space-y-3 text-sm text-neutral-300 leading-relaxed">
+        <p set:html={t('elec.clinical.p1')} />
+        <p set:html={t('elec.clinical.p2')} />
+      </div>
+    </div>
+
+    <!-- Code link -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-6">
+      <div class="flex items-center gap-3">
+        <span class="text-lg">🧮</span>
+        <div>
+          <div class="text-xs font-semibold text-neutral-300">{t('elec.code.title')}</div>
+          <a href="https://github.com/lyfar/strc-research/blob/master/electrostatics_e1659a.py"
+             target="_blank" rel="noopener"
+             class="text-xs text-blue-400 hover:underline">{t('elec.code.link')}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

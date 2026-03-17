@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const hypotheses = [
+  {
+    href: '/hypotheses/mini-strc',
+    title: 'Mini-STRC Hypothesis',
+    badge: 'AAV packaging',
+    badgeColor: 'purple',
+    desc: 'A truncated STRC construct (3984 bp) that fits within the AAV packaging limit. Leverages AlphaFold pLDDT to identify dispensable disordered N-terminal domains.',
+  },
+  {
+    href: '/hypotheses/prime-editing',
+    title: 'Prime Editing',
+    badge: 'In situ correction',
+    badgeColor: 'green',
+    desc: 'Precision correction of c.4976A>C using PE3 or PE3b pegRNA strategy without double-strand breaks.',
+  },
+  {
+    href: '/hypotheses/sonogenetics',
+    title: 'Sonogenetics',
+    badge: 'Non-invasive',
+    badgeColor: 'blue',
+    desc: 'Mechanosensitive channel activation via focused ultrasound. ODE model of calcium signaling in OHC stereocilia.',
+  },
+  {
+    href: '/hypotheses/delivery',
+    title: 'Delivery',
+    badge: 'Sonoporation',
+    badgeColor: 'cyan',
+    desc: 'Non-invasive cochlear gene delivery via sonoporation + LNP. ODE model shows 78% transduction efficiency under optimized parameters.',
+  },
+  {
+    href: '/hypotheses/dual-vector',
+    title: 'Dual-Vector vs Single-Vector',
+    badge: 'Stochastic model',
+    badgeColor: 'purple',
+    desc: 'Poisson stochastic model quantifying the probability cost of dual-vector co-transduction vs single-vector strategy.',
+  },
+  {
+    href: '/hypotheses/electrostatics',
+    title: 'Electrostatic Analysis',
+    badge: 'Biophysics',
+    badgeColor: 'blue',
+    desc: 'Coulomb energetics explain why E1659A is pathogenic despite intact structure. 8.62 kcal/mol destabilization of adhesion interface.',
+  },
+  {
+    href: '/hypotheses/immune',
+    title: 'Immune Response',
+    badge: 'Pharmacokinetics',
+    badgeColor: 'amber',
+    desc: 'NAb kinetics, seroprevalence barriers, and delivery vehicle comparison for cochlear gene therapy re-dosing strategies.',
+  },
+];
+
+const badgeClasses: Record<string, string> = {
+  purple: 'bg-purple-500/20 text-purple-400',
+  green: 'bg-green-500/20 text-green-400',
+  blue: 'bg-blue-500/20 text-blue-400',
+  cyan: 'bg-cyan-500/20 text-cyan-400',
+  amber: 'bg-amber-500/20 text-amber-400',
+};
+---
+
+<Layout lang={lang}>
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Back to overview</a>
+  </div>
+
+  <section class="px-6 pt-6 pb-12 max-w-4xl mx-auto">
+    <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 2</span>
+    <h2 class="text-lg font-bold mt-1 mb-1">Research Hypotheses</h2>
+    <p class="text-xs text-neutral-400 mb-8">Computational hypotheses for accelerating STRC gene therapy. These require experimental validation.</p>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      {hypotheses.map((h) => (
+        <a href={h.href} class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class={`px-1.5 py-0.5 text-[10px] rounded font-semibold ${badgeClasses[h.badgeColor] || badgeClasses.blue}`}>{h.badge}</span>
+          </div>
+          <h3 class="text-sm font-semibold text-white mb-1 group-hover:text-white/90">{h.title}</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed">{h.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
