@@ -236,25 +236,47 @@ const t = useTranslations(lang);
       <p class="text-[10px] text-neutral-500 mt-3">{t('ode.sensitivity.note')}</p>
     </div>
 
-    <!-- AF3 structural validation -->
-    <div class="bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-5 mb-6">
-      <h3 class="text-sm font-semibold text-cyan-400 mb-3">{t('ode.af3val.title')}</h3>
-      <p class="text-xs text-neutral-300 leading-relaxed mb-3" set:html={t('ode.af3val.desc')} />
-      <ul class="space-y-1.5 text-xs text-neutral-400 mb-3">
-        <li class="flex items-start gap-2">
-          <span class="text-green-400 mt-0.5">●</span>
-          <span set:html={t('ode.af3val.pair1')} />
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-400 mt-0.5">●</span>
-          <span set:html={t('ode.af3val.pair2')} />
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-400 mt-0.5">●</span>
-          <span set:html={t('ode.af3val.pair3')} />
-        </li>
-      </ul>
-      <p class="text-[11px] text-neutral-500 leading-relaxed">{t('ode.af3val.note')}</p>
+    <!-- AF3 structural validation — 3D viewer -->
+    <div class="bg-cyan-500/5 border border-cyan-500/20 rounded-lg overflow-hidden mb-6">
+      <div id="v-ode-job8" style="width:100%;height:280px;position:relative;overflow:hidden;background:#080808;cursor:grab;">
+        <div style="color:#555;display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;">Loading 3D model...</div>
+      </div>
+      <div class="p-5">
+        <h3 class="text-sm font-semibold text-cyan-400 mb-2">{t('ode.af3val.title')}</h3>
+        <p class="text-xs text-neutral-300 leading-relaxed mb-3" set:html={t('ode.af3val.desc')} />
+        <div class="grid grid-cols-3 gap-3 mb-3">
+          <div class="bg-black/30 rounded p-2 text-center">
+            <div class="text-[10px] text-cyan-400 mb-0.5">NFAT</div>
+            <div class="w-3 h-3 rounded-full bg-[#22d3ee] mx-auto mb-1"></div>
+            <div class="text-[10px] text-neutral-500">chain A</div>
+          </div>
+          <div class="bg-black/30 rounded p-2 text-center">
+            <div class="text-[10px] text-blue-400 mb-0.5">Calcineurin A</div>
+            <div class="w-3 h-3 rounded-full bg-[#4a9eff] mx-auto mb-1"></div>
+            <div class="text-[10px] text-neutral-500">chain B</div>
+          </div>
+          <div class="bg-black/30 rounded p-2 text-center">
+            <div class="text-[10px] text-purple-400 mb-0.5">Calcineurin B</div>
+            <div class="w-3 h-3 rounded-full bg-[#a78bfa] mx-auto mb-1"></div>
+            <div class="text-[10px] text-neutral-500">chain C</div>
+          </div>
+        </div>
+        <ul class="space-y-1.5 text-xs text-neutral-400 mb-3">
+          <li class="flex items-start gap-2">
+            <span class="text-green-400 mt-0.5">●</span>
+            <span set:html={t('ode.af3val.pair1')} />
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-400 mt-0.5">●</span>
+            <span set:html={t('ode.af3val.pair2')} />
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-400 mt-0.5">●</span>
+            <span set:html={t('ode.af3val.pair3')} />
+          </li>
+        </ul>
+        <p class="text-[11px] text-neutral-500 leading-relaxed">{t('ode.af3val.note')}</p>
+      </div>
     </div>
 
     <!-- Source code -->
@@ -268,3 +290,32 @@ const t = useTranslations(lang);
     </div>
   </div>
 </section>
+
+<!-- 3Dmol.js viewer for ODE section Job 8 -->
+<script is:inline>
+(function() {
+  function initODEViewer() {
+    if (typeof $3Dmol === 'undefined') { setTimeout(initODEViewer, 300); return; }
+    var el = document.getElementById('v-ode-job8');
+    if (!el) return;
+    fetch('/models/job8-nfatc1-calcineurin.cif').then(function(r) { return r.text(); }).then(function(data) {
+      el.innerHTML = '';
+      var v = $3Dmol.createViewer(el, {backgroundColor: '#080808'});
+      v.addModel(data, 'cif');
+      v.setStyle({chain: 'A'}, {cartoon: {color: '#22d3ee'}});
+      v.setStyle({chain: 'B'}, {cartoon: {color: '#4a9eff'}});
+      v.setStyle({chain: 'C'}, {cartoon: {color: '#a78bfa'}});
+      v.zoomTo();
+      v.render();
+      v.spin('y', 0.3);
+    }).catch(function() {
+      el.innerHTML = '<div style="color:#555;text-align:center;padding:20px;font-size:10px;">Model loading failed</div>';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initODEViewer);
+  } else {
+    initODEViewer();
+  }
+})();
+</script>
