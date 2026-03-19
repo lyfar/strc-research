@@ -1,0 +1,52 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+// No props needed
+
+---
+<!-- ═══════════════════════════════════════════ -->
+<!-- INTERACTION SCREEN                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">{t('ministrc.interaction_screen.t1')}</h3>
+  
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
+    <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+      {t('ministrc.interaction_screen.t2')}
+      <Fragment set:html={t('ministrc.interaction_screen.t3')} />
+    </p>
+
+    <!-- Compressed results: positive control + TMEM145 comparison + negative summary -->
+    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+      <div class="p-3 bg-cyan-500/5 border border-cyan-500/10 rounded-lg">
+        <div class="text-cyan-400 text-[10px] uppercase tracking-wider mb-1 font-semibold">{t('ministrc.interaction_screen.t4')}</div>
+        <p class="text-xs text-neutral-300">{t('ministrc.interaction_screen.t5')}</p>
+        <p class="text-xs font-mono text-cyan-400 font-bold">{t('ministrc.interaction_screen.t6')}</p>
+        <p class="text-[10px] text-neutral-500 mt-1">{t('ministrc.interaction_screen.t7')}</p>
+      </div>
+      <div class="p-3 bg-amber-500/5 border border-amber-500/10 rounded-lg">
+        <div class="text-amber-400 text-[10px] uppercase tracking-wider mb-1 font-semibold">{t('ministrc.interaction_screen.t8')}</div>
+        <p class="text-xs text-neutral-300"><Fragment set:html={t('ministrc.interaction_screen.t9')} /></p>
+        <p class="text-xs text-neutral-300"><Fragment set:html={t('ministrc.interaction_screen.t10')} /></p>
+        <p class="text-[10px] text-neutral-500 mt-1">{t('ministrc.interaction_screen.t11')}</p>
+      </div>
+      <div class="p-3 bg-white/5 border border-white/5 rounded-lg">
+        <div class="text-neutral-500 text-[10px] uppercase tracking-wider mb-1 font-semibold">{t('ministrc.interaction_screen.t12')}</div>
+        <p class="text-[10px] text-neutral-500 leading-relaxed">
+          {t('ministrc.interaction_screen.t13')}
+        </p>
+        <p class="text-[10px] text-neutral-500 mt-1">{t('ministrc.interaction_screen.t14')}</p>
+      </div>
+    </div>
+
+    <div class="bg-amber-500/10 border border-amber-500/15 rounded-lg p-3">
+      <p class="text-xs text-neutral-300 leading-relaxed">
+        <strong class="text-amber-400">Interpretation:</strong> Stereocilin likely functions through 
+        <strong class="text-white">membrane-associated or glycosylation-mediated</strong> interactions that AF3 cannot model 
+        {t('ministrc.interaction_screen.t15')}
+        {t('ministrc.interaction_screen.t16')}
+      </p>
+    </div>
+  </div>
+</div>

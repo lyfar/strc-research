@@ -1,0 +1,45 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+// No props needed
+
+---
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 2: WHY DUAL-VECTOR FAILS IN HUMANS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-4">{t('ministrc.dual_vector_fails.t1')}</h3>
+  
+  <div class="bg-white/[0.02] border border-cyan-500/20 rounded-lg p-5">
+    <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+      {t('ministrc.dual_vector_fails.t2')}
+      {t('ministrc.dual_vector_fails.t3')}
+      <a href="/hypotheses/dual-vector" class="text-cyan-400 hover:text-cyan-300 no-underline">gamma-Poisson stochastic model</a>, 
+      {t('ministrc.dual_vector_fails.t4')}
+    </p>
+    
+    <div class="grid sm:grid-cols-3 gap-4 mb-4">
+      <div class="bg-green-500/5 border border-green-500/10 rounded-lg p-4 text-center">
+        <div class="text-[10px] text-green-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.dual_vector_fails.t5')}</div>
+        <div class="text-2xl font-bold text-green-400 mb-1">~60%</div>
+        <div class="text-[10px] text-neutral-500">{t('ministrc.dual_vector_fails.t6')}</div>
+      </div>
+      <div class="bg-amber-500/5 border border-amber-500/10 rounded-lg p-4 text-center">
+        <div class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.dual_vector_fails.t7')}</div>
+        <div class="text-2xl font-bold text-amber-400 mb-1">~27%</div>
+        <div class="text-[10px] text-neutral-500">{t('ministrc.dual_vector_fails.t8')}</div>
+      </div>
+      <div class="bg-emerald-500/5 border border-emerald-500/10 rounded-lg p-4 text-center">
+        <div class="text-[10px] text-emerald-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.dual_vector_fails.t9')}</div>
+        <div class="text-2xl font-bold text-emerald-400 mb-1">~78%</div>
+        <div class="text-[10px] text-neutral-500">{t('ministrc.dual_vector_fails.t10')}</div>
+      </div>
+    </div>
+    
+    <p class="text-xs text-neutral-300 leading-relaxed">
+      {t('ministrc.dual_vector_fails.t11')}
+      {t('ministrc.dual_vector_fails.t12')}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+// No props needed
+
+---
+<!-- ═══════════════════════════════════════════ -->
+<!-- CONCLUSIONS                                 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400 mb-4">Conclusions</h3>
+  
+  <div class="bg-green-500/5 border border-green-500/20 rounded-lg p-5 mb-4">
+    <div class="text-xs text-neutral-300 leading-relaxed space-y-3">
+      <p>
+        <strong class="text-green-400">Recommended construct: IgK-SP + residues 700-1775 (3,228 bp).</strong> 
+        {t('ministrc.conclusions.t1')}
+        {t('ministrc.conclusions.t2')}
+        {t('ministrc.conclusions.t3')}
+      </p>
+      <p>
+        <strong class="text-emerald-400">Backup: C-term only (1075-1775).</strong> 
+        {t('ministrc.conclusions.t4')}
+        {t('ministrc.conclusions.t5')}
+      </p>
+    </div>
+  </div>
+
+  <!-- Evidence summary — compact checklist -->
+  <div class="grid sm:grid-cols-2 gap-3 mb-4">
+    <div class="bg-green-500/5 border border-green-500/15 rounded-lg p-4">
+      <h4 class="text-[10px] text-green-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t6')}</h4>
+      <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
+        <li>{t('ministrc.conclusions.t7')}</li>
+        <li>{t('ministrc.conclusions.t8')}</li>
+        <li>{t('ministrc.conclusions.t9')}</li>
+        <li>{t('ministrc.conclusions.t10')}</li>
+        <li>{t('ministrc.conclusions.t11')}</li>
+        <li>{t('ministrc.conclusions.t12')}</li>
+        <li>{t('ministrc.conclusions.t13')}</li>
+        <li>{t('ministrc.conclusions.t14')}</li>
+        <li>{t('ministrc.conclusions.t15')}</li>
+        <li>{t('ministrc.conclusions.t16')}</li>
+      </ul>
+    </div>
+    <div class="bg-yellow-500/5 border border-yellow-500/15 rounded-lg p-4">
+      <h4 class="text-[10px] text-yellow-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t17')}</h4>
+      <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
+        <li>{t('ministrc.conclusions.t18')}</li>
+        <li>{t('ministrc.conclusions.t19')}</li>
+        <li>{t('ministrc.conclusions.t20')}</li>
+        <li>{t('ministrc.conclusions.t21')}</li>
+        <li>{t('ministrc.conclusions.t22')}</li>
+      </ul>
+      <div class="mt-3 pt-3 border-t border-white/5">
+        <h4 class="text-[10px] text-purple-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t23')}</h4>
+        <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
+          <li>{t('ministrc.conclusions.t24')}</li>
+          <li>{t('ministrc.conclusions.t25')}</li>
+          <li>{t('ministrc.conclusions.t26')}</li>
+          <li>{t('ministrc.conclusions.t27')}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white/5 rounded-lg p-4">
+    <p class="text-xs text-neutral-400 leading-relaxed">
+      <strong class="text-white">Bottom line:</strong> Every computational tool we have access to supports the mini-STRC hypothesis. 
+      {t('ministrc.conclusions.t28')}
+      {t('ministrc.conclusions.t29')}
+      {t('ministrc.conclusions.t30')}
+    </p>
+  </div>
+</div>

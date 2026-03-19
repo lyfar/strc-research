@@ -1,0 +1,62 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+// No props needed
+
+---
+<!-- ═══════════════════════════════════════════ -->
+<!-- RISK ASSESSMENT                             -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-red-400 mb-4">{t('ministrc.risk_assessment.t1')}</h3>
+  
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+    <div class="space-y-4">
+      <div class="grid sm:grid-cols-3 gap-4 text-xs">
+        
+        <div class="p-3 bg-red-500/5 border border-red-500/10 rounded-lg">
+          <div class="text-red-400 text-[10px] uppercase tracking-wider mb-2 font-semibold">{t('ministrc.risk_assessment.t2')}</div>
+          <p class="text-neutral-400 leading-relaxed mb-1"><Fragment set:html={t('ministrc.risk_assessment.t3')} /></p>
+          <p class="text-neutral-500 text-[10px] leading-relaxed">
+            {t('ministrc.risk_assessment.t4')}
+            {t('ministrc.risk_assessment.t5')}
+            {t('ministrc.risk_assessment.t6')}
+          </p>
+          <p class="text-[10px] text-neutral-500 mt-2 italic">{t('ministrc.risk_assessment.t7')}</p>
+        </div>
+
+        <div class="p-3 bg-amber-500/5 border border-amber-500/10 rounded-lg">
+          <div class="text-amber-400 text-[10px] uppercase tracking-wider mb-2 font-semibold">{t('ministrc.risk_assessment.t8')}</div>
+          <p class="text-neutral-400 leading-relaxed mb-1"><Fragment set:html={t('ministrc.risk_assessment.t9')} /></p>
+          <p class="text-neutral-500 text-[10px] leading-relaxed">
+            {t('ministrc.risk_assessment.t10')}
+            {t('ministrc.risk_assessment.t11')}
+          </p>
+          <p class="text-[10px] text-neutral-500 mt-2 italic">{t('ministrc.risk_assessment.t12')}</p>
+        </div>
+
+        <div class="p-3 bg-green-500/5 border border-green-500/10 rounded-lg">
+          <div class="text-green-400 text-[10px] uppercase tracking-wider mb-2 font-semibold">{t('ministrc.risk_assessment.t13')}</div>
+          <p class="text-neutral-400 leading-relaxed mb-1"><Fragment set:html={t('ministrc.risk_assessment.t14')} /></p>
+          <p class="text-neutral-500 text-[10px] leading-relaxed">
+            {t('ministrc.risk_assessment.t15')}
+            {t('ministrc.risk_assessment.t16')}
+            {t('ministrc.risk_assessment.t17')}
+          </p>
+          <p class="text-[10px] text-neutral-500 mt-2 italic">{t('ministrc.risk_assessment.t18')}</p>
+        </div>
+      </div>
+
+      <div class="bg-white/5 rounded-lg p-3">
+        <p class="text-xs text-neutral-400 leading-relaxed">
+          <strong class="text-white">What this analysis cannot determine:</strong> whether the truncated protein 
+          {t('ministrc.risk_assessment.t19')}
+          {t('ministrc.risk_assessment.t20')}
+          {t('ministrc.risk_assessment.t21')}
+          {t('ministrc.risk_assessment.t22')}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
