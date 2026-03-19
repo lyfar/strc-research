@@ -127,6 +127,48 @@ const t = useTranslations(lang);
           <p class="text-[10px] text-neutral-500 leading-relaxed">{t('af3results.joba.desc')}</p>
         </div>
       </div>
+      <!-- Job C: mini-STRC homodimer (Day 5) -->
+      <div class="bg-white/[0.02] border border-red-500/20 rounded-lg overflow-hidden group relative">
+        <span class="absolute top-2 right-2 px-1.5 py-0.5 text-[9px] rounded bg-red-500/20 text-red-400 font-semibold z-10">DAY 5</span>
+        <div id="v-jobc" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="text-[10px] text-red-500 mb-1">Self-Association Test</div>
+          <div class="text-xs font-semibold text-neutral-300 mb-1">{t('af3results.jobc.title')}</div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-mono text-red-400">{t('af3results.jobc.score')}</span>
+            <span class="text-[10px] text-neutral-500">No dimerization</span>
+          </div>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">{t('af3results.jobc.desc')}</p>
+        </div>
+      </div>
+      <!-- Job D: mini-STRC + Otoancorin (Day 5) -->
+      <div class="bg-white/[0.02] border border-neutral-500/20 rounded-lg overflow-hidden group relative">
+        <span class="absolute top-2 right-2 px-1.5 py-0.5 text-[9px] rounded bg-neutral-500/20 text-neutral-400 font-semibold z-10">DAY 5</span>
+        <div id="v-jobd" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="text-[10px] text-neutral-500 mb-1">TM Binding Test</div>
+          <div class="text-xs font-semibold text-neutral-300 mb-1">{t('af3results.jobd.title')}</div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-mono text-neutral-400">{t('af3results.jobd.score')}</span>
+            <span class="text-[10px] text-neutral-500">No direct contact</span>
+          </div>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">{t('af3results.jobd.desc')}</p>
+        </div>
+      </div>
+      <!-- Job E: mini-STRC + TMC1 (Day 5) -->
+      <div class="bg-white/[0.02] border border-neutral-500/20 rounded-lg overflow-hidden group relative">
+        <span class="absolute top-2 right-2 px-1.5 py-0.5 text-[9px] rounded bg-neutral-500/20 text-neutral-400 font-semibold z-10">DAY 5</span>
+        <div id="v-jobe" style="width:100%;height:180px;position:relative;overflow:hidden;background:#080808;"></div>
+        <div class="p-3">
+          <div class="text-[10px] text-neutral-500 mb-1">Channel Interaction</div>
+          <div class="text-xs font-semibold text-neutral-300 mb-1">{t('af3results.jobe.title')}</div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-mono text-neutral-400">{t('af3results.jobe.score')}</span>
+            <span class="text-[10px] text-neutral-500">No interaction</span>
+          </div>
+          <p class="text-[10px] text-neutral-500 leading-relaxed">{t('af3results.jobe.desc')}</p>
+        </div>
+      </div>
     </div>
 
     <!-- Summary -->
@@ -152,6 +194,9 @@ const t = useTranslations(lang);
       { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },
       { id: 'v-job8', url: '/models/job8-nfatc1-calcineurin.cif', multichain: true, threeChain: true },
       { id: 'v-joba', url: '/models/job-a-mini-strc-piezo2.cif', multichain: true },
+      { id: 'v-jobc', url: '/models/job-c-mini-strc-homodimer.cif', multichain: true },
+      { id: 'v-jobd', url: '/models/job-d-mini-strc-otoancorin.cif', multichain: true },
+      { id: 'v-jobe', url: '/models/job-e-mini-strc-tmc1.cif', multichain: true },
     ];
 
     jobs.forEach(function(job) {
