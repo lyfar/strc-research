@@ -116,13 +116,13 @@
   "ministrc.remove.r4": "<span class=\"font-mono text-neutral-500\">449-485</span> Disordered loop (pLDDT 47.5)",
   "ministrc.remove.r5": "<span class=\"font-mono text-neutral-500\">496-615</span> Large disordered region (pLDDT 31.1)",
   "ministrc.remove.footnote": "All regions have pLDDT &lt; 50 (no stable structure predicted)",
-  "ministrc.keep.title": "Keep (1328 aa, 3984 bp)",
+  "ministrc.keep.title": "Keep (1076 aa, 3228 bp)",
   "ministrc.keep.r1": "<span class=\"font-mono text-neutral-500\">1-22</span> Signal peptide (secretion)",
   "ministrc.keep.r2": "<span class=\"font-mono text-neutral-500\">616-1074</span> LRR domain (protein interactions)",
   "ministrc.keep.r3": "<span class=\"font-mono text-neutral-500\">1075-1775</span> C-terminal (tectorial membrane attachment)",
   "ministrc.keep.r4": "<span class=\"font-mono text-neutral-500\">1659</span> Misha's variant position (preserved)",
   "ministrc.keep.r5": "8 glycosylation sites in functional core preserved",
-  "ministrc.keep.footnote": "3984 bp fits in single AAV (&lt;4400 bp limit)",
+  "ministrc.keep.footnote": "3228 bp fits in single AAV (&lt;4400 bp limit) with 1172 bp headroom",
   "ministrc.iranfar.title": "Why mini-STRC matters: the dual-AAV problem (Iranfar 2026)",
   "ministrc.iranfar.desc": "Iranfar et al. (2026) achieved the first hearing rescue in DFNB16 mice using dual-AAV STRC delivery. But dual-AAV has a fundamental scaling problem:",
   "ministrc.iranfar.mouse_label": "Mouse cochlea",
@@ -146,8 +146,8 @@
   "ministrc.af3.linkdesc": "Full data: 5 models, PAE matrices, CIF structures (downloadable)",
   "ministrc.caveat": "<strong>Important:</strong> This is a computational hypothesis based on AlphaFold structural predictions. It requires experimental validation: does mini-stereocilin fold correctly? Does it localize to stereocilia tips? Does it form horizontal top connectors and tectorial membrane attachments? These questions need wet-lab work. But the structural data strongly suggests the N-terminal region is dispensable, and a single-AAV mini-STRC approach deserves investigation.",
   "af3results.title": "AlphaFold 3 Experiments",
-  "af3results.badge": "8 JOBS",
-  "af3results.desc": "Systematic computational testing of the mini-STRC hypothesis, variant impact, and protein-protein interactions. 3D models rendered live from AlphaFold 3 CIF files. Drag to rotate, scroll to zoom.",
+  "af3results.badge": "16 JOBS",
+  "af3results.desc": "Systematic computational testing of the mini-STRC hypothesis, variant impact, interaction partners, and alternative truncation constructs using AlphaFold 3.",
   "af3results.job1.title": "Full STRC + TMEM145",
   "af3results.job1.score": "ipTM 0.47",
   "af3results.job1.desc": "Low confidence interaction. Best cross-chain PAE: 8.6 A at N-terminal.",
@@ -167,8 +167,8 @@
   "af3results.job6.title": "N-terminal only (1-615)",
   "af3results.job6.score": "pTM 0.27",
   "af3results.job6.desc": "Confirmed disordered. 38% unstructured. Safe to remove.",
-  "af3results.summary.title": "Key findings (11 jobs completed)",
-  "af3results.summary.desc": "Mini-STRC folds excellently (<strong class=\"text-green-400\">pTM 0.81</strong>) vs full-length (<strong class=\"text-neutral-300\">pTM 0.63</strong>). The interaction screen (Jobs A, C, D, E) shows mini-STRC does <strong class=\"text-red-400\">not directly interact</strong> with Piezo2, TMC1, otoancorin, or itself as a homodimer (all ipTM 0.19-0.30). This suggests stereocilin works through <strong class=\"text-neutral-300\">extracellular matrix binding</strong> (tectorins, collagens) rather than specific protein-protein contacts, or that dimerization requires the N-terminal region or post-translational modifications not modeled by AF3. The NFAT-Calcineurin cascade is validated (<strong class=\"text-cyan-400\">ipTM 0.73</strong>), supporting the sonogenetic hypothesis. <strong>Next: full-length STRC homodimer to determine if the removed N-terminal contains the dimerization interface.</strong>",
+  "af3results.summary.title": "Key findings (16 jobs completed)",
+  "af3results.summary.desc": "Three viable single-AAV constructs identified: mini-STRC (<strong class=\"text-green-400\">pTM 0.81</strong>), shorter mini-STRC (<strong class=\"text-green-400\">pTM 0.86</strong>), and C-term only (<strong class=\"text-green-400\">pTM 0.87</strong>, best). Full STRC homodimer control (ipTM 0.24) validates all truncations: dimerization failure is not truncation-specific. No direct pairwise binding detected with any partner (TMEM145, Piezo2, Otoancorin, Tectorin ZP, TMC1), suggesting membrane context is required.",
   "primeediting.title": "Could We Fix Just the One Letter?",
   "primeediting.badge": "COMPUTATIONAL",
   "primeediting.desc": "Instead of replacing the entire STRC gene (5325 bp), what if we could correct just the single mutated base? There are three types of gene editing tools. I checked each one against Michael's specific variant.",
@@ -252,7 +252,7 @@
   "methodresearch.step8.body2": "<strong>Base editing (CBE/ABE): cannot fix this variant</strong> (C>A transversion is outside their range). <strong>Prime editing: feasible.</strong> Claude found a suitable PAM site just 4 base pairs from the mutation. A prime editor could theoretically correct the single base change, though this approach has not yet been tested in inner ear cells.",
   "methodresearch.step9.title": "I asked: can we make the gene shorter to fit in one virus?",
   "methodresearch.step9.body1": "Current gene therapy for STRC requires two viruses (dual-AAV) because the gene is too long for one. Two viruses means lower efficiency: both must enter the same cell. Claude analyzed the AlphaFold structure and identified that the first ~600 amino acids have very low structural confidence (pLDDT below 50), suggesting they may not form a stable structure and might be dispensable.",
-  "methodresearch.step9.body2": "<strong>If those regions are removed, the remaining \"mini-stereocilin\" (1328 aa, 3984 bp) fits in a single AAV vector.</strong> This is a computational hypothesis. It needs lab testing. But the precedent exists: micro-dystrophin (removing non-essential parts of dystrophin) is now in Phase 3 clinical trials for muscular dystrophy.",
+  "methodresearch.step9.body2": "<strong>If those regions are removed, the remaining \"mini-stereocilin\" (1076 aa, 3228 bp) fits in a single AAV vector.</strong> This is a computational hypothesis. It needs lab testing. But the precedent exists: micro-dystrophin (removing non-essential parts of dystrophin) is now in Phase 3 clinical trials for muscular dystrophy.",
   "methodresearch.step10.title": "I asked: do these proteins actually touch?",
   "methodresearch.step10.body1": "To test the mini-STRC idea further, We submitted a job to <a href=\"https://alphafoldserver.com\" target=\"_blank\" rel=\"noopener\">AlphaFold 3 Server</a> to predict the 3D structure of stereocilin bound to its interaction partner TMEM145 (a protein recently discovered to be essential for stereocilin's function, Nature Communications 2025).",
   "methodresearch.step10.body2": "<strong>First results received (Job 1).</strong> ipTM = 0.47, pTM = 0.48. Low confidence in direct binding. PAE matrix analysis shows best cross-chain contacts at N-terminal residues 174-185 (but still poor at 8.6 A).",
@@ -289,20 +289,18 @@
   "methodresearch.step11.title": "I wrote to the researchers",
   "methodresearch.step11.body1": "I emailed the leading researchers working on STRC gene therapy at institutions in the US, France, and China. I shared the reclassification evidence, the mini-STRC hypothesis, and a link to this website.",
   "methodresearch.step11.body2": "I received encouraging responses confirming the computational approach is sound and that the analysis has been shared with research teams working on STRC gene therapy.",
-
   "methodresearch.day3_label": "Day 3: New hypothesis",
   "methodresearch.day3_title": "What if the therapy could dose itself?",
   "methodresearch.day3_desc": "On day three, we asked a question that changed the direction of the research: instead of a constitutive promoter that's always on, what if we used a promoter that responds to sound? Hair cells already convert sound to calcium signals. That's a built-in sensor we can hijack.",
   "methodresearch.step12.title": "I asked: can sound itself activate the gene?",
   "methodresearch.step12.body1": "Hair cells have mechanotransduction (MET) channels that open when sound deflects their stereocilia. Ca²⁺ flows in, activating the calcineurin-NFAT signaling pathway. This pathway is well-characterized in the sonogenetics literature (Wu et al., Nature Communications 2023), where researchers used it to achieve 62-fold gene induction with zero background leakage.",
-  "methodresearch.step12.body2": "We designed a construct: <strong>6xNFAT promoter + mini-STRC</strong>. The 6xNFAT promoter is a synthetic element with 6 copies of the NFAT response element, creating a cooperative digital switch that requires sustained calcium signaling to activate. Combined with mini-STRC (from Day 2), the total construct is 4,401 bp, fitting within the 4,700 bp AAV packaging limit with 299 bp to spare.",
+  "methodresearch.step12.body2": "We designed a construct: <strong>6xNFAT promoter + mini-STRC</strong>. The 6xNFAT promoter is a synthetic element with 6 copies of the NFAT response element, creating a cooperative digital switch that requires sustained calcium signaling to activate. Combined with mini-STRC (from Day 2), the total construct is 3,893 bp, fitting within the 4,700 bp AAV packaging limit with 807 bp to spare.",
   "methodresearch.step13.title": "I built a mathematical model to test it",
   "methodresearch.step13.body1": "To go beyond speculation, we built an ODE (ordinary differential equation) model of the complete signaling cascade: sound level → MET channel open probability → Ca²⁺ influx → calcineurin activation → NFAT nuclear translocation → transcription → translation → protein accumulation. Every parameter comes from peer-reviewed literature.",
   "methodresearch.step13.body2": "<strong>Result: with a realistic hearing aid schedule (16h on, 8h off), the model predicts therapeutic stereocilin levels (>15,000 molecules per OHC) in just 13 hours.</strong> In silence, the system produces only 6.8% of the target (promoter effectively OFF). The full Python code is available on GitHub for anyone to reproduce or extend.",
   "methodresearch.step14.title": "I submitted two more AF3 jobs",
   "methodresearch.step14.body1": "To test the mechanosensitive hypothesis structurally, we submitted two new AlphaFold 3 jobs. Job 7: mini-STRC + Piezo2 CED (does stereocilin physically contact the mechanosensitive channel?). Job 8: NFATC1 + Calcineurin A/B (positive control, validates the cascade model).",
   "methodresearch.step14.body2": "Results pending. If Job 7 shows high ipTM (>0.6), it would mean stereocilin directly interacts with Piezo2, implying a feedback loop: broken STRC affects mechanosensation itself, not just structural connections.",
-
   "methodresearch.step15.title": "I asked: can we deliver without surgery?",
   "methodresearch.step15.body1": "Gene therapy currently requires surgical injection into the cochlea. What if ultrasound could push the treatment through the round window membrane non-invasively? I found papers showing that microbubbles + ultrasound create temporary pores in the RWM (Shih et al. 2019: 5.2x permeability increase, full recovery in 24 hours, zero hearing damage).",
   "methodresearch.step15.body2": "I built an ODE model of the full delivery chain: ultrasound → pore formation → nanoparticle diffusion → cell uptake → protein production. <strong>Honest result: baseline parameters fall short (0.39% per session, 258 sessions needed). Optimized LNPs with ionizable lipids: 78% per session, 2 sessions total.</strong> The bottleneck is endosomal escape, not the ultrasound. The most realistic path: one-time AAV surgery, plus non-invasive LNP top-ups years later if expression fades.",
@@ -328,14 +326,11 @@
   "toolsgrid.pubmed.name": "PubMed / PMC",
   "toolsgrid.pubmed.desc": "Research papers (open access)",
   "toolsgrid.footnote": "OpenClaw is open source (free). Claude Opus 4.6 is available via Anthropic API (pay per use). All scientific databases are free and open access. AlphaFold 3 Server requires a Google account.",
-
   "sono.title": "Sonogenetic STRC Hypothesis",
   "sono.badge_comp": "COMPUTATIONAL",
-
-  "sono.story.p1": "Treating hearing loss with sound. There's a phrase in Russian: <em>klin klinom</em>, driving a wedge out with a wedge. The problem itself becomes the cure. I'm not a scientist. But I believe there's a certain elegance in solutions that use the nature of the problem to fix it. That belief led me to this hypothesis. When I shared our computational work with one of the world's leading STRC researchers, he called it the right direction and asked me to share the analysis with his team.",
-  "sono.story.p2": "The idea: every gene therapy vector needs a promoter, a switch that controls when the cell makes the protein. Standard approach is always-on. Our hypothesis: put the gene behind a switch that responds to sound. Hair cells already have this machinery. Sound bends stereocilia, calcium rushes in, a chain reaction follows. We hijack it. <strong>Sound in = gene on. Silence = gene off.</strong> The child wears the hearing aid he already has. No special frequencies. Just everyday sounds, amplified to 60-80 dB.",
-  "sono.story.p3": "Does the protein vanish at night? No. Stereocilin has a half-life of about 30 days (hair cells don't divide). It takes roughly 13 hours of hearing aid use to reach 50% of normal levels. After 72 hours, more than enough. Sleep doesn't reset anything. Even a week off barely makes a dent.",
-
+  "sono.story.p1": "Treating hearing loss with sound. In Russian we say <em>klin klinom</em>: driving a wedge out with a wedge. The problem itself becomes the cure.",
+  "sono.story.p2": "Every gene therapy vector needs a promoter: a switch that tells the cell when to make the protein. Standard approach is always-on. Ours: <strong>put the gene behind a switch that responds to sound.</strong> Hair cells already have this machinery. Sound bends stereocilia, calcium floods in, a signaling cascade fires. We hijack it. Sound in = gene on. Silence = gene off. The child wears the hearing aid he already has. No special frequencies. Just everyday sounds.",
+  "sono.story.p3": "Does the protein vanish at night? No. Stereocilin has a half-life of ~30 days. It takes ~13 hours of hearing aid use to hit 50% of normal levels. Sleep doesn't reset anything.",
   "sono.cascade.title": "The cascade",
   "sono.cascade.c1.title": "Sound",
   "sono.cascade.c1.desc": "Hearing aid amplifies to 60-80 dB. Stereocilia deflect, MET channels open.",
@@ -345,18 +340,15 @@
   "sono.cascade.c3.desc": "Calcineurin → NFAT → nucleus. 6xNFAT promoter fires.",
   "sono.cascade.c4.title": "Protein",
   "sono.cascade.c4.desc": "mini-STRC expressed. Accumulates on stereocilia tips. t½ ~30 days.",
-
   "sono.construct.title": "Single-AAV construct",
   "sono.construct.total": "Total construct",
   "sono.construct.limit": "AAV packaging limit",
   "sono.construct.margin": "Safety margin",
-
   "sono.literature.title": "Supporting literature",
   "sono.literature.ref1": "Wu et al. (2023). <em>Sonogenetic control of multiplexed genome regulation and base editing.</em> Nature Communications 14:6811. <strong>62-fold induction, zero leakage over 3 weeks.</strong> <a href='https://doi.org/10.1038/s41467-023-42249-8' target='_blank' class='text-blue-400'>doi</a>",
   "sono.literature.ref2": "Tomida et al. (2003). <em>NFAT functions as a working memory of Ca²⁺ signals in decoding Ca²⁺ dynamics.</em> EMBO J 22:3825-3832. NFAT nuclear translocation kinetics. <a href='https://doi.org/10.1093/emboj/cdg381' target='_blank' class='text-blue-400'>doi</a>",
   "sono.literature.ref3": "Fettiplace & Kim (2014). <em>The physiology of mechanoelectrical transduction channels in hearing.</em> Physiological Reviews 94:951-986. MET channel properties. <a href='https://doi.org/10.1152/physrev.00038.2013' target='_blank' class='text-blue-400'>doi</a>",
   "sono.literature.ref4": "Iranfar et al. (2026). <em>Dual-vector gene therapy restores cochlear amplification and auditory sensitivity in a mouse model of DFNB16 hearing loss.</em> Science Advances. <strong>First STRC gene therapy in mice.</strong> <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC12784207/' target='_blank' class='text-blue-400'>PMC</a>",
-
   "af3results.job8.title": "NFATC1 + Calcineurin A + B",
   "af3results.job8.score": "ipTM 0.73 · pTM 0.59",
   "af3results.job8.desc": "Positive control: validates the calcineurin-NFAT cascade. CnA-CnB ipTM 0.91 (known complex). NFAT-CnA ipTM 0.72 (substrate recognition). NFAT disorder-to-order transition confirmed.",
@@ -372,56 +364,44 @@
   "af3results.jobe.title": "Mini-STRC + TMC1",
   "af3results.jobe.score": "ipTM 0.20 · pTM 0.51",
   "af3results.jobe.desc": "No interaction with TMC1 mechanotransduction channel (PAE 19-21 Å). Expected: TMC1 operates at tip links (between rows) while stereocilin is at top connectors (within/across rows) and attachment crowns. Different structural compartments.",
-
   "sono.caveat": "<strong>Important:</strong> This is a computational hypothesis. No one has combined a mechanosensitive NFAT promoter with inner ear gene therapy. The signaling cascade (MET → Ca²⁺ → calcineurin → NFAT) is well-established in hair cells, and sonogenetic promoters are proven in other cell types. But whether this specific construct would work in vivo requires experimental validation. The ODE model below provides quantitative support.",
   "sono.caveat_short": "This is a computational hypothesis. Each individual component is proven (NFAT promoters, MET channel biophysics, mini-STRC packaging). Nobody has combined them for inner ear gene therapy yet.",
-
   "ode.title": "ODE Model: Calcium-to-Protein Dynamics",
   "ode.badge": "SIMULATED",
-  "ode.desc": "We built a 5-variable ordinary differential equation (ODE) model to test whether the signaling cascade from sound to stereocilin production is quantitatively plausible. All parameters from peer-reviewed literature. The model simulates 72 hours across four scenarios.",
-
+  "ode.desc": "Words are cheap. We built a mathematical model to check whether this cascade actually produces enough protein. Five differential equations, every parameter from published literature, four scenarios tested. The question: does a hearing-aid-wearing child produce therapeutic levels of stereocilin through sound alone?",
   "ode.scenario1.title": "Constant 70 dB",
   "ode.scenario2.title": "Hearing Aid Cycle (16h/8h)",
   "ode.scenario2.badge": "REALISTIC",
   "ode.scenario3.title": "Therapy Sessions (2h/day 85 dB)",
   "ode.scenario4.title": "Silence (control)",
   "ode.scenario4.badge": "CONTROL",
-
   "ode.label.protein": "Stereocilin molecules",
   "ode.label.target": "Target",
   "ode.label.t10": "Time to 10% function",
   "ode.label.t50": "Time to 50% function",
-
   "ode.finding.title": "Key finding: 29x dynamic range, therapeutic levels in 13 hours",
   "ode.finding.desc": "With a realistic hearing aid schedule (16 hours ON at 70 dB, 8 hours sleep), the model predicts <strong>29,571 stereocilin molecules per OHC after 72 hours</strong> (target: 15,000). In silence, only 1,023 molecules accumulate (6.8%). This gives a <strong>29-fold dynamic range</strong> between sound-activated and silent states. The 50% therapeutic threshold is reached in just <strong>13 hours</strong> of hearing aid use. The system self-regulates: protein saturates at the available binding sites on stereocilia, preventing overexpression.",
-
   "ode.params.title": "Model parameters (from literature)",
   "ode.params.col_param": "Parameter",
   "ode.params.col_value": "Value",
   "ode.params.col_source": "Source",
-
   "ode.sensitivity.title": "Sensitivity analysis",
-  "ode.sensitivity.desc": "Each parameter varied ±50% from baseline. Sensitivity index = (high - low) / baseline. Higher = model more sensitive to this parameter.",
-  "ode.sensitivity.note": "Transcription rate and translation rate have the highest sensitivity (1.50). This means accurate promoter characterization in hair cells is the most important experimental measurement needed to validate the model.",
-
+  "ode.sensitivity.desc": "How fragile is the result? We varied each parameter by ±50% to find what matters most. If the model breaks when one number changes, that parameter needs the most careful experimental measurement.",
+  "ode.sensitivity.note": "Transcription and translation rates dominate (sensitivity 1.50). This means the most important experiment is characterizing the 6xNFAT promoter strength specifically in hair cells. Channel count and calcineurin affinity matter less: the system is robust to biological variation in these parameters.",
   "ode.code.title": "Reproducible: full source code",
   "ode.code.desc": "The complete ODE model is available as a Python script. Dependencies: numpy, scipy. Run it yourself to reproduce these results or modify parameters.",
   "ode.code.link": "View on GitHub: ode_model.py",
-
   "ode.af3val.title": "Structural validation: AF3 confirms the cascade",
   "ode.af3val.desc": "AlphaFold 3 Job 8 (NFATC1 + Calcineurin A + Calcineurin B) validates the signaling cascade used in the ODE model. The trimeric complex predicted with <strong>ipTM = 0.73</strong> and <strong>ranking score 0.95</strong>:",
   "ode.af3val.pair1": "CnA-CnB heterodimer: ipTM <strong>0.91</strong> (known complex, method validation)",
   "ode.af3val.pair2": "NFAT-CnA (enzyme-substrate): ipTM <strong>0.72</strong> (strong interaction, this is the dephosphorylation step)",
   "ode.af3val.pair3": "NFAT-CnB (co-recognition): ipTM <strong>0.80</strong> (CnB contributes to NFAT substrate recognition)",
   "ode.af3val.note": "NFAT regulatory domain is intrinsically disordered (chain_ptm 0.13), but becomes ordered upon binding calcineurin (chain_iptm 0.76). This disorder-to-order transition is the molecular switch that makes the 6xNFAT promoter work: only when Ca²⁺ activates calcineurin does NFAT adopt the conformation needed for nuclear import.",
-
   "dlv.title": "Delivery: Sound Pushes the Cure In",
   "dlv.badge": "COMPUTATIONAL",
-
   "dlv.story.p1": "There's a second layer to the <em>klin klinom</em> idea. The first layer: sound activates the gene. The second: sound delivers the gene. Ultrasound, specifically. Tiny bubbles oscillating at megahertz frequencies, opening transient pores in the membrane that separates the middle ear from the inner ear. No scalpel. No general anesthesia. A gel in the ear canal, an ultrasound probe, ten minutes in a chair. The child goes home after.",
   "dlv.story.p2": "Current gene therapy delivery requires surgery. A surgeon punctures the round window membrane under general anesthesia, injects the viral vector directly into the cochlear fluid. One shot. If it doesn't work, you can't repeat it: the immune system remembers the virus. For a 4-year-old with moderate hearing loss, that's a big bet on a single injection.",
   "dlv.story.p3": "I built an ODE model to test whether non-invasive delivery is quantitatively possible. The honest answer: with standard parameters, it falls short. With optimized nanoparticles, it works. And the most realistic path combines both: surgery once, non-invasive top-ups later. Here are all three scenarios, including the one that failed.",
-
   "dlv.problem.title": "The delivery problem",
   "dlv.problem.current": "Current: surgical injection",
   "dlv.problem.c1": "<strong>General anesthesia</strong> required (risk for a 4-year-old)",
@@ -433,7 +413,6 @@
   "dlv.problem.p2": "<strong>Repeatable.</strong> LNPs don't trigger immune memory. Can dose again next month.",
   "dlv.problem.p3": "<strong>No payload limit.</strong> mRNA of any length. No need for mini-STRC (though it still helps).",
   "dlv.problem.p4": "<strong>RWM recovers fully</strong> within 24 hours. No permanent damage. (Shih et al. 2019: zero ABR shift)",
-
   "dlv.how.title": "How sonoporation works",
   "dlv.how.s1.title": "Apply gel with microbubbles",
   "dlv.how.s1.desc": "A gel containing lipid microbubbles (SonoVue, 2-5 µm diameter) and LNP-packaged mRNA is placed in the ear canal, contacting the round window membrane (RWM). The RWM is the thin membrane (70 µm in humans) separating the middle ear from the cochlear fluid.",
@@ -443,29 +422,24 @@
   "dlv.how.s3.desc": "LNPs (80 nm diameter) are small enough to pass through the 110 nm pores. Hindered diffusion (Renkin equation) reduces transport ~7.5x compared to free diffusion, but the pore density and exposure time compensate. Nanoparticles enter the perilymph of scala tympani.",
   "dlv.how.s4.title": "Hair cells take up LNPs",
   "dlv.how.s4.desc": "OHCs endocytose LNPs from the perilymph. Inside the cell, ionizable lipids (SM-102 class) destabilize the endosome, releasing mRNA into the cytoplasm. Translation begins within hours. No viral capsid, no immune memory, no integration risk.",
-
   "dlv.model.title": "Three scenarios: what the math says",
   "dlv.model.desc": "We modeled the complete delivery chain: ultrasound parameters → pore formation → LNP diffusion through RWM → perilymph distribution → OHC uptake → endosomal escape → mRNA translation → protein production. Every parameter from peer-reviewed measurements. We ran three scenarios. One failed.",
   "dlv.model.col.conc": "LNP concentration",
   "dlv.model.col.escape": "Endosomal escape",
   "dlv.model.col.exposure": "Exposure",
   "dlv.model.col.result": "% therapeutic/dose",
-
   "dlv.model.baseline.label": "Scenario 1: Standard LNP parameters",
   "dlv.model.baseline.badge": "INSUFFICIENT",
   "dlv.model.baseline.note": "<strong>258 sessions needed.</strong> Standard LNPs (2% endosomal escape) deliver only 58 proteins per OHC per session. Target: 15,000. The bottleneck isn't the ultrasound or the pores. It's the endosomal escape: 98% of LNPs that enter the cell get destroyed in lysosomes before releasing their cargo. This is the known weakness of first-generation LNPs.",
-
   "dlv.model.optimized.label": "Scenario 2: Optimized LNP (ionizable lipids)",
   "dlv.model.optimized.badge": "2 SESSIONS",
   "dlv.model.optimized.note": "<strong>2 sessions for full therapeutic dose.</strong> Three changes: 10x higher LNP concentration (achievable by ultracentrifugation), ionizable lipids like SM-102 (used in Moderna's COVID vaccine, 10-20% escape rate), and optimized mRNA loading (6 copies per LNP). Result: 11,710 proteins per OHC per session. 78% of target in one visit. These aren't speculative numbers. SM-102 is FDA-approved. Concentrated LNPs are routine in pharma.",
-
   "dlv.model.hybrid.label": "Scenario 3: Hybrid (AAV + LNP top-up)",
   "dlv.model.hybrid.badge": "MOST REALISTIC",
   "dlv.model.hybrid.y0": "<strong>Year 0:</strong> Standard AAV surgery (Anc80L65, one-time, 80% OHC transduction). This is the Iranfar 2026 approach. It works. Do it.",
   "dlv.model.hybrid.y3": "<strong>Year 3+:</strong> AAV expression may decline (episomal DNA loss in dividing support cells, though OHCs don't divide). Monitor hearing thresholds.",
   "dlv.model.hybrid.y5": "<strong>Year 5+:</strong> If expression drops to 60%, the 40% deficit can be covered by a single optimized LNP sonoporation session. Non-invasive. Repeatable. No second surgery.",
   "dlv.model.hybrid.note": "This combines the strength of both: AAV's long-lasting expression for the initial heavy lifting, and LNP's repeatability for long-term maintenance. The child gets surgery once (when gene therapy is approved), and non-invasive top-ups later if needed. No re-operation, no immune barrier.",
-
   "dlv.sensitivity.title": "What matters most (sensitivity analysis)",
   "dlv.sensitivity.desc": "We varied each parameter independently across its realistic range, holding others at baseline. This shows which variables actually move the needle.",
   "dlv.sensitivity.col.param": "Parameter",
@@ -481,7 +455,6 @@
   "dlv.sensitivity.r4.param": "Pore radius",
   "dlv.sensitivity.r4.verdict": "Low (LNP fits)",
   "dlv.sensitivity.note": "The biggest lever is endosomal escape, not ultrasound parameters. This means the path to clinical viability runs through LNP chemistry (better ionizable lipids, pH-sensitive formulations), not through more powerful ultrasound. Good news: LNP optimization is one of the most active areas in nanomedicine right now.",
-
   "dlv.nonviral.title": "Beyond AAV: Repeatable non-viral delivery (Leclere 2024)",
   "dlv.nonviral.desc": "AAV is the gold standard for cochlear gene therapy, but it's a <strong class='text-red-400'>one-shot therapy</strong>. Anti-AAV neutralizing antibodies form after the first injection, blocking subsequent doses. For a large gene like STRC, where co-transduction efficiency may be low, the inability to re-dose is a critical limitation. Non-viral vectors solve this.",
   "dlv.nonviral.col.vehicle": "Vehicle",
@@ -491,34 +464,27 @@
   "dlv.nonviral.col.status": "Status",
   "dlv.nonviral.strc_title": "Why this matters for STRC specifically",
   "dlv.nonviral.strc_note": "STRC (5325 bp cDNA) requires dual-AAV or mini-STRC. Dual-AAV co-transduction drops to ~6% in the human cochlea (stochastic model). With LNP: (1) carry the full STRC mRNA in a single particle, (2) if the first dose underperforms, repeat 2-4 weeks later, (3) zero seroprevalence barrier in pediatric patients. The trade-off: mRNA is transient (days to weeks of expression vs permanent AAV DNA integration), so repeated dosing becomes a feature, not a limitation.",
-
   "dlv.lit.title": "Sources",
   "dlv.lit.ref1": "Zhou et al. (2009). <em>The size of sonoporation pores on the cell membrane.</em> Ultrasound Med Biol 35(10):1756-1760. Pore radius 110 ± 40 nm by voltage clamp. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC2752487/' target='_blank' class='text-blue-400'>PMC2752487</a>",
   "dlv.lit.ref2": "Shih et al. (2019). <em>Ultrasound-microbubble cavitation facilitates AAV-mediated cochlear gene transfection across the round-window membrane.</em> Biomedicines. 5.2x permeability, zero ABR shift. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC7823126/' target='_blank' class='text-blue-400'>PMC7823126</a>",
   "dlv.lit.ref3": "Landegger et al. (2017). <em>A synthetic AAV vector enables safe and efficient gene transfer to the mammalian inner ear.</em> Nat Biotechnol 35(3):280-284. Anc80L65: 60-100% OHC transduction. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC5340646/' target='_blank' class='text-blue-400'>PMC5340646</a>",
   "dlv.lit.ref4": "Iversen et al. (2022). <em>Choice of vector and surgical approach enables efficient cochlear gene transfer in nonhuman primate.</em> Nat Commun 13:1448. Anc80L65 up to 90% IHC in NHPs. <a href='https://www.nature.com/articles/s41467-022-28969-3' target='_blank' class='text-blue-400'>doi</a>",
   "dlv.lit.ref5": "Leclere et al. (2024). <em>Gene therapy for hearing loss: Advances and prospects of non-viral vectors.</em> Hear Res. Comprehensive review of LNP, exosome, and polymer nanoparticle delivery to the inner ear. Repeatable dosing, zero seroprevalence barrier.",
-
   "dlv.code.title": "Full model: Python, all parameters, reproducible",
   "dlv.code.link": "View on GitHub: sonoporation_model.py",
-
   "dlv.caveat": "This is a computational model. Sonoporation through the round window membrane has been demonstrated in guinea pigs (Shih 2019) but not yet combined with LNP-mRNA delivery to human inner ear. The optimized LNP parameters (SM-102, high concentration) are individually validated in other contexts (COVID vaccines, preclinical cochlear studies) but not yet tested in this specific combination. The model provides quantitative estimates to guide experimental design, not clinical predictions.",
-
   "dualvec.title": "Dual-Vector vs Single-Vector Transduction",
   "dualvec.badge": "STOCHASTIC MODEL",
   "dualvec.story.p1": "STRC is too big for one AAV. The coding sequence is 5,325 base pairs. AAV packaging limit is 4,700. That is why Iranfar et al. (2026) use a <strong>dual-vector</strong> approach: split the gene into two halves, package in two separate AAV particles, inject both, hope they recombine inside the same cell.",
   "dualvec.story.p2": "Hope is the key word. For dual-vector to work, <strong>both viruses must enter the same cell</strong>. Then the two halves must find each other and recombine. Each step has its own probability. The losses multiply.",
-  "dualvec.story.p3": "Our mini-STRC (residues 594-1775, 3,546 bp) fits in a single AAV. One particle. One transduction event. No recombination needed. This is not an incremental improvement. The math shows it is a different category.",
-
+  "dualvec.story.p3": "Our mini-STRC (residues 700-1775, 3,228 bp) fits in a single AAV. One particle. One transduction event. No recombination needed. This is not an incremental improvement. The math shows it is a different category.",
   "dualvec.math.title": "The Math",
   "dualvec.math.poisson": "Viral particle uptake follows a <strong>Poisson distribution</strong>. If the average number of particles reaching a cell (MOI) is &lambda;, then probability of getting at least one is P = 1 - e<sup>-&lambda;</sup>.",
   "dualvec.math.dual": "For dual-vector: both AAV-A and AAV-B must enter the same cell. If they share the same receptors (AAVR/HSPG), they compete. Each gets half the effective MOI. Co-transduction probability = P(A&ge;1) &times; P(B&ge;1).",
   "dualvec.math.recombo": "Even after co-transduction, the two halves must recombine intracellularly. Published efficiency: <strong>10-30%</strong> (overlap or split-intein designs).",
-
   "dualvec.calib.title": "Calibration Against Experimental Data",
   "dualvec.calib.desc": "We calibrate delivery efficiency from Omichi et al. (2020): single AAV2 via RWM achieved <strong>83.9% OHC transduction</strong> in mice at 3.75&times;10<sup>12</sup> GC/mL. This implies an effective delivery rate of 0.12% of injected particles actually reaching OHC. Most particles stay in perilymph, bind non-target cells, or degrade.",
   "dualvec.calib.source": "Omichi et al. (2020). Cochlear gene therapy with dual-AAV. PMC7270144",
-
   "dualvec.result.title": "Human Prediction",
   "dualvec.result.h1": "Single-vector (mini-STRC)",
   "dualvec.result.h2": "Dual-vector (full STRC)",
@@ -533,31 +499,25 @@
   "dualvec.result.n2": "143 of 12,000",
   "dualvec.result.ratio": "56.5&times;",
   "dualvec.result.note": "At standard clinical titer (3.75&times;10<sup>12</sup> GC/mL), single-vector mini-STRC delivers functional protein to <strong>56.5 times more hair cells</strong> than dual-vector full STRC. The dual-vector approach is further penalized by 10-30% intracellular recombination efficiency, which is already included in the 1.2% figure above.",
-
   "dualvec.sweep.title": "Titer Dependence",
   "dualvec.sweep.desc": "The gap between single and dual widens at clinically realistic titers. Only at extreme titers (&gt;10<sup>13</sup> GC/mL, difficult to manufacture) does dual approach single efficiency.",
   "dualvec.sweep.col1": "Viral titer",
   "dualvec.sweep.col2": "Single-vector",
   "dualvec.sweep.col3": "Dual-vector",
   "dualvec.sweep.col4": "Gap",
-
   "dualvec.code.title": "Full model: Poisson statistics, all parameters from literature",
   "dualvec.code.link": "View on GitHub: dual_vs_single_vector.py",
-
   "dualvec.caveat": "Model assumes independent Poisson uptake for each vector, which is conservative. In reality, receptor competition and steric exclusion at the cell surface make co-transduction even harder. Experimental validation: Omichi 2020 measured 83.9% single vs 65.6% dual (in optimized overlap design), consistent with our model's direction. Human predictions use mouse-calibrated delivery efficiency scaled for cochlear volume differences.",
-
   "elec.title": "Electrostatic Analysis: Why E1659A Is Pathogenic",
   "elec.badge": "BIOPHYSICS",
   "elec.story.p1": "AlphaFold says the structure does not change. AlphaMissense says the variant is pathogenic (0.9016). Both are correct. The paradox resolves when you look at the <strong>chemistry</strong>, not the geometry.",
   "elec.story.p2": "Stereocilin is an <strong>extracellular adhesion protein</strong>. It sits on top of OHC stereocilia and physically connects them to the tectorial membrane. The connection is maintained by surface charge, hydrogen bonds, and hydrophilic interactions. Glutamate (E) at position 1659 contributes all three. Alanine (A) contributes none.",
   "elec.story.p3": "This is a surface mutation on an adhesion protein. The fold is irrelevant. The glue is broken.",
-
   "elec.table.title": "What Changes",
   "elec.table.property": "Property",
   "elec.table.wildtype": "Wildtype (Glu)",
   "elec.table.mutant": "Mutant (Ala)",
   "elec.table.impact": "Impact",
-
   "elec.table.r1.prop": "Net charge (pH 7.4)",
   "elec.table.r1.wt": "-1 (deprotonated carboxylate)",
   "elec.table.r1.mut": "0 (nonpolar methyl)",
@@ -574,7 +534,6 @@
   "elec.table.r4.wt": "-3.5 (hydrophilic)",
   "elec.table.r4.mut": "+1.8 (hydrophobic)",
   "elec.table.r4.impact": "+5.3 shift: adhesion surface becomes water-repelling",
-
   "elec.energy.title": "Energy Budget",
   "elec.energy.desc": "Summing individual contributions gives the total destabilization of the stereocilin-TM interaction:",
   "elec.energy.r1": "Salt bridge loss",
@@ -589,31 +548,25 @@
   "elec.energy.total.v": "8.62 kcal/mol",
   "elec.energy.kd": "Estimated binding affinity decrease: <strong>~10<sup>6</sup>&times;</strong>",
   "elec.energy.note": "For reference: 1.4 kcal/mol = 10&times; change in dissociation constant. 8.62 kcal/mol = catastrophic loss of adhesion. The protein folds correctly but cannot stick to the tectorial membrane.",
-
   "elec.paradox.title": "The Structure-Function Paradox",
   "elec.paradox.p1": "AlphaFold pLDDT at position 1659: <strong>95.69</strong> (very high confidence, well-folded). AF3 overlay of wildtype and E1659A shows virtually identical backbone. This is expected: alanine is small, does not clash with neighbors, and does not disrupt the hydrophobic core.",
   "elec.paradox.p2": "AlphaMissense score: <strong>0.9016</strong> (likely pathogenic). AlphaMissense was trained on evolutionary conservation and protein fitness, not just structure. It learned that at this position, charge is conserved across mammals. Losing it breaks function.",
   "elec.paradox.p3": "The pathogenicity is in the chemistry, not the geometry. Identical structure, destroyed adhesion.",
-
   "elec.clinical.title": "Clinical Correlation",
   "elec.clinical.p1": "E1659A <strong>weakens but does not abolish</strong> stereocilin function. This explains Misha's moderate (not profound) hearing loss. Truncating variants (frameshifts, nonsense mutations) eliminate stereocilin entirely and cause <strong>profound</strong> deafness. Missense variants that disrupt surface interactions cause <strong>partial</strong> loss and moderate-to-severe hearing loss.",
   "elec.clinical.p2": "The weakened TM attachment means OHC stereocilia gradually decouple from the tectorial membrane. Cochlear amplification decreases. The loss may be progressive as microtrauma accumulates at the weakened interface.",
-
   "elec.code.title": "Full analysis: Coulomb energetics, H-bonds, solvation",
   "elec.code.link": "View on GitHub: electrostatics_e1659a.py",
-
   "immune.title": "Immune Response: Why Re-dosing Matters",
   "immune.badge": "PHARMACOKINETICS",
   "immune.story.p1": "AAV gene therapy is essentially one-shot. After the first dose, the immune system generates neutralizing antibodies (NAbs) against the viral capsid. These NAbs persist for years thanks to memory B cells. A second dose of the same serotype gets neutralized before it reaches target cells.",
   "immune.story.p2": "This is not a hypothetical concern. Patients seropositive for anti-AAV antibodies are <strong>excluded from most clinical trials</strong>. And 30-60% of the general population already has pre-existing anti-AAV immunity from childhood wild-type AAV exposure.",
   "immune.story.p3": "For STRC gene therapy, this creates a specific problem. If the first dose does not achieve sufficient transduction, there is no second chance with the same vector. This is where the delivery vehicle choice becomes critical.",
-
   "immune.timeline.title": "NAb Kinetics After First Dose",
   "immune.timeline.desc": "Neutralizing antibody titer over time after intracochlear AAV administration (seronegative patient). Cochlear immune privilege reduces systemic response by ~30% compared to IV delivery.",
   "immune.timeline.peak": "Peak: day 14, ~2.6&times; baseline",
   "immune.timeline.memory": "Memory B cells maintain 10% of peak titer indefinitely",
   "immune.timeline.window": "For seronegative patients with low baseline, re-dosing window may open within weeks. For seropositive patients (baseline titer &ge;50): window opens at day 49 at earliest.",
-
   "immune.sero.title": "Seroprevalence Barrier",
   "immune.sero.desc": "Percentage of population with pre-existing neutralizing antibodies by AAV serotype:",
   "immune.sero.aav1": "AAV1: 67%",
@@ -624,7 +577,6 @@
   "immune.sero.anc80": "Anc80L65: ~20% (ancestral, lower cross-reactivity)",
   "immune.sero.pediatric": "Pediatric (&lt;5 years): <strong>20-30%</strong> (lower than adults)",
   "immune.sero.source": "Boutin et al. 2010, Calcedo et al. 2015",
-
   "immune.compare.title": "Delivery Vehicle Comparison",
   "immune.compare.col1": "Property",
   "immune.compare.col2": "AAV",
@@ -654,29 +606,22 @@
   "immune.compare.r6.aav": "Phase 1/2 (for OTOF)",
   "immune.compare.r6.lnp": "Preclinical (cochlear), approved (COVID)",
   "immune.compare.r6.exo": "Early research",
-
   "immune.implication.title": "What This Means for STRC",
   "immune.implication.p1": "Single-vector mini-STRC has a higher probability of success on the first (and possibly only) AAV dose. Dual-vector full STRC wastes half the dose on each vector, then loses another 70-80% to failed recombination.",
   "immune.implication.p2": "The hybrid strategy from our delivery model (AAV surgery for base coverage + LNP top-up via sonoporation) directly addresses the re-dosing problem. AAV provides high initial transduction. LNP provides indefinite maintenance doses without immune barrier.",
   "immune.implication.p3": "For pediatric patients like Misha (age 4), anti-AAV seroprevalence is lower (20-30%). This is a timing advantage that diminishes with age as children encounter wild-type AAV.",
-
   "immune.code.title": "Full model: NAb kinetics, seroprevalence, vehicle comparison",
   "immune.code.link": "View on GitHub: immune_response_model.py",
-
   "immune.caveat": "Cochlear immune privilege is real but incomplete. The blood-perilymph barrier is weaker than the blood-brain barrier. Local AAV delivery to the cochlea generates lower systemic NAb responses than intravenous delivery, but still sufficient to block re-dosing with the same serotype. The 30% reduction factor is estimated from comparative studies of intraocular vs systemic AAV delivery in NHPs (Timmers 2022). Direct cochlear NAb kinetics data in humans does not yet exist.",
-
   "methodresearch.step16.title": "Dual-Vector vs Single-Vector Transduction Model",
   "methodresearch.step16.body1": "Built a stochastic model using Poisson statistics to quantify the transduction advantage of single-vector mini-STRC over dual-vector full STRC. Calibrated delivery efficiency from Omichi et al. (2020) mouse data (83.9% single AAV2 OHC transduction at 3.75&times;10<sup>12</sup> GC/mL). Scaled to human cochlear parameters (12,000 OHC, 191 &mu;L perilymph volume) using volume-ratio dilution correction.",
   "methodresearch.step16.body2": "Result: at standard clinical titer, single-vector achieves 67.4% OHC transduction vs 1.2% effective yield for dual-vector (including 20% intracellular recombination efficiency). <strong>56.5&times; advantage.</strong> The gap narrows only at extreme titers (&gt;10<sup>13</sup> GC/mL). <a href='https://github.com/lyfar/strc-research/blob/master/dual_vs_single_vector.py' target='_blank' class='text-blue-400'>Source code.</a>",
-
   "methodresearch.step17.title": "Electrostatic Analysis of E1659A Variant",
   "methodresearch.step17.body1": "Computed the biophysical impact of Glu&rarr;Ala substitution at position 1659: charge loss (-1 &rarr; 0), H-bond donor/acceptor elimination (2 acceptors lost), cavity creation (49.8 &Aring;&sup3;), and hydrophobicity shift (+5.3 on Kyte-Doolittle scale). Summed energetic contributions using Coulomb electrostatics (salt bridge at 4 &Aring;, &epsilon;=20 for protein surface), empirical H-bond values, and solvation transfer energies.",
   "methodresearch.step17.body2": "Total destabilization: 8.62 kcal/mol, corresponding to ~10<sup>6</sup>&times; decrease in binding affinity at the TM attachment interface. Explains the paradox: AlphaFold shows identical fold (pLDDT 95.69) while AlphaMissense scores 0.9016 (pathogenic). Pathogenicity is in surface chemistry, not backbone geometry. <a href='https://github.com/lyfar/strc-research/blob/master/electrostatics_e1659a.py' target='_blank' class='text-blue-400'>Source code.</a>",
-
   "methodresearch.step18.title": "Anti-AAV Immune Response Model",
   "methodresearch.step18.body1": "Modeled neutralizing antibody (NAb) kinetics after intracochlear AAV administration using IgG pharmacokinetics (half-life 21 days, Waldmann & Strober 1969), dose-dependent primary response (3.7&times; fold increase, Timmers 2022), and memory B cell persistence. Applied 30% reduction for cochlear immune privilege (blood-perilymph barrier).",
   "methodresearch.step18.body2": "Compared three delivery vehicles: AAV (one-shot, 30-60% excluded by seroprevalence), LNP (repeatable every 2-4 weeks, 0% seroprevalence barrier), exosomes (repeatable, minimal immunity, early research). Pediatric advantage: children &lt;5 have 20-30% anti-AAV seroprevalence vs 40-60% in adults. <a href='https://github.com/lyfar/strc-research/blob/master/immune_response_model.py' target='_blank' class='text-blue-400'>Source code.</a>",
-
   "enh.title": "Enhancer-Driven OHC Targeting",
   "enh.desc": "Current cochlear gene therapies use ubiquitous promoters (CAG, CMV) that express in all cell types. The ARBITER workflow (Zhao et al. 2025) identified synthetic enhancers that drive expression <strong class='text-emerald-400'>exclusively in outer hair cells</strong>, with zero leakage into IHCs or vestibular cells.",
   "enh.problem.title": "The promoter problem",
@@ -701,8 +646,7 @@
   "enh.strc.p1": "Stereocilin is an OHC-specific protein. Current STRC gene therapy research (Iranfar 2026) uses generic promoters. Applying the ARBITER workflow to find <strong class='text-purple-400'>STRC-specific enhancers</strong> could improve targeting precision and potentially increase therapeutic expression levels.",
   "enh.strc.p2": "The key question: do conserved non-coding elements near the STRC locus contain enhancer activity? Given that STRC (like Slc26a5) is OHC-specific, there is reason to expect dedicated regulatory elements exist.",
   "enh.strc.synergy_title": "Synergy with mini-STRC",
-  "enh.strc.synergy": "A compact enhancer like B8 (~600 bp) combined with mini-STRC (3984 bp) could fit within a single AAV vector with room to spare: <strong class='text-purple-400'>~600 + 3984 = 4584 bp</strong>. This is tight but feasible with a minimal poly(A) signal, potentially enabling a <strong>single-vector, OHC-targeted STRC gene therapy</strong>.",
-
+  "enh.strc.synergy": "A compact enhancer like B8 (~600 bp) combined with our recommended shorter mini-STRC (3,228 bp) fits comfortably within a single AAV vector: <strong class='text-purple-400'>~600 + 3,228 = 3,828 bp</strong>. This leaves 872 bp of headroom for UTRs, polyA, and optimized regulatory elements, enabling a <strong>single-vector, OHC-targeted STRC gene therapy</strong>.",
   "aso.title": "ASO Exon Skipping",
   "aso.desc": "Instead of replacing the entire STRC gene, what if we could make the cell skip the broken part? <strong class='text-purple-400'>Antisense oligonucleotides (ASOs)</strong> bind to pre-mRNA and force the splicing machinery to skip specific exons, producing a shorter but potentially functional protein. This approach has 4 FDA-approved drugs for Duchenne muscular dystrophy.",
   "aso.precedent.title": "Proven precedent: DMD exon skipping",
@@ -729,7 +673,6 @@
   "aso.questions.q1": "1. Which STRC exons are dispensable? Need systematic AF3 modeling of each single-exon deletion.",
   "aso.questions.q2": "2. Can ASOs be delivered to OHCs efficiently? Intratympanic injection reaches the round window, but OHC uptake of naked ASOs is unknown.",
   "aso.questions.q3": "3. What dosing schedule maintains therapeutic levels? DMD uses weekly IV infusions; cochlear delivery would need a different approach (depot, sustained release, or LNP-encapsulated ASO).",
-
   "tw.title": "Treatment Window",
   "tw.desc": "Gene therapy for DFNB16 is time-sensitive. Mouse data from Iranfar et al. (2026) defines a <strong class='text-amber-400'>critical developmental window</strong> where intervention works, and when it closes.",
   "tw.mouse.title": "Mouse data (Iranfar 2026)",
@@ -756,5 +699,20 @@
   "tw.implications.p1": "DFNB16 hearing loss is <strong class='text-neutral-300'>stable, not progressive</strong>. OHCs are present but lack stereocilin at their stereocilia tips. The structural damage (missing horizontal top connectors and tectorial membrane attachment crowns) occurs during cochlear maturation.",
   "tw.implications.p2": "The good news: because DFNB16 is non-degenerative (OHCs survive), there may be a <strong class='text-green-400'>wider intervention window than degenerative conditions</strong>. The cells are there; they just need the protein. The mouse P5 cutoff may reflect when stereocilia structure becomes irreversibly disorganized without STRC, not cell death.",
   "tw.implications.p3": "The open question: can stereocilia reorganize if stereocilin is provided after the developmental window? In mice, injection at P7-P9 still achieved some transduction but no functional recovery. Understanding whether this is a structural rigidity problem or an expression timing problem is crucial for human translation.",
-  "tw.caveat": "<strong class='text-amber-400'>Key uncertainty:</strong> The mouse P1-P5 window cannot be directly mapped to human developmental stages. Human cochlear maturation is largely complete by week 20 of gestation. Whether postnatal gene therapy can still rescue function in humans depends on how long OHC stereocilia retain structural plasticity after birth. Early intervention (ideally within the first year) is likely critical."
+  "tw.caveat": "<strong class='text-amber-400'>Key uncertainty:</strong> The mouse P1-P5 window cannot be directly mapped to human developmental stages. Human cochlear maturation is largely complete by week 20 of gestation. Whether postnatal gene therapy can still rescue function in humans depends on how long OHC stereocilia retain structural plasticity after birth. Early intervention (ideally within the first year) is likely critical.",
+  "af3results.jobb.title": "Full STRC homodimer",
+  "af3results.jobb.score": "ipTM 0.24 · pTM 0.41",
+  "af3results.jobb.desc": "Full-length STRC also does NOT dimerize (PAE 26-29 Å). Critical control: validates mini-STRC Job C result. STRC self-association requires membrane context.",
+  "af3results.jobd2.title": "Mini-STRC + Tectorin ZP",
+  "af3results.jobd2.score": "ipTM 0.24 · pTM 0.63",
+  "af3results.jobd2.desc": "No direct binding to alpha-tectorin ZP domain (PAE 16-17 Å). STRC-tectorial membrane interface likely requires glycosylation or scaffold proteins.",
+  "af3results.jobf.title": "Shorter mini-STRC (700-1775)",
+  "af3results.jobf.score": "pTM 0.86 · rank 0.88",
+  "af3results.jobf.desc": "More aggressive truncation folds BETTER than original mini-STRC (0.86 vs 0.81). 3228 bp coding, 1472 bp AAV headroom. Strong therapeutic candidate.",
+  "af3results.jobg.title": "Delta LRR linker",
+  "af3results.jobg.score": "pTM 0.80 · rank 0.85",
+  "af3results.jobg.desc": "Internal deletion (199 LRR repeats removed, GSGSGS linker). Works but 8-12% disordered. Simple truncations outperform this approach.",
+  "af3results.jobh.title": "C-term only (1075-1775)",
+  "af3results.jobh.score": "pTM 0.87 · rank 0.90",
+  "af3results.jobh.desc": "Best-folding construct. 701 aa, 2103 bp coding, 2597 bp AAV headroom. C-terminal region is self-contained structural domain. Contains E1659."
 }

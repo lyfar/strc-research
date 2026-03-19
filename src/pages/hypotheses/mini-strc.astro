@@ -11,7 +11,22 @@ const lang = 'en';
     <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
   </div>
   <MiniSTRC lang={lang} />
-  <AF3Results lang={lang} />
+  
+  <!-- AF3 raw cards injected into the expandable section -->
+  <script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    var target = document.getElementById('af3-raw-cards');
+    var af3section = document.querySelector('[data-af3-results]');
+    if (target && af3section) {
+      target.appendChild(af3section);
+      af3section.style.display = 'block';
+    }
+  });
+  </script>
+  <div data-af3-results style="display:none;">
+    <AF3Results lang={lang} />
+  </div>
+  
   <div class="px-6 py-8 max-w-4xl mx-auto">
     <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
   </div>
