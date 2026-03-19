@@ -1,111 +1,94 @@
 ---
-import { useTranslations } from '../../lib/i18n';
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/ThreeConstructs.en.json';
+import zh from './i18n/ThreeConstructs.zh.json';
 const { lang = 'en' } = Astro.props;
-const t = useTranslations(lang);
-// No props needed
-
+const t = useComponentTranslations(lang, { en, zh });
 ---
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 5: THREE CONSTRUCTS                 -->
-<!-- ═══════════════════════════════════════════ -->
 <div class="mb-12">
-  <h3 class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-4">{t('ministrc.three_constructs.t1')}</h3>
-  <p class="text-xs text-neutral-400 mb-4">
-    {t('ministrc.three_constructs.t2')}
-  </p>
-  
-  <!-- Construct comparison table -->
-  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
-    <div class="overflow-x-auto">
-      <table class="w-full text-xs">
-        <thead>
-          <tr class="border-b border-white/5 text-neutral-500">
-            <th class="text-left p-3 font-medium">Construct</th>
-            <th class="text-left p-3 font-medium">Residues</th>
-            <th class="text-right p-3 font-medium">Length</th>
-            <th class="text-right p-3 font-medium">CDS</th>
-            <th class="text-right p-3 font-medium">{t('ministrc.three_constructs.t3')}</th>
-            <th class="text-right p-3 font-medium">pTM</th>
-            <th class="text-right p-3 font-medium">Disorder</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-white/5 text-neutral-400">
-            <td class="p-3">
-              <span class="text-white font-medium">Mini-STRC</span>
-              <span class="ml-1 text-[9px] px-1 py-0.5 bg-blue-500/20 text-blue-400 rounded">conservative</span>
-            </td>
-            <td class="p-3 font-mono text-[10px]">616-1775</td>
-            <td class="p-3 text-right font-mono">1,160 aa</td>
-            <td class="p-3 text-right font-mono">3,480 bp</td>
-            <td class="p-3 text-right font-mono">920 bp</td>
-            <td class="p-3 text-right font-mono text-green-400">0.81</td>
-            <td class="p-3 text-right font-mono">7%</td>
-          </tr>
-          <tr class="border-b border-white/5 text-neutral-400 bg-green-500/[0.03]">
-            <td class="p-3">
-              <span class="text-green-400 font-medium">{t('ministrc.three_constructs.t4')}</span>
-              <span class="ml-1 text-[9px] px-1 py-0.5 bg-green-500/20 text-green-400 rounded">recommended</span>
-            </td>
-            <td class="p-3 font-mono text-[10px]">700-1775</td>
-            <td class="p-3 text-right font-mono">1,076 aa</td>
-            <td class="p-3 text-right font-mono">3,228 bp</td>
-            <td class="p-3 text-right font-mono text-green-400 font-bold">1,472 bp</td>
-            <td class="p-3 text-right font-mono text-green-400 font-bold">0.86</td>
-            <td class="p-3 text-right font-mono text-green-400">4%</td>
-          </tr>
-          <tr class="border-b border-white/5 text-neutral-400">
-            <td class="p-3">
-              <span class="text-emerald-400 font-medium">C-term only</span>
-              <span class="ml-1 text-[9px] px-1 py-0.5 bg-emerald-500/20 text-emerald-400 rounded">aggressive</span>
-            </td>
-            <td class="p-3 font-mono text-[10px]">1075-1775</td>
-            <td class="p-3 text-right font-mono">701 aa</td>
-            <td class="p-3 text-right font-mono">2,103 bp</td>
-            <td class="p-3 text-right font-mono text-emerald-400 font-bold">2,597 bp</td>
-            <td class="p-3 text-right font-mono text-emerald-400 font-bold">0.87</td>
-            <td class="p-3 text-right font-mono">6%</td>
-          </tr>
-          <tr class="text-neutral-500">
-            <td class="p-3">
-              <span class="text-neutral-500">{t('ministrc.three_constructs.t5')}</span>
-              <span class="ml-1 text-[9px] px-1 py-0.5 bg-neutral-500/20 text-neutral-500 rounded">{t('ministrc.three_constructs.t6')}</span>
-            </td>
-            <td class="p-3 font-mono text-[10px]">custom</td>
-            <td class="p-3 text-right font-mono">989 aa</td>
-            <td class="p-3 text-right font-mono">2,967 bp</td>
-            <td class="p-3 text-right font-mono">1,733 bp</td>
-            <td class="p-3 text-right font-mono">0.80</td>
-            <td class="p-3 text-right font-mono text-yellow-400">8-12%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  
-  <!-- 3D viewers for the three constructs -->
-  <div class="grid sm:grid-cols-3 gap-3 mb-4">
-    <div class="bg-white/[0.02] border border-green-500/20 rounded-lg overflow-hidden">
-      <div id="v-jobf" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
-      <div class="p-2 text-center">
-        <div class="text-[10px] text-green-400 font-semibold">{t('ministrc.three_constructs.t7')}</div>
-        <div class="text-[10px] text-neutral-500">{t('ministrc.three_constructs.t8')}</div>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-4">{t('t12')}</h3>
+      <p class="text-xs text-neutral-400 mb-4"><Fragment set:html={t('t1')} /></p>
+      
+      <!-- Construct comparison table -->
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="border-b border-white/5 text-neutral-500">
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t7')} /></th>
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t8')} /></th>
+                <th class="text-right p-3 font-medium"><Fragment set:html={t('t9')} /></th>
+                <th class="text-right p-3 font-medium">CDS</th>
+                <th class="text-right p-3 font-medium"><Fragment set:html={t('t10')} /></th>
+                <th class="text-right p-3 font-medium">pTM</th>
+                <th class="text-right p-3 font-medium"><Fragment set:html={t('t11')} /></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/5 text-neutral-400">
+                <td class="p-3"><Fragment set:html={t('t2')} /></td>
+                <td class="p-3 font-mono text-[10px]">616-1775</td>
+                <td class="p-3 text-right font-mono">1,160 aa</td>
+                <td class="p-3 text-right font-mono">3,480 bp</td>
+                <td class="p-3 text-right font-mono">920 bp</td>
+                <td class="p-3 text-right font-mono text-green-400">0.81</td>
+                <td class="p-3 text-right font-mono">7%</td>
+              </tr>
+              <tr class="border-b border-white/5 text-neutral-400 bg-green-500/[0.03]">
+                <td class="p-3"><Fragment set:html={t('t3')} /></td>
+                <td class="p-3 font-mono text-[10px]">700-1775</td>
+                <td class="p-3 text-right font-mono">1,076 aa</td>
+                <td class="p-3 text-right font-mono">3,228 bp</td>
+                <td class="p-3 text-right font-mono text-green-400 font-bold">1,472 bp</td>
+                <td class="p-3 text-right font-mono text-green-400 font-bold">0.86</td>
+                <td class="p-3 text-right font-mono text-green-400">4%</td>
+              </tr>
+              <tr class="border-b border-white/5 text-neutral-400">
+                <td class="p-3"><Fragment set:html={t('t4')} /></td>
+                <td class="p-3 font-mono text-[10px]">1075-1775</td>
+                <td class="p-3 text-right font-mono">701 aa</td>
+                <td class="p-3 text-right font-mono">2,103 bp</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">2,597 bp</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">0.87</td>
+                <td class="p-3 text-right font-mono">6%</td>
+              </tr>
+              <tr class="text-neutral-500">
+                <td class="p-3"><Fragment set:html={t('t5')} /></td>
+                <td class="p-3 font-mono text-[10px]"><Fragment set:html={t('t6')} /></td>
+                <td class="p-3 text-right font-mono">989 aa</td>
+                <td class="p-3 text-right font-mono">2,967 bp</td>
+                <td class="p-3 text-right font-mono">1,733 bp</td>
+                <td class="p-3 text-right font-mono">0.80</td>
+                <td class="p-3 text-right font-mono text-yellow-400">8-12%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-    <div class="bg-white/[0.02] border border-emerald-500/20 rounded-lg overflow-hidden">
-      <div id="v-jobh" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
-      <div class="p-2 text-center">
-        <div class="text-[10px] text-emerald-400 font-semibold">{t('ministrc.three_constructs.t9')}</div>
-        <div class="text-[10px] text-neutral-500">{t('ministrc.three_constructs.t10')}</div>
+      
+      <!-- 3D viewers for the three constructs -->
+      <div class="grid sm:grid-cols-3 gap-3 mb-4">
+        <div class="bg-white/[0.02] border border-green-500/20 rounded-lg overflow-hidden">
+          <div id="v-jobf" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
+          <div class="p-2 text-center">
+            <div class="text-[10px] text-green-400 font-semibold">Shorter mini-STRC (700-1775)</div>
+            <div class="text-[10px] text-neutral-500">pTM 0.86 · recommended</div>
+          </div>
+        </div>
+        <div class="bg-white/[0.02] border border-emerald-500/20 rounded-lg overflow-hidden">
+          <div id="v-jobh" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
+          <div class="p-2 text-center">
+            <div class="text-[10px] text-emerald-400 font-semibold">C-term only (1075-1775)</div>
+            <div class="text-[10px] text-neutral-500">pTM 0.87 · best fold</div>
+          </div>
+        </div>
+        <div class="bg-white/[0.02] border border-yellow-500/20 rounded-lg overflow-hidden">
+          <div id="v-jobg" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
+          <div class="p-2 text-center">
+            <div class="text-[10px] text-yellow-400 font-semibold">{t('t13')}</div>
+            <div class="text-[10px] text-neutral-500">pTM 0.80 · more disorder</div>
+          </div>
+        </div>
       </div>
+      
     </div>
-    <div class="bg-white/[0.02] border border-yellow-500/20 rounded-lg overflow-hidden">
-      <div id="v-jobg" style="width:100%;height:140px;position:relative;overflow:hidden;background:#080808;"></div>
-      <div class="p-2 text-center">
-        <div class="text-[10px] text-yellow-400 font-semibold">{t('ministrc.three_constructs.t11')}</div>
-        <div class="text-[10px] text-neutral-500">{t('ministrc.three_constructs.t12')}</div>
-      </div>
-    </div>
-  </div>
-  
-</div>

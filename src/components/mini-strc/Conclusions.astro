@@ -1,76 +1,72 @@
 ---
-import { useTranslations } from '../../lib/i18n';
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/Conclusions.en.json';
+import zh from './i18n/Conclusions.zh.json';
 const { lang = 'en' } = Astro.props;
-const t = useTranslations(lang);
-// No props needed
-
+const t = useComponentTranslations(lang, { en, zh });
 ---
-<!-- ═══════════════════════════════════════════ -->
-<!-- CONCLUSIONS                                 -->
-<!-- ═══════════════════════════════════════════ -->
 <div class="mb-12">
-  <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400 mb-4">Conclusions</h3>
-  
-  <div class="bg-green-500/5 border border-green-500/20 rounded-lg p-5 mb-4">
-    <div class="text-xs text-neutral-300 leading-relaxed space-y-3">
-      <p>
-        <strong class="text-green-400">Recommended construct: IgK-SP + residues 700-1775 (3,228 bp).</strong> 
-        {t('ministrc.conclusions.t1')}
-        {t('ministrc.conclusions.t2')}
-        {t('ministrc.conclusions.t3')}
-      </p>
-      <p>
-        <strong class="text-emerald-400">Backup: C-term only (1075-1775).</strong> 
-        {t('ministrc.conclusions.t4')}
-        {t('ministrc.conclusions.t5')}
-      </p>
-    </div>
-  </div>
-
-  <!-- Evidence summary — compact checklist -->
-  <div class="grid sm:grid-cols-2 gap-3 mb-4">
-    <div class="bg-green-500/5 border border-green-500/15 rounded-lg p-4">
-      <h4 class="text-[10px] text-green-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t6')}</h4>
-      <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
-        <li>{t('ministrc.conclusions.t7')}</li>
-        <li>{t('ministrc.conclusions.t8')}</li>
-        <li>{t('ministrc.conclusions.t9')}</li>
-        <li>{t('ministrc.conclusions.t10')}</li>
-        <li>{t('ministrc.conclusions.t11')}</li>
-        <li>{t('ministrc.conclusions.t12')}</li>
-        <li>{t('ministrc.conclusions.t13')}</li>
-        <li>{t('ministrc.conclusions.t14')}</li>
-        <li>{t('ministrc.conclusions.t15')}</li>
-        <li>{t('ministrc.conclusions.t16')}</li>
-      </ul>
-    </div>
-    <div class="bg-yellow-500/5 border border-yellow-500/15 rounded-lg p-4">
-      <h4 class="text-[10px] text-yellow-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t17')}</h4>
-      <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
-        <li>{t('ministrc.conclusions.t18')}</li>
-        <li>{t('ministrc.conclusions.t19')}</li>
-        <li>{t('ministrc.conclusions.t20')}</li>
-        <li>{t('ministrc.conclusions.t21')}</li>
-        <li>{t('ministrc.conclusions.t22')}</li>
-      </ul>
-      <div class="mt-3 pt-3 border-t border-white/5">
-        <h4 class="text-[10px] text-purple-400 font-semibold uppercase tracking-wider mb-2">{t('ministrc.conclusions.t23')}</h4>
-        <ul class="text-[10px] text-neutral-400 space-y-1 leading-relaxed">
-          <li>{t('ministrc.conclusions.t24')}</li>
-          <li>{t('ministrc.conclusions.t25')}</li>
-          <li>{t('ministrc.conclusions.t26')}</li>
-          <li>{t('ministrc.conclusions.t27')}</li>
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400 mb-4">{t('t35')}</h3>
+      
+      <div class="bg-green-500/5 border border-green-500/20 rounded-lg p-5 mb-4">
+        <div class="text-xs text-neutral-300 leading-relaxed space-y-3">
+          <p><Fragment set:html={t('t1')} /></p>
+          <p><Fragment set:html={t('t2')} /></p>
+          <p><Fragment set:html={t('t3')} /></p>
+          <ul class="space-y-1 ml-4">
+            <li><Fragment set:html={t('t5')} /></li>
+            <li><Fragment set:html={t('t6')} /></li>
+            <li><Fragment set:html={t('t7')} /></li>
+            <li><Fragment set:html={t('t8')} /></li>
+            <li><Fragment set:html={t('t9')} /></li>
+            <li><Fragment set:html={t('t10')} /></li>
+            <li><Fragment set:html={t('t11')} /></li>
+            <li><Fragment set:html={t('t12')} /></li>
+            <li><Fragment set:html={t('t13')} /></li>
+            <li><Fragment set:html={t('t14')} /></li>
+            <li><Fragment set:html={t('t15')} /></li>
+            <li><Fragment set:html={t('t16')} /></li>
+            <li><Fragment set:html={t('t17')} /></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- What's been resolved computationally -->
+      <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-4">
+        <h4 class="text-xs font-semibold text-green-400 mb-2">{t('t36')}</h4>
+        <ul class="text-xs text-neutral-300 space-y-1">
+          <li><Fragment set:html={t('t18')} /></li>
+          <li><Fragment set:html={t('t19')} /></li>
+          <li><Fragment set:html={t('t20')} /></li>
+          <li><Fragment set:html={t('t21')} /></li>
+          <li><Fragment set:html={t('t22')} /></li>
+          <li><Fragment set:html={t('t23')} /></li>
+          <li><Fragment set:html={t('t24')} /></li>
+          <li><Fragment set:html={t('t25')} /></li>
+          <li><Fragment set:html={t('t26')} /></li>
         </ul>
       </div>
+      
+      <!-- Remaining questions -->
+      <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
+        <h4 class="text-xs font-semibold text-yellow-400 mb-2">{t('t37')}</h4>
+        <ul class="text-xs text-neutral-300 space-y-1">
+          <li><Fragment set:html={t('t27')} /></li>
+          <li><Fragment set:html={t('t28')} /></li>
+          <li><Fragment set:html={t('t29')} /></li>
+          <li><Fragment set:html={t('t30')} /></li>
+        </ul>
+      </div>
+      
+      <!-- Computational next steps -->
+      <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+        <h4 class="text-xs font-semibold text-purple-400 mb-2">{t('t38')}</h4>
+        <ul class="text-xs text-neutral-300 space-y-1.5">
+          <li><Fragment set:html={t('t31')} /></li>
+          <li><Fragment set:html={t('t32')} /></li>
+          <li><Fragment set:html={t('t33')} /></li>
+          <li><Fragment set:html={t('t34')} /></li>
+        </ul>
+        <p class="text-[10px] text-neutral-500 mt-3"><Fragment set:html={t('t4')} /></p>
+      </div>
     </div>
-  </div>
-
-  <div class="bg-white/5 rounded-lg p-4">
-    <p class="text-xs text-neutral-400 leading-relaxed">
-      <strong class="text-white">Bottom line:</strong> Every computational tool we have access to supports the mini-STRC hypothesis. 
-      {t('ministrc.conclusions.t28')}
-      {t('ministrc.conclusions.t29')}
-      {t('ministrc.conclusions.t30')}
-    </p>
-  </div>
-</div>

@@ -1,0 +1,18 @@
+{
+  "t1": "We established residue 700 as the cut point based on the pLDDT disorder dip at positions 685-694. But is 700 truly optimal? We tested four truncation boundaries (±50 residues) and also verified that prepending the IgK signal peptide doesn't destabilize the fold.",
+  "t2": "<strong class=\"text-violet-400\">Result:</strong> Residues 700 and 720 are both optimal (pTM 0.86), while cutting at 650 or 680 includes the disorder dip (residues 685-694, pLDDT 31-39) and gives worse results. This confirms the pLDDT-based domain boundary. The cut at 700 sits at the exact recovery point where structural confidence returns.",
+  "t3": "The 21-amino acid IgK signal peptide has no meaningful effect on the fold (pTM 0.86 → 0.85, within noise). This is expected: the SP is cleaved co-translationally in the ER and is not part of the mature protein.",
+  "t4": "Shorter mini-STRC (700-1775), no SP",
+  "t5": "IgK-SP + shorter mini-STRC (700-1775)",
+  "t6": "Cut point",
+  "t7": "Residues",
+  "t8": "CDS (bp)",
+  "t9": "Ranking",
+  "t10": "Disorder",
+  "t11": "AAV headroom",
+  "t12": "Construct",
+  "t13": "Ranking",
+  "t14": "Disorder",
+  "t15": "10. Truncation boundary refinement\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-violet-500/20 text-violet-400 font-semibold normal-case\">4 AF3 jobs</span>",
+  "t16": "Signal peptide fold impact"
+}

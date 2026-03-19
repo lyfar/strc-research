@@ -1,25 +1,21 @@
 ---
-// Mini-STRC Hypothesis — composite component
-// Each section lives in mini-strc/*.astro for independent editing
 import { useTranslations } from '../lib/i18n';
-
-import ExecutiveSummary from './mini-strc/ExecutiveSummary.astro';
 import Problem from './mini-strc/Problem.astro';
-import DualVectorFails from './mini-strc/DualVectorFails.astro';
-import Precedent from './mini-strc/Precedent.astro';
+import DualVectorFails from './mini-strc/WhyDualvectorFailsInHumans.astro';
 import Hypothesis from './mini-strc/Hypothesis.astro';
 import AF3Validation from './mini-strc/AF3Validation.astro';
 import ThreeConstructs from './mini-strc/ThreeConstructs.astro';
 import ConstructEngineering from './mini-strc/ConstructEngineering.astro';
 import InteractionScreen from './mini-strc/InteractionScreen.astro';
-import ViabilityValidation from './mini-strc/ViabilityValidation.astro';
+import Precedent from './mini-strc/Precedent.astro';
+import SignalPeptide from './mini-strc/SignalPeptide.astro';
 import TruncationBoundary from './mini-strc/TruncationBoundary.astro';
-import Conservation from './mini-strc/Conservation.astro';
-import DisorderValidation from './mini-strc/DisorderValidation.astro';
-import RiskAssessment from './mini-strc/RiskAssessment.astro';
+import GPIAnchor from './mini-strc/GpianchorValidation.astro';
+import SubcellularLocalization from './mini-strc/SubcellularLocalization.astro';
+import Glycosylation from './mini-strc/Nglycosylation.astro';
+import DisorderValidation from './mini-strc/DisorderCrossvalidation.astro';
 import Conclusions from './mini-strc/Conclusions.astro';
 import AF3Expandable from './mini-strc/AF3Expandable.astro';
-import ViewerScript from './mini-strc/ViewerScript.astro';
 
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
@@ -27,30 +23,29 @@ const t = useTranslations(lang);
 <section id="mini-strc" class="px-6 py-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
     <div class="flex items-center gap-2 mb-2">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Mini-STRC Hypothesis</h2>
-      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">COMPUTATIONAL</span>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('ministrc.title')}</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">{t('ministrc.badge_comp')}</span>
       <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold">20 AF3 JOBS</span>
     </div>
     <p class="text-neutral-400 text-sm mb-10 max-w-2xl">
-      If the N-terminal half of stereocilin is intrinsically disordered and functionally dispensable, removing it creates a truncated protein that fits in a single AAV vector. 20 AlphaFold 3 experiments plus eight independent prediction tools support this hypothesis.
+      {t('ministrc.desc')}
     </p>
 
-    <ExecutiveSummary lang={lang} />
     <Problem lang={lang} />
     <DualVectorFails lang={lang} />
-    <Precedent lang={lang} />
     <Hypothesis lang={lang} />
     <AF3Validation lang={lang} />
     <ThreeConstructs lang={lang} />
     <ConstructEngineering lang={lang} />
     <InteractionScreen lang={lang} />
-    <ViabilityValidation lang={lang} />
+    <Precedent lang={lang} />
+    <SignalPeptide lang={lang} />
     <TruncationBoundary lang={lang} />
-    <Conservation lang={lang} />
+    <GPIAnchor lang={lang} />
+    <SubcellularLocalization lang={lang} />
+    <Glycosylation lang={lang} />
     <DisorderValidation lang={lang} />
-    <RiskAssessment lang={lang} />
     <Conclusions lang={lang} />
     <AF3Expandable lang={lang} />
   </div>
 </section>
-<ViewerScript />

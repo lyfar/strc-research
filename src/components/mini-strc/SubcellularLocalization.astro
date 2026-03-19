@@ -1,86 +1,76 @@
 ---
-import { useTranslations } from '../../lib/i18n';
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/SubcellularLocalization.en.json';
+import zh from './i18n/SubcellularLocalization.zh.json';
 const { lang = 'en' } = Astro.props;
-const t = useTranslations(lang);
+const t = useComponentTranslations(lang, { en, zh });
 ---
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 12: SUBCELLULAR LOCALIZATION        -->
-<!-- ═══════════════════════════════════════════ -->
 <div class="mb-12">
-  <h3 class="text-xs font-semibold uppercase tracking-wider text-teal-400 mb-4">
-    Q3: Does it reach the cell surface?
-    <span class="ml-2 px-1.5 py-0.5 text-[10px] rounded bg-teal-500/20 text-teal-400 font-semibold normal-case">DeepLoc 2.1</span>
-  </h3>
-  
-  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
-    <p class="text-xs text-neutral-400 leading-relaxed mb-4">
-      Where does the protein end up inside the cell? <strong class="text-white">DeepLoc 2.1</strong> (DTU Health Tech) uses a protein language model (ProtT5) to predict subcellular localization and membrane association from sequence alone. For a GPI-anchored extracellular protein like stereocilin, we expect: extracellular localization + lipid anchor (GPI) or soluble.
-    </p>
-    
-    <div class="overflow-x-auto mb-5">
-      <table class="w-full text-xs">
-        <thead>
-          <tr class="border-b border-white/10 text-neutral-300">
-            <th class="text-left p-3 font-medium">Construct</th>
-            <th class="text-left p-3 font-medium">Top localization</th>
-            <th class="text-right p-3 font-medium">Probability</th>
-            <th class="text-left p-3 font-medium">Membrane type</th>
-            <th class="text-right p-3 font-medium">Lipid anchor</th>
-            <th class="text-left p-3 font-medium">SP detected</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-white/5 text-neutral-400">
-            <td class="p-3">Full STRC</td>
-            <td class="p-3"><span class="text-green-400">Extracellular</span></td>
-            <td class="p-3 text-right font-mono">74.1%</td>
-            <td class="p-3">Soluble</td>
-            <td class="p-3 text-right font-mono">28.4%</td>
-            <td class="p-3"><span class="text-green-400">✓ Yes</span></td>
-          </tr>
-          <tr class="border-b border-white/5 bg-teal-500/[0.03]">
-            <td class="p-3 text-teal-400 font-medium">IgK-SP + mini-STRC</td>
-            <td class="p-3"><span class="text-teal-400 font-semibold">Extracellular</span></td>
-            <td class="p-3 text-right font-mono text-teal-400">57.4%</td>
-            <td class="p-3 text-teal-400">Lipid anchor</td>
-            <td class="p-3 text-right font-mono text-teal-400 font-bold">72.1%</td>
-            <td class="p-3"><span class="text-teal-400">✓ Yes</span></td>
-          </tr>
-          <tr class="text-neutral-400">
-            <td class="p-3">No SP (control)</td>
-            <td class="p-3"><span class="text-yellow-400">Cell membrane</span></td>
-            <td class="p-3 text-right font-mono">42.9%</td>
-            <td class="p-3">Lipid anchor</td>
-            <td class="p-3 text-right font-mono">71.4%</td>
-            <td class="p-3"><span class="text-red-400">✗ Artifact</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="bg-teal-500/10 border border-teal-500/20 rounded-lg p-4 mb-5">
-      <p class="text-xs text-neutral-300 leading-relaxed">
-        <strong class="text-teal-400">Result:</strong> Our construct (IgK-SP + mini-STRC) is correctly predicted as <strong class="text-white">extracellular</strong> with <strong class="text-white">lipid anchor</strong> (GPI) association. The lipid anchor probability is actually higher for mini-STRC (72.1%) than full STRC (28.4%), suggesting that removing the disordered N-terminal domain makes the GPI signal more prominent to the model. The no-SP control loses extracellular localization (drops to Cell membrane), confirming the signal peptide is essential for proper trafficking.
-      </p>
-    </div>
-    
-    <!-- DeepLoc attention plots -->
-    <div class="grid sm:grid-cols-2 gap-4">
-      <div>
-        <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-2 text-center">IgK-SP + shorter mini-STRC (our construct)</p>
-        <div class="bg-white rounded-lg overflow-hidden">
-          <img src="/images/deeploc-igk-mini-strc.png" alt="DeepLoc 2.1 sorting signal attention map for IgK-SP + mini-STRC showing N-terminal SP attention and C-terminal GPI signal" class="w-full" loading="lazy" />
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-teal-400 mb-4"><Fragment set:html={t('t23')} /></h3>
+      
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
+        <p class="text-xs text-neutral-400 leading-relaxed mb-4"><Fragment set:html={t('t1')} /></p>
+        
+        <div class="overflow-x-auto mb-5">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="border-b border-white/10 text-neutral-300">
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t17')} /></th>
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t18')} /></th>
+                <th class="text-right p-3 font-medium"><Fragment set:html={t('t19')} /></th>
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t20')} /></th>
+                <th class="text-right p-3 font-medium"><Fragment set:html={t('t21')} /></th>
+                <th class="text-left p-3 font-medium"><Fragment set:html={t('t22')} /></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/5 text-neutral-400">
+                <td class="p-3"><Fragment set:html={t('t6')} /></td>
+                <td class="p-3"><Fragment set:html={t('t7')} /></td>
+                <td class="p-3 text-right font-mono">74.1%</td>
+                <td class="p-3"><Fragment set:html={t('t8')} /></td>
+                <td class="p-3 text-right font-mono">28.4%</td>
+                <td class="p-3"><Fragment set:html={t('t9')} /></td>
+              </tr>
+              <tr class="border-b border-white/5 bg-teal-500/[0.03]">
+                <td class="p-3 text-teal-400 font-medium"><Fragment set:html={t('t10')} /></td>
+                <td class="p-3"><Fragment set:html={t('t11')} /></td>
+                <td class="p-3 text-right font-mono text-teal-400">57.4%</td>
+                <td class="p-3 text-teal-400"><Fragment set:html={t('t12')} /></td>
+                <td class="p-3 text-right font-mono text-teal-400 font-bold">72.1%</td>
+                <td class="p-3"><Fragment set:html={t('t13')} /></td>
+              </tr>
+              <tr class="text-neutral-400">
+                <td class="p-3">No SP (control)</td>
+                <td class="p-3"><Fragment set:html={t('t14')} /></td>
+                <td class="p-3 text-right font-mono">42.9%</td>
+                <td class="p-3"><Fragment set:html={t('t15')} /></td>
+                <td class="p-3 text-right font-mono">71.4%</td>
+                <td class="p-3"><Fragment set:html={t('t16')} /></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-      <div>
-        <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-2 text-center">Full STRC (native)</p>
-        <div class="bg-white rounded-lg overflow-hidden">
-          <img src="/images/deeploc-full-strc.png" alt="DeepLoc 2.1 sorting signal attention map for full STRC showing native SP attention pattern" class="w-full" loading="lazy" />
+        
+        <div class="bg-teal-500/10 border border-teal-500/20 rounded-lg p-4 mb-5">
+          <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('t2')} /></p>
         </div>
+        
+        <!-- DeepLoc attention plots -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-2 text-center"><Fragment set:html={t('t3')} /></p>
+            <div class="bg-white rounded-lg overflow-hidden">
+              <img src="/images/deeploc-igk-mini-strc.png" alt="DeepLoc 2.1 sorting signal attention map for IgK-SP + mini-STRC showing N-terminal SP attention and C-terminal GPI signal" class="w-full" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-2 text-center"><Fragment set:html={t('t4')} /></p>
+            <div class="bg-white rounded-lg overflow-hidden">
+              <img src="/images/deeploc-full-strc.png" alt="DeepLoc 2.1 sorting signal attention map for full STRC showing native SP attention pattern" class="w-full" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <p class="text-[10px] text-neutral-500 mt-3 text-center"><Fragment set:html={t('t5')} /></p>
       </div>
     </div>
-    <p class="text-[10px] text-neutral-500 mt-3 text-center">
-      DeepLoc 2.1 attention maps showing which residues contribute to localization prediction. Note the strong N-terminal signal peptide attention and C-terminal GPI signal.
-    </p>
-  </div>
-</div>

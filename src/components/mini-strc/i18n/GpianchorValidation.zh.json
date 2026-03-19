@@ -1,0 +1,17 @@
+{
+  "t1": "立体纤毛蛋白是一种 GPI 锚定蛋白：糖基磷脂酰肌醇（GPI）脂质在翻译后附着，将其系连到毛细胞膜外表面。这对于其在静纤毛顶端的功能以及与覆膜形成水平顶连接体至关重要。GPI 信号编码于C末端约 25 个氨基酸中，所有 mini-STRC 构建体均完整保留。",
+  "t2": "我们将三种构建体提交至 <strong class=\"text-white\">NetGPI 1.1</strong>（DTU Health Tech），这是一个预测 GPI 锚信号和 omega 位点（GPI 附着发生的残基）的神经网络。",
+  "t3": "* 构建体编号中的位置。对应完整 STRC 中的 S1749（相同残基，因截短而偏移不同）。",
+  "t4": "<strong class=\"text-amber-400\">结果：</strong>三种构建体均被预测为 GPI 锚定，具有相同的可能性（0.471）和相同的 omega 位点（丝氨酸）。GPI 信号位于C末端尾部，在所有截短变体中均完整保留。N末端去除对 GPI 锚预测没有任何影响。即使是无 SP 对照也被预测为 GPI 锚定，但没有信号肽，它永远无法到达实际发生 GPI 附着的内质网。",
+  "t5": "完整 STRC（1775 aa）",
+  "t6": "<span class=\"text-green-400 font-semibold\">GPI 锚定</span>",
+  "t7": "IgK-SP + 较短 mini-STRC",
+  "t8": "<span class=\"text-amber-400 font-semibold\">GPI 锚定</span>",
+  "t9": "较短 mini-STRC（无 SP，对照）",
+  "t10": "<span class=\"text-green-400 font-semibold\">GPI 锚定</span>",
+  "t11": "构建体",
+  "t12": "预测",
+  "t13": "Omega 位点",
+  "t14": "可能性",
+  "t15": "11. GPI 锚预测\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-400 font-semibold normal-case\">NetGPI 1.1</span>"
+}

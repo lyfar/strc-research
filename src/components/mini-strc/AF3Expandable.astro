@@ -1,15 +1,56 @@
 ---
-// No props needed
+const { lang = 'en' } = Astro.props;
 ---
-<!-- ═══════════════════════════════════════════ -->
 <!-- EXPANDABLE: RAW AF3 DATA                    -->
-<!-- ═══════════════════════════════════════════ -->
-<details class="mb-6">
-  <summary class="text-xs text-neutral-500 cursor-pointer hover:text-neutral-300 transition-colors py-2">
-    Show all 16 AlphaFold 3 experiment cards with 3D viewers →
-  </summary>
-  <div class="mt-4" id="af3-raw-cards">
-    <!-- This will be populated by the AF3Results component below -->
+    <details class="mb-6">
+      <summary class="text-xs text-neutral-500 cursor-pointer hover:text-neutral-300 transition-colors py-2">
+        Show all 16 AlphaFold 3 experiment cards with 3D viewers →
+      </summary>
+      <div class="mt-4" id="af3-raw-cards">
+        <!-- This will be populated by the AF3Results component below -->
+      </div>
+    </details>
   </div>
-</details>
-  </div>
+</section>
+
+<!-- 3Dmol.js viewers -->
+<script is:inline>
+(function() {
+  function initMiniSTRCViewers() {
+    if (typeof $3Dmol === 'undefined') { setTimeout(initMiniSTRCViewers, 300); return; }
+
+    var jobs = [
+      { id: 'v-job4', url: '/models/job4-wildtype.cif', multichain: false },
+      { id: 'v-job5', url: '/models/job5-mini-strc.cif', multichain: false },
+      { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },
+      { id: 'v-jobf', url: '/models/job-f-shorter-mini-strc-700.cif', multichain: false },
+      { id: 'v-jobg', url: '/models/job-g-delta-lrr-linker.cif', multichain: false },
+      { id: 'v-jobh', url: '/models/job-h-strc-cterm-only.cif', multichain: false },
+    ];
+
+    jobs.forEach(function(job) {
+      var el = document.getElementById(job.id);
+      if (!el) return;
+      el.innerHTML = '<div style="color:#333;display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;">Loading...</div>';
+
+      fetch(job.url).then(function(r) { return r.text(); }).then(function(data) {
+        el.innerHTML = '';
+        var v = $3Dmol.createViewer(el, {backgroundColor: '#080808'});
+        v.addModel(data, 'cif');
+        v.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:30, max:100}}});
+        v.zoomTo();
+        v.render();
+        v.spin('y', 0.3);
+      }).catch(function() {
+        el.innerHTML = '<div style="color:#555;text-align:center;padding:20px;font-size:10px;">Failed to load</div>';
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMiniSTRCViewers);
+  } else {
+    initMiniSTRCViewers();
+  }
+})();
+</script>

@@ -1,0 +1,181 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/Nglycosylation.en.json';
+import zh from './i18n/Nglycosylation.zh.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, zh });
+---
+<div class="mb-12">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-4"><Fragment set:html={t('t23')} /></h3>
+      
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
+        <p class="text-xs text-neutral-400 leading-relaxed mb-4"><Fragment set:html={t('t1')} /></p>
+        
+        <!-- Full STRC glycosylation map -->
+        <div class="mb-5">
+          <p class="text-[10px] text-neutral-500 uppercase tracking-wider mb-2"><Fragment set:html={t('t2')} /></p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="border-b border-white/10 text-neutral-300">
+                  <th class="text-left p-2 font-medium"><Fragment set:html={t('t18')} /></th>
+                  <th class="text-left p-2 font-medium"><Fragment set:html={t('t19')} /></th>
+                  <th class="text-right p-2 font-medium"><Fragment set:html={t('t20')} /></th>
+                  <th class="text-center p-2 font-medium">Jury</th>
+                  <th class="text-left p-2 font-medium"><Fragment set:html={t('t21')} /></th>
+                  <th class="text-left p-2 font-medium"><Fragment set:html={t('t22')} /></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N65</td>
+                  <td class="p-2 font-mono">NISS</td>
+                  <td class="p-2 text-right font-mono">0.757</td>
+                  <td class="p-2 text-center">9/9</td>
+                  <td class="p-2"><span class="text-green-400">+++</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N202</td>
+                  <td class="p-2 font-mono">NATG</td>
+                  <td class="p-2 text-right font-mono">0.520</td>
+                  <td class="p-2 text-center">5/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N297</td>
+                  <td class="p-2 font-mono">NLSW</td>
+                  <td class="p-2 text-right font-mono">0.653</td>
+                  <td class="p-2 text-center">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N366</td>
+                  <td class="p-2 font-mono">NFSI</td>
+                  <td class="p-2 text-right font-mono">0.628</td>
+                  <td class="p-2 text-center">7/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N427</td>
+                  <td class="p-2 font-mono">NLSF</td>
+                  <td class="p-2 text-right font-mono">0.641</td>
+                  <td class="p-2 text-center">9/9</td>
+                  <td class="p-2"><span class="text-green-400">++</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N476</td>
+                  <td class="p-2 font-mono">NETL</td>
+                  <td class="p-2 text-right font-mono">0.707</td>
+                  <td class="p-2 text-center">9/9</td>
+                  <td class="p-2"><span class="text-green-400">++</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N540</td>
+                  <td class="p-2 font-mono">NDTM</td>
+                  <td class="p-2 text-right font-mono">0.570</td>
+                  <td class="p-2 text-center">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N565</td>
+                  <td class="p-2 font-mono">NDTC</td>
+                  <td class="p-2 text-right font-mono">0.619</td>
+                  <td class="p-2 text-center">9/9</td>
+                  <td class="p-2"><span class="text-green-400">++</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-500">
+                  <td class="p-2 font-mono">N656</td>
+                  <td class="p-2 font-mono">NCSF</td>
+                  <td class="p-2 text-right font-mono">0.553</td>
+                  <td class="p-2 text-center">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><span class="text-red-400">Lost</span></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-400 bg-yellow-500/[0.03]">
+                  <td class="p-2 font-mono">N696</td>
+                  <td class="p-2 font-mono">NPSS</td>
+                  <td class="p-2 text-right font-mono">0.577</td>
+                  <td class="p-2 text-center">7/9</td>
+                  <td class="p-2"><Fragment set:html={t('t11')} /></td>
+                  <td class="p-2"><Fragment set:html={t('t12')} /></td>
+                </tr>
+                <tr class="border-b border-white/5 text-neutral-400">
+                  <td class="p-2 font-mono">N824</td>
+                  <td class="p-2 font-mono">NDSV</td>
+                  <td class="p-2 text-right font-mono text-red-400">0.452</td>
+                  <td class="p-2 text-center">4/9</td>
+                  <td class="p-2"><span class="text-red-400">−</span></td>
+                  <td class="p-2"><Fragment set:html={t('t13')} /></td>
+                </tr>
+                <tr class="border-b border-white/5 bg-amber-500/[0.03]">
+                  <td class="p-2 font-mono text-amber-400">N916</td>
+                  <td class="p-2 font-mono text-amber-400">NQSV</td>
+                  <td class="p-2 text-right font-mono text-amber-400">0.648</td>
+                  <td class="p-2 text-center text-amber-400">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><Fragment set:html={t('t14')} /></td>
+                </tr>
+                <tr class="border-b border-white/5 bg-amber-500/[0.03]">
+                  <td class="p-2 font-mono text-amber-400">N964</td>
+                  <td class="p-2 font-mono text-amber-400">NGTL</td>
+                  <td class="p-2 text-right font-mono text-amber-400">0.598</td>
+                  <td class="p-2 text-center text-amber-400">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><Fragment set:html={t('t15')} /></td>
+                </tr>
+                <tr class="border-b border-white/5 bg-amber-500/[0.03]">
+                  <td class="p-2 font-mono text-amber-400">N1179</td>
+                  <td class="p-2 font-mono text-amber-400">NLTL</td>
+                  <td class="p-2 text-right font-mono text-amber-400">0.678</td>
+                  <td class="p-2 text-center text-amber-400">8/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><Fragment set:html={t('t16')} /></td>
+                </tr>
+                <tr class="bg-amber-500/[0.03]">
+                  <td class="p-2 font-mono text-amber-400">N1274</td>
+                  <td class="p-2 font-mono text-amber-400">NESI</td>
+                  <td class="p-2 text-right font-mono text-amber-400">0.517</td>
+                  <td class="p-2 text-center text-amber-400">6/9</td>
+                  <td class="p-2"><span class="text-green-400">+</span></td>
+                  <td class="p-2"><Fragment set:html={t('t17')} /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Mini-STRC construct confirmation -->
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 mb-5">
+          <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('t3')} /></p>
+        </div>
+        
+        <!-- Summary boxes -->
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold text-red-400">9</p>
+            <p class="text-[10px] text-neutral-400 mt-1"><Fragment set:html={t('t4')} /></p>
+            <p class="text-[10px] text-neutral-500"><Fragment set:html={t('t5')} /></p>
+          </div>
+          <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold text-green-400">5</p>
+            <p class="text-[10px] text-neutral-400 mt-1"><Fragment set:html={t('t6')} /></p>
+            <p class="text-[10px] text-neutral-500"><Fragment set:html={t('t7')} /></p>
+          </div>
+          <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 text-center">
+            <p class="text-2xl font-bold text-amber-400">0.66</p>
+            <p class="text-[10px] text-neutral-400 mt-1"><Fragment set:html={t('t8')} /></p>
+            <p class="text-[10px] text-neutral-500"><Fragment set:html={t('t9')} /></p>
+          </div>
+        </div>
+        
+        <p class="text-[10px] text-neutral-500 mt-4"><Fragment set:html={t('t10')} /></p>
+      </div>
+    </div>
