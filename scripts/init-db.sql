@@ -14,6 +14,9 @@ CREATE TABLE IF NOT EXISTS tools (
   is_free INTEGER NOT NULL DEFAULT 1,
   has_api INTEGER NOT NULL DEFAULT 0,
   acmg_relevance TEXT,
+  how_to_use TEXT NOT NULL DEFAULT '',  -- brief usage instructions
+  api_url TEXT NOT NULL DEFAULT '',     -- API endpoint or web form URL
+  example_query TEXT NOT NULL DEFAULT '',-- exact query/command for E1659A
   sort_order INTEGER DEFAULT 0,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
