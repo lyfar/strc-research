@@ -5,6 +5,7 @@ import Conservation from '../components/Conservation.astro';
 import Structure3D from '../components/Structure3D.astro';
 import Pseudogene from '../components/Pseudogene.astro';
 import ACMG from '../components/ACMG.astro';
+import ComputationalConsensus from '../components/ComputationalConsensus.astro';
 import { variants } from '../data/variants';
 import { useTranslations } from '../lib/i18n';
 
@@ -28,6 +29,7 @@ const t = useTranslations(lang);
   <Conservation lang={lang} />
   <Structure3D lang={lang} />
   <Pseudogene lang={lang} />
+  <ComputationalConsensus lang={lang} />
   <ACMG lang={lang} />
 
   <div class="px-6 py-8 max-w-4xl mx-auto">
