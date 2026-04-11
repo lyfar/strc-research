@@ -1,0 +1,63 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/ComparativeGenomics.en.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en });
+---
+<div class="mt-16 pt-10 border-t border-white/5">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-4"><Fragment set:html={t('title')} /></h3>
+  <p class="text-xs text-neutral-400 leading-relaxed mb-4"><Fragment set:html={t('desc')} /></p>
+
+  <div class="space-y-3 mb-4">
+    <!-- Birds -->
+    <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-4">
+      <h4 class="text-[10px] text-cyan-400 font-semibold uppercase tracking-wider mb-2">{t('finding1_title')}</h4>
+      <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('finding1')} /></p>
+    </div>
+
+    <!-- Pfam boundary -->
+    <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+      <h4 class="text-[10px] text-purple-400 font-semibold uppercase tracking-wider mb-2">{t('finding2_title')}</h4>
+      <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('finding2')} /></p>
+    </div>
+
+    <!-- Fish length -->
+    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+      <h4 class="text-[10px] text-blue-400 font-semibold uppercase tracking-wider mb-2">{t('finding3_title')}</h4>
+      <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('finding3')} /></p>
+    </div>
+
+    <!-- Dual-AAV convergence -->
+    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+      <h4 class="text-[10px] text-green-400 font-semibold uppercase tracking-wider mb-2">{t('finding4_title')}</h4>
+      <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('finding4')} /></p>
+    </div>
+  </div>
+
+  <!-- Species table -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5 text-neutral-500">
+          <th class="text-left p-3 font-medium">{t('table_species')}</th>
+          <th class="text-right p-3 font-medium">{t('table_length')}</th>
+          <th class="text-left p-3 font-medium">{t('table_note')}</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-400">
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Human</td><td class="p-2 text-right font-mono">1,775</td><td class="p-2 text-neutral-500">Reference</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Mouse</td><td class="p-2 text-right font-mono">1,809</td><td class="p-2 text-neutral-500">+34 aa</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Cat</td><td class="p-2 text-right font-mono text-yellow-400">1,672</td><td class="p-2 text-neutral-500">Shortest mammal (-103 aa)</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Sea lamprey</td><td class="p-2 text-right font-mono">1,756</td><td class="p-2 text-neutral-500">Most ancient (~500 Mya)</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Chinese alligator</td><td class="p-2 text-right font-mono text-yellow-400">1,157</td><td class="p-2 text-neutral-500">-618 aa (assembly quality?)</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Bambooshark (paralog)</td><td class="p-2 text-right font-mono text-cyan-400">986</td><td class="p-2 text-neutral-500">Short STRC paralog exists</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Turbot (fish)</td><td class="p-2 text-right font-mono text-blue-400">2,697</td><td class="p-2 text-neutral-500">Longest (+922 aa, all N-term)</td></tr>
+        <tr class="border-b border-white/5"><td class="p-2 pl-3">Xenopus (frog)</td><td class="p-2 text-right font-mono">1,871</td><td class="p-2 text-neutral-500">+96 aa</td></tr>
+        <tr class="border-b border-white/5 bg-cyan-500/5"><td class="p-2 pl-3 text-cyan-400">Chicken</td><td class="p-2 text-right font-mono text-cyan-400">—</td><td class="p-2 text-cyan-400">No STRC gene. Hears fine.</td></tr>
+        <tr><td class="p-2 pl-3 text-cyan-400">Owl, songbirds</td><td class="p-2 text-right font-mono text-cyan-400">—</td><td class="p-2 text-cyan-400">No STRC gene. Excellent hearing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-xs text-neutral-500 italic leading-relaxed"><Fragment set:html={t('conclusion')} /></p>
+</div>

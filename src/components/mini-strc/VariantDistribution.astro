@@ -1,0 +1,71 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/VariantDistribution.en.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en });
+---
+<div class="mt-16 pt-10 border-t border-white/5">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-red-400 mb-4"><Fragment set:html={t('title')} /></h3>
+  <p class="text-xs text-neutral-400 leading-relaxed mb-4"><Fragment set:html={t('desc')} /></p>
+
+  <!-- Distribution bar -->
+  <div class="mb-4">
+    <div class="flex h-8 rounded overflow-hidden text-[9px] font-mono">
+      <div class="bg-neutral-700/60 flex items-center justify-center px-2 text-neutral-400" style="width:13%">
+        13% path.
+      </div>
+      <div class="bg-green-500/30 flex items-center justify-center px-2 text-green-400 font-bold" style="width:87%">
+        87% pathogenic load retained
+      </div>
+    </div>
+    <div class="flex justify-between text-[9px] text-neutral-500 mt-1">
+      <span>{t('removed_label')}</span>
+      <span>{t('retained_label')}</span>
+    </div>
+  </div>
+
+  <!-- Data table -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5 text-neutral-500">
+          <th class="text-left p-3 font-medium">Metric</th>
+          <th class="text-right p-3 font-medium">{t('removed_label')}</th>
+          <th class="text-right p-3 font-medium">{t('retained_label')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-3">{t('path_label')}</td>
+          <td class="p-3 text-right font-mono">{t('removed_path')}</td>
+          <td class="p-3 text-right font-mono text-green-400 font-bold">{t('retained_path')}</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-3">{t('missense_label')}</td>
+          <td class="p-3 text-right font-mono">{t('removed_miss')}</td>
+          <td class="p-3 text-right font-mono">{t('retained_miss')}</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-3">{t('nonsense_label')}</td>
+          <td class="p-3 text-right font-mono">{t('removed_non')}</td>
+          <td class="p-3 text-right font-mono">{t('retained_non')}</td>
+        </tr>
+        <tr class="text-neutral-400">
+          <td class="p-3">{t('glyc_label')}</td>
+          <td class="p-3 text-right font-mono">{t('removed_glyc')}</td>
+          <td class="p-3 text-right font-mono">{t('retained_glyc')}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-3">
+    <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('conclusion')} /></p>
+  </div>
+  <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 mb-3">
+    <p class="text-[10px] text-neutral-400 leading-relaxed"><Fragment set:html={t('caveat')} /></p>
+  </div>
+  <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3">
+    <p class="text-[10px] text-neutral-400 leading-relaxed"><Fragment set:html={t('bhatt')} /></p>
+  </div>
+</div>

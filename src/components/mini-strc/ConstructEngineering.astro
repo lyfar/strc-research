@@ -69,6 +69,41 @@ const t = useComponentTranslations(lang, { en, zh });
         </div>
       </div>
       
+      <!-- CpG hazard -->
+      <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-4">
+        <h4 class="text-[10px] text-red-400 font-semibold uppercase tracking-wider mb-2">{t('t15')}</h4>
+        <p class="text-xs text-neutral-300 leading-relaxed mb-2"><Fragment set:html={t('t16')} /></p>
+        <p class="text-xs text-neutral-300 leading-relaxed mb-2"><Fragment set:html={t('t17')} /></p>
+        <div class="grid sm:grid-cols-3 gap-2 text-[10px] mb-2">
+          <div class="bg-black/30 rounded p-2 text-center border border-red-500/20">
+            <div class="text-red-400 mb-1">Current</div>
+            <div class="text-xl font-bold text-red-400">156</div>
+            <div class="text-neutral-500">CpG dinucleotides</div>
+            <div class="text-neutral-600">48.3/kb (4.9x genome)</div>
+          </div>
+          <div class="bg-black/30 rounded p-2 text-center border border-green-500/20">
+            <div class="text-green-400 mb-1">After depletion</div>
+            <div class="text-xl font-bold text-green-400">21</div>
+            <div class="text-neutral-500">CpG dinucleotides</div>
+            <div class="text-neutral-600">6.5/kb (below genome avg)</div>
+          </div>
+          <div class="bg-black/30 rounded p-2 text-center">
+            <div class="text-neutral-400 mb-1">Cost</div>
+            <div class="text-xl font-bold text-neutral-300">3%</div>
+            <div class="text-neutral-500">CAI reduction</div>
+            <div class="text-neutral-600">14.5% codons swapped</div>
+          </div>
+        </div>
+        <p class="text-[10px] text-neutral-500"><Fragment set:html={t('t18')} /></p>
+        <p class="text-[10px] text-red-400 mt-2"><Fragment set:html={t('t19')} /></p>
+      </div>
+
+      <!-- mRNA structure risk -->
+      <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
+        <h4 class="text-[10px] text-yellow-400 font-semibold uppercase tracking-wider mb-2">{t('t20')}</h4>
+        <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('t21')} /></p>
+      </div>
+
       <!-- Glycosylation impact -->
       <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
         <h4 class="text-[10px] text-yellow-400 font-semibold uppercase tracking-wider mb-2">{t('t7')}</h4>

@@ -1,0 +1,15 @@
+{
+  "title": "17. Normal Mode Analysis\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-violet-500/20 text-violet-400 font-semibold normal-case\">ProDy ANM/GNM</span>",
+  "desc": "AlphaFold gives a static snapshot. Normal Mode Analysis reveals <strong class=\"text-white\">collective motions</strong> — the functional dynamics a protein needs to work. If truncation destroys the lowest-frequency modes, the protein may fold correctly but move wrong. We compared full STRC vs mini-STRC (700-1775) using Anisotropic Network Model (ANM, 15 A cutoff) and Gaussian Network Model (GNM, 10 A cutoff).",
+  "key_finding_title": "N-terminal is dynamically decoupled",
+  "key_finding": "Modes 1-20 of full STRC are <strong class=\"text-red-400\">>92% localized to the disordered N-terminal</strong> (residues 1-699). The first mode involving the structured core appears at <strong class=\"text-white\">mode 21</strong>. The N-terminal contributes only floppy, non-functional motions and is dynamically independent from the functional core.",
+  "overlap_title": "Mode preservation: subspace overlap",
+  "overlap_desc": "Do the same residues move the same way after truncation? Overlap >0.7 = excellent in the NMA literature.",
+  "overlap_cumulative": "Cumulative subspace overlap (top 3 modes): <strong class=\"text-green-400\">0.905</strong> — outstanding. Functional dynamics are preserved.",
+  "modes_title": "Mini-STRC mode characterization",
+  "mode1": "<strong>Mode 1:</strong> Lateral swaying, C-terminal tail (res 1770-1775)",
+  "mode2": "<strong>Mode 2:</strong> Axial twisting, C-terminal tail",
+  "mode3": "<strong>Mode 3:</strong> Axial twisting with central hinge around residue 1113",
+  "bfactor": "B-factor correlation: GNM log-transformed Pearson r = 0.57 (good), ANM Pearson r = 0.83. Mobility profile qualitatively preserved; absolute amplitudes differ (expected when removing 40% of the protein).",
+  "conclusion": "<strong class=\"text-green-400\">Verdict:</strong> The N-terminal is not just structurally disordered — it is <strong>dynamically decoupled</strong>. It does not participate in the collective motions of the structured core. Removing it does not perturb the essential dynamics needed for stereocilia adhesion function. Subspace overlap 0.905 is strong evidence that mini-STRC retains full functional dynamics."
+}

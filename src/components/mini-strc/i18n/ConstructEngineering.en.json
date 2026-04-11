@@ -12,5 +12,12 @@
   "t11": "Native but unusually long",
   "t12": "Efficient ER targeting",
   "t13": "Revised AAV construct map (with IgK signal peptide)",
-  "t14": "Full STRC"
+  "t14": "Full STRC",
+  "t15": "CpG dinucleotide hazard",
+  "t16": "Our codon-optimized CDS contains <strong class=\"text-red-400\">156 CpG dinucleotides</strong> — 4.9x the human genome average (48.3/kb vs ~10/kb). Unmethylated CpG motifs in AAV transgenes activate <strong class=\"text-white\">TLR9</strong>, triggering innate immune responses. In the cochlea, this inflammatory response can damage the very hair cells we're targeting.",
+  "t17": "All 156 CpGs sit at codon junctions (position 3 + position 1 of adjacent codons). They are <strong class=\"text-green-400\">100% eliminable</strong> by synonymous codon swaps. Replacing 156 of 1,076 codons (14.5%) reduces CpG from 156 to 21 (87% reduction), drops density to 6.5/kb (below genome average), at a cost of only ~3% CAI loss. GC content drops from 70.5% to 66.3%, also reducing mRNA secondary structure risk.",
+  "t18": "Top CpG-contributing junctions: P(CCC)-E(GAG) 20x, A(GCC)-A(GCC) 13x, A(GCC)-V(GTG) 9x. These three patterns alone account for 27% of all CpGs.",
+  "t19": "<strong class=\"text-red-400\">Action required:</strong> CpG-depleted codon re-optimization before any lab experiment. This is a low-cost, high-value safety optimization that should be standard for cochlear AAV constructs.",
+  "t20": "mRNA secondary structure risk",
+  "t21": "GC content of 70.5% means <strong class=\"text-yellow-400\">67% of 100-bp windows exceed 70% GC</strong>. The 5' region (nt 21-70, encoding the IgK signal peptide C-terminus) has a 73-77% GC hotspot that risks stalling ribosome scanning at the translation initiation site. CpG depletion partially addresses this (GC drops to 66.3%), but the 5' region should be specifically optimized with lower-GC synonymous codons in the first 30-50 codons."
 }

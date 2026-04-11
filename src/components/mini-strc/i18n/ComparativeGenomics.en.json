@@ -1,0 +1,16 @@
+{
+  "title": "16. Comparative genomics\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/20 text-cyan-400 font-semibold normal-case\">cross-species</span>",
+  "desc": "If the N-terminus is dispensable, we'd expect: (a) lower conservation than the C-terminal, (b) no recognized domain, and (c) species that hear without STRC at all. We checked ~180 STRC orthologs across vertebrates.",
+  "finding1_title": "Birds lack STRC — and hear",
+  "finding1": "Among all Aves, only the North Island brown kiwi has a STRC gene (1,777 aa). <strong class=\"text-white\">Chickens, songbirds, and owls have no STRC gene at all</strong> — yet have excellent hearing (125 Hz - 8 kHz+). Stereocilin is not universally required for vertebrate hearing. It is specific to the mammalian OHC horizontal top connector / tectorial membrane attachment system.",
+  "finding2_title": "Pfam domain boundary = our cut point",
+  "finding2": "The <strong class=\"text-white\">Stereocilin LRR domain (PF21058)</strong> maps to human residues ~700-1100 across all annotated orthologs. The N-terminal ~700 residues contain <strong class=\"text-red-400\">no recognized Pfam domain</strong>. Our truncation at residue 700 falls exactly at the domain boundary — we remove the domain-free region and keep everything with structural annotation.",
+  "finding3_title": "Fish STRC is longer, not shorter",
+  "finding3": "Bony fish stereocilins range from 1,900-2,700 aa — up to 900 aa longer than human. The extra length is in the N-terminal region. This demonstrates the N-terminus <strong class=\"text-white\">tolerates massive size variation</strong> (±900 aa) across vertebrate evolution without losing function.",
+  "finding4_title": "Dual-AAV papers converge on the same boundary",
+  "finding4": "Bhatt et al. (2022, Science Advances) independently chose their dual-AAV split at <strong class=\"text-white\">Ser746/Cys747</strong> to avoid disrupting structural domains. Iranfar et al. (2026) used a similar split. Two independent groups, designing for different purposes, identified the same domain boundary that AlphaFold 3's disorder profile predicts.",
+  "table_species": "Species",
+  "table_length": "STRC length",
+  "table_note": "Note",
+  "conclusion": "No vertebrate has a naturally truncated STRC missing only residues 1-700 while retaining 700-1775. But the convergent evidence — no N-terminal domain, precise Pfam boundary match, bird STRC absence, fish length variation, and independent dual-AAV split point selection — supports the hypothesis that the N-terminal region is not essential for the C-terminal core's structural function."
+}

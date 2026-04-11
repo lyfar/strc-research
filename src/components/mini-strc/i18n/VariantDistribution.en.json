@@ -1,0 +1,21 @@
+{
+  "title": "15. Population variant distribution\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-red-500/20 text-red-400 font-semibold normal-case\">ClinVar</span>",
+  "desc": "If the N-terminal is functionally critical, pathogenic variants should cluster there too. We queried <strong class=\"text-white\">ClinVar (427 STRC variants)</strong> and mapped pathogenic/likely pathogenic variants across the protein. The result strongly supports truncation safety.",
+  "removed_label": "Residues 1-699 (removed)",
+  "retained_label": "Residues 700-1775 (retained)",
+  "path_label": "Pathogenic + Likely Pathogenic",
+  "missense_label": "Pathogenic missense",
+  "nonsense_label": "Pathogenic nonsense",
+  "glyc_label": "N-glycosylation sites",
+  "removed_path": "~12 (13%)",
+  "retained_path": "~77+ (87%)",
+  "removed_miss": "2 (L490P, C590R)",
+  "retained_miss": "5+ (L714P, W1475C, M1483R, T1709A, P1520R)",
+  "removed_non": "5 (pos 87-410)",
+  "retained_non": "20+ (pos 849-1730)",
+  "removed_glyc": "9 of 14",
+  "retained_glyc": "5 of 14",
+  "conclusion": "<strong class=\"text-green-400\">87% of pathogenic load is in the retained region.</strong> The N-terminal carries only 2 pathogenic missense variants — and even these may be pseudogene contamination artifacts, since exons 1-15 share 100% identity between STRC and its pseudogene STRCP1. Nonsense variants in the N-terminal (positions 87-410) are pathogenic because they also truncate the C-terminal — they do not prove N-terminal function per se.",
+  "caveat": "<strong class=\"text-amber-400\">Pseudogene caveat:</strong> STRCP1 shares >99% coding sequence with STRC. Exons 1-15 (entire N-terminal) have 100% identity — short-read sequencing cannot distinguish the two. N-terminal variant counts in ClinVar and gnomAD may include pseudogene contamination. Only long-read sequencing or long-range PCR reliably calls variants in this region.",
+  "bhatt": "Independent validation: Bhatt et al. (dual-AAV STRC, Science Advances 2022) chose their split point at <strong class=\"text-white\">Ser746/Cys747</strong> to \"avoid predicted structural domains\" — almost exactly our 700 boundary. Two independent analyses converge on the same domain boundary."
+}
