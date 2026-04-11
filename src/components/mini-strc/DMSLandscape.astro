@@ -1,0 +1,142 @@
+---
+// Deep Mutational Scanning landscape via PoolParty + ESM-2
+const { lang = 'en' } = Astro.props;
+
+const topConstrained = [
+  { pos: 885, wt: 'L', avg: -14.7, region: 'LRR domain' },
+  { pos: 1652, wt: 'W', avg: -14.3, region: 'E1659 region' },
+  { pos: 1724, wt: 'L', avg: -13.9, region: 'GPI region' },
+  { pos: 862, wt: 'W', avg: -13.9, region: 'LRR domain' },
+  { pos: 1376, wt: 'G', avg: -13.7, region: 'ARM mid' },
+  { pos: 1594, wt: 'L', avg: -13.7, region: 'ARM C-term' },
+  { pos: 961, wt: 'C', avg: -13.6, region: 'LRR domain' },
+  { pos: 842, wt: 'Q', avg: -13.6, region: 'LRR domain' },
+];
+
+const topTolerant = [
+  { pos: 1309, wt: 'N', avg: 1.3 },
+  { pos: 765, wt: 'K', avg: 1.1 },
+  { pos: 1110, wt: 'M', avg: 0.9 },
+  { pos: 1463, wt: 'N', avg: 0.1 },
+  { pos: 769, wt: 'K', avg: 0.1 },
+];
+
+const regions = [
+  { name: 'LRR domain', range: '754-1074', avg: -7.83, n: 321, color: 'blue' },
+  { name: 'ARM core', range: '1075-1200', avg: -5.71, n: 126, color: 'purple' },
+  { name: 'ARM mid', range: '1200-1400', avg: -6.56, n: 201, color: 'purple' },
+  { name: 'ARM C-term', range: '1400-1600', avg: -7.80, n: 201, color: 'purple' },
+  { name: 'E1659 region', range: '1600-1700', avg: -9.46, n: 101, color: 'red' },
+  { name: 'GPI region', range: '1700-1775', avg: -6.44, n: 76, color: 'green' },
+];
+
+const maxConstraint = 9.46;
+---
+
+<div class="mt-16 pt-10 border-t border-white/5">
+  <div class="flex items-center gap-2 mb-1">
+    <h3 class="text-sm font-semibold text-white">Deep Mutational Scanning Landscape</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-blue-500/20 text-blue-400 font-semibold">PoolParty + ESM-2</span>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-green-500/20 text-green-400 font-semibold">NEW</span>
+  </div>
+  <p class="text-xs text-neutral-500 mb-6">
+    All 20,444 possible single amino acid substitutions in mini-STRC generated via
+    <a href="https://doi.org/10.64898/2026.04.06.716802" class="text-blue-400 hover:text-blue-300 no-underline" target="_blank">PoolParty</a>
+    (Liu, Cordero & Kinney, bioRxiv 2026) and scored with
+    <a href="/tools/tool/esm1v" class="text-blue-400 hover:text-blue-300 no-underline">ESM-2</a>
+    in a single forward pass.
+  </p>
+
+  <!-- Stats -->
+  <div class="grid sm:grid-cols-4 gap-3 mb-8">
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="text-xl font-bold font-mono text-white">19,418</div>
+      <div class="text-[10px] text-neutral-500">variants scored</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="text-xl font-bold font-mono text-white">1,022</div>
+      <div class="text-[10px] text-neutral-500">positions covered</div>
+    </div>
+    <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+      <div class="text-xl font-bold font-mono text-red-400">77%</div>
+      <div class="text-[10px] text-neutral-500">strongly constrained</div>
+    </div>
+    <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+      <div class="text-xl font-bold font-mono text-red-400">49th</div>
+      <div class="text-[10px] text-neutral-500">E1659 rank / 1022</div>
+    </div>
+  </div>
+
+  <!-- Regional constraint bars -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Constraint by region</h4>
+  <div class="space-y-2 mb-8">
+    {regions.map((r) => (
+      <div class="flex items-center gap-3">
+        <span class="w-28 text-xs text-neutral-400 text-right shrink-0">{r.name}</span>
+        <div class="flex-1 h-5 bg-white/[0.02] rounded overflow-hidden">
+          <div
+            class="h-full rounded bg-red-500/50"
+            style={`width: ${Math.abs(r.avg) / maxConstraint * 100}%`}
+          ></div>
+        </div>
+        <span class="w-12 text-xs font-mono text-neutral-500 shrink-0">{r.avg.toFixed(1)}</span>
+      </div>
+    ))}
+  </div>
+  <p class="text-xs text-neutral-600 mb-8">
+    E1659 region (1600-1700) is the most constrained at avg delta -9.46.
+    Lower values = more damaging mutations = more functionally critical.
+  </p>
+
+  <!-- Top constrained -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Most constrained positions (do not modify)</h4>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5">
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Position</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Residue</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Avg delta</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Region</th>
+        </tr>
+      </thead>
+      <tbody>
+        {topConstrained.map((p) => (
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-1.5 font-mono text-white">{p.pos}</td>
+            <td class="px-4 py-1.5 font-mono text-red-400 font-bold">{p.wt}</td>
+            <td class="px-4 py-1.5 font-mono text-red-400">{p.avg.toFixed(1)}</td>
+            <td class="px-4 py-1.5 text-neutral-500">{p.region}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Top tolerant -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Most tolerant positions (safe for codon optimization)</h4>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5">
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Position</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Residue</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Avg delta</th>
+        </tr>
+      </thead>
+      <tbody>
+        {topTolerant.map((p) => (
+          <tr class="border-b border-white/5">
+            <td class="px-4 py-1.5 font-mono text-white">{p.pos}</td>
+            <td class="px-4 py-1.5 font-mono text-green-400 font-bold">{p.wt}</td>
+            <td class="px-4 py-1.5 font-mono text-green-400">+{p.avg.toFixed(1)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-xs text-neutral-600">
+    E1659 is rank 49/1022 (top 5% most constrained). All 19 substitutions are damaging (E→A = -11.1, E→P = -17.2). Library: <a href="https://doi.org/10.64898/2026.04.06.716802" class="text-blue-400 no-underline" target="_blank">PoolParty</a> (CSHL). Scored: <a href="/tools/tool/esm1v" class="text-blue-400 no-underline">ESM-2</a> on M5 Max. Full 19,418-variant matrix available on request.
+  </p>
+</div>
