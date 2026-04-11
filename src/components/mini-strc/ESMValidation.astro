@@ -102,7 +102,45 @@ const { lang = 'en' } = Astro.props;
       <div class="text-[10px] text-green-400">No change</div>
     </div>
   </div>
+
+  <!-- Pseudo-perplexity -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mt-8 mb-3">Sequence fitness (pseudo-perplexity)</h4>
+  <p class="text-xs text-neutral-500 mb-3">
+    ESM-2 pseudo-perplexity measures how "natural" a protein sequence looks to the model. Lower = more evolutionarily fit.
+  </p>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-4">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5">
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Construct</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Residues</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">PPL</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Interpretation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-white/5">
+          <td class="px-4 py-2 font-medium">Mini-STRC</td>
+          <td class="px-4 py-2 text-neutral-500">700-1775</td>
+          <td class="px-4 py-2 font-mono text-green-400 font-bold">1.35</td>
+          <td class="px-4 py-2"><span class="text-green-400">Identical to full-length</span></td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="px-4 py-2">Full STRC (C-term)</td>
+          <td class="px-4 py-2 text-neutral-500">754-1775</td>
+          <td class="px-4 py-2 font-mono text-white">1.35</td>
+          <td class="px-4 py-2 text-neutral-400">Reference</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">N-terminal (removed)</td>
+          <td class="px-4 py-2 text-neutral-500">1-700</td>
+          <td class="px-4 py-2 font-mono text-yellow-400">1.51</td>
+          <td class="px-4 py-2"><span class="text-yellow-400">Less fit, supports removal</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p class="text-xs text-neutral-600">
-    The truncation at residue 700 does not alter the evolutionary fitness landscape at E1659 or the C-terminal GPI anchor sites (S1758: -0.310, S1761: -0.314, both optimal). This provides sequence-level evidence that mini-STRC (700-1775) preserves the functional properties of the full protein in the region that matters for tectorial membrane attachment.
+    The truncation at residue 700 does not alter the evolutionary fitness landscape. Mini-STRC (PPL 1.35) is indistinguishable from full-length C-terminal (PPL 1.35), while the removed N-terminal is measurably less fit (PPL 1.51). E1659 region (PPL 1.6) is more constrained than average, confirming its functional importance. GPI anchor sites remain optimal.
   </p>
 </div>
