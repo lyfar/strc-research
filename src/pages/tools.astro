@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ToolCard from '../components/ToolCard.astro';
+import { tools, CATEGORIES as categories, verifiedCount, testedCount } from '../data/tools';
+
+const lang = 'en';
+
+// Group tools by category
+const grouped = new Map<string, typeof tools>();
+for (const tool of tools) {
+  const list = grouped.get(tool.category) || [];
+  list.push(tool);
+  grouped.set(tool.category, list);
+}
+---
+
+<Layout lang={lang}>
+  <!-- Header -->
+  <section class="px-6 py-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold uppercase tracking-wider">Part 4</span>
+      </div>
+      <h1 class="text-xl font-semibold text-white mb-3">Computational Toolkit</h1>
+      <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+        Comprehensive collection of computational tools used in STRC variant analysis and hearing loss genetics research. All tools are freely accessible to enable independent genetic variant research.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid sm:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-xl font-bold text-white mb-0.5">{tools.length}</div>
+          <div class="text-xs text-neutral-500">Total tools</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-xl font-bold text-green-400 mb-0.5">{verifiedCount}</div>
+          <div class="text-xs text-neutral-500">Verified / Used</div>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+          <div class="text-xl font-bold text-blue-400 mb-0.5">{testedCount}</div>
+          <div class="text-xs text-neutral-500">E1659A tested</div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="mb-8">
+        <input
+          id="tool-search"
+          type="text"
+          placeholder="Search tools..."
+          class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:border-white/20 transition-colors"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Sections -->
+  {categories.map((category) => {
+    const categoryTools = grouped.get(category) || [];
+    return (
+      <section class="px-6 pb-10 tool-category" data-category={category}>
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-3 mb-4">
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500">{category}</h2>
+            <span class="text-[10px] text-neutral-600">{categoryTools.length} tools</span>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {categoryTools.map((tool) => (
+              <ToolCard
+                slug={tool.slug}
+                name={tool.name}
+                description={tool.description}
+                status={tool.status}
+                e1659a={tool.e1659a}
+                hasApi={tool.hasApi}
+                isFree={tool.isFree}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Footer Summary -->
+  <section class="px-6 pb-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-white mb-4">Research Impact</h3>
+        <div class="grid sm:grid-cols-3 gap-6 text-xs">
+          <div>
+            <div class="text-xl font-bold text-green-400 mb-1">{tools.length}</div>
+            <div class="text-neutral-400">Computational tools</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-blue-400 mb-1">16</div>
+            <div class="text-neutral-400">AlphaFold 3 experiments</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-purple-400 mb-1">$50-100</div>
+            <div class="text-neutral-400">Total AI cost for full analysis</div>
+          </div>
+        </div>
+        <p class="text-xs text-neutral-500 mt-4">
+          All tools are designed for independent research. Most databases are free with academic access.
+          The complete methodology is documented to enable reproduction by any family facing similar variant uncertainty.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const input = document.getElementById('tool-search') as HTMLInputElement;
+  if (input) {
+    input.addEventListener('input', () => {
+      const query = input.value.toLowerCase().trim();
+      const cards = document.querySelectorAll<HTMLElement>('[data-name]');
+      const sections = document.querySelectorAll<HTMLElement>('.tool-category');
+
+      cards.forEach((card) => {
+        const name = card.getAttribute('data-name') || '';
+        card.style.display = name.includes(query) ? '' : 'none';
+      });
+
+      sections.forEach((section) => {
+        const visibleCards = section.querySelectorAll<HTMLElement>('[data-name]');
+        let anyVisible = false;
+        visibleCards.forEach((card) => {
+          if (card.style.display !== 'none') anyVisible = true;
+        });
+        section.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  }
+</script>

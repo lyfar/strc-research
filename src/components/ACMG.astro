@@ -32,17 +32,13 @@ const t = useTranslations(lang);
             <td class="px-4 py-3">{t('acmg.pm2.strength')}</td>
             <td class="px-4 py-3 text-neutral-400">{t('acmg.pm2.evidence')}</td>
           </tr>
-          <tr>
-            <td class="px-4 py-3 font-mono text-yellow-400">PP1_Supporting</td>
-            <td class="px-4 py-3">{t('acmg.pp1.strength')}</td>
-            <td class="px-4 py-3 text-neutral-400">{t('acmg.pp1.evidence')}</td>
-          </tr>
         </tbody>
       </table>
     </div>
-    <div class="mt-4 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+    <p class="mt-3 text-xs text-neutral-500">{t('acmg.pp1.note')}</p>
+    <div class="mt-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
       <div class="flex items-center gap-2">
-        <span class="text-red-400 font-bold text-sm">{t('acmg.result.label')}</span>
+        <span class="text-yellow-400 font-bold text-sm">{t('acmg.result.label')}</span>
       </div>
       <p class="text-xs text-neutral-400 mt-1">
         {t('acmg.result.desc')}

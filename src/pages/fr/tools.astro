@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <!-- Header -->
+  <section class="px-6 py-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold uppercase tracking-wider">Part 4</span>
+      </div>
+      <h1 class="text-xl font-semibold text-white mb-3">Computational Tools</h1>
+      <p class="text-sm text-neutral-400 leading-relaxed mb-6">Comprehensive toolkit for independent genetic variant research and hearing loss genetics analysis.</p>
+      <div class="text-xs text-neutral-500 bg-white/[0.02] border border-white/5 rounded-lg p-4">
+        <p class="mb-2"><strong class="text-neutral-400">Independent Research Toolkit:</strong> This is a comprehensive collection of computational tools used in our STRC variant analysis and hearing loss genetics research. All tools are freely accessible to enable independent genetic variant research.</p>
+        <p><strong class="text-neutral-400">Total Cost:</strong> Claude Opus 4.6 API (~$50-100 for a project like this) + OpenClaw (free, open source). All scientific databases and most analysis tools are free with academic/public access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & Automation -->
+  <section class="px-6 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">AI & Automation</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <a href="https://openclaw.ai" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">Hermes (AI Agent)</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 uppercase tracking-wider">Used</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Open source AI agent for autonomous research. Downloads files, searches databases, builds analysis pipelines.</p>
+          <div class="text-[10px] text-neutral-500">Used for: All automated database queries, file downloads, and analysis coordination</div>
+        </a>
+
+        <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">Claude Opus 4.6</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 uppercase tracking-wider">Used</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Large language model (Anthropic). Powers the AI agent reasoning and scientific analysis.</p>
+          <div class="text-[10px] text-neutral-500">Used for: Scientific reasoning, ACMG interpretation, hypothesis generation</div>
+        </a>
+
+        <a href="https://www.alphagenomedocs.com" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">AlphaGenome</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 uppercase tracking-wider">New</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">DNA sequence → multi-modal predictions (chromatin, expression, splicing, contact maps, histone marks). API-based.</p>
+          <div class="text-[10px] text-neutral-500">Supports: 11 output types across genomic functions via Python API (pip install alphagenome)</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Variant Classification & Scoring -->
+  <section class="px-6 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Variant Classification & Scoring</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">AlphaMissense</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 uppercase tracking-wider">Used</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Missense variant pathogenicity prediction using protein structure. Immune to pseudogene interference.</p>
+          <div class="text-[10px] text-neutral-500">Used for: E1659A pathogenicity (0.9016), critical for STRC due to STRCP1 pseudogene</div>
+        </a>
+
+        <a href="https://sites.google.com/site/revelgenomics/" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">REVEL</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 uppercase tracking-wider">Used</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Rare variant ensemble learner combining 13 pathogenicity predictors. Threshold ≥0.773 per Pejaver 2022.</p>
+          <div class="text-[10px] text-neutral-500">Used for: E1659A score 0.789, concordant with AlphaMissense for PP3_Moderate</div>
+        </a>
+
+        <a href="https://www.ncbi.nlm.nih.gov/clinvar/" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-sm font-semibold text-white group-hover:text-white/90">ClinVar</h3>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 uppercase tracking-wider">Available</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">NCBI database of genetic variants and their clinical significance. Essential for literature review.</p>
+          <div class="text-[10px] text-neutral-500">Use case: Check existing classifications, variant prevalence, clinical interpretations</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Summary -->
+  <section class="px-6 pb-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-white mb-4">Research Impact</h3>
+        <div class="grid sm:grid-cols-3 gap-6 text-xs">
+          <div>
+            <div class="text-xl font-bold text-green-400 mb-1">47</div>
+            <div class="text-neutral-400">Computational tools</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-blue-400 mb-1">16</div>
+            <div class="text-neutral-400">AlphaFold 3 experiments</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-purple-400 mb-1">$50-100</div>
+            <div class="text-neutral-400">Total AI cost for full analysis</div>
+          </div>
+        </div>
+        <p class="text-xs text-neutral-500 mt-4">
+          All tools are designed for independent research. Most databases are free with academic access. 
+          The complete methodology is documented to enable reproduction by any family facing similar variant uncertainty.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

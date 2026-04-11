@@ -1,0 +1,17 @@
+---
+interface Props {
+  status: string;
+}
+const { status } = Astro.props;
+
+const config: Record<string, { label: string; bg: string; text: string }> = {
+  verified:     { label: 'VERIFIED',  bg: 'bg-green-500/20',   text: 'text-green-400' },
+  tested:       { label: 'TESTED',    bg: 'bg-green-500/20',   text: 'text-green-400' },
+  available:    { label: 'AVAILABLE', bg: 'bg-blue-500/20',    text: 'text-blue-400' },
+  stub:         { label: 'STUB',      bg: 'bg-neutral-500/20', text: 'text-neutral-400' },
+  'site-down':  { label: 'DOWN',      bg: 'bg-red-500/20',     text: 'text-red-400' },
+  'link-broken':{ label: 'BROKEN',    bg: 'bg-red-500/20',     text: 'text-red-400' },
+};
+const c = config[status] || config['stub'];
+---
+<span class={`px-2 py-0.5 text-[10px] rounded ${c.bg} ${c.text} font-semibold uppercase tracking-wider`}>{c.label}</span>

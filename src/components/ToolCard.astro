@@ -1,0 +1,33 @@
+---
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+  slug: string;
+  name: string;
+  description: string;
+  status: string;
+  e1659a?: { score: string; interpretation: string };
+  hasApi: boolean;
+  isFree: boolean;
+}
+const { slug, name, description, status, e1659a, hasApi, isFree } = Astro.props;
+---
+<a href={`/tools/tool/${slug}`}
+   class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group"
+   data-name={name.toLowerCase()}
+   data-status={status}>
+  <div class="flex items-center justify-between mb-2">
+    <h3 class="text-sm font-semibold text-white group-hover:text-white/90 truncate mr-2">{name}</h3>
+    <StatusBadge status={status} />
+  </div>
+  <p class="text-xs text-neutral-400 leading-relaxed mb-2 line-clamp-2">{description}</p>
+  {e1659a && (
+    <div class="text-[10px] text-neutral-500 mb-2">
+      <span class="text-green-400/70 font-medium">E1659A:</span> {e1659a.score} — {e1659a.interpretation}
+    </div>
+  )}
+  <div class="flex gap-2">
+    {hasApi && <span class="text-[9px] px-1 py-0.5 rounded bg-blue-500/10 text-blue-400/60">API</span>}
+    {isFree && <span class="text-[9px] px-1 py-0.5 rounded bg-green-500/10 text-green-400/60">FREE</span>}
+  </div>
+</a>

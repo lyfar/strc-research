@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const lang = 'ja';
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <!-- Header -->
+  <section class="px-6 py-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold uppercase tracking-wider">Part 4</span>
+      </div>
+      <h1 class="text-xl font-semibold text-white mb-3">Computational Tools</h1>
+      <p class="text-sm text-neutral-400 leading-relaxed mb-6">Comprehensive toolkit for independent genetic variant research and hearing loss genetics analysis.</p>
+      <div class="text-xs text-neutral-500 bg-white/[0.02] border border-white/5 rounded-lg p-4">
+        <p><strong class="text-neutral-400">47 computational tools</strong> used in STRC variant analysis. All freely accessible for independent research. <a href="/tools" class="text-blue-400 hover:underline">View English version</a> for complete details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Tools -->
+  <section class="px-6 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Key Tools Used</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <a href="https://openclaw.ai" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">Hermes (AI Agent)</h3>
+          <p class="text-xs text-neutral-400">Open source AI agent for autonomous research</p>
+        </a>
+
+        <a href="https://deepmind.google/technologies/alphamissense/" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">AlphaMissense</h3>
+          <p class="text-xs text-neutral-400">Variant pathogenicity prediction (E1659A: 0.9016)</p>
+        </a>
+
+        <a href="https://alphafoldserver.com" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">AlphaFold 3 Server</h3>
+          <p class="text-xs text-neutral-400">16 experiments testing mini-STRC hypothesis</p>
+        </a>
+
+        <a href="https://gnomad.broadinstitute.org" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">gnomAD</h3>
+          <p class="text-xs text-neutral-400">Population frequency analysis (E1659A: 0 alleles)</p>
+        </a>
+
+        <a href="https://rest.ensembl.org" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">Ensembl REST API</h3>
+          <p class="text-xs text-neutral-400">Genomic coordinates and PAM site analysis</p>
+        </a>
+
+        <a href="https://www.uniprot.org" target="_blank" rel="noopener" class="block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
+          <h3 class="text-sm font-semibold text-white group-hover:text-white/90 mb-2">UniProt</h3>
+          <p class="text-xs text-neutral-400">Conservation analysis across 9 mammalian species</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="px-6 pb-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white/[0.02] border border-white/5 rounded-lg p-6">
+        <h3 class="text-sm font-semibold text-white mb-4">Research Impact</h3>
+        <div class="grid sm:grid-cols-3 gap-6 text-xs">
+          <div>
+            <div class="text-xl font-bold text-green-400 mb-1">47</div>
+            <div class="text-neutral-400">Computational tools</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-blue-400 mb-1">16</div>
+            <div class="text-neutral-400">AlphaFold 3 experiments</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-purple-400 mb-1">$50-100</div>
+            <div class="text-neutral-400">Total AI cost</div>
+          </div>
+        </div>
+        <p class="text-xs text-neutral-500 mt-4">
+          <a href="/tools" class="text-blue-400 hover:underline">View full English version</a> for complete tool descriptions and usage details.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
