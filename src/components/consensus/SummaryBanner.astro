@@ -1,0 +1,17 @@
+---
+interface Props {
+  totalDamaging: number;
+  total: number;
+}
+const { totalDamaging, total } = Astro.props;
+---
+
+<div class="bg-red-500/10 border border-red-500/20 rounded-lg p-5 mb-8">
+  <div class="flex items-center gap-3 mb-2">
+    <span class="text-red-400 font-bold text-lg">{totalDamaging}/{total}</span>
+    <span class="text-sm text-neutral-300">predictors agree: E1659A is damaging</span>
+  </div>
+  <p class="text-xs text-neutral-400">
+    Overwhelming computational consensus across meta-predictors, single-tool predictors, and protein stability analysis. The only partial outlier is PrimateAI (0.559, Tolerated), explained by the STRC pseudogene confounding primate alignments.
+  </p>
+</div>

@@ -1,0 +1,59 @@
+---
+// Sensitivity Analysis — tornado-style elasticity bars
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<!-- Sensitivity analysis -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
+  <h3 class="text-sm font-semibold mb-3">{t('ode.sensitivity.title')}</h3>
+  <p class="text-xs text-neutral-400 mb-3">{t('ode.sensitivity.desc')}</p>
+  <div class="space-y-2">
+    <div>
+      <div class="flex justify-between text-[11px] mb-1">
+        <span class="text-neutral-400">k_transcription_max</span>
+        <span class="text-white font-mono">1.50</span>
+      </div>
+      <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div class="h-full bg-orange-500/60 rounded-full" style="width:100%"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex justify-between text-[11px] mb-1">
+        <span class="text-neutral-400">k_translation</span>
+        <span class="text-white font-mono">1.50</span>
+      </div>
+      <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div class="h-full bg-orange-500/60 rounded-full" style="width:100%"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex justify-between text-[11px] mb-1">
+        <span class="text-neutral-400">n_channels</span>
+        <span class="text-white font-mono">0.46</span>
+      </div>
+      <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div class="h-full bg-yellow-500/40 rounded-full" style="width:31%"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex justify-between text-[11px] mb-1">
+        <span class="text-neutral-400">Kd_CaN</span>
+        <span class="text-white font-mono">-0.47</span>
+      </div>
+      <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div class="h-full bg-blue-500/40 rounded-full" style="width:31%"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex justify-between text-[11px] mb-1">
+        <span class="text-neutral-400">buffer_ratio</span>
+        <span class="text-white font-mono">-0.46</span>
+      </div>
+      <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div class="h-full bg-blue-500/40 rounded-full" style="width:31%"></div>
+      </div>
+    </div>
+  </div>
+  <p class="text-[10px] text-neutral-500 mt-3">{t('ode.sensitivity.note')}</p>
+</div>

@@ -1,5 +1,8 @@
 ---
 // Computational Consensus — all E1659A predictor scores with links to tool pages
+import SummaryBanner from './consensus/SummaryBanner.astro';
+import ScoreTable from './consensus/ScoreTable.astro';
+
 const { lang = 'en' } = Astro.props;
 
 const pathogenicityScores = [
@@ -41,192 +44,50 @@ const populationScores = [
 
 const totalDamaging = pathogenicityScores.filter(s => s.color === 'red').length + proteinLMScores.filter(s => s.color === 'red').length + structuralScores.filter(s => s.color === 'red').length;
 const total = pathogenicityScores.length + proteinLMScores.length + structuralScores.length;
-
-function scoreColor(color: string) {
-  if (color === 'red') return 'text-red-400';
-  if (color === 'orange') return 'text-yellow-400';
-  return 'text-green-400';
-}
-
-function dotColor(color: string) {
-  if (color === 'red') return 'bg-red-400';
-  if (color === 'orange') return 'bg-yellow-400';
-  return 'bg-green-400';
-}
+const toolCount = pathogenicityScores.length + proteinLMScores.length + structuralScores.length + splicingScores.length + populationScores.length;
 ---
 
 <section class="px-6 py-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-2">Computational Consensus</h2>
     <p class="text-xs text-neutral-500 mb-6">
-      {totalDamaging} of {total} predictors classify E1659A as damaging. Scores aggregated from {pathogenicityScores.length + proteinLMScores.length + structuralScores.length + splicingScores.length + populationScores.length} tools tested on this variant.
+      {totalDamaging} of {total} predictors classify E1659A as damaging. Scores aggregated from {toolCount} tools tested on this variant.
     </p>
 
-    <!-- Summary banner -->
-    <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-5 mb-8">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="text-red-400 font-bold text-lg">{totalDamaging}/{total}</span>
-        <span class="text-sm text-neutral-300">predictors agree: E1659A is damaging</span>
-      </div>
-      <p class="text-xs text-neutral-400">
-        Overwhelming computational consensus across meta-predictors, single-tool predictors, and protein stability analysis. The only partial outlier is PrimateAI (0.559, Tolerated), explained by the STRC pseudogene confounding primate alignments.
-      </p>
-    </div>
+    <SummaryBanner totalDamaging={totalDamaging} total={total} />
 
-    <!-- Pathogenicity Predictors -->
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Pathogenicity Predictors</h3>
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
-      <table class="w-full min-w-[500px] text-xs">
-        <thead>
-          <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Tool</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Score</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pathogenicityScores.map((s) => (
-            <tr class="border-b border-white/5">
-              <td class="px-4 py-2">
-                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
-              </td>
-              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
-              <td class="px-4 py-2">
-                <span class="flex items-center gap-1.5">
-                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
-                  <span class={scoreColor(s.color)}>{s.verdict}</span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ScoreTable
+      title="Pathogenicity Predictors"
+      columns={['Tool', 'Score', 'Verdict']}
+      scores={pathogenicityScores}
+    />
 
-    <!-- Protein Language Models -->
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">
-      Protein Language Models
-      <span class="ml-2 px-1.5 py-0.5 text-[9px] rounded bg-purple-500/20 text-purple-400 font-semibold normal-case tracking-normal">zero-shot</span>
-    </h3>
-    <p class="text-xs text-neutral-600 mb-3">No clinical training data used. Models predict variant effect purely from evolutionary protein sequences.</p>
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
-      <table class="w-full min-w-[500px] text-xs">
-        <thead>
-          <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Model</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Log-likelihood delta</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          {proteinLMScores.map((s) => (
-            <tr class="border-b border-white/5">
-              <td class="px-4 py-2">
-                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
-              </td>
-              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
-              <td class="px-4 py-2">
-                <span class="flex items-center gap-1.5">
-                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
-                  <span class={scoreColor(s.color)}>{s.verdict}</span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-    <p class="text-xs text-neutral-600 mb-8">Glutamic acid (E) is the most preferred residue at position 1659. Alanine (A) ranks 3rd worst of 20 possible substitutions. Ran locally on Apple M5 Max via MPS.</p>
+    <ScoreTable
+      title="Protein Language Models"
+      columns={['Model', 'Log-likelihood delta', 'Verdict']}
+      scores={proteinLMScores}
+      badge="zero-shot"
+      subtitle="No clinical training data used. Models predict variant effect purely from evolutionary protein sequences."
+      footnote="Glutamic acid (E) is the most preferred residue at position 1659. Alanine (A) ranks 3rd worst of 20 possible substitutions. Ran locally on Apple M5 Max via MPS."
+    />
 
-    <!-- Protein Stability -->
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Protein Stability</h3>
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
-      <table class="w-full min-w-[500px] text-xs">
-        <thead>
-          <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Tool</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Score</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          {structuralScores.map((s) => (
-            <tr class="border-b border-white/5">
-              <td class="px-4 py-2">
-                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
-              </td>
-              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
-              <td class="px-4 py-2">
-                <span class="flex items-center gap-1.5">
-                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
-                  <span class={scoreColor(s.color)}>{s.verdict}</span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ScoreTable
+      title="Protein Stability"
+      columns={['Tool', 'Score', 'Verdict']}
+      scores={structuralScores}
+    />
 
-    <!-- Splicing -->
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Splicing Impact</h3>
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
-      <table class="w-full min-w-[500px] text-xs">
-        <thead>
-          <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Tool</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Score</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          {splicingScores.map((s) => (
-            <tr class="border-b border-white/5">
-              <td class="px-4 py-2">
-                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
-              </td>
-              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
-              <td class="px-4 py-2">
-                <span class="flex items-center gap-1.5">
-                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
-                  <span class={scoreColor(s.color)}>{s.verdict}</span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ScoreTable
+      title="Splicing Impact"
+      columns={['Tool', 'Score', 'Verdict']}
+      scores={splicingScores}
+    />
 
-    <!-- Population Absence -->
-    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Population Databases</h3>
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
-      <table class="w-full min-w-[500px] text-xs">
-        <thead>
-          <tr class="border-b border-white/5">
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Database</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Result</th>
-            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Significance</th>
-          </tr>
-        </thead>
-        <tbody>
-          {populationScores.map((s) => (
-            <tr class="border-b border-white/5">
-              <td class="px-4 py-2">
-                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
-              </td>
-              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
-              <td class="px-4 py-2">
-                <span class="flex items-center gap-1.5">
-                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
-                  <span class={scoreColor(s.color)}>{s.verdict}</span>
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ScoreTable
+      title="Population Databases"
+      columns={['Database', 'Result', 'Significance']}
+      scores={populationScores}
+    />
 
     <p class="text-xs text-neutral-500">
       All tool pages with methodology and source links available at <a href="/tools" class="text-blue-400 hover:text-blue-300 no-underline">/tools</a>.

@@ -1,0 +1,68 @@
+---
+interface ScoreRow {
+  tool: string;
+  slug: string;
+  score: string;
+  verdict: string;
+  color: string;
+}
+
+interface Props {
+  title: string;
+  columns: [string, string, string];
+  scores: ScoreRow[];
+  badge?: string;
+  subtitle?: string;
+  footnote?: string;
+}
+
+const { title, columns, scores, badge, subtitle, footnote } = Astro.props;
+
+function scoreColor(color: string) {
+  if (color === 'red') return 'text-red-400';
+  if (color === 'orange') return 'text-yellow-400';
+  return 'text-green-400';
+}
+
+function dotColor(color: string) {
+  if (color === 'red') return 'bg-red-400';
+  if (color === 'orange') return 'bg-yellow-400';
+  return 'bg-green-400';
+}
+---
+
+<h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">
+  {title}
+  {badge && (
+    <span class="ml-2 px-1.5 py-0.5 text-[9px] rounded bg-purple-500/20 text-purple-400 font-semibold normal-case tracking-normal">{badge}</span>
+  )}
+</h3>
+{subtitle && <p class="text-xs text-neutral-600 mb-3">{subtitle}</p>}
+<div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+  <table class="w-full min-w-[500px] text-xs">
+    <thead>
+      <tr class="border-b border-white/5">
+        <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">{columns[0]}</th>
+        <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">{columns[1]}</th>
+        <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">{columns[2]}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {scores.map((s) => (
+        <tr class="border-b border-white/5">
+          <td class="px-4 py-2">
+            <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
+          </td>
+          <td class="px-4 py-2 font-mono text-white">{s.score}</td>
+          <td class="px-4 py-2">
+            <span class="flex items-center gap-1.5">
+              <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
+              <span class={scoreColor(s.color)}>{s.verdict}</span>
+            </span>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+{footnote && <p class="text-xs text-neutral-600 mb-8">{footnote}</p>}

@@ -1,0 +1,86 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<!-- CASCADE DIAGRAM: CSS-based, responsive -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-5">{t('sono.cascade.title')}</h3>
+
+  <div class="cascade-flow">
+    <!-- Row 1: Sound → Stereocilia → Ca²⁺ -->
+    <div class="cascade-row">
+      <div class="cascade-node border-cyan-500/30 bg-cyan-950/30">
+        <div class="cascade-label text-cyan-400">Sound</div>
+        <div class="cascade-detail">Hearing aid amplifies everyday sounds to 60-80 dB</div>
+        <div class="cascade-meta">No special frequencies needed</div>
+      </div>
+      <div class="cascade-arrow-h">→</div>
+      <div class="cascade-node border-cyan-500/30 bg-cyan-950/30">
+        <div class="cascade-label text-cyan-400">Stereocilia</div>
+        <div class="cascade-detail">MET channels open at tips<br/>~134 channels per cell</div>
+        <div class="cascade-meta">15% Ca²⁺ permeability</div>
+      </div>
+      <div class="cascade-arrow-h">→</div>
+      <div class="cascade-node border-green-500/30 bg-green-950/30">
+        <div class="cascade-label text-green-400">Ca²⁺ signal</div>
+        <div class="cascade-detail">Apical compartment<br/>70 nM → 500-900 nM</div>
+        <div class="cascade-meta">V = 0.05 pL (tiny space)</div>
+      </div>
+    </div>
+
+    <!-- Connector down -->
+    <div class="cascade-arrow-v">↓ <span class="cascade-arrow-label">activates</span></div>
+
+    <!-- Row 2: Calcineurin → NFAT -->
+    <div class="cascade-row cascade-row-reverse">
+      <div class="cascade-node border-purple-500/30 bg-purple-950/20">
+        <div class="cascade-label text-purple-400">Calcineurin</div>
+        <div class="cascade-detail">Ca²⁺-dependent phosphatase<br/>CnA + CnB heterodimer</div>
+        <div class="cascade-meta">Kd = 500 nM, Hill n = 4</div>
+      </div>
+      <div class="cascade-arrow-h">→</div>
+      <div class="cascade-node border-purple-500/30 bg-purple-950/20">
+        <div class="cascade-label text-purple-400">NFAT</div>
+        <div class="cascade-detail">Transcription factor<br/>Dephosphorylated → NLS exposed</div>
+        <div class="cascade-meta">Enters nucleus in minutes</div>
+      </div>
+    </div>
+
+    <!-- Connector down -->
+    <div class="cascade-arrow-v">↓ <span class="cascade-arrow-label">enters nucleus, binds promoter</span></div>
+
+    <!-- Row 3: Promoter → Protein → Result -->
+    <div class="cascade-row">
+      <div class="cascade-node border-amber-500/30 bg-amber-950/20">
+        <div class="cascade-label text-amber-400">6×NFAT promoter</div>
+        <div class="cascade-detail">6 binding sites + minimal promoter<br/>Sharp on/off switch (Hill ~4)</div>
+        <div class="cascade-meta">62× induction, zero leakage (Wu 2023)</div>
+      </div>
+      <div class="cascade-arrow-h">→</div>
+      <div class="cascade-node border-green-500/30 bg-green-950/30">
+        <div class="cascade-label text-green-400">mini-STRC</div>
+        <div class="cascade-detail">1076 aa (residues 700-1775)<br/>Traffics to stereocilia tips</div>
+        <div class="cascade-meta">t½ ~30 days. Accumulates over days.</div>
+      </div>
+      <div class="cascade-arrow-h">→</div>
+      <div class="cascade-node border-green-400/40 bg-green-950/40 ring-1 ring-green-500/20">
+        <div class="cascade-label text-green-300">Hearing</div>
+        <div class="cascade-detail">Top connectors restored<br/>Bundle moves as unit again</div>
+        <div class="cascade-meta">50% in 13h, full in 72h</div>
+      </div>
+    </div>
+
+    <!-- OFF state -->
+    <div class="mt-5 flex items-center gap-3">
+      <div class="cascade-node-small border-red-500/20 bg-red-950/10 border-dashed">
+        <div class="text-[10px] text-red-400/70 font-semibold">SLEEP / SILENCE</div>
+        <div class="text-[10px] text-neutral-600">No sound → no Ca²⁺ → promoter OFF → protein stable (t½ 30 days)</div>
+      </div>
+      <div class="cascade-node-small border-green-500/20 bg-green-950/10 border-dashed">
+        <div class="text-[10px] text-green-400/70 font-semibold">POSITIVE FEEDBACK</div>
+        <div class="text-[10px] text-neutral-600">As hearing improves → better signal → more protein → better hearing</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 ---
 // Day 3: Sonogenetic STRC Hypothesis
 import { useTranslations } from '../lib/i18n';
+import Story from './sonogenetics/Story.astro';
+import CascadeDiagram from './sonogenetics/CascadeDiagram.astro';
+import VectorConstruct from './sonogenetics/VectorConstruct.astro';
+import Literature from './sonogenetics/Literature.astro';
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
 ---
@@ -11,161 +15,14 @@ const t = useTranslations(lang);
       <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/20 text-cyan-400 font-semibold">DAY 3</span>
     </div>
 
-    <!-- Story: 3 paragraphs, Egor's voice -->
-    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
-      <p set:html={t('sono.story.p1')} />
-      <p set:html={t('sono.story.p2')} />
-      <p set:html={t('sono.story.p3')} />
-    </div>
-
-    <!-- CASCADE DIAGRAM: CSS-based, responsive -->
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
-      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-5">{t('sono.cascade.title')}</h3>
-
-      <div class="cascade-flow">
-        <!-- Row 1: Sound → Stereocilia → Ca²⁺ -->
-        <div class="cascade-row">
-          <div class="cascade-node border-cyan-500/30 bg-cyan-950/30">
-            <div class="cascade-label text-cyan-400">Sound</div>
-            <div class="cascade-detail">Hearing aid amplifies everyday sounds to 60-80 dB</div>
-            <div class="cascade-meta">No special frequencies needed</div>
-          </div>
-          <div class="cascade-arrow-h">→</div>
-          <div class="cascade-node border-cyan-500/30 bg-cyan-950/30">
-            <div class="cascade-label text-cyan-400">Stereocilia</div>
-            <div class="cascade-detail">MET channels open at tips<br/>~134 channels per cell</div>
-            <div class="cascade-meta">15% Ca²⁺ permeability</div>
-          </div>
-          <div class="cascade-arrow-h">→</div>
-          <div class="cascade-node border-green-500/30 bg-green-950/30">
-            <div class="cascade-label text-green-400">Ca²⁺ signal</div>
-            <div class="cascade-detail">Apical compartment<br/>70 nM → 500-900 nM</div>
-            <div class="cascade-meta">V = 0.05 pL (tiny space)</div>
-          </div>
-        </div>
-
-        <!-- Connector down -->
-        <div class="cascade-arrow-v">↓ <span class="cascade-arrow-label">activates</span></div>
-
-        <!-- Row 2: Calcineurin → NFAT -->
-        <div class="cascade-row cascade-row-reverse">
-          <div class="cascade-node border-purple-500/30 bg-purple-950/20">
-            <div class="cascade-label text-purple-400">Calcineurin</div>
-            <div class="cascade-detail">Ca²⁺-dependent phosphatase<br/>CnA + CnB heterodimer</div>
-            <div class="cascade-meta">Kd = 500 nM, Hill n = 4</div>
-          </div>
-          <div class="cascade-arrow-h">→</div>
-          <div class="cascade-node border-purple-500/30 bg-purple-950/20">
-            <div class="cascade-label text-purple-400">NFAT</div>
-            <div class="cascade-detail">Transcription factor<br/>Dephosphorylated → NLS exposed</div>
-            <div class="cascade-meta">Enters nucleus in minutes</div>
-          </div>
-        </div>
-
-        <!-- Connector down -->
-        <div class="cascade-arrow-v">↓ <span class="cascade-arrow-label">enters nucleus, binds promoter</span></div>
-
-        <!-- Row 3: Promoter → Protein → Result -->
-        <div class="cascade-row">
-          <div class="cascade-node border-amber-500/30 bg-amber-950/20">
-            <div class="cascade-label text-amber-400">6×NFAT promoter</div>
-            <div class="cascade-detail">6 binding sites + minimal promoter<br/>Sharp on/off switch (Hill ~4)</div>
-            <div class="cascade-meta">62× induction, zero leakage (Wu 2023)</div>
-          </div>
-          <div class="cascade-arrow-h">→</div>
-          <div class="cascade-node border-green-500/30 bg-green-950/30">
-            <div class="cascade-label text-green-400">mini-STRC</div>
-            <div class="cascade-detail">1076 aa (residues 700-1775)<br/>Traffics to stereocilia tips</div>
-            <div class="cascade-meta">t½ ~30 days. Accumulates over days.</div>
-          </div>
-          <div class="cascade-arrow-h">→</div>
-          <div class="cascade-node border-green-400/40 bg-green-950/40 ring-1 ring-green-500/20">
-            <div class="cascade-label text-green-300">Hearing</div>
-            <div class="cascade-detail">Top connectors restored<br/>Bundle moves as unit again</div>
-            <div class="cascade-meta">50% in 13h, full in 72h</div>
-          </div>
-        </div>
-
-        <!-- OFF state -->
-        <div class="mt-5 flex items-center gap-3">
-          <div class="cascade-node-small border-red-500/20 bg-red-950/10 border-dashed">
-            <div class="text-[10px] text-red-400/70 font-semibold">SLEEP / SILENCE</div>
-            <div class="text-[10px] text-neutral-600">No sound → no Ca²⁺ → promoter OFF → protein stable (t½ 30 days)</div>
-          </div>
-          <div class="cascade-node-small border-green-500/20 bg-green-950/10 border-dashed">
-            <div class="text-[10px] text-green-400/70 font-semibold">POSITIVE FEEDBACK</div>
-            <div class="text-[10px] text-neutral-600">As hearing improves → better signal → more protein → better hearing</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- AAV Vector Construct -->
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
-      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('sono.construct.title')}</h3>
-      <div class="bg-black/40 rounded-lg p-3 sm:p-4 font-mono text-xs overflow-x-auto mb-3">
-        <div class="flex items-center gap-0 min-w-0">
-          <div class="bg-neutral-700 text-neutral-300 px-1.5 sm:px-2 py-1.5 rounded-l text-center shrink-0" style="width:12%">
-            <div class="text-[8px] sm:text-[9px] text-neutral-500">ITR</div>
-            <div class="text-[10px] sm:text-xs">145bp</div>
-          </div>
-          <div class="bg-cyan-900/60 text-cyan-300 px-1.5 sm:px-3 py-1.5 text-center shrink-0" style="width:15%">
-            <div class="text-[8px] sm:text-[9px] text-cyan-500">Promoter</div>
-            <div class="text-[10px] sm:text-xs">6xNFAT</div>
-            <div class="text-[8px] sm:text-[9px]">~300bp</div>
-          </div>
-          <div class="bg-green-900/60 text-green-300 px-2 sm:px-4 py-1.5 text-center grow">
-            <div class="text-[8px] sm:text-[9px] text-green-500">Transgene</div>
-            <div class="text-[10px] sm:text-xs">mini-STRC CDS</div>
-            <div class="text-[8px] sm:text-[9px]">3228bp</div>
-          </div>
-          <div class="bg-purple-900/40 text-purple-300 px-1.5 sm:px-2 py-1.5 text-center shrink-0" style="width:12%">
-            <div class="text-[8px] sm:text-[9px] text-purple-500">PolyA</div>
-            <div class="text-[10px] sm:text-xs">bGH</div>
-            <div class="text-[8px] sm:text-[9px]">250bp</div>
-          </div>
-          <div class="bg-neutral-700 text-neutral-300 px-1.5 sm:px-2 py-1.5 rounded-r text-center shrink-0" style="width:12%">
-            <div class="text-[8px] sm:text-[9px] text-neutral-500">ITR</div>
-            <div class="text-[10px] sm:text-xs">145bp</div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
-        <span class="text-neutral-500">{t('sono.construct.total')}: <span class="text-white font-mono font-bold">4,068 bp</span></span>
-        <span class="text-neutral-500">{t('sono.construct.limit')}: <span class="text-green-400 font-mono font-bold">4,700 bp</span></span>
-        <span class="text-green-400 font-semibold">{t('sono.construct.margin')}: 632 bp</span>
-      </div>
-    </div>
-
-    <!-- Literature -->
-    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
-      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('sono.literature.title')}</h3>
-      <div class="space-y-2 text-xs text-neutral-400">
-        <div class="flex items-start gap-2">
-          <span class="text-neutral-600 shrink-0">[1]</span>
-          <span set:html={t('sono.literature.ref1')} />
-        </div>
-        <div class="flex items-start gap-2">
-          <span class="text-neutral-600 shrink-0">[2]</span>
-          <span set:html={t('sono.literature.ref2')} />
-        </div>
-        <div class="flex items-start gap-2">
-          <span class="text-neutral-600 shrink-0">[3]</span>
-          <span set:html={t('sono.literature.ref3')} />
-        </div>
-        <div class="flex items-start gap-2">
-          <span class="text-neutral-600 shrink-0">[4]</span>
-          <span set:html={t('sono.literature.ref4')} />
-        </div>
-      </div>
-    </div>
-
-    <!-- Caveat -->
-    <p class="text-xs text-neutral-500 italic">{t('sono.caveat_short')}</p>
+    <Story lang={lang} />
+    <CascadeDiagram lang={lang} />
+    <VectorConstruct lang={lang} />
+    <Literature lang={lang} />
   </div>
 </section>
 
-<style>
+<style is:global>
   .cascade-flow {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,11 @@
+---
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<!-- Story: 3 paragraphs, Egor's voice -->
+<div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+  <p set:html={t('sono.story.p1')} />
+  <p set:html={t('sono.story.p2')} />
+  <p set:html={t('sono.story.p3')} />
+</div>

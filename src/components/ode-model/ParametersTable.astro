@@ -1,0 +1,59 @@
+---
+// Parameters Table — literature-sourced model parameters
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<!-- Parameters table -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
+  <h3 class="text-sm font-semibold mb-3">{t('ode.params.title')}</h3>
+  <div class="overflow-x-auto">
+    <table class="text-[11px] w-full min-w-[500px]">
+      <tr class="border-b border-white/10">
+        <th class="text-left py-1.5 pr-3 text-neutral-500">{t('ode.params.col_param')}</th>
+        <th class="text-left py-1.5 pr-3 text-neutral-500">{t('ode.params.col_value')}</th>
+        <th class="text-left py-1.5 text-neutral-500">{t('ode.params.col_source')}</th>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">MET channel conductance</td>
+        <td class="py-1.5 pr-3 font-mono text-white">150 pS</td>
+        <td class="py-1.5 text-neutral-500">Beurg et al. 2006</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">Channels per bundle</td>
+        <td class="py-1.5 pr-3 font-mono text-white">134</td>
+        <td class="py-1.5 text-neutral-500">Fettiplace 2017</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">Endolymphatic potential</td>
+        <td class="py-1.5 pr-3 font-mono text-white">+80 mV</td>
+        <td class="py-1.5 text-neutral-500">Standard</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">Calcineurin Kd (Ca²⁺)</td>
+        <td class="py-1.5 pr-3 font-mono text-white">500 nM</td>
+        <td class="py-1.5 text-neutral-500">Stemmer & Klee 1994</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">NFAT nuclear import t½</td>
+        <td class="py-1.5 pr-3 font-mono text-white">~2 min</td>
+        <td class="py-1.5 text-neutral-500">Tomida et al. 2003</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">Promoter fold induction</td>
+        <td class="py-1.5 pr-3 font-mono text-white">up to 62x</td>
+        <td class="py-1.5 text-neutral-500">Wu et al. 2023</td>
+      </tr>
+      <tr class="border-b border-white/5">
+        <td class="py-1.5 pr-3 text-neutral-300">Promoter leakage</td>
+        <td class="py-1.5 pr-3 font-mono text-green-400">Zero (3 weeks)</td>
+        <td class="py-1.5 text-neutral-500">Wu et al. 2023</td>
+      </tr>
+      <tr>
+        <td class="py-1.5 pr-3 text-neutral-300">Apical compartment volume</td>
+        <td class="py-1.5 pr-3 font-mono text-white">0.05 pL</td>
+        <td class="py-1.5 text-neutral-500">Lumpkin & Bhatt 2001</td>
+      </tr>
+    </table>
+  </div>
+</div>

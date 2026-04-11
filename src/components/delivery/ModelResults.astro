@@ -1,0 +1,88 @@
+---
+// Delivery: ODE Model Results - Baseline, Optimized, Hybrid scenarios
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('dlv.model.title')}</h3>
+  <p class="text-xs text-neutral-400 mb-5" set:html={t('dlv.model.desc')} />
+
+  <!-- Scenario 1: Baseline (FAILED) -->
+  <div class="border border-red-500/20 bg-red-950/10 rounded-lg p-4 mb-4">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-semibold text-red-400 uppercase tracking-wider">{t('dlv.model.baseline.label')}</span>
+      <span class="px-1.5 py-0.5 text-[9px] rounded bg-red-500/20 text-red-400 font-semibold">{t('dlv.model.baseline.badge')}</span>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.conc')}</div>
+        <div class="text-xs text-neutral-300 font-mono">10&sup1;&sup2;/mL</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.escape')}</div>
+        <div class="text-xs text-neutral-300 font-mono">2%</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.exposure')}</div>
+        <div class="text-xs text-neutral-300 font-mono">10 min</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.result')}</div>
+        <div class="text-xs text-red-400 font-mono font-bold">0.39%</div>
+      </div>
+    </div>
+    <p class="text-[11px] text-neutral-500" set:html={t('dlv.model.baseline.note')} />
+  </div>
+
+  <!-- Scenario 2: Optimized (VIABLE) -->
+  <div class="border border-green-500/20 bg-green-950/10 rounded-lg p-4 mb-4">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-semibold text-green-400 uppercase tracking-wider">{t('dlv.model.optimized.label')}</span>
+      <span class="px-1.5 py-0.5 text-[9px] rounded bg-green-500/20 text-green-400 font-semibold">{t('dlv.model.optimized.badge')}</span>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.conc')}</div>
+        <div class="text-xs text-green-300 font-mono">10&sup1;&sup3;/mL</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.escape')}</div>
+        <div class="text-xs text-green-300 font-mono">15%</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.exposure')}</div>
+        <div class="text-xs text-green-300 font-mono">20 min</div>
+      </div>
+      <div>
+        <div class="text-[9px] text-neutral-600 uppercase">{t('dlv.model.col.result')}</div>
+        <div class="text-xs text-green-400 font-mono font-bold">78%</div>
+      </div>
+    </div>
+    <p class="text-[11px] text-neutral-500" set:html={t('dlv.model.optimized.note')} />
+  </div>
+
+  <!-- Scenario 3: Hybrid (REALISTIC) -->
+  <div class="border border-cyan-500/20 bg-cyan-950/10 rounded-lg p-4">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-[10px] font-semibold text-cyan-400 uppercase tracking-wider">{t('dlv.model.hybrid.label')}</span>
+      <span class="px-1.5 py-0.5 text-[9px] rounded bg-cyan-500/20 text-cyan-400 font-semibold">{t('dlv.model.hybrid.badge')}</span>
+    </div>
+    <div class="space-y-2 text-xs text-neutral-400">
+      <div class="flex items-start gap-2">
+        <span class="text-cyan-500 font-mono text-[10px] shrink-0">Y0</span>
+        <span set:html={t('dlv.model.hybrid.y0')} />
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-cyan-500 font-mono text-[10px] shrink-0">Y3+</span>
+        <span set:html={t('dlv.model.hybrid.y3')} />
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-cyan-500 font-mono text-[10px] shrink-0">Y5+</span>
+        <span set:html={t('dlv.model.hybrid.y5')} />
+      </div>
+    </div>
+    <p class="text-[11px] text-neutral-500 mt-3" set:html={t('dlv.model.hybrid.note')} />
+  </div>
+</div>

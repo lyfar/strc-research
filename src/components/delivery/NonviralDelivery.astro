@@ -1,0 +1,60 @@
+---
+// Delivery: Non-viral repeatable delivery comparison (Leclere 2024)
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="bg-white/[0.02] border border-cyan-500/20 rounded-lg p-5 mb-8">
+  <h3 class="text-sm font-semibold mb-3">{t('dlv.nonviral.title')}</h3>
+  <p class="text-xs text-neutral-400 leading-relaxed mb-4" set:html={t('dlv.nonviral.desc')} />
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="text-left text-neutral-500 text-[10px] uppercase tracking-wider border-b border-white/5">
+          <th class="pb-2 pr-3">{t('dlv.nonviral.col.vehicle')}</th>
+          <th class="pb-2 pr-3">{t('dlv.nonviral.col.redose')}</th>
+          <th class="pb-2 pr-3">{t('dlv.nonviral.col.cargo')}</th>
+          <th class="pb-2 pr-3">{t('dlv.nonviral.col.sero')}</th>
+          <th class="pb-2">{t('dlv.nonviral.col.status')}</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-400">
+        <tr class="border-b border-white/5">
+          <td class="py-2 pr-3 font-semibold text-neutral-300">AAV</td>
+          <td class="py-2 pr-3"><span class="text-red-400">&#x2717; One-shot</span></td>
+          <td class="py-2 pr-3">DNA (permanent)</td>
+          <td class="py-2 pr-3 text-red-400">30-60%</td>
+          <td class="py-2"><span class="text-green-400">Clinical trials</span></td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2 pr-3 font-semibold text-cyan-300">LNP</td>
+          <td class="py-2 pr-3"><span class="text-green-400">&#x2713; Repeatable</span></td>
+          <td class="py-2 pr-3">mRNA / DNA</td>
+          <td class="py-2 pr-3 text-green-400">0%</td>
+          <td class="py-2"><span class="text-amber-400">Preclinical</span></td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2 pr-3 font-semibold text-neutral-300">Exosomes</td>
+          <td class="py-2 pr-3"><span class="text-green-400">&#x2713; Repeatable</span></td>
+          <td class="py-2 pr-3">mRNA / siRNA</td>
+          <td class="py-2 pr-3 text-green-400">~0%</td>
+          <td class="py-2"><span class="text-neutral-500">Early research</span></td>
+        </tr>
+        <tr>
+          <td class="py-2 pr-3 font-semibold text-neutral-300">Polymer NP</td>
+          <td class="py-2 pr-3"><span class="text-green-400">&#x2713; Repeatable</span></td>
+          <td class="py-2 pr-3">DNA / mRNA</td>
+          <td class="py-2 pr-3 text-green-400">~0%</td>
+          <td class="py-2"><span class="text-neutral-500">Early research</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4 bg-cyan-500/5 border border-cyan-500/10 rounded-lg p-3">
+    <div class="text-[10px] text-cyan-400 font-semibold mb-1">{t('dlv.nonviral.strc_title')}</div>
+    <p class="text-[10px] text-neutral-400" set:html={t('dlv.nonviral.strc_note')} />
+  </div>
+</div>

@@ -1,0 +1,62 @@
+---
+// AF3 Results — 3Dmol.js viewer initialization script
+---
+<script is:inline>
+(function() {
+  function initAF3Viewers() {
+    if (typeof $3Dmol === 'undefined') { setTimeout(initAF3Viewers, 300); return; }
+
+    var jobs = [
+      { id: 'v-job1', url: '/models/job1-full-complex.cif', multichain: true },
+      { id: 'v-job2', url: '/models/job2-mini-complex.cif', multichain: true },
+      { id: 'v-job3', url: '/models/job3-mutant.cif', multichain: false },
+      { id: 'v-job4', url: '/models/job4-wildtype.cif', multichain: false },
+      { id: 'v-job5', url: '/models/job5-mini-strc.cif', multichain: false },
+      { id: 'v-job6', url: '/models/job6-nterminal.cif', multichain: false },
+      { id: 'v-job8', url: '/models/job8-nfatc1-calcineurin.cif', multichain: true, threeChain: true },
+      { id: 'v-joba', url: '/models/job-a-mini-strc-piezo2.cif', multichain: true },
+      { id: 'v-jobc', url: '/models/job-c-mini-strc-homodimer.cif', multichain: true },
+      { id: 'v-jobd', url: '/models/job-d-mini-strc-otoancorin.cif', multichain: true },
+      { id: 'v-jobe', url: '/models/job-e-mini-strc-tmc1.cif', multichain: true },
+      { id: 'v-jobb', url: '/models/job-b-full-strc-homodimer.cif', multichain: true },
+      { id: 'v-jobd2', url: '/models/job-d2-mini-strc-tectorin-zp.cif', multichain: true },
+      { id: 'v-jobf', url: '/models/job-f-shorter-mini-strc-700.cif', multichain: false },
+      { id: 'v-jobg', url: '/models/job-g-delta-lrr-linker.cif', multichain: false },
+      { id: 'v-jobh', url: '/models/job-h-strc-cterm-only.cif', multichain: false },
+    ];
+
+    jobs.forEach(function(job) {
+      var el = document.getElementById(job.id);
+      if (!el) return;
+      el.innerHTML = '<div style="color:#333;display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;">Loading...</div>';
+
+      fetch(job.url).then(function(r) { return r.text(); }).then(function(data) {
+        el.innerHTML = '';
+        var v = $3Dmol.createViewer(el, {backgroundColor: '#080808'});
+        v.addModel(data, 'cif');
+        if (job.threeChain) {
+          v.setStyle({chain: 'A'}, {cartoon: {color: '#22d3ee'}});
+          v.setStyle({chain: 'B'}, {cartoon: {color: '#4a9eff'}});
+          v.setStyle({chain: 'C'}, {cartoon: {color: '#a78bfa'}});
+        } else if (job.multichain) {
+          v.setStyle({chain: 'A'}, {cartoon: {color: '#4a9eff'}});
+          v.setStyle({chain: 'B'}, {cartoon: {color: '#f59e0b'}});
+        } else {
+          v.setStyle({}, {cartoon: {colorscheme: {prop:'b', gradient:'rwb', min:30, max:100}}});
+        }
+        v.zoomTo();
+        v.render();
+        v.spin('y', 0.3);
+      }).catch(function() {
+        el.innerHTML = '<div style="color:#555;text-align:center;padding:20px;font-size:10px;">Failed to load</div>';
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAF3Viewers);
+  } else {
+    initAF3Viewers();
+  }
+})();
+</script>

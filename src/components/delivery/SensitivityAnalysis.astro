@@ -1,0 +1,51 @@
+---
+// Delivery: Sensitivity Analysis - parameter impact table
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('dlv.sensitivity.title')}</h3>
+  <p class="text-xs text-neutral-400 mb-4" set:html={t('dlv.sensitivity.desc')} />
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="text-left text-neutral-500 text-[10px] uppercase tracking-wider">
+          <th class="pb-2 pr-3">{t('dlv.sensitivity.col.param')}</th>
+          <th class="pb-2 pr-3">{t('dlv.sensitivity.col.range')}</th>
+          <th class="pb-2 pr-3">{t('dlv.sensitivity.col.effect')}</th>
+          <th class="pb-2">{t('dlv.sensitivity.col.verdict')}</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-400">
+        <tr class="border-t border-white/5">
+          <td class="py-2 pr-3 text-amber-400 font-mono">{t('dlv.sensitivity.r1.param')}</td>
+          <td class="py-2 pr-3 font-mono">1% &rarr; 20%</td>
+          <td class="py-2 pr-3 font-mono">0.19% &rarr; 3.89%</td>
+          <td class="py-2"><span class="text-red-400 font-semibold">{t('dlv.sensitivity.r1.verdict')}</span></td>
+        </tr>
+        <tr class="border-t border-white/5">
+          <td class="py-2 pr-3 text-amber-400 font-mono">{t('dlv.sensitivity.r2.param')}</td>
+          <td class="py-2 pr-3 font-mono">10&sup1;&sup1; &rarr; 10&sup1;&sup3;</td>
+          <td class="py-2 pr-3 font-mono">0.04% &rarr; 3.89%</td>
+          <td class="py-2"><span class="text-amber-400 font-semibold">{t('dlv.sensitivity.r2.verdict')}</span></td>
+        </tr>
+        <tr class="border-t border-white/5">
+          <td class="py-2 pr-3 text-neutral-400 font-mono">{t('dlv.sensitivity.r3.param')}</td>
+          <td class="py-2 pr-3 font-mono">5 &rarr; 30 min</td>
+          <td class="py-2 pr-3 font-mono">0.26% &rarr; 1.06%</td>
+          <td class="py-2"><span class="text-neutral-500">{t('dlv.sensitivity.r3.verdict')}</span></td>
+        </tr>
+        <tr class="border-t border-white/5">
+          <td class="py-2 pr-3 text-neutral-400 font-mono">{t('dlv.sensitivity.r4.param')}</td>
+          <td class="py-2 pr-3 font-mono">70 &rarr; 200 nm</td>
+          <td class="py-2 pr-3 font-mono">~0.39%</td>
+          <td class="py-2"><span class="text-neutral-500">{t('dlv.sensitivity.r4.verdict')}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-[11px] text-neutral-500 mt-3 italic" set:html={t('dlv.sensitivity.note')} />
+</div>

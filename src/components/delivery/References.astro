@@ -1,0 +1,49 @@
+---
+// Delivery: Literature references, code link, and caveat
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<!-- Literature -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-6">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('dlv.lit.title')}</h3>
+  <div class="space-y-2 text-xs text-neutral-400">
+    <div class="flex items-start gap-2">
+      <span class="text-neutral-600 shrink-0">[1]</span>
+      <span set:html={t('dlv.lit.ref1')} />
+    </div>
+    <div class="flex items-start gap-2">
+      <span class="text-neutral-600 shrink-0">[2]</span>
+      <span set:html={t('dlv.lit.ref2')} />
+    </div>
+    <div class="flex items-start gap-2">
+      <span class="text-neutral-600 shrink-0">[3]</span>
+      <span set:html={t('dlv.lit.ref3')} />
+    </div>
+    <div class="flex items-start gap-2">
+      <span class="text-neutral-600 shrink-0">[4]</span>
+      <span set:html={t('dlv.lit.ref4')} />
+    </div>
+    <div class="flex items-start gap-2">
+      <span class="text-neutral-600 shrink-0">[5]</span>
+      <span set:html={t('dlv.lit.ref5')} />
+    </div>
+  </div>
+</div>
+
+<!-- Code link -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-6">
+  <div class="flex items-center gap-3">
+    <span class="text-lg">&#x1F9EE;</span>
+    <div>
+      <div class="text-xs font-semibold text-neutral-300">{t('dlv.code.title')}</div>
+      <a href="https://github.com/lyfar/strc-research/blob/master/sonoporation_model.py"
+         target="_blank" rel="noopener"
+         class="text-xs text-blue-400 hover:underline">{t('dlv.code.link')}</a>
+    </div>
+  </div>
+</div>
+
+<!-- Caveat -->
+<p class="text-xs text-neutral-500 italic" set:html={t('dlv.caveat')} />

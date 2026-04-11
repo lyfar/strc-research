@@ -1,0 +1,114 @@
+---
+// Scenarios Grid — 4 ODE model scenarios (Hearing Aid, Therapy, Constant 70dB, Silence)
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<!-- Results grid: 4 scenarios -->
+<div class="grid md:grid-cols-2 gap-4 mb-6">
+  <!-- Hearing Aid Cycle -->
+  <div class="bg-white/[0.02] border border-green-500/20 rounded-lg p-4">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-xs font-semibold text-green-400">{t('ode.scenario2.title')}</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold">{t('ode.scenario2.badge')}</span>
+    </div>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-[11px] mb-1">
+          <span class="text-neutral-400">{t('ode.label.protein')}</span>
+          <span class="text-green-400 font-mono font-bold">29,571</span>
+        </div>
+        <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+          <div class="h-full bg-green-500/60 rounded-full" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="flex justify-between text-[10px] text-neutral-500">
+        <span>{t('ode.label.target')}: 15,000</span>
+        <span class="text-green-400">197%</span>
+      </div>
+      <div class="text-[10px] text-neutral-500 space-y-0.5">
+        <div>Peak Ca²⁺: <span class="text-white font-mono">689 nM</span></div>
+        <div>Peak NFAT(nuclear): <span class="text-white font-mono">37.3%</span></div>
+        <div>{t('ode.label.t10')}: <span class="text-white font-mono">7.5h</span></div>
+        <div>{t('ode.label.t50')}: <span class="text-white font-mono">13.0h</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Therapy Sessions -->
+  <div class="bg-white/[0.02] border border-cyan-500/20 rounded-lg p-4">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-xs font-semibold text-cyan-400">{t('ode.scenario3.title')}</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/20 text-cyan-400 font-semibold">85 dB</span>
+    </div>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-[11px] mb-1">
+          <span class="text-neutral-400">{t('ode.label.protein')}</span>
+          <span class="text-cyan-400 font-mono font-bold">29,571</span>
+        </div>
+        <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+          <div class="h-full bg-cyan-500/60 rounded-full" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="flex justify-between text-[10px] text-neutral-500">
+        <span>{t('ode.label.target')}: 15,000</span>
+        <span class="text-cyan-400">197%</span>
+      </div>
+      <div class="text-[10px] text-neutral-500 space-y-0.5">
+        <div>Peak Ca²⁺: <span class="text-white font-mono">886 nM</span></div>
+        <div>Peak NFAT(nuclear): <span class="text-white font-mono">40.0%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Constant 70 dB -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-xs font-semibold text-neutral-300">{t('ode.scenario1.title')}</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-white/10 text-neutral-400 font-semibold">70 dB</span>
+    </div>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-[11px] mb-1">
+          <span class="text-neutral-400">{t('ode.label.protein')}</span>
+          <span class="text-white font-mono font-bold">29,733</span>
+        </div>
+        <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+          <div class="h-full bg-white/30 rounded-full" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="flex justify-between text-[10px] text-neutral-500">
+        <span>{t('ode.label.target')}: 15,000</span>
+        <span class="text-white">198%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Silence (control) -->
+  <div class="bg-white/[0.02] border border-red-500/10 rounded-lg p-4">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-xs font-semibold text-red-400">{t('ode.scenario4.title')}</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-red-500/20 text-red-400 font-semibold">{t('ode.scenario4.badge')}</span>
+    </div>
+    <div class="space-y-2">
+      <div>
+        <div class="flex justify-between text-[11px] mb-1">
+          <span class="text-neutral-400">{t('ode.label.protein')}</span>
+          <span class="text-red-400 font-mono font-bold">1,023</span>
+        </div>
+        <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+          <div class="h-full bg-red-500/40 rounded-full" style="width:6.8%"></div>
+        </div>
+      </div>
+      <div class="flex justify-between text-[10px] text-neutral-500">
+        <span>{t('ode.label.target')}: 15,000</span>
+        <span class="text-red-400">6.8%</span>
+      </div>
+      <div class="text-[10px] text-neutral-500">
+        <div>Peak Ca²⁺: <span class="text-white font-mono">171 nM</span></div>
+        <div>Peak NFAT(nuclear): <span class="text-white font-mono">1.3%</span></div>
+      </div>
+    </div>
+  </div>
+</div>

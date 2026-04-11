@@ -1,0 +1,40 @@
+---
+// Delivery: Story + Problem comparison (current vs proposed)
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<!-- Story -->
+<div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+  <p set:html={t('dlv.story.p1')} />
+  <p set:html={t('dlv.story.p2')} />
+  <p set:html={t('dlv.story.p3')} />
+</div>
+
+<!-- The Problem -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('dlv.problem.title')}</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Current: Surgery -->
+    <div class="border border-red-500/20 bg-red-950/10 rounded-lg p-4">
+      <div class="text-[10px] text-red-400 font-semibold uppercase tracking-wider mb-2">{t('dlv.problem.current')}</div>
+      <div class="space-y-1.5 text-xs text-neutral-400">
+        <div class="flex items-start gap-2"><span class="text-red-500/60 shrink-0">&#x2717;</span><span set:html={t('dlv.problem.c1')} /></div>
+        <div class="flex items-start gap-2"><span class="text-red-500/60 shrink-0">&#x2717;</span><span set:html={t('dlv.problem.c2')} /></div>
+        <div class="flex items-start gap-2"><span class="text-red-500/60 shrink-0">&#x2717;</span><span set:html={t('dlv.problem.c3')} /></div>
+        <div class="flex items-start gap-2"><span class="text-red-500/60 shrink-0">&#x2717;</span><span set:html={t('dlv.problem.c4')} /></div>
+      </div>
+    </div>
+    <!-- Proposed: Non-invasive -->
+    <div class="border border-green-500/20 bg-green-950/10 rounded-lg p-4">
+      <div class="text-[10px] text-green-400 font-semibold uppercase tracking-wider mb-2">{t('dlv.problem.proposed')}</div>
+      <div class="space-y-1.5 text-xs text-neutral-400">
+        <div class="flex items-start gap-2"><span class="text-green-500/60 shrink-0">&#x2713;</span><span set:html={t('dlv.problem.p1')} /></div>
+        <div class="flex items-start gap-2"><span class="text-green-500/60 shrink-0">&#x2713;</span><span set:html={t('dlv.problem.p2')} /></div>
+        <div class="flex items-start gap-2"><span class="text-green-500/60 shrink-0">&#x2713;</span><span set:html={t('dlv.problem.p3')} /></div>
+        <div class="flex items-start gap-2"><span class="text-green-500/60 shrink-0">&#x2713;</span><span set:html={t('dlv.problem.p4')} /></div>
+      </div>
+    </div>
+  </div>
+</div>

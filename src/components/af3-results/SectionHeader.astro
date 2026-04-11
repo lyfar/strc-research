@@ -1,0 +1,13 @@
+---
+// AF3 Results — Section header with title, badge, and description
+import { useTranslations } from '../../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+<div class="flex items-center gap-2 mb-2">
+  <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('af3results.title')}</h2>
+  <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">{t('af3results.badge')}</span>
+</div>
+<p class="text-neutral-400 text-sm mb-8 max-w-3xl">
+  {t('af3results.desc')}
+</p>
