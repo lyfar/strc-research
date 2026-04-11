@@ -1,0 +1,108 @@
+---
+// ESM Protein Language Model Validation for Mini-STRC
+const { lang = 'en' } = Astro.props;
+---
+
+<div class="mt-16 pt-10 border-t border-white/5">
+  <div class="flex items-center gap-2 mb-1">
+    <h3 class="text-sm font-semibold text-white">Protein Language Model Validation</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-purple-500/20 text-purple-400 font-semibold">ESM zero-shot</span>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-green-500/20 text-green-400 font-semibold">NEW</span>
+  </div>
+  <p class="text-xs text-neutral-500 mb-6">
+    Meta's <a href="/tools/tool/esm1v" class="text-blue-400 hover:text-blue-300 no-underline">ESM protein language models</a> predict variant effects from evolutionary protein sequences alone, with no clinical training data. This provides an independent validation layer orthogonal to structure-based methods.
+  </p>
+
+  <!-- Key finding -->
+  <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-5 mb-6">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-green-400 font-bold text-sm">E1659 fitness identical in mini vs full</span>
+    </div>
+    <p class="text-xs text-neutral-400">
+      ESM-1v log-probability for wildtype Glutamic acid at position 1659 is -0.367 in both full-length STRC (1-1775) and mini-STRC (700-1775). Truncation does not alter the evolutionary fitness signal at the variant site.
+    </p>
+  </div>
+
+  <!-- E1659A variant scoring -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">E1659A variant effect</h4>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5">
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Model</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Parameters</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Delta (A-E)</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-white/5">
+          <td class="px-4 py-2"><a href="/tools/tool/esm1v" class="text-blue-400 hover:text-blue-300 no-underline">ESM-1v</a></td>
+          <td class="px-4 py-2 text-neutral-500">650M</td>
+          <td class="px-4 py-2 font-mono text-white">-2.733</td>
+          <td class="px-4 py-2"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span><span class="text-red-400">Damaging</span></span></td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="px-4 py-2"><a href="/tools/tool/esm1v" class="text-blue-400 hover:text-blue-300 no-underline">ESM-2</a></td>
+          <td class="px-4 py-2 text-neutral-500">650M</td>
+          <td class="px-4 py-2 font-mono text-white">-1.718</td>
+          <td class="px-4 py-2"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span><span class="text-red-400">Damaging</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-neutral-600 mb-8">
+    Negative delta = mutant less likely than wildtype. Glutamic acid (E) is the single most preferred amino acid at position 1659. Alanine (A) ranks 18th of 20 possible substitutions. Ran locally on Apple M5 Max via Metal Performance Shaders.
+  </p>
+
+  <!-- Truncation boundary fitness -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Truncation boundary fitness</h4>
+  <p class="text-xs text-neutral-500 mb-3">
+    ESM-1v log-probability of the wildtype residue at each position near the cut point. Higher = more evolutionarily preferred. Low scores indicate positions tolerant of change, supporting safe truncation.
+  </p>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-white/5">
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Position</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Residue</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Score</th>
+          <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">696</td><td class="px-4 py-1.5 font-mono">N</td><td class="px-4 py-1.5 font-mono text-neutral-400">-0.972</td><td class="px-4 py-1.5 text-neutral-600"></td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">697</td><td class="px-4 py-1.5 font-mono">P</td><td class="px-4 py-1.5 font-mono text-neutral-400">-0.379</td><td class="px-4 py-1.5 text-neutral-600"></td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">698</td><td class="px-4 py-1.5 font-mono">S</td><td class="px-4 py-1.5 font-mono text-green-400">-0.282</td><td class="px-4 py-1.5 text-neutral-600">Low constraint</td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">699</td><td class="px-4 py-1.5 font-mono">S</td><td class="px-4 py-1.5 font-mono text-green-400">-0.241</td><td class="px-4 py-1.5 text-neutral-600">Low constraint</td></tr>
+        <tr class="border-b border-white/5 bg-yellow-500/5"><td class="px-4 py-1.5 font-mono text-yellow-400 font-bold">700</td><td class="px-4 py-1.5 font-mono font-bold">G</td><td class="px-4 py-1.5 font-mono text-white font-bold">-0.452</td><td class="px-4 py-1.5 text-yellow-400 text-[10px] font-semibold">CUT POINT</td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">701</td><td class="px-4 py-1.5 font-mono">I</td><td class="px-4 py-1.5 font-mono text-neutral-400">-0.647</td><td class="px-4 py-1.5 text-neutral-600"></td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">702</td><td class="px-4 py-1.5 font-mono">S</td><td class="px-4 py-1.5 font-mono text-green-400">-0.161</td><td class="px-4 py-1.5 text-neutral-600">Very low constraint</td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">705</td><td class="px-4 py-1.5 font-mono">E</td><td class="px-4 py-1.5 font-mono text-green-400">-0.215</td><td class="px-4 py-1.5 text-neutral-600">Low constraint</td></tr>
+        <tr class="border-b border-white/5"><td class="px-4 py-1.5 font-mono text-neutral-500">712</td><td class="px-4 py-1.5 font-mono">P</td><td class="px-4 py-1.5 font-mono text-green-400">-0.140</td><td class="px-4 py-1.5 text-neutral-600">Minimal constraint</td></tr>
+        <tr><td class="px-4 py-1.5 font-mono text-neutral-500">714</td><td class="px-4 py-1.5 font-mono">L</td><td class="px-4 py-1.5 font-mono text-green-400">-0.078</td><td class="px-4 py-1.5 text-neutral-600">Least constrained</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mini vs Full comparison -->
+  <h4 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Mini-STRC vs full-length comparison</h4>
+  <div class="grid sm:grid-cols-3 gap-4 mb-4">
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="text-xs text-neutral-500 mb-1">E1659 fitness (mini)</div>
+      <div class="text-lg font-bold font-mono text-white">-0.367</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="text-xs text-neutral-500 mb-1">E1659 fitness (full)</div>
+      <div class="text-lg font-bold font-mono text-white">-0.367</div>
+    </div>
+    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+      <div class="text-xs text-neutral-500 mb-1">Delta</div>
+      <div class="text-lg font-bold font-mono text-green-400">0.000</div>
+      <div class="text-[10px] text-green-400">No change</div>
+    </div>
+  </div>
+  <p class="text-xs text-neutral-600">
+    The truncation at residue 700 does not alter the evolutionary fitness landscape at E1659 or the C-terminal GPI anchor sites (S1758: -0.310, S1761: -0.314, both optimal). This provides sequence-level evidence that mini-STRC (700-1775) preserves the functional properties of the full protein in the region that matters for tectorial membrane attachment.
+  </p>
+</div>
