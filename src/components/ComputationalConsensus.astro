@@ -16,9 +16,14 @@ const pathogenicityScores = [
   { tool: 'PolyPhen-2', slug: 'intervar', score: '0.991', verdict: 'Probably damaging', color: 'red' },
 ];
 
+const proteinLMScores = [
+  { tool: 'ESM-1v', slug: 'esm1v', score: 'delta -2.733', verdict: 'Damaging (zero-shot)', color: 'red' },
+  { tool: 'ESM-2 (650M)', slug: 'esm1v', score: 'delta -1.718', verdict: 'Damaging (zero-shot)', color: 'red' },
+];
+
 const structuralScores = [
   { tool: 'DynaMut2', slug: 'dynamut', score: '-0.913 kcal/mol', verdict: 'Destabilizing', color: 'red' },
-  { tool: 'AlphaFold DB', slug: 'alphafold-db', score: 'pLDDT 68.75', verdict: 'Moderate confidence', color: 'orange' },
+  { tool: 'AlphaFold DB', slug: 'alphafold-db', score: 'pLDDT 95.69', verdict: 'High confidence at E1659', color: 'green' },
 ];
 
 const splicingScores = [
@@ -34,8 +39,8 @@ const populationScores = [
   { tool: 'LOVD', slug: 'lovd', score: 'Absent', verdict: 'Not in hearing loss DB', color: 'red' },
 ];
 
-const totalDamaging = pathogenicityScores.filter(s => s.color === 'red').length + structuralScores.filter(s => s.color === 'red').length;
-const total = pathogenicityScores.length + structuralScores.length;
+const totalDamaging = pathogenicityScores.filter(s => s.color === 'red').length + proteinLMScores.filter(s => s.color === 'red').length + structuralScores.filter(s => s.color === 'red').length;
+const total = pathogenicityScores.length + proteinLMScores.length + structuralScores.length;
 
 function scoreColor(color: string) {
   if (color === 'red') return 'text-red-400';
@@ -54,7 +59,7 @@ function dotColor(color: string) {
   <div class="max-w-4xl mx-auto">
     <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-2">Computational Consensus</h2>
     <p class="text-xs text-neutral-500 mb-6">
-      {totalDamaging} of {total} predictors classify E1659A as damaging. Scores aggregated from {pathogenicityScores.length + structuralScores.length + splicingScores.length + populationScores.length} tools tested on this variant.
+      {totalDamaging} of {total} predictors classify E1659A as damaging. Scores aggregated from {pathogenicityScores.length + proteinLMScores.length + structuralScores.length + splicingScores.length + populationScores.length} tools tested on this variant.
     </p>
 
     <!-- Summary banner -->
@@ -97,6 +102,41 @@ function dotColor(color: string) {
         </tbody>
       </table>
     </div>
+
+    <!-- Protein Language Models -->
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">
+      Protein Language Models
+      <span class="ml-2 px-1.5 py-0.5 text-[9px] rounded bg-purple-500/20 text-purple-400 font-semibold normal-case tracking-normal">zero-shot</span>
+    </h3>
+    <p class="text-xs text-neutral-600 mb-3">No clinical training data used. Models predict variant effect purely from evolutionary protein sequences.</p>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-x-auto mb-6">
+      <table class="w-full min-w-[500px] text-xs">
+        <thead>
+          <tr class="border-b border-white/5">
+            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Model</th>
+            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Log-likelihood delta</th>
+            <th class="text-left px-4 py-2.5 text-neutral-400 font-medium">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          {proteinLMScores.map((s) => (
+            <tr class="border-b border-white/5">
+              <td class="px-4 py-2">
+                <a href={`/tools/tool/${s.slug}`} class="text-blue-400 hover:text-blue-300 no-underline">{s.tool}</a>
+              </td>
+              <td class="px-4 py-2 font-mono text-white">{s.score}</td>
+              <td class="px-4 py-2">
+                <span class="flex items-center gap-1.5">
+                  <span class={`w-1.5 h-1.5 rounded-full ${dotColor(s.color)}`}></span>
+                  <span class={scoreColor(s.color)}>{s.verdict}</span>
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-neutral-600 mb-8">Glutamic acid (E) is the most preferred residue at position 1659. Alanine (A) ranks 3rd worst of 20 possible substitutions. Ran locally on Apple M5 Max via MPS.</p>
 
     <!-- Protein Stability -->
     <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Protein Stability</h3>
