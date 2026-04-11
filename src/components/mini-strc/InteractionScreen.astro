@@ -69,6 +69,12 @@ const t = useComponentTranslations(lang, { en, zh });
                 <td class="p-3 text-right font-mono text-amber-400">26-29 A</td>
                 <td class="p-3"><Fragment set:html={t('t18')} /></td>
               </tr>
+              <tr class="bg-green-500/[0.05] border-b border-white/5">
+                <td class="p-3 text-green-400 font-medium">Mini-STRC + TMEM145 GOLD domain <span class="text-[9px] px-1 py-0.5 rounded bg-green-500/20 text-green-400 font-semibold ml-1">NEW</span></td>
+                <td class="p-3 text-right font-mono text-green-400 font-bold">0.74</td>
+                <td class="p-3 text-right font-mono text-green-400">1.7-1.9 A</td>
+                <td class="p-3 text-green-400">Confident interaction. GOLD domain only removes TM noise. Answers Holt Lab question.</td>
+              </tr>
               <tr class="bg-cyan-500/[0.03]">
                 <td class="p-3 text-cyan-400 font-medium"><Fragment set:html={t('t19')} /></td>
                 <td class="p-3 text-right font-mono text-cyan-400 font-bold">0.73</td>
@@ -79,7 +85,17 @@ const t = useComponentTranslations(lang, { en, zh });
           </table>
         </div>
       </div>
-      
+
+      <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-4">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-green-400 font-bold text-sm">TMEM145 interaction confirmed</span>
+          <span class="text-[9px] px-1.5 py-0.5 rounded bg-green-500/20 text-green-400 font-semibold">April 2026</span>
+        </div>
+        <p class="text-xs text-neutral-300 leading-relaxed">
+          Mini-STRC (700-1775) + TMEM145 GOLD domain (30-174): <strong>ipTM 0.74</strong>, PAE 1.7-1.9 A. This is a confident interaction prediction, validating that mini-STRC preserves the TMEM145 binding interface. Previous full-TMEM145 jobs (ipTM 0.43-0.47) were confounded by 8 transmembrane helices. Using only the extracellular GOLD domain, AF3 clearly resolves the C-terminal ARM repeat binding. Consistent with Derstroff et al. 2026 (ipTM up to 0.91 with pruned fragments).
+        </p>
+      </div>
+
       <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4">
         <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('t2')} /></p>
       </div>
