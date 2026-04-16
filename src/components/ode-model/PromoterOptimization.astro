@@ -1,0 +1,101 @@
+---
+// Promoter Optimization — 9xNFAT-weak design for self-dosing at 40-50 dB
+const { lang = 'en' } = Astro.props;
+
+const comparison = [
+  { dB: 0,  current: '11.6%', optimized: '0.1%',   note: 'Leak eliminated', color: 'green' },
+  { dB: 20, current: '179.7%', optimized: '0.1%',  note: 'Was saturated, now OFF', color: 'green' },
+  { dB: 40, current: '198.3%', optimized: '5.7%',  note: 'Was saturated, now sub-therapeutic', color: 'green' },
+  { dB: 45, current: '~198%',  optimized: '51.2%', note: 'THE SWITCH POINT', color: 'amber' },
+  { dB: 50, current: '198.3%', optimized: '163.3%', note: 'Rapidly therapeutic', color: 'cyan' },
+  { dB: 70, current: '198.3%', optimized: '198.1%', note: 'Same as before', color: 'cyan' },
+];
+
+const variants = [
+  { name: '9xNFAT-weak', sites: 9, seq: 'AGGAGAAT', hill: 8, threshold: '~0.30', behavior: 'Switch at 40-50 dB', badge: 'CANDIDATE', badgeColor: 'green' },
+  { name: '9xNFAT-mixed', sites: 9, seq: '5×strong + 4×weak', hill: '6-7', threshold: '~0.15', behavior: 'Switch at 25-35 dB', badge: 'FALLBACK', badgeColor: 'yellow' },
+  { name: '6xNFAT-strong', sites: 6, seq: 'AGGAAAAT', hill: 4, threshold: '~0.05', behavior: 'Current model. Saturates at 14 dB', badge: 'BASELINE', badgeColor: 'neutral' },
+];
+---
+
+<div class="bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-5 mb-6">
+  <div class="flex items-center gap-2 mb-2">
+    <h3 class="text-sm font-semibold text-cyan-400">Solution: 9xNFAT-weak Promoter</h3>
+    <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold">NEW</span>
+  </div>
+  <p class="text-xs text-neutral-300 leading-relaxed mb-4">
+    Parameter optimization across 245 combinations found that increasing the NFAT activation
+    threshold (0.05→0.30) and cooperativity (Hill 4→8) moves the switch to 40-50 dB.
+    Biologically: use <strong class="text-cyan-300">9 NFAT binding sites with reduced individual affinity</strong>
+    (A→G at position 4 of each site). One nucleotide change, repeated 9 times, transforms
+    the therapy from "always ON" to "hearing-aid controlled."
+  </p>
+
+  <!-- Current vs Optimized comparison -->
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full text-[10px]">
+      <thead>
+        <tr class="text-neutral-500 border-b border-white/5">
+          <th class="text-left py-1.5 font-medium">Sound</th>
+          <th class="text-right py-1.5 font-medium">6xNFAT (current)</th>
+          <th class="text-right py-1.5 font-medium">9xNFAT-weak</th>
+          <th class="text-left py-1.5 pl-3 font-medium hidden sm:table-cell">Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        {comparison.map(r => (
+          <tr class="border-b border-white/[0.03]">
+            <td class="py-1.5 text-neutral-400 font-mono">{r.dB} dB</td>
+            <td class="py-1.5 text-right text-neutral-500 font-mono">{r.current}</td>
+            <td class={`py-1.5 text-right font-mono font-semibold text-${r.color}-400`}>{r.optimized}</td>
+            <td class="py-1.5 pl-3 text-neutral-500 hidden sm:table-cell">{r.note}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Key mutation -->
+  <div class="bg-black/30 rounded p-3 font-mono text-[11px] mb-4">
+    <div class="text-neutral-500 mb-1.5">// Single nucleotide substitution</div>
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class="text-red-400">Strong: A<span class="bg-red-500/20 px-0.5">G</span>G<span class="bg-red-500/20 px-0.5">A</span>AAAT</span>
+      <span class="text-neutral-600">→</span>
+      <span class="text-green-400">Weak:&nbsp; A<span class="bg-green-500/20 px-0.5">G</span>G<span class="bg-green-500/20 px-0.5 text-amber-400">G</span>AAAT</span>
+      <span class="text-neutral-600 text-[9px]">(position 4: A→G)</span>
+    </div>
+    <div class="text-neutral-500 mt-2">// Full promoter: 9× [AGGAGAAT] + spacers + TATA = 161 bp</div>
+    <div class="text-neutral-500">// AAV construct: 4,247 bp total (453 bp margin)</div>
+  </div>
+</div>
+
+<!-- Variant designs -->
+<div class="grid sm:grid-cols-3 gap-3 mb-6">
+  {variants.map(v => (
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-3">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-xs font-semibold text-neutral-200">{v.name}</span>
+        <span class={`px-1.5 py-0.5 text-[9px] rounded bg-${v.badgeColor}-500/20 text-${v.badgeColor}-400 font-semibold`}>{v.badge}</span>
+      </div>
+      <div class="text-[10px] text-neutral-400 space-y-1">
+        <div>Sites: <span class="text-white font-mono">{v.sites}×</span></div>
+        <div>Sequence: <span class="text-white font-mono text-[9px]">{v.seq}</span></div>
+        <div>Hill: <span class="text-white font-mono">{v.hill}</span> | Threshold: <span class="text-white font-mono">{v.threshold}</span></div>
+        <div class="text-neutral-500 mt-1">{v.behavior}</div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<!-- Literature support -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-6">
+  <h4 class="text-xs font-semibold text-neutral-300 mb-2">Literature Support</h4>
+  <div class="text-[10px] text-neutral-400 space-y-1.5">
+    <div><strong class="text-neutral-300">Yamamoto et al. 2018</strong> — Direct 3x/6x/9x NFAT-RE comparison.
+    9x gave best fold-change (ON/OFF ratio). Supports Hill=8 prediction.</div>
+    <div><strong class="text-neutral-300">Crabtree 2003, Genes Dev</strong> — GGAGA documented as suboptimal NFAT motif
+    with 3-5x reduced affinity vs consensus GGAAA.</div>
+    <div><strong class="text-neutral-300">CD3γ mutagenesis (JBC 2002)</strong> — A→G at position 4 of GGAAAA
+    abrogates binding at individual sites. With 9 cooperative sites, partial binding is retained.</div>
+  </div>
+</div>

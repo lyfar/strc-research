@@ -1,0 +1,109 @@
+---
+// Alternative Pathway — AC1/cAMP/CREB as replacement for NFAT
+const { lang = 'en' } = Astro.props;
+
+const comparison = [
+  { aspect: 'Ca²⁺ sensor location', nfat: 'Soma (Ca²⁺ doesn\'t reach)', creb: 'Stereocilia (where Ca²⁺ is)', winner: 'creb' },
+  { aspect: 'Second messenger', nfat: 'Ca²⁺ itself (heavily buffered)', creb: 'cAMP (freely diffusing)', winner: 'creb' },
+  { aspect: 'Pathway in OHC', nfat: 'Only activated by damage', creb: 'AC1 mutations cause deafness', winner: 'creb' },
+  { aspect: 'Safety', nfat: 'Triggers apoptosis (TNF, Caspases)', creb: 'Neuroplasticity pathway', winner: 'creb' },
+  { aspect: 'Promoter element', nfat: '6xNFAT-RE (never tested in ear)', creb: 'CRE (TGACGTCA, well characterized)', winner: 'creb' },
+  { aspect: 'Tested in hair cells', nfat: 'No', creb: 'No', winner: 'neither' },
+];
+---
+
+<div class="bg-blue-500/5 border border-blue-500/20 rounded-lg p-5 mb-6">
+  <div class="flex items-center gap-2 mb-2">
+    <h3 class="text-sm font-semibold text-blue-400">Alternative: AC1/cAMP/CREB Pathway</h3>
+    <span class="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-400 font-semibold">PROPOSED</span>
+  </div>
+  <p class="text-xs text-neutral-300 leading-relaxed mb-4">
+    A more biologically plausible activity-dependent pathway exists. Adenylyl cyclase 1 (AC1/ADCY1)
+    is a calcium-calmodulin-activated enzyme <strong class="text-blue-300">located directly in stereocilia</strong>,
+    where MET-channel calcium is abundant. It converts Ca²⁺ signals to cAMP, a small molecule that
+    diffuses freely to the soma, bypassing the calcium compartmentalization barrier entirely.
+  </p>
+
+  <!-- Alternative cascade -->
+  <div class="flex items-center justify-center gap-1 text-[9px] font-mono mb-5 flex-wrap">
+    <span class="px-2 py-1 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">MET Ca²⁺</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400">CaM</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400">AC1</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-yellow-500/10 border border-yellow-500/20 text-yellow-400">cAMP↑</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-purple-500/10 border border-purple-500/20 text-purple-400">PKA</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400">CREB-P</span>
+    <span class="text-neutral-600">→</span>
+    <span class="px-2 py-1 rounded bg-green-500/10 border border-green-500/20 text-green-400">CRE→STRC</span>
+  </div>
+
+  <!-- Head-to-head -->
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full text-[10px]">
+      <thead>
+        <tr class="text-neutral-500 border-b border-white/5">
+          <th class="text-left py-1.5 font-medium"></th>
+          <th class="text-center py-1.5 font-medium text-red-400">NFAT pathway</th>
+          <th class="text-center py-1.5 font-medium text-blue-400">AC1/CREB pathway</th>
+        </tr>
+      </thead>
+      <tbody>
+        {comparison.map(c => (
+          <tr class="border-b border-white/[0.03]">
+            <td class="py-1.5 text-neutral-400">{c.aspect}</td>
+            <td class={`py-1.5 text-center font-mono ${c.winner === 'creb' ? 'text-neutral-600' : c.winner === 'neither' ? 'text-neutral-500' : 'text-green-400'}`}>{c.nfat}</td>
+            <td class={`py-1.5 text-center font-mono ${c.winner === 'creb' ? 'text-blue-400' : c.winner === 'neither' ? 'text-neutral-500' : 'text-neutral-600'}`}>{c.creb}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Key evidence -->
+  <div class="bg-white/[0.03] rounded p-3 mb-3">
+    <h4 class="text-[11px] text-blue-400 font-semibold mb-1.5">Why AC1 is credible</h4>
+    <div class="text-[10px] text-neutral-400 space-y-1">
+      <div><strong class="text-neutral-300">ADCY1 in stereocilia:</strong> Immunolocalization confirms AC1 protein
+      in hair cell stereocilia, exactly where MET-channel Ca²⁺ is highest.</div>
+      <div><strong class="text-neutral-300">ADCY1 mutations cause deafness:</strong> Recessive hearing impairment
+      in humans and zebrafish. AC1 is functionally essential for hearing, unlike NFATc4.</div>
+      <div><strong class="text-neutral-300">cAMP diffuses freely:</strong> Unlike Ca²⁺ (trapped by millimolar
+      buffers), cAMP passes through the cuticular plate without barrier. Reaches nucleus in seconds.</div>
+      <div><strong class="text-neutral-300">CREB is safe:</strong> Standard neuroplasticity pathway. No link to
+      OHC apoptosis.</div>
+    </div>
+  </div>
+
+  <!-- What we don't know -->
+  <div class="bg-yellow-500/5 border border-yellow-500/15 rounded p-3">
+    <h4 class="text-[11px] text-yellow-400 font-semibold mb-1.5">What remains unproven</h4>
+    <div class="text-[10px] text-neutral-400 space-y-1">
+      <div>1. Does AC1 produce enough cAMP during normal hearing to activate PKA/CREB?</div>
+      <div>2. Does cAMP from stereocilia reach the nucleus at sufficient concentration?</div>
+      <div>3. Would a CRE-responsive promoter fire in OHCs? (Never tested)</div>
+      <div>4. cAMP/CREB responds to many signals, not just sound. Specificity is a concern.</div>
+      <div>5. All ODE model parameters would need re-derivation for the AC1/CREB cascade.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DFNB16-specific hypothesis -->
+<div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-6">
+  <h4 class="text-xs font-semibold text-neutral-300 mb-2">Speculative: DFNB16-Specific Calcium Leak</h4>
+  <p class="text-[10px] text-neutral-400 leading-relaxed mb-2">
+    In Strc-/- mice, stereocilia lose horizontal top connectors by P15, bundle stiffness drops 60-74%,
+    and stereocilia progressively disconnect. It is possible that this structural disorganization
+    disrupts calcium compartmentalization, allowing MET-channel Ca²⁺ to leak into the soma,
+    making the NFAT pathway viable <em>only in DFNB16 cells</em>.
+  </p>
+  <p class="text-[10px] text-neutral-500 leading-relaxed">
+    If true, this would create an elegant self-dosing mechanism: the disease activates the promoter,
+    the cure silences it. But <strong class="text-neutral-400">no one has measured somatic Ca²⁺ in Strc-/- OHCs</strong>.
+    This remains pure speculation. It is testable by calcium imaging in cochlear explants from
+    stereocilin-null mice.
+  </p>
+</div>

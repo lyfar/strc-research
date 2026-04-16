@@ -1,0 +1,76 @@
+---
+// Recombinase-based gene insertion hypothesis
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const compareRows = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6'] as const;
+---
+<section id="recombinases" class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('recom.title')}</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">{t('recom.badge')}</span>
+    </div>
+
+    <!-- Story -->
+    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed mb-10">
+      <p set:html={t('recom.story.p1')} />
+      <p set:html={t('recom.story.p2')} />
+      <p set:html={t('recom.story.p3')} />
+    </div>
+
+    <!-- How it works -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">{t('recom.how.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed" set:html={t('recom.how.desc')} />
+    </div>
+
+    <!-- Comparison table -->
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t('recom.compare.title')}</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-neutral-500 text-left border-b border-white/5">
+              <th class="py-2 pr-4 font-medium">{t('recom.compare.col1')}</th>
+              <th class="py-2 pr-4 font-medium text-red-400/60">{t('recom.compare.col2')}</th>
+              <th class="py-2 pr-4 font-medium text-amber-400/60">{t('recom.compare.col3')}</th>
+              <th class="py-2 font-medium text-emerald-400/60">{t('recom.compare.col4')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compareRows.map((row) => (
+              <tr class="border-b border-white/[0.03]">
+                <td class="py-1.5 pr-4 text-neutral-300">{t(`recom.compare.${row}.prop`)}</td>
+                <td class="py-1.5 pr-4 text-neutral-400">{t(`recom.compare.${row}.dual`)}</td>
+                <td class="py-1.5 pr-4 text-neutral-400">{t(`recom.compare.${row}.mini`)}</td>
+                <td class="py-1.5 text-neutral-400">{t(`recom.compare.${row}.recom`)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Seamless/Lilly deal -->
+    <div class="bg-white/[0.02] border border-emerald-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-emerald-400/60 mb-3">{t('recom.deal.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed" set:html={t('recom.deal.desc')} />
+    </div>
+
+    <!-- What this means for STRC -->
+    <div class="bg-white/[0.02] border border-purple-500/20 rounded-lg p-5 mb-8">
+      <h3 class="text-sm font-semibold mb-3">{t('recom.implication.title')}</h3>
+      <div class="space-y-3 text-xs text-neutral-400 leading-relaxed">
+        <p set:html={t('recom.implication.p1')} />
+        <p set:html={t('recom.implication.p2')} />
+      </div>
+    </div>
+
+    <!-- Caveat -->
+    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+      <p class="text-xs text-neutral-300" set:html={t('recom.caveat')} />
+    </div>
+  </div>
+</section>

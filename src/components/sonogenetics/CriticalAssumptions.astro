@@ -1,0 +1,72 @@
+---
+// Critical Assumptions — honest disclosure of biological uncertainties
+const { lang = 'en' } = Astro.props;
+
+const assumptions = [
+  {
+    claim: 'Ca²⁺ from MET channels activates calcineurin in OHC soma',
+    status: 'UNVERIFIED',
+    statusColor: 'red',
+    evidence: 'Multiple studies show extreme Ca²⁺ compartmentalization in OHC stereocilia. Millimolar calcium buffers, PMCA2 pumps, a mitochondrial barrier below the cuticular plate, and 4-6 mM oncomodulin in the cell body all prevent MET-channel calcium from reaching the soma. Resting somatic Ca²⁺: ~91 nM. Calcineurin Kd: ~500 nM. No published evidence of calcineurin activation during normal hearing.',
+    refs: 'Bhatt et al. 2000; Ricci et al. 1998; Hackney et al. 2005',
+  },
+  {
+    claim: 'NFAT translocates to nucleus during normal sound exposure',
+    status: 'NOT OBSERVED',
+    statusColor: 'red',
+    evidence: 'Every published observation of NFATc4 nuclear translocation in OHCs is in the context of pathological injury: noise trauma or aminoglycoside exposure. NFATc4 knockout mice develop normal cochlear structure and have normal hearing. NFAT is dispensable for OHC function.',
+    refs: 'Frontieres Immunol 2019; Front Cell Dev Bio 2021',
+  },
+  {
+    claim: 'NFAT activation in OHCs is safe',
+    status: 'CONTRADICTED',
+    statusColor: 'red',
+    evidence: 'NFATc4 downstream targets in OHCs include TNF, Caspase-8, and Caspase-3, all apoptosis effectors. NFAT inhibitors (11R-VIVIT, pasireotide) protect hair cells from death. Activating NFAT in OHCs may trigger cell death, not therapeutic gene expression.',
+    refs: 'Pubmed 27787949; Pubmed 31755556',
+  },
+  {
+    claim: '6xNFAT promoter functions in hair cells',
+    status: 'UNTESTED',
+    statusColor: 'yellow',
+    evidence: 'The 6xNFAT promoter (Wu et al. 2023) was validated in HEK293T cells with focused ultrasound. It has never been tested in any cochlear cell type. No synthetic NFAT-responsive promoter has been tested in the inner ear.',
+    refs: 'Wu et al. 2023',
+  },
+];
+---
+
+<div class="bg-red-500/5 border border-red-500/20 rounded-lg p-5 mb-6">
+  <div class="flex items-center gap-2 mb-2">
+    <h3 class="text-sm font-semibold text-red-400">Critical Assumptions & Open Questions</h3>
+    <span class="px-1.5 py-0.5 text-[10px] rounded bg-red-500/20 text-red-400 font-semibold">HONEST DISCLOSURE</span>
+  </div>
+  <p class="text-xs text-neutral-300 leading-relaxed mb-4">
+    The ODE model is mathematically correct: equations are sound, parameters are from peer-reviewed
+    literature, and the system dynamics are thoroughly analyzed. However, several
+    <strong class="text-red-400">biological assumptions have not been validated in cochlear outer hair cells</strong>.
+    A literature review (April 2026) identified the following critical gaps.
+  </p>
+
+  <div class="space-y-2 mb-4">
+    {assumptions.map(a => (
+      <div class="bg-white/[0.02] rounded p-3">
+        <div class="flex items-start gap-3">
+          <span class={`px-1.5 py-0.5 text-[9px] rounded bg-${a.statusColor}-500/20 text-${a.statusColor}-400 font-semibold shrink-0 mt-0.5 whitespace-nowrap`}>
+            {a.status}
+          </span>
+          <div>
+            <div class="text-[11px] text-neutral-200 font-medium mb-1">"{a.claim}"</div>
+            <div class="text-[10px] text-neutral-500 leading-relaxed">{a.evidence}</div>
+            <div class="text-[9px] text-neutral-600 mt-1">{a.refs}</div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="bg-white/[0.03] rounded p-3 text-[10px] text-neutral-400 leading-relaxed">
+    <strong class="text-neutral-300">The core problem:</strong> Ca²⁺ from MET channels stays in stereocilia
+    under physiological conditions. It never reaches the soma at concentrations sufficient to activate
+    calcineurin (~500 nM). The model's V_cell = 0.05 pL (apical compartment) assumes calcium reaches
+    a signaling volume where calcineurin resides. Published data suggests it does not.
+  </div>
+</div>
