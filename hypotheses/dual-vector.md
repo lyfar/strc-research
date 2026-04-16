@@ -30,6 +30,23 @@ Viral particle uptake follows gamma-Poisson (negative binomial) distribution, ac
 
 Gap widens at clinically realistic titers. Only at extreme titers (>10¹³, difficult to manufacture) does dual-vector become comparable.
 
+## OTOF clinical recalibration (2026-04-16)
+
+Model recalibrated against OTOF/DB-OTO trial data (Lustig 2024, Regeneron;
+Sun et al. 2024, Lancet). See dual_vector_otof_calibration.py.
+
+The model underpredicts dual-vector transduction at high titers (mean error 14%)
+because recombination efficiency is higher in vivo than bench R=0.50 assumption.
+This means the original 2.8x claim was overestimated.
+
+**Revised advantage at clinical titer: 2.2x** (single 89.8% vs dual 40.4%)
+
+2.2x is still a clinically meaningful advantage — dual-vector requires 2.2x
+more vector copies per OHC to match single-vector coverage. But this is an
+honest correction and should replace the 2.8x figure in all communications.
+
 ## Conclusion
 
-Mini-STRC single-vector approach is not incremental — it's a 2.8x improvement in therapeutic coverage at clinical titers. This is the quantitative argument for prioritizing mini-STRC over dual-vector full-STRC.
+Mini-STRC single-vector is 2.2x more efficient than dual-vector at clinical
+titers. This reflects conservative recalibration against OTOF clinical trial
+data — a stronger evidentiary basis than bench data alone.

@@ -39,6 +39,41 @@ Residues 1075–1775: pTM 0.87, 2,597 bp headroom. Better fold but removes 60% o
 - Does hair cell function recover (ABR, DPOAE in STRC knockout mice)?
 - Does loss of 9 N-glycosylation sites affect trafficking in vivo?
 
+## Clinical outcome projections (2026-04-16)
+
+Motivated by Tsai et al. 2026 (JCI, postnatal SLC26A4 gene therapy) and
+Lesperance et al. 2026 (Ear and Hearing, OTOF gene therapy for ANSD).
+
+### Therapeutic window (therapeutic_window_model.py)
+
+ODE model of OHC stereocilia bundle degradation in STRC-null inner ear.
+Calibrated to Verpy et al. 2011 Strc-/- mouse data. Scaled 10x to human.
+
+- Intervention deadline for functional hearing (<55 dB): **~30 months postnatal**
+- Intervention deadline for responder status (≥20 dB improvement): **~30 months postnatal**
+- Standard UNHS → treatment pathway: ~5 months
+- **Margin: 25 months. Compatible with universal newborn hearing screening.**
+
+### ABR outcome projection (abr_transfer_model.py)
+
+Log-linear model calibrated to published OHC-count vs threshold correlations
+(Bredberg 1968; Schuknecht & Gacek 1993) and OTOF clinical trial data points.
+
+- Mini-STRC at clinical titer (67% transduction): **33 dB predicted threshold**
+- Improvement over DFNB16 baseline (85 dB): **52 dB**
+- Category: Mild — conversational speech without hearing aids
+- Responder status (≥20 dB): YES
+- Functional hearing (<55 dB): YES
+- Minimum transduction for responder status: 13%
+- Minimum transduction for functional hearing: 24%
+
+### Combined clinical statement
+
+> Mini-STRC (Anc80L65, 3.75×10¹² GC/mL) must be delivered before ~30 months
+> postnatal to achieve functional hearing (<55 dB). At clinical titer, 67%
+> OHC transduction produces a predicted 33 dB ABR threshold — mild hearing
+> loss category, conversational speech without aids.
+
 ## Computational next steps
 
 - Molecular dynamics (GROMACS/OpenMM) at 37°C to verify fold stability
