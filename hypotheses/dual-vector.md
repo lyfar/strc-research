@@ -33,3 +33,10 @@ Gap widens at clinically realistic titers. Only at extreme titers (>10¹³, diff
 ## Conclusion
 
 Mini-STRC single-vector approach is not incremental — it's a 2.8x improvement in therapeutic coverage at clinical titers. This is the quantitative argument for prioritizing mini-STRC over dual-vector full-STRC.
+
+## Recent Papers
+
+### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
+*Ear and Hearing · relevance: 7/10 · fda_path*
+
+OTOF (~6kb CDS) uses dual-AAV to deliver the full gene, making it the most prominent real-world test of dual-vector cochlear gene therapy. Clinical efficacy data from OTOF trials will provide the first human evidence on dual-vector recombination efficiency in hair cells — a key parameter in our transduction model. If OTOF dual-vector achieves high efficacy, it may narrow our modeled 2.8x single-vector advantage; if efficacy is lower than expected, it strengthens the case for mini-STRC.

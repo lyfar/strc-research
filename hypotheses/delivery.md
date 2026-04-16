@@ -45,3 +45,10 @@ Computational model only. Sonoporation through RWM demonstrated in guinea pigs (
 - What is actual pore diameter and permeability in human RWM vs animal models?
 - Does repeated sonoporation cause cumulative RWM damage?
 - Can mRNA expression be sustained long enough for functional recovery?
+
+## Recent Papers
+
+### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
+*Ear and Hearing · relevance: 7/10 · fda_path*
+
+OTOF clinical trials establish real-world data on cochlear gene therapy delivery in pediatric patients, including surgical approach, dose volumes, and safety monitoring. This clinical framework directly informs regulatory expectations for cochlear delivery — both surgical (standard approach) and any non-surgical alternatives like our sonoporation concept. Understanding delivery-related adverse events from OTOF trials will help benchmark the safety case for alternative delivery routes.

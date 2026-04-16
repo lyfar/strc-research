@@ -47,3 +47,15 @@ Residues 1075–1775: pTM 0.87, 2,597 bp headroom. Better fold but removes 60% o
 - Systematic exon-deletion sweep (29 AF3 jobs) to find structurally dispensable exons
 - HADDOCK/ClusPro docking as orthogonal validation of AF3 interaction predictions
 - CpG depletion — **must do before lab**
+
+## Recent Papers
+
+### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
+*Ear and Hearing · relevance: 7/10 · fda_path*
+
+OTOF gene therapy is the first successful inner ear gene therapy and establishes the regulatory and clinical precedent for all subsequent programs including mini-STRC. The dual-AAV approach used for otoferlin (~6kb CDS) directly validates that oversized hearing loss genes can be delivered to the cochlea, though our mini-gene strategy offers a single-vector alternative. Clinical endpoints and pediatric patient selection criteria from OTOF trials will likely shape FDA expectations for DFNB16.
+
+### 2026-04-16 — [Postnatal Slc26a4 gene therapy improves hearing and structural integrity in a hereditary hearing loss model](https://pubmed.ncbi.nlm.nih.gov/41701544/)
+*The Journal of Clinical Investigation · relevance: 6/10 · applicable*
+
+Demonstrates postnatal AAV gene therapy can restore hearing in another hereditary HL model (DFNB4), validating the general approach. The identification of a critical therapeutic window is particularly important — we need to determine if DFNB16 has a similar window before irreversible OHC damage occurs. Their use of single-AAV for the ~2.3kb SLC26A4 CDS provides a regulatory reference for single-vector cochlear gene therapy.

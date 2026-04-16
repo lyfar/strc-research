@@ -37,3 +37,10 @@ Anc80L65 (used by Iranfar 2026) shows ~80% OHC transduction but carries standard
 - NAb kinetics after cochlear AAV administration — does intracochlear route reduce systemic immunity?
 - Minimum interval between doses with immunosuppression?
 - Cross-reactivity between serotypes (Anc80L65 vs AAV9 etc.)?
+
+## Recent Papers
+
+### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
+*Ear and Hearing · relevance: 7/10 · fda_path*
+
+OTOF pediatric trials will generate critical real-world data on immune responses to cochlear AAV administration — including NAb formation kinetics, systemic vs. local immune responses, and whether intracochlear delivery reduces immunogenicity. This directly addresses our open question about NAb kinetics after cochlear AAV administration. Any immunosuppression protocols used in OTOF trials will establish precedent for managing immune barriers in subsequent hearing loss gene therapies.
