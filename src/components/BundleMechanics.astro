@@ -165,8 +165,41 @@ const sweepRows = sweep.map(row => ({
       </div>
     </div>
 
+    <!-- Citations -->
+    <div class="mt-8 pt-6 border-t border-white/5">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Supporting literature</h3>
+      <div class="space-y-3">
+        <div class="text-[11px] text-neutral-500 leading-relaxed">
+          <span class="text-neutral-400 font-medium">Dulon et al. 2019</span> — First direct AFM measurement of HTC spring contribution to OHC bundle stiffness.
+          With HTCs: 5.12 pN/nm; without: 2.05 pN/nm. <strong class="text-neutral-400">60% reduction confirmed</strong> with direct measurement.
+          IHC stiffness unchanged (HTC contribution is OHC-specific).
+          <a href="https://doi.org/10.1126/sciadv.aat9934" class="text-neutral-600 hover:text-neutral-400 transition-colors ml-1">Science Advances ↗</a>
+        </div>
+        <div class="text-[11px] text-neutral-500 leading-relaxed">
+          <span class="text-neutral-400 font-medium">Verpy et al. 2011</span> — OHC survival and TM morphology in Strc−/− across ages. At 5 months: basal OHCs damaged, apical preserved.
+          TM imprints absent throughout in full KO — structural deficit, not age-related degradation.
+          Apical OHCs (low frequency) show <strong class="text-neutral-400">no increased cell loss</strong> vs controls at 5 months.
+          <a href="https://doi.org/10.1002/cne.22509" class="text-neutral-600 hover:text-neutral-400 transition-colors ml-1">J Comp Neurol ↗</a>
+        </div>
+        <div class="text-[11px] text-neutral-500 leading-relaxed">
+          <span class="text-neutral-400 font-medium">Tarchini et al. 2021</span> — Dual-AAV STRC therapy at P1. 59% transduction, 50-60 dB rescue in best responders.
+          TM attachment crowns reformed even from full KO baseline — TM retains structural capacity to embed stereocilia when STRC is present.
+          Adult delivery not tested (explicit limitation). This is the key unanswered question.
+          <a href="https://doi.org/10.1126/sciadv.abi7629" class="text-neutral-600 hover:text-neutral-400 transition-colors ml-1">Science Advances ↗</a>
+        </div>
+        <div class="text-[11px] text-neutral-500 leading-relaxed">
+          <span class="text-neutral-400 font-medium">Verpy et al. 2008</span> — Strc−/− mouse: ~44 dB threshold shift vs control. Model calibration anchor.
+          <span class="text-neutral-600 ml-1">Nature</span>
+        </div>
+        <div class="text-[11px] text-neutral-500 leading-relaxed">
+          <span class="text-neutral-400 font-medium">Camalet et al. 2000</span> — Hopf oscillator model of cochlear amplification. Gain scales as f^0.5 near bifurcation.
+          <span class="text-neutral-600 ml-1">PNAS</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Model details -->
-    <div class="mt-6 pt-4 border-t border-white/5 flex gap-6 text-[11px] text-neutral-600">
+    <div class="mt-4 pt-4 border-t border-white/5 flex gap-6 text-[11px] text-neutral-600">
       <div>Model: two-component analytical (MET + Hopf)</div>
       <div>Calibration: Verpy 2008 (44 dB at f=0)</div>
       <div>Source: <code class="font-mono">stereocilia_bundle_mechanics.py</code></div>
