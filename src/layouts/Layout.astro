@@ -39,6 +39,9 @@ const base = lang === 'en' ? '' : `/${lang}`;
       <a href={base + '/hypotheses'} class="hover:text-white transition-colors no-underline">{t('layout.nav.research')}</a>
       <a href={base + '/methodology'} class="hover:text-white transition-colors no-underline">{t('layout.nav.method')}</a>
       <a href={base + '/tools'} class="hover:text-white transition-colors no-underline">Tools</a>
+      <a href={base + '/journal'} class="hover:text-white transition-colors no-underline flex items-center gap-1">
+        <span class="w-1 h-1 rounded-full bg-green-400 animate-pulse inline-block"></span>Monitor
+      </a>
     </div>
     <div class="flex gap-1 text-xs shrink-0">
       <a href="/" class={`px-2 py-1 rounded no-underline transition-colors ${lang === 'en' ? 'bg-white/10 text-white' : 'text-neutral-500 hover:text-white'}`}>EN</a>
