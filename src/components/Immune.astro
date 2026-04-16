@@ -12,6 +12,14 @@ const seroData = [
   { key: 'immune.sero.aav9', label: 'AAV9', pct: 47 },
   { key: 'immune.sero.anc80', label: 'Anc80L65', pct: 20 },
 ];
+
+const capsid2025 = [
+  { label: 'WAC19-1', ohc: '~2M× enrichment', ihc: 'TBD', note: 'Peptide-modified AAV1, directed evolution', source: '2025' },
+  { label: 'AAV-S', ohc: '50-75%', ihc: '~100%', note: 'From AAV9, neonatal mice + NHPs', source: '2025' },
+  { label: 'Anc80L65', ohc: '62%', ihc: '41%', note: 'Ancestral, lowest seroprevalence', source: '2017/2025' },
+  { label: 'AAV9-PHP.eB', ohc: '17%', ihc: '21%', note: 'Used in current STRC work (Boston)', source: '2025' },
+  { label: 'AAV2.7m8', ohc: 'Excellent', ihc: 'Moderate', note: 'Engineered, ~25% seroprevalence', source: '2020' },
+];
 ---
 <section id="immune" class="px-6 py-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
@@ -98,6 +106,54 @@ const seroData = [
           </tbody>
         </table>
       </div>
+    </div>
+
+    <!-- 2025 Capsid Update -->
+    <div class="bg-white/[0.02] border border-blue-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-blue-400/60 mb-2">{t('immune.capsid2025.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed mb-4">{t('immune.capsid2025.desc')}</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-left text-neutral-500 text-[10px] uppercase tracking-wider border-b border-white/5">
+              <th class="pb-2 pr-3">Capsid</th>
+              <th class="pb-2 pr-3">OHC</th>
+              <th class="pb-2 pr-3">IHC</th>
+              <th class="pb-2">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="text-neutral-400">
+            {capsid2025.map((c) => (
+              <tr class="border-b border-white/[0.03]">
+                <td class="py-1.5 pr-3 font-mono text-neutral-300">{c.label}</td>
+                <td class={`py-1.5 pr-3 ${c.label === 'AAV9-PHP.eB' ? 'text-red-400' : 'text-emerald-400'}`}>{c.ohc}</td>
+                <td class="py-1.5 pr-3">{c.ihc}</td>
+                <td class="py-1.5 text-[10px] text-neutral-500">{c.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[10px] text-neutral-500 mt-3 italic">{t('immune.capsid2025.note')}</p>
+    </div>
+
+    <!-- Cochlear Inflammation -->
+    <div class="bg-white/[0.02] border border-orange-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-orange-400/60 mb-2">{t('immune.inflammation.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t('immune.inflammation.desc')}</p>
+      <p class="text-[10px] text-neutral-500 italic">{t('immune.inflammation.note')}</p>
+    </div>
+
+    <!-- Clinical Validation -->
+    <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400/60 mb-2">{t('immune.clinical.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t('immune.clinical.desc')}</p>
+      <div class="space-y-2 text-xs text-neutral-400">
+        <p set:html={t('immune.clinical.r1')} />
+        <p set:html={t('immune.clinical.r2')} />
+        <p set:html={t('immune.clinical.r3')} />
+      </div>
+      <p class="text-[10px] text-neutral-500 mt-3 italic">{t('immune.clinical.note')}</p>
     </div>
 
     <!-- STRC implications -->

@@ -3,6 +3,10 @@
 import { useTranslations } from '../lib/i18n';
 import ScenariosGrid from './ode-model/ScenariosGrid.astro';
 import KeyFinding from './ode-model/KeyFinding.astro';
+import BifurcationAnalysis from './ode-model/BifurcationAnalysis.astro';
+import PromoterOptimization from './ode-model/PromoterOptimization.astro';
+import SafetyAnalysis from './ode-model/SafetyAnalysis.astro';
+import ClosedLoop from './ode-model/ClosedLoop.astro';
 import ParametersTable from './ode-model/ParametersTable.astro';
 import SensitivityAnalysis from './ode-model/SensitivityAnalysis.astro';
 import SourceCode from './ode-model/SourceCode.astro';
@@ -20,6 +24,10 @@ const t = useTranslations(lang);
 
     <ScenariosGrid lang={lang} />
     <KeyFinding lang={lang} />
+    <BifurcationAnalysis lang={lang} />
+    <PromoterOptimization lang={lang} />
+    <SafetyAnalysis lang={lang} />
+    <ClosedLoop lang={lang} />
     <ParametersTable lang={lang} />
     <SensitivityAnalysis lang={lang} />
     <SourceCode lang={lang} />

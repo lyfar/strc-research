@@ -15,7 +15,7 @@ const t = useTranslations(lang);
   <section class="px-6 py-12 border-t border-white/5">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-6">Explore the Research</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <!-- Reclassification -->
         <a href="/reclassification" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
@@ -47,31 +47,17 @@ const t = useTranslations(lang);
           </div>
         </a>
 
-        <!-- Methodology -->
-        <a href="/methodology" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-400 font-semibold uppercase tracking-wider">Part 3</span>
-          </div>
-          <h3 class="text-sm font-semibold text-white mb-2 group-hover:text-white/90">{t('page.part3.title')}</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed">{t('page.part3.desc')}</p>
-          <div class="mt-4 flex flex-wrap gap-1">
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Methods</span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Tools</span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Reproducibility</span>
-          </div>
-        </a>
-
         <!-- Tools -->
         <a href="/tools" class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
           <div class="flex items-center gap-2 mb-3">
-            <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold uppercase tracking-wider">Part 4</span>
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold uppercase tracking-wider">Part 3</span>
           </div>
           <h3 class="text-sm font-semibold text-white mb-2 group-hover:text-white/90">{t('page.part4.title')}</h3>
           <p class="text-xs text-neutral-400 leading-relaxed">{t('page.part4.desc')}</p>
           <div class="mt-4 flex flex-wrap gap-1">
             <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">AlphaMissense</span>
             <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">AlphaFold 3</span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">OpenClaw</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">Claude</span>
             <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">+44 more</span>
           </div>
         </a>

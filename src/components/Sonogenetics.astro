@@ -4,6 +4,8 @@ import { useTranslations } from '../lib/i18n';
 import Story from './sonogenetics/Story.astro';
 import CascadeDiagram from './sonogenetics/CascadeDiagram.astro';
 import VectorConstruct from './sonogenetics/VectorConstruct.astro';
+import CriticalAssumptions from './sonogenetics/CriticalAssumptions.astro';
+import AlternativePathway from './sonogenetics/AlternativePathway.astro';
 import Literature from './sonogenetics/Literature.astro';
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
@@ -18,6 +20,8 @@ const t = useTranslations(lang);
     <Story lang={lang} />
     <CascadeDiagram lang={lang} />
     <VectorConstruct lang={lang} />
+    <CriticalAssumptions lang={lang} />
+    <AlternativePathway lang={lang} />
     <Literature lang={lang} />
   </div>
 </section>

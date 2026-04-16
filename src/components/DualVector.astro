@@ -136,6 +136,16 @@ const titerSweep = [
       <a href="https://github.com/lyfar/strc-research/blob/master/dual_vs_single_vector.py" target="_blank" class="text-blue-400 hover:underline" set:html={t('dualvec.code.link')} />
     </div>
 
+    <!-- Clinical validation context -->
+    <div class="bg-white/[0.02] border border-green-500/10 rounded-lg p-5 mb-8">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400/60 mb-2">{t('dualvec.clinical.title')}</h3>
+      <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t('dualvec.clinical.desc')}</p>
+      <div class="space-y-2 text-xs text-neutral-400">
+        <p set:html={t('dualvec.clinical.p1')} />
+        <p set:html={t('dualvec.clinical.p2')} />
+      </div>
+    </div>
+
     <!-- Caveat -->
     <div class="bg-amber-950/10 border border-amber-500/10 rounded-lg p-4 text-xs text-neutral-400 leading-relaxed">
       <span class="text-amber-400/60 font-semibold">⚠</span>
