@@ -1,0 +1,176 @@
+---
+import { useTranslations } from '../lib/i18n';
+const { lang = 'en' } = Astro.props;
+
+// Model results (hardcoded from stereocilia_bundle_mechanics.py output)
+const sweep = [
+  { coupling: 0,   abr: 64.0, category: "Moderate-severe" },
+  { coupling: 5,   abr: 55.8, category: "Moderate-severe" },
+  { coupling: 10,  abr: 52.1, category: "Moderate" },
+  { coupling: 20,  abr: 46.7, category: "Moderate" },
+  { coupling: 30,  abr: 42.3, category: "Moderate" },
+  { coupling: 50,  abr: 34.9, category: "Mild" },
+  { coupling: 70,  abr: 28.5, category: "Mild" },
+  { coupling: 85,  abr: 24.1, category: "Normal" },
+  { coupling: 100, abr: 20.0, category: "Normal" },
+];
+
+const therapy = [
+  { coupling: 0,  current: 64.0, post: 29.4, gain: 34.6 },
+  { coupling: 5,  current: 55.8, post: 28.9, gain: 26.9 },
+  { coupling: 10, current: 52.1, post: 28.4, gain: 23.7 },
+  { coupling: 20, current: 46.7, post: 27.4, gain: 19.3 },
+  { coupling: 30, current: 42.3, post: 26.4, gain: 15.9 },
+];
+
+// Misha's estimated range (Sept 2025 audiometry)
+const mishaRange = { lo: 0, hi: 30 };
+
+const sweepRows = sweep.map(row => ({
+  ...row,
+  isMisha: row.coupling >= mishaRange.lo && row.coupling <= mishaRange.hi,
+  rowClass: row.coupling >= mishaRange.lo && row.coupling <= mishaRange.hi
+    ? 'border-b border-white/[0.03] bg-amber-500/5'
+    : 'border-b border-white/[0.03]',
+  catClass: row.category === 'Normal'
+    ? 'py-2 text-green-400'
+    : row.category === 'Mild'
+    ? 'py-2 text-yellow-400'
+    : 'py-2 text-neutral-400',
+}));
+---
+
+<section class="px-6 py-16 border-t border-white/5">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex items-center gap-2 mb-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Stereocilia Bundle Mechanics</h2>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-400 font-semibold">SUPPORTING</span>
+    </div>
+
+    <!-- Core claim -->
+    <p class="text-neutral-300 text-sm leading-relaxed mb-8 max-w-2xl">
+      OHC function depends on HTC spring coupling maintained by STRC. This model quantifies
+      how much coupling remains in DFNB16, what gene therapy adds, and what the actual
+      unknown is — it's not OHC survival, it's tectorial membrane remodeling.
+    </p>
+
+    <!-- Two-mechanism diagram -->
+    <div class="mb-10">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Why hearing is lost: two mechanisms</h3>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <div class="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-2">MET channels — 9.5 dB</div>
+          <p class="text-xs text-neutral-400 leading-relaxed">
+            HTCs transfer tectorial membrane signal from tallest stereocilia row to shorter rows.
+            Without HTCs: only 1 of 3 rows driven. 3× fewer MET channels open = −9.5 dB sensitivity.
+          </p>
+        </div>
+        <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5">
+          <div class="text-[10px] font-mono text-red-400 uppercase tracking-wider mb-2">Hopf amplification — 34.5 dB</div>
+          <p class="text-xs text-neutral-400 leading-relaxed">
+            OHC active amplification is a Hopf oscillator. Gain scales as f^0.5 where f = HTC coupling.
+            Full coupling loss = loss of ~35 dB active gain. This is the dominant mechanism.
+          </p>
+        </div>
+      </div>
+      <div class="mt-3 bg-white/[0.02] border border-white/5 rounded-lg p-4 flex items-center gap-4">
+        <div class="text-xs text-neutral-500">Total at f=0:</div>
+        <div class="font-mono text-white text-sm">44 dB shift</div>
+        <div class="text-xs text-neutral-500">Matches Verpy 2008 Strc−/− data exactly.</div>
+      </div>
+    </div>
+
+    <!-- Coupling → ABR table -->
+    <div class="mb-10">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">HTC coupling → ABR threshold</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left py-2 pr-4 text-neutral-500 font-medium">HTC coupling</th>
+              <th class="text-left py-2 pr-4 text-neutral-500 font-medium">ABR threshold</th>
+              <th class="text-left py-2 text-neutral-500 font-medium">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sweepRows.map(row => (
+              <tr class={row.rowClass}>
+                <td class="py-2 pr-4 font-mono text-white">
+                  {row.coupling}%
+                  {row.isMisha && <span class="ml-2 text-[9px] text-amber-400 font-semibold">← MISHA</span>}
+                </td>
+                <td class="py-2 pr-4 font-mono text-neutral-300">{row.abr} dB</td>
+                <td class={row.catClass}>{row.category}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-neutral-600 mt-2">
+        Misha (Sept 2025 audiometry): right ear 50-65 dB, left ear 40-50 dB → estimated 0-30% residual HTC coupling.
+        His VUS allele (c.4976A>C) produces partial stereocilin — he is not a complete knockout.
+      </p>
+    </div>
+
+    <!-- Gene therapy projection -->
+    <div class="mb-10">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Gene therapy projection (67% OHC transduction)</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="text-left py-2 pr-4 text-neutral-500 font-medium">Current coupling</th>
+              <th class="text-left py-2 pr-4 text-neutral-500 font-medium">Current ABR</th>
+              <th class="text-left py-2 pr-4 text-neutral-500 font-medium">Post-therapy</th>
+              <th class="text-left py-2 text-neutral-500 font-medium">Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {therapy.map(row => (
+              <tr class="border-b border-white/[0.03]">
+                <td class="py-2 pr-4 font-mono text-white">{row.coupling}%</td>
+                <td class="py-2 pr-4 font-mono text-neutral-400">{row.current} dB</td>
+                <td class="py-2 pr-4 font-mono text-green-400">{row.post} dB</td>
+                <td class="py-2 font-mono text-white font-semibold">+{row.gain} dB</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-3 bg-green-500/5 border border-green-500/10 rounded-lg p-4">
+        <div class="text-xs text-green-400 font-semibold mb-1">Post-therapy projection: 26–29 dB</div>
+        <div class="text-xs text-neutral-400">Mild hearing loss. Conversational speech without hearing aids.</div>
+      </div>
+    </div>
+
+    <!-- The open question -->
+    <div class="bg-red-500/5 border border-red-500/10 rounded-lg p-5">
+      <div class="text-xs font-semibold text-red-400 uppercase tracking-wider mb-3">The unknown: tectorial membrane</div>
+      <div class="grid sm:grid-cols-2 gap-4 text-xs text-neutral-400 leading-relaxed">
+        <div>
+          <div class="text-neutral-300 font-medium mb-1">What we know</div>
+          OHC survival: confirmed even in adult Strc−/− mice (Verpy 2008).
+          Stereocilia present. Rootlets anchored. HTC reformation is
+          structurally plausible if STRC is delivered.
+        </div>
+        <div>
+          <div class="text-neutral-300 font-medium mb-1">What we don't know</div>
+          After 5 years without OHC-TM coupling, has the tectorial membrane
+          undergone irreversible structural remodeling? No data exists for
+          DFNB16-equivalent at this age in any model. This is the experiment
+          that determines whether older patients can be treated.
+        </div>
+      </div>
+    </div>
+
+    <!-- Model details -->
+    <div class="mt-6 pt-4 border-t border-white/5 flex gap-6 text-[11px] text-neutral-600">
+      <div>Model: two-component analytical (MET + Hopf)</div>
+      <div>Calibration: Verpy 2008 (44 dB at f=0)</div>
+      <div>Source: <code class="font-mono">stereocilia_bundle_mechanics.py</code></div>
+    </div>
+
+  </div>
+</section>
