@@ -59,3 +59,43 @@ OTOF gene therapy is the first successful inner ear gene therapy and establishes
 *The Journal of Clinical Investigation · relevance: 6/10 · applicable*
 
 Demonstrates postnatal AAV gene therapy can restore hearing in another hereditary HL model (DFNB4), validating the general approach. The identification of a critical therapeutic window is particularly important — we need to determine if DFNB16 has a similar window before irreversible OHC damage occurs. Their use of single-AAV for the ~2.3kb SLC26A4 CDS provides a regulatory reference for single-vector cochlear gene therapy.
+
+### 2026-04-20 — [Generation of human iPSC lines from a patient with OTOF-related deafness](https://pubmed.ncbi.nlm.nih.gov/42000544/)
+*Stem Cell Res · relevance: 5/10 · applicable*
+
+iPSC disease modeling platform for DFNB9 (OTOF compound heterozygous mutations). The carrier line concept — comparing homozygous patient vs. heterozygous carrier — is directly transferable to STRC/DFNB16 for testing mini-STRC dose-response in human-derived cells. Could generate equivalent lines for STRC mutations.
+
+### 2026-04-20 — [Localized active transport shapes nanoscopic features at mechanosensory cilia tips](https://pubmed.ncbi.nlm.nih.gov/41941305/)
+*J Cell Biol · relevance: 7/10 · lateral*
+
+Kif19A coordinates molecular enrichment at mechanosensory cilia tips via localized active transport counteracting diffusion. Critical implication for mini-STRC: truncation reduces protein size, increasing diffusion rate, which could impair tip concentration. The transport-binding-diffusion balance model should be applied to predict whether mini-stereocilin achieves sufficient tip localization.
+
+### 2026-04-20 — [Seed-based design + ribosome display for nanobody-like scaffolds](https://pubmed.ncbi.nlm.nih.gov/41995290/)
+*Biosci Biotechnol Biochem · relevance: 4/10 · lateral*
+
+Conserved "seed framework" residues (just 10 residues) can nucleate correct protein folding in randomized contexts. Inverse of our truncation approach: instead of removing internal domains, they kept minimal seeds. MSA-based identification of conserved framework residues in stereocilin orthologs could define the irreducible core that must be preserved, potentially enabling a smaller, more stable mini-STRC.
+
+### 2026-04-20 — [Tri-modal contrastive learning for protein representation](https://pubmed.ncbi.nlm.nih.gov/41990738/)
+*Cell Rep Methods · relevance: 3/10 · lateral*
+
+ProteinAligner integrates sequence + structure + literature for protein function prediction, outperforming sequence-only models. Stereocilin is poorly characterized experimentally — a multimodal model incorporating literature context could predict functional impact of truncations more accurately than AlphaFold alone.
+
+### 2026-04-20 — [ProteinMPNN engineering for hyper-stable protein redesign](https://pubmed.ncbi.nlm.nih.gov/41988819/)
+*Microb Biotechnol · relevance: 4/10 · lateral*
+
+ProteinMPNN redesigned non-functional scaffold regions for enhanced stability while preserving functional epitopes, achieving soluble expression without inclusion bodies. Directly applicable: ProteinMPNN could optimize the truncation junction (aa 699↔1776) in mini-STRC, redesigning exposed surfaces for improved thermodynamic stability without altering functional domains.
+
+### 2026-04-20 — [Mechanical confinement regulates ECM remodeling via MAPK and Hedgehog](https://pubmed.ncbi.nlm.nih.gov/41985400/)
+*Biomaterials · relevance: 3/10 · lateral*
+
+Mechanical confinement level directly regulates ECM production through cilia-dependent MAPK/Hedgehog signaling. OHCs exist in a mechanically confined space defined partly by stereocilin-mediated TM attachment. Loss of stereocilin may trigger aberrant confinement signaling beyond simple mechanical decoupling — mini-STRC must restore sufficient TM attachment to normalize this.
+
+### 2026-04-20 — [Cilia biophysics in PCD: quantitative characterization of RSPH4A variant](https://pubmed.ncbi.nlm.nih.gov/41972697/)
+*Cells · relevance: 3/10 · lateral*
+
+High-speed video microscopy quantified biophysical consequences of a specific genetic variant on ciliary mechanics (angular excursion, beat amplitude). Methodology adaptable for stereocilia bundle mechanics: measuring deflection amplitude, stiffness, and recovery dynamics to functionally compare mini-STRC vs. WT bundles beyond morphology alone.
+
+### 2026-04-20 — [Shear stress mechanosensing in endothelial cells](https://pubmed.ncbi.nlm.nih.gov/41969033/)
+*J Cell Sci · relevance: 4/10 · lateral*
+
+Endothelial cells use distributed mechanosensor networks (glycocalyx, ion channels, cilia) rather than single receptors. Stereocilin may function like the glycocalyx — not transducing force directly but shaping frequency-dependent mechanical coupling to the MET apparatus. Mini-STRC must preserve this filtering function, not just physical attachment.

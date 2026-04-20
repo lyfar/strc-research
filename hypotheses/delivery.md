@@ -52,3 +52,13 @@ Computational model only. Sonoporation through RWM demonstrated in guinea pigs (
 *Ear and Hearing · relevance: 7/10 · fda_path*
 
 OTOF clinical trials establish real-world data on cochlear gene therapy delivery in pediatric patients, including surgical approach, dose volumes, and safety monitoring. This clinical framework directly informs regulatory expectations for cochlear delivery — both surgical (standard approach) and any non-surgical alternatives like our sonoporation concept. Understanding delivery-related adverse events from OTOF trials will help benchmark the safety case for alternative delivery routes.
+
+### 2026-04-20 — [FUS + perfluorocarbon nanodroplets for barrier disruption and enhanced delivery](https://pubmed.ncbi.nlm.nih.gov/41993780/)
+*Int J Nanomedicine · relevance: 3/10 · lateral*
+
+Achieved 28-fold reduction in systemic clearance and 33% long-term survival in glioblastoma using 62 nm perfluorocarbon nanodroplets combined with FUS-mediated BBB disruption. The blood-labyrinth barrier is structurally analogous to the BBB. This dual approach (barrier opening + nanocarrier) could enable non-invasive cochlear delivery of AAV-mini-STRC or mRNA-LNPs without surgical round window access, potentially enabling bilateral treatment and repeat dosing. The 62 nm particle size is within range for cochlear tissue penetration.
+
+### 2026-04-20 — [FUS-mediated gene therapy: preclinical systematic review and meta-analysis](https://pubmed.ncbi.nlm.nih.gov/41955864/)
+*Biomed Pharmacother · relevance: 4/10 · lateral*
+
+Meta-analysis of 9 studies: FUS enhanced gene expression 6.34x (95% CI 2.21-18.18) across viral, non-viral, nanoparticle, and exosome vectors. The vector-agnostic nature of FUS enhancement is key — it would likely work with AAV-mini-STRC. At the 6.34x enhancement factor, the required AAV dose for therapeutic OHC transduction could drop proportionally, directly addressing our sensitivity analysis showing endosomal escape as the primary bottleneck. Combined with our Scenario 3 hybrid approach (AAV + LNP top-up), FUS could make the initial AAV dose more efficient.

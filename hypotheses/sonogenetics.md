@@ -40,3 +40,10 @@ Sound → stereocilia deflection → MET channels open → Ca²⁺ enters (134 c
 ## Relationship to other hypotheses
 
 Sonogenetics addresses both delivery (sound-triggered uptake) and expression control. If validated, could be combined with mini-STRC (payload) and LNP delivery (vector) for a non-surgical, repeatable therapeutic system.
+
+## Recent Papers
+
+### 2026-04-20 — [Multicolored Mechanoluminescent Nanoparticles for Functional Sono-Optogenetics](https://pubmed.ncbi.nlm.nih.gov/41974592/)
+*J Am Chem Soc · relevance: 7/10 · lateral*
+
+Developed nanoparticles that convert focused ultrasound into tunable light emission (461-592 nm) via mechanoluminescence, successfully activating ChR2, eOPN3, and ChRmine in deep tissue. Directly enables a hybrid sono-optogenetic approach for the cochlea: AAV delivers a channelrhodopsin to hair cells, mechanoluminescent nanoparticles in perilymph convert sound vibrations or external FUS into local light, creating a sound-responsive prosthetic system. The red-shifted emission option (592 nm) would minimize cochlear phototoxicity. Key question: do cochlear acoustic pressures reach the ~MPa thresholds needed for mechanoluminescence activation?

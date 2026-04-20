@@ -36,3 +36,10 @@ Mini-STRC (gene replacement) is currently the more validated path. Prime editing
 - What PE3 efficiency is achievable in non-dividing OHCs?
 - Can the editor + pegRNA be co-delivered in a single vector?
 - What are off-target rates at this genomic locus?
+
+## Recent Papers
+
+### 2026-04-20 — [Rapid customization of base editors via ML-powered combinatorial mutagenesis](https://pubmed.ncbi.nlm.nih.gov/41997156/)
+*Mol Cell · relevance: 5/10 · lateral*
+
+ML-guided engineering of base editors from only 0.004% of the mutational landscape, achieving undetectable bystander edits in 50% of >800 disease mutations. While STRC E1659A (C>A transversion) requires prime editing not base editing, the ML-powered approach to customizing editor specificity is directly transferable: the same combinatorial mutagenesis + ML framework could optimize prime editor variants for STRC-specific efficiency in the OHC sequence context. The structure-based deep learning model predicting functional variants without experimental data (63% success) suggests computational pre-screening of PE3 variants before expensive in vivo testing is feasible.
