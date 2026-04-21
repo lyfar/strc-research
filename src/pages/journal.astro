@@ -7,7 +7,9 @@ const lang = 'en';
 const papers = await getCollection('papers');
 papers.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const lastScan = papers[0]?.data.date.toISOString().split('T')[0] ?? 'pending';
+const scanDates = papers.map(p => p.data.date_added).filter(Boolean) as Date[];
+scanDates.sort((a, b) => b.getTime() - a.getTime());
+const lastScan = scanDates[0]?.toISOString().split('T')[0] ?? 'pending';
 ---
 
 <Layout lang={lang} title="Research Monitor — STRC/DFNB16">

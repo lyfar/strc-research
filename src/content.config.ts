@@ -8,12 +8,14 @@ const papers = defineCollection({
     authors: z.array(z.string()),
     journal: z.string(),
     date: z.coerce.date(),
-    pubmed_id: z.string(),
+    pubmed_id: z.string().optional(),
+    biorxiv_id: z.string().optional(),
     doi: z.string(),
     relevance_type: z.string(),
     relevance_score: z.string(),
     tags: z.array(z.string()),
     status: z.string().default('unread'),
+    date_added: z.coerce.date().optional(),
   }),
 });
 

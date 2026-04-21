@@ -7,9 +7,11 @@ interface Props {
 
 const { paper } = Astro.props;
 const { Content } = await render(paper);
-const { title, authors, journal, date, pubmed_id, doi, relevance_type, relevance_score, tags, status } = paper.data;
+const { title, authors, journal, date, pubmed_id, biorxiv_id, doi, relevance_type, relevance_score, tags, date_added } = paper.data;
 
 const score = parseInt(relevance_score);
+const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+const isNew = date_added ? date_added >= sevenDaysAgo : false;
 const scoreColor = score >= 8 ? 'text-green-400 bg-green-500/10 border-green-500/20'
   : score >= 6 ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
   : 'text-neutral-400 bg-white/5 border-white/10';
@@ -19,6 +21,7 @@ const typeLabel: Record<string, string> = {
   applicable: 'Applicable',
   background: 'Background',
   direct: 'Direct',
+  lateral: 'Lateral',
 };
 
 const dateStr = date.toISOString().split('T')[0];
@@ -36,7 +39,7 @@ const firstAuthor = authors[0]?.split(',')[0] ?? '';
         <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
           {typeLabel[relevance_type] ?? relevance_type}
         </span>
-        {status === 'unread' && (
+        {isNew && (
           <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">New</span>
         )}
       </div>
@@ -61,10 +64,18 @@ const firstAuthor = authors[0]?.split(',')[0] ?? '';
 
     <!-- Links -->
     <div class="mt-4 pt-4 border-t border-white/5 flex gap-4">
-      <a href={`https://pubmed.ncbi.nlm.nih.gov/${pubmed_id}/`} target="_blank" rel="noopener"
-        class="text-[11px] text-neutral-500 hover:text-white transition-colors no-underline font-mono">
-        PubMed ↗
-      </a>
+      {pubmed_id && (
+        <a href={`https://pubmed.ncbi.nlm.nih.gov/${pubmed_id}/`} target="_blank" rel="noopener"
+          class="text-[11px] text-neutral-500 hover:text-white transition-colors no-underline font-mono">
+          PubMed ↗
+        </a>
+      )}
+      {biorxiv_id && (
+        <a href={`https://biorxiv.org/content/${biorxiv_id}`} target="_blank" rel="noopener"
+          class="text-[11px] text-neutral-500 hover:text-white transition-colors no-underline font-mono">
+          bioRxiv ↗
+        </a>
+      )}
       <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener"
         class="text-[11px] text-neutral-500 hover:text-white transition-colors no-underline font-mono">
         DOI ↗
