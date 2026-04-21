@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "variant": "STRC c.4976A>C p.E1659A (Misha maternal)",
+    "genome_build": "GRCh38",
+    "chrom": "15",
+    "variant_pos_plus_strand": 43600551,
+    "pam": "TGG (+ strand)",
+    "pam_coords_plus": [
+      43600540,
+      43600542
+    ],
+    "nick_coords_plus_between": [
+      43600536,
+      43600537
+    ],
+    "region_fetched": [
+      43600400,
+      43600700
+    ]
+  },
+  "pegrna": {
+    "protospacer_plus_strand_5to3": "GCCCAGCTCCCCACCTGCTA",
+    "pam_plus_strand": "TGG",
+    "nick_position_plus_strand_chr15": [
+      43600536,
+      43600537
+    ],
+    "spacer_gc_pct": 70.0,
+    "rt_templates": [
+      {
+        "rt_length_nt": 16,
+        "wt_plus_stretch": "CTATGGTGCCAATTTC",
+        "rt_template_5to3": "GAAATTGGCACCATAG",
+        "edit_nt_position_in_rt_template": 1,
+        "edit_in_rt_context": "A"
+      },
+      {
+        "rt_length_nt": 20,
+        "wt_plus_stretch": "CTATGGTGCCAATTTCAGTG",
+        "rt_template_5to3": "CACTGAAATTGGCACCATAG",
+        "edit_nt_position_in_rt_template": 5,
+        "edit_in_rt_context": "A"
+      },
+      {
+        "rt_length_nt": 24,
+        "wt_plus_stretch": "CTATGGTGCCAATTTCAGTGAAGA",
+        "rt_template_5to3": "TCTTCACTGAAATTGGCACCATAG",
+        "edit_nt_position_in_rt_template": 9,
+        "edit_in_rt_context": "A"
+      }
+    ],
+    "pbs_templates": [
+      {
+        "pbs_length_nt": 11,
+        "plus_stretch_5of_nick": "CTCCCCACCTG",
+        "pbs_5to3": "CAGGTGGGGAG",
+        "gc_pct": 72.7
+      },
+      {
+        "pbs_length_nt": 12,
+        "plus_stretch_5of_nick": "GCTCCCCACCTG",
+        "pbs_5to3": "CAGGTGGGGAGC",
+        "gc_pct": 75.0
+      },
+      {
+        "pbs_length_nt": 13,
+        "plus_stretch_5of_nick": "AGCTCCCCACCTG",
+        "pbs_5to3": "CAGGTGGGGAGCT",
+        "gc_pct": 69.2
+      },
+      {
+        "pbs_length_nt": 14,
+        "plus_stretch_5of_nick": "CAGCTCCCCACCTG",
+        "pbs_5to3": "CAGGTGGGGAGCTG",
+        "gc_pct": 71.4
+      },
+      {
+        "pbs_length_nt": 15,
+        "plus_stretch_5of_nick": "CCAGCTCCCCACCTG",
+        "pbs_5to3": "CAGGTGGGGAGCTGG",
+        "gc_pct": 73.3
+      }
+    ]
+  },
+  "nicking_sgrnas": [
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600447,
+        43600449
+      ],
+      "protospacer_minus_5to3": "AGACTGCCCTGCAATTCTTA",
+      "gc_pct": 45.0,
+      "nick_between_plus_coords": [
+        43600450,
+        43600451
+      ],
+      "dist_nt_from_edit": 100,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600471,
+        43600473
+      ],
+      "protospacer_minus_5to3": "TATACCATGGGTGGACTGGA",
+      "gc_pct": 50.0,
+      "nick_between_plus_coords": [
+        43600474,
+        43600475
+      ],
+      "dist_nt_from_edit": 76,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600475,
+        43600477
+      ],
+      "protospacer_minus_5to3": "TTTCTATACCATGGGTGGAC",
+      "gc_pct": 45.0,
+      "nick_between_plus_coords": [
+        43600478,
+        43600479
+      ],
+      "dist_nt_from_edit": 72,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600480,
+        43600482
+      ],
+      "protospacer_minus_5to3": "TTTGGTTTCTATACCATGGG",
+      "gc_pct": 40.0,
+      "nick_between_plus_coords": [
+        43600483,
+        43600484
+      ],
+      "dist_nt_from_edit": 67,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600483,
+        43600485
+      ],
+      "protospacer_minus_5to3": "TGGTTTGGTTTCTATACCAT",
+      "gc_pct": 35.0,
+      "nick_between_plus_coords": [
+        43600486,
+        43600487
+      ],
+      "dist_nt_from_edit": 64,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600484,
+        43600486
+      ],
+      "protospacer_minus_5to3": "TTGGTTTGGTTTCTATACCA",
+      "gc_pct": 35.0,
+      "nick_between_plus_coords": [
+        43600487,
+        43600488
+      ],
+      "dist_nt_from_edit": 63,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600498,
+        43600500
+      ],
+      "protospacer_minus_5to3": "ACTGCTGGTGCAAGTTGGTT",
+      "gc_pct": 50.0,
+      "nick_between_plus_coords": [
+        43600501,
+        43600502
+      ],
+      "dist_nt_from_edit": 49,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600503,
+        43600505
+      ],
+      "protospacer_minus_5to3": "GGGCCACTGCTGGTGCAAGT",
+      "gc_pct": 65.0,
+      "nick_between_plus_coords": [
+        43600506,
+        43600507
+      ],
+      "dist_nt_from_edit": 44,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600513,
+        43600515
+      ],
+      "protospacer_minus_5to3": "GTGGGGAGCTGGGCCACTGC",
+      "gc_pct": 75.0,
+      "nick_between_plus_coords": [
+        43600516,
+        43600517
+      ],
+      "dist_nt_from_edit": 34,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600589,
+        43600591
+      ],
+      "protospacer_minus_5to3": "CTTGTACTGCCTGGTGGGTT",
+      "gc_pct": 55.0,
+      "nick_between_plus_coords": [
+        43600592,
+        43600593
+      ],
+      "dist_nt_from_edit": 42,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600594,
+        43600596
+      ],
+      "protospacer_minus_5to3": "ACCTACTTGTACTGCCTGGT",
+      "gc_pct": 50.0,
+      "nick_between_plus_coords": [
+        43600597,
+        43600598
+      ],
+      "dist_nt_from_edit": 47,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600595,
+        43600597
+      ],
+      "protospacer_minus_5to3": "CACCTACTTGTACTGCCTGG",
+      "gc_pct": 55.0,
+      "nick_between_plus_coords": [
+        43600598,
+        43600599
+      ],
+      "dist_nt_from_edit": 48,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600598,
+        43600600
+      ],
+      "protospacer_minus_5to3": "GCCCACCTACTTGTACTGCC",
+      "gc_pct": 60.0,
+      "nick_between_plus_coords": [
+        43600601,
+        43600602
+      ],
+      "dist_nt_from_edit": 51,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600620,
+        43600622
+      ],
+      "protospacer_minus_5to3": "TGAGGAACAACTGGAGGTTC",
+      "gc_pct": 50.0,
+      "nick_between_plus_coords": [
+        43600623,
+        43600624
+      ],
+      "dist_nt_from_edit": 73,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600626,
+        43600628
+      ],
+      "protospacer_minus_5to3": "GTGCTCTGAGGAACAACTGG",
+      "gc_pct": 55.0,
+      "nick_between_plus_coords": [
+        43600629,
+        43600630
+      ],
+      "dist_nt_from_edit": 79,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600629,
+        43600631
+      ],
+      "protospacer_minus_5to3": "CCAGTGCTCTGAGGAACAAC",
+      "gc_pct": 55.0,
+      "nick_between_plus_coords": [
+        43600632,
+        43600633
+      ],
+      "dist_nt_from_edit": 82,
+      "pe3b_eligible_spans_variant": false
+    },
+    {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600638,
+        43600640
+      ],
+      "protospacer_minus_5to3": "CCTGCATCTCCAGTGCTCTG",
+      "gc_pct": 60.0,
+      "nick_between_plus_coords": [
+        43600641,
+        43600642
+      ],
+      "dist_nt_from_edit": 91,
+      "pe3b_eligible_spans_variant": false
+    }
+  ],
+  "recommendation": {
+    "pegrna_spacer_5to3": "GCCCAGCTCCCCACCTGCTA",
+    "rt_template_5to3": "CACTGAAATTGGCACCATAG",
+    "rt_length_nt": 20,
+    "pbs_5to3": "CAGGTGGGGAGCT",
+    "pbs_length_nt": 13,
+    "nicking_sgrna": {
+      "strand": "-",
+      "pam_plus_coords": [
+        43600484,
+        43600486
+      ],
+      "protospacer_minus_5to3": "TTGGTTTGGTTTCTATACCA",
+      "gc_pct": 35.0,
+      "nick_between_plus_coords": [
+        43600487,
+        43600488
+      ],
+      "dist_nt_from_edit": 63,
+      "pe3b_eligible_spans_variant": false
+    }
+  }
+}

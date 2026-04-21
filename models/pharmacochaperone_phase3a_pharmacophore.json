@@ -1,0 +1,959 @@
+{
+  "source": "Phase 3A pharmacophore extraction",
+  "wt_cif": "job4-wildtype.cif",
+  "pocket_residues": [
+    1140,
+    1141,
+    1142,
+    1143,
+    1144,
+    1168,
+    1169,
+    1170,
+    1172,
+    1173,
+    1612,
+    1642,
+    1643,
+    1644,
+    1645,
+    1646,
+    1647,
+    1648,
+    1651,
+    1652,
+    1653,
+    1655,
+    1656,
+    1659
+  ],
+  "pocket_centroid_A": [
+    7.705,
+    -5.41,
+    -41.480000000000004
+  ],
+  "feature_cutoff_to_pocket_A": 12.0,
+  "n_features_total": 69,
+  "n_features_near_pocket": 65,
+  "feature_counts_by_kind": {
+    "hb_acceptor_target": 21,
+    "hb_donor_target": 23,
+    "hydrophobic_target": 10,
+    "anion_target": 3,
+    "aromatic_target": 4,
+    "cation_target": 4
+  },
+  "anchor_triangle": {
+    "k1141_nz_to_f1646_ring_A": 5.69299000648811,
+    "k1141_nz_to_g1645_o_A": 2.4691180338374275,
+    "k1141_nz_to_g1647_o_A": 8.586712080857621,
+    "f1646_ring_to_g1645_o_A": 5.1526829967162495,
+    "anchor_triangle_vertices": {
+      "K1141_NZ": [
+        4.791999816894531,
+        -6.738999843597412,
+        -45.3650016784668
+      ],
+      "F1646_RING": [
+        6.4913330078125,
+        -11.023999214172363,
+        -42.024166107177734
+      ],
+      "G1645_O": [
+        6.36299991607666,
+        -8.329000473022461,
+        -46.41400146484375
+      ]
+    }
+  },
+  "disease_residue_delta_E1659A": {
+    "wt_side_chain_centroid": [
+      3.66225004196167,
+      -12.608999252319336,
+      -37.141998291015625
+    ],
+    "mut_cb": [
+      18.957000732421875,
+      -36.86800003051758,
+      18.24799919128418
+    ],
+    "distance_A": 62.373714447021484,
+    "note": "Atoms lost in MUT: CG, CD, OE1, OE2 (4 heavy atoms; ~45 \u00c5\u00b3 volume)"
+  },
+  "ligand_design_rules": {
+    "required_anionic_group": true,
+    "required_anion_xyz_target": [
+      [
+        4.791999816894531,
+        -6.738999843597412,
+        -45.3650016784668
+      ]
+    ],
+    "preferred_aromatic_xyz_target": [
+      [
+        6.4913330078125,
+        -11.023999214172363,
+        -42.024166107177734
+      ]
+    ],
+    "mw_range_Da": [
+      150,
+      350
+    ],
+    "logp_range": [
+      -1.0,
+      4.0
+    ],
+    "rule_of_3_preferred": true,
+    "h_bond_donor_ligand_for_backbone_acceptor": true,
+    "keep_out_of_e1659_mut_cavity": false,
+    "notes": "E1659A mutation loses the side-chain OE1/OE2 that in WT formed an intra-chain salt bridge with K1141. Pharmacochaperone ligand must donate a carboxylate within 3.5 \u00c5 of K1141 NZ to RESTORE the lost salt bridge (compensatory pharmacochaperone)."
+  },
+  "near_features": [
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        2.309999942779541,
+        -9.322999954223633,
+        -36.869998931884766
+      ],
+      "residue": 1140,
+      "resname": "LEU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.103684600673112
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        3.3010001182556152,
+        -6.169000148773193,
+        -38.2130012512207
+      ],
+      "residue": 1140,
+      "resname": "LEU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 5.535754420922934
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        5.490499973297119,
+        -9.338750839233398,
+        -35.958499908447266
+      ],
+      "residue": 1140,
+      "resname": "LEU",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 7.129239565764436
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        2.552000045776367,
+        -7.97599983215332,
+        -39.31100082397461
+      ],
+      "residue": 1141,
+      "resname": "LYS",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 6.151611259860174
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        1.1160000562667847,
+        -5.224999904632568,
+        -41.095001220703125
+      ],
+      "residue": 1141,
+      "resname": "LYS",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 6.602830404747828
+    },
+    {
+      "kind": "anion_target",
+      "xyz": [
+        4.791999816894531,
+        -6.738999843597412,
+        -45.3650016784668
+      ],
+      "residue": 1141,
+      "resname": "LYS",
+      "atom": "NZ",
+      "source": "sidechain",
+      "dist_to_pocket_A": 5.034386625274646
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        0.17000000178813934,
+        -6.458000183105469,
+        -39.47100067138672
+      ],
+      "residue": 1142,
+      "resname": "LEU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 7.868329407136592
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        -1.253999948501587,
+        -3.5889999866485596,
+        -37.77799987792969
+      ],
+      "residue": 1142,
+      "resname": "LEU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.863291845509085
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        -3.031750202178955,
+        -6.8782501220703125,
+        -39.94075012207031
+      ],
+      "residue": 1142,
+      "resname": "LEU",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 10.945448986298182
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        0.4699999988079071,
+        -4.906000137329102,
+        -37.21099853515625
+      ],
+      "residue": 1143,
+      "resname": "LEU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.415676703965046
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        2.859999895095825,
+        -2.7130000591278076,
+        -36.387001037597656
+      ],
+      "residue": 1143,
+      "resname": "LEU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 7.52904197946973
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        1.8199999332427979,
+        -4.782500267028809,
+        -33.67449951171875
+      ],
+      "residue": 1143,
+      "resname": "LEU",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.795551009165848
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        0.8669999837875366,
+        -1.871999979019165,
+        -36.928001403808594
+      ],
+      "residue": 1144,
+      "resname": "GLN",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.944069520632686
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        0.33500000834465027,
+        1.4600000381469727,
+        -36.71500015258789
+      ],
+      "residue": 1144,
+      "resname": "GLN",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.145358852319504
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        11.048999786376953,
+        -5.5329999923706055,
+        -31.08099937438965
+      ],
+      "residue": 1168,
+      "resname": "GLN",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.92413280681157
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        9.215999603271484,
+        -6.64300012588501,
+        -31.743999481201172
+      ],
+      "residue": 1169,
+      "resname": "PHE",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.929406589196061
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        9.279000282287598,
+        -3.4200000762939453,
+        -33.04600143432617
+      ],
+      "residue": 1169,
+      "resname": "PHE",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.807378065620881
+    },
+    {
+      "kind": "aromatic_target",
+      "xyz": [
+        6.982166290283203,
+        -4.805333614349365,
+        -35.990333557128906
+      ],
+      "residue": 1169,
+      "resname": "PHE",
+      "atom": "RING_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 5.569968371887201
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        7.091428279876709,
+        -5.029999732971191,
+        -35.65656661987305
+      ],
+      "residue": 1169,
+      "resname": "PHE",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 5.867984900411205
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        7.85699987411499,
+        -4.13700008392334,
+        -31.458999633789062
+      ],
+      "residue": 1170,
+      "resname": "LEU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.10267692681806
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        8.99899959564209,
+        -0.9769999980926514,
+        -30.51300048828125
+      ],
+      "residue": 1170,
+      "resname": "LEU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.899621937711796
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        4.95775032043457,
+        -2.9699997901916504,
+        -30.432748794555664
+      ],
+      "residue": 1170,
+      "resname": "LEU",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 11.642282466163092
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        11.98900032043457,
+        -2.6640000343322754,
+        -31.06800079345703
+      ],
+      "residue": 1172,
+      "resname": "LYS",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.588912892673848
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        13.022000312805176,
+        -0.14800000190734863,
+        -33.29399871826172
+      ],
+      "residue": 1172,
+      "resname": "LYS",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.089172795610962
+    },
+    {
+      "kind": "anion_target",
+      "xyz": [
+        14.550999641418457,
+        -5.936999797821045,
+        -37.073001861572266
+      ],
+      "residue": 1172,
+      "resname": "LYS",
+      "atom": "NZ",
+      "source": "sidechain",
+      "dist_to_pocket_A": 8.158864655655872
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        10.949000358581543,
+        -0.9629999995231628,
+        -33.082000732421875
+      ],
+      "residue": 1173,
+      "resname": "LYS",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.041202070915661
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        10.423999786376953,
+        2.5250000953674316,
+        -33.527000427246094
+      ],
+      "residue": 1173,
+      "resname": "LYS",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.55886623142698
+    },
+    {
+      "kind": "anion_target",
+      "xyz": [
+        4.9730000495910645,
+        0.5440000295639038,
+        -37.07699966430664
+      ],
+      "residue": 1173,
+      "resname": "LYS",
+      "atom": "NZ",
+      "source": "sidechain",
+      "dist_to_pocket_A": 7.893057204733617
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        0.9039999842643738,
+        -10.741999626159668,
+        -49.32099914550781
+      ],
+      "residue": 1612,
+      "resname": "TRP",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.668979768054147
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        -0.5189999938011169,
+        -10.487000465393066,
+        -46.145999908447266
+      ],
+      "residue": 1612,
+      "resname": "TRP",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.732272115878912
+    },
+    {
+      "kind": "aromatic_target",
+      "xyz": [
+        -0.611111044883728,
+        -6.271111011505127,
+        -46.56211471557617
+      ],
+      "residue": 1612,
+      "resname": "TRP",
+      "atom": "RING_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.784022949035245
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        -0.5768999457359314,
+        -6.508199214935303,
+        -46.799400329589844
+      ],
+      "residue": 1612,
+      "resname": "TRP",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.904136918142127
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        8.692999839782715,
+        -12.251999855041504,
+        -50.803001403808594
+      ],
+      "residue": 1642,
+      "resname": "LEU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.60635433179668
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        7.638999938964844,
+        -9.815999984741211,
+        -49.97200012207031
+      ],
+      "residue": 1642,
+      "resname": "LEU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.567196974393196
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        6.239999771118164,
+        -6.431000232696533,
+        -49.803001403808594
+      ],
+      "residue": 1643,
+      "resname": "PRO",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.512403862223053
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        5.263000011444092,
+        -8.10099983215332,
+        -50.9370002746582
+      ],
+      "residue": 1644,
+      "resname": "GLY",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.1311252206081
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        3.4560000896453857,
+        -8.527000427246094,
+        -47.840999603271484
+      ],
+      "residue": 1644,
+      "resname": "GLY",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.260266814968254
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        5.206999778747559,
+        -9.692000389099121,
+        -48.62699890136719
+      ],
+      "residue": 1645,
+      "resname": "GLY",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.697995500905137
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        6.36299991607666,
+        -8.329000473022461,
+        -46.41400146484375
+      ],
+      "residue": 1645,
+      "resname": "GLY",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 5.887775338940493
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        7.4679999351501465,
+        -10.199999809265137,
+        -45.84299850463867
+      ],
+      "residue": 1646,
+      "resname": "PHE",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 6.483519349472024
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        10.529000282287598,
+        -8.355999946594238,
+        -45.0890007019043
+      ],
+      "residue": 1646,
+      "resname": "PHE",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 5.447823358557009
+    },
+    {
+      "kind": "aromatic_target",
+      "xyz": [
+        6.4913330078125,
+        -11.023999214172363,
+        -42.024166107177734
+      ],
+      "residue": 1646,
+      "resname": "PHE",
+      "atom": "RING_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 5.769409978226052
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        6.816714286804199,
+        -10.943572044372559,
+        -42.275428771972656
+      ],
+      "residue": 1646,
+      "resname": "PHE",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 5.660581066446376
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        9.847999572753906,
+        -9.331000328063965,
+        -46.981998443603516
+      ],
+      "residue": 1647,
+      "resname": "GLY",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 7.087924774919427
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        12.008000373840332,
+        -11.052000045776367,
+        -47.11399841308594
+      ],
+      "residue": 1647,
+      "resname": "GLY",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.060348495089213
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        14.993000030517578,
+        -10.185999870300293,
+        -45.67100143432617
+      ],
+      "residue": 1648,
+      "resname": "PRO",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.669002649107954
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        14.954998970031738,
+        -8.730999946594238,
+        -48.504669189453125
+      ],
+      "residue": 1648,
+      "resname": "PRO",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 10.627205791363606
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        17.072999954223633,
+        -9.274999618530273,
+        -43.82099914550781
+      ],
+      "residue": 1651,
+      "resname": "ASN",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.400861608195806
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        15.081999778747559,
+        -7.7789998054504395,
+        -41.17499923706055
+      ],
+      "residue": 1651,
+      "resname": "ASN",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 7.754051281701676
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        15.291000366210938,
+        -9.911999702453613,
+        -41.85599899291992
+      ],
+      "residue": 1652,
+      "resname": "TRP",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.82931357013226
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        16.125999450683594,
+        -10.960000038146973,
+        -39.29100036621094
+      ],
+      "residue": 1652,
+      "resname": "TRP",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.320244743637305
+    },
+    {
+      "kind": "aromatic_target",
+      "xyz": [
+        12.033222198486328,
+        -13.256555557250977,
+        -43.690555572509766
+      ],
+      "residue": 1652,
+      "resname": "TRP",
+      "atom": "RING_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.229761505675537
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        12.22020149230957,
+        -13.115900039672852,
+        -43.44669723510742
+      ],
+      "residue": 1652,
+      "resname": "TRP",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.145263142860559
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        14.319999694824219,
+        -9.859000205993652,
+        -38.51499938964844
+      ],
+      "residue": 1653,
+      "resname": "GLY",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.505471910178837
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        13.406999588012695,
+        -12.04699993133545,
+        -37.180999755859375
+      ],
+      "residue": 1653,
+      "resname": "GLY",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.749049722376272
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        12.027999877929688,
+        -11.812000274658203,
+        -34.33399963378906
+      ],
+      "residue": 1655,
+      "resname": "GLU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.523272147730035
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        8.758999824523926,
+        -12.890999794006348,
+        -35.1879997253418
+      ],
+      "residue": 1655,
+      "resname": "GLU",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 9.831863557043418
+    },
+    {
+      "kind": "cation_target",
+      "xyz": [
+        12.192999839782715,
+        -7.789999961853027,
+        -36.224998474121094
+      ],
+      "residue": 1655,
+      "resname": "GLU",
+      "atom": "OE1",
+      "source": "sidechain",
+      "dist_to_pocket_A": 7.30900700624235
+    },
+    {
+      "kind": "cation_target",
+      "xyz": [
+        12.859999656677246,
+        -9.142000198364258,
+        -34.64899826049805
+      ],
+      "residue": 1655,
+      "resname": "GLU",
+      "atom": "OE2",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.336189356799279
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        10.317000389099121,
+        -12.14900016784668,
+        -36.61199951171875
+      ],
+      "residue": 1656,
+      "resname": "ILE",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 8.714017331219743
+    },
+    {
+      "kind": "hb_donor_target",
+      "xyz": [
+        8.819000244140625,
+        -14.89799976348877,
+        -38.09400177001953
+      ],
+      "residue": 1656,
+      "resname": "ILE",
+      "atom": "O",
+      "source": "backbone",
+      "dist_to_pocket_A": 10.13548815150702
+    },
+    {
+      "kind": "hydrophobic_target",
+      "xyz": [
+        10.152000427246094,
+        -11.263250350952148,
+        -39.69525146484375
+      ],
+      "residue": 1656,
+      "resname": "ILE",
+      "atom": "SC_CENTROID",
+      "source": "sidechain",
+      "dist_to_pocket_A": 6.590423210660026
+    },
+    {
+      "kind": "hb_acceptor_target",
+      "xyz": [
+        7.205999851226807,
+        -15.630000114440918,
+        -35.483001708984375
+      ],
+      "residue": 1659,
+      "resname": "GLU",
+      "atom": "N",
+      "source": "backbone",
+      "dist_to_pocket_A": 11.860075547402404
+    },
+    {
+      "kind": "cation_target",
+      "xyz": [
+        3.2720000743865967,
+        -12.057999610900879,
+        -38.25
+      ],
+      "residue": 1659,
+      "resname": "GLU",
+      "atom": "OE1",
+      "source": "sidechain",
+      "dist_to_pocket_A": 8.618601230305687
+    },
+    {
+      "kind": "cation_target",
+      "xyz": [
+        3.6059999465942383,
+        -11.871000289916992,
+        -36.09199905395508
+      ],
+      "residue": 1659,
+      "resname": "GLU",
+      "atom": "OE2",
+      "source": "sidechain",
+      "dist_to_pocket_A": 9.358251993759781
+    }
+  ]
+}

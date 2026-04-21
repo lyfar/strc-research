@@ -1,0 +1,584 @@
+{
+  "baseline_params": {
+    "CA_REST_NM": 25.0,
+    "CA_CEILING_NM": 3000.0,
+    "SPL_HALF_SATURATION": 70.0,
+    "K_EXTRUSION_S": 30.0,
+    "K_CA_AC1_NM": 150.0,
+    "N_CA_AC1": 2.0,
+    "K_AC1_ACT_S": 0.1,
+    "K_AC1_INACT_S": 0.2,
+    "AC1_VMAX_NM_S": 2000.0,
+    "PDE4_VMAX_NM_S": 8000.0,
+    "PDE4_KM_NM": 4000.0,
+    "CAMP_BASAL_PROD_NM_S": 10.0,
+    "K_CAMP_PKA_NM": 300.0,
+    "N_PKA": 2.0,
+    "K_PKA_ACT_S": 0.5,
+    "K_CREB_PHOS_S": 0.02,
+    "K_CREB_DEPHOS_S": 0.005,
+    "K_STRC_TXN_BASAL_S": 0.0001,
+    "K_CREB_CRE_HALF": 0.2,
+    "N_CRE": 1.0,
+    "K_TXN_MAX_FOLD": 6.0,
+    "STRC_MRNA_DECAY_S": 0.0001,
+    "K_TRANSLATION": 0.0005,
+    "K_PROT_DECAY_S": 5e-06
+  },
+  "sweep_params": [
+    "K_CA_AC1_NM",
+    "AC1_VMAX_NM_S",
+    "PDE4_VMAX_NM_S",
+    "K_CAMP_PKA_NM",
+    "K_CREB_DEPHOS_S",
+    "K_TXN_MAX_FOLD",
+    "CA_CEILING_NM",
+    "SPL_HALF_SATURATION"
+  ],
+  "SPL_levels_dB": [
+    30,
+    45,
+    75,
+    100
+  ],
+  "sweep_results": {
+    "baseline": {
+      "tag": "baseline",
+      "proteins": [
+        108.69,
+        197.67,
+        198.01,
+        198.0
+      ],
+      "creb_p": [
+        0.0148,
+        0.696,
+        0.706,
+        0.7065
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.82,
+      "fold_silence_to_100dB": 1.82,
+      "creb_p_fold": 47.7,
+      "monotonic_5_tol": true
+    },
+    "K_CA_AC1_NM_0.5x": {
+      "tag": "K_CA_AC1_NM_0.5x",
+      "proteins": [
+        144.43,
+        197.96,
+        197.92,
+        197.99
+      ],
+      "creb_p": [
+        0.1091,
+        0.7042,
+        0.7066,
+        0.7068
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.048,
+        0.328,
+        0.333,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.37,
+      "fold_silence_to_100dB": 1.37,
+      "creb_p_fold": 6.5,
+      "monotonic_5_tol": true
+    },
+    "K_CA_AC1_NM_2x": {
+      "tag": "K_CA_AC1_NM_2x",
+      "proteins": [
+        102.0,
+        196.5,
+        197.89,
+        197.94
+      ],
+      "creb_p": [
+        0.0032,
+        0.6616,
+        0.7034,
+        0.7053
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.003,
+        0.268,
+        0.327,
+        0.33
+      ],
+      "fold_silence_to_45dB": 1.93,
+      "fold_silence_to_100dB": 1.94,
+      "creb_p_fold": 222.9,
+      "monotonic_5_tol": true
+    },
+    "AC1_VMAX_NM_S_0.5x": {
+      "tag": "AC1_VMAX_NM_S_0.5x",
+      "proteins": [
+        103.72,
+        189.32,
+        190.29,
+        190.4
+      ],
+      "creb_p": [
+        0.006,
+        0.4907,
+        0.5112,
+        0.5122
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.83,
+      "fold_silence_to_100dB": 1.84,
+      "creb_p_fold": 84.8,
+      "monotonic_5_tol": true
+    },
+    "AC1_VMAX_NM_S_2x": {
+      "tag": "AC1_VMAX_NM_S_2x",
+      "proteins": [
+        122.2,
+        199.96,
+        200.04,
+        200.01
+      ],
+      "creb_p": [
+        0.0429,
+        0.7754,
+        0.7783,
+        0.7784
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.64,
+      "fold_silence_to_100dB": 1.64,
+      "creb_p_fold": 18.2,
+      "monotonic_5_tol": true
+    },
+    "PDE4_VMAX_NM_S_0.5x": {
+      "tag": "PDE4_VMAX_NM_S_0.5x",
+      "proteins": [
+        127.73,
+        199.94,
+        200.1,
+        200.1
+      ],
+      "creb_p": [
+        0.0566,
+        0.7758,
+        0.7786,
+        0.7788
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.57,
+      "fold_silence_to_100dB": 1.57,
+      "creb_p_fold": 13.8,
+      "monotonic_5_tol": true
+    },
+    "PDE4_VMAX_NM_S_2x": {
+      "tag": "PDE4_VMAX_NM_S_2x",
+      "proteins": [
+        102.34,
+        188.9,
+        190.03,
+        190.07
+      ],
+      "creb_p": [
+        0.0037,
+        0.4846,
+        0.5055,
+        0.5065
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.85,
+      "fold_silence_to_100dB": 1.86,
+      "creb_p_fold": 135.6,
+      "monotonic_5_tol": true
+    },
+    "K_CAMP_PKA_NM_0.5x": {
+      "tag": "K_CAMP_PKA_NM_0.5x",
+      "proteins": [
+        127.54,
+        199.87,
+        199.98,
+        199.98
+      ],
+      "creb_p": [
+        0.0561,
+        0.7712,
+        0.7742,
+        0.7744
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.57,
+      "fold_silence_to_100dB": 1.57,
+      "creb_p_fold": 13.8,
+      "monotonic_5_tol": true
+    },
+    "K_CAMP_PKA_NM_2x": {
+      "tag": "K_CAMP_PKA_NM_2x",
+      "proteins": [
+        102.35,
+        189.79,
+        190.85,
+        190.91
+      ],
+      "creb_p": [
+        0.0038,
+        0.5006,
+        0.522,
+        0.523
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.85,
+      "fold_silence_to_100dB": 1.87,
+      "creb_p_fold": 139.4,
+      "monotonic_5_tol": true
+    },
+    "K_CREB_DEPHOS_S_0.5x": {
+      "tag": "K_CREB_DEPHOS_S_0.5x",
+      "proteins": [
+        116.0,
+        201.05,
+        201.27,
+        201.26
+      ],
+      "creb_p": [
+        0.0292,
+        0.8207,
+        0.8277,
+        0.828
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.73,
+      "fold_silence_to_100dB": 1.73,
+      "creb_p_fold": 28.4,
+      "monotonic_5_tol": true
+    },
+    "K_CREB_DEPHOS_S_2x": {
+      "tag": "K_CREB_DEPHOS_S_2x",
+      "proteins": [
+        104.53,
+        191.44,
+        192.03,
+        192.04
+      ],
+      "creb_p": [
+        0.0075,
+        0.5337,
+        0.5456,
+        0.5462
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.83,
+      "fold_silence_to_100dB": 1.84,
+      "creb_p_fold": 73.3,
+      "monotonic_5_tol": true
+    },
+    "K_TXN_MAX_FOLD_0.5x": {
+      "tag": "K_TXN_MAX_FOLD_0.5x",
+      "proteins": [
+        103.47,
+        139.07,
+        139.2,
+        139.2
+      ],
+      "creb_p": [
+        0.0148,
+        0.696,
+        0.706,
+        0.7065
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.34,
+      "fold_silence_to_100dB": 1.35,
+      "creb_p_fold": 47.7,
+      "monotonic_5_tol": true
+    },
+    "K_TXN_MAX_FOLD_2x": {
+      "tag": "K_TXN_MAX_FOLD_2x",
+      "proteins": [
+        119.11,
+        314.86,
+        315.62,
+        315.6
+      ],
+      "creb_p": [
+        0.0148,
+        0.696,
+        0.706,
+        0.7065
+      ],
+      "ca_mean_nM": [
+        25.0,
+        497.6,
+        1758.1,
+        2645.4
+      ],
+      "ac1_mean": [
+        0.013,
+        0.314,
+        0.332,
+        0.333
+      ],
+      "fold_silence_to_45dB": 2.64,
+      "fold_silence_to_100dB": 2.65,
+      "creb_p_fold": 47.7,
+      "monotonic_5_tol": true
+    },
+    "CA_CEILING_NM_0.5x": {
+      "tag": "CA_CEILING_NM_0.5x",
+      "proteins": [
+        108.69,
+        196.61,
+        197.93,
+        198.01
+      ],
+      "creb_p": [
+        0.0148,
+        0.6654,
+        0.7034,
+        0.7053
+      ],
+      "ca_mean_nM": [
+        25.0,
+        259.3,
+        884.3,
+        1324.2
+      ],
+      "ac1_mean": [
+        0.013,
+        0.273,
+        0.327,
+        0.331
+      ],
+      "fold_silence_to_45dB": 1.81,
+      "fold_silence_to_100dB": 1.82,
+      "creb_p_fold": 47.7,
+      "monotonic_5_tol": true
+    },
+    "CA_CEILING_NM_2x": {
+      "tag": "CA_CEILING_NM_2x",
+      "proteins": [
+        108.69,
+        197.93,
+        197.99,
+        197.98
+      ],
+      "creb_p": [
+        0.0148,
+        0.704,
+        0.7066,
+        0.7068
+      ],
+      "ca_mean_nM": [
+        25.0,
+        974.2,
+        3505.9,
+        5287.8
+      ],
+      "ac1_mean": [
+        0.013,
+        0.328,
+        0.333,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.82,
+      "fold_silence_to_100dB": 1.82,
+      "creb_p_fold": 47.8,
+      "monotonic_5_tol": true
+    },
+    "SPL_HALF_SATURATION_0.5x": {
+      "tag": "SPL_HALF_SATURATION_0.5x",
+      "proteins": [
+        108.69,
+        197.97,
+        197.92,
+        198.03
+      ],
+      "creb_p": [
+        0.0148,
+        0.7062,
+        0.7065,
+        0.7066
+      ],
+      "ca_mean_nM": [
+        25.0,
+        1990.8,
+        2806.7,
+        2961.5
+      ],
+      "ac1_mean": [
+        0.013,
+        0.332,
+        0.333,
+        0.333
+      ],
+      "fold_silence_to_45dB": 1.82,
+      "fold_silence_to_100dB": 1.82,
+      "creb_p_fold": 47.7,
+      "monotonic_5_tol": true
+    },
+    "SPL_HALF_SATURATION_2x": {
+      "tag": "SPL_HALF_SATURATION_2x",
+      "proteins": [
+        108.69,
+        114.23,
+        162.64,
+        196.03
+      ],
+      "creb_p": [
+        0.0148,
+        0.0255,
+        0.1988,
+        0.6474
+      ],
+      "ca_mean_nM": [
+        25.0,
+        30.3,
+        63.5,
+        218.3
+      ],
+      "ac1_mean": [
+        0.013,
+        0.019,
+        0.071,
+        0.254
+      ],
+      "fold_silence_to_45dB": 1.05,
+      "fold_silence_to_100dB": 1.8,
+      "creb_p_fold": 43.8,
+      "monotonic_5_tol": true
+    }
+  },
+  "broken_variants": [
+    "SPL_HALF_SATURATION_2x"
+  ],
+  "fragile_variants": [
+    [
+      "SPL_HALF_SATURATION_2x",
+      -42.3
+    ]
+  ],
+  "robustness_index": 0.906,
+  "verdict": "ROBUST \u2014 1 of 16 perturbations break hypothesis; 1 have >30% fold-change deviation."
+}

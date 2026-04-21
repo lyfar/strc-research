@@ -1,0 +1,18 @@
+{
+  "generated": "2026-04-20",
+  "purpose": "Test whether E1 (RBM24-regulated 56 aa exon at STRC aa 1047-1102) is structurally part of the TMEM145 binding interface",
+  "priority_order": [
+    "strc_mini_x_tmem145_full_v2",
+    "strc_mini_dE1_x_tmem145_full",
+    "strc_mini_dE1_solo",
+    "strc_mini_x_tmem145_gold"
+  ],
+  "success_criteria": {
+    "strc_mini_x_tmem145_full_v2": "ipTM > 0.6; residues 1047-1102 in STRC show low PAE with TMEM145 chain",
+    "strc_mini_dE1_x_tmem145_full": "ipTM drops vs v2 by >0.15 \u2014 confirms E1 is in the interface",
+    "strc_mini_dE1_solo": "pTM < 0.75 \u2014 indicates E1 contributes to fold stability",
+    "strc_mini_x_tmem145_gold": "ipTM > 0.7 \u2014 Derstroff-style pruned job for clearer interface"
+  },
+  "daily_limit": "AF3 server 20 jobs/day \u2014 all 4 fit easily",
+  "related_note": "~/Brain/notes/STRC RBM24 Exon Mapping to Human Protein.md"
+}

@@ -1,0 +1,452 @@
+{
+  "model": "STRC mRNA-LNP audiogram rescue (tonotopic x transfer function)",
+  "abr_transfer_fit": {
+    "A": 25.6367820646823,
+    "B": 61.738116341705265,
+    "C": 0.09999999999999999
+  },
+  "tonotopic_gradient": {
+    "basal_4_8kHz": 2.0,
+    "mid_1_4kHz": 1.0,
+    "apical_250_1kHz": 0.5
+  },
+  "pkpd_reference_regimen": {
+    "modification": "m1psi",
+    "interval_d": 42.0,
+    "dose_intra": 200.0,
+    "tx_trough_fold": 2.168693645308909,
+    "per_ohc_therapeutic": true
+  },
+  "dfnb16_baseline_85dB": [
+    {
+      "name": "untargeted_0.8pct",
+      "eff_mean": 0.008,
+      "per_ohc_therapeutic": true,
+      "baseline_dB": 85.0,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "eff_ohc": 0.016,
+          "rescued_fraction": 0.016,
+          "abr_threshold_dB": 83.4,
+          "improvement_dB": 1.6,
+          "category": "Severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Limited benefit from hearing aids; cochlear implant territory"
+        },
+        "mid_1_4kHz": {
+          "eff_ohc": 0.008,
+          "rescued_fraction": 0.008,
+          "abr_threshold_dB": 85.3,
+          "improvement_dB": -0.3,
+          "category": "Severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Limited benefit from hearing aids; cochlear implant territory"
+        },
+        "apical_250_1kHz": {
+          "eff_ohc": 0.004,
+          "rescued_fraction": 0.004,
+          "abr_threshold_dB": 86.3,
+          "improvement_dB": -1.3,
+          "category": "Severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Limited benefit from hearing aids; cochlear implant territory"
+        }
+      },
+      "weighted_threshold_dB": 85.0,
+      "weighted_improvement_dB": -0.0,
+      "any_band_responder": false,
+      "all_bands_responder": false,
+      "any_band_functional": false
+    },
+    {
+      "name": "cochlear_tropic_5pct",
+      "eff_mean": 0.05,
+      "per_ohc_therapeutic": true,
+      "baseline_dB": 85.0,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "eff_ohc": 0.1,
+          "rescued_fraction": 0.1,
+          "abr_threshold_dB": 68.8,
+          "improvement_dB": 16.2,
+          "category": "Moderate-severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Hearing aids required; speech perception possible"
+        },
+        "mid_1_4kHz": {
+          "eff_ohc": 0.05,
+          "rescued_fraction": 0.05,
+          "abr_threshold_dB": 76.5,
+          "improvement_dB": 8.5,
+          "category": "Severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Limited benefit from hearing aids; cochlear implant territory"
+        },
+        "apical_250_1kHz": {
+          "eff_ohc": 0.025,
+          "rescued_fraction": 0.025,
+          "abr_threshold_dB": 81.4,
+          "improvement_dB": 3.6,
+          "category": "Severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Limited benefit from hearing aids; cochlear implant territory"
+        }
+      },
+      "weighted_threshold_dB": 75.6,
+      "weighted_improvement_dB": 9.4,
+      "any_band_responder": false,
+      "all_bands_responder": false,
+      "any_band_functional": false
+    },
+    {
+      "name": "OHC_targeted_20pct",
+      "eff_mean": 0.2,
+      "per_ohc_therapeutic": true,
+      "baseline_dB": 85.0,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "eff_ohc": 0.4,
+          "rescued_fraction": 0.4,
+          "abr_threshold_dB": 44.2,
+          "improvement_dB": 40.8,
+          "category": "Moderate",
+          "responder": true,
+          "functional": true,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        },
+        "mid_1_4kHz": {
+          "eff_ohc": 0.2,
+          "rescued_fraction": 0.2,
+          "abr_threshold_dB": 57.9,
+          "improvement_dB": 27.1,
+          "category": "Moderate-severe",
+          "responder": true,
+          "functional": false,
+          "interpretation": "Hearing aids required; speech perception possible"
+        },
+        "apical_250_1kHz": {
+          "eff_ohc": 0.1,
+          "rescued_fraction": 0.1,
+          "abr_threshold_dB": 68.8,
+          "improvement_dB": 16.2,
+          "category": "Moderate-severe",
+          "responder": false,
+          "functional": false,
+          "interpretation": "Hearing aids required; speech perception possible"
+        }
+      },
+      "weighted_threshold_dB": 57.0,
+      "weighted_improvement_dB": 28.0,
+      "any_band_responder": true,
+      "all_bands_responder": false,
+      "any_band_functional": true
+    },
+    {
+      "name": "hypothetical_50pct",
+      "eff_mean": 0.5,
+      "per_ohc_therapeutic": true,
+      "baseline_dB": 85.0,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "eff_ohc": 1.0,
+          "rescued_fraction": 1.0,
+          "abr_threshold_dB": 23.1,
+          "improvement_dB": 61.9,
+          "category": "Normal",
+          "responder": true,
+          "functional": true,
+          "interpretation": "No intervention needed"
+        },
+        "mid_1_4kHz": {
+          "eff_ohc": 0.5,
+          "rescued_fraction": 0.5,
+          "abr_threshold_dB": 39.3,
+          "improvement_dB": 45.7,
+          "category": "Mild",
+          "responder": true,
+          "functional": true,
+          "interpretation": "Conversational speech without aids"
+        },
+        "apical_250_1kHz": {
+          "eff_ohc": 0.25,
+          "rescued_fraction": 0.25,
+          "abr_threshold_dB": 53.8,
+          "improvement_dB": 31.2,
+          "category": "Moderate",
+          "responder": true,
+          "functional": true,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        }
+      },
+      "weighted_threshold_dB": 38.7,
+      "weighted_improvement_dB": 46.3,
+      "any_band_responder": true,
+      "all_bands_responder": true,
+      "any_band_functional": true
+    },
+    {
+      "name": "Anc80L65_ref_67pct",
+      "eff_mean": 0.67,
+      "per_ohc_therapeutic": true,
+      "baseline_dB": 85.0,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "eff_ohc": 1.0,
+          "rescued_fraction": 1.0,
+          "abr_threshold_dB": 23.1,
+          "improvement_dB": 61.9,
+          "category": "Normal",
+          "responder": true,
+          "functional": true,
+          "interpretation": "No intervention needed"
+        },
+        "mid_1_4kHz": {
+          "eff_ohc": 0.67,
+          "rescued_fraction": 0.67,
+          "abr_threshold_dB": 32.6,
+          "improvement_dB": 52.4,
+          "category": "Mild",
+          "responder": true,
+          "functional": true,
+          "interpretation": "Conversational speech without aids"
+        },
+        "apical_250_1kHz": {
+          "eff_ohc": 0.335,
+          "rescued_fraction": 0.335,
+          "abr_threshold_dB": 48.0,
+          "improvement_dB": 37.0,
+          "category": "Moderate",
+          "responder": true,
+          "functional": true,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        }
+      },
+      "weighted_threshold_dB": 34.6,
+      "weighted_improvement_dB": 50.4,
+      "any_band_responder": true,
+      "all_bands_responder": true,
+      "any_band_functional": true
+    }
+  ],
+  "misha_per_zone": [
+    {
+      "name": "untargeted_0.8pct",
+      "eff_mean": 0.008,
+      "per_ohc_therapeutic": true,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "baseline_dB": 65.0,
+          "eff_ohc": 0.016,
+          "rescued_fraction": 0.016,
+          "abr_post_dB": 65.0,
+          "improvement_dB": 0.0,
+          "category": "Moderate-severe",
+          "responder": false,
+          "interpretation": "Hearing aids required; speech perception possible"
+        },
+        "mid_1_4kHz": {
+          "baseline_dB": 55.0,
+          "eff_ohc": 0.008,
+          "rescued_fraction": 0.008,
+          "abr_post_dB": 55.0,
+          "improvement_dB": 0.0,
+          "category": "Moderate",
+          "responder": false,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        },
+        "apical_250_1kHz": {
+          "baseline_dB": 40.0,
+          "eff_ohc": 0.004,
+          "rescued_fraction": 0.004,
+          "abr_post_dB": 40.0,
+          "improvement_dB": 0.0,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        }
+      },
+      "weighted_post_dB": 53.3,
+      "weighted_improvement_dB": 0.0,
+      "any_band_responder": false,
+      "all_bands_responder": false
+    },
+    {
+      "name": "cochlear_tropic_5pct",
+      "eff_mean": 0.05,
+      "per_ohc_therapeutic": true,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "baseline_dB": 65.0,
+          "eff_ohc": 0.1,
+          "rescued_fraction": 0.1,
+          "abr_post_dB": 65.0,
+          "improvement_dB": 0.0,
+          "category": "Moderate-severe",
+          "responder": false,
+          "interpretation": "Hearing aids required; speech perception possible"
+        },
+        "mid_1_4kHz": {
+          "baseline_dB": 55.0,
+          "eff_ohc": 0.05,
+          "rescued_fraction": 0.05,
+          "abr_post_dB": 55.0,
+          "improvement_dB": 0.0,
+          "category": "Moderate",
+          "responder": false,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        },
+        "apical_250_1kHz": {
+          "baseline_dB": 40.0,
+          "eff_ohc": 0.025,
+          "rescued_fraction": 0.025,
+          "abr_post_dB": 40.0,
+          "improvement_dB": 0.0,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        }
+      },
+      "weighted_post_dB": 53.3,
+      "weighted_improvement_dB": 0.0,
+      "any_band_responder": false,
+      "all_bands_responder": false
+    },
+    {
+      "name": "OHC_targeted_20pct",
+      "eff_mean": 0.2,
+      "per_ohc_therapeutic": true,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "baseline_dB": 65.0,
+          "eff_ohc": 0.4,
+          "rescued_fraction": 0.4,
+          "abr_post_dB": 44.2,
+          "improvement_dB": 20.8,
+          "category": "Moderate",
+          "responder": true,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        },
+        "mid_1_4kHz": {
+          "baseline_dB": 55.0,
+          "eff_ohc": 0.2,
+          "rescued_fraction": 0.2,
+          "abr_post_dB": 55.0,
+          "improvement_dB": 0.0,
+          "category": "Moderate",
+          "responder": false,
+          "interpretation": "Benefits from hearing aids; functional hearing"
+        },
+        "apical_250_1kHz": {
+          "baseline_dB": 40.0,
+          "eff_ohc": 0.1,
+          "rescued_fraction": 0.1,
+          "abr_post_dB": 40.0,
+          "improvement_dB": 0.0,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        }
+      },
+      "weighted_post_dB": 46.4,
+      "weighted_improvement_dB": 6.9,
+      "any_band_responder": true,
+      "all_bands_responder": false
+    },
+    {
+      "name": "hypothetical_50pct",
+      "eff_mean": 0.5,
+      "per_ohc_therapeutic": true,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "baseline_dB": 65.0,
+          "eff_ohc": 1.0,
+          "rescued_fraction": 1.0,
+          "abr_post_dB": 23.1,
+          "improvement_dB": 41.9,
+          "category": "Normal",
+          "responder": true,
+          "interpretation": "No intervention needed"
+        },
+        "mid_1_4kHz": {
+          "baseline_dB": 55.0,
+          "eff_ohc": 0.5,
+          "rescued_fraction": 0.5,
+          "abr_post_dB": 39.3,
+          "improvement_dB": 15.7,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        },
+        "apical_250_1kHz": {
+          "baseline_dB": 40.0,
+          "eff_ohc": 0.25,
+          "rescued_fraction": 0.25,
+          "abr_post_dB": 40.0,
+          "improvement_dB": 0.0,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        }
+      },
+      "weighted_post_dB": 34.1,
+      "weighted_improvement_dB": 19.2,
+      "any_band_responder": true,
+      "all_bands_responder": false
+    },
+    {
+      "name": "Anc80L65_ref_67pct",
+      "eff_mean": 0.67,
+      "per_ohc_therapeutic": true,
+      "per_zone": {
+        "basal_4_8kHz": {
+          "baseline_dB": 65.0,
+          "eff_ohc": 1.0,
+          "rescued_fraction": 1.0,
+          "abr_post_dB": 23.1,
+          "improvement_dB": 41.9,
+          "category": "Normal",
+          "responder": true,
+          "interpretation": "No intervention needed"
+        },
+        "mid_1_4kHz": {
+          "baseline_dB": 55.0,
+          "eff_ohc": 0.67,
+          "rescued_fraction": 0.67,
+          "abr_post_dB": 32.6,
+          "improvement_dB": 22.4,
+          "category": "Mild",
+          "responder": true,
+          "interpretation": "Conversational speech without aids"
+        },
+        "apical_250_1kHz": {
+          "baseline_dB": 40.0,
+          "eff_ohc": 0.335,
+          "rescued_fraction": 0.335,
+          "abr_post_dB": 40.0,
+          "improvement_dB": 0.0,
+          "category": "Mild",
+          "responder": false,
+          "interpretation": "Conversational speech without aids"
+        }
+      },
+      "weighted_post_dB": 31.9,
+      "weighted_improvement_dB": 21.4,
+      "any_band_responder": true,
+      "all_bands_responder": false
+    }
+  ],
+  "misha_baseline": {
+    "baseline_dB": {
+      "basal_4_8kHz": 65.0,
+      "mid_1_4kHz": 55.0,
+      "apical_250_1kHz": 40.0
+    },
+    "note": "moderate-severe configuration, sloping; approximated from audiogram."
+  }
+}

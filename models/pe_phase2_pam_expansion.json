@@ -1,0 +1,1687 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "variant_chr15_plus_strand_pos": 43600551,
+    "anzalone_nick_to_edit_optimum_nt": [
+      3,
+      10
+    ],
+    "region_scanned": [
+      43600400,
+      43600700
+    ],
+    "cas9_variants_scanned": [
+      "SpCas9_NGG",
+      "SpG_NGN",
+      "enCas9_NGN",
+      "SpRY_NRN",
+      "SpCas9NG_NG",
+      "SaCas9_NNGRRT"
+    ]
+  },
+  "variants": {
+    "SpCas9_NGG": {
+      "total_plus_pams": 19,
+      "total_minus_pams": 40,
+      "pegrna_optimal": [],
+      "pe3b_nickers_minus_strand": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGG",
+          "pam_coords_plus": [
+            43600529,
+            43600531
+          ],
+          "protospacer_minus_5to3": "AAATTGGCACCATAGCAGGT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600534,
+            43600535
+          ],
+          "nick_to_edit_nt": 16.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600530,
+            43600532
+          ],
+          "protospacer_minus_5to3": "GAAATTGGCACCATAGCAGG",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600535,
+            43600536
+          ],
+          "nick_to_edit_nt": 15.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGG",
+          "pam_coords_plus": [
+            43600533,
+            43600535
+          ],
+          "protospacer_minus_5to3": "ACTGAAATTGGCACCATAGC",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600538,
+            43600539
+          ],
+          "nick_to_edit_nt": 12.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600545,
+            43600547
+          ],
+          "protospacer_minus_5to3": "CCTGAGATCTTCACTGAAAT",
+          "protospacer_coords_plus": [
+            43600548,
+            43600567
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600550,
+            43600551
+          ],
+          "nick_to_edit_nt": 0.5,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ],
+      "pe3b_nickers_plus_strand": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGG",
+          "pam_coords_plus": [
+            43600565,
+            43600567
+          ],
+          "protospacer_plus_5to3": "CCAATTTCAGTGAAGATCTC",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600561,
+            43600562
+          ],
+          "nick_to_edit_nt": -11,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ]
+    },
+    "SpG_NGN": {
+      "total_plus_pams": 68,
+      "total_minus_pams": 88,
+      "pegrna_optimal": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGA",
+          "pam_coords_plus": [
+            43600551,
+            43600553
+          ],
+          "protospacer_minus_5to3": "TGGGGGCCTGAGATCTTCAC",
+          "protospacer_coords_plus": [
+            43600554,
+            43600573
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600556,
+            43600557
+          ],
+          "nick_to_edit_nt": 5.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        }
+      ],
+      "pe3b_nickers_minus_strand": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGG",
+          "pam_coords_plus": [
+            43600529,
+            43600531
+          ],
+          "protospacer_minus_5to3": "AAATTGGCACCATAGCAGGT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600534,
+            43600535
+          ],
+          "nick_to_edit_nt": 16.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600530,
+            43600532
+          ],
+          "protospacer_minus_5to3": "GAAATTGGCACCATAGCAGG",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600535,
+            43600536
+          ],
+          "nick_to_edit_nt": 15.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGT",
+          "pam_coords_plus": [
+            43600532,
+            43600534
+          ],
+          "protospacer_minus_5to3": "CTGAAATTGGCACCATAGCA",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600537,
+            43600538
+          ],
+          "nick_to_edit_nt": 13.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGG",
+          "pam_coords_plus": [
+            43600533,
+            43600535
+          ],
+          "protospacer_minus_5to3": "ACTGAAATTGGCACCATAGC",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600538,
+            43600539
+          ],
+          "nick_to_edit_nt": 12.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGC",
+          "pam_coords_plus": [
+            43600544,
+            43600546
+          ],
+          "protospacer_minus_5to3": "CTGAGATCTTCACTGAAATT",
+          "protospacer_coords_plus": [
+            43600547,
+            43600566
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600545,
+            43600547
+          ],
+          "protospacer_minus_5to3": "CCTGAGATCTTCACTGAAAT",
+          "protospacer_coords_plus": [
+            43600548,
+            43600567
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600550,
+            43600551
+          ],
+          "nick_to_edit_nt": 0.5,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ],
+      "pe3b_nickers_plus_strand": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGT",
+          "pam_coords_plus": [
+            43600553,
+            43600555
+          ],
+          "protospacer_plus_5to3": "CCTGCTATGGTGCCAATTTC",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "TGA",
+          "pam_coords_plus": [
+            43600555,
+            43600557
+          ],
+          "protospacer_plus_5to3": "TGCTATGGTGCCAATTTCAG",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600551,
+            43600552
+          ],
+          "nick_to_edit_nt": -1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGA",
+          "pam_coords_plus": [
+            43600558,
+            43600560
+          ],
+          "protospacer_plus_5to3": "TATGGTGCCAATTTCAGTGA",
+          "protospacer_coords_plus": [
+            43600538,
+            43600557
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600554,
+            43600555
+          ],
+          "nick_to_edit_nt": -4,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGG",
+          "pam_coords_plus": [
+            43600565,
+            43600567
+          ],
+          "protospacer_plus_5to3": "CCAATTTCAGTGAAGATCTC",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600561,
+            43600562
+          ],
+          "nick_to_edit_nt": -11,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GGC",
+          "pam_coords_plus": [
+            43600566,
+            43600568
+          ],
+          "protospacer_plus_5to3": "CAATTTCAGTGAAGATCTCA",
+          "protospacer_coords_plus": [
+            43600546,
+            43600565
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600562,
+            43600563
+          ],
+          "nick_to_edit_nt": -12,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ]
+    },
+    "enCas9_NGN": {
+      "total_plus_pams": 68,
+      "total_minus_pams": 88,
+      "pegrna_optimal": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGA",
+          "pam_coords_plus": [
+            43600551,
+            43600553
+          ],
+          "protospacer_minus_5to3": "TGGGGGCCTGAGATCTTCAC",
+          "protospacer_coords_plus": [
+            43600554,
+            43600573
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600556,
+            43600557
+          ],
+          "nick_to_edit_nt": 5.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        }
+      ],
+      "pe3b_nickers_minus_strand": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGG",
+          "pam_coords_plus": [
+            43600529,
+            43600531
+          ],
+          "protospacer_minus_5to3": "AAATTGGCACCATAGCAGGT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600534,
+            43600535
+          ],
+          "nick_to_edit_nt": 16.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600530,
+            43600532
+          ],
+          "protospacer_minus_5to3": "GAAATTGGCACCATAGCAGG",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600535,
+            43600536
+          ],
+          "nick_to_edit_nt": 15.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGT",
+          "pam_coords_plus": [
+            43600532,
+            43600534
+          ],
+          "protospacer_minus_5to3": "CTGAAATTGGCACCATAGCA",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600537,
+            43600538
+          ],
+          "nick_to_edit_nt": 13.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGG",
+          "pam_coords_plus": [
+            43600533,
+            43600535
+          ],
+          "protospacer_minus_5to3": "ACTGAAATTGGCACCATAGC",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600538,
+            43600539
+          ],
+          "nick_to_edit_nt": 12.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGC",
+          "pam_coords_plus": [
+            43600544,
+            43600546
+          ],
+          "protospacer_minus_5to3": "CTGAGATCTTCACTGAAATT",
+          "protospacer_coords_plus": [
+            43600547,
+            43600566
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600545,
+            43600547
+          ],
+          "protospacer_minus_5to3": "CCTGAGATCTTCACTGAAAT",
+          "protospacer_coords_plus": [
+            43600548,
+            43600567
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600550,
+            43600551
+          ],
+          "nick_to_edit_nt": 0.5,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ],
+      "pe3b_nickers_plus_strand": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGT",
+          "pam_coords_plus": [
+            43600553,
+            43600555
+          ],
+          "protospacer_plus_5to3": "CCTGCTATGGTGCCAATTTC",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "TGA",
+          "pam_coords_plus": [
+            43600555,
+            43600557
+          ],
+          "protospacer_plus_5to3": "TGCTATGGTGCCAATTTCAG",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600551,
+            43600552
+          ],
+          "nick_to_edit_nt": -1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGA",
+          "pam_coords_plus": [
+            43600558,
+            43600560
+          ],
+          "protospacer_plus_5to3": "TATGGTGCCAATTTCAGTGA",
+          "protospacer_coords_plus": [
+            43600538,
+            43600557
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600554,
+            43600555
+          ],
+          "nick_to_edit_nt": -4,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGG",
+          "pam_coords_plus": [
+            43600565,
+            43600567
+          ],
+          "protospacer_plus_5to3": "CCAATTTCAGTGAAGATCTC",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600561,
+            43600562
+          ],
+          "nick_to_edit_nt": -11,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GGC",
+          "pam_coords_plus": [
+            43600566,
+            43600568
+          ],
+          "protospacer_plus_5to3": "CAATTTCAGTGAAGATCTCA",
+          "protospacer_coords_plus": [
+            43600546,
+            43600565
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600562,
+            43600563
+          ],
+          "nick_to_edit_nt": -12,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ]
+    },
+    "SpRY_NRN": {
+      "total_plus_pams": 143,
+      "total_minus_pams": 144,
+      "pegrna_optimal": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "CAA",
+          "pam_coords_plus": [
+            43600546,
+            43600548
+          ],
+          "protospacer_plus_5to3": "CTCCCCACCTGCTATGGTGC",
+          "protospacer_coords_plus": [
+            43600526,
+            43600545
+          ],
+          "protospacer_gc_pct": 65.0,
+          "nick_between_plus": [
+            43600542,
+            43600543
+          ],
+          "nick_to_edit_nt": 8,
+          "pegrna_fit": "optimum",
+          "edit_downstream_of_nick": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AAT",
+          "pam_coords_plus": [
+            43600547,
+            43600549
+          ],
+          "protospacer_plus_5to3": "TCCCCACCTGCTATGGTGCC",
+          "protospacer_coords_plus": [
+            43600527,
+            43600546
+          ],
+          "protospacer_gc_pct": 65.0,
+          "nick_between_plus": [
+            43600543,
+            43600544
+          ],
+          "nick_to_edit_nt": 7,
+          "pegrna_fit": "optimum",
+          "edit_downstream_of_nick": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TAG",
+          "pam_coords_plus": [
+            43600537,
+            43600539
+          ],
+          "protospacer_minus_5to3": "CTTCACTGAAATTGGCACCA",
+          "protospacer_coords_plus": [
+            43600540,
+            43600559
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600542,
+            43600543
+          ],
+          "nick_to_edit_nt": 8.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAT",
+          "pam_coords_plus": [
+            43600539,
+            43600541
+          ],
+          "protospacer_minus_5to3": "ATCTTCACTGAAATTGGCAC",
+          "protospacer_coords_plus": [
+            43600542,
+            43600561
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600544,
+            43600545
+          ],
+          "nick_to_edit_nt": 6.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAC",
+          "pam_coords_plus": [
+            43600542,
+            43600544
+          ],
+          "protospacer_minus_5to3": "GAGATCTTCACTGAAATTGG",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600547,
+            43600548
+          ],
+          "nick_to_edit_nt": 3.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AAA",
+          "pam_coords_plus": [
+            43600549,
+            43600551
+          ],
+          "protospacer_minus_5to3": "GGGGCCTGAGATCTTCACTG",
+          "protospacer_coords_plus": [
+            43600552,
+            43600571
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600554,
+            43600555
+          ],
+          "nick_to_edit_nt": 3.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GAA",
+          "pam_coords_plus": [
+            43600550,
+            43600552
+          ],
+          "protospacer_minus_5to3": "GGGGGCCTGAGATCTTCACT",
+          "protospacer_coords_plus": [
+            43600553,
+            43600572
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600555,
+            43600556
+          ],
+          "nick_to_edit_nt": 4.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGA",
+          "pam_coords_plus": [
+            43600551,
+            43600553
+          ],
+          "protospacer_minus_5to3": "TGGGGGCCTGAGATCTTCAC",
+          "protospacer_coords_plus": [
+            43600554,
+            43600573
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600556,
+            43600557
+          ],
+          "nick_to_edit_nt": 5.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAC",
+          "pam_coords_plus": [
+            43600554,
+            43600556
+          ],
+          "protospacer_minus_5to3": "AACTGGGGGCCTGAGATCTT",
+          "protospacer_coords_plus": [
+            43600557,
+            43600576
+          ],
+          "protospacer_gc_pct": 55.0,
+          "nick_between_plus": [
+            43600559,
+            43600560
+          ],
+          "nick_to_edit_nt": 8.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        }
+      ],
+      "pe3b_nickers_minus_strand": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGG",
+          "pam_coords_plus": [
+            43600529,
+            43600531
+          ],
+          "protospacer_minus_5to3": "AAATTGGCACCATAGCAGGT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600534,
+            43600535
+          ],
+          "nick_to_edit_nt": 16.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TGG",
+          "pam_coords_plus": [
+            43600530,
+            43600532
+          ],
+          "protospacer_minus_5to3": "GAAATTGGCACCATAGCAGG",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600535,
+            43600536
+          ],
+          "nick_to_edit_nt": 15.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGT",
+          "pam_coords_plus": [
+            43600532,
+            43600534
+          ],
+          "protospacer_minus_5to3": "CTGAAATTGGCACCATAGCA",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600537,
+            43600538
+          ],
+          "nick_to_edit_nt": 13.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGG",
+          "pam_coords_plus": [
+            43600533,
+            43600535
+          ],
+          "protospacer_minus_5to3": "ACTGAAATTGGCACCATAGC",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600538,
+            43600539
+          ],
+          "nick_to_edit_nt": 12.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAG",
+          "pam_coords_plus": [
+            43600534,
+            43600536
+          ],
+          "protospacer_minus_5to3": "CACTGAAATTGGCACCATAG",
+          "protospacer_coords_plus": [
+            43600537,
+            43600556
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600539,
+            43600540
+          ],
+          "nick_to_edit_nt": 11.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AGC",
+          "pam_coords_plus": [
+            43600536,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TAG",
+          "pam_coords_plus": [
+            43600537,
+            43600539
+          ],
+          "protospacer_minus_5to3": "CTTCACTGAAATTGGCACCA",
+          "protospacer_coords_plus": [
+            43600540,
+            43600559
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600542,
+            43600543
+          ],
+          "nick_to_edit_nt": 8.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAT",
+          "pam_coords_plus": [
+            43600539,
+            43600541
+          ],
+          "protospacer_minus_5to3": "ATCTTCACTGAAATTGGCAC",
+          "protospacer_coords_plus": [
+            43600542,
+            43600561
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600544,
+            43600545
+          ],
+          "nick_to_edit_nt": 6.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "CAC",
+          "pam_coords_plus": [
+            43600542,
+            43600544
+          ],
+          "protospacer_minus_5to3": "GAGATCTTCACTGAAATTGG",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600547,
+            43600548
+          ],
+          "nick_to_edit_nt": 3.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GGC",
+          "pam_coords_plus": [
+            43600544,
+            43600546
+          ],
+          "protospacer_minus_5to3": "CTGAGATCTTCACTGAAATT",
+          "protospacer_coords_plus": [
+            43600547,
+            43600566
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1.5,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ],
+      "pe3b_nickers_plus_strand": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "CAG",
+          "pam_coords_plus": [
+            43600552,
+            43600554
+          ],
+          "protospacer_plus_5to3": "ACCTGCTATGGTGCCAATTT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600548,
+            43600549
+          ],
+          "nick_to_edit_nt": 2,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGT",
+          "pam_coords_plus": [
+            43600553,
+            43600555
+          ],
+          "protospacer_plus_5to3": "CCTGCTATGGTGCCAATTTC",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "TGA",
+          "pam_coords_plus": [
+            43600555,
+            43600557
+          ],
+          "protospacer_plus_5to3": "TGCTATGGTGCCAATTTCAG",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600551,
+            43600552
+          ],
+          "nick_to_edit_nt": -1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GAA",
+          "pam_coords_plus": [
+            43600556,
+            43600558
+          ],
+          "protospacer_plus_5to3": "GCTATGGTGCCAATTTCAGT",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600552,
+            43600553
+          ],
+          "nick_to_edit_nt": -2,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AAG",
+          "pam_coords_plus": [
+            43600557,
+            43600559
+          ],
+          "protospacer_plus_5to3": "CTATGGTGCCAATTTCAGTG",
+          "protospacer_coords_plus": [
+            43600537,
+            43600556
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600553,
+            43600554
+          ],
+          "nick_to_edit_nt": -3,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGA",
+          "pam_coords_plus": [
+            43600558,
+            43600560
+          ],
+          "protospacer_plus_5to3": "TATGGTGCCAATTTCAGTGA",
+          "protospacer_coords_plus": [
+            43600538,
+            43600557
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600554,
+            43600555
+          ],
+          "nick_to_edit_nt": -4,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GAT",
+          "pam_coords_plus": [
+            43600559,
+            43600561
+          ],
+          "protospacer_plus_5to3": "ATGGTGCCAATTTCAGTGAA",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600555,
+            43600556
+          ],
+          "nick_to_edit_nt": -5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "CAG",
+          "pam_coords_plus": [
+            43600564,
+            43600566
+          ],
+          "protospacer_plus_5to3": "GCCAATTTCAGTGAAGATCT",
+          "protospacer_coords_plus": [
+            43600544,
+            43600563
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600560,
+            43600561
+          ],
+          "nick_to_edit_nt": -10,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AGG",
+          "pam_coords_plus": [
+            43600565,
+            43600567
+          ],
+          "protospacer_plus_5to3": "CCAATTTCAGTGAAGATCTC",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600561,
+            43600562
+          ],
+          "nick_to_edit_nt": -11,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GGC",
+          "pam_coords_plus": [
+            43600566,
+            43600568
+          ],
+          "protospacer_plus_5to3": "CAATTTCAGTGAAGATCTCA",
+          "protospacer_coords_plus": [
+            43600546,
+            43600565
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600562,
+            43600563
+          ],
+          "nick_to_edit_nt": -12,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ]
+    },
+    "SpCas9NG_NG": {
+      "total_plus_pams": 69,
+      "total_minus_pams": 89,
+      "pegrna_optimal": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AG",
+          "pam_coords_plus": [
+            43600537,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true,
+          "pegrna_fit": "optimum"
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TG",
+          "pam_coords_plus": [
+            43600552,
+            43600553
+          ],
+          "protospacer_minus_5to3": "TGGGGGCCTGAGATCTTCAC",
+          "protospacer_coords_plus": [
+            43600554,
+            43600573
+          ],
+          "protospacer_gc_pct": 60.0,
+          "nick_between_plus": [
+            43600556,
+            43600557
+          ],
+          "nick_to_edit_nt": 5.5,
+          "protospacer_spans_variant_for_PE3b": false,
+          "pegrna_fit": "optimum"
+        }
+      ],
+      "pe3b_nickers_minus_strand": [
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GG",
+          "pam_coords_plus": [
+            43600530,
+            43600531
+          ],
+          "protospacer_minus_5to3": "AAATTGGCACCATAGCAGGT",
+          "protospacer_coords_plus": [
+            43600532,
+            43600551
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600534,
+            43600535
+          ],
+          "nick_to_edit_nt": 16.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TG",
+          "pam_coords_plus": [
+            43600531,
+            43600532
+          ],
+          "protospacer_minus_5to3": "GAAATTGGCACCATAGCAGG",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600535,
+            43600536
+          ],
+          "nick_to_edit_nt": 15.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GG",
+          "pam_coords_plus": [
+            43600533,
+            43600534
+          ],
+          "protospacer_minus_5to3": "CTGAAATTGGCACCATAGCA",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600537,
+            43600538
+          ],
+          "nick_to_edit_nt": 13.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AG",
+          "pam_coords_plus": [
+            43600534,
+            43600535
+          ],
+          "protospacer_minus_5to3": "ACTGAAATTGGCACCATAGC",
+          "protospacer_coords_plus": [
+            43600536,
+            43600555
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600538,
+            43600539
+          ],
+          "nick_to_edit_nt": 12.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "AG",
+          "pam_coords_plus": [
+            43600537,
+            43600538
+          ],
+          "protospacer_minus_5to3": "TTCACTGAAATTGGCACCAT",
+          "protospacer_coords_plus": [
+            43600539,
+            43600558
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600541,
+            43600542
+          ],
+          "nick_to_edit_nt": 9.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "GG",
+          "pam_coords_plus": [
+            43600545,
+            43600546
+          ],
+          "protospacer_minus_5to3": "CTGAGATCTTCACTGAAATT",
+          "protospacer_coords_plus": [
+            43600547,
+            43600566
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1.5,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "-",
+          "pam_seq_minus_5to3": "TG",
+          "pam_coords_plus": [
+            43600546,
+            43600547
+          ],
+          "protospacer_minus_5to3": "CCTGAGATCTTCACTGAAAT",
+          "protospacer_coords_plus": [
+            43600548,
+            43600567
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600550,
+            43600551
+          ],
+          "nick_to_edit_nt": 0.5,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ],
+      "pe3b_nickers_plus_strand": [
+        {
+          "strand": "+",
+          "pam_seq_plus": "AG",
+          "pam_coords_plus": [
+            43600553,
+            43600554
+          ],
+          "protospacer_plus_5to3": "CCTGCTATGGTGCCAATTTC",
+          "protospacer_coords_plus": [
+            43600533,
+            43600552
+          ],
+          "protospacer_gc_pct": 50.0,
+          "nick_between_plus": [
+            43600549,
+            43600550
+          ],
+          "nick_to_edit_nt": 1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "TG",
+          "pam_coords_plus": [
+            43600555,
+            43600556
+          ],
+          "protospacer_plus_5to3": "TGCTATGGTGCCAATTTCAG",
+          "protospacer_coords_plus": [
+            43600535,
+            43600554
+          ],
+          "protospacer_gc_pct": 45.0,
+          "nick_between_plus": [
+            43600551,
+            43600552
+          ],
+          "nick_to_edit_nt": -1,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AG",
+          "pam_coords_plus": [
+            43600558,
+            43600559
+          ],
+          "protospacer_plus_5to3": "TATGGTGCCAATTTCAGTGA",
+          "protospacer_coords_plus": [
+            43600538,
+            43600557
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600554,
+            43600555
+          ],
+          "nick_to_edit_nt": -4,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "AG",
+          "pam_coords_plus": [
+            43600565,
+            43600566
+          ],
+          "protospacer_plus_5to3": "CCAATTTCAGTGAAGATCTC",
+          "protospacer_coords_plus": [
+            43600545,
+            43600564
+          ],
+          "protospacer_gc_pct": 40.0,
+          "nick_between_plus": [
+            43600561,
+            43600562
+          ],
+          "nick_to_edit_nt": -11,
+          "protospacer_spans_variant_for_PE3b": true
+        },
+        {
+          "strand": "+",
+          "pam_seq_plus": "GG",
+          "pam_coords_plus": [
+            43600566,
+            43600567
+          ],
+          "protospacer_plus_5to3": "CAATTTCAGTGAAGATCTCA",
+          "protospacer_coords_plus": [
+            43600546,
+            43600565
+          ],
+          "protospacer_gc_pct": 35.0,
+          "nick_between_plus": [
+            43600562,
+            43600563
+          ],
+          "nick_to_edit_nt": -12,
+          "protospacer_spans_variant_for_PE3b": true
+        }
+      ]
+    },
+    "SaCas9_NNGRRT": {
+      "total_plus_pams": 2,
+      "total_minus_pams": 4,
+      "pegrna_optimal": [],
+      "pe3b_nickers_minus_strand": [],
+      "pe3b_nickers_plus_strand": []
+    }
+  },
+  "summary": [
+    {
+      "variant": "SpCas9_NGG",
+      "baseline": true,
+      "n_total_pams": 59,
+      "n_pegrna_in_3to10nt_window": 0,
+      "n_pe3b_nickers": 5,
+      "best_pegrna_dist_nt": null
+    },
+    {
+      "variant": "SpG_NGN",
+      "baseline": false,
+      "n_total_pams": 156,
+      "n_pegrna_in_3to10nt_window": 2,
+      "n_pe3b_nickers": 12,
+      "best_pegrna_dist_nt": 5.5
+    },
+    {
+      "variant": "enCas9_NGN",
+      "baseline": false,
+      "n_total_pams": 156,
+      "n_pegrna_in_3to10nt_window": 2,
+      "n_pe3b_nickers": 12,
+      "best_pegrna_dist_nt": 5.5
+    },
+    {
+      "variant": "SpRY_NRN",
+      "baseline": false,
+      "n_total_pams": 287,
+      "n_pegrna_in_3to10nt_window": 10,
+      "n_pe3b_nickers": 22,
+      "best_pegrna_dist_nt": 3.5
+    },
+    {
+      "variant": "SpCas9NG_NG",
+      "baseline": false,
+      "n_total_pams": 158,
+      "n_pegrna_in_3to10nt_window": 2,
+      "n_pe3b_nickers": 12,
+      "best_pegrna_dist_nt": 5.5
+    },
+    {
+      "variant": "SaCas9_NNGRRT",
+      "baseline": false,
+      "n_total_pams": 6,
+      "n_pegrna_in_3to10nt_window": 0,
+      "n_pe3b_nickers": 0,
+      "best_pegrna_dist_nt": null
+    }
+  ],
+  "verdict": "BOTH CONSTRAINTS UNBLOCKED by SpRY_NRN: 10 optimal pegRNAs + 22 PE3b nickers"
+}

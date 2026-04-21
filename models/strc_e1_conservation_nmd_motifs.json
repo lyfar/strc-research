@@ -1,0 +1,59 @@
+{
+  "generated": "2026-04-20",
+  "analysis_1_conservation": {
+    "human_region": "aa 1047-1102",
+    "human_sequence": "LSLEELCSLHLLLPGLSPQTLQAIPRRVLVGACSCLAPELSRLSACQTAALLQTFR",
+    "per_species": [
+      {
+        "species": "chimp",
+        "identity_pct": 100.0,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEELCSLHLLLPGLSPQTLQAIPRRVLVGACSCLAPELSRLSACQTAALLQTFR"
+      },
+      {
+        "species": "cow",
+        "identity_pct": 89.3,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEELCSLHPLLPGLSSQTLQAIPRRVLLRACPCLAPELARLSACQTAALLQTFR"
+      },
+      {
+        "species": "rabbit",
+        "identity_pct": 98.2,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEELCSLHSLLPGLSPQTLQAIPRRVLVGACSCLAPELSRLSACQTAALLQTFR"
+      },
+      {
+        "species": "rat",
+        "identity_pct": 92.9,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEELCSLHPLLPGLSPQTLQAIPKRVLVGACSCLGPELSRLSACQIAALLQTFR"
+      },
+      {
+        "species": "dog",
+        "identity_pct": 94.6,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEELCSLHPLLPGLSSQTLQAIPRRVLIGACSCLAPELSRLSACQTAALLQTFR"
+      },
+      {
+        "species": "pig",
+        "identity_pct": 94.6,
+        "gaps_in_e1_region": 0,
+        "region_seq": "LSLEEFCSLHPLLPGLSSQTLQAIPRRVLVGACSCLAPELSRLSACQTAALLQTFR"
+      }
+    ]
+  },
+  "analysis_2_nmd": {
+    "e3": {
+      "skip_nt": 70,
+      "ptc_codon": 773,
+      "triggers_nmd": true
+    },
+    "e4": {
+      "skip_nt": 197,
+      "ptc_codon": 1353,
+      "triggers_nmd": true
+    },
+    "original_stop_nt": 5427,
+    "nmd_50nt_cutoff": 5377
+  }
+}

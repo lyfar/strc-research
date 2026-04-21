@@ -1,0 +1,34 @@
+{
+  "generated": "2026-04-21",
+  "purpose": "Validate Ultra-Mini STRC (aa 1075-1775, 701 aa) as the aggressive C-term-only therapeutic construct. Structural superposition (mini_strc_interface_preservation.json) shows sub-Angstrom RMSD at the TMEM145 binding pocket vs clinical 700-1775 mini. These AF3 multimer jobs are the direct empirical test.",
+  "source_note": "~/Brain/notes/STRC Mini-STRC Truncation Interface Validation.md",
+  "sequence_verification": "Ultra-Mini sequence extracted from two independent sources and verified identical: (1) slice of mini_STRC_700_1775 FASTA positions 376-1076; (2) MMCIFParser extraction from job-h-strc-cterm-only.cif chain A (701 residues). TMEM145 sequence verified against job2-mini-complex.cif chain B (493 residues).",
+  "priority_order": [
+    "strc_ultramini_x_tmem145_full",
+    "strc_ultramini_x_tmem145_gold",
+    "strc_ultramini_homodimer"
+  ],
+  "jobs": {
+    "strc_ultramini_x_tmem145_full": {
+      "file": "strc_ultramini_x_tmem145_full.json",
+      "description": "Ultra-Mini STRC 1075-1775 (701 aa) + full TMEM145 (493 aa)",
+      "success_criteria": "ipTM >= 0.40 (matches job2-mini-complex value of 0.43); STRC interface residues concentrate in aa 1603-1749; does not drift to N-terminal false-positive zone like Job 1 did",
+      "hypothesis_impact": "if passes -> Mini-STRC delivery score 4->5; Ultra-Mini becomes preferred clinical candidate; unlocks OHC-specific Prestin promoter integration",
+      "rejection_meaning": "if ipTM < 0.25 or interface shifts away from 1603-1749 -> LRR domain (aa 700-1075) provides essential structural context; revert to clinical 700-1775 as final construct"
+    },
+    "strc_ultramini_x_tmem145_gold": {
+      "file": "strc_ultramini_x_tmem145_gold.json",
+      "description": "Ultra-Mini STRC 1075-1775 + TMEM145 GOLD domain only (aa 1-165, Derstroff-style pruning)",
+      "success_criteria": "ipTM >= 0.70 (matches Derstroff et al. 2026 pruned result of 0.91 for full STRC + GOLD)",
+      "hypothesis_impact": "confirms Ultra-Mini retains the GOLD-binding interface when partner is pruned to its minimal functional domain; orthogonal confirmation of the full-TMEM145 result"
+    },
+    "strc_ultramini_homodimer": {
+      "file": "strc_ultramini_homodimer.json",
+      "description": "Ultra-Mini STRC 1075-1775 x 2 (self-assembly test, PCDH15-motivated)",
+      "success_criteria": "inter-chain contact residues at 5 A cutoff; if STRC self-assembles like PCDH15 tip link, oligomerization domain should be in 1075-1775 (same range TMEM145 uses)",
+      "hypothesis_impact": "negative result (no contacts, ipTM < 0.20 like prior homodimer jobs) -> STRC likely does not self-assemble or requires non-ARM domain (removed by Ultra-Mini); positive result -> Ultra-Mini retains dimerization capacity, safety margin for in vivo assembly"
+    }
+  },
+  "how_to_submit": "AlphaFold Server (alphafoldserver.com): upload each JSON via 'Import from JSON' or paste sequences manually from af3_jobs_sequences.fasta. Daily limit: 20 jobs. Model seed 42 is used across all submissions for reproducibility vs prior jobs.",
+  "previous_ultra_mini_solo_cif": "~/Sites/site-strc-egor-lol/public/models/job-h-strc-cterm-only.cif (pTM 0.87, solo fold, March 2026)"
+}

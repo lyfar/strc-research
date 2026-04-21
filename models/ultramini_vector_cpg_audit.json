@@ -1,0 +1,84 @@
+{
+  "vector_architecture": "5'ITR - B8 - Kozak - IgK SP - Ultra-Mini CDS - stop - WPRE3-compact - bGH polyA - 3'ITR",
+  "aav_capacity_bp": 4700,
+  "total_vector_bp": 3446,
+  "total_vector_cpg": 48,
+  "cpg_per_kb": 13.93,
+  "fold_vs_human_genome": 1.44,
+  "human_genome_cpg_per_kb_reference": 9.7,
+  "per_element": [
+    {
+      "element": "5_ITR_AAV2",
+      "size_bp": 130,
+      "cpg_count": 16,
+      "cpg_per_kb": 123.08,
+      "source": "AAV2 consensus ITR (Samulski 1987); cis replication element",
+      "seq_provided": true
+    },
+    {
+      "element": "B8_enhancer",
+      "size_bp": 587,
+      "cpg_count": 5,
+      "cpg_per_kb": 8.52,
+      "source": "ARBITER synthetic (exact seq proprietary); estimated CpG per panel characterization",
+      "seq_provided": false
+    },
+    {
+      "element": "Kozak_IgK_SP",
+      "size_bp": 63,
+      "cpg_count": 3,
+      "cpg_per_kb": 47.62,
+      "source": "GCCACCATG Kozak + IgK V-kappa leader signal peptide, max-freq codons (not yet CpG-depleted)",
+      "seq_provided": true
+    },
+    {
+      "element": "Ultra_Mini_CDS",
+      "size_bp": 2106,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "source": "CpG-depleted Ultra-Mini (aa 1075-1775) CDS from cpg_depletion_ultra_mini_strc_max.fasta",
+      "seq_provided": true
+    },
+    {
+      "element": "stop_codon",
+      "size_bp": 3,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "source": "TAA stop (no CG)",
+      "seq_provided": true
+    },
+    {
+      "element": "WPRE3_compact",
+      "size_bp": 219,
+      "cpg_count": 6,
+      "cpg_per_kb": 27.4,
+      "source": "Choi 2014 Cell 157 truncated WPRE (Addgene #64237 core region)",
+      "seq_provided": true
+    },
+    {
+      "element": "bGH_polyA",
+      "size_bp": 208,
+      "cpg_count": 2,
+      "cpg_per_kb": 9.62,
+      "source": "pAAV-MCS canonical bGH polyA signal",
+      "seq_provided": true
+    },
+    {
+      "element": "3_ITR_AAV2",
+      "size_bp": 130,
+      "cpg_count": 16,
+      "cpg_per_kb": 123.08,
+      "source": "AAV2 consensus 3' ITR (reverse complement of 5' ITR)",
+      "seq_provided": true
+    }
+  ],
+  "depletion_notes": [
+    "5_ITR_AAV2: FIXED \u2014 AAV ITR sequences are structurally constrained (cis replication motifs); cannot deplete without breaking packaging",
+    "B8_enhancer: estimated; audit once exact sequence in hand",
+    "Kozak_IgK_SP: depletable \u2014 60 bp CDS, 3.5% CAI cost acceptable",
+    "WPRE3_compact: partially depletable \u2014 Choi 2014 core has CpG-containing miRNA seed; some positions structurally constrained for RNA folding",
+    "bGH_polyA: partially depletable \u2014 polyA signal sequence motifs (AATAAA and downstream GT/T-rich) must be preserved",
+    "3_ITR_AAV2: FIXED \u2014 AAV ITR sequences are structurally constrained (cis replication motifs); cannot deplete without breaking packaging"
+  ],
+  "disclaimer": "Sequences used for CpG counting are canonical published proxies. B8 enhancer is proprietary (estimated 5 CpG). ITR sequences are AAV2 consensus. Real vector assembly will have minor variations (+/- a few CpGs) depending on exact cloning junctions and proprietary element versions."
+}

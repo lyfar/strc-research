@@ -1,0 +1,836 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "transcript": "ENST00000450892",
+    "chromosome": "15",
+    "strand": -1,
+    "total_exons": 29,
+    "flank_nt": 80,
+    "aso_length_set": [
+      18,
+      20,
+      22
+    ],
+    "rbm24_motifs": [
+      "TGTGTG",
+      "GTGTGT",
+      "GCTCTTC"
+    ]
+  },
+  "events": [
+    {
+      "label": "E1",
+      "priority": "high",
+      "in_frame": true,
+      "human_aa_range": [
+        1047,
+        1102
+      ],
+      "exon_rank": 13,
+      "ensembl_exon_id": "ENSE00003647299",
+      "genomic_range": [
+        43611148,
+        43611315
+      ],
+      "exon_length_nt": 168,
+      "acceptor_23mer": "TTGTCTCTCTTGCTCTTTAGCTA",
+      "acceptor_score": 6.9,
+      "donor_9mer": "CGGGTATGA",
+      "donor_score": 8.7,
+      "rbm24_hits": [],
+      "rbm24_exonic_count": 0,
+      "candidates": [
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            63,
+            81
+          ],
+          "target_sense": "TCTCTCTTGCTCTTTAGC",
+          "aso_5to3": "GCTAAAGAGCAAGAGAGA",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 61.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            59,
+            77
+          ],
+          "target_sense": "CTTGTCTCTCTTGCTCTT",
+          "aso_5to3": "AAGAGCAAGAGAGACAAG",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 62.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            80
+          ],
+          "target_sense": "TTGTCTCTCTTGCTCTTTAG",
+          "aso_5to3": "CTAAAGAGCAAGAGAGACAA",
+          "length": 20,
+          "gc_pct": 40.0,
+          "tm_c": 63.1,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_donor",
+          "pre_mRNA_target_0idx": [
+            247,
+            265
+          ],
+          "target_sense": "GGTATGAGAGTGGCAAGG",
+          "aso_5to3": "CCTTGCCACTCTCATACC",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 65.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            73
+          ],
+          "target_sense": "GCCTCTTGTCTCTCTTGC",
+          "aso_5to3": "GCAAGAGAGACAAGAGGC",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 66.1,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_donor",
+          "pre_mRNA_target_0idx": [
+            243,
+            263
+          ],
+          "target_sense": "TTCGGGTATGAGAGTGGCAA",
+          "aso_5to3": "TTGCCACTCTCATACCCGAA",
+          "length": 20,
+          "gc_pct": 50.0,
+          "tm_c": 69.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_donor",
+          "pre_mRNA_target_0idx": [
+            243,
+            261
+          ],
+          "target_sense": "TTCGGGTATGAGAGTGGC",
+          "aso_5to3": "GCCACTCTCATACCCGAA",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 67.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            77
+          ],
+          "target_sense": "GCCTCTTGTCTCTCTTGCTCTT",
+          "aso_5to3": "AAGAGCAAGAGAGACAAGAGGC",
+          "length": 22,
+          "gc_pct": 50.0,
+          "tm_c": 70.9,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_donor",
+          "pre_mRNA_target_0idx": [
+            248,
+            268
+          ],
+          "target_sense": "GTATGAGAGTGGCAAGGAGG",
+          "aso_5to3": "CCTCCTTGCCACTCTCATAC",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 68.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            75
+          ],
+          "target_sense": "GCCTCTTGTCTCTCTTGCTC",
+          "aso_5to3": "GAGCAAGAGAGACAAGAGGC",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 69.1,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_donor",
+          "pre_mRNA_target_0idx": [
+            243,
+            265
+          ],
+          "target_sense": "TTCGGGTATGAGAGTGGCAAGG",
+          "aso_5to3": "CCTTGCCACTCTCATACCCGAA",
+          "length": 22,
+          "gc_pct": 54.5,
+          "tm_c": 73.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E1_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            82
+          ],
+          "target_sense": "TTGTCTCTCTTGCTCTTTAGCT",
+          "aso_5to3": "AGCTAAAGAGCAAGAGAGACAA",
+          "length": 22,
+          "gc_pct": 40.9,
+          "tm_c": 67.8,
+          "hairpin_longest": 4
+        }
+      ]
+    },
+    {
+      "label": "E2",
+      "priority": "medium",
+      "in_frame": true,
+      "human_aa_range": [
+        1311,
+        1376
+      ],
+      "exon_rank": 20,
+      "ensembl_exon_id": "ENSE00003667797",
+      "genomic_range": [
+        43604650,
+        43604846
+      ],
+      "exon_length_nt": 197,
+      "acceptor_23mer": "GTTCTGATGCTCTTCTCCAGGCT",
+      "acceptor_score": 6.7,
+      "donor_9mer": "TGGGTATGG",
+      "donor_score": 7.8,
+      "rbm24_hits": [
+        {
+          "motif": "GCTCTTC",
+          "start": 68,
+          "end": 75,
+          "context": "TGATGCTCTTCTCCA",
+          "loc": "intron_up_-12"
+        }
+      ],
+      "rbm24_exonic_count": 0,
+      "candidates": [
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            59,
+            77
+          ],
+          "target_sense": "AGTTCTGATGCTCTTCTC",
+          "aso_5to3": "GAGAAGAGCATCAGAACT",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 61.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            73
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCT",
+          "aso_5to3": "AGAGCATCAGAACTTGGA",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 63.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            75
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCTTC",
+          "aso_5to3": "GAAGAGCATCAGAACTTGGA",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 66.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            80
+          ],
+          "target_sense": "GTTCTGATGCTCTTCTCCAG",
+          "aso_5to3": "CTGGAGAAGAGCATCAGAAC",
+          "length": 20,
+          "gc_pct": 50.0,
+          "tm_c": 66.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            63,
+            81
+          ],
+          "target_sense": "CTGATGCTCTTCTCCAGG",
+          "aso_5to3": "CCTGGAGAAGAGCATCAG",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 65.2,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            290
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCG",
+          "aso_5to3": "CGAAGGTCCATACCCAAG",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 65.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            77
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCTTCTC",
+          "aso_5to3": "GAGAAGAGCATCAGAACTTGGA",
+          "length": 22,
+          "gc_pct": 45.5,
+          "tm_c": 68.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            82
+          ],
+          "target_sense": "GTTCTGATGCTCTTCTCCAGGC",
+          "aso_5to3": "GCCTGGAGAAGAGCATCAGAAC",
+          "length": 22,
+          "gc_pct": 54.5,
+          "tm_c": 72.1,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            67,
+            85
+          ],
+          "target_sense": "TGCTCTTCTCCAGGCTCC",
+          "aso_5to3": "GGAGCCTGGAGAAGAGCA",
+          "length": 18,
+          "gc_pct": 61.1,
+          "tm_c": 69.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_donor",
+          "pre_mRNA_target_0idx": [
+            276,
+            294
+          ],
+          "target_sense": "GGTATGGACCTTCGAGAA",
+          "aso_5to3": "TTCTCGAAGGTCCATACC",
+          "length": 18,
+          "gc_pct": 50.0,
+          "tm_c": 63.8,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E2_acceptor",
+          "pre_mRNA_target_0idx": [
+            65,
+            85
+          ],
+          "target_sense": "GATGCTCTTCTCCAGGCTCC",
+          "aso_5to3": "GGAGCCTGGAGAAGAGCATC",
+          "length": 20,
+          "gc_pct": 60.0,
+          "tm_c": 71.2,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E2_donor",
+          "pre_mRNA_target_0idx": [
+            277,
+            297
+          ],
+          "target_sense": "GTATGGACCTTCGAGAACTT",
+          "aso_5to3": "AAGTTCTCGAAGGTCCATAC",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 65.4,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E2_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            294
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCGAGAA",
+          "aso_5to3": "TTCTCGAAGGTCCATACCCAAG",
+          "length": 22,
+          "gc_pct": 50.0,
+          "tm_c": 70.5,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E2_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            292
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCGAG",
+          "aso_5to3": "CTCGAAGGTCCATACCCAAG",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 68.6,
+          "hairpin_longest": 4
+        }
+      ]
+    },
+    {
+      "label": "E3",
+      "priority": "medium",
+      "in_frame": false,
+      "human_aa_range": [
+        712,
+        732
+      ],
+      "exon_rank": 5,
+      "ensembl_exon_id": "ENSE00003551147",
+      "genomic_range": [
+        43614414,
+        43614476
+      ],
+      "exon_length_nt": 63,
+      "acceptor_23mer": "ATTGTCTTTCTTCCCACCAGCCT",
+      "acceptor_score": 6.6,
+      "donor_9mer": "CAGGTAACA",
+      "donor_score": 9.6,
+      "rbm24_hits": [],
+      "rbm24_exonic_count": 0,
+      "candidates": [
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            59,
+            77
+          ],
+          "target_sense": "TATTGTCTTTCTTCCCAC",
+          "aso_5to3": "GTGGGAAGAAAGACAATA",
+          "length": 18,
+          "gc_pct": 38.9,
+          "tm_c": 59.5,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            80
+          ],
+          "target_sense": "ATTGTCTTTCTTCCCACCAG",
+          "aso_5to3": "CTGGTGGGAAGAAAGACAAT",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 66.2,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            63,
+            81
+          ],
+          "target_sense": "GTCTTTCTTCCCACCAGC",
+          "aso_5to3": "GCTGGTGGGAAGAAAGAC",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 66.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            67,
+            85
+          ],
+          "target_sense": "TTCTTCCCACCAGCCTGT",
+          "aso_5to3": "ACAGGCTGGTGGGAAGAA",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 68.9,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            82
+          ],
+          "target_sense": "ATTGTCTTTCTTCCCACCAGCC",
+          "aso_5to3": "GGCTGGTGGGAAGAAAGACAAT",
+          "length": 22,
+          "gc_pct": 50.0,
+          "tm_c": 71.8,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_donor",
+          "pre_mRNA_target_0idx": [
+            143,
+            163
+          ],
+          "target_sense": "GTAACAGGTGGAGGGCACAT",
+          "aso_5to3": "ATGTGCCCTCCACCTGTTAC",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 70.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            65,
+            85
+          ],
+          "target_sense": "CTTTCTTCCCACCAGCCTGT",
+          "aso_5to3": "ACAGGCTGGTGGGAAGAAAG",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 71.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            73
+          ],
+          "target_sense": "GGCATATTGTCTTTCTTC",
+          "aso_5to3": "GAAGAAAGACAATATGCC",
+          "length": 18,
+          "gc_pct": 38.9,
+          "tm_c": 59.0,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E3_donor",
+          "pre_mRNA_target_0idx": [
+            142,
+            160
+          ],
+          "target_sense": "GGTAACAGGTGGAGGGCA",
+          "aso_5to3": "TGCCCTCCACCTGTTACC",
+          "length": 18,
+          "gc_pct": 61.1,
+          "tm_c": 69.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            75
+          ],
+          "target_sense": "GGCATATTGTCTTTCTTCCC",
+          "aso_5to3": "GGGAAGAAAGACAATATGCC",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 65.1,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E3_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            77
+          ],
+          "target_sense": "GGCATATTGTCTTTCTTCCCAC",
+          "aso_5to3": "GTGGGAAGAAAGACAATATGCC",
+          "length": 22,
+          "gc_pct": 45.5,
+          "tm_c": 68.5,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E3_donor",
+          "pre_mRNA_target_0idx": [
+            138,
+            156
+          ],
+          "target_sense": "TGCAGGTAACAGGTGGAG",
+          "aso_5to3": "CTCCACCTGTTACCTGCA",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 67.2,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E3_donor",
+          "pre_mRNA_target_0idx": [
+            138,
+            158
+          ],
+          "target_sense": "TGCAGGTAACAGGTGGAGGG",
+          "aso_5to3": "CCCTCCACCTGTTACCTGCA",
+          "length": 20,
+          "gc_pct": 60.0,
+          "tm_c": 72.6,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E3_donor",
+          "pre_mRNA_target_0idx": [
+            138,
+            160
+          ],
+          "target_sense": "TGCAGGTAACAGGTGGAGGGCA",
+          "aso_5to3": "TGCCCTCCACCTGTTACCTGCA",
+          "length": 22,
+          "gc_pct": 59.1,
+          "tm_c": 76.7,
+          "hairpin_longest": 4
+        }
+      ]
+    },
+    {
+      "label": "E4",
+      "priority": "low",
+      "in_frame": false,
+      "human_aa_range": [
+        1311,
+        1376
+      ],
+      "exon_rank": 20,
+      "ensembl_exon_id": "ENSE00003667797",
+      "genomic_range": [
+        43604650,
+        43604846
+      ],
+      "exon_length_nt": 197,
+      "acceptor_23mer": "GTTCTGATGCTCTTCTCCAGGCT",
+      "acceptor_score": 6.7,
+      "donor_9mer": "TGGGTATGG",
+      "donor_score": 7.8,
+      "rbm24_hits": [
+        {
+          "motif": "GCTCTTC",
+          "start": 68,
+          "end": 75,
+          "context": "TGATGCTCTTCTCCA",
+          "loc": "intron_up_-12"
+        }
+      ],
+      "rbm24_exonic_count": 0,
+      "candidates": [
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            59,
+            77
+          ],
+          "target_sense": "AGTTCTGATGCTCTTCTC",
+          "aso_5to3": "GAGAAGAGCATCAGAACT",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 61.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            73
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCT",
+          "aso_5to3": "AGAGCATCAGAACTTGGA",
+          "length": 18,
+          "gc_pct": 44.4,
+          "tm_c": 63.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            75
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCTTC",
+          "aso_5to3": "GAAGAGCATCAGAACTTGGA",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 66.0,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            80
+          ],
+          "target_sense": "GTTCTGATGCTCTTCTCCAG",
+          "aso_5to3": "CTGGAGAAGAGCATCAGAAC",
+          "length": 20,
+          "gc_pct": 50.0,
+          "tm_c": 66.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            63,
+            81
+          ],
+          "target_sense": "CTGATGCTCTTCTCCAGG",
+          "aso_5to3": "CCTGGAGAAGAGCATCAG",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 65.2,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            290
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCG",
+          "aso_5to3": "CGAAGGTCCATACCCAAG",
+          "length": 18,
+          "gc_pct": 55.6,
+          "tm_c": 65.6,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            55,
+            77
+          ],
+          "target_sense": "TCCAAGTTCTGATGCTCTTCTC",
+          "aso_5to3": "GAGAAGAGCATCAGAACTTGGA",
+          "length": 22,
+          "gc_pct": 45.5,
+          "tm_c": 68.7,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            60,
+            82
+          ],
+          "target_sense": "GTTCTGATGCTCTTCTCCAGGC",
+          "aso_5to3": "GCCTGGAGAAGAGCATCAGAAC",
+          "length": 22,
+          "gc_pct": 54.5,
+          "tm_c": 72.1,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            67,
+            85
+          ],
+          "target_sense": "TGCTCTTCTCCAGGCTCC",
+          "aso_5to3": "GGAGCCTGGAGAAGAGCA",
+          "length": 18,
+          "gc_pct": 61.1,
+          "tm_c": 69.4,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_donor",
+          "pre_mRNA_target_0idx": [
+            276,
+            294
+          ],
+          "target_sense": "GGTATGGACCTTCGAGAA",
+          "aso_5to3": "TTCTCGAAGGTCCATACC",
+          "length": 18,
+          "gc_pct": 50.0,
+          "tm_c": 63.8,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E4_acceptor",
+          "pre_mRNA_target_0idx": [
+            65,
+            85
+          ],
+          "target_sense": "GATGCTCTTCTCCAGGCTCC",
+          "aso_5to3": "GGAGCCTGGAGAAGAGCATC",
+          "length": 20,
+          "gc_pct": 60.0,
+          "tm_c": 71.2,
+          "hairpin_longest": 0
+        },
+        {
+          "window_tag": "E4_donor",
+          "pre_mRNA_target_0idx": [
+            277,
+            297
+          ],
+          "target_sense": "GTATGGACCTTCGAGAACTT",
+          "aso_5to3": "AAGTTCTCGAAGGTCCATAC",
+          "length": 20,
+          "gc_pct": 45.0,
+          "tm_c": 65.4,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E4_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            294
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCGAGAA",
+          "aso_5to3": "TTCTCGAAGGTCCATACCCAAG",
+          "length": 22,
+          "gc_pct": 50.0,
+          "tm_c": 70.5,
+          "hairpin_longest": 4
+        },
+        {
+          "window_tag": "E4_donor",
+          "pre_mRNA_target_0idx": [
+            272,
+            292
+          ],
+          "target_sense": "CTTGGGTATGGACCTTCGAG",
+          "aso_5to3": "CTCGAAGGTCCATACCCAAG",
+          "length": 20,
+          "gc_pct": 55.0,
+          "tm_c": 68.6,
+          "hairpin_longest": 4
+        }
+      ]
+    }
+  ]
+}

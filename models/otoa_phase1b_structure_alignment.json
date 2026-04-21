@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "date": "2026-04-20",
+    "question": "Do STRC ARM repeats structurally superimpose on OTOA C-terminal?",
+    "strc_structure": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job4-wildtype.cif",
+    "otoa_structure": "/tmp/af_otoa.pdb",
+    "strc_length": 1775,
+    "otoa_length": 1153
+  },
+  "arm_region": {
+    "strc_range_1idx": [
+      1603,
+      1770
+    ],
+    "total_matched_pairs": 148,
+    "n_aligned": 148,
+    "rmsd": 13.782450505454916,
+    "rotation": [
+      [
+        -0.12695632422847689,
+        -0.68355241032773,
+        0.7187754823820469
+      ],
+      [
+        -0.690111752977931,
+        0.5813725159782511,
+        0.4309892876474375
+      ],
+      [
+        -0.7124800770127688,
+        -0.44131859240266436,
+        -0.54553646977962
+      ]
+    ],
+    "translation": [
+      0.16954596895430285,
+      -26.59685326909588,
+      -19.293110428157632
+    ],
+    "seq_identity_pct": 33.78,
+    "sample_pairs_first_5": [
+      [
+        1605,
+        977,
+        "E",
+        "E"
+      ],
+      [
+        1606,
+        978,
+        "L",
+        "I"
+      ],
+      [
+        1607,
+        979,
+        "Q",
+        "P"
+      ],
+      [
+        1608,
+        980,
+        "H",
+        "L"
+      ],
+      [
+        1609,
+        981,
+        "I",
+        "I"
+      ]
+    ]
+  },
+  "mini_strc_region": {
+    "strc_range_1idx": [
+      700,
+      1775
+    ],
+    "total_matched_pairs": 362,
+    "n_aligned": 362,
+    "rmsd": 9.854117251029233,
+    "rotation": [
+      [
+        -0.11417534935650112,
+        -0.773419190485242,
+        0.6235276620876367
+      ],
+      [
+        -0.7737007369414921,
+        0.4629255514985965,
+        0.4325356672297812
+      ],
+      [
+        -0.623178272451401,
+        -0.43303890074550205,
+        -0.6512496842115276
+      ]
+    ],
+    "translation": [
+      0.9537652420074415,
+      -29.267342591751085,
+      -21.539747211167835
+    ],
+    "seq_identity_pct": 29.83,
+    "sample_pairs_first_5": [
+      [
+        1376,
+        750,
+        "G",
+        "G"
+      ],
+      [
+        1377,
+        751,
+        "K",
+        "L"
+      ],
+      [
+        1378,
+        752,
+        "P",
+        "P"
+      ],
+      [
+        1379,
+        753,
+        "E",
+        "Q"
+      ],
+      [
+        1380,
+        754,
+        "L",
+        "H"
+      ]
+    ]
+  },
+  "global_region": {
+    "total_matched_pairs": 1126,
+    "n_aligned": 1126,
+    "rmsd": 35.81771711085896,
+    "rotation": [
+      [
+        0.6734948274611307,
+        -0.08752105339280618,
+        0.7339923586769248
+      ],
+      [
+        -0.7138557574600155,
+        0.18073417979479053,
+        0.6765686319916789
+      ],
+      [
+        -0.1918715062855595,
+        -0.9796301452420285,
+        0.05924612737380156
+      ]
+    ],
+    "translation": [
+      1.5294143455745712,
+      -8.129561970062245,
+      -10.389960445987752
+    ],
+    "seq_identity_pct": 28.33,
+    "sample_pairs_first_5": [
+      [
+        1,
+        1,
+        "M",
+        "M"
+      ],
+      [
+        4,
+        2,
+        "S",
+        "S"
+      ],
+      [
+        5,
+        3,
+        "L",
+        "Q"
+      ],
+      [
+        6,
+        4,
+        "W",
+        "E"
+      ],
+      [
+        7,
+        5,
+        "P",
+        "P"
+      ]
+    ]
+  },
+  "anchor_residues": {
+    "K1141": {
+      "strc_pos": 1141,
+      "strc_letter": "K",
+      "otoa_pos": null,
+      "otoa_letter": null,
+      "conservation": "gap"
+    },
+    "G1645": {
+      "strc_pos": 1645,
+      "strc_letter": "G",
+      "otoa_pos": null,
+      "otoa_letter": null,
+      "conservation": "gap"
+    },
+    "F1646": {
+      "strc_pos": 1646,
+      "strc_letter": "F",
+      "otoa_pos": 1014,
+      "otoa_letter": "F",
+      "conservation": "identical"
+    },
+    "E1659": {
+      "strc_pos": 1659,
+      "strc_letter": "E",
+      "otoa_pos": 1027,
+      "otoa_letter": "E",
+      "conservation": "identical"
+    }
+  },
+  "verdict": "PARALOG_SEQUENCE_ONLY_NO_FOLD_SHARE"
+}

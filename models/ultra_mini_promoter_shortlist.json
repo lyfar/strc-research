@@ -1,0 +1,201 @@
+{
+  "aav_capacity_bp": 4700,
+  "itr_overhead_bp": 300,
+  "kozak_sp_polya_overhead_bp": 450,
+  "ultra_mini_cds_bp": 2106,
+  "mini_700_1775_cds_bp": 3231,
+  "ultra_mini_regulatory_budget_bp": 1844,
+  "mini_700_1775_regulatory_budget_bp": 719,
+  "upgrade_gain_bp": 1125,
+  "modules": {
+    "B8_enhancer": {
+      "size": 587,
+      "source": "ARBITER synthetic panel; [[STRC B8 Enhancer Selection]]"
+    },
+    "WPRE3_compact": {
+      "size": 247,
+      "source": "truncated WPRE (Choi 2014); mRNA stability + translation boost"
+    },
+    "WPRE_full": {
+      "size": 593,
+      "source": "full WPRE; larger but higher expression boost"
+    },
+    "Myo15_956": {
+      "size": 956,
+      "source": "Zhao 2024 Research; HC-exclusive in AAV-PHP.eB"
+    },
+    "Myo15_1157": {
+      "size": 1157,
+      "source": "Zhao 2024 Research; HC-exclusive, stronger than 956"
+    },
+    "Myo15_1611_native": {
+      "size": 1611,
+      "source": "Liu 2024 Mol Ther Nucleic Acids; OTOF rescue in DFNB9 mice"
+    },
+    "Prestin_native_est": {
+      "size": 1800,
+      "source": "estimated from Slc26a5 regulatory region; used in some OHC constructs"
+    },
+    "Myo15_core": {
+      "size": 300,
+      "source": "Myo15 minimal proximal promoter estimate (TATA + BRE + 5'UTR)"
+    },
+    "bGH_polyA": {
+      "size": 225,
+      "source": "already counted in KOZAK_SP_POLYA"
+    },
+    "SV40_polyA": {
+      "size": 135,
+      "source": "alternative polyA; shorter than bGH"
+    },
+    "IgK_SP": {
+      "size": 63,
+      "source": "already counted in KOZAK_SP_POLYA"
+    }
+  },
+  "candidates": [
+    {
+      "name": "01_B8_alone_baseline",
+      "description": "Current design: B8 enhancer + Ultra-Mini CDS + IgK SP + polyA. No WPRE.",
+      "modules": [
+        "B8_enhancer"
+      ],
+      "total_regulatory_bp": 587,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 1257,
+      "fits_mini_700_1775": true,
+      "spare_bp_mini_700_1775": 132,
+      "size_fit_score": 5,
+      "size_note": "fits, 1257 bp spare",
+      "ohc_specificity_score": 5,
+      "expression_strength_score": 3,
+      "aav_track_record_score": 4,
+      "tier": 3
+    },
+    {
+      "name": "02_B8_plus_WPRE3",
+      "description": "B8 enhancer + WPRE3-compact for posttranscriptional boost. Expression upgrade at modest size cost.",
+      "modules": [
+        "B8_enhancer",
+        "WPRE3_compact"
+      ],
+      "total_regulatory_bp": 834,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 1010,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -115,
+      "size_fit_score": 5,
+      "size_note": "fits, 1010 bp spare",
+      "ohc_specificity_score": 5,
+      "expression_strength_score": 4,
+      "aav_track_record_score": 4,
+      "tier": 4
+    },
+    {
+      "name": "03_B8_plus_WPRE_full",
+      "description": "B8 enhancer + full WPRE. Max expression boost, larger footprint.",
+      "modules": [
+        "B8_enhancer",
+        "WPRE_full"
+      ],
+      "total_regulatory_bp": 1180,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 664,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -461,
+      "size_fit_score": 5,
+      "size_note": "fits, 664 bp spare",
+      "ohc_specificity_score": 5,
+      "expression_strength_score": 5,
+      "aav_track_record_score": 4,
+      "tier": 4
+    },
+    {
+      "name": "04_Myo15_956_alone",
+      "description": "Zhao 2024 truncated Myo15 promoter, HC-exclusive. Replaces B8 entirely with a hair-cell-restricted natural promoter.",
+      "modules": [
+        "Myo15_956"
+      ],
+      "total_regulatory_bp": 956,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 888,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -237,
+      "size_fit_score": 5,
+      "size_note": "fits, 888 bp spare",
+      "ohc_specificity_score": 3,
+      "expression_strength_score": 4,
+      "aav_track_record_score": 5,
+      "tier": 3
+    },
+    {
+      "name": "05_Myo15_1611_full",
+      "description": "Liu 2024 full native Myo15 promoter, clinically published for OTOF rescue.",
+      "modules": [
+        "Myo15_1611_native"
+      ],
+      "total_regulatory_bp": 1611,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 233,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -892,
+      "size_fit_score": 3,
+      "size_note": "fits, 233 bp spare",
+      "ohc_specificity_score": 3,
+      "expression_strength_score": 5,
+      "aav_track_record_score": 5,
+      "tier": 3
+    },
+    {
+      "name": "06_B8_plus_Myo15_core_plus_WPRE3",
+      "description": "Belt-and-suspenders: B8 (OHC-restricted enhancer) + Myo15 minimal core (HC-restricted basal promoter) + WPRE3. Dual specificity layer + expression boost.",
+      "modules": [
+        "B8_enhancer",
+        "Myo15_core",
+        "WPRE3_compact"
+      ],
+      "total_regulatory_bp": 1134,
+      "fits_ultra_mini": true,
+      "spare_bp_ultra_mini": 710,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -415,
+      "size_fit_score": 5,
+      "size_note": "fits, 710 bp spare",
+      "ohc_specificity_score": 5,
+      "expression_strength_score": 5,
+      "aav_track_record_score": 3,
+      "tier": 3
+    },
+    {
+      "name": "07_Prestin_native_plus_WPRE3",
+      "description": "Native Slc26a5 (prestin) regulatory region + WPRE3. Uses endogenous OHC-specific promoter. Matches STRC's natural expression pattern (OHC-exclusive).",
+      "modules": [
+        "Prestin_native_est",
+        "WPRE3_compact"
+      ],
+      "total_regulatory_bp": 2047,
+      "fits_ultra_mini": false,
+      "spare_bp_ultra_mini": -203,
+      "fits_mini_700_1775": false,
+      "spare_bp_mini_700_1775": -1328,
+      "size_fit_score": 1,
+      "size_note": "does not fit",
+      "ohc_specificity_score": 5,
+      "expression_strength_score": 4,
+      "aav_track_record_score": 3,
+      "tier": 1
+    }
+  ],
+  "top_3_for_ultra_mini": [
+    "02_B8_plus_WPRE3",
+    "03_B8_plus_WPRE_full",
+    "01_B8_alone_baseline"
+  ],
+  "exclusively_ultra_mini_enabled": [
+    "02_B8_plus_WPRE3",
+    "03_B8_plus_WPRE_full",
+    "04_Myo15_956_alone",
+    "05_Myo15_1611_full",
+    "06_B8_plus_Myo15_core_plus_WPRE3"
+  ]
+}

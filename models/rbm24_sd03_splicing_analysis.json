@@ -1,0 +1,165 @@
+{
+  "source": "Sun et al. 2026 PNAS SD03 \u2014 rMATS SE (skipped exon) analysis",
+  "comparison": "Rbm24-exon4-KO vs control cochlea",
+  "total_sig_events": 562,
+  "unique_genes": 469,
+  "down_events": 254,
+  "up_events": 261,
+  "strc_events": [
+    {
+      "gene": "Strc",
+      "chr": "2",
+      "exon_start": "121203399",
+      "exon_end": "121203567",
+      "strand": "-",
+      "incl_ctrl": "1.0,0.835,1.0",
+      "incl_exp": "0.54,0.32,0.349",
+      "incl_diff": "0.54200000000000004",
+      "direction": "Down",
+      "pval": "1.06602824346E-8",
+      "fdr": "2.07529048296E-5"
+    },
+    {
+      "gene": "Strc",
+      "chr": "2",
+      "exon_start": "121198816",
+      "exon_end": "121198894",
+      "strand": "-",
+      "incl_ctrl": "0.724,0.84,0.786",
+      "incl_exp": "0.283,0.233,0.522",
+      "incl_diff": "0.437",
+      "direction": "Down",
+      "pval": "1.4629577498499999E-5",
+      "fdr": "3.6987181812E-3"
+    },
+    {
+      "gene": "Strc",
+      "chr": "2",
+      "exon_start": "121206192",
+      "exon_end": "121206262",
+      "strand": "-",
+      "incl_ctrl": "1.0,1.0,1.0",
+      "incl_exp": "0.576,0.731,0.531",
+      "incl_diff": "0.38700000000000001",
+      "direction": "Down",
+      "pval": "3.2640035681199998E-5",
+      "fdr": "6.2602945283100004E-3"
+    },
+    {
+      "gene": "Strc",
+      "chr": "2",
+      "exon_start": "121198816",
+      "exon_end": "121199013",
+      "strand": "-",
+      "incl_ctrl": "0.885,0.938,0.852",
+      "incl_exp": "0.665,0.41,0.812",
+      "incl_diff": "0.26300000000000001",
+      "direction": "Down",
+      "pval": "4.1003343590700003E-4",
+      "fdr": "3.1488465142099999E-2"
+    }
+  ],
+  "top20_by_magnitude": [
+    {
+      "gene": "Trappc4",
+      "incl_diff": -1.0,
+      "direction": "Up"
+    },
+    {
+      "gene": "Cipc",
+      "incl_diff": -0.897,
+      "direction": "Up"
+    },
+    {
+      "gene": "Cpne2",
+      "incl_diff": 0.894,
+      "direction": "Down"
+    },
+    {
+      "gene": "Dph5",
+      "incl_diff": -0.884,
+      "direction": "Up"
+    },
+    {
+      "gene": "Trdn",
+      "incl_diff": 0.872,
+      "direction": "Down"
+    },
+    {
+      "gene": "Slc25a19",
+      "incl_diff": 0.861,
+      "direction": "Down"
+    },
+    {
+      "gene": "Plekha5",
+      "incl_diff": 0.857,
+      "direction": "Down"
+    },
+    {
+      "gene": "Nktr",
+      "incl_diff": 0.832,
+      "direction": "Down"
+    },
+    {
+      "gene": "Neurl4",
+      "incl_diff": 0.792,
+      "direction": "Down"
+    },
+    {
+      "gene": "Gm10644",
+      "incl_diff": 0.771,
+      "direction": "Down"
+    },
+    {
+      "gene": "Brpf3",
+      "incl_diff": 0.766,
+      "direction": "Down"
+    },
+    {
+      "gene": "Dnajc6",
+      "incl_diff": 0.747,
+      "direction": "Down"
+    },
+    {
+      "gene": "Zfp286",
+      "incl_diff": -0.732,
+      "direction": "Up"
+    },
+    {
+      "gene": "Zfp280c",
+      "incl_diff": 0.73,
+      "direction": "Down"
+    },
+    {
+      "gene": "Ccdc138",
+      "incl_diff": 0.722,
+      "direction": "Down"
+    },
+    {
+      "gene": "Ptges2",
+      "incl_diff": 0.721,
+      "direction": "Down"
+    },
+    {
+      "gene": "Abhd11",
+      "incl_diff": 0.721,
+      "direction": "Down"
+    },
+    {
+      "gene": "Gng8",
+      "incl_diff": -0.714,
+      "direction": "Up"
+    },
+    {
+      "gene": "Zfp280c",
+      "incl_diff": 0.71,
+      "direction": "Down"
+    },
+    {
+      "gene": "Ildr2",
+      "incl_diff": 0.704,
+      "direction": "Down"
+    }
+  ],
+  "strc_summary": "4 significant exon-skipping events in STRC, all Down (exon inclusion drops 26-54% when RBM24 exon4 is absent). Direct experimental confirmation of RBM24 -> STRC splicing dependency."
+}

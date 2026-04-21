@@ -1,0 +1,95 @@
+{
+  "source": "STRC exon-to-protein position mapping",
+  "inputs": {
+    "mouse_transcript": "ENSMUST00000038389",
+    "human_transcript": "ENST00000450892",
+    "mouse_protein_length": 1809,
+    "human_protein_length": 1775,
+    "mini_strc_window": [
+      700,
+      1775
+    ],
+    "tmem145_interface": [
+      950,
+      1200
+    ]
+  },
+  "events": [
+    {
+      "label": "E1",
+      "mouse_genomic_start": 121203399,
+      "mouse_genomic_end": 121203567,
+      "mouse_exon_length_nt": 168,
+      "mouse_exon_length_aa": 56.0,
+      "in_frame": true,
+      "incl_diff": 0.542,
+      "fdr": 2.08e-05,
+      "mouse_mrna_exon_number": 13,
+      "mouse_ensembl_exon_id": "ENSMUSE00000293823",
+      "mouse_exon_genomic": "121203400-121203567",
+      "mouse_exon_aa_start": 1083,
+      "mouse_exon_aa_end": 1138,
+      "human_aa_start": 1047,
+      "human_aa_end": 1102,
+      "in_mini_strc_window": true,
+      "in_tmem145_interface": true
+    },
+    {
+      "label": "E2",
+      "mouse_genomic_start": 121198816,
+      "mouse_genomic_end": 121198894,
+      "mouse_exon_length_nt": 78,
+      "mouse_exon_length_aa": 26.0,
+      "in_frame": true,
+      "incl_diff": 0.437,
+      "fdr": 0.0037,
+      "mouse_mrna_exon_number": 20,
+      "mouse_ensembl_exon_id": "ENSMUSE00000293748",
+      "mouse_exon_genomic": "121198817-121199013",
+      "mouse_exon_aa_start": 1345,
+      "mouse_exon_aa_end": 1410,
+      "human_aa_start": 1311,
+      "human_aa_end": 1376,
+      "in_mini_strc_window": true,
+      "in_tmem145_interface": false
+    },
+    {
+      "label": "E3",
+      "mouse_genomic_start": 121206192,
+      "mouse_genomic_end": 121206262,
+      "mouse_exon_length_nt": 70,
+      "mouse_exon_length_aa": 23.333333333333332,
+      "in_frame": false,
+      "incl_diff": 0.387,
+      "fdr": 0.00626,
+      "mouse_mrna_exon_number": 5,
+      "mouse_ensembl_exon_id": "ENSMUSE00000436532",
+      "mouse_exon_genomic": "121206200-121206262",
+      "mouse_exon_aa_start": 750,
+      "mouse_exon_aa_end": 770,
+      "human_aa_start": 712,
+      "human_aa_end": 732,
+      "in_mini_strc_window": true,
+      "in_tmem145_interface": false
+    },
+    {
+      "label": "E4",
+      "mouse_genomic_start": 121198816,
+      "mouse_genomic_end": 121199013,
+      "mouse_exon_length_nt": 197,
+      "mouse_exon_length_aa": 65.66666666666667,
+      "in_frame": false,
+      "incl_diff": 0.263,
+      "fdr": 0.0315,
+      "mouse_mrna_exon_number": 20,
+      "mouse_ensembl_exon_id": "ENSMUSE00000293748",
+      "mouse_exon_genomic": "121198817-121199013",
+      "mouse_exon_aa_start": 1345,
+      "mouse_exon_aa_end": 1410,
+      "human_aa_start": 1311,
+      "human_aa_end": 1376,
+      "in_mini_strc_window": true,
+      "in_tmem145_interface": false
+    }
+  ]
+}

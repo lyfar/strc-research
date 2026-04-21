@@ -1,0 +1,103 @@
+{
+  "interface_zone_canonical_full": [
+    1603,
+    1770
+  ],
+  "interface_zone_canonical_biorelevant": [
+    1603,
+    1749
+  ],
+  "gpi_omega_site": 1749,
+  "rationale_gpi_exclusion": "Residues 1750-1775 are the GPI prosequence, proteolytically cleaved during GPI anchor attachment in the ER (NetGPI 1.1 predicts omega site S1749). Excluded from interface test because AF3 models them as a free tail, but they do not exist in the mature membrane-anchored protein.",
+  "top15_tmem145_contacts_canonical": [
+    1607,
+    1630,
+    1648,
+    1650,
+    1669,
+    1670,
+    1673,
+    1674,
+    1676,
+    1695,
+    1698,
+    1704
+  ],
+  "reference_construct": "STRC 594-1775 + TMEM145 (job2-mini-complex.cif)",
+  "truncations": {
+    "clinical_700_1775": {
+      "canonical_range": [
+        700,
+        1775
+      ],
+      "n_interface_residues_matched": 147,
+      "hot_contact_rmsd_A": 0.17238936634560417,
+      "full_zone_rmsd_after_hot_align_A": 0.7004433424438893,
+      "per_residue_median_dev_A": 0.18797537715923304,
+      "per_residue_p75_dev_A": 0.2667550491307184,
+      "per_residue_p95_dev_A": 0.9016269857985617,
+      "per_residue_max_dev_A": 4.8627813284565455,
+      "fraction_residues_below_3A": 0.98,
+      "top5_peripheral_outliers": [
+        {
+          "resnum_canonical": 1749,
+          "deviation_A": 4.86
+        },
+        {
+          "resnum_canonical": 1747,
+          "deviation_A": 3.71
+        },
+        {
+          "resnum_canonical": 1748,
+          "deviation_A": 3.23
+        },
+        {
+          "resnum_canonical": 1746,
+          "deviation_A": 2.97
+        },
+        {
+          "resnum_canonical": 1743,
+          "deviation_A": 2.29
+        }
+      ],
+      "verdict": "preserved_binding_pocket"
+    },
+    "aggressive_1075_1775": {
+      "canonical_range": [
+        1075,
+        1775
+      ],
+      "n_interface_residues_matched": 147,
+      "hot_contact_rmsd_A": 0.1760090470371684,
+      "full_zone_rmsd_after_hot_align_A": 0.6089442919006236,
+      "per_residue_median_dev_A": 0.18733964855494253,
+      "per_residue_p75_dev_A": 0.28219954366480443,
+      "per_residue_p95_dev_A": 0.5303728003974338,
+      "per_residue_max_dev_A": 5.047129621020645,
+      "fraction_residues_below_3A": 0.993,
+      "top5_peripheral_outliers": [
+        {
+          "resnum_canonical": 1749,
+          "deviation_A": 5.05
+        },
+        {
+          "resnum_canonical": 1748,
+          "deviation_A": 2.75
+        },
+        {
+          "resnum_canonical": 1746,
+          "deviation_A": 2.57
+        },
+        {
+          "resnum_canonical": 1747,
+          "deviation_A": 1.73
+        },
+        {
+          "resnum_canonical": 1745,
+          "deviation_A": 1.57
+        }
+      ],
+      "verdict": "preserved_binding_pocket"
+    }
+  }
+}

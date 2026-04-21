@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "construct": "ultra_mini_STRC_aa1075-1775",
+    "protein_length_aa": 701,
+    "parent_note": "STRC Mini-STRC Truncation Interface Validation",
+    "prior_clinical_construct": "mini_STRC_aa700-1775 (cpg_depletion_mini_strc.json)",
+    "codon_usage_source": "Kazusa Homo sapiens",
+    "cai_method": "Sharp & Li 1987",
+    "human_genome_cpg_per_kb_reference": 9.7
+  },
+  "baseline_v0": {
+    "cds_length_bp": 2106,
+    "cpg_count": 105,
+    "cpg_per_kb": 49.86,
+    "cpg_fold_vs_human_genome": 5.14,
+    "cai": 1.0,
+    "gc_pct": 68.28,
+    "translation_roundtrip_ok": true
+  },
+  "depletion_sweep": [
+    {
+      "threshold": 0.0,
+      "swaps": 0,
+      "cpg_count": 105,
+      "cpg_per_kb": 49.86,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.28,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.05,
+      "swaps": 0,
+      "cpg_count": 105,
+      "cpg_per_kb": 49.86,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.28,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.1,
+      "swaps": 0,
+      "cpg_count": 105,
+      "cpg_per_kb": 49.86,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.28,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.15,
+      "swaps": 37,
+      "cpg_count": 68,
+      "cpg_per_kb": 32.29,
+      "cpg_reduction_pct": 35.24,
+      "cai": 0.9933,
+      "cai_delta_pct": 0.67,
+      "gc_pct": 66.52,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.2,
+      "swaps": 40,
+      "cpg_count": 65,
+      "cpg_per_kb": 30.86,
+      "cpg_reduction_pct": 38.1,
+      "cai": 0.9925,
+      "cai_delta_pct": 0.75,
+      "gc_pct": 66.38,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.25,
+      "swaps": 66,
+      "cpg_count": 39,
+      "cpg_per_kb": 18.52,
+      "cpg_reduction_pct": 62.86,
+      "cai": 0.9836,
+      "cai_delta_pct": 1.64,
+      "gc_pct": 65.15,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.3,
+      "swaps": 80,
+      "cpg_count": 25,
+      "cpg_per_kb": 11.87,
+      "cpg_reduction_pct": 76.19,
+      "cai": 0.9777,
+      "cai_delta_pct": 2.23,
+      "gc_pct": 64.48,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.35,
+      "swaps": 105,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9635,
+      "cai_delta_pct": 3.65,
+      "gc_pct": 63.3,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.4,
+      "swaps": 105,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9635,
+      "cai_delta_pct": 3.65,
+      "gc_pct": 63.3,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.5,
+      "swaps": 105,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9635,
+      "cai_delta_pct": 3.65,
+      "gc_pct": 63.3,
+      "length_bp": 2106
+    },
+    {
+      "threshold": 0.6,
+      "swaps": 105,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9635,
+      "cai_delta_pct": 3.65,
+      "gc_pct": 63.3,
+      "length_bp": 2106
+    }
+  ],
+  "best_under_5pct_cai_cost": {
+    "threshold": 0.35,
+    "swaps": 105,
+    "cpg_count": 0,
+    "cpg_per_kb": 0.0,
+    "cpg_reduction_pct": 100.0,
+    "cai": 0.9635,
+    "cai_delta_pct": 3.65,
+    "gc_pct": 63.3,
+    "length_bp": 2106
+  },
+  "max_depleted_roundtrip_ok": true,
+  "comparison_vs_mini_700_1775": {
+    "mini_700_1775_baseline_cpg": 156,
+    "mini_700_1775_baseline_bp": 3231,
+    "ultra_1075_1775_baseline_cpg": 105,
+    "ultra_1075_1775_baseline_bp": 2106,
+    "cpg_reduction_due_to_shorter_cds": 32.69,
+    "bp_reduction_due_to_shorter_cds": 34.82,
+    "mini_700_1775_final_cpg": 0,
+    "mini_700_1775_final_cai_cost_pct": 3.51,
+    "ultra_1075_1775_final_cpg": 0,
+    "ultra_1075_1775_final_cai_cost_pct": 3.65
+  },
+  "outputs": {
+    "v0_fasta": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_ultra_mini_strc_v0.fasta",
+    "max_depleted_fasta": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_ultra_mini_strc_max.fasta",
+    "results_json": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_ultra_mini_strc.json"
+  }
+}

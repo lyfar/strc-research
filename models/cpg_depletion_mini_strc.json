@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "source_accession": "Q7RTU9",
+    "protein_length": 1775,
+    "mini_strc_window_aa": [
+      700,
+      1775
+    ],
+    "mini_strc_protein_length_aa": 1076,
+    "human_genome_cpg_per_kb_reference": 9.7,
+    "codon_usage_source": "Kazusa Homo sapiens codon usage",
+    "cai_method": "Sharp & Li 1987 geometric mean of relative adaptiveness"
+  },
+  "baseline_v0": {
+    "cds_length_bp": 3231,
+    "cpg_count": 156,
+    "cpg_per_kb": 48.28,
+    "cpg_fold_vs_human_genome": 4.98,
+    "cai": 1.0,
+    "gc_pct": 68.59,
+    "translation_roundtrip_ok": true
+  },
+  "depletion_sweep": [
+    {
+      "threshold": 0.0,
+      "swaps": 0,
+      "cpg_count": 156,
+      "cpg_per_kb": 48.28,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.59,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.05,
+      "swaps": 0,
+      "cpg_count": 156,
+      "cpg_per_kb": 48.28,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.59,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.1,
+      "swaps": 0,
+      "cpg_count": 156,
+      "cpg_per_kb": 48.28,
+      "cpg_reduction_pct": 0.0,
+      "cai": 1.0,
+      "cai_delta_pct": 0.0,
+      "gc_pct": 68.59,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.15,
+      "swaps": 55,
+      "cpg_count": 101,
+      "cpg_per_kb": 31.26,
+      "cpg_reduction_pct": 35.26,
+      "cai": 0.9935,
+      "cai_delta_pct": 0.65,
+      "gc_pct": 66.88,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.2,
+      "swaps": 59,
+      "cpg_count": 97,
+      "cpg_per_kb": 30.02,
+      "cpg_reduction_pct": 37.82,
+      "cai": 0.9929,
+      "cai_delta_pct": 0.71,
+      "gc_pct": 66.76,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.25,
+      "swaps": 99,
+      "cpg_count": 57,
+      "cpg_per_kb": 17.64,
+      "cpg_reduction_pct": 63.46,
+      "cai": 0.9839,
+      "cai_delta_pct": 1.61,
+      "gc_pct": 65.52,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.3,
+      "swaps": 121,
+      "cpg_count": 35,
+      "cpg_per_kb": 10.83,
+      "cpg_reduction_pct": 77.56,
+      "cai": 0.9778,
+      "cai_delta_pct": 2.22,
+      "gc_pct": 64.84,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.35,
+      "swaps": 156,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9649,
+      "cai_delta_pct": 3.51,
+      "gc_pct": 63.76,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.4,
+      "swaps": 156,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9649,
+      "cai_delta_pct": 3.51,
+      "gc_pct": 63.76,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.5,
+      "swaps": 156,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9649,
+      "cai_delta_pct": 3.51,
+      "gc_pct": 63.76,
+      "length_bp": 3231
+    },
+    {
+      "threshold": 0.6,
+      "swaps": 156,
+      "cpg_count": 0,
+      "cpg_per_kb": 0.0,
+      "cpg_reduction_pct": 100.0,
+      "cai": 0.9649,
+      "cai_delta_pct": 3.51,
+      "gc_pct": 63.76,
+      "length_bp": 3231
+    }
+  ],
+  "best_under_5pct_cai_cost": {
+    "threshold": 0.35,
+    "swaps": 156,
+    "cpg_count": 0,
+    "cpg_per_kb": 0.0,
+    "cpg_reduction_pct": 100.0,
+    "cai": 0.9649,
+    "cai_delta_pct": 3.51,
+    "gc_pct": 63.76,
+    "length_bp": 3231
+  },
+  "max_depleted_roundtrip_ok": true,
+  "outputs": {
+    "v0_fasta": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_mini_strc_v0.fasta",
+    "max_depleted_fasta": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_mini_strc_max.fasta",
+    "results_json": "/Users/egorlyfar/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brain/research/strc/models/cpg_depletion_mini_strc.json"
+  }
+}
