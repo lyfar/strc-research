@@ -1,25 +1,36 @@
 ---
 import { useTranslations } from '../lib/i18n';
-import Problem from './mini-strc/Problem.astro';
-import DualVectorFails from './mini-strc/WhyDualvectorFailsInHumans.astro';
-import Hypothesis from './mini-strc/Hypothesis.astro';
-import AF3Validation from './mini-strc/AF3Validation.astro';
-import ThreeConstructs from './mini-strc/ThreeConstructs.astro';
-import ConstructEngineering from './mini-strc/ConstructEngineering.astro';
-import InteractionScreen from './mini-strc/InteractionScreen.astro';
-import Precedent from './mini-strc/Precedent.astro';
-import SignalPeptide from './mini-strc/SignalPeptide.astro';
-import TruncationBoundary from './mini-strc/TruncationBoundary.astro';
-import GPIAnchor from './mini-strc/GpianchorValidation.astro';
-import SubcellularLocalization from './mini-strc/SubcellularLocalization.astro';
-import Glycosylation from './mini-strc/Nglycosylation.astro';
-import DisorderValidation from './mini-strc/DisorderCrossvalidation.astro';
-import ESMValidation from './mini-strc/ESMValidation.astro';
-import DMSLandscape from './mini-strc/DMSLandscape.astro';
-import VariantDistribution from './mini-strc/VariantDistribution.astro';
-import ComparativeGenomics from './mini-strc/ComparativeGenomics.astro';
-import NormalModeAnalysis from './mini-strc/NormalModeAnalysis.astro';
-import Conclusions from './mini-strc/Conclusions.astro';
+
+// Abstract / verdict
+import UltraMiniStatus from './mini-strc/UltraMiniStatus.astro';
+
+// Intro + hypothesis
+import Intro from './mini-strc/Intro.astro';
+import HypothesisUltraMini from './mini-strc/HypothesisUltraMini.astro';
+
+// Master tables
+import AllExperiments from './mini-strc/AllExperiments.astro';
+import OtherComputations from './mini-strc/OtherComputations.astro';
+
+// Truncation design path (Full → Mini → Ultra)
+import TruncationPath from './mini-strc/TruncationPath.astro';
+
+// Target biology
+import TargetBiology from './mini-strc/TargetBiology.astro';
+
+// Interface gates (three Ultra-Mini AF3 gates)
+import UltraMiniGOLDInterface from './mini-strc/UltraMiniGOLDInterface.astro';
+import UltraMiniFullTMEM145 from './mini-strc/UltraMiniFullTMEM145.astro';
+import UltraMiniHomodimer from './mini-strc/UltraMiniHomodimer.astro';
+
+// Orthogonal + context + engineering + precedent + next
+import OrthogonalChecks from './mini-strc/OrthogonalChecks.astro';
+import EvolutionContext from './mini-strc/EvolutionContext.astro';
+import UltraMiniCassette from './mini-strc/UltraMiniCassette.astro';
+import PrecedentCard from './mini-strc/PrecedentCard.astro';
+import UltraMiniWetlab from './mini-strc/UltraMiniWetlab.astro';
+
+// Appendix — raw 3D viewers + 3Dmol init script
 import AF3Expandable from './mini-strc/AF3Expandable.astro';
 
 const { lang = 'en' } = Astro.props;
@@ -27,35 +38,38 @@ const t = useTranslations(lang);
 ---
 <section id="mini-strc" class="px-6 py-16 border-t border-white/5">
   <div class="max-w-4xl mx-auto">
-    <div class="flex items-center gap-2 mb-2">
+    <div class="flex items-center gap-2 mb-2 flex-wrap">
       <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">{t('ministrc.title')}</h2>
       <span class="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/20 text-purple-400 font-semibold">{t('ministrc.badge_comp')}</span>
-      <span class="px-1.5 py-0.5 text-[10px] rounded bg-green-500/20 text-green-400 font-semibold">20 AF3 JOBS</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/20 text-emerald-400 font-semibold">23 AF3 JOBS</span>
+      <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-400 font-semibold border border-emerald-500/30">CLINICAL CANDIDATE · ULTRA-MINI</span>
     </div>
-    <p class="text-neutral-400 text-sm mb-10 max-w-2xl">
+    <p class="text-neutral-400 text-sm mb-8 max-w-2xl">
       {t('ministrc.desc')}
     </p>
 
-    <Problem lang={lang} />
-    <DualVectorFails lang={lang} />
-    <Hypothesis lang={lang} />
-    <AF3Validation lang={lang} />
-    <ThreeConstructs lang={lang} />
-    <ConstructEngineering lang={lang} />
-    <InteractionScreen lang={lang} />
-    <Precedent lang={lang} />
-    <SignalPeptide lang={lang} />
-    <TruncationBoundary lang={lang} />
-    <GPIAnchor lang={lang} />
-    <SubcellularLocalization lang={lang} />
-    <Glycosylation lang={lang} />
-    <DisorderValidation lang={lang} />
-    <ESMValidation lang={lang} />
-    <DMSLandscape lang={lang} />
-    <VariantDistribution lang={lang} />
-    <ComparativeGenomics lang={lang} />
-    <NormalModeAnalysis lang={lang} />
-    <Conclusions lang={lang} />
+    <UltraMiniStatus lang={lang} />
+
+    <Intro lang={lang} />
+    <HypothesisUltraMini lang={lang} />
+
+    <AllExperiments lang={lang} />
+    <OtherComputations lang={lang} />
+
+    <TruncationPath lang={lang} />
+    <TargetBiology lang={lang} />
+
+    <UltraMiniGOLDInterface lang={lang} />
+    <UltraMiniFullTMEM145 lang={lang} />
+    <UltraMiniHomodimer lang={lang} />
+
+    <OrthogonalChecks lang={lang} />
+    <EvolutionContext lang={lang} />
+
+    <UltraMiniCassette lang={lang} />
+    <PrecedentCard lang={lang} />
+    <UltraMiniWetlab lang={lang} />
+
     <AF3Expandable lang={lang} />
   </div>
 </section>

@@ -1,0 +1,58 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/UltraMiniWetlab.en.json';
+import ru from './i18n/UltraMiniWetlab.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-yellow-400">{t('title')}</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-yellow-500/15 text-yellow-400 font-semibold">NEXT GATE · WET-LAB</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl"><Fragment set:html={t('lede')} /></p>
+
+  <div class="grid lg:grid-cols-3 gap-3 mb-4">
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-bold flex items-center justify-center">1</span>
+        <div class="text-[10px] uppercase tracking-wider text-yellow-400 font-semibold">{t('s1_label')}</div>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('s1_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">IDT / Twist · ~$150–300 · 1–2 weeks</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed mb-2"><Fragment set:html={t('s1_body')} /></p>
+      <div class="text-[10px] text-neutral-500 font-mono">{t('s1_deliverable')}</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-bold flex items-center justify-center">2</span>
+        <div class="text-[10px] uppercase tracking-wider text-yellow-400 font-semibold">{t('s2_label')}</div>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('s2_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">VectorBuilder / GenScript · ~$800–1,500 · 3–4 weeks</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed mb-2"><Fragment set:html={t('s2_body')} /></p>
+      <div class="text-[10px] text-neutral-500 font-mono">{t('s2_deliverable')}</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-bold flex items-center justify-center">3</span>
+        <div class="text-[10px] uppercase tracking-wider text-yellow-400 font-semibold">{t('s3_label')}</div>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('s3_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">HEK293 coIP · ~$3,000–10,000 · 4–6 weeks</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed mb-2"><Fragment set:html={t('s3_body')} /></p>
+      <div class="text-[10px] text-neutral-500 font-mono">{t('s3_deliverable')}</div>
+    </div>
+  </div>
+
+  <div class="bg-yellow-500/5 border border-yellow-500/20 rounded-lg p-4">
+    <div class="text-[10px] uppercase tracking-wider text-yellow-400 mb-2 font-semibold">{t('partners_title')}</div>
+    <ul class="text-[11px] text-neutral-300 space-y-1.5">
+      <li><span class="text-white font-semibold">Holt Lab (Boston, HMS / Boston Children's)</span> — co-author on Derstroff et al. 2026, ran the original STRC × TMEM145 coIP. Could append Ultra-Mini to an existing batch. <span class="text-neutral-500">Ideal collaboration target.</span></li>
+      <li><span class="text-white font-semibold">Fudan EENT Hospital (Shanghai)</span> — existing correspondence from Misha's diagnosis pathway. DFNB16 expertise, potential co-development partner.</li>
+      <li><span class="text-white font-semibold">Contract research (GenScript, Creative Biolabs, Ciaotech)</span> — fallback if academic collaborations don't materialize. Fully commoditised coIP service.</li>
+    </ul>
+  </div>
+
+  <p class="text-[10px] text-neutral-500 mt-3 leading-relaxed"><Fragment set:html={t('footer')} /></p>
+</div>

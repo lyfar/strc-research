@@ -1,0 +1,11 @@
+{
+  "title": "10. Gate 3 · Vector budget — CpG depletion + OHC-exclusive regulatory cassette",
+  "lede": "Structural viability is necessary but not sufficient. A clinical AAV also has to (a) survive TLR9 sensing of unmethylated CpG dinucleotides, and (b) fit a full OHC-exclusive regulatory architecture inside the 4,700 bp ITR-to-ITR ceiling. Both properties are now formally checked for Ultra-Mini and strictly stronger than for the Mini-STRC 700-1775 precedent.",
+  "cpg_title": "CpG depletion — max-frequency codon baseline → 0 CpG",
+  "cpg_note": "Iterative synonymous-codon substitution on Kazusa max-frequency human codons. Every residual CpG admits a synonym within 35 % per-swap adaptiveness drop — no structurally stuck site. Ultra-Mini tracks the 700-1775 construct within 0.14 % CAI and both land at 0 CpG, confirming the depletion property scales with length.",
+  "promoter_title": "Regulatory shortlist (7 architectures scored)",
+  "promoter_note": "Five of seven shortlisted architectures fit only in the Ultra-Mini vector — the shorter CDS is what makes posttranscriptional boosters (WPRE3) and multi-element enhancer combos considerable at all. B8 remains the only OHC-exclusive element with published zero ectopic expression; Myo15 variants get dropped because they activate both IHCs and OHCs, which is off-target for STRC.",
+  "cassette_title": "Final clinical architecture (recommended)",
+  "cassette_body": "B8 enhancer drives OHC-exclusive transcription. IgK signal peptide handles secretion (STRC is extracellular, GPI-anchored). WPRE3-compact provides 2-10× posttranscriptional mRNA boost at 247 bp. bGH polyA + flanking ITRs close out. Total 3,538 bp leaves 1,162 bp of real engineering headroom — enough for KASH insulators, alt-polyA, or a second boost element if preclinical titers come in under target.",
+  "files": "Reference sequence: <code class=\"text-neutral-400\">cpg_depletion_ultra_mini_strc_max.fasta</code> (0 CpG, CAI 0.9635) — this is the gBlock order"
+}

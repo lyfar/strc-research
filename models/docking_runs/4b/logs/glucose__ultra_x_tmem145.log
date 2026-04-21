@@ -1,0 +1,49 @@
+AutoDock Vina v1.2.7
+#################################################################
+# If you used AutoDock Vina in your work, please cite:          #
+#                                                               #
+# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #
+# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #
+# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #
+# DOI 10.1021/acs.jcim.1c00203                                  #
+#                                                               #
+# O. Trott, A. J. Olson,                                        #
+# AutoDock Vina: improving the speed and accuracy of docking    #
+# with a new scoring function, efficient optimization and       #
+# multithreading, J. Comp. Chem. (2010)                         #
+# DOI 10.1002/jcc.21334                                         #
+#                                                               #
+# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #
+# more information.                                             #
+#################################################################
+
+Scoring function : vina
+Rigid receptor: /Users/egorlyfar/Brain/research/strc/models/docking_runs/4b/ultra_x_tmem145_chainA.pdbqt
+Ligand: /Users/egorlyfar/Brain/research/strc/models/docking_runs/4b/ligands/glucose.pdbqt
+Grid center: X -22.027 Y -18.547 Z 2.215
+Grid size  : X 18 Y 18 Z 18
+Grid space : 0.375
+Exhaustiveness: 32
+CPU: 8
+Verbosity: 1
+
+Computing Vina grid ... done.
+Performing docking (random seed: 686075175) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -4.808          0          0
+   2       -4.227      10.41      11.76
+   3       -4.168      17.02      18.45
+   4       -4.073      16.47      18.29
+   5       -4.011      10.66      11.85
+   6       -3.936      12.32      13.94
+   7       -3.912      10.32      11.85
+   8       -3.885      16.23      17.61
+   9       -3.875      16.38       18.2
+
+---STDERR---

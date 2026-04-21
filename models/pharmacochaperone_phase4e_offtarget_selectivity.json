@@ -1,0 +1,534 @@
+{
+  "summary": {
+    "target_cif": "job-ultramini-x-tmem145-full.cif",
+    "n_pockets_found": 218,
+    "k1141_pocket_score": 0.873,
+    "k1141_pocket_centroid": [
+      -23.92,
+      -16.81,
+      6.69
+    ],
+    "k1141_pocket_druggability": 0.978,
+    "k1141_pocket_volume_A3": 209.09,
+    "best_off_target_score": 0.723,
+    "best_off_target_centroid": [
+      12.65,
+      -14.46,
+      25.44
+    ],
+    "selectivity_margin": 0.15,
+    "selectivity_threshold": 0.2,
+    "leads_passing": 0,
+    "min_leads_passing": 3,
+    "verdict": "FAIL"
+  },
+  "per_lead": [
+    {
+      "name": "salicylic-acid",
+      "selectivity_margin_proxy": 0.15
+    },
+    {
+      "name": "nicotinic-acid",
+      "selectivity_margin_proxy": 0.15
+    },
+    {
+      "name": "cyclopropane-phenyl-COOH",
+      "selectivity_margin_proxy": 0.15
+    },
+    {
+      "name": "indole-3-acetic-acid",
+      "selectivity_margin_proxy": 0.15
+    },
+    {
+      "name": "naphthalene-2-carboxylic",
+      "selectivity_margin_proxy": 0.15
+    }
+  ],
+  "k1141_pocket": {
+    "centroid": [
+      -23.92,
+      -16.81,
+      6.69
+    ],
+    "volume_A3": 209.09,
+    "druggability": 0.978,
+    "n_lining_residues": 19,
+    "hydrophobic_frac": 0.474,
+    "donors": 7,
+    "acceptors": 5,
+    "depth_mean_A": 3.3,
+    "lining_residues": {
+      "51": "PRO",
+      "66": "LEU",
+      "67": "LYS",
+      "68": "LEU",
+      "69": "LEU",
+      "70": "GLN",
+      "94": "GLN",
+      "95": "PHE",
+      "98": "LYS",
+      "99": "LYS",
+      "571": "GLY",
+      "572": "PHE",
+      "573": "GLY",
+      "574": "PRO",
+      "577": "ASN",
+      "578": "TRP",
+      "579": "GLY",
+      "581": "GLU",
+      "582": "ILE"
+    },
+    "pharmacophore": {
+      "score": 0.873,
+      "has_K1141": true,
+      "has_D_face": false,
+      "has_aromatic": true,
+      "has_4plus_hb": true,
+      "has_any_basic": true,
+      "has_any_acidic": true
+    }
+  },
+  "off_target_pockets_ranked": [
+    {
+      "centroid": [
+        12.65,
+        -14.46,
+        25.44
+      ],
+      "volume_A3": 217.73,
+      "druggability": 0.982,
+      "n_lining_residues": 20,
+      "hydrophobic_frac": 0.45,
+      "donors": 10,
+      "acceptors": 12,
+      "depth_mean_A": 3.3,
+      "lining_residues": {
+        "192": "ILE",
+        "195": "MET",
+        "196": "ASP",
+        "223": "LEU",
+        "226": "ALA",
+        "227": "ALA",
+        "228": "LEU",
+        "230": "GLU",
+        "231": "ARG",
+        "234": "GLN",
+        "257": "PHE",
+        "258": "LEU",
+        "259": "GLY",
+        "260": "THR",
+        "286": "THR",
+        "663": "HIS",
+        "666": "LYS",
+        "667": "GLU",
+        "668": "SER",
+        "669": "PRO"
+      },
+      "pharmacophore": {
+        "score": 0.723,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        13.84,
+        -36.22,
+        -1.17
+      ],
+      "volume_A3": 196.99,
+      "druggability": 0.972,
+      "n_lining_residues": 21,
+      "hydrophobic_frac": 0.429,
+      "donors": 9,
+      "acceptors": 11,
+      "depth_mean_A": 3.33,
+      "lining_residues": {
+        "320": "PHE",
+        "344": "LEU",
+        "345": "GLU",
+        "347": "GLN",
+        "348": "GLN",
+        "351": "GLU",
+        "352": "GLN",
+        "368": "LYS",
+        "393": "VAL",
+        "394": "ARG",
+        "396": "THR",
+        "397": "PHE",
+        "398": "PRO",
+        "399": "ALA",
+        "419": "THR",
+        "420": "LEU",
+        "421": "PHE",
+        "423": "GLY",
+        "424": "ASP",
+        "425": "PRO",
+        "426": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.722,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        14.37,
+        -36.51,
+        -1.41
+      ],
+      "volume_A3": 203.9,
+      "druggability": 0.972,
+      "n_lining_residues": 21,
+      "hydrophobic_frac": 0.476,
+      "donors": 8,
+      "acceptors": 10,
+      "depth_mean_A": 3.25,
+      "lining_residues": {
+        "320": "PHE",
+        "344": "LEU",
+        "345": "GLU",
+        "347": "GLN",
+        "348": "GLN",
+        "351": "GLU",
+        "364": "LEU",
+        "365": "ALA",
+        "368": "LYS",
+        "393": "VAL",
+        "394": "ARG",
+        "396": "THR",
+        "397": "PHE",
+        "398": "PRO",
+        "399": "ALA",
+        "419": "THR",
+        "420": "LEU",
+        "423": "GLY",
+        "424": "ASP",
+        "425": "PRO",
+        "426": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.722,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        14.12,
+        -36.82,
+        -1.14
+      ],
+      "volume_A3": 191.81,
+      "druggability": 0.963,
+      "n_lining_residues": 19,
+      "hydrophobic_frac": 0.474,
+      "donors": 7,
+      "acceptors": 9,
+      "depth_mean_A": 3.24,
+      "lining_residues": {
+        "320": "PHE",
+        "343": "LEU",
+        "344": "LEU",
+        "345": "GLU",
+        "347": "GLN",
+        "348": "GLN",
+        "351": "GLU",
+        "368": "LYS",
+        "393": "VAL",
+        "394": "ARG",
+        "396": "THR",
+        "397": "PHE",
+        "398": "PRO",
+        "399": "ALA",
+        "420": "LEU",
+        "423": "GLY",
+        "424": "ASP",
+        "425": "PRO",
+        "426": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.721,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        -2.39,
+        -11.39,
+        22.74
+      ],
+      "volume_A3": 191.81,
+      "druggability": 0.962,
+      "n_lining_residues": 22,
+      "hydrophobic_frac": 0.455,
+      "donors": 14,
+      "acceptors": 10,
+      "depth_mean_A": 3.22,
+      "lining_residues": {
+        "151": "GLY",
+        "154": "ARG",
+        "155": "ALA",
+        "156": "CYS",
+        "158": "TRP",
+        "159": "ALA",
+        "162": "GLN",
+        "189": "ASP",
+        "190": "LEU",
+        "191": "PRO",
+        "603": "ARG",
+        "607": "GLN",
+        "632": "SER",
+        "633": "SER",
+        "634": "LEU",
+        "635": "THR",
+        "636": "SER",
+        "637": "ALA",
+        "660": "TRP",
+        "661": "ALA",
+        "664": "GLU",
+        "665": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.721,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        -2.13,
+        -10.08,
+        23.83
+      ],
+      "volume_A3": 179.71,
+      "druggability": 0.953,
+      "n_lining_residues": 19,
+      "hydrophobic_frac": 0.421,
+      "donors": 15,
+      "acceptors": 9,
+      "depth_mean_A": 3.23,
+      "lining_residues": {
+        "154": "ARG",
+        "155": "ALA",
+        "156": "CYS",
+        "158": "TRP",
+        "159": "ALA",
+        "162": "GLN",
+        "191": "PRO",
+        "193": "GLN",
+        "603": "ARG",
+        "607": "GLN",
+        "632": "SER",
+        "633": "SER",
+        "634": "LEU",
+        "635": "THR",
+        "636": "SER",
+        "660": "TRP",
+        "661": "ALA",
+        "664": "GLU",
+        "665": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.72,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        13.18,
+        -14.08,
+        24.32
+      ],
+      "volume_A3": 155.52,
+      "druggability": 0.945,
+      "n_lining_residues": 16,
+      "hydrophobic_frac": 0.5,
+      "donors": 7,
+      "acceptors": 10,
+      "depth_mean_A": 3.48,
+      "lining_residues": {
+        "192": "ILE",
+        "222": "PRO",
+        "223": "LEU",
+        "224": "HIS",
+        "226": "ALA",
+        "227": "ALA",
+        "230": "GLU",
+        "234": "GLN",
+        "257": "PHE",
+        "258": "LEU",
+        "259": "GLY",
+        "663": "HIS",
+        "666": "LYS",
+        "667": "GLU",
+        "668": "SER",
+        "669": "PRO"
+      },
+      "pharmacophore": {
+        "score": 0.72,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        -3.54,
+        -27.17,
+        22.73
+      ],
+      "volume_A3": 172.8,
+      "druggability": 0.949,
+      "n_lining_residues": 16,
+      "hydrophobic_frac": 0.562,
+      "donors": 10,
+      "acceptors": 5,
+      "depth_mean_A": 3.26,
+      "lining_residues": {
+        "142": "ILE",
+        "143": "TYR",
+        "145": "LEU",
+        "146": "PRO",
+        "147": "THR",
+        "148": "ARG",
+        "149": "VAL",
+        "154": "ARG",
+        "185": "LYS",
+        "186": "LEU",
+        "188": "LEU",
+        "189": "ASP",
+        "209": "LEU",
+        "216": "GLN",
+        "219": "ALA",
+        "220": "LEU"
+      },
+      "pharmacophore": {
+        "score": 0.72,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        -2.32,
+        -11.36,
+        22.62
+      ],
+      "volume_A3": 174.53,
+      "druggability": 0.947,
+      "n_lining_residues": 19,
+      "hydrophobic_frac": 0.421,
+      "donors": 13,
+      "acceptors": 9,
+      "depth_mean_A": 3.2,
+      "lining_residues": {
+        "151": "GLY",
+        "154": "ARG",
+        "155": "ALA",
+        "158": "TRP",
+        "159": "ALA",
+        "189": "ASP",
+        "191": "PRO",
+        "603": "ARG",
+        "607": "GLN",
+        "632": "SER",
+        "633": "SER",
+        "634": "LEU",
+        "635": "THR",
+        "636": "SER",
+        "637": "ALA",
+        "660": "TRP",
+        "661": "ALA",
+        "664": "GLU",
+        "665": "GLY"
+      },
+      "pharmacophore": {
+        "score": 0.72,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    },
+    {
+      "centroid": [
+        -30.06,
+        -29.06,
+        7.93
+      ],
+      "volume_A3": 158.98,
+      "druggability": 0.925,
+      "n_lining_residues": 18,
+      "hydrophobic_frac": 0.611,
+      "donors": 9,
+      "acceptors": 7,
+      "depth_mean_A": 3.07,
+      "lining_residues": {
+        "51": "PRO",
+        "52": "ILE",
+        "53": "PRO",
+        "54": "THR",
+        "55": "THR",
+        "56": "TRP",
+        "61": "LEU",
+        "64": "LEU",
+        "68": "LEU",
+        "69": "LEU",
+        "70": "GLN",
+        "71": "LEU",
+        "72": "ASP",
+        "75": "ALA",
+        "76": "LEU",
+        "79": "ASN",
+        "82": "ARG",
+        "83": "TYR"
+      },
+      "pharmacophore": {
+        "score": 0.718,
+        "has_K1141": false,
+        "has_D_face": false,
+        "has_aromatic": true,
+        "has_4plus_hb": true,
+        "has_any_basic": true,
+        "has_any_acidic": true
+      }
+    }
+  ]
+}

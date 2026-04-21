@@ -1,6 +1,6 @@
 {
-  "t1": "We tested mini-STRC (616-1775) against every relevant cochlear partner. No direct protein-protein interaction was detected. \n        Critically, <strong class=\"text-white\">full-length STRC also doesn't interact</strong> in these assays, confirming that negative results \n        are not truncation artifacts but a known limitation of AF3's complex prediction mechanism. Li et al. (2026) showed that AF3 assembles complexes through <strong class=\"text-white\">interface-level geometric pattern matching</strong> learned from training data, not coevolution (<a href='https://doi.org/10.64898/2026.04.03.716280' target='_blank' class='text-blue-400'>bioRxiv</a>). For non-canonical interfaces (membrane-associated, glycan-mediated), AF3 lacks structural priors, producing low ipTM scores even for real interactions.\n        The shorter construct (700-1775) is a strict subset of mini-STRC: it removes 84 more N-terminal residues that are disordered in all models. \n        Interaction results transfer directly.",
-  "t2": "<strong class=\"text-amber-400\">Key insight:</strong> The positive control (NFAT + Calcineurin, ipTM 0.73-0.91) proves our methodology works — and illustrates exactly the mechanism described by <a href='https://doi.org/10.64898/2026.04.03.716280' target='_blank' class='text-blue-400'>Li et al. (2026)</a>: AF3 excels at canonical interfaces with strong geometric priors in training data. \n          The negative results across all STRC partners reflect a <strong>distributional mismatch</strong>: stereocilin's membrane-associated and glycan-mediated interactions are structurally atypical, analogous to the antigen-antibody limitation Li et al. identified. Low ipTM here is not evidence of non-interaction — it is evidence of AF3's interface prior gap.",
+  "t1": "We tested Mini-STRC (616-1775) against every relevant cochlear partner in the first pass, then re-ran the decisive TMEM145 multimer on Ultra-Mini (1075-1775) directly. The partner-screen negatives (Piezo2 CED, Otoancorin, Tectorin ZP, TMC1) transfer from Mini-STRC to Ultra-Mini by construction — Ultra-Mini is a strict subset. The TMEM145 positive was the one that needed re-validation on the shorter construct, and it did: see §10 (full-length) and §11 (GOLD-pruned) for the Ultra-Mini × TMEM145 gates. Li et al. (2026) showed that AF3 assembles complexes through <strong class=\"text-white\">interface-level geometric pattern matching</strong> learned from training data, not coevolution (<a href='https://doi.org/10.64898/2026.04.03.716280' target='_blank' class='text-blue-400'>bioRxiv</a>). For non-canonical interfaces (membrane-associated, glycan-mediated), AF3 lacks structural priors, producing low ipTM scores even for real interactions — which is why the full-length TMEM145 jobs score low and the GOLD-pruned control scores high.",
+  "t2": "<strong class=\"text-amber-400\">Key insight:</strong> The positive control (NFAT + Calcineurin, ipTM 0.73-0.91) proves our methodology works — and illustrates exactly the mechanism described by <a href='https://doi.org/10.64898/2026.04.03.716280' target='_blank' class='text-blue-400'>Li et al. (2026)</a>: AF3 excels at canonical interfaces with strong geometric priors in training data. The negative partner results reflect a <strong>distributional mismatch</strong>: stereocilin's membrane-associated and glycan-mediated interactions are structurally atypical, analogous to the antigen-antibody limitation Li et al. identified. Low ipTM here is not evidence of non-interaction — it is evidence of AF3's interface prior gap, which is why GOLD-domain pruning (§10) is required for the real TMEM145 interface to resolve.",
   "t3": "Full STRC + TMEM145",
   "t4": "<span class=\"text-yellow-400\">Low confidence</span>",
   "t5": "Mini-STRC + TMEM145",
@@ -13,14 +13,14 @@
   "t12": "<span class=\"text-neutral-500\">No binding</span>",
   "t13": "Mini-STRC + TMC1",
   "t14": "<span class=\"text-neutral-500\">No interaction (expected)</span>",
-  "t15": "Mini-STRC homodimer",
-  "t16": "<span class=\"text-neutral-500\">No dimerization</span>",
+  "t15": "Mini-STRC homodimer (first pass)",
+  "t16": "<span class=\"text-neutral-500\">Low ipTM 0.20 — re-tested on Ultra-Mini (§12)</span>",
   "t17": "Full STRC homodimer (control)",
-  "t18": "<span class=\"text-amber-400\">Also no dimer — truncation didn't cause this</span>",
+  "t18": "<span class=\"text-amber-400\">Also low 0.24 — Ultra-Mini rises to 0.28–0.30 with 94 % C2 (§12)</span>",
   "t19": "NFATC1 + Calcineurin A/B (positive control)",
   "t20": "<span class=\"text-cyan-400\">✓ Known complex correctly detected</span>",
   "t21": "Experiment",
   "t22": "Cross-PAE",
   "t23": "Verdict",
-  "t24": "7. Does truncation break interactions? No."
+  "t24": "5. Partner interaction screen (first-pass Mini-STRC; TMEM145 re-validated on Ultra-Mini)"
 }

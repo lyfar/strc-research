@@ -1,0 +1,30 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-green-400 mb-3">11. Precedent — micro-dystrophin (Sarepta SRP-9001, FDA 2023)</h3>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl">
+    This is not a new engineering pattern. The dystrophin gene (11,000 bp) was too large for AAV, so researchers created micro-dystrophin by deleting non-essential spectrin-like repeats and packaged it in a single AAV. Sarepta's SRP-9001 (delandistrogene moxeparvovec) was FDA-approved in 2023. Ultra-Mini STRC follows the same template — more aggressively, because our cassette is smaller.
+  </p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="bg-white/[0.02] border border-white/10 rounded-lg p-4">
+      <div class="text-[10px] uppercase tracking-wider text-green-400 font-semibold mb-2">Dystrophin (DMD) · FDA 2023</div>
+      <div class="space-y-1 text-[11px] text-neutral-400 font-mono">
+        <div class="flex justify-between"><span>Full gene</span><span>11,000 bp</span></div>
+        <div class="flex justify-between"><span>Removed</span><span>spectrin repeats</span></div>
+        <div class="flex justify-between"><span>Micro-dystrophin</span><span class="text-white">~3,600 bp</span></div>
+        <div class="flex justify-between"><span>Status</span><span class="text-green-400">approved</span></div>
+      </div>
+    </div>
+    <div class="bg-emerald-500/[0.05] border border-emerald-500/30 rounded-lg p-4">
+      <div class="text-[10px] uppercase tracking-wider text-emerald-400 font-semibold mb-2">Stereocilin (STRC) · this paper</div>
+      <div class="space-y-1 text-[11px] text-neutral-300 font-mono">
+        <div class="flex justify-between"><span>Full gene</span><span>5,325 bp</span></div>
+        <div class="flex justify-between"><span>Removed</span><span>N-terminus + LRR linker</span></div>
+        <div class="flex justify-between"><span>Ultra-Mini</span><span class="text-emerald-400 font-bold">2,103 bp</span></div>
+        <div class="flex justify-between"><span>Status</span><span class="text-yellow-400">compute gates cleared · wet-lab next</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="text-[10px] text-neutral-500 mt-3">Ultra-Mini CDS is 42 % smaller than the FDA-approved micro-dystrophin CDS. The engineering pattern has a commercial precedent; we are executing it on a tighter budget.</p>
+</div>

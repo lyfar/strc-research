@@ -1,0 +1,17 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">1. The problem — STRC does not fit an AAV, and dual-vector fails in humans</h3>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
+    <p class="text-sm text-neutral-300 leading-relaxed mb-3">
+      Stereocilin (STRC) is the gene responsible for DFNB16 autosomal-recessive hearing loss. Its coding sequence is <strong class="text-white">5,325 bp</strong>. An AAV vector, the delivery vehicle of modern inner-ear gene therapy, has roughly <strong class="text-white">4,400 bp</strong> of cargo space once ITRs, promoter and polyA are accounted for. The gene is ~925 bp too large.
+    </p>
+    <p class="text-sm text-neutral-300 leading-relaxed mb-3">
+      The current workaround — used by Iranfar et al. (2026) and Bhatt et al. (2022) — is a <strong class="text-white">dual-vector</strong> approach: split the gene in half, package each half in its own AAV, inject both, and rely on intracellular recombination in the same cell to reconstitute the full transgene. In mouse cochleas (~3,300 outer hair cells, 3.5 mm cochlea) this works. In human cochleas (~12,000 OHCs, 35 mm cochlea) our <a href="/hypotheses/dual-vector" class="text-cyan-400 hover:text-cyan-300 no-underline">Gamma-Poisson transduction model</a>, recalibrated against published OTOF/DB-OTO clinical data, predicts single-vector coverage of <strong class="text-white">89.8 %</strong> of OHCs at clinical titer vs <strong class="text-red-400">40.4 %</strong> for dual-vector — a 2.2× advantage that is clinically decisive.
+    </p>
+    <p class="text-sm text-neutral-300 leading-relaxed">
+      A single-vector STRC therapy therefore requires shrinking the transgene while keeping the binding surfaces that matter (the TMEM145 interface, the GPI anchor, the signal peptide pathway, the homodimer geometry). This paper describes Ultra-Mini STRC (residues 1075–1775), the clinical construct, and the 22 AlphaFold3 jobs plus 11 supporting computational models that took us there.
+    </p>
+  </div>
+</div>

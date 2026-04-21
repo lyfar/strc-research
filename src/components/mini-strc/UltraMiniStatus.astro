@@ -1,0 +1,74 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/UltraMiniStatus.en.json';
+import ru from './i18n/UltraMiniStatus.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+---
+<div class="mb-10 mt-2">
+  <div class="relative bg-gradient-to-br from-emerald-500/[0.07] via-green-500/[0.04] to-transparent border border-emerald-500/30 rounded-lg p-5 overflow-hidden">
+    <!-- Stamp -->
+    <div class="absolute top-3 right-3 select-none">
+      <div class="border-2 border-emerald-400/60 rounded-md px-2 py-0.5 transform rotate-[-6deg]">
+        <div class="text-[9px] font-bold uppercase tracking-widest text-emerald-400">{t('stamp')}</div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 mb-3">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <div class="text-[10px] font-semibold uppercase tracking-wider text-emerald-400">{t('label')}</div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-white mb-2">{t('title')}</h3>
+    <p class="text-xs text-neutral-400 leading-relaxed mb-4 max-w-3xl"><Fragment set:html={t('desc')} /></p>
+
+    <div class="grid sm:grid-cols-4 gap-2 text-[11px]">
+      <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+        <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('m1_label')}</div>
+        <div class="text-emerald-400 font-mono font-semibold">23 / 23</div>
+        <div class="text-[9px] text-neutral-500">{t('m1_sub')}</div>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+        <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('m2_label')}</div>
+        <div class="text-emerald-400 font-mono font-semibold">5 / 5</div>
+        <div class="text-[9px] text-neutral-500">{t('m2_sub')}</div>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+        <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('m3_label')}</div>
+        <div class="text-emerald-400 font-mono font-semibold">1,075–1,775</div>
+        <div class="text-[9px] text-neutral-500">{t('m3_sub')}</div>
+      </div>
+      <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+        <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('m4_label')}</div>
+        <div class="text-yellow-400 font-mono font-semibold">Wet-lab</div>
+        <div class="text-[9px] text-neutral-500">{t('m4_sub')}</div>
+      </div>
+    </div>
+
+    <div class="mt-4 pt-4 border-t border-white/5 grid sm:grid-cols-3 gap-3 text-[11px]">
+      <div class="flex items-start gap-2">
+        <span class="text-emerald-400 font-mono mt-0.5">✓</span>
+        <div>
+          <div class="text-white font-semibold">{t('gate1_t')}</div>
+          <div class="text-neutral-500">{t('gate1_d')}</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-emerald-400 font-mono mt-0.5">✓</span>
+        <div>
+          <div class="text-white font-semibold">{t('gate2_t')}</div>
+          <div class="text-neutral-500">{t('gate2_d')}</div>
+        </div>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-emerald-400 font-mono mt-0.5">✓</span>
+        <div>
+          <div class="text-white font-semibold">{t('gate3_t')}</div>
+          <div class="text-neutral-500">{t('gate3_d')}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 text-[10px] text-neutral-500 font-mono">{t('timestamp')}</div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "title": "6. Gate 1 · Ultra-Mini × full-length TMEM145 — no regression vs full STRC",
+  "lede": "The closing AF3 job on the delivery-score upgrade: can the aggressive 1075–1775 truncation still reproduce the TMEM145 contact surface when TMEM145 is modelled as its full 493 aa, 7-transmembrane-helix form? Answer: yes — no regression against the full-STRC precedent, core ARM-repeat hot-spots conserved.",
+  "consensus": "5-model consensus",
+  "consensus_note": "All five models converge within ±0.02 ipTM. No clashes. 11 % fraction-disordered matches Ultra-Mini solo fold. The model is consistent with itself.",
+  "ladder": "Precedent ladder — no regression vs full STRC",
+  "ladder_note": "Truncating 1,075 N-terminal residues did not move ipTM. The absolute 0.43 is the known AF3 ceiling for 7-TM membrane proteins in solution, not a property of Ultra-Mini.",
+  "interface": "Interface residues (Biopython 5 Å cutoff, model 0)",
+  "gold_clusters": "Canonical ARM clusters (Job 2 reference vs this job)",
+  "clusters_note": "Four of six canonical clusters reproduced. The two hot-spots (1669–1680 and 1692–1707) account for 17 of the 23 in-zone contacts — the binding free-energy core survives.",
+  "out_of_zone": "Out-of-zone contacts (18/41) — interpreted as artifact",
+  "oo_note": "aa 1178–1212 had zero contact in Job 2 or in the GOLD-pruned job — most likely AF3 spreading low-confidence chain contacts across the surface. aa 1769–1775 is the pre-GPI linker that is proteolytically removed at GPI attachment.",
+  "gate_title": "Pass criteria (pre-registered in ranking note)",
+  "files": "Top-ranked model: <code class=\"text-neutral-400\">public/models/job-ultramini-x-tmem145-full.cif</code> · Full job archive: <code class=\"text-neutral-400\">~/DeepResearch/strc/af3-results/job-ultramini-x-tmem145-full/</code>"
+}

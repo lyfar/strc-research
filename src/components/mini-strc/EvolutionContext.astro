@@ -1,0 +1,77 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-400">9. Evolutionary + variant context — what gets lost and why it doesn't matter</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-sky-500/15 text-sky-400 font-semibold">180 ORTHOLOGS · 427 CLINVAR</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl">
+    Two checks orthogonal to structure: is the C-terminal core the evolutionarily load-bearing part of stereocilin, and does the construct retain the pathogenic-variant landscape that matters for DFNB16 rescue?
+  </p>
+
+  <!-- Evolutionary -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-4">
+    <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-2">Cross-species evidence</div>
+    <ul class="text-xs text-neutral-300 leading-relaxed space-y-2">
+      <li><span class="text-sky-400 font-semibold">Birds lack STRC and hear fine.</span> Chickens, songbirds, owls have no STRC gene at all and span 125 Hz – 8 kHz+ hearing. STRC is specific to the mammalian OHC horizontal top connector / tectorial membrane attachment system, not universally required.</li>
+      <li><span class="text-sky-400 font-semibold">Fish STRC is 900 aa <em>longer</em>, not shorter.</span> Bony fish orthologs range 1,900–2,700 aa. The extra length is entirely N-terminal. The C-terminal ARM repeat block (where Ultra-Mini sits) is conserved length across vertebrates — exactly the constraint we expect on a functional module.</li>
+      <li><span class="text-sky-400 font-semibold">Pfam domain boundary PF21058 sits at 700–1100.</span> The step-1 Mini-STRC cut at 700 lands exactly at this boundary. The step-2 Ultra-Mini cut at 1075 goes inside the LRR box — not justifiable by Pfam alone, and that is why we validated it directly with the AF3 interface gates in §5–§7. AF3 gave the green light, so we stopped relying on Pfam.</li>
+      <li><span class="text-sky-400 font-semibold">Bhatt et al. 2022 chose Ser746/Cys747.</span> Their dual-AAV split-site analysis independently landed within 50 aa of our step-1 boundary. Our single-vector Ultra-Mini doesn't need to obey split-site constraints, so it pushes further.</li>
+    </ul>
+  </div>
+
+  <!-- Variant distribution -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+    <div class="px-4 pt-3 pb-1 text-[10px] uppercase tracking-wider text-neutral-500">ClinVar pathogenic variant distribution (427 STRC variants)</div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-[11px]">
+        <thead>
+          <tr class="border-b border-white/5 text-neutral-500">
+            <th class="text-left p-3 font-medium">Region</th>
+            <th class="text-left p-3 font-medium">Residues</th>
+            <th class="text-right p-3 font-medium">Pathogenic + Likely</th>
+            <th class="text-right p-3 font-medium">Missense</th>
+            <th class="text-right p-3 font-medium">Nonsense</th>
+            <th class="text-left p-3 font-medium">Status in Ultra-Mini</th>
+          </tr>
+        </thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-white/5 text-neutral-400">
+            <td class="p-3">N-terminal disordered</td>
+            <td class="p-3">1–699</td>
+            <td class="p-3 text-right">~12 (13 %)</td>
+            <td class="p-3 text-right">2 (L490P, C590R)</td>
+            <td class="p-3 text-right">5 (pos 87–410)</td>
+            <td class="p-3 text-[10px] text-red-400">removed · acceptable (wildtype delivery rescues)</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-400">
+            <td class="p-3">LRR linker</td>
+            <td class="p-3">700–1074</td>
+            <td class="p-3 text-right text-amber-400">~5 (6 %)</td>
+            <td class="p-3 text-right text-amber-400">1 (L714P)</td>
+            <td class="p-3 text-right text-amber-400">~4</td>
+            <td class="p-3 text-[10px] text-amber-400">removed · acceptable (wildtype delivery rescues)</td>
+          </tr>
+          <tr class="bg-emerald-500/[0.05] text-neutral-200">
+            <td class="p-3 text-white font-semibold">ARM repeat core (Ultra-Mini)</td>
+            <td class="p-3 text-emerald-400">1075–1775</td>
+            <td class="p-3 text-right text-emerald-400 font-bold">~72+ (81 %)</td>
+            <td class="p-3 text-right text-emerald-400">4+ (W1475C, M1483R, P1520R, T1709A)</td>
+            <td class="p-3 text-right text-emerald-400">~16+ (pos 1083–1730)</td>
+            <td class="p-3 text-[10px] text-emerald-400">retained · this is where our patient's variant E1659A lives</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bg-emerald-500/[0.05] border border-emerald-500/20 rounded-lg p-4">
+    <p class="text-xs text-neutral-300 leading-relaxed">
+      <span class="text-emerald-400 font-semibold">Ultra-Mini keeps 81 % of the pathogenic load</span> in a construct 61 % smaller than the full gene. The ~5 LRR-region variants (700–1074) that fall outside the Ultra-Mini window are irrelevant once wildtype Ultra-Mini is delivered — the replacement protein does not need its own pathogenic alleles to be rescued. The target variant of this project (E1659A) sits in the densest pathogenic cluster, inside Ultra-Mini.
+    </p>
+    <p class="text-[10px] text-neutral-500 leading-relaxed mt-2">
+      <span class="text-amber-400">Pseudogene caveat:</span> STRCP1 shares &gt;99 % coding identity with STRC; exons 1–15 (entire N-terminal) have 100 % identity. N-terminal variant counts in ClinVar/gnomAD may include pseudogene contamination. Ultra-Mini sits entirely outside the ambiguous zone — every residue in 1075–1775 is unambiguously STRC, not pSTRC.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "title": "Beyond AlphaFold3 — eleven supporting computational models",
+  "lede": "The 22 AF3 jobs above carry the structural argument. Four additional computational tracks underpin the why, the how-much, and the clinical read-out — variant pathogenicity chemistry, AAV transduction statistics, anti-AAV immunity kinetics, and pseudogene bioinformatics. Each lives on a sibling hypothesis page with its own full working; summaries are linked below.",
+  "c1_label": "Track 1 · AAV transduction statistics",
+  "c1_title": "Gamma-Poisson transduction model",
+  "c1_body": "Three iterations of quantitative transduction modelling — v1 Simple Poisson (56.5× advantage), v2 Gamma-Poisson with cell-heterogeneity overdispersion (2.8–4.7×), v3 OTOF-clinical-recalibrated against published OTOF/DB-OTO trial data (2.2× at clinical titer). The 2.2× is the honest, deployable number: single-vector covers 89.8 % of OHCs at clinical titer vs. 40.4 % for dual-vector. This is what makes Mini-STRC worth the structural effort.",
+  "c1_sources": "Notes: Dual-Vector vs Single-Vector · Gamma-Poisson Transduction Model",
+  "c2_label": "Track 2 · Variant pathogenicity chemistry",
+  "c2_title": "E1659A electrostatic analysis",
+  "c2_body": "AlphaFold Job 3 showed E1659A has pTM 0.64 — essentially identical to wildtype (0.63). So the structure is fine. Electrostatic analysis resolves the paradox: E1659A removes a −1 charged residue exposed at the TMEM145-contact surface, disrupting ionic interactions without geometric damage. AlphaMissense scores 0.9016 pathogenic. Ultra-Mini carries this exact residue, which is why gene therapy delivers wildtype STRC and does not need to correct chemistry <em>in situ</em>.",
+  "c2_sources": "Notes: Electrostatic Analysis E1659A · E1659A Tool Testing Results",
+  "c3_label": "Track 3 · Anti-AAV immunity",
+  "c3_title": "Anti-AAV NAb response model",
+  "c3_body": "Per-vector-dose neutralising antibody response model, seroprevalence-adjusted. Smaller single-vector cassette means one half the dose of dual-vector to achieve equivalent payload delivery — halves the NAb trigger and the systemic immune burden. Combined with Ultra-Mini's zero-CpG CDS (reduces TLR9 activation), total anti-capsid immunity exposure is 2.5–4× lower than the current dual-vector clinical trajectory.",
+  "c3_sources": "Note: Anti-AAV Immune Response Model",
+  "c4_label": "Track 4 · Variant interpretation",
+  "c4_title": "Pseudogene / reclassification pipeline",
+  "c4_body": "Computational case for reclassifying E1659A (c.4976A>C) from VUS to Likely Pathogenic. STRC's pseudogene (pSTRC) confuses most variant callers and makes de novo variant discovery noisy; the pipeline applies ACMG criteria + segregation analysis + AlphaMissense 0.9016 to cross the reclassification threshold. This is the evidentiary basis for why Misha's specific variant justifies therapy development.",
+  "c4_sources": "Notes: Pseudogene Problem · E1659A Conservation and Reclassification",
+  "inline_title": "Already embedded above (not repeated here)",
+  "inline_body": "Four additional computational artifacts are embedded inline in the numbered sections on this page rather than cross-referenced: <strong class=\"text-neutral-300\">pLDDT cut-point analysis + boundary sweep</strong> (§6), <strong class=\"text-neutral-300\">CpG-depletion pipeline + promoter shortlist + AAV vector architecture</strong> (§13), <strong class=\"text-neutral-300\">cross-species conservation</strong> (§12), and <strong class=\"text-neutral-300\">disorder/ESM/DMS cross-validation battery</strong> (§11). With the tracks above, total Mini-STRC-relevant computational artifacts = <strong class=\"text-neutral-300\">22 AF3 jobs + 11 supporting models/pipelines</strong>."
+}

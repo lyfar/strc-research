@@ -1,0 +1,220 @@
+{
+  "summary": {
+    "phase": "4c",
+    "targets_compared": [
+      "wt_full",
+      "e1659a_mutant"
+    ],
+    "delta_gate_kcal_mol": 1.0,
+    "min_leads_passing": 3,
+    "leads_passing": 0,
+    "verdict": "FAIL",
+    "mean_delta_leads": -0.455,
+    "mean_delta_positive": -0.043,
+    "mean_delta_negative": -0.138
+  },
+  "paired": [
+    {
+      "name": "salicylic-acid",
+      "role": "lead",
+      "smiles": "OC(=O)c1ccccc1O",
+      "wt_dG_kcal_mol": -4.645,
+      "e1659a_dG_kcal_mol": -4.213,
+      "delta_wt_minus_mut": -0.432
+    },
+    {
+      "name": "nicotinic-acid",
+      "role": "lead",
+      "smiles": "OC(=O)c1cccnc1",
+      "wt_dG_kcal_mol": -4.367,
+      "e1659a_dG_kcal_mol": -3.967,
+      "delta_wt_minus_mut": -0.4
+    },
+    {
+      "name": "cyclopropane-phenyl-COOH",
+      "role": "lead",
+      "smiles": "OC(=O)C1CC1c1ccccc1",
+      "wt_dG_kcal_mol": -5.404,
+      "e1659a_dG_kcal_mol": -4.965,
+      "delta_wt_minus_mut": -0.439
+    },
+    {
+      "name": "indole-3-acetic-acid",
+      "role": "lead",
+      "smiles": "OC(=O)Cc1c[nH]c2ccccc12",
+      "wt_dG_kcal_mol": -5.557,
+      "e1659a_dG_kcal_mol": -5.097,
+      "delta_wt_minus_mut": -0.46
+    },
+    {
+      "name": "naphthalene-2-carboxylic",
+      "role": "lead",
+      "smiles": "OC(=O)c1ccc2ccccc2c1",
+      "wt_dG_kcal_mol": -6.009,
+      "e1659a_dG_kcal_mol": -5.463,
+      "delta_wt_minus_mut": -0.546
+    },
+    {
+      "name": "diflunisal",
+      "role": "positive",
+      "smiles": "OC(=O)c1cc(-c2ccc(F)cc2F)ccc1O",
+      "wt_dG_kcal_mol": -6.124,
+      "e1659a_dG_kcal_mol": -6.081,
+      "delta_wt_minus_mut": -0.043
+    },
+    {
+      "name": "glucose",
+      "role": "negative",
+      "smiles": "OCC1OC(O)C(O)C(O)C1O",
+      "wt_dG_kcal_mol": -4.032,
+      "e1659a_dG_kcal_mol": -4.118,
+      "delta_wt_minus_mut": 0.086
+    },
+    {
+      "name": "urea",
+      "role": "negative",
+      "smiles": "NC(=O)N",
+      "wt_dG_kcal_mol": -3.291,
+      "e1659a_dG_kcal_mol": -2.955,
+      "delta_wt_minus_mut": -0.336
+    },
+    {
+      "name": "acetamide",
+      "role": "negative",
+      "smiles": "CC(=O)N",
+      "wt_dG_kcal_mol": -3.092,
+      "e1659a_dG_kcal_mol": -2.927,
+      "delta_wt_minus_mut": -0.165
+    }
+  ],
+  "wt_results": [
+    {
+      "name": "salicylic-acid",
+      "smiles": "OC(=O)c1ccccc1O",
+      "role": "lead",
+      "best_affinity_kcal_mol": -4.645,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/salicylic-acid__wt_full.pdbqt"
+    },
+    {
+      "name": "nicotinic-acid",
+      "smiles": "OC(=O)c1cccnc1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -4.367,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/nicotinic-acid__wt_full.pdbqt"
+    },
+    {
+      "name": "cyclopropane-phenyl-COOH",
+      "smiles": "OC(=O)C1CC1c1ccccc1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -5.404,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/cyclopropane-phenyl-COOH__wt_full.pdbqt"
+    },
+    {
+      "name": "indole-3-acetic-acid",
+      "smiles": "OC(=O)Cc1c[nH]c2ccccc12",
+      "role": "lead",
+      "best_affinity_kcal_mol": -5.557,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/indole-3-acetic-acid__wt_full.pdbqt"
+    },
+    {
+      "name": "naphthalene-2-carboxylic",
+      "smiles": "OC(=O)c1ccc2ccccc2c1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -6.009,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/naphthalene-2-carboxylic__wt_full.pdbqt"
+    },
+    {
+      "name": "diflunisal",
+      "smiles": "OC(=O)c1cc(-c2ccc(F)cc2F)ccc1O",
+      "role": "positive",
+      "best_affinity_kcal_mol": -6.124,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/diflunisal__wt_full.pdbqt"
+    },
+    {
+      "name": "glucose",
+      "smiles": "OCC1OC(O)C(O)C(O)C1O",
+      "role": "negative",
+      "best_affinity_kcal_mol": -4.032,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/glucose__wt_full.pdbqt"
+    },
+    {
+      "name": "urea",
+      "smiles": "NC(=O)N",
+      "role": "negative",
+      "best_affinity_kcal_mol": -3.291,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/urea__wt_full.pdbqt"
+    },
+    {
+      "name": "acetamide",
+      "smiles": "CC(=O)N",
+      "role": "negative",
+      "best_affinity_kcal_mol": -3.092,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/acetamide__wt_full.pdbqt"
+    }
+  ],
+  "e1659a_results": [
+    {
+      "name": "salicylic-acid",
+      "smiles": "OC(=O)c1ccccc1O",
+      "role": "lead",
+      "best_affinity_kcal_mol": -4.213,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/salicylic-acid__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "nicotinic-acid",
+      "smiles": "OC(=O)c1cccnc1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -3.967,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/nicotinic-acid__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "cyclopropane-phenyl-COOH",
+      "smiles": "OC(=O)C1CC1c1ccccc1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -4.965,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/cyclopropane-phenyl-COOH__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "indole-3-acetic-acid",
+      "smiles": "OC(=O)Cc1c[nH]c2ccccc12",
+      "role": "lead",
+      "best_affinity_kcal_mol": -5.097,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/indole-3-acetic-acid__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "naphthalene-2-carboxylic",
+      "smiles": "OC(=O)c1ccc2ccccc2c1",
+      "role": "lead",
+      "best_affinity_kcal_mol": -5.463,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/naphthalene-2-carboxylic__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "diflunisal",
+      "smiles": "OC(=O)c1cc(-c2ccc(F)cc2F)ccc1O",
+      "role": "positive",
+      "best_affinity_kcal_mol": -6.081,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/diflunisal__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "glucose",
+      "smiles": "OCC1OC(O)C(O)C(O)C1O",
+      "role": "negative",
+      "best_affinity_kcal_mol": -4.118,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/glucose__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "urea",
+      "smiles": "NC(=O)N",
+      "role": "negative",
+      "best_affinity_kcal_mol": -2.955,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/urea__e1659a_mutant.pdbqt"
+    },
+    {
+      "name": "acetamide",
+      "smiles": "CC(=O)N",
+      "role": "negative",
+      "best_affinity_kcal_mol": -2.927,
+      "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/poses/acetamide__e1659a_mutant.pdbqt"
+    }
+  ]
+}

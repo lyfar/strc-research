@@ -61,8 +61,18 @@ const t = useComponentTranslations(lang, { en, zh });
                 <td class="p-3 text-right font-mono text-violet-400">4-5%</td>
                 <td class="p-3 text-right font-mono text-violet-400">1,532 bp</td>
               </tr>
+              <tr class="border-b border-white/5 bg-emerald-500/[0.06]">
+                <td class="p-3 font-mono text-emerald-400 font-bold">1075 ★★</td>
+                <td class="p-3 text-right font-mono text-emerald-400">1075-1775</td>
+                <td class="p-3 text-right font-mono text-emerald-400">2,103</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">0.87</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">0.90</td>
+                <td class="p-3 text-right font-mono text-emerald-400">6%</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">2,597 bp</td>
+              </tr>
             </tbody>
           </table>
+          <p class="text-[10px] text-neutral-500 mt-2">★ first-pass optimum · ★★ step-2 clinical (Ultra-Mini) — <span class="text-emerald-400">better pTM, better ranking, 1,125 bp more headroom</span>; 2 pp more IUPred3 disorder is a narrow-window artefact of the ARM repeats (AF3 pTM is the load-bearing fold score).</p>
         </div>
         
         <div class="bg-violet-500/10 border border-violet-500/20 rounded-lg p-4 mb-4">
@@ -88,14 +98,21 @@ const t = useComponentTranslations(lang, { en, zh });
                 <td class="p-3 text-right font-mono">0.88</td>
                 <td class="p-3 text-right font-mono">4%</td>
               </tr>
-              <tr class="text-neutral-400">
+              <tr class="border-b border-white/5 text-neutral-400">
                 <td class="p-3"><Fragment set:html={t('t5')} /></td>
                 <td class="p-3 text-right font-mono">0.85</td>
                 <td class="p-3 text-right font-mono">0.88</td>
                 <td class="p-3 text-right font-mono">5%</td>
               </tr>
+              <tr class="bg-emerald-500/[0.05] text-neutral-300">
+                <td class="p-3 text-white font-semibold">Ultra-Mini 1075-1775 (no SP, solo fold)</td>
+                <td class="p-3 text-right font-mono text-emerald-400 font-bold">0.87</td>
+                <td class="p-3 text-right font-mono text-emerald-400">0.90</td>
+                <td class="p-3 text-right font-mono text-emerald-400">6%</td>
+              </tr>
             </tbody>
           </table>
+          <p class="text-[10px] text-neutral-500 mt-2">IgK-SP behaviour is identical on Ultra-Mini by construction (SP is cleaved before the mature protein sees the C-terminal fold). A dedicated IgK-SP + Ultra-Mini AF3 job was not run — the 21 aa SP has no more impact on the 701 aa Ultra-Mini than it did on the 1,076 aa Mini-STRC.</p>
         </div>
         <p class="text-xs text-neutral-400 leading-relaxed"><Fragment set:html={t('t3')} /></p>
       </div>

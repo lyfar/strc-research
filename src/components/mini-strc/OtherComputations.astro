@@ -1,0 +1,70 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/OtherComputations.en.json';
+import ru from './i18n/OtherComputations.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+const base = lang === 'en' ? '' : `/${lang}`;
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-indigo-400">{t('title')}</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-indigo-500/15 text-indigo-400 font-semibold">11 MODELS · 4 EXTERNAL PAGES</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl"><Fragment set:html={t('lede')} /></p>
+
+  <div class="grid md:grid-cols-2 gap-3">
+    <!-- Transduction math -->
+    <a href={`${base}/hypotheses/dual-vector`} class="group block bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 rounded-lg p-4 transition-colors no-underline">
+      <div class="flex items-start justify-between mb-2">
+        <div class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold">{t('c1_label')}</div>
+        <span class="text-[10px] text-neutral-500 group-hover:text-indigo-400 transition-colors">↗</span>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('c1_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">2.2× advantage · clinical titer · v3 OTOF-calibrated</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed"><Fragment set:html={t('c1_body')} /></p>
+      <div class="text-[10px] text-neutral-500 mt-2 font-mono">{t('c1_sources')}</div>
+    </a>
+
+    <!-- Electrostatics -->
+    <a href={`${base}/hypotheses/electrostatics`} class="group block bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 rounded-lg p-4 transition-colors no-underline">
+      <div class="flex items-start justify-between mb-2">
+        <div class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold">{t('c2_label')}</div>
+        <span class="text-[10px] text-neutral-500 group-hover:text-indigo-400 transition-colors">↗</span>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('c2_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">Chemistry not geometry · AlphaMissense 0.90 confirmed</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed"><Fragment set:html={t('c2_body')} /></p>
+      <div class="text-[10px] text-neutral-500 mt-2 font-mono">{t('c2_sources')}</div>
+    </a>
+
+    <!-- Immune response -->
+    <a href={`${base}/hypotheses/immune`} class="group block bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 rounded-lg p-4 transition-colors no-underline">
+      <div class="flex items-start justify-between mb-2">
+        <div class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold">{t('c3_label')}</div>
+        <span class="text-[10px] text-neutral-500 group-hover:text-indigo-400 transition-colors">↗</span>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('c3_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">Per-vector-dose NAb model · seroprevalence adjusted</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed"><Fragment set:html={t('c3_body')} /></p>
+      <div class="text-[10px] text-neutral-500 mt-2 font-mono">{t('c3_sources')}</div>
+    </a>
+
+    <!-- Reclassification -->
+    <a href={`${base}/reclassification`} class="group block bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 rounded-lg p-4 transition-colors no-underline">
+      <div class="flex items-start justify-between mb-2">
+        <div class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold">{t('c4_label')}</div>
+        <span class="text-[10px] text-neutral-500 group-hover:text-indigo-400 transition-colors">↗</span>
+      </div>
+      <div class="text-sm text-white font-semibold mb-1">{t('c4_title')}</div>
+      <div class="text-[10px] text-neutral-500 mb-2 font-mono">pSTRC problem · VUS → Likely Pathogenic case</div>
+      <p class="text-[11px] text-neutral-400 leading-relaxed"><Fragment set:html={t('c4_body')} /></p>
+      <div class="text-[10px] text-neutral-500 mt-2 font-mono">{t('c4_sources')}</div>
+    </a>
+  </div>
+
+  <div class="mt-4 bg-white/[0.02] border border-white/5 rounded-lg p-4">
+    <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-2">{t('inline_title')}</div>
+    <p class="text-[11px] text-neutral-400 leading-relaxed"><Fragment set:html={t('inline_body')} /></p>
+  </div>
+</div>

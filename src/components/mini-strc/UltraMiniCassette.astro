@@ -1,0 +1,155 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/UltraMiniCassette.en.json';
+import ru from './i18n/UltraMiniCassette.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">{t('title')}</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-emerald-500/15 text-emerald-400 font-semibold">GATE 3 · VECTOR BUDGET</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl"><Fragment set:html={t('lede')} /></p>
+
+  <!-- CpG depletion -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-4">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-[10px] uppercase tracking-wider text-neutral-500">{t('cpg_title')}</div>
+      <div class="text-[10px] font-mono text-emerald-400">105 → 0 CpG · ΔCAI 3.65 %</div>
+    </div>
+    <table class="w-full text-[11px] font-mono">
+      <thead>
+        <tr class="text-neutral-500 border-b border-white/5">
+          <th class="text-left pb-1.5 font-medium">Property</th>
+          <th class="text-right pb-1.5 font-medium">Mini-STRC 700–1775</th>
+          <th class="text-right pb-1.5 font-medium text-emerald-400">Ultra-Mini 1075–1775</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-300">
+        <tr class="border-b border-white/5">
+          <td class="py-1">Protein length</td>
+          <td class="text-right">1,076 aa</td>
+          <td class="text-right text-emerald-400">701 aa</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1">CDS length</td>
+          <td class="text-right">3,231 bp</td>
+          <td class="text-right text-emerald-400">2,106 bp</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1">CpG (baseline)</td>
+          <td class="text-right">156</td>
+          <td class="text-right">105</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1">CpG (post-depletion)</td>
+          <td class="text-right text-emerald-400">0</td>
+          <td class="text-right text-emerald-400">0</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1">CAI cost of depletion</td>
+          <td class="text-right">3.51 %</td>
+          <td class="text-right">3.65 %</td>
+        </tr>
+        <tr>
+          <td class="py-1">Final CAI</td>
+          <td class="text-right">0.965</td>
+          <td class="text-right">0.9635</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-[10px] text-neutral-500 mt-3 leading-relaxed"><Fragment set:html={t('cpg_note')} /></p>
+  </div>
+
+  <!-- Promoter -->
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-4">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-[10px] uppercase tracking-wider text-neutral-500">{t('promoter_title')}</div>
+      <div class="text-[10px] font-mono text-emerald-400">B8 + WPRE3-compact · 834 bp · tier 4</div>
+    </div>
+    <table class="w-full text-[11px] font-mono">
+      <thead>
+        <tr class="text-neutral-500 border-b border-white/5">
+          <th class="text-left pb-1.5 font-medium">Candidate</th>
+          <th class="text-right pb-1.5 font-medium">Reg. bp</th>
+          <th class="text-right pb-1.5 font-medium">Fits 700–1775?</th>
+          <th class="text-right pb-1.5 font-medium">Fits Ultra-Mini?</th>
+          <th class="text-right pb-1.5 font-medium">OHC</th>
+          <th class="text-right pb-1.5 font-medium">Tier</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-300">
+        <tr class="border-b border-white/5">
+          <td class="py-1">B8 alone (current)</td>
+          <td class="text-right">587</td>
+          <td class="text-right text-emerald-400">✓</td>
+          <td class="text-right text-emerald-400">✓ · 1,257 bp spare</td>
+          <td class="text-right">5/5</td>
+          <td class="text-right">3</td>
+        </tr>
+        <tr class="border-b border-white/5 bg-emerald-500/5">
+          <td class="py-1 text-white font-semibold">B8 + WPRE3-compact</td>
+          <td class="text-right">834</td>
+          <td class="text-right text-red-400">✗ (-115)</td>
+          <td class="text-right text-emerald-400 font-bold">✓ · 1,010 bp spare</td>
+          <td class="text-right">5/5</td>
+          <td class="text-right text-emerald-400 font-bold">4</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1">B8 + full WPRE</td>
+          <td class="text-right">1,180</td>
+          <td class="text-right text-red-400">✗ (-461)</td>
+          <td class="text-right text-emerald-400">✓ · 664 bp spare</td>
+          <td class="text-right">5/5</td>
+          <td class="text-right">4</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-1 text-neutral-500">Myo15_956 alone</td>
+          <td class="text-right">956</td>
+          <td class="text-right text-red-400">✗</td>
+          <td class="text-right text-emerald-400">✓</td>
+          <td class="text-right text-yellow-400">3/5</td>
+          <td class="text-right">3</td>
+        </tr>
+        <tr>
+          <td class="py-1 text-neutral-500">Prestin native + WPRE3</td>
+          <td class="text-right">2,047</td>
+          <td class="text-right text-red-400">✗</td>
+          <td class="text-right text-red-400">✗ (-203)</td>
+          <td class="text-right">5/5</td>
+          <td class="text-right">1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-[10px] text-neutral-500 mt-3 leading-relaxed"><Fragment set:html={t('promoter_note')} /></p>
+  </div>
+
+  <!-- Cassette diagram -->
+  <div class="bg-gradient-to-br from-emerald-500/[0.05] to-transparent border border-emerald-500/20 rounded-lg p-4">
+    <div class="text-[10px] uppercase tracking-wider text-emerald-400 mb-2 font-semibold">{t('cassette_title')}</div>
+    <div class="overflow-x-auto">
+      <div class="flex items-stretch gap-0.5 text-[9px] font-mono min-w-max mb-2">
+        <div class="bg-neutral-700 text-neutral-200 px-2 py-3 rounded-l">ITR · 150</div>
+        <div class="bg-purple-500/30 text-purple-200 px-2 py-3">B8 · 587</div>
+        <div class="bg-neutral-600 text-neutral-200 px-2 py-3">Kozak · 10</div>
+        <div class="bg-blue-500/30 text-blue-200 px-2 py-3">IgK SP · 63</div>
+        <div class="bg-emerald-500/40 text-emerald-100 px-2 py-3 font-bold">Ultra-Mini CDS · 2,103</div>
+        <div class="bg-neutral-600 text-neutral-200 px-2 py-3">stop · 3</div>
+        <div class="bg-yellow-500/30 text-yellow-100 px-2 py-3">WPRE3-c · 247</div>
+        <div class="bg-orange-500/30 text-orange-100 px-2 py-3">bGH pA · 225</div>
+        <div class="bg-neutral-700 text-neutral-200 px-2 py-3 rounded-r">ITR · 150</div>
+      </div>
+      <div class="flex justify-between text-[9px] text-neutral-500 font-mono">
+        <span>5′</span>
+        <span class="text-emerald-400 font-semibold">Total 3,538 bp · 1,162 bp under 4,700 bp AAV ceiling</span>
+        <span>3′</span>
+      </div>
+    </div>
+    <p class="text-[10px] text-neutral-400 mt-3 leading-relaxed"><Fragment set:html={t('cassette_body')} /></p>
+  </div>
+
+  <p class="text-[10px] text-neutral-500 mt-3">
+    <Fragment set:html={t('files')} />
+  </p>
+</div>

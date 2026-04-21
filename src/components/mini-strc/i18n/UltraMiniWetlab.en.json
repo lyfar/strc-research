@@ -1,0 +1,18 @@
+{
+  "title": "12. Wet-lab handoff — three steps from frozen compute to first biological signal",
+  "lede": "Every computational gate has been cleared. The remaining questions are about protein folding in cells, secretion efficiency, and functional binding to TMEM145 <em>in vivo</em> — none of which AF3 can answer. The path from here is physical: order DNA, clone a vector, co-transfect HEK293 cells, pull down, blot.",
+  "s1_label": "Step 1 · DNA synthesis",
+  "s1_title": "Order the gBlock",
+  "s1_body": "Synthesise the CpG-depleted Ultra-Mini CDS (2,103 bp, 0 CpG, CAI 0.9635) as a gBlock fragment. No lab bench needed — ordered online with a credit card, shipped in two weeks. Sequence is finalised in <code class=\"text-neutral-400\">cpg_depletion_ultra_mini_strc_max.fasta</code>.",
+  "s1_deliverable": "→ 2,103 bp linear dsDNA in a tube",
+  "s2_label": "Step 2 · Vector assembly",
+  "s2_title": "Clone the pAAV construct",
+  "s2_body": "Assemble the full cassette: 5′ITR · B8 enhancer · Kozak · IgK signal peptide · Ultra-Mini CDS · stop · WPRE3-compact · bGH polyA · 3′ITR. Outsource to VectorBuilder or GenScript with architecture spec; they handle synthesis, cloning, and QC.",
+  "s2_deliverable": "→ pAAV-B8-IgK-UM-WPRE3-bGH plasmid, sequence-verified",
+  "s3_label": "Step 3 · Functional test",
+  "s3_title": "HEK293 coIP · Ultra-Mini × TMEM145",
+  "s3_body": "Co-transfect HEK293 cells with FLAG-tagged Ultra-Mini-STRC and HA-tagged TMEM145. Lyse, pull down with anti-FLAG beads, blot for HA. Positive signal confirms the AF3-predicted interface works in a mammalian membrane context. Derstroff et al. ran this exact assay for native STRC and got a positive result; we aim to replicate with the Ultra-Mini construct.",
+  "s3_deliverable": "→ Western blot: does HA-TMEM145 co-precipitate with FLAG-Ultra-Mini?",
+  "partners_title": "Wet-lab partners considered (in priority order)",
+  "footer": "Beyond Step 3 the pathway continues: mouse model transduction (~$20–50k, 6–12 months) · IND-enabling toxicology ($500k–2M) · Phase 1 trial ($5–20M). The compute-to-clinic gap closes at Step 3 — everything before it is argumentation, everything after it is pharmacology."
+}

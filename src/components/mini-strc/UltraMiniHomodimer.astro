@@ -1,0 +1,70 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/UltraMiniHomodimer.en.json';
+import ru from './i18n/UltraMiniHomodimer.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-emerald-400">{t('title')}</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-emerald-500/15 text-emerald-400 font-semibold">GATE 2 · 2026-04-21</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl"><Fragment set:html={t('lede')} /></p>
+
+  <div class="grid lg:grid-cols-3 gap-3 mb-4">
+    <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4">
+      <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">ipTM</div>
+      <div class="text-2xl font-mono text-neutral-300 font-bold">0.28 – 0.30</div>
+      <div class="text-[10px] text-neutral-500 mt-1">{t('iptm_sub')}</div>
+    </div>
+    <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4">
+      <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">{t('c2_title')}</div>
+      <div class="text-2xl font-mono text-emerald-400 font-bold">94 %</div>
+      <div class="text-[10px] text-neutral-500 mt-1">{t('c2_sub')}</div>
+    </div>
+    <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-4">
+      <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">{t('sc_title')}</div>
+      <div class="text-xl font-mono text-emerald-400 font-bold">1579 · 1580 · 1581</div>
+      <div class="text-[10px] text-neutral-500 mt-1">{t('sc_sub')}</div>
+    </div>
+  </div>
+
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-4 mb-4">
+    <div class="text-[10px] uppercase tracking-wider text-neutral-500 mb-2">{t('zones_title')}</div>
+    <table class="w-full text-[11px] font-mono">
+      <thead>
+        <tr class="text-neutral-500 border-b border-white/5">
+          <th class="text-left pb-1.5 font-medium">Zone</th>
+          <th class="text-right pb-1.5 font-medium">Residues</th>
+          <th class="text-right pb-1.5 font-medium">In ≥3/5 models</th>
+          <th class="text-right pb-1.5 font-medium">Interpretation</th>
+        </tr>
+      </thead>
+      <tbody class="text-neutral-300">
+        <tr class="border-b border-white/5">
+          <td class="py-1.5">Stump (aa 1077–1131)</td>
+          <td class="text-right">27</td>
+          <td class="text-right">consensus</td>
+          <td class="text-right text-neutral-500 text-[10px]">possible truncation artefact</td>
+        </tr>
+        <tr class="bg-emerald-500/5">
+          <td class="py-1.5 text-white font-semibold">Deep ARM (aa 1493–1590)</td>
+          <td class="text-right">17</td>
+          <td class="text-right text-emerald-400">consensus + self-contacts</td>
+          <td class="text-right text-emerald-400 text-[10px]">real dimer signature</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-[10px] text-neutral-500 mt-3 leading-relaxed"><Fragment set:html={t('zones_note')} /></p>
+  </div>
+
+  <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
+    <div class="text-[10px] uppercase tracking-wider text-emerald-400 mb-2 font-semibold">{t('pass_title')}</div>
+    <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('pass_body')} /></p>
+  </div>
+
+  <p class="text-[10px] text-neutral-500 mt-3">
+    <Fragment set:html={t('files')} />
+  </p>
+</div>

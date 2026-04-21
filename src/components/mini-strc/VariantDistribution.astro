@@ -30,34 +30,40 @@ const t = useComponentTranslations(lang, { en });
       <thead>
         <tr class="border-b border-white/5 text-neutral-500">
           <th class="text-left p-3 font-medium">Metric</th>
-          <th class="text-right p-3 font-medium">{t('removed_label')}</th>
-          <th class="text-right p-3 font-medium">{t('retained_label')}</th>
+          <th class="text-right p-3 font-medium">1-699 (removed in both)</th>
+          <th class="text-right p-3 font-medium">700-1074 (removed in Ultra only)</th>
+          <th class="text-right p-3 font-medium text-emerald-400">1075-1775 (retained in Ultra)</th>
         </tr>
       </thead>
       <tbody>
         <tr class="border-b border-white/5 text-neutral-400">
           <td class="p-3">{t('path_label')}</td>
-          <td class="p-3 text-right font-mono">{t('removed_path')}</td>
-          <td class="p-3 text-right font-mono text-green-400 font-bold">{t('retained_path')}</td>
+          <td class="p-3 text-right font-mono">~12 (13 %)</td>
+          <td class="p-3 text-right font-mono text-amber-400">~5 (6 %)</td>
+          <td class="p-3 text-right font-mono text-emerald-400 font-bold">~72+ (81 %)</td>
         </tr>
         <tr class="border-b border-white/5 text-neutral-400">
           <td class="p-3">{t('missense_label')}</td>
-          <td class="p-3 text-right font-mono">{t('removed_miss')}</td>
-          <td class="p-3 text-right font-mono">{t('retained_miss')}</td>
+          <td class="p-3 text-right font-mono">2 (L490P, C590R)</td>
+          <td class="p-3 text-right font-mono text-amber-400">1 (L714P)</td>
+          <td class="p-3 text-right font-mono text-emerald-400">4+ (W1475C, M1483R, P1520R, T1709A)</td>
         </tr>
         <tr class="border-b border-white/5 text-neutral-400">
           <td class="p-3">{t('nonsense_label')}</td>
-          <td class="p-3 text-right font-mono">{t('removed_non')}</td>
-          <td class="p-3 text-right font-mono">{t('retained_non')}</td>
+          <td class="p-3 text-right font-mono">5 (pos 87-410)</td>
+          <td class="p-3 text-right font-mono text-amber-400">~4 (pos 849-1050)</td>
+          <td class="p-3 text-right font-mono text-emerald-400">~16+ (pos 1083-1730)</td>
         </tr>
         <tr class="text-neutral-400">
           <td class="p-3">{t('glyc_label')}</td>
-          <td class="p-3 text-right font-mono">{t('removed_glyc')}</td>
-          <td class="p-3 text-right font-mono">{t('retained_glyc')}</td>
+          <td class="p-3 text-right font-mono">9 of 14</td>
+          <td class="p-3 text-right font-mono text-amber-400">3 of 14 (N824, N916, N964)</td>
+          <td class="p-3 text-right font-mono text-emerald-400">2 of 14 (N1179, N1274)</td>
         </tr>
       </tbody>
     </table>
   </div>
+  <p class="text-[10px] text-neutral-500 mb-4">Ultra-Mini keeps <span class="text-emerald-400 font-semibold">81 % of the pathogenic load</span> in a construct that's 61 % smaller than the full gene. The ~5 LRR-region variants (700-1074) that fall outside the Ultra-Mini window become irrelevant once wildtype Ultra-Mini is delivered — the replacement protein doesn't need its own pathogenic alleles to be rescued.</p>
 
   <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-3">
     <p class="text-xs text-neutral-300 leading-relaxed"><Fragment set:html={t('conclusion')} /></p>

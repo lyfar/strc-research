@@ -1,0 +1,253 @@
+---
+import { useComponentTranslations } from '../../lib/component-i18n';
+import en from './i18n/AllExperiments.en.json';
+import ru from './i18n/AllExperiments.ru.json';
+const { lang = 'en' } = Astro.props;
+const t = useComponentTranslations(lang, { en, ru });
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-cyan-400">{t('title')}</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-cyan-500/15 text-cyan-400 font-semibold">MASTER TABLE · 22 AF3 JOBS</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl"><Fragment set:html={t('lede')} /></p>
+
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+    <div class="overflow-x-auto">
+      <table class="w-full text-[11px]">
+        <thead>
+          <tr class="border-b border-white/10 text-neutral-500 bg-white/[0.02]">
+            <th class="text-left p-2 font-medium w-10">#</th>
+            <th class="text-left p-2 font-medium">Job</th>
+            <th class="text-left p-2 font-medium">Construct</th>
+            <th class="text-right p-2 font-medium">pTM / ipTM</th>
+            <th class="text-left p-2 font-medium">Verdict</th>
+            <th class="text-left p-2 font-medium w-24">Section</th>
+          </tr>
+        </thead>
+        <tbody class="font-mono">
+          <!-- Block 1: Baseline fold -->
+          <tr class="border-b border-white/5 text-neutral-500 bg-blue-500/[0.03]">
+            <td colspan="6" class="px-2 py-1.5 text-[10px] uppercase tracking-wider text-blue-400">{t('block_fold')}</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">4</td>
+            <td class="p-2">STRC WT (solo)</td>
+            <td class="p-2 text-neutral-400">1-1775 · full</td>
+            <td class="p-2 text-right">pTM 0.63</td>
+            <td class="p-2 text-neutral-400">{t('v_baseline')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">3</td>
+            <td class="p-2">STRC E1659A (solo)</td>
+            <td class="p-2 text-neutral-400">1-1775 · mutant</td>
+            <td class="p-2 text-right">pTM 0.64</td>
+            <td class="p-2 text-emerald-400">{t('v_fold_intact')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">6</td>
+            <td class="p-2">N-terminal solo</td>
+            <td class="p-2 text-neutral-400">1-615</td>
+            <td class="p-2 text-right">pTM 0.27</td>
+            <td class="p-2 text-neutral-400">{t('v_disordered')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">5</td>
+            <td class="p-2">Mini-STRC solo</td>
+            <td class="p-2 text-neutral-400">616-1775</td>
+            <td class="p-2 text-right text-emerald-400">pTM 0.81</td>
+            <td class="p-2 text-emerald-400">{t('v_folds_better')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+
+          <!-- Block 2: Boundary sweep -->
+          <tr class="border-b border-white/5 text-neutral-500 bg-cyan-500/[0.03]">
+            <td colspan="6" class="px-2 py-1.5 text-[10px] uppercase tracking-wider text-cyan-400">{t('block_boundary')}</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">—</td>
+            <td class="p-2">Truncation 650</td>
+            <td class="p-2 text-neutral-400">650-1775</td>
+            <td class="p-2 text-right">pTM 0.84</td>
+            <td class="p-2 text-neutral-400">{t('v_worse_than_700')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">—</td>
+            <td class="p-2">Truncation 680</td>
+            <td class="p-2 text-neutral-400">680-1775</td>
+            <td class="p-2 text-right">pTM 0.84</td>
+            <td class="p-2 text-neutral-400">{t('v_worse_than_700')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300 bg-blue-500/[0.03]">
+            <td class="p-2 text-neutral-500">F</td>
+            <td class="p-2 text-white">Mini-STRC 700-1775</td>
+            <td class="p-2 text-neutral-400">700-1775</td>
+            <td class="p-2 text-right text-blue-400 font-semibold">pTM 0.86</td>
+            <td class="p-2 text-blue-400">{t('v_first_candidate')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">—</td>
+            <td class="p-2">IgK-SP + 700-1775</td>
+            <td class="p-2 text-neutral-400">IgK + 700-1775</td>
+            <td class="p-2 text-right">pTM 0.85</td>
+            <td class="p-2 text-emerald-400">{t('v_sp_ok')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§8</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">—</td>
+            <td class="p-2">Truncation 720</td>
+            <td class="p-2 text-neutral-400">720-1775</td>
+            <td class="p-2 text-right">pTM 0.86</td>
+            <td class="p-2 text-neutral-400">{t('v_equal_700')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">G</td>
+            <td class="p-2">Delta LRR linker</td>
+            <td class="p-2 text-neutral-400">594-699 + GS + 899-1775</td>
+            <td class="p-2 text-right">pTM 0.80</td>
+            <td class="p-2 text-neutral-500">{t('v_rejected_disorder')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§3</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300 bg-emerald-500/[0.05]">
+            <td class="p-2 text-emerald-400 font-bold">H</td>
+            <td class="p-2 text-white font-semibold">Ultra-Mini (clinical)</td>
+            <td class="p-2 text-emerald-400">1075-1775</td>
+            <td class="p-2 text-right text-emerald-400 font-bold">pTM 0.87</td>
+            <td class="p-2 text-emerald-400 font-semibold">{t('v_clinical')}</td>
+            <td class="p-2 text-emerald-400 text-[10px]">§3</td>
+          </tr>
+
+          <!-- Block 3: Partner screen -->
+          <tr class="border-b border-white/5 text-neutral-500 bg-yellow-500/[0.03]">
+            <td colspan="6" class="px-2 py-1.5 text-[10px] uppercase tracking-wider text-yellow-400">{t('block_partners')}</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">1</td>
+            <td class="p-2">Full STRC × TMEM145 full</td>
+            <td class="p-2 text-neutral-400">1775 + 493 aa</td>
+            <td class="p-2 text-right">ipTM 0.47</td>
+            <td class="p-2 text-neutral-400">{t('v_tmem145_weak')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§4</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">2</td>
+            <td class="p-2">Mini-STRC × TMEM145 full</td>
+            <td class="p-2 text-neutral-400">1182 + 493 aa</td>
+            <td class="p-2 text-right">ipTM 0.43</td>
+            <td class="p-2 text-neutral-400">{t('v_tmem145_weak')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§4</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-500">
+            <td class="p-2">A</td>
+            <td class="p-2">Mini-STRC × Piezo2 CED</td>
+            <td class="p-2">1182 + 563 aa</td>
+            <td class="p-2 text-right">ipTM 0.30</td>
+            <td class="p-2">{t('v_no_interaction')}</td>
+            <td class="p-2 text-[10px]">§4</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-500">
+            <td class="p-2">D</td>
+            <td class="p-2">Mini-STRC × Otoancorin</td>
+            <td class="p-2">1182 + 1153 aa</td>
+            <td class="p-2 text-right">ipTM 0.29</td>
+            <td class="p-2">{t('v_no_interaction')}</td>
+            <td class="p-2 text-[10px]">§4</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-500">
+            <td class="p-2">D2</td>
+            <td class="p-2">Mini-STRC × Tectorin ZP</td>
+            <td class="p-2">1182 + 255 aa</td>
+            <td class="p-2 text-right">ipTM 0.24</td>
+            <td class="p-2">{t('v_no_interaction')}</td>
+            <td class="p-2 text-[10px]">§4</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-500">
+            <td class="p-2">E</td>
+            <td class="p-2">Mini-STRC × TMC1</td>
+            <td class="p-2">1182 + 760 aa</td>
+            <td class="p-2 text-right">ipTM 0.20</td>
+            <td class="p-2">{t('v_no_interaction')}</td>
+            <td class="p-2 text-[10px]">§4</td>
+          </tr>
+
+          <!-- Block 4: Homodimer -->
+          <tr class="border-b border-white/5 text-neutral-500 bg-purple-500/[0.03]">
+            <td colspan="6" class="px-2 py-1.5 text-[10px] uppercase tracking-wider text-purple-400">{t('block_homodimer')}</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">B</td>
+            <td class="p-2">Full STRC × 2</td>
+            <td class="p-2 text-neutral-400">1775 × 2</td>
+            <td class="p-2 text-right">ipTM 0.24</td>
+            <td class="p-2 text-neutral-500">{t('v_homodimer_baseline')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§7</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300">
+            <td class="p-2 text-neutral-500">C</td>
+            <td class="p-2">Mini-STRC × 2</td>
+            <td class="p-2 text-neutral-400">1182 × 2</td>
+            <td class="p-2 text-right">ipTM 0.20</td>
+            <td class="p-2 text-neutral-500">{t('v_homodimer_baseline')}</td>
+            <td class="p-2 text-neutral-500 text-[10px]">§7</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300 bg-emerald-500/[0.04]">
+            <td class="p-2 text-emerald-400 font-bold">UM-D</td>
+            <td class="p-2 text-white">Ultra-Mini × 2</td>
+            <td class="p-2 text-emerald-400">701 × 2</td>
+            <td class="p-2 text-right text-emerald-400 font-bold">ipTM 0.28–0.30</td>
+            <td class="p-2 text-emerald-400">{t('v_homodimer_c2')}</td>
+            <td class="p-2 text-emerald-400 text-[10px]">§7</td>
+          </tr>
+
+          <!-- Block 5: Ultra-Mini gates -->
+          <tr class="border-b border-white/5 text-neutral-500 bg-emerald-500/[0.04]">
+            <td colspan="6" class="px-2 py-1.5 text-[10px] uppercase tracking-wider text-emerald-400">{t('block_gates')}</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300 bg-emerald-500/[0.05]">
+            <td class="p-2 text-emerald-400 font-bold">UM-G</td>
+            <td class="p-2 text-white font-semibold">Ultra-Mini × TMEM145 GOLD</td>
+            <td class="p-2 text-emerald-400">701 + 200 aa · pruned</td>
+            <td class="p-2 text-right text-emerald-400 font-bold">ipTM 0.68</td>
+            <td class="p-2 text-emerald-400 font-semibold">{t('v_gate1a')}</td>
+            <td class="p-2 text-emerald-400 text-[10px]">§5</td>
+          </tr>
+          <tr class="border-b border-white/5 text-neutral-300 bg-emerald-500/[0.05]">
+            <td class="p-2 text-emerald-400 font-bold">UM-F</td>
+            <td class="p-2 text-white font-semibold">Ultra-Mini × TMEM145 full</td>
+            <td class="p-2 text-emerald-400">701 + 493 aa · full</td>
+            <td class="p-2 text-right text-emerald-400 font-bold">ipTM 0.43</td>
+            <td class="p-2 text-emerald-400 font-semibold">{t('v_gate1b')}</td>
+            <td class="p-2 text-emerald-400 text-[10px]">§6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-3 gap-3 text-[11px]">
+    <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+      <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('s1_label')}</div>
+      <div class="text-emerald-400 font-mono font-semibold">4 / 22</div>
+      <div class="text-[9px] text-neutral-500">{t('s1_sub')}</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+      <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('s2_label')}</div>
+      <div class="text-neutral-300 font-mono font-semibold">5 / 22</div>
+      <div class="text-[9px] text-neutral-500">{t('s2_sub')}</div>
+    </div>
+    <div class="bg-white/[0.02] border border-white/5 rounded px-3 py-2">
+      <div class="text-[9px] uppercase tracking-wider text-neutral-500 mb-0.5">{t('s3_label')}</div>
+      <div class="text-neutral-300 font-mono font-semibold">13 / 22</div>
+      <div class="text-[9px] text-neutral-500">{t('s3_sub')}</div>
+    </div>
+  </div>
+
+  <p class="text-[10px] text-neutral-500 mt-3"><Fragment set:html={t('footer')} /></p>
+</div>

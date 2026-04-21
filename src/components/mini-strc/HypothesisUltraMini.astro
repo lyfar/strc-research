@@ -1,0 +1,29 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+<div class="mb-12">
+  <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">2. Hypothesis — cut away everything that is not the binding pocket, then cut again</h3>
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg p-5 mb-4">
+    <p class="text-sm text-neutral-300 leading-relaxed mb-3">
+      AlphaFold 3 predicts stereocilin's fold with wildly different confidence along the sequence. The N-terminal half (residues 1–615) has <strong class="text-red-400">no stable 3D structure</strong> (pTM 0.27, 38 % disordered). The C-terminal half, by contrast, folds into a well-defined ARM-repeat architecture that contains every surface we care about — TMEM145 binding, GPI-anchor omega site, the homodimer cluster, and the E1659 residue our patient variant targets.
+    </p>
+    <p class="text-sm text-neutral-300 leading-relaxed mb-3">
+      We therefore truncated STRC in two explicit steps and tested each at the same computational bar:
+    </p>
+    <div class="grid md:grid-cols-2 gap-3 mb-3">
+      <div class="bg-white/[0.02] border border-white/10 rounded p-3">
+        <div class="text-[9px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Step 1 · first pass</div>
+        <div class="text-white font-mono text-sm mb-1">Mini-STRC 700–1775</div>
+        <div class="text-[11px] text-neutral-400">Remove the disordered N-terminus up to the pLDDT recovery boundary at residue 700. Fits AAV with 1,472 bp regulatory headroom — enough for bare promoter + polyA. pTM 0.86.</div>
+      </div>
+      <div class="bg-emerald-500/[0.05] border border-emerald-500/30 rounded p-3">
+        <div class="text-[9px] uppercase tracking-wider text-emerald-400 font-semibold mb-1">Step 2 · clinical</div>
+        <div class="text-white font-mono text-sm mb-1">Ultra-Mini 1075–1775</div>
+        <div class="text-[11px] text-neutral-300">Cut further past the LRR linker to residue 1075. Fits AAV with <strong class="text-emerald-400">2,597 bp</strong> regulatory headroom — enough for an OHC-exclusive B8 enhancer + WPRE3-compact. pTM <strong class="text-emerald-400">0.87</strong>, best fold of any construct we tested.</div>
+      </div>
+    </div>
+    <p class="text-sm text-neutral-300 leading-relaxed">
+      Every subsequent section in this paper reports an experiment run against both constructs (or run against Mini-STRC first-pass and shown to transfer to Ultra-Mini by construction). <strong class="text-emerald-400">In every test, Ultra-Mini either matches Mini-STRC or beats it on the metric that matters.</strong> The two-step design makes this claim honest: we do not hide the first-pass Mini, we show it next to Ultra-Mini so the comparison is visible.
+    </p>
+  </div>
+</div>

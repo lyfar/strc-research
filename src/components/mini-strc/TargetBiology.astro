@@ -1,0 +1,75 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+<div class="mb-12">
+  <div class="flex items-center gap-2 mb-3">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-yellow-400">4. Target biology — TMEM145 as the anchor partner, and why AF3 undersells the signal</h3>
+    <span class="px-1.5 py-0.5 text-[9px] rounded bg-yellow-500/15 text-yellow-400 font-semibold">6 AF3 JOBS</span>
+  </div>
+  <p class="text-xs text-neutral-400 mb-4 max-w-3xl">
+    Derstroff et al. 2026 (Holt lab co-authored) identified <strong class="text-white">TMEM145</strong> as the OHC stereocilia membrane protein that stereocilin binds via its C-terminal ARM-repeat surface. All Ultra-Mini gating is aimed at preserving that single interface. We screened five other plausible partners as negative controls; all five are negative for both Mini-STRC and Ultra-Mini because the construct is a strict superset/subset of the same binding surface.
+  </p>
+
+  <div class="bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden mb-4">
+    <table class="w-full text-[11px]">
+      <thead>
+        <tr class="border-b border-white/10 text-neutral-500 bg-white/[0.02]">
+          <th class="text-left p-2 font-medium">Partner</th>
+          <th class="text-left p-2 font-medium">Construct tested</th>
+          <th class="text-right p-2 font-medium">ipTM</th>
+          <th class="text-left p-2 font-medium">Verdict (applies to Ultra-Mini)</th>
+        </tr>
+      </thead>
+      <tbody class="font-mono text-neutral-300">
+        <tr class="border-b border-white/5 bg-emerald-500/[0.04]">
+          <td class="p-2 text-white font-semibold">TMEM145 full-length</td>
+          <td class="p-2 text-emerald-400">Ultra-Mini direct</td>
+          <td class="p-2 text-right text-emerald-400 font-bold">0.43</td>
+          <td class="p-2 text-emerald-400">no regression vs full STRC (0.47) — see §6</td>
+        </tr>
+        <tr class="border-b border-white/5 bg-emerald-500/[0.04]">
+          <td class="p-2 text-white font-semibold">TMEM145 GOLD pruned</td>
+          <td class="p-2 text-emerald-400">Ultra-Mini direct</td>
+          <td class="p-2 text-right text-emerald-400 font-bold">0.68</td>
+          <td class="p-2 text-emerald-400">high-confidence (Derstroff-style) — see §5</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-2">Piezo2 CED</td>
+          <td class="p-2 text-neutral-500">Mini-STRC</td>
+          <td class="p-2 text-right">0.30</td>
+          <td class="p-2 text-neutral-500">no interaction · different compartment (MET channel)</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-2">Otoancorin</td>
+          <td class="p-2 text-neutral-500">Mini-STRC</td>
+          <td class="p-2 text-right">0.29</td>
+          <td class="p-2 text-neutral-500">no direct contact · paralog, different cell type</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-2">Tectorin ZP</td>
+          <td class="p-2 text-neutral-500">Mini-STRC</td>
+          <td class="p-2 text-right">0.24</td>
+          <td class="p-2 text-neutral-500">no ZP binding · likely glycan-mediated, AF3 blind</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-2">TMC1</td>
+          <td class="p-2 text-neutral-500">Mini-STRC</td>
+          <td class="p-2 text-right">0.20</td>
+          <td class="p-2 text-neutral-500">no interaction · expected negative control</td>
+        </tr>
+        <tr class="border-b border-white/5 text-neutral-400">
+          <td class="p-2">NFAT + Calcineurin (positive control)</td>
+          <td class="p-2 text-neutral-500">published complex</td>
+          <td class="p-2 text-right text-green-400">0.73</td>
+          <td class="p-2 text-green-400">methodology works on canonical interfaces</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+    <p class="text-xs text-neutral-300 leading-relaxed">
+      <strong class="text-yellow-400">Why full-length TMEM145 scores low even when the interface is real.</strong> Li et al. (2026, bioRxiv) demonstrated that AF3 assembles complexes through interface-level geometric pattern matching learned from training data, not coevolution. TMEM145 has 7 transmembrane helices that collapse in solution because AF3 has no lipid bilayer. Derstroff et al. solved this by pruning TMEM145 down to its isolated GOLD domain, which recovers ipTM 0.91 in published work. Our §5 reproduces that exact workaround on Ultra-Mini (ipTM 0.68), and §6 shows full-length TMEM145 + Ultra-Mini matches the full-STRC precedent — the low absolute number is membrane-context noise, not an interface failure.
+    </p>
+  </div>
+</div>

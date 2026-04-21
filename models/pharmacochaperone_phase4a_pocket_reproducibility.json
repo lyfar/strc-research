@@ -1,0 +1,758 @@
+{
+  "summary": {
+    "n_cifs": 5,
+    "n_pass": 4,
+    "threshold_druggability": 0.7,
+    "threshold_dist_to_K1141_A": 12.0,
+    "threshold_dist_to_loop_A": 12.0,
+    "min_pass_to_advance": 4,
+    "verdict": "PASS",
+    "per_cif_pass": {
+      "WT_full": true,
+      "E1659A_mutant": true,
+      "mini_594_1775": false,
+      "ultra_cterm_only": true,
+      "ultra_x_tmem145": true
+    }
+  },
+  "per_cif": [
+    {
+      "label": "WT_full",
+      "cif": "job4-wildtype.cif",
+      "offset": 0,
+      "chain_heavy_atoms": 13588,
+      "cif_loop_range": [
+        1639,
+        1651
+      ],
+      "cif_k1141_resnum": 1141,
+      "cif_e1659_resnum": 1659,
+      "loop_centroid_A": [
+        10.25,
+        -10.91,
+        -47.78
+      ],
+      "k1141_ca_A": [
+        2.22,
+        -7.27,
+        -40.55
+      ],
+      "e1659_ca_A": [
+        5.85,
+        -15.55,
+        -36.04
+      ],
+      "n_clusters": 8,
+      "n_subpockets": 38,
+      "n_k1141_subpockets": 3,
+      "best_k1141_subpocket": {
+        "n_points": 193,
+        "volume_A3": 98.82,
+        "centroid": [
+          9.52,
+          -6.14,
+          -39.83
+        ],
+        "depth_mean_A": 3.08,
+        "n_lining_residues": 16,
+        "hydrophobic_frac": 0.438,
+        "donors": 6,
+        "acceptors": 4,
+        "druggability": 0.856,
+        "lining_residues_cif": [
+          1140,
+          1141,
+          1168,
+          1169,
+          1170,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          11.45,
+          -5.71,
+          -39.38
+        ],
+        "peak_depth_A": 3.86,
+        "dist_to_K1141_CA_A": 7.42,
+        "dist_to_loop_centroid_A": 9.3,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1168,
+          1169,
+          1170,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      },
+      "top_subpocket_overall": {
+        "n_points": 193,
+        "volume_A3": 98.82,
+        "centroid": [
+          9.52,
+          -6.14,
+          -39.83
+        ],
+        "depth_mean_A": 3.08,
+        "n_lining_residues": 16,
+        "hydrophobic_frac": 0.438,
+        "donors": 6,
+        "acceptors": 4,
+        "druggability": 0.856,
+        "lining_residues_cif": [
+          1140,
+          1141,
+          1168,
+          1169,
+          1170,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          11.45,
+          -5.71,
+          -39.38
+        ],
+        "peak_depth_A": 3.86,
+        "dist_to_K1141_CA_A": 7.42,
+        "dist_to_loop_centroid_A": 9.3,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1168,
+          1169,
+          1170,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      }
+    },
+    {
+      "label": "E1659A_mutant",
+      "cif": "job3-mutant.cif",
+      "offset": 0,
+      "chain_heavy_atoms": 13584,
+      "cif_loop_range": [
+        1639,
+        1651
+      ],
+      "cif_k1141_resnum": 1141,
+      "cif_e1659_resnum": 1659,
+      "loop_centroid_A": [
+        23.4,
+        -48.44,
+        17.4
+      ],
+      "k1141_ca_A": [
+        13.13,
+        -43.27,
+        17.16
+      ],
+      "e1659_ca_A": [
+        19.78,
+        -35.8,
+        18.97
+      ],
+      "n_clusters": 9,
+      "n_subpockets": 31,
+      "n_k1141_subpockets": 4,
+      "best_k1141_subpocket": {
+        "n_points": 137,
+        "volume_A3": 70.14,
+        "centroid": [
+          15.24,
+          -45.21,
+          13.32
+        ],
+        "depth_mean_A": 3.4,
+        "n_lining_residues": 12,
+        "hydrophobic_frac": 0.583,
+        "donors": 4,
+        "acceptors": 1,
+        "druggability": 0.816,
+        "lining_residues_cif": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1169,
+          1173,
+          1612,
+          1645,
+          1646,
+          1647,
+          1656
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          15.0,
+          -47.24,
+          11.4
+        ],
+        "peak_depth_A": 5.56,
+        "dist_to_K1141_CA_A": 4.79,
+        "dist_to_loop_centroid_A": 9.68,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1169,
+          1173,
+          1612,
+          1645,
+          1646,
+          1647,
+          1656
+        ]
+      },
+      "top_subpocket_overall": {
+        "n_points": 137,
+        "volume_A3": 70.14,
+        "centroid": [
+          15.24,
+          -45.21,
+          13.32
+        ],
+        "depth_mean_A": 3.4,
+        "n_lining_residues": 12,
+        "hydrophobic_frac": 0.583,
+        "donors": 4,
+        "acceptors": 1,
+        "druggability": 0.816,
+        "lining_residues_cif": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1169,
+          1173,
+          1612,
+          1645,
+          1646,
+          1647,
+          1656
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          15.0,
+          -47.24,
+          11.4
+        ],
+        "peak_depth_A": 5.56,
+        "dist_to_K1141_CA_A": 4.79,
+        "dist_to_loop_centroid_A": 9.68,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1169,
+          1173,
+          1612,
+          1645,
+          1646,
+          1647,
+          1656
+        ]
+      }
+    },
+    {
+      "label": "mini_594_1775",
+      "cif": "job5-mini-strc.cif",
+      "offset": 593,
+      "chain_heavy_atoms": 9148,
+      "cif_loop_range": [
+        1046,
+        1058
+      ],
+      "cif_k1141_resnum": 548,
+      "cif_e1659_resnum": 1066,
+      "loop_centroid_A": [
+        11.78,
+        -22.78,
+        -25.2
+      ],
+      "k1141_ca_A": [
+        1.84,
+        -20.95,
+        -20.09
+      ],
+      "e1659_ca_A": [
+        7.91,
+        -14.56,
+        -15.39
+      ],
+      "n_clusters": 9,
+      "n_subpockets": 30,
+      "n_k1141_subpockets": 2,
+      "best_k1141_subpocket": {
+        "n_points": 285,
+        "volume_A3": 145.92,
+        "centroid": [
+          -4.32,
+          -26.65,
+          -21.15
+        ],
+        "depth_mean_A": 3.24,
+        "n_lining_residues": 16,
+        "hydrophobic_frac": 0.562,
+        "donors": 10,
+        "acceptors": 5,
+        "druggability": 0.921,
+        "lining_residues_cif": [
+          508,
+          509,
+          510,
+          511,
+          512,
+          532,
+          533,
+          535,
+          537,
+          548,
+          549,
+          550,
+          551,
+          552,
+          1019,
+          1023
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          -4.62,
+          -27.98,
+          -22.4
+        ],
+        "peak_depth_A": 4.55,
+        "dist_to_K1141_CA_A": 8.46,
+        "dist_to_loop_centroid_A": 17.05,
+        "lining_residues_real": [
+          1101,
+          1102,
+          1103,
+          1104,
+          1105,
+          1125,
+          1126,
+          1128,
+          1130,
+          1141,
+          1142,
+          1143,
+          1144,
+          1145,
+          1612,
+          1616
+        ]
+      },
+      "top_subpocket_overall": {
+        "n_points": 285,
+        "volume_A3": 145.92,
+        "centroid": [
+          -4.32,
+          -26.65,
+          -21.15
+        ],
+        "depth_mean_A": 3.24,
+        "n_lining_residues": 16,
+        "hydrophobic_frac": 0.562,
+        "donors": 10,
+        "acceptors": 5,
+        "druggability": 0.921,
+        "lining_residues_cif": [
+          508,
+          509,
+          510,
+          511,
+          512,
+          532,
+          533,
+          535,
+          537,
+          548,
+          549,
+          550,
+          551,
+          552,
+          1019,
+          1023
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          -4.62,
+          -27.98,
+          -22.4
+        ],
+        "peak_depth_A": 4.55,
+        "dist_to_K1141_CA_A": 8.46,
+        "dist_to_loop_centroid_A": 17.05,
+        "lining_residues_real": [
+          1101,
+          1102,
+          1103,
+          1104,
+          1105,
+          1125,
+          1126,
+          1128,
+          1130,
+          1141,
+          1142,
+          1143,
+          1144,
+          1145,
+          1612,
+          1616
+        ]
+      }
+    },
+    {
+      "label": "ultra_cterm_only",
+      "cif": "job-h-strc-cterm-only.cif",
+      "offset": 1074,
+      "chain_heavy_atoms": 5411,
+      "cif_loop_range": [
+        565,
+        577
+      ],
+      "cif_k1141_resnum": 67,
+      "cif_e1659_resnum": 585,
+      "loop_centroid_A": [
+        7.14,
+        25.19,
+        -1.06
+      ],
+      "k1141_ca_A": [
+        -3.4,
+        22.41,
+        1.75
+      ],
+      "e1659_ca_A": [
+        1.31,
+        13.55,
+        1.56
+      ],
+      "n_clusters": 8,
+      "n_subpockets": 30,
+      "n_k1141_subpockets": 3,
+      "best_k1141_subpocket": {
+        "n_points": 252,
+        "volume_A3": 129.02,
+        "centroid": [
+          1.1,
+          23.68,
+          6.76
+        ],
+        "depth_mean_A": 3.23,
+        "n_lining_residues": 19,
+        "hydrophobic_frac": 0.474,
+        "donors": 7,
+        "acceptors": 5,
+        "druggability": 0.901,
+        "lining_residues_cif": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          94,
+          95,
+          98,
+          99,
+          571,
+          572,
+          573,
+          574,
+          577,
+          578,
+          579,
+          581,
+          582
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          1.94,
+          27.19,
+          7.34
+        ],
+        "peak_depth_A": 5.79,
+        "dist_to_K1141_CA_A": 6.85,
+        "dist_to_loop_centroid_A": 10.0,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1145,
+          1168,
+          1169,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      },
+      "top_subpocket_overall": {
+        "n_points": 252,
+        "volume_A3": 129.02,
+        "centroid": [
+          1.1,
+          23.68,
+          6.76
+        ],
+        "depth_mean_A": 3.23,
+        "n_lining_residues": 19,
+        "hydrophobic_frac": 0.474,
+        "donors": 7,
+        "acceptors": 5,
+        "druggability": 0.901,
+        "lining_residues_cif": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          94,
+          95,
+          98,
+          99,
+          571,
+          572,
+          573,
+          574,
+          577,
+          578,
+          579,
+          581,
+          582
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          1.94,
+          27.19,
+          7.34
+        ],
+        "peak_depth_A": 5.79,
+        "dist_to_K1141_CA_A": 6.85,
+        "dist_to_loop_centroid_A": 10.0,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1142,
+          1143,
+          1144,
+          1145,
+          1168,
+          1169,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      }
+    },
+    {
+      "label": "ultra_x_tmem145",
+      "cif": "job-ultramini-x-tmem145-full.cif",
+      "offset": 1074,
+      "chain_heavy_atoms": 5411,
+      "cif_loop_range": [
+        565,
+        577
+      ],
+      "cif_k1141_resnum": 67,
+      "cif_e1659_resnum": 585,
+      "loop_centroid_A": [
+        -20.59,
+        -10.47,
+        0.09
+      ],
+      "k1141_ca_A": [
+        -22.24,
+        -21.51,
+        2.61
+      ],
+      "e1659_ca_A": [
+        -12.65,
+        -19.69,
+        5.62
+      ],
+      "n_clusters": 6,
+      "n_subpockets": 33,
+      "n_k1141_subpockets": 5,
+      "best_k1141_subpocket": {
+        "n_points": 230,
+        "volume_A3": 117.76,
+        "centroid": [
+          -22.82,
+          -15.41,
+          6.83
+        ],
+        "depth_mean_A": 3.4,
+        "n_lining_residues": 14,
+        "hydrophobic_frac": 0.429,
+        "donors": 5,
+        "acceptors": 3,
+        "druggability": 0.898,
+        "lining_residues_cif": [
+          66,
+          67,
+          95,
+          98,
+          99,
+          571,
+          572,
+          573,
+          574,
+          577,
+          578,
+          579,
+          581,
+          582
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          -25.79,
+          -14.07,
+          6.09
+        ],
+        "peak_depth_A": 5.2,
+        "dist_to_K1141_CA_A": 7.45,
+        "dist_to_loop_centroid_A": 8.65,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1169,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      },
+      "top_subpocket_overall": {
+        "n_points": 230,
+        "volume_A3": 117.76,
+        "centroid": [
+          -22.82,
+          -15.41,
+          6.83
+        ],
+        "depth_mean_A": 3.4,
+        "n_lining_residues": 14,
+        "hydrophobic_frac": 0.429,
+        "donors": 5,
+        "acceptors": 3,
+        "druggability": 0.898,
+        "lining_residues_cif": [
+          66,
+          67,
+          95,
+          98,
+          99,
+          571,
+          572,
+          573,
+          574,
+          577,
+          578,
+          579,
+          581,
+          582
+        ],
+        "has_K1141_cif": true,
+        "peak_xyz": [
+          -25.79,
+          -14.07,
+          6.09
+        ],
+        "peak_depth_A": 5.2,
+        "dist_to_K1141_CA_A": 7.45,
+        "dist_to_loop_centroid_A": 8.65,
+        "lining_residues_real": [
+          1140,
+          1141,
+          1169,
+          1172,
+          1173,
+          1645,
+          1646,
+          1647,
+          1648,
+          1651,
+          1652,
+          1653,
+          1655,
+          1656
+        ]
+      }
+    }
+  ]
+}

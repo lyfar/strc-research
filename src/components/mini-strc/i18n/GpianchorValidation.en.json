@@ -1,17 +1,17 @@
 {
-  "t1": "Stereocilin is a GPI-anchored protein: a glycosylphosphatidylinositol (GPI) lipid is attached post-translationally to tether it to the outer surface of the hair cell membrane. This is essential for its function at stereocilia tips and for forming horizontal top connectors with the tectorial membrane. The GPI signal is encoded in the C-terminal ~25 amino acids, which all mini-STRC constructs preserve intact.",
-  "t2": "We submitted three constructs to <strong class=\"text-white\">NetGPI 1.1</strong> (DTU Health Tech), a neural network that predicts GPI-anchor signals and omega sites (the residue where GPI attachment occurs).",
+  "t1": "Stereocilin is a GPI-anchored protein: a glycosylphosphatidylinositol (GPI) lipid is attached post-translationally to tether it to the outer surface of the hair cell membrane. This is essential for its function at stereocilia tips and for forming horizontal top connectors with the tectorial membrane. The GPI signal is encoded in the C-terminal ~25 amino acids (omega site S1749, pre-GPI linker + hydrophobic tail), which <strong class=\"text-emerald-400\">both Mini-STRC (700-1775) and Ultra-Mini (1075-1775) preserve intact</strong> — the residues that matter are near the C-terminus, far from either truncation boundary.",
+  "t2": "We submitted full STRC, IgK-SP + Mini-STRC, and the no-SP control to <strong class=\"text-white\">NetGPI 1.1</strong> (DTU Health Tech), a neural network that predicts GPI-anchor signals and omega sites. Ultra-Mini shares the identical C-terminus with Mini-STRC, so the GPI-anchor prediction transfers by construction and was not re-tested.",
   "t3": "* Position in construct numbering. Corresponds to S1749 in full STRC (same residue, different offset due to truncation).",
-  "t4": "<strong class=\"text-amber-400\">Result:</strong> All three constructs are predicted as GPI-anchored with identical likelihood (0.471) and the same omega site (serine). The GPI signal is in the C-terminal tail, which is fully preserved in all truncation variants. N-terminal removal has zero effect on GPI-anchor prediction. Even the no-SP control is predicted GPI-anchored, though without a signal peptide it would never reach the ER where GPI attachment actually occurs.",
+  "t4": "<strong class=\"text-amber-400\">Result:</strong> All three constructs are predicted as GPI-anchored with identical likelihood (0.471) and the same omega site (serine, corresponds to S1749 in full STRC numbering). The GPI signal is in the C-terminal tail, which is fully preserved in all truncation variants — including Ultra-Mini. N-terminal or LRR-linker removal has zero effect on GPI-anchor prediction. Even the no-SP control is predicted GPI-anchored, though without a signal peptide it would never reach the ER where GPI attachment actually occurs.",
   "t5": "Full STRC (1775 aa)",
   "t6": "<span class=\"text-green-400 font-semibold\">GPI-Anchored</span>",
-  "t7": "IgK-SP + shorter mini-STRC",
+  "t7": "IgK-SP + Mini-STRC (same C-term as Ultra-Mini · transfers directly)",
   "t8": "<span class=\"text-amber-400 font-semibold\">GPI-Anchored</span>",
-  "t9": "Shorter mini-STRC (no SP, control)",
+  "t9": "Mini-STRC (no SP, negative control)",
   "t10": "<span class=\"text-green-400 font-semibold\">GPI-Anchored</span>",
   "t11": "Construct",
   "t12": "Prediction",
   "t13": "Omega site",
   "t14": "Likelihood",
-  "t15": "11. GPI-anchor prediction\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-400 font-semibold normal-case\">NetGPI 1.1</span>"
+  "t15": "12. GPI-anchor prediction (applies to both Mini-STRC and Ultra-Mini)\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-400 font-semibold normal-case\">NetGPI 1.1</span>"
 }

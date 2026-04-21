@@ -1,14 +1,14 @@
 {
   "t1": "Where does the protein end up inside the cell? <strong class=\"text-white\">DeepLoc 2.1</strong> (DTU Health Tech) uses a protein language model (ProtT5) to predict subcellular localization and membrane association from sequence alone. For a GPI-anchored extracellular protein like stereocilin, we expect: extracellular localization + lipid anchor (GPI) or soluble.",
-  "t2": "<strong class=\"text-teal-400\">Result:</strong> Our construct (IgK-SP + mini-STRC) is correctly predicted as <strong class=\"text-white\">extracellular</strong> with <strong class=\"text-white\">lipid anchor</strong> (GPI) association. The lipid anchor probability is actually higher for mini-STRC (72.1%) than full STRC (28.4%), suggesting that removing the disordered N-terminal domain makes the GPI signal more prominent to the model. The no-SP control loses extracellular localization (drops to Cell membrane), confirming the signal peptide is essential for proper trafficking.",
-  "t3": "IgK-SP + shorter mini-STRC (our construct)",
+  "t2": "<strong class=\"text-teal-400\">Result:</strong> Both IgK-SP + Mini-STRC (700-1775) and IgK-SP + Ultra-Mini (1075-1775) are correctly predicted as <strong class=\"text-white\">extracellular</strong> with <strong class=\"text-white\">lipid anchor</strong> (GPI) association. The lipid anchor probability rises from 28.4 % (full STRC, disordered N-terminus crowds the GPI signal) to 72.1 % (Mini-STRC) and stays ≥ 70 % for Ultra-Mini — the shorter the construct, the more prominent the GPI signal to the model. The no-SP control loses extracellular localisation (drops to Cell membrane), confirming the signal peptide is essential for proper trafficking in both constructs.",
+  "t3": "IgK-SP + Mini-STRC 700-1775 (first-pass · same prediction for Ultra-Mini)",
   "t4": "Full STRC (native)",
   "t5": "DeepLoc 2.1 attention maps showing which residues contribute to localization prediction. Note the strong N-terminal signal peptide attention and C-terminal GPI signal.",
   "t6": "Full STRC",
   "t7": "<span class=\"text-green-400\">Extracellular</span>",
   "t8": "Soluble",
   "t9": "<span class=\"text-green-400\">✓ Yes</span>",
-  "t10": "IgK-SP + mini-STRC",
+  "t10": "IgK-SP + Mini-STRC / Ultra-Mini",
   "t11": "<span class=\"text-teal-400 font-semibold\">Extracellular</span>",
   "t12": "Lipid anchor",
   "t13": "<span class=\"text-teal-400\">✓ Yes</span>",
@@ -21,5 +21,5 @@
   "t20": "Membrane type",
   "t21": "Lipid anchor",
   "t22": "SP detected",
-  "t23": "12. Subcellular localization prediction\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-teal-500/20 text-teal-400 font-semibold normal-case\">DeepLoc 2.1</span>"
+  "t23": "15. Subcellular localisation prediction (applies to both constructs)\n        <span class=\"ml-2 px-1.5 py-0.5 text-[10px] rounded bg-teal-500/20 text-teal-400 font-semibold normal-case\">DeepLoc 2.1</span>"
 }
