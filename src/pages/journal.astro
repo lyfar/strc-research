@@ -2,14 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import PaperCard from '../components/PaperCard.astro';
 import { getCollection } from 'astro:content';
+import { parseRanking, TIER_META } from '../lib/hypothesis-ranking';
 
 const lang = 'en';
 const papers = await getCollection('papers');
-papers.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+// Sort by date_added (agent run date) primary, publication date as tiebreak.
+// Keeps ahead-of-print papers in the batch they arrived with, not floated to top.
+papers.sort((a, b) => {
+  const aAdded = a.data.date_added?.getTime() ?? 0;
+  const bAdded = b.data.date_added?.getTime() ?? 0;
+  if (aAdded !== bAdded) return bAdded - aAdded;
+  return b.data.date.getTime() - a.data.date.getTime();
+});
 
 const scanDates = papers.map(p => p.data.date_added).filter(Boolean) as Date[];
 scanDates.sort((a, b) => b.getTime() - a.getTime());
 const lastScan = scanDates[0]?.toISOString().split('T')[0] ?? 'pending';
+
+const { hypotheses: allHypotheses } = parseRanking();
+const sTier = allHypotheses.filter(h => h.tier === 'S');
+const aTier = allHypotheses.filter(h => h.tier === 'A');
 ---
 
 <Layout lang={lang} title="Research Monitor — STRC/DFNB16">
@@ -33,6 +45,36 @@ const lastScan = scanDates[0]?.toISOString().split('T')[0] ?? 'pending';
           <span>Last scan: {lastScan}</span>
           <span>Runs daily 02:00 UTC</span>
         </div>
+      </div>
+
+      <!-- What we're working on (S/A-tier priority context) -->
+      <div class="mb-10 bg-white/[0.02] border border-white/5 rounded-lg p-5">
+        <div class="flex items-baseline justify-between mb-3">
+          <h2 class="text-[10px] font-semibold uppercase tracking-wider text-neutral-500">Current priority — what the agent is looking for</h2>
+          <a href="/hypotheses/" class="text-[11px] text-neutral-500 hover:text-white no-underline">Full register →</a>
+        </div>
+        <div class="space-y-2">
+          {sTier.map(h => (
+            <div class="flex items-start gap-2 text-xs">
+              <span class={`mt-0.5 text-[10px] font-semibold px-1.5 py-0.5 rounded border shrink-0 ${TIER_META.S.color}`}>S</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-neutral-300 font-medium">{h.title}</div>
+                <div class="text-[11px] text-neutral-500 truncate"><span class="text-neutral-600">next:</span> {h.nextStep}</div>
+              </div>
+            </div>
+          ))}
+          {aTier.map(h => (
+            <div class="flex items-start gap-2 text-xs">
+              <span class={`mt-0.5 text-[10px] font-semibold px-1.5 py-0.5 rounded border shrink-0 ${TIER_META.A.color}`}>A</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-neutral-400">{h.title}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-[11px] text-neutral-600 mt-4 leading-relaxed">
+          Papers below are scored against this priority. Anything advancing an S-tier hypothesis is high-value. Anything on a killed (D-tier) mechanism gets skipped unless it credibly flips the kill.
+        </p>
       </div>
 
       <!-- How it works -->

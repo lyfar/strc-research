@@ -12,6 +12,7 @@ const { title, authors, journal, date, pubmed_id, biorxiv_id, doi, relevance_typ
 const score = parseInt(relevance_score);
 const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
 const isNew = date_added ? date_added >= sevenDaysAgo : false;
+const aheadOfPrint = date.getTime() > Date.now();
 const scoreColor = score >= 8 ? 'text-green-400 bg-green-500/10 border-green-500/20'
   : score >= 6 ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
   : 'text-neutral-400 bg-white/5 border-white/10';
@@ -41,6 +42,9 @@ const firstAuthor = authors[0]?.split(',')[0] ?? '';
         </span>
         {isNew && (
           <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-neutral-500">New</span>
+        )}
+        {aheadOfPrint && (
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20" title="Publication date is in the future — this is an online-first / ahead-of-print paper">Ahead of print</span>
         )}
       </div>
       <time class="text-[11px] text-neutral-500 font-mono shrink-0">{dateStr}</time>
