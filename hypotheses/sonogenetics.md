@@ -43,6 +43,11 @@ Sonogenetics addresses both delivery (sound-triggered uptake) and expression con
 
 ## Recent Papers
 
+### 2026-04-19 — [Ultrasound-Assisted multimodal neuromodulation via nanosystems](https://pubmed.ncbi.nlm.nih.gov/42002736/)
+*J Nanobiotechnol · relevance: 3/10 · lateral · published*
+
+Comprehensive review cataloging nanosystem-mediated ultrasound transduction into bioelectric, mechanical, optical, and chemical signals for neuromodulation. Relevant to sonogenetics because it maps the current efficiency envelope of ultrasound-to-signal conversion — piezoelectric nanoparticles in perilymph could potentially generate localized fields near OHCs. However, the cochlear acoustic pressure regime (~mPa–Pa for physiological sound) is 3–6 orders of magnitude below the MPa thresholds reported for most nanosystem activation, reinforcing that therapeutic-intensity FUS rather than passive sound would be required.
+
 ### 2026-04-20 — [Multicolored Mechanoluminescent Nanoparticles for Functional Sono-Optogenetics](https://pubmed.ncbi.nlm.nih.gov/41974592/)
 *J Am Chem Soc · relevance: 7/10 · lateral*
 
