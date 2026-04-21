@@ -19,14 +19,18 @@ export interface Hypothesis {
 const slugMap = (slugsJson as { slugs: Record<string, string | null> }).slugs;
 
 function cleanCell(cell: string): string {
-  return cell.replace(/\*\*/g, '').trim();
+  return cell
+    .replace(/\*\*/g, '')
+    .replace(/\p{Extended_Pictographic}/gu, '')
+    .trim();
 }
 
 function normalizeTier(raw: string): Tier {
   const t = cleanCell(raw);
   if (t === '—' || t === '-' || t === '') return 'reference';
-  if (t === 'S' || t === 'A' || t === 'B' || t === 'C' || t === 'D') return t;
-  if (t === 'D/C' || t === 'C/D') return 'D/C';
+  if (/\bD\s*\/\s*C\b|\bC\s*\/\s*D\b/.test(t)) return 'D/C';
+  const m = t.match(/\b([SABCD])\b/);
+  if (m) return m[1] as Tier;
   return 'reference';
 }
 
