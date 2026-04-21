@@ -10,62 +10,56 @@
 
 STRC encodes stereocilin — an extracellular protein that maintains the structure of the hair bundle on outer hair cells (OHCs) of the cochlea. Stereocilin forms the horizontal top connectors between stereocilia and attaches the tallest stereocilia to the tectorial membrane. Without it, hair bundles collapse, OHCs lose mechanosensitivity, and hearing fails.
 
-Mutations in STRC cause DFNB16 — autosomal recessive non-syndromic hearing loss. ~1 in 1,000 in consanguineous populations, one of the most common causes of moderate-to-severe genetic hearing loss globally.
-
-Target patient: **Misha** (compound heterozygote — paternal 98 kb deletion / maternal c.4976A>C E1659A). Any hypothesis is evaluated for Misha-fit first.
+Mutations in STRC cause DFNB16 — autosomal recessive non-syndromic hearing loss. Target patient: **Misha** (compound heterozygote — paternal 98 kb deletion / maternal c.4976A>C E1659A).
 
 ## Central engineering constraint
 
-STRC CDS is ~5,320 bp. Standard AAV payload limit: ~4,700 bp including promoter and regulatory elements. STRC doesn't fit a single AAV. Every mechanism hypothesis has to address this: truncate, split, edit in situ, use a non-AAV chassis, or replace function via materials.
-
-## Current engineering gates
-
-- **Mini-STRC AAV**: Ultra-Mini 1075-1775 CDS validated; 0 CpG at 3.65% CAI; B8+WPRE3 fits 4,543 bp vector. Next gate: final AF3 `strc_ultramini_x_tmem145_full` job (in progress), then gBlock order.
-- **mRNA-LNP (Strategy B, full-length)**: Hill ceiling broken (2.18× cochlea-mean at 5% LNP). Works on Misha's paternal null allele. Engineering gate: LNP cochlear tropism ≥ 20% with OHC targeting.
-- **Pharmacochaperone E1659A**: Virtual screen complete, top-5 leads shortlisted. Wet-lab gate: bind assay on salicylic acid / indole-3-acetic lead pair.
-- **Piezoelectric TM amplifier**: 92% audiogram coverage modeled. Wet-lab gate: ex-vivo PVDF-TrFE deposition feasibility.
+STRC CDS is ~5,320 bp. AAV payload limit ~4,700 bp. STRC doesn't fit a single AAV. Every mechanism hypothesis addresses this: truncate, split, edit in situ, use a non-AAV chassis, or replace function via materials.
 
 ---
 
-## Active hypothesis register (25 entries, 2026-04-21 snapshot)
+## Active hypothesis register
 
-Scoring: M = Mechanism (does biology work?), D = Delivery (can we get it into Misha's cochlea in 3-5 yrs?), F = Misha-fit (works for his specific compound het + age + OHC window?). Each 1-5.
+Source of truth: `~/Brain/notes/STRC Hypothesis Ranking.md`. Full table below.
 
-Tier ≈ min(M, D, F). Tiers: **S** (primary, active compute now, top-5 max) / **A** (active backburner) / **B** (watch) / **C** (paused, external catalyst needed) / **D** (killed) / **reference** (supporting models, not standalone hypotheses).
+Scoring: M = Mechanism, D = Delivery, F = Misha-fit (each 1-5). Tier ≈ min(M, D, F).
+Tiers: **S** (primary, active compute, top-5 max) / **A** (active backburner) / **B** (watch) / **C** (paused) / **D** (killed) / **reference** (supporting models).
 
-| # | Hypothesis | Tier | M/D/F | Status | Evidence | Next step |
-|---|---|---|---|---|---|---|
-| 1 | STRC Pharmacochaperone Virtual Screen E1659A | **S** | 4/4/4 | active | Phases 0-3; top-5 shortlist | wet-lab bind assay |
-| 2 | STRC Piezoelectric TM Bioelectronic Amplifier | **S** | 3/2/5 | active | Phases 1-3; 92% audiogram coverage | PVDF-TrFE deposition feasibility |
-| 3 | STRC Mini-STRC Single-Vector Hypothesis | **S** | 4→5/4/4 | active | Ultra-Mini validated 2026-04-21 | await AF3 x_tmem145_full, order gBlock |
-| 4 | STRC mRNA-LNP Strategy B Full-Length | **S** | 3/2/5 | active | PK/PD + audiogram done 2026-04-21 | LNP tropism literature scan |
-| 5 | STRC Calcium Oscillation Acoustic Therapy | **A** | 3/4/2 | active | Phases 1-3; Hill n=4.3, globally stable | maternal-only; Touch Grass integration |
-| 6 | STRC mRNA Therapy Hypothesis (Strategy A / RBM24) | **A** | 3/2/2 | backburner | PK/PD + audiogram done | adjunctive to Strategy B only |
-| 7 | Prime Editing for STRC | **A** | 4/2/2 | active | Phase 1-3 pegRNA design | maternal-only; Cas-OFFinder scan |
-| 8 | STRC ASO Exon Skipping | **B** | 3/3/2 | backburner | Phase 1 design; lead ASO | maternal-only; ViennaRNA fold check |
-| 9 | STRC Synthetic Peptide Hydrogel HTC | **B** | 3/3/3 | active | none | Phase 1 self-assembly geometry |
-| 10 | STRC In Situ SpyCatcher Assembly | **B** | 3/2/3 | active | none | Phase 1 fragment complementation |
-| 11 | STRC Engineered TECTA Chimera | **B** | 2/2/3 | active | none | Phase 1 TECTA-STRC fusion check |
-| 12 | Sonogenetic STRC Computational Proof | **C** | 2/2/2 | paused | bifurcation done | speculative; no near-term path |
-| 13 | STRC Programmable Recombinases | **C** | 2/1/3 | paused | none | technology-watch |
-| 14 | STRC Protein Replacement Therapy | **C** | 2/1/3 | paused | none | no delivery beyond mRNA |
-| 15 | STRC OTOA Paralog Cross-Rescue | **D/C** | 2/2/2 | partially killed | Phases 1A-1B | chimera dead (RMSD 13.8 Å); upregulation weak |
-| 16 | STRC ZP Domain Prion-Like Seeding | **D** | 3/2/1 | killed | none | no WT to seed for Misha paternal Δ |
-| 17 | STRC RBM24 Regulatory Hypothesis | ref | — | reference | parent of Strategy A | rolled into Strategy A |
-| 18 | STRC Stereocilia Bundle Mechanics Model | ref | — | reference | supporting model | used by others |
-| 19 | STRC AAV Vector Design | ref | — | reference | implementation helper | used by Mini-STRC + PE |
-| 20 | STRC B8 Enhancer Selection | ref | — | reference | implementation helper | used by AAV pipeline |
-| 21 | STRC Dual-Vector vs Single-Vector Transduction | ref | — | reference | implementation choice | engineering layer |
-| 22 | STRC Anti-AAV Immune Response Model | ref | — | reference | supporting model | constraint on re-dosing |
-| 23 | STRC Electrostatic Analysis E1659A | ref | — | reference | supporting model | input to pharmacochaperone |
-| 24 | Adult Treatment Window STRC | ref | — | reference | reference note | constraint across mechanisms |
-| 25 | Alternative STRC Delivery Hypotheses | ref | — | reference | sibling to mRNA | delivery-layer survey |
+
+| #   | Hypothesis                                            | Mech | Deliv | Misha | Evidence                                               | Status                                  | Tier    | Next step                                                        |
+| --- | ----------------------------------------------------- | ---- | ----- | ----- | ------------------------------------------------------ | --------------------------------------- | ------- | ---------------------------------------------------------------- |
+| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]      | 4    | 4     | 4     | Phases 0–3 done; top-5 leads shortlist                 | active                                  | **S**   | wet-lab bind assay on salicylic acid / indole-3-acetic lead pair |
+| 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]     | 3    | 2     | 5     | Phases 1–3 done; delivery model 92% audiogram coverage | active                                  | **S**   | ex-vivo PVDF-TrFE deposition assay feasibility                   |
+| 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]           | 4→**5** | 4     | 4     | Full-stack 2026-04-21 Ultra-Mini validation: sub-Å TMEM145 interface preservation, 0 CpG CDS at 3.65% CAI, B8+WPRE3 vector fits, AF3 GOLD ipTM 0.68 (PAE 2.26 Å, 21/21 residues in zone), AF3 homodimer real-weak-interface (C2 94%, SASA 98%, ARM 1579-1581), full-vector CpG at AAV floor (13.9/kb, 67% from ITRs). Delivery score **practically upgraded 4→5 pending x_tmem145_full AF3 (in progress)** | active                                  | **S**   | await final AF3 (strc_ultramini_x_tmem145_full); order gBlock when that passes |
+| 4   | [[STRC mRNA-LNP Strategy B Full-Length]]              | 3    | 2     | 5     | PK/PD + audiogram done 2026-04-21                      | active                                  | **S**   | cochlear LNP tropism literature scan (20%/50% gate)              |
+| 5   | [[STRC Calcium Oscillation Acoustic Therapy]]         | 3    | 4     | 2     | Phases 1–3 done; n=4.3 Hill, globally stable           | active                                  | **A**   | maternal-allele-only; Touch Grass integration path               |
+| 6   | [[STRC mRNA Therapy Hypothesis]] (Strategy A / RBM24) | 3    | 2     | 2     | PK/PD + audiogram done                                 | backburner                              | **A**   | adjunctive to Strategy B; alone subtherapeutic for Misha         |
+| 7   | [[Prime Editing for STRC]]                            | 4    | 2     | 2     | Phase 1–3 pegRNA design done                           | active                                  | **A**   | maternal-allele only; Cas-OFFinder off-target scan               |
+| 8   | [[STRC ASO Exon Skipping]]                            | 3    | 3     | 2     | Phase 1 design; lead ASO                               | backburner                              | **B**   | maternal-only; ViennaRNA fold check                              |
+| 9   | [[STRC Synthetic Peptide Hydrogel HTC]]               | 3    | 3     | 3     | none                                                   | active                                  | **B**   | Phase 1 self-assembly geometry model                             |
+| 10  | [[STRC In Situ SpyCatcher Assembly]]                  | 3    | 2     | 3     | none                                                   | active                                  | **B**   | Phase 1 fragment complementation geometry                        |
+| 11  | [[STRC Engineered TECTA Chimera]]                     | 2    | 2     | 3     | none                                                   | active                                  | **B**   | Phase 1 TECTA-STRC fusion structural check                       |
+| 12  | [[Sonogenetic STRC Computational Proof]]              | 2    | 2     | 2     | bifurcation analysis done                              | paused                                  | **C**   | speculative mechanism; no near-term path                         |
+| 13  | [[STRC Programmable Recombinases]]                    | 2    | 1     | 3     | none                                                   | paused                                  | **C**   | technology-watch only                                            |
+| 14  | [[STRC Protein Replacement Therapy]]                  | 2    | 1     | 3     | none                                                   | paused                                  | **C**   | no concrete delivery route beyond mRNA                           |
+| 15  | [[STRC OTOA Paralog Cross-Rescue]]                    | 2    | 2     | 2     | Phases 1A–1B done; chimera killed                      | killed (chimera); paused (upregulation) | **D/C** | chimera dead (RMSD 13.8 Å); upregulation branch open but weak    |
+| 16  | [[STRC ZP Domain Prion-Like Seeding]]                 | 3    | 2     | **1** | none                                                   | killed (Misha)                          | **D**   | requires WT substrate; Misha paternal 98 kb Δ has no WT to seed  |
+| 17  | [[STRC RBM24 Regulatory Hypothesis]]                  | —    | —     | —     | parent of Strategy A                                   | reference                               | —       | rolled into Strategy A                                           |
+| 18  | [[STRC Stereocilia Bundle Mechanics Model]]           | —    | —     | —     | supporting model                                       | reference                               | —       | used by other hypotheses                                         |
+| 19  | [[STRC AAV Vector Design]]                            | —    | —     | —     | implementation helper                                  | reference                               | —       | used by Mini-STRC + Prime Editing                                |
+| 20  | [[STRC B8 Enhancer Selection]]                        | —    | —     | —     | implementation helper                                  | reference                               | —       | used by AAV pipeline                                             |
+| 21  | [[STRC Dual-Vector vs Single-Vector Transduction]]    | —    | —     | —     | implementation choice                                  | reference                               | —       | engineering layer of Mini-STRC                                   |
+| 22  | [[STRC Anti-AAV Immune Response Model]]               | —    | —     | —     | supporting model                                       | reference                               | —       | constraint on re-dosing                                          |
+| 23  | [[STRC Electrostatic Analysis E1659A]]                | —    | —     | —     | supporting model                                       | reference                               | —       | input to pharmacochaperone design                                |
+| 24  | [[Adult Treatment Window STRC]]                       | —    | —     | —     | reference note                                         | reference                               | —       | constraint across all mechanisms                                 |
+| 25  | [[Alternative STRC Delivery Hypotheses]]              | —    | —     | —     | sibling to mRNA strategies                             | reference                               | —       | delivery-layer survey                                            |
+
 
 ---
 
 ## Hypothesis → synthesis file slug
 
-When Part 2 (hypothesis synthesis) needs to write a "Recent Papers" note entry, use these slugs. `null` = no synthesis file yet; the routine should skip synthesis for that hypothesis (no file to update, no new file to create automatically — the human decides when to open a synthesis file).
+When Part 2 (hypothesis synthesis) needs to write a Recent Papers entry, use these slugs. `null` = no synthesis file yet; routine should skip synthesis for that hypothesis.
 
 | Hypothesis | Synthesis file |
 |---|---|
@@ -77,31 +71,37 @@ When Part 2 (hypothesis synthesis) needs to write a "Recent Papers" note entry, 
 | STRC mRNA Therapy Hypothesis | `null` |
 | Prime Editing for STRC | `hypotheses/prime-editing.md` |
 | STRC ASO Exon Skipping | `hypotheses/exon-skipping.md` |
+| STRC Synthetic Peptide Hydrogel HTC | `null` |
+| STRC In Situ SpyCatcher Assembly | `null` |
+| STRC Engineered TECTA Chimera | `null` |
 | Sonogenetic STRC Computational Proof | `hypotheses/sonogenetics.md` |
 | STRC Programmable Recombinases | `hypotheses/recombinases.md` |
+| STRC Protein Replacement Therapy | `null` |
+| STRC OTOA Paralog Cross-Rescue | `null` |
+| STRC ZP Domain Prion-Like Seeding | `null` |
+| STRC RBM24 Regulatory Hypothesis | `null` |
 | STRC Stereocilia Bundle Mechanics Model | `hypotheses/bundle-mechanics.md` |
+| STRC AAV Vector Design | `null` |
 | STRC B8 Enhancer Selection | `hypotheses/enhancer.md` |
 | STRC Dual-Vector vs Single-Vector Transduction | `hypotheses/dual-vector.md` |
 | STRC Anti-AAV Immune Response Model | `hypotheses/immune.md` |
 | STRC Electrostatic Analysis E1659A | `hypotheses/electrostatics.md` |
+| Adult Treatment Window STRC | `null` |
 | Alternative STRC Delivery Hypotheses | `hypotheses/delivery.md` |
-| (everything else) | `null` |
 
 ---
 
 ## Kill list (D-tier — do not pursue)
 
-- **OTOA chimera** — Phase 1B killed it (Cα RMSD 13.8 Å; paralog too divergent). Chimera branch dead. Upregulation branch paused.
-- **ZP prion-like seeding** — requires WT STRC substrate; Misha paternal 98 kb deletion has no WT to seed. Wrong-patient.
-- **Direct protein replacement (without a delivery route)** — no concrete pathway; supplanted by Strategy B mRNA.
-
-Do not advance these without explicit authorization. Papers relevant to these are LOW priority unless they open a specifically unblocked sub-branch (e.g. upregulation for OTOA is paused, not killed).
+- **OTOA chimera** — Phase 1B killed it (Cα RMSD 13.8 Å; paralog structure too divergent).
+- **ZP prion-like seeding** — requires WT STRC substrate; Misha paternal 98 kb deletion has no WT to seed. Wrong patient.
+- **Direct protein replacement** (without a delivery route) — no concrete pathway; supplanted by Strategy B mRNA.
 
 ---
 
 ## How to use this file (agent directive)
 
-1. **Before scanning**: read this entire file. Understand which 4 hypotheses are S-tier (top compute), which are A (active backburner), which are killed. Skew relevance scoring toward S/A tier — papers that advance S-tier hypotheses are HIGH value. Papers on D-tier mechanisms should only be indexed if they open a path that flips the tier.
-2. **For paper dedup**: see the routine's own Step 1 instructions (builds DOI/PMID/bioRxiv lookup sets from `papers/*.md`).
-3. **For hypothesis synthesis** (Part 2): match new papers to hypotheses by tag + relevance_type + mechanism overlap. Append "Recent Papers" entries only to files listed in the slug table above. If a hypothesis has no synthesis file (`null` in the table), log `SKIP-NO-SYNTH-FILE: <hypothesis>` and move on — do not create new files.
-4. **If this file feels stale** (e.g. a hypothesis you see mentioned in a recent paper isn't in the table, or an S-tier hypothesis has a next-step that was completed): still operate from this file. Flag the drift in your commit message so the human knows to resync.
+1. **Before scanning**: read this entire file. Understand S-tier (top compute), A-tier (backburner), killed. Skew relevance scoring toward S/A — papers advancing S-tier hypotheses are HIGH value. Papers on D-tier should only be indexed if they credibly flip the kill.
+2. **For paper dedup**: see routine Step 1 (builds DOI/PMID/bioRxiv lookup sets).
+3. **For hypothesis synthesis** (Part 2): match papers to hypotheses by tag + relevance + mechanism overlap. Append "Recent Papers" entries only to files listed in the slug table. If `null`: log `SKIP-NO-SYNTH-FILE: <hypothesis>` and move on.
+4. **If this file feels stale** (S-tier hypothesis with completed next-step, or paper mentions hypothesis not in the table): operate from this file anyway, flag drift in commit message.
