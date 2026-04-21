@@ -50,6 +50,11 @@ Residues 1075–1775: pTM 0.87, 2,597 bp headroom. Better fold but removes 60% o
 
 ## Recent Papers
 
+### 2026-04-21 — [LinkCraft: An interactive tool for the design of flexible linkers](https://pubmed.ncbi.nlm.nih.gov/42001978/)
+*Journal of Molecular Biology · relevance: 4/10 · lateral*
+
+Computational tool for rational design of intrinsically disordered linkers in multi-domain proteins, with ensemble-based structural modeling. Directly applicable to optimizing the truncation junction (aa 699↔700) in Mini-STRC and the Ultra-Mini construct. LinkCraft could model whether the junction region behaves as an unstructured linker and suggest sequence modifications that maintain proper inter-domain spacing and dynamics while minimizing misfolding risk at the truncation boundary.
+
 ### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
 *Ear and Hearing · relevance: 7/10 · fda_path*
 

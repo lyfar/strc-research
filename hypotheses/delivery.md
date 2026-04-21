@@ -48,6 +48,11 @@ Computational model only. Sonoporation through RWM demonstrated in guinea pigs (
 
 ## Recent Papers
 
+### 2026-04-21 — [Noninvasive Focal Gene Delivery into the Cerebellum of Non-Human Primates using Focused Ultrasound](https://pubmed.ncbi.nlm.nih.gov/42003738/)
+*Advanced Science · relevance: 5/10 · lateral*
+
+FUS + IV microbubbles achieved non-invasive, spatially precise AAV9 delivery to macaque deep cerebellar nuclei with robust neuronal transduction. The blood-labyrinth barrier is structurally analogous to the BBB, and this NHP demonstration of FUS-mediated AAV delivery strengthens the feasibility case for non-invasive cochlear gene delivery. Combined with our existing ODE model (Scenario 2/3), FUS-mediated barrier opening could bypass the surgical round window approach entirely, enabling bilateral treatment and repeat dosing of AAV-mini-STRC or mRNA-LNPs.
+
 ### 2026-04-16 — [Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder](https://pubmed.ncbi.nlm.nih.gov/41979424/)
 *Ear and Hearing · relevance: 7/10 · fda_path*
 
