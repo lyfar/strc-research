@@ -16,6 +16,7 @@ const papers = defineCollection({
     tags: z.array(z.string()),
     status: z.string().default('unread'),
     date_added: z.coerce.date().optional(),
+    publication_status: z.enum(['ahead-of-print', 'published']).optional(),
   }),
 });
 
