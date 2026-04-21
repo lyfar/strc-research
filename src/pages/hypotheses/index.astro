@@ -1,97 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { useTranslations } from '../../lib/i18n';
+import { parseRanking, TIER_ORDER, TIER_META, type Tier, type Hypothesis } from '../../lib/hypothesis-ranking';
 
 const lang = 'en';
-const t = useTranslations(lang);
+const { hypotheses, updatedDate } = parseRanking();
 
-const hypotheses = [
-  {
-    href: '/hypotheses/mini-strc',
-    title: 'Mini-STRC Hypothesis',
-    badge: 'AAV packaging',
-    badgeColor: 'purple',
-    desc: 'Three single-AAV constructs validated by 16 AF3 experiments. Removing the disordered N-terminal improves folding (pTM 0.81-0.87). Recommended: shorter mini-STRC (3228 bp, 1472 bp headroom).',
-  },
-  {
-    href: '/hypotheses/prime-editing',
-    title: 'Prime Editing',
-    badge: 'In situ correction',
-    badgeColor: 'green',
-    desc: 'Precision correction of c.4976A>C using PE3 or PE3b pegRNA strategy without double-strand breaks.',
-  },
-  {
-    href: '/hypotheses/sonogenetics',
-    title: 'Sonogenetics',
-    badge: 'Non-invasive',
-    badgeColor: 'blue',
-    desc: 'Mechanosensitive channel activation via focused ultrasound. ODE model of calcium signaling in OHC stereocilia.',
-  },
-  {
-    href: '/hypotheses/delivery',
-    title: 'Delivery',
-    badge: 'Sonoporation',
-    badgeColor: 'cyan',
-    desc: 'Non-invasive cochlear gene delivery via sonoporation + LNP. ODE model shows 78% transduction efficiency under optimized parameters.',
-  },
-  {
-    href: '/hypotheses/dual-vector',
-    title: 'Dual-Vector vs Single-Vector',
-    badge: 'Stochastic model',
-    badgeColor: 'purple',
-    desc: 'Poisson stochastic model quantifying the probability cost of dual-vector co-transduction vs single-vector strategy.',
-  },
-  {
-    href: '/hypotheses/electrostatics',
-    title: 'Electrostatic Analysis',
-    badge: 'Biophysics',
-    badgeColor: 'blue',
-    desc: 'Coulomb energetics explain why E1659A is pathogenic despite intact structure. 8.62 kcal/mol destabilization of adhesion interface.',
-  },
-  {
-    href: '/hypotheses/immune',
-    title: 'Immune Response',
-    badge: 'Pharmacokinetics',
-    badgeColor: 'amber',
-    desc: 'NAb kinetics, seroprevalence barriers, and delivery vehicle comparison for cochlear gene therapy re-dosing strategies.',
-  },
-  {
-    href: '/hypotheses/enhancer',
-    title: 'Enhancer-Driven OHC Targeting',
-    badge: 'Cell targeting',
-    badgeColor: 'green',
-    desc: 'ARBITER workflow for OHC-specific synthetic enhancers. B8 enhancer fully rescues hearing with zero ectopic expression. Potential synergy with mini-STRC for single-vector therapy.',
-  },
-  {
-    href: '/hypotheses/exon-skipping',
-    title: 'ASO Exon Skipping',
-    badge: 'RNA therapeutics',
-    badgeColor: 'purple',
-    desc: 'Antisense oligonucleotides to skip mutant exons, producing shorter but functional stereocilin. Repeatable, no AAV needed. Proven in DMD (4 FDA-approved drugs).',
-  },
-  {
-    href: '/hypotheses/bundle-mechanics',
-    title: 'Stereocilia Bundle Mechanics',
-    badge: 'Biophysics',
-    badgeColor: 'amber',
-    desc: 'Hopf oscillator + MET channel model. Quantifies residual HTC coupling in DFNB16 from audiometry data. Identifies tectorial membrane remodeling — not OHC survival — as the key unknown for treating older patients.',
-  },
-  {
-    href: '/hypotheses/recombinases',
-    title: 'Programmable Recombinases',
-    badge: 'Emerging',
-    badgeColor: 'amber',
-    desc: 'Full-length STRC in one vector via precise genomic insertion. No splitting, no truncation. Lilly/Seamless deal: $1.12B exclusive for hearing loss (Jan 2026). Not yet tested in cochlea.',
-  },
-];
-
-const badgeClasses: Record<string, string> = {
-  purple: 'bg-purple-500/20 text-purple-400',
-  green: 'bg-green-500/20 text-green-400',
-  blue: 'bg-blue-500/20 text-blue-400',
-  cyan: 'bg-cyan-500/20 text-cyan-400',
-  amber: 'bg-amber-500/20 text-amber-400',
+const grouped: Record<Tier, Hypothesis[]> = {
+  S: [], A: [], B: [], C: [], 'D/C': [], D: [], reference: [],
 };
+for (const h of hypotheses) grouped[h.tier].push(h);
+
+const total = hypotheses.length;
+const sCount = grouped.S.length;
+const killedCount = grouped.D.length + grouped['D/C'].length;
 ---
 
 <Layout lang={lang}>
@@ -99,21 +20,76 @@ const badgeClasses: Record<string, string> = {
     <a href="/" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← Back to overview</a>
   </div>
 
-  <section class="px-6 pt-6 pb-12 max-w-4xl mx-auto">
+  <section class="px-6 pt-6 pb-4 max-w-4xl mx-auto">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+      <span class="text-[11px] font-mono text-green-400 uppercase tracking-wider">Live priority register</span>
+    </div>
     <span class="text-[10px] uppercase tracking-widest text-neutral-500 font-semibold">Part 2</span>
     <h2 class="text-lg font-bold mt-1 mb-1">Research Hypotheses</h2>
-    <p class="text-xs text-neutral-400 mb-8">Computational hypotheses for accelerating STRC gene therapy. These require experimental validation.</p>
-
-    <div class="grid sm:grid-cols-2 gap-4">
-      {hypotheses.map((h) => (
-        <a href={h.href} class="block bg-white/[0.02] border border-white/5 rounded-lg p-5 hover:border-white/10 hover:bg-white/[0.04] transition-all no-underline group">
-          <div class="flex items-center gap-2 mb-2">
-            <span class={`px-1.5 py-0.5 text-[10px] rounded font-semibold ${badgeClasses[h.badgeColor] || badgeClasses.blue}`}>{h.badge}</span>
-          </div>
-          <h3 class="text-sm font-semibold text-white mb-1 group-hover:text-white/90">{h.title}</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed">{h.desc}</p>
-        </a>
-      ))}
+    <p class="text-xs text-neutral-400 mb-3">
+      Rolling rubric for all STRC/DFNB16 hypotheses, Misha-centric. Each scored 1–5 on Mechanism (M), Delivery (D), Misha-fit (F).
+      Tier ≈ min(M, D, F). This page mirrors <code class="text-[10px] bg-white/5 px-1 py-0.5 rounded">~/Brain/notes/STRC Hypothesis Ranking.md</code> — the canonical register.
+    </p>
+    <div class="flex flex-wrap gap-4 text-[11px] font-mono text-neutral-500 mb-6">
+      <span>{total} hypotheses</span>
+      <span class="text-red-400">{sCount} S-tier</span>
+      <span class="text-neutral-600">{killedCount} killed</span>
+      {updatedDate && <span>updated {updatedDate}</span>}
     </div>
+  </section>
+
+  <section class="px-6 pb-12 max-w-4xl mx-auto space-y-10">
+    {TIER_ORDER.map((tier) => grouped[tier].length > 0 && (
+      <div>
+        <div class="flex items-baseline gap-3 mb-3 pb-2 border-b border-white/5">
+          <span class={`px-2 py-0.5 text-[11px] rounded font-semibold border ${TIER_META[tier].color}`}>{TIER_META[tier].label}</span>
+          <span class="text-[11px] text-neutral-500">{TIER_META[tier].caption}</span>
+          <span class="text-[11px] text-neutral-600 ml-auto font-mono">{grouped[tier].length}</span>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          {grouped[tier].map((h) => {
+            const muted = tier === 'D' || tier === 'D/C';
+            const Card = h.slug ? 'a' : 'div';
+            const cardProps = h.slug
+              ? { href: `/hypotheses/${h.slug}`, class: 'block bg-white/[0.02] border border-white/5 rounded-lg p-4 hover:border-white/15 hover:bg-white/[0.04] transition-all no-underline group' }
+              : { class: `block bg-white/[0.015] border border-white/5 rounded-lg p-4 ${muted ? 'opacity-60' : ''}` };
+            return (
+              <Card {...cardProps}>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[10px] font-mono text-neutral-600">#{h.num}</span>
+                  <div class="flex items-center gap-1.5">
+                    {tier !== 'reference' && (
+                      <span class="text-[10px] font-mono text-neutral-500" title="Mechanism / Delivery / Misha-fit">
+                        M{h.mech} · D{h.deliv} · F{h.misha}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <h3 class={`text-sm font-semibold mb-1.5 ${muted ? 'line-through text-neutral-500' : 'text-white group-hover:text-white/90'}`}>
+                  {h.title}
+                </h3>
+                {tier !== 'reference' && (
+                  <p class="text-[11px] text-neutral-500 mb-1.5">
+                    <span class="text-neutral-400">Evidence:</span> {h.evidence}
+                  </p>
+                )}
+                <p class="text-[11px] text-neutral-500 mb-1.5">
+                  <span class="text-neutral-400">Status:</span> {h.status}
+                </p>
+                {h.nextStep && h.nextStep !== '—' && (
+                  <p class="text-[11px] text-neutral-500">
+                    <span class="text-neutral-400">Next:</span> {h.nextStep}
+                  </p>
+                )}
+                {!h.slug && tier !== 'reference' && (
+                  <p class="text-[10px] text-neutral-600 mt-2 italic">No detail page yet</p>
+                )}
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    ))}
   </section>
 </Layout>
