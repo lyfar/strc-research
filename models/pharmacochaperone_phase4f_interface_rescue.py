@@ -79,7 +79,16 @@ def env_check():
     log("env OK: openmm, openff-toolkit, pdbfixer, MDAnalysis, rdkit, obabel")
 
 
+PHASE4G_JSON = WORK_DIR / "pharmacochaperone_phase4g_repurpose_screen.json"
+
+
 def load_top_leads():
+    """Load Phase 4b top-3 leads. If PHASE4F_INCLUDE_REPURPOSE=1, also append
+    the Phase 4g repurposable chaperones (4PBA, IP-045, TMAO) using their
+    E1659A-pocket Vina pose for interface-rescue testing. This gives a direct
+    MM-GBSA number for FDA-approved repurposing candidates in the same run."""
+    import os
+
     if not PHASE4B_JSON.exists():
         log(f"FATAL — Phase 4b output missing: {PHASE4B_JSON}")
         sys.exit(3)
@@ -87,9 +96,37 @@ def load_top_leads():
     leads = [r for r in data["results"] if r.get("role") == "lead"]
     leads.sort(key=lambda r: r["best_affinity_kcal_mol"])
     top = leads[:TOP_K_LEADS]
-    log(f"Top-{TOP_K_LEADS} leads by Vina raw affinity:")
+
+    include_repurpose = os.environ.get("PHASE4F_INCLUDE_REPURPOSE", "0") == "1"
+    if include_repurpose and PHASE4G_JSON.exists():
+        g = json.loads(PHASE4G_JSON.read_text())
+        # Flatten nested shape: results[name] = {"meta": {...}, "targets": {target: {...}}}
+        for name, entry in g.get("results", {}).items():
+            meta = entry.get("meta", {})
+            mut_target = entry.get("targets", {}).get("e1659a_mutant", {})
+            if "best_affinity_kcal_mol" not in mut_target:
+                continue
+            # Prefer the e1659a_mutant pose since Phase 4f tests rescue of the
+            # mutant's interface. Fall back to ultra_x_tmem145 pose if mutant
+            # missing.
+            pose_pdbqt = mut_target.get("pose_pdbqt")
+            if not pose_pdbqt:
+                ultra = entry.get("targets", {}).get("ultra_x_tmem145", {})
+                pose_pdbqt = ultra.get("pose_pdbqt")
+            top.append({
+                "name": name,
+                "smiles": meta.get("smiles"),
+                "best_affinity_kcal_mol": mut_target["best_affinity_kcal_mol"],
+                "pose_pdbqt": pose_pdbqt,
+                "role": meta.get("role", "repurpose"),
+                "clinical_status": meta.get("clinical_status", ""),
+            })
+        log(f"PHASE4F_INCLUDE_REPURPOSE=1 — appended {len(g.get('results', {}))} Phase 4g candidates")
+
+    log(f"Roster for Phase 4f: {len(top)} compounds")
     for r in top:
-        log(f"  {r['name']:30s} {r['smiles']:35s} {r['best_affinity_kcal_mol']:.3f} kcal/mol")
+        role_tag = f" [{r.get('role')}]" if r.get("role") and r["role"] != "lead" else ""
+        log(f"  {r['name']:30s} {r['smiles']:40s} {r['best_affinity_kcal_mol']:.3f} kcal/mol{role_tag}")
     return top
 
 
