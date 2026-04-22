@@ -2,7 +2,7 @@
 
 > **Agent context file.** Every scheduled routine working in this repo reads this first to understand the current research state before acting. Regenerated from `~/Brain/research/strc/_context.md` and `~/Brain/notes/STRC Hypothesis Ranking.md`.
 >
-> Last synced: 2026-04-21
+> Last synced: 2026-04-22
 
 ---
 
@@ -35,7 +35,7 @@ Tiers: **S** (primary, active compute, top-5 max) / **A** (active backburner) / 
 | 5   | [[STRC Calcium Oscillation Acoustic Therapy]]         | 3    | 4     | 2     | Phases 1–3 done; n=4.3 Hill, globally stable           | active                                  | **A**   | maternal-allele-only; Touch Grass integration path               |
 | 6   | [[STRC mRNA Therapy Hypothesis]] (Strategy A / RBM24) | 3    | 2     | 2     | PK/PD + audiogram done                                 | backburner                              | **A**   | adjunctive to Strategy B; alone subtherapeutic for Misha         |
 | 7   | [[Prime Editing for STRC]]                            | 4    | 2     | 2     | Phase 1–3 pegRNA design done                           | active                                  | **A**   | maternal-allele only; Cas-OFFinder off-target scan               |
-| 8   | [[STRC ASO Exon Skipping]]                            | 3    | 3     | 2     | Phase 1 design; lead ASO                               | backburner                              | **B**   | maternal-only; ViennaRNA fold check                              |
+| 8   | [[STRC ASO Exon Skipping]]                            | 3    | 3     | 2     | Phase 1 design (54 candidates); local self-fold check **PASS 54/54** ([[STRC ASO Phase1 Fold Check]]); heteroduplex ΔG + RNAplfold accessibility still pending | backburner                              | **B**   | maternal-only; heteroduplex ΔG (NUPACK) + RNAplfold sliding-window accessibility on full intron/exon context |
 | 9   | [[STRC Synthetic Peptide Hydrogel HTC]]               | 3    | 3     | 3     | none                                                   | active                                  | **B**   | Phase 1 self-assembly geometry model                             |
 | 10  | [[STRC In Situ SpyCatcher Assembly]]                  | 3    | 2     | 3     | none                                                   | active                                  | **B**   | Phase 1 fragment complementation geometry                        |
 | 11  | [[STRC Engineered TECTA Chimera]]                     | 2    | 2     | 3     | none                                                   | active                                  | **B**   | Phase 1 TECTA-STRC fusion structural check                       |
