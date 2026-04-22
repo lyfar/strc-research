@@ -89,7 +89,7 @@ STRC_SPY_REASSEMBLED = (
     + LINK_5  # between SpyTag and STRC-C
     + STRC_ULTRAMINI
 )
-assert len(STRC_SPY_REASSEMBLED) == 1074 + 5 + 113 + 2 + 13 + 5 + 701 == 1913
+assert len(STRC_SPY_REASSEMBLED) == 1074 + 5 + 114 + 2 + 13 + 5 + 701 == 1914
 
 # Hypothesis #11 TECTA chimera: TECTA ZP region as C-terminal anchor +
 # GGSGSG linker + STRC Ultra-Mini as the N-terminal functional domain.
@@ -119,7 +119,7 @@ jobs = {
         "json": job("strc_spy_reassembled_fold", [(STRC_SPY_REASSEMBLED, 1)]),
         "description": (
             "Single-chain simulation of post-assembly SpyCatcher product: "
-            f"STRC N-term 1-1074 + linker + SpyCatcher + SpyTag + linker + "
+            "STRC N-term 1-1074 + linker + SpyCatcher + SpyTag + linker + "
             f"STRC 1075-1775. {len(STRC_SPY_REASSEMBLED)} aa total. "
             "Purpose: does the reassembled product adopt a native-like STRC fold?"
         ),
@@ -144,7 +144,7 @@ jobs = {
         ]),
         "description": (
             "Reassembled SpyCatcher construct + TMEM145 full length. "
-            f"{len(STRC_SPY_REASSEMBLED)} + {len(TMEM145_FULL)} = 2406 aa. "
+            f"{len(STRC_SPY_REASSEMBLED)} + {len(TMEM145_FULL)} = {len(STRC_SPY_REASSEMBLED) + len(TMEM145_FULL)} aa. "
             "Phase 1b: does the reassembled STRC preserve the TMEM145 interface?"
         ),
         "success_criteria": (
@@ -235,8 +235,8 @@ manifest = {
         "STRC_SPY_REASSEMBLED": {
             "length": len(STRC_SPY_REASSEMBLED),
             "composition": (
-                "STRC_1-1074 (1074) + GSGSG + SpyCatcher (113) + GG + "
-                "SpyTag (13) + GSGSG + STRC_1075-1775 (701) = 1913 aa"
+                "STRC_1-1074 (1074) + GSGSG + SpyCatcher (114) + GG + "
+                "SpyTag (13) + GSGSG + STRC_1075-1775 (701) = 1914 aa"
             ),
             "rationale": (
                 "Models the post-reaction covalent product of Fragment 1 "
