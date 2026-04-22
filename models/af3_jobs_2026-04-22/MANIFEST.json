@@ -1,0 +1,53 @@
+{
+  "generated": "2026-04-22",
+  "builder": "af3_jobs_2026-04-22_builder.py",
+  "purpose": "Phase 1 geometry validation for two B-tier STRC hypotheses currently at 0 compute: #10 [[STRC In Situ SpyCatcher Assembly]] and #11 [[STRC Engineered TECTA Chimera]]. Both sit in B-tier partly because no structural evidence exists either way. A single AF3 pass moves them to Phase 2 (if fold + TMEM145 binding preserved) or kills them cheaply.",
+  "source_sequences": {
+    "STRC_full": "UniProt Q7RTU9, 1775 aa (fetched 2026-04-22)",
+    "TECTA_full": "UniProt O75443, 2155 aa (fetched 2026-04-22)",
+    "TMEM145_full": "verified from prior AF3 batch 2026-04-21 FASTA",
+    "SpyCatcher": "original SpyCatcher (Zakeri 2012), 113 aa",
+    "SpyTag": "original SpyTag, 13 aa"
+  },
+  "construct_assemblies": {
+    "STRC_SPY_REASSEMBLED": {
+      "length": 1914,
+      "composition": "STRC_1-1074 (1074) + GSGSG + SpyCatcher (114) + GG + SpyTag (13) + GSGSG + STRC_1075-1775 (701) = 1914 aa",
+      "rationale": "Models the post-reaction covalent product of Fragment 1 (STRC-N + SpyCatcher) meeting Fragment 2 (SpyTag + STRC-C) in the secretory pathway or on the OHC surface."
+    },
+    "TECTA_CHIMERA": {
+      "length": 1207,
+      "composition": "TECTA_1655-2155 (500, ZP region) + GGSGSG + STRC_1075-1775 (701) = 1207 aa",
+      "rationale": "TECTA ZP C-terminal anchor scaffold + STRC Ultra-Mini functional domain. Idea: TECTA ZP auto-polymerisation in tectorial membrane provides the anchoring, STRC Ultra-Mini provides the TMEM145-binding horizontal connector function."
+    }
+  },
+  "priority_order": [
+    "strc_spy_reassembled_fold",
+    "strc_tecta_chimera_fold",
+    "strc_spy_reassembled_x_tmem145",
+    "strc_tecta_chimera_x_tmem145"
+  ],
+  "jobs": {
+    "strc_spy_reassembled_fold": {
+      "description": "Single-chain simulation of post-assembly SpyCatcher product: STRC N-term 1-1074 + linker + SpyCatcher + SpyTag + linker + STRC 1075-1775. 1914 aa total. Purpose: does the reassembled product adopt a native-like STRC fold?",
+      "success_criteria": "pTM >= 0.60 for overall chain AND the C-terminal STRC region (1075-1775 equivalent positions, aa 1194-1913 of this chain) adopts an ARM-repeat fold comparable to Ultra-Mini solo (previous job-h-strc-cterm-only.cif at pTM 0.87)",
+      "hypothesis_impact": "pass -> SpyCatcher reassembly is geometrically viable; advance to Phase 1b TMEM145 binding test. fail (pTM < 0.40 OR C-term ARM fold destroyed) -> SpyCatcher tag topology incompatible with STRC C-term tertiary structure; kill or try alternate split points"
+    },
+    "strc_spy_reassembled_x_tmem145": {
+      "description": "Reassembled SpyCatcher construct + TMEM145 full length. 1914 + 493 = 2407 aa. Phase 1b: does the reassembled STRC preserve the TMEM145 interface?",
+      "success_criteria": "ipTM >= 0.40 (matches prior Ultra-Mini x TMEM145 baseline). STRC chain interface residues concentrate in positions equivalent to aa 1603-1749 of native STRC (= positions 1603-1749 within the C-terminal segment of the reassembled chain, indexed from SpyTag+5)",
+      "hypothesis_impact": "pass -> SpyCatcher fragment complementation preserves TMEM145 binding. Hypothesis #10 earns Phase 2 (fragment expression + in vitro SpyCatcher-SpyTag reaction test). fail -> TMEM145 interface disrupted; kill"
+    },
+    "strc_tecta_chimera_fold": {
+      "description": "TECTA ZP region (aa 1655-2155, 500 aa) + linker + STRC Ultra-Mini (1075-1775, 701 aa). 1207 aa. Purpose: does the chimera adopt a stable two-domain fold?",
+      "success_criteria": "pTM >= 0.55 overall. TECTA ZP domain region (aa 1-500 of chimera) adopts ZP-fold. STRC Ultra-Mini region (aa 507-1207 of chimera) adopts ARM-repeat fold comparable to Ultra-Mini solo.",
+      "hypothesis_impact": "pass -> chimera geometry plausible; advance to Phase 1b TMEM145 test. fail (domains clash or linker forces non-native fold) -> TECTA-STRC fusion incompatible; try alternate TECTA region (e.g. VWF D domain) or kill"
+    },
+    "strc_tecta_chimera_x_tmem145": {
+      "description": "TECTA-STRC chimera + TMEM145 full. 1207 + 493 = 1700 aa. Phase 1b: does chimera preserve TMEM145 binding despite TECTA scaffold?",
+      "success_criteria": "ipTM >= 0.40. STRC region of chimera engages TMEM145 interface; TECTA ZP region does NOT dominate the interface (false-positive binder)",
+      "hypothesis_impact": "pass -> TECTA-STRC chimera preserves the STRC-TMEM145 recognition surface while gaining ZP anchoring; advance to Phase 2 (tectorial membrane self-assembly model). fail -> chimera either breaks TMEM145 binding OR TECTA ZP dominates interface artifactually; kill or redesign"
+    }
+  },
+  "how_to_submit": "AlphaFold Server (alphafoldserver.com): Import from JSON for each file. Daily limit 20 jobs, we use 4. Seed 42 for reproducibility."
+}

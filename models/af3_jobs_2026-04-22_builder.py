@@ -47,7 +47,7 @@ assert len(TECTA_FULL) == 2155
 
 STRC_N_1_1074 = STRC_FULL[0:1074]           # N-terminal fragment for SpyCatcher
 STRC_ULTRAMINI = STRC_FULL[1074:1775]       # Ultra-Mini 1075-1775, 701 aa
-TECTA_ZP_REGION = TECTA_FULL[1654:2155]     # C-terminal 500 aa, spans ZP-N + ZP-C + CFCS
+TECTA_ZP_REGION = TECTA_FULL[1655:2155]     # C-terminal 500 aa, spans ZP-N + ZP-C + CFCS
 
 # TMEM145 — re-use verified sequences from prior AF3 batch.
 TMEM145_FULL = (
