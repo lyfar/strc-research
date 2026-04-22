@@ -1,0 +1,243 @@
+{
+  "phase": "4g",
+  "run_date": "2026-04-22",
+  "vina_exhaustiveness": 32,
+  "vina_num_modes": 9,
+  "box_size_A": 18.0,
+  "roster": [
+    {
+      "name": "4-phenylbutyrate",
+      "smiles": "OC(=O)CCCc1ccccc1",
+      "role": "fda-approved-chaperone",
+      "source": "hayase 2026; DSCAML1 A2105T in-vivo rescue",
+      "clinical_status": "FDA approved (Buphenyl \u2014 urea cycle disorder)"
+    },
+    {
+      "name": "ip-045",
+      "smiles": "O=C(OC1=CC=CC=C1F)CCc2c[nH]c3ccccc23",
+      "role": "indole-chaperone",
+      "source": "kaur 2026; \u03b1-synuclein rotenone-PD rat in-vivo",
+      "clinical_status": "preclinical; indole chemotype matches our lead"
+    },
+    {
+      "name": "tmao",
+      "smiles": "C[N+](C)(C)[O-]",
+      "role": "osmolyte-baseline",
+      "source": "reference; trimethylamine-N-oxide",
+      "clinical_status": "dietary; generic protein stabiliser"
+    }
+  ],
+  "targets": [
+    "ultra_x_tmem145",
+    "wt_full",
+    "e1659a_mutant"
+  ],
+  "results": {
+    "4-phenylbutyrate": {
+      "meta": {
+        "name": "4-phenylbutyrate",
+        "smiles": "OC(=O)CCCc1ccccc1",
+        "role": "fda-approved-chaperone",
+        "source": "hayase 2026; DSCAML1 A2105T in-vivo rescue",
+        "clinical_status": "FDA approved (Buphenyl \u2014 urea cycle disorder)"
+      },
+      "targets": {
+        "ultra_x_tmem145": {
+          "best_affinity_kcal_mol": -5.401,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/4-phenylbutyrate__ultra_x_tmem145.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/4-phenylbutyrate__ultra_x_tmem145.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4b/ultra_x_tmem145_chainA.pdbqt",
+          "box_centre": [
+            -22.027,
+            -18.547,
+            2.215
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "wt_full": {
+          "best_affinity_kcal_mol": -4.736,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/4-phenylbutyrate__wt_full.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/4-phenylbutyrate__wt_full.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/wt_full_chainA.pdbqt",
+          "box_centre": [
+            4.526,
+            -7.941,
+            -42.352
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "e1659a_mutant": {
+          "best_affinity_kcal_mol": -5.056,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/4-phenylbutyrate__e1659a_mutant.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/4-phenylbutyrate__e1659a_mutant.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/e1659a_mutant_chainA.pdbqt",
+          "box_centre": [
+            15.777,
+            -44.66,
+            16.866
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        }
+      }
+    },
+    "ip-045": {
+      "meta": {
+        "name": "ip-045",
+        "smiles": "O=C(OC1=CC=CC=C1F)CCc2c[nH]c3ccccc23",
+        "role": "indole-chaperone",
+        "source": "kaur 2026; \u03b1-synuclein rotenone-PD rat in-vivo",
+        "clinical_status": "preclinical; indole chemotype matches our lead"
+      },
+      "targets": {
+        "ultra_x_tmem145": {
+          "best_affinity_kcal_mol": -6.078,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/ip-045__ultra_x_tmem145.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/ip-045__ultra_x_tmem145.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4b/ultra_x_tmem145_chainA.pdbqt",
+          "box_centre": [
+            -22.027,
+            -18.547,
+            2.215
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "wt_full": {
+          "best_affinity_kcal_mol": -6.461,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/ip-045__wt_full.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/ip-045__wt_full.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/wt_full_chainA.pdbqt",
+          "box_centre": [
+            4.526,
+            -7.941,
+            -42.352
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "e1659a_mutant": {
+          "best_affinity_kcal_mol": -6.193,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/ip-045__e1659a_mutant.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/ip-045__e1659a_mutant.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/e1659a_mutant_chainA.pdbqt",
+          "box_centre": [
+            15.777,
+            -44.66,
+            16.866
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        }
+      }
+    },
+    "tmao": {
+      "meta": {
+        "name": "tmao",
+        "smiles": "C[N+](C)(C)[O-]",
+        "role": "osmolyte-baseline",
+        "source": "reference; trimethylamine-N-oxide",
+        "clinical_status": "dietary; generic protein stabiliser"
+      },
+      "targets": {
+        "ultra_x_tmem145": {
+          "best_affinity_kcal_mol": -2.399,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/tmao__ultra_x_tmem145.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/tmao__ultra_x_tmem145.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4b/ultra_x_tmem145_chainA.pdbqt",
+          "box_centre": [
+            -22.027,
+            -18.547,
+            2.215
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "wt_full": {
+          "best_affinity_kcal_mol": -2.534,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/tmao__wt_full.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/tmao__wt_full.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/wt_full_chainA.pdbqt",
+          "box_centre": [
+            4.526,
+            -7.941,
+            -42.352
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        },
+        "e1659a_mutant": {
+          "best_affinity_kcal_mol": -2.054,
+          "pose_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/poses/tmao__e1659a_mutant.pdbqt",
+          "log": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4g/logs/tmao__e1659a_mutant.log",
+          "receptor_pdbqt": "/Users/egorlyfar/Brain/research/strc/models/docking_runs/4c/e1659a_mutant_chainA.pdbqt",
+          "box_centre": [
+            15.777,
+            -44.66,
+            16.866
+          ],
+          "box_size": [
+            18.0,
+            18.0,
+            18.0
+          ]
+        }
+      }
+    }
+  },
+  "summary": [
+    {
+      "name": "4-phenylbutyrate",
+      "role": "fda-approved-chaperone",
+      "clinical_status": "FDA approved (Buphenyl \u2014 urea cycle disorder)",
+      "dG_ultra": -5.401,
+      "dG_wt": -4.736,
+      "dG_e1659a": -5.056,
+      "selectivity_mut_minus_wt": -0.32
+    },
+    {
+      "name": "ip-045",
+      "role": "indole-chaperone",
+      "clinical_status": "preclinical; indole chemotype matches our lead",
+      "dG_ultra": -6.078,
+      "dG_wt": -6.461,
+      "dG_e1659a": -6.193,
+      "selectivity_mut_minus_wt": 0.268
+    },
+    {
+      "name": "tmao",
+      "role": "osmolyte-baseline",
+      "clinical_status": "dietary; generic protein stabiliser",
+      "dG_ultra": -2.399,
+      "dG_wt": -2.534,
+      "dG_e1659a": -2.054,
+      "selectivity_mut_minus_wt": 0.48
+    }
+  ]
+}
