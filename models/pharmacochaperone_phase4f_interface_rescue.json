@@ -1,0 +1,42 @@
+{
+  "phase": "4f",
+  "method": "OpenMM single-point + GBn2 implicit solvent (static snapshot, not MD MM-GBSA)",
+  "target_cif": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job-ultramini-x-tmem145-full.cif",
+  "reference_gap_kcal_mol": 8.4,
+  "recovery_gate": 0.3,
+  "apo_interface": {
+    "e_complex_kcal": -9773.551650875557,
+    "e_chain_a_kcal": -19229.002852767953,
+    "e_chain_b_kcal": -4413.704239278958,
+    "dg_interface_kcal": 13869.155441171355
+  },
+  "results": [
+    {
+      "name": "indole-3-acetic-acid",
+      "smiles": "OC(=O)Cc1c[nH]c2ccccc12",
+      "vina_best_affinity_kcal": -6.05,
+      "apo_interface_dg_kcal": 13869.155441171355,
+      "bound_interface_dg_kcal": -6570.392336573744,
+      "ddg_rescue_kcal": 20439.547777745098,
+      "recovery_fraction": 2433.2794973506066,
+      "passes_30pct_gate": true,
+      "raw": {
+        "apo": {
+          "e_complex_kcal": -9773.551650875557,
+          "e_chain_a_kcal": -19229.002852767953,
+          "e_chain_b_kcal": -4413.704239278958,
+          "dg_interface_kcal": 13869.155441171355
+        },
+        "bound": {
+          "e_complex_kcal": -33184.83764648267,
+          "e_chain_a_kcal": -22200.74107062997,
+          "e_chain_b_kcal": -4413.704239278958,
+          "dg_interface_kcal": -6570.392336573744
+        }
+      }
+    }
+  ],
+  "n_pass": 1,
+  "verdict": "PASS",
+  "timestamp": "2026-04-22T06:04:27.518247+00:00"
+}
