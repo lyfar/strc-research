@@ -3,7 +3,9 @@ title: Mini-STRC Single-Vector Hypothesis
 status: active
 stage: computational-validation
 priority: primary
-tags: [aav, gene-therapy, truncation, mini-gene]
+tags: [aav, gene-therapy, truncation, mini-gene, strc, synthesis, hypothesis]
+date: 2026-04-22
+type: synthesis
 ---
 
 ## Core claim
@@ -104,3 +106,9 @@ High-speed video microscopy quantified biophysical consequences of a specific ge
 *J Cell Sci · relevance: 4/10 · lateral*
 
 Endothelial cells use distributed mechanosensor networks (glycocalyx, ion channels, cilia) rather than single receptors. Stereocilin may function like the glycocalyx — not transducing force directly but shaping frequency-dependent mechanical coupling to the MET apparatus. Mini-STRC must preserve this filtering function, not just physical attachment.
+
+## Connections
+
+- `[part-of]` [[STRC]]
+- `[synthesizes]` [[STRC Mini-STRC Single-Vector Hypothesis]]
+- `[see-also]` [[STRC Hypothesis Ranking]]

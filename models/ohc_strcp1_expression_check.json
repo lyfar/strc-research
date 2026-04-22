@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "date": "2026-04-22",
+    "source": "GTEx v8 medianGeneExpression API",
+    "strc_gencode": "ENSG00000242866.9",
+    "strcp1_gencode": "ENSG00000166763.7",
+    "limitation": "GTEx has no cochlea/inner ear; highest-STRC tissues used as proxies"
+  },
+  "totals": {
+    "n_tissues": 54,
+    "n_strc_expressed_tpm_gt_0.1": 40,
+    "n_strcp1_expressed_tpm_gt_0.1": 37,
+    "n_co_expressed_tpm_gt_0.1": 34
+  },
+  "verdict": {
+    "label": "STRCP1_CO_EXPRESSED_PARTIAL",
+    "reason": "STRC:STRCP1 median ratio 4.5:1. ASO loses 25-50% of dose to STRCP1 \u2014 significant but not fatal. PE off-target rate stays unchanged per copy."
+  },
+  "rows_top10_by_strc": [
+    {
+      "tissue": "Brain_Cerebellum",
+      "strc_tpm": 15.1652,
+      "strcp1_tpm": 2.55647,
+      "strc_to_strcp1_ratio": 5.932086040516807
+    },
+    {
+      "tissue": "Brain_Cerebellar_Hemisphere",
+      "strc_tpm": 12.3421,
+      "strcp1_tpm": 2.48963,
+      "strc_to_strcp1_ratio": 4.957403308925422
+    },
+    {
+      "tissue": "Testis",
+      "strc_tpm": 4.94299,
+      "strcp1_tpm": 1.10772,
+      "strc_to_strcp1_ratio": 4.462309970028527
+    },
+    {
+      "tissue": "Brain_Cortex",
+      "strc_tpm": 1.21337,
+      "strcp1_tpm": 0.38298000000000004,
+      "strc_to_strcp1_ratio": 3.1682333281111283
+    },
+    {
+      "tissue": "Pituitary",
+      "strc_tpm": 1.03128,
+      "strcp1_tpm": 0.432713,
+      "strc_to_strcp1_ratio": 2.383288692505194
+    },
+    {
+      "tissue": "Brain_Frontal_Cortex_BA9",
+      "strc_tpm": 0.8510110000000001,
+      "strcp1_tpm": 0.381531,
+      "strc_to_strcp1_ratio": 2.2305160000104842
+    },
+    {
+      "tissue": "Skin_Sun_Exposed_Lower_leg",
+      "strc_tpm": 0.577512,
+      "strcp1_tpm": 0.519917,
+      "strc_to_strcp1_ratio": 1.110777297145506
+    },
+    {
+      "tissue": "Brain_Nucleus_accumbens_basal_ganglia",
+      "strc_tpm": 0.569657,
+      "strcp1_tpm": 0.270451,
+      "strc_to_strcp1_ratio": 2.1063224022096425
+    },
+    {
+      "tissue": "Skin_Not_Sun_Exposed_Suprapubic",
+      "strc_tpm": 0.564026,
+      "strcp1_tpm": 0.44936499999999996,
+      "strc_to_strcp1_ratio": 1.2551622845570973
+    },
+    {
+      "tissue": "Prostate",
+      "strc_tpm": 0.43358599999999997,
+      "strcp1_tpm": 0.35692399999999996,
+      "strc_to_strcp1_ratio": 1.2147852203830507
+    }
+  ],
+  "rows_full": [
+    {
+      "tissue": "Brain_Cerebellum",
+      "strc_tpm": 15.1652,
+      "strcp1_tpm": 2.55647,
+      "strc_to_strcp1_ratio": 5.932086040516807
+    },
+    {
+      "tissue": "Brain_Cerebellar_Hemisphere",
+      "strc_tpm": 12.3421,
+      "strcp1_tpm": 2.48963,
+      "strc_to_strcp1_ratio": 4.957403308925422
+    },
+    {
+      "tissue": "Testis",
+      "strc_tpm": 4.94299,
+      "strcp1_tpm": 1.10772,
+      "strc_to_strcp1_ratio": 4.462309970028527
+    },
+    {
+      "tissue": "Brain_Cortex",
+      "strc_tpm": 1.21337,
+      "strcp1_tpm": 0.38298000000000004,
+      "strc_to_strcp1_ratio": 3.1682333281111283
+    },
+    {
+      "tissue": "Pituitary",
+      "strc_tpm": 1.03128,
+      "strcp1_tpm": 0.432713,
+      "strc_to_strcp1_ratio": 2.383288692505194
+    },
+    {
+      "tissue": "Brain_Frontal_Cortex_BA9",
+      "strc_tpm": 0.8510110000000001,
+      "strcp1_tpm": 0.381531,
+      "strc_to_strcp1_ratio": 2.2305160000104842
+    },
+    {
+      "tissue": "Skin_Sun_Exposed_Lower_leg",
+      "strc_tpm": 0.577512,
+      "strcp1_tpm": 0.519917,
+      "strc_to_strcp1_ratio": 1.110777297145506
+    },
+    {
+      "tissue": "Brain_Nucleus_accumbens_basal_ganglia",
+      "strc_tpm": 0.569657,
+      "strcp1_tpm": 0.270451,
+      "strc_to_strcp1_ratio": 2.1063224022096425
+    },
+    {
+      "tissue": "Skin_Not_Sun_Exposed_Suprapubic",
+      "strc_tpm": 0.564026,
+      "strcp1_tpm": 0.44936499999999996,
+      "strc_to_strcp1_ratio": 1.2551622845570973
+    },
+    {
+      "tissue": "Prostate",
+      "strc_tpm": 0.43358599999999997,
+      "strcp1_tpm": 0.35692399999999996,
+      "strc_to_strcp1_ratio": 1.2147852203830507
+    },
+    {
+      "tissue": "Cervix_Endocervix",
+      "strc_tpm": 0.425212,
+      "strcp1_tpm": 0.32839,
+      "strc_to_strcp1_ratio": 1.2948384542769267
+    },
+    {
+      "tissue": "Brain_Caudate_basal_ganglia",
+      "strc_tpm": 0.405532,
+      "strcp1_tpm": 0.15981900000000002,
+      "strc_to_strcp1_ratio": 2.5374454852051382
+    },
+    {
+      "tissue": "Fallopian_Tube",
+      "strc_tpm": 0.367334,
+      "strcp1_tpm": 0.39538,
+      "strc_to_strcp1_ratio": 0.9290657089382366
+    },
+    {
+      "tissue": "Minor_Salivary_Gland",
+      "strc_tpm": 0.35885100000000003,
+      "strcp1_tpm": 0.264631,
+      "strc_to_strcp1_ratio": 1.3560429428147118
+    },
+    {
+      "tissue": "Brain_Anterior_cingulate_cortex_BA24",
+      "strc_tpm": 0.339437,
+      "strcp1_tpm": 0.164652,
+      "strc_to_strcp1_ratio": 2.0615419187134076
+    },
+    {
+      "tissue": "Ovary",
+      "strc_tpm": 0.33357800000000004,
+      "strcp1_tpm": 0.305114,
+      "strc_to_strcp1_ratio": 1.0932897212189543
+    },
+    {
+      "tissue": "Brain_Putamen_basal_ganglia",
+      "strc_tpm": 0.30950900000000003,
+      "strcp1_tpm": 0.120709,
+      "strc_to_strcp1_ratio": 2.564092155514502
+    },
+    {
+      "tissue": "Thyroid",
+      "strc_tpm": 0.30949699999999997,
+      "strcp1_tpm": 0.28886999999999996,
+      "strc_to_strcp1_ratio": 1.0714058226884067
+    },
+    {
+      "tissue": "Brain_Hypothalamus",
+      "strc_tpm": 0.28123200000000004,
+      "strcp1_tpm": 0.169966,
+      "strc_to_strcp1_ratio": 1.6546368097148842
+    },
+    {
+      "tissue": "Small_Intestine_Terminal_Ileum",
+      "strc_tpm": 0.27185,
+      "strcp1_tpm": 0.211296,
+      "strc_to_strcp1_ratio": 1.286583749810692
+    },
+    {
+      "tissue": "Cervix_Ectocervix",
+      "strc_tpm": 0.23155799999999999,
+      "strcp1_tpm": 0.19842,
+      "strc_to_strcp1_ratio": 1.1670093740550347
+    },
+    {
+      "tissue": "Nerve_Tibial",
+      "strc_tpm": 0.22517600000000002,
+      "strcp1_tpm": 0.24382399999999999,
+      "strc_to_strcp1_ratio": 0.9235186035829124
+    },
+    {
+      "tissue": "Breast_Mammary_Tissue",
+      "strc_tpm": 0.220331,
+      "strcp1_tpm": 0.253429,
+      "strc_to_strcp1_ratio": 0.8693993189413997
+    },
+    {
+      "tissue": "Vagina",
+      "strc_tpm": 0.207664,
+      "strcp1_tpm": 0.20556300000000002,
+      "strc_to_strcp1_ratio": 1.010220710925604
+    },
+    {
+      "tissue": "Spleen",
+      "strc_tpm": 0.19686199999999998,
+      "strcp1_tpm": 0.175102,
+      "strc_to_strcp1_ratio": 1.1242704252378612
+    },
+    {
+      "tissue": "Brain_Spinal_cord_cervical_c-1",
+      "strc_tpm": 0.191419,
+      "strcp1_tpm": 0.12174700000000001,
+      "strc_to_strcp1_ratio": 1.5722687212005224
+    },
+    {
+      "tissue": "Uterus",
+      "strc_tpm": 0.17564000000000002,
+      "strcp1_tpm": 0.12493599999999999,
+      "strc_to_strcp1_ratio": 1.4058397899724662
+    },
+    {
+      "tissue": "Colon_Transverse",
+      "strc_tpm": 0.145644,
+      "strcp1_tpm": 0.16306500000000002,
+      "strc_to_strcp1_ratio": 0.8931653021801121
+    },
+    {
+      "tissue": "Brain_Hippocampus",
+      "strc_tpm": 0.145175,
+      "strcp1_tpm": 0.0970753,
+      "strc_to_strcp1_ratio": 1.4954885537309697
+    },
+    {
+      "tissue": "Artery_Aorta",
+      "strc_tpm": 0.140665,
+      "strcp1_tpm": 0.131589,
+      "strc_to_strcp1_ratio": 1.0689723305139487
+    },
+    {
+      "tissue": "Bladder",
+      "strc_tpm": 0.13383599999999998,
+      "strcp1_tpm": 0.113702,
+      "strc_to_strcp1_ratio": 1.1770769203707938
+    },
+    {
+      "tissue": "Adrenal_Gland",
+      "strc_tpm": 0.129664,
+      "strcp1_tpm": 0.0519059,
+      "strc_to_strcp1_ratio": 2.498058987513944
+    },
+    {
+      "tissue": "Kidney_Medulla",
+      "strc_tpm": 0.12278599999999999,
+      "strcp1_tpm": 0.0957537,
+      "strc_to_strcp1_ratio": 1.2823107618817862
+    },
+    {
+      "tissue": "Brain_Amygdala",
+      "strc_tpm": 0.122155,
+      "strcp1_tpm": 0.07596460000000001,
+      "strc_to_strcp1_ratio": 1.6080516451083793
+    },
+    {
+      "tissue": "Adipose_Subcutaneous",
+      "strc_tpm": 0.117403,
+      "strcp1_tpm": 0.155212,
+      "strc_to_strcp1_ratio": 0.7564041440094839
+    },
+    {
+      "tissue": "Colon_Sigmoid",
+      "strc_tpm": 0.11608399999999999,
+      "strcp1_tpm": 0.111973,
+      "strc_to_strcp1_ratio": 1.0367142078894018
+    },
+    {
+      "tissue": "Esophagus_Mucosa",
+      "strc_tpm": 0.107867,
+      "strcp1_tpm": 0.125129,
+      "strc_to_strcp1_ratio": 0.8620463681480713
+    },
+    {
+      "tissue": "Stomach",
+      "strc_tpm": 0.10694200000000001,
+      "strcp1_tpm": 0.113353,
+      "strc_to_strcp1_ratio": 0.9434421673886003
+    },
+    {
+      "tissue": "Kidney_Cortex",
+      "strc_tpm": 0.102108,
+      "strcp1_tpm": 0.0939561,
+      "strc_to_strcp1_ratio": 1.0867628605274167
+    },
+    {
+      "tissue": "Brain_Substantia_nigra",
+      "strc_tpm": 0.100715,
+      "strcp1_tpm": 0.0900352,
+      "strc_to_strcp1_ratio": 1.1186180516064828
+    },
+    {
+      "tissue": "Esophagus_Gastroesophageal_Junction",
+      "strc_tpm": 0.0969174,
+      "strcp1_tpm": 0.08851569999999999,
+      "strc_to_strcp1_ratio": 1.0949176247829482
+    },
+    {
+      "tissue": "Lung",
+      "strc_tpm": 0.09475499999999999,
+      "strcp1_tpm": 0.10275899999999999,
+      "strc_to_strcp1_ratio": 0.9221090123492833
+    },
+    {
+      "tissue": "Cells_EBV-transformed_lymphocytes",
+      "strc_tpm": 0.09163260000000001,
+      "strcp1_tpm": 0.12179000000000001,
+      "strc_to_strcp1_ratio": 0.752381968962969
+    },
+    {
+      "tissue": "Esophagus_Muscularis",
+      "strc_tpm": 0.0910174,
+      "strcp1_tpm": 0.09365119999999999,
+      "strc_to_strcp1_ratio": 0.9718764949087679
+    },
+    {
+      "tissue": "Artery_Coronary",
+      "strc_tpm": 0.08237080000000001,
+      "strcp1_tpm": 0.0823453,
+      "strc_to_strcp1_ratio": 1.0003096715902426
+    },
+    {
+      "tissue": "Artery_Tibial",
+      "strc_tpm": 0.08052260000000001,
+      "strcp1_tpm": 0.08578680000000001,
+      "strc_to_strcp1_ratio": 0.9386362470683136
+    },
+    {
+      "tissue": "Adipose_Visceral_Omentum",
+      "strc_tpm": 0.07141089999999999,
+      "strcp1_tpm": 0.0851273,
+      "strc_to_strcp1_ratio": 0.838871901258468
+    },
+    {
+      "tissue": "Liver",
+      "strc_tpm": 0.06559010000000001,
+      "strcp1_tpm": 0.184757,
+      "strc_to_strcp1_ratio": 0.3550073880827249
+    },
+    {
+      "tissue": "Muscle_Skeletal",
+      "strc_tpm": 0.04564,
+      "strcp1_tpm": 0.0189425,
+      "strc_to_strcp1_ratio": 2.4093968589151378
+    },
+    {
+      "tissue": "Heart_Atrial_Appendage",
+      "strc_tpm": 0.0287932,
+      "strcp1_tpm": 0.0246848,
+      "strc_to_strcp1_ratio": 1.1664344049779622
+    },
+    {
+      "tissue": "Pancreas",
+      "strc_tpm": 0.0280738,
+      "strcp1_tpm": 0.0467524,
+      "strc_to_strcp1_ratio": 0.600478264217452
+    },
+    {
+      "tissue": "Whole_Blood",
+      "strc_tpm": 0.0195608,
+      "strcp1_tpm": 0.0324681,
+      "strc_to_strcp1_ratio": 0.6024621089623353
+    },
+    {
+      "tissue": "Cells_Cultured_fibroblasts",
+      "strc_tpm": 0.0128299,
+      "strcp1_tpm": 0.00774831,
+      "strc_to_strcp1_ratio": 1.6558320459558278
+    },
+    {
+      "tissue": "Heart_Left_Ventricle",
+      "strc_tpm": 0.009859999999999999,
+      "strcp1_tpm": 0.00828195,
+      "strc_to_strcp1_ratio": 1.1905408750354687
+    }
+  ]
+}

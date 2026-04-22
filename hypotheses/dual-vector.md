@@ -3,7 +3,9 @@ title: Dual-Vector vs Single-Vector Transduction Analysis
 status: active
 stage: computational-modeling
 priority: supporting
-tags: [aav, dual-vector, single-vector, transduction, statistics, gamma-poisson]
+tags: [aav, dual-vector, single-vector, transduction, statistics, gamma-poisson, strc, synthesis, hypothesis]
+date: 2026-04-22
+type: synthesis
 ---
 
 ## Core claim
@@ -40,3 +42,9 @@ Mini-STRC single-vector approach is not incremental — it's a 2.8x improvement 
 *Ear and Hearing · relevance: 7/10 · fda_path*
 
 OTOF (~6kb CDS) uses dual-AAV to deliver the full gene, making it the most prominent real-world test of dual-vector cochlear gene therapy. Clinical efficacy data from OTOF trials will provide the first human evidence on dual-vector recombination efficiency in hair cells — a key parameter in our transduction model. If OTOF dual-vector achieves high efficacy, it may narrow our modeled 2.8x single-vector advantage; if efficacy is lower than expected, it strengthens the case for mini-STRC.
+
+## Connections
+
+- `[part-of]` [[STRC]]
+- `[synthesizes]` [[STRC Dual-Vector vs Single-Vector Transduction]]
+- `[see-also]` [[STRC Hypothesis Ranking]]

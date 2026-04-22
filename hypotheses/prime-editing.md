@@ -3,7 +3,9 @@ title: Prime Editing — Fix the Single Mutation In Situ
 status: exploratory
 stage: feasibility-analysis
 priority: alternative
-tags: [prime-editing, base-editing, gene-correction, CRISPR, PE3]
+tags: [prime-editing, base-editing, gene-correction, CRISPR, PE3, strc, synthesis, hypothesis]
+date: 2026-04-22
+type: synthesis
 ---
 
 ## Core claim
@@ -43,3 +45,9 @@ Mini-STRC (gene replacement) is currently the more validated path. Prime editing
 *Mol Cell · relevance: 5/10 · lateral*
 
 ML-guided engineering of base editors from only 0.004% of the mutational landscape, achieving undetectable bystander edits in 50% of >800 disease mutations. While STRC E1659A (C>A transversion) requires prime editing not base editing, the ML-powered approach to customizing editor specificity is directly transferable: the same combinatorial mutagenesis + ML framework could optimize prime editor variants for STRC-specific efficiency in the OHC sequence context. The structure-based deep learning model predicting functional variants without experimental data (63% success) suggests computational pre-screening of PE3 variants before expensive in vivo testing is feasible.
+
+## Connections
+
+- `[part-of]` [[STRC]]
+- `[synthesizes]` [[Prime Editing for STRC]]
+- `[see-also]` [[STRC Hypothesis Ranking]]

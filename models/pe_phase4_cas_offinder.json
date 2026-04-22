@@ -1,0 +1,4672 @@
+{
+  "phase": "PE-4",
+  "method": "Cas-OFFinder on hg38 chr15, max 4 mismatches",
+  "genome": "/Users/egorlyfar/Brain/research/strc/genomes/hg38_chr15.fa",
+  "max_mismatches": 4,
+  "gate_max_offtargets_at_3mm": 5,
+  "n_guides_total": 61,
+  "n_guides_pass": 0,
+  "verdict": "FAIL",
+  "results": [
+    {
+      "pam": "SpCas9_NGG",
+      "protospacer": "CCTGAGATCTTCACTGAAAT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 0.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 8,
+      "offtargets_by_mismatch": {
+        "4": 7,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149299,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45096613,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77002842,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56985798,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50543058,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33248897,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9_NGG",
+      "protospacer": "ACTGAAATTGGCACCATAGC",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 12.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 4,
+      "offtargets_by_mismatch": {
+        "4": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297864,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97841886,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629436,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9_NGG",
+      "protospacer": "GAAATTGGCACCATAGCAGG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 15.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 7,
+      "offtargets_by_mismatch": {
+        "4": 6,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700347,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32551563,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227365,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 72490337,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91635762,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30456119,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22649701,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9_NGG",
+      "protospacer": "AAATTGGCACCATAGCAGGT",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 16.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 3,
+      "offtargets_by_mismatch": {
+        "4": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700346,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61526715,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60172125,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9_NGG",
+      "protospacer": "CCAATTTCAGTGAAGATCTC",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -11,
+      "on_target_hits": 1,
+      "offtarget_count_total": 4,
+      "offtargets_by_mismatch": {
+        "0": 1,
+        "4": 3
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95245712,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 81938219,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149299,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CCTGAGATCTTCACTGAAAT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 0.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 40,
+      "offtargets_by_mismatch": {
+        "4": 38,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534543,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22481765,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23290624,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24255552,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24364159,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24418220,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24469002,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149299,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28255649,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CTGAGATCTTCACTGAAATT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 27,
+      "offtargets_by_mismatch": {
+        "4": 23,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700361,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87471165,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95245711,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524871,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32858300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43761964,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 49637875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 59896787,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63263719,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "TTCACTGAAATTGGCACCAT",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 9.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700353,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27400777,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37907985,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 40326549,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76731725,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 79894902,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128014,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82726976,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040295,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 31958189,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "ACTGAAATTGGCACCATAGC",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 12.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33442694,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68908988,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77709633,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297864,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106718,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 88377804,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 99424869,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97841886,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629436,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CTGAAATTGGCACCATAGCA",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 13.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 9,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700349,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91924434,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43108041,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60590067,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376379,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61778364,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297865,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128018,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562796,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91534505,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "GAAATTGGCACCATAGCAGG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 15.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700347,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38700894,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62842851,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32551563,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56446368,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376381,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 66195875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227365,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 69276005,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "AAATTGGCACCATAGCAGGT",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 16.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 19,
+      "offtargets_by_mismatch": {
+        "4": 17,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700346,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227366,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61442608,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77983275,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82324155,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106722,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 98345999,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91547121,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91485765,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87779610,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CCTGCTATGGTGCCAATTTC",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 13,
+      "offtargets_by_mismatch": {
+        "4": 12,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013323,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019971,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23004917,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57553236,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57753626,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61587256,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94882553,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562797,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87179832,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "TGCTATGGTGCCAATTTCAG",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 10,
+      "offtargets_by_mismatch": {
+        "3": 2,
+        "4": 7,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700352,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013325,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019973,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355669,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355712,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658832,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63869847,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86789629,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50679299,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429503,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "TATGGTGCCAATTTCAGTGA",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -4,
+      "on_target_hits": 1,
+      "offtarget_count_total": 18,
+      "offtargets_by_mismatch": {
+        "4": 16,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700355,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871151,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 19858508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040297,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62650182,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 75985392,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94320651,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 90310196,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77320044,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58621446,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CCAATTTCAGTGAAGATCTC",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -11,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "0": 1,
+        "3": 2
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101936685,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28277225,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29537143,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30829789,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30830022,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37081387,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56985798,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 67416933,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpG_NGN",
+      "protospacer": "CAATTTCAGTGAAGATCTCA",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -12,
+      "on_target_hits": 1,
+      "offtarget_count_total": 36,
+      "offtargets_by_mismatch": {
+        "4": 34,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700363,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 81938218,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23027093,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29610250,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45513728,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 52615564,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54163199,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534544,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61958316,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 65098572,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CCTGAGATCTTCACTGAAAT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 0.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 40,
+      "offtargets_by_mismatch": {
+        "4": 38,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534543,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22481765,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23290624,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24255552,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24364159,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24418220,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24469002,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149299,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28255649,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CTGAGATCTTCACTGAAATT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 27,
+      "offtargets_by_mismatch": {
+        "4": 23,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700361,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87471165,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95245711,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524871,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32858300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43761964,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 49637875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 59896787,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63263719,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "TTCACTGAAATTGGCACCAT",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 9.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700353,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27400777,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37907985,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 40326549,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76731725,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 79894902,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128014,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82726976,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040295,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 31958189,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "ACTGAAATTGGCACCATAGC",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 12.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33442694,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68908988,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77709633,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297864,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106718,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 88377804,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 99424869,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97841886,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629436,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CTGAAATTGGCACCATAGCA",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 13.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 9,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700349,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91924434,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43108041,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60590067,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376379,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61778364,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297865,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128018,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562796,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91534505,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "GAAATTGGCACCATAGCAGG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 15.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700347,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38700894,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62842851,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32551563,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56446368,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376381,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 66195875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227365,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 69276005,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "AAATTGGCACCATAGCAGGT",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 16.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 19,
+      "offtargets_by_mismatch": {
+        "4": 17,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700346,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227366,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61442608,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77983275,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82324155,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106722,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 98345999,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91547121,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91485765,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87779610,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CCTGCTATGGTGCCAATTTC",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 13,
+      "offtargets_by_mismatch": {
+        "4": 12,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013323,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019971,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23004917,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57553236,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57753626,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61587256,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94882553,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562797,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87179832,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "TGCTATGGTGCCAATTTCAG",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 10,
+      "offtargets_by_mismatch": {
+        "3": 2,
+        "4": 7,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700352,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013325,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019973,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355669,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355712,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658832,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63869847,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86789629,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50679299,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429503,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "TATGGTGCCAATTTCAGTGA",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -4,
+      "on_target_hits": 1,
+      "offtarget_count_total": 18,
+      "offtargets_by_mismatch": {
+        "4": 16,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700355,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871151,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 19858508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040297,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62650182,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 75985392,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94320651,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 90310196,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77320044,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58621446,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CCAATTTCAGTGAAGATCTC",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -11,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "0": 1,
+        "3": 2
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101936685,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28277225,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29537143,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30829789,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30830022,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37081387,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56985798,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 67416933,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "enCas9_NGN",
+      "protospacer": "CAATTTCAGTGAAGATCTCA",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -12,
+      "on_target_hits": 1,
+      "offtarget_count_total": 36,
+      "offtargets_by_mismatch": {
+        "4": 34,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700363,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 81938218,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23027093,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29610250,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45513728,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 52615564,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54163199,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534544,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61958316,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 65098572,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CTGAGATCTTCACTGAAATT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 73,
+      "offtargets_by_mismatch": {
+        "4": 64,
+        "3": 8,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 9,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700361,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 48423427,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87471165,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101936686,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 98151055,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95245711,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83158103,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524871,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29610248,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27335779,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "GAGATCTTCACTGAAATTGG",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 3.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 50,
+      "offtargets_by_mismatch": {
+        "4": 46,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700359,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83714232,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62879137,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524869,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24316457,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30748334,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 31548347,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32858168,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38913120,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 39035379,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "ATCTTCACTGAAATTGGCAC",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 6.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 49,
+      "offtargets_by_mismatch": {
+        "4": 45,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700356,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91978338,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101364204,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27625953,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24316460,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26074293,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28334899,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32970522,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 39035382,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 39992988,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CTTCACTGAAATTGGCACCA",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 8.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 41,
+      "offtargets_by_mismatch": {
+        "4": 38,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700354,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871152,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95839674,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21261481,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22481773,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23290632,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 25130000,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28255657,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28576363,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 40902429,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "TTCACTGAAATTGGCACCAT",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 9.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 37,
+      "offtargets_by_mismatch": {
+        "4": 34,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700353,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95041120,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37823363,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24769457,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27400777,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36846583,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36953152,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37907985,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 40326549,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871153,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CACTGAAATTGGCACCATAG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 11.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 31,
+      "offtargets_by_mismatch": {
+        "4": 30,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700351,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23712586,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24769459,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32844748,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37907987,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 39568759,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871155,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 51413396,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56938503,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 72943631,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "ACTGAAATTGGCACCATAGC",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 12.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 26,
+      "offtargets_by_mismatch": {
+        "4": 24,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95041123,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27528920,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33442694,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42205726,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 59921842,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61778363,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68908988,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77709633,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297864,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CTGAAATTGGCACCATAGCA",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 13.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 31,
+      "offtargets_by_mismatch": {
+        "4": 28,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700349,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95041124,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91924434,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42205727,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43108041,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 44568384,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 48216906,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50679302,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58160875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 59583251,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "GAAATTGGCACCATAGCAGG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 15.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 47,
+      "offtargets_by_mismatch": {
+        "4": 42,
+        "3": 4,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 5,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700347,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38700894,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87779611,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62842851,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60172126,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23546515,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30379427,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32420759,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32551563,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33593953,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "AAATTGGCACCATAGCAGGT",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 16.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 39,
+      "offtargets_by_mismatch": {
+        "4": 35,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700346,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38700895,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227366,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62842850,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23105871,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24612729,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36781115,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38446980,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 41199956,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56833589,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CCTGCTATGGTGCCAATTTC",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 31,
+      "offtargets_by_mismatch": {
+        "4": 28,
+        "0": 1,
+        "3": 2
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60172129,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91924435,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013323,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019971,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23004917,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658830,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 39294089,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42190538,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629436,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "TGCTATGGTGCCAATTTCAG",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 30,
+      "offtargets_by_mismatch": {
+        "3": 3,
+        "4": 26,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700352,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013325,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019973,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 80394429,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355669,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355712,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23004919,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26088757,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658832,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 46354248,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "ACCTGCTATGGTGCCAATTT",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 2,
+      "on_target_hits": 1,
+      "offtarget_count_total": 19,
+      "offtargets_by_mismatch": {
+        "3": 1,
+        "4": 17,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700349,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658829,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36526479,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 44821077,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50011173,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 52128762,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629435,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61033629,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61526718,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61587255,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "GCTATGGTGCCAATTTCAGT",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -2,
+      "on_target_hits": 1,
+      "offtarget_count_total": 25,
+      "offtargets_by_mismatch": {
+        "3": 3,
+        "0": 1,
+        "4": 21
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700353,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013326,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019974,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95041120,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76508516,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76523392,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 80394430,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83325394,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 85302780,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86789630,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CTATGGTGCCAATTTCAGTG",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -3,
+      "on_target_hits": 1,
+      "offtarget_count_total": 27,
+      "offtargets_by_mismatch": {
+        "4": 26,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700354,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 35870035,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040296,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60786266,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 70700103,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 73357173,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 75172252,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83184122,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 90971223,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95076781,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "TATGGTGCCAATTTCAGTGA",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -4,
+      "on_target_hits": 1,
+      "offtarget_count_total": 42,
+      "offtargets_by_mismatch": {
+        "4": 40,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700355,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871151,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 19858508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29215728,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 35950868,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040297,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36220032,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37823365,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 51743876,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62650182,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "ATGGTGCCAATTTCAGTGAA",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 41,
+      "offtargets_by_mismatch": {
+        "4": 37,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700356,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37823366,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 67815638,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26074293,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22299268,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23811493,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 25037262,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29576204,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040298,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54176306,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "GCCAATTTCAGTGAAGATCT",
+      "strand": "+",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": -10,
+      "on_target_hits": 1,
+      "offtarget_count_total": 43,
+      "offtargets_by_mismatch": {
+        "4": 39,
+        "0": 1,
+        "3": 3
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700361,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 98151055,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 92393339,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38913118,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20380028,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23224799,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28453775,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29537142,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30829788,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30830021,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CCAATTTCAGTGAAGATCTC",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -11,
+      "on_target_hits": 1,
+      "offtarget_count_total": 54,
+      "offtargets_by_mismatch": {
+        "4": 49,
+        "0": 1,
+        "3": 4
+      },
+      "n_offtargets_le_3mm": 5,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101936685,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83714229,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76244938,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20380029,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26218029,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28277225,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29537143,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30829789,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpRY_NRN",
+      "protospacer": "CAATTTCAGTGAAGATCTCA",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -12,
+      "on_target_hits": 1,
+      "offtarget_count_total": 78,
+      "offtargets_by_mismatch": {
+        "4": 73,
+        "0": 1,
+        "3": 4
+      },
+      "n_offtargets_le_3mm": 5,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700363,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524873,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 67517709,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 83158105,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 81938218,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23027093,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23811500,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28277226,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29610250,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37528571,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CCTGAGATCTTCACTGAAAT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 0.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 40,
+      "offtargets_by_mismatch": {
+        "4": 38,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700363,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534544,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 22481765,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23290624,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24255552,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24364159,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24418220,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 24469002,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149299,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28255649,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CTGAGATCTTCACTGAAATT",
+      "strand": "-",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 27,
+      "offtargets_by_mismatch": {
+        "4": 23,
+        "3": 3,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 4,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87471165,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 95245712,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28149300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32858300,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43761964,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 49637875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 59896787,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63263719,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "TTCACTGAAATTGGCACCAT",
+      "strand": "-",
+      "discrimination_grade": "moderate",
+      "nick_to_edit_nt": 9.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700354,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 27400777,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37907985,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 40326549,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 76731725,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 79894902,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128014,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82726977,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040296,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 31958190,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "ACTGAAATTGGCACCATAGC",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 12.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 10,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700351,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 33442694,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68908988,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77709633,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297864,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106718,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 88377804,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 99424870,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97841887,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56629437,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CTGAAATTGGCACCATAGCA",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 13.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 11,
+      "offtargets_by_mismatch": {
+        "4": 9,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91924435,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 43108041,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 60590067,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376379,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61778364,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82297865,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 97128018,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562797,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91534506,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "GAAATTGGCACCATAGCAGG",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 15.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "3": 2,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700348,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 38700894,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62842852,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 32551563,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56446368,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61376381,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 66195875,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227365,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 69276005,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "AAATTGGCACCATAGCAGGT",
+      "strand": "-",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": 16.5,
+      "on_target_hits": 1,
+      "offtarget_count_total": 19,
+      "offtargets_by_mismatch": {
+        "4": 17,
+        "3": 1,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700347,
+          "mm": 0,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 68227366,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61442608,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77983275,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 82324155,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86106722,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 98345999,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91547122,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 91485766,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87779611,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CCTGCTATGGTGCCAATTTC",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": 1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 13,
+      "offtargets_by_mismatch": {
+        "4": 12,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 1,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700350,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013323,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019971,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23004917,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57553236,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 57753626,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61587256,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94882553,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101562797,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 87179833,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "TGCTATGGTGCCAATTTCAG",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -1,
+      "on_target_hits": 1,
+      "offtarget_count_total": 10,
+      "offtargets_by_mismatch": {
+        "3": 2,
+        "4": 7,
+        "0": 1
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700352,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20013325,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 21019973,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355669,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 20355712,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 26658832,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 63869847,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 86789629,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 50679300,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45429504,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "TATGGTGCCAATTTCAGTGA",
+      "strand": "+",
+      "discrimination_grade": "strong",
+      "nick_to_edit_nt": -4,
+      "on_target_hits": 1,
+      "offtarget_count_total": 18,
+      "offtargets_by_mismatch": {
+        "4": 16,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700355,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 42871152,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 19858508,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 36040297,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 62650182,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 75985392,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 94320652,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 90310197,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 77320045,
+          "mm": 4,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58621447,
+          "mm": 4,
+          "strand": "-"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CCAATTTCAGTGAAGATCTC",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -11,
+      "on_target_hits": 1,
+      "offtarget_count_total": 24,
+      "offtargets_by_mismatch": {
+        "4": 21,
+        "0": 1,
+        "3": 2
+      },
+      "n_offtargets_le_3mm": 3,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700362,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54524872,
+          "mm": 3,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 101936686,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 28277225,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29537143,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30829789,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 30830022,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 37081387,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 56985798,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 67416933,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    },
+    {
+      "pam": "SpCas9NG_NG",
+      "protospacer": "CAATTTCAGTGAAGATCTCA",
+      "strand": "+",
+      "discrimination_grade": "weak",
+      "nick_to_edit_nt": -12,
+      "on_target_hits": 1,
+      "offtarget_count_total": 36,
+      "offtargets_by_mismatch": {
+        "4": 34,
+        "0": 1,
+        "3": 1
+      },
+      "n_offtargets_le_3mm": 2,
+      "n_perfect_offtargets": 1,
+      "passes_gate": false,
+      "offtarget_loci_top10": [
+        {
+          "chr": "chr15",
+          "pos": 43700363,
+          "mm": 0,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 81938219,
+          "mm": 3,
+          "strand": "-"
+        },
+        {
+          "chr": "chr15",
+          "pos": 23027093,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 29610250,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 45513728,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 52615564,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 54163199,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 58534544,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 61958316,
+          "mm": 4,
+          "strand": "+"
+        },
+        {
+          "chr": "chr15",
+          "pos": 65098572,
+          "mm": 4,
+          "strand": "+"
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-04-22T00:35:24.347934+00:00"
+}

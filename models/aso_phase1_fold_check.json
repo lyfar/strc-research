@@ -1,0 +1,775 @@
+{
+  "phase": "ASO-1-fold",
+  "method": "seqfold (Turner 2004 NN params), pure-Python ViennaRNA equivalent",
+  "gates": {
+    "aso_mfe_gate_kcal_mol_gt": -5.0,
+    "target_mfe_gate_kcal_mol_gt": -8.0
+  },
+  "summary": {
+    "n_candidates": 54,
+    "n_pass": 54,
+    "n_aso_hairpin": 0,
+    "n_target_structured": 0,
+    "n_both_structured": 0,
+    "n_error": 0
+  },
+  "results": [
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "GCTAAAGAGCAAGAGAGA",
+      "target_sense": "TCTCTCTTGCTCTTTAGC",
+      "aso_mfe_kcal_mol": -1.3,
+      "target_mfe_kcal_mol": -1.2,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "AAGAGCAAGAGAGACAAG",
+      "target_sense": "CTTGTCTCTCTTGCTCTT",
+      "aso_mfe_kcal_mol": 1600.0,
+      "target_mfe_kcal_mol": 1600.0,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "CTAAAGAGCAAGAGAGACAA",
+      "target_sense": "TTGTCTCTCTTGCTCTTTAG",
+      "aso_mfe_kcal_mol": 1.5,
+      "target_mfe_kcal_mol": 1.0,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_donor",
+      "aso_5to3": "CCTTGCCACTCTCATACC",
+      "target_sense": "GGTATGAGAGTGGCAAGG",
+      "aso_mfe_kcal_mol": 2.0,
+      "target_mfe_kcal_mol": 1.8,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "GCAAGAGAGACAAGAGGC",
+      "target_sense": "GCCTCTTGTCTCTCTTGC",
+      "aso_mfe_kcal_mol": 2.1,
+      "target_mfe_kcal_mol": 2.2,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_donor",
+      "aso_5to3": "TTGCCACTCTCATACCCGAA",
+      "target_sense": "TTCGGGTATGAGAGTGGCAA",
+      "aso_mfe_kcal_mol": 1.9,
+      "target_mfe_kcal_mol": 1.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_donor",
+      "aso_5to3": "GCCACTCTCATACCCGAA",
+      "target_sense": "TTCGGGTATGAGAGTGGC",
+      "aso_mfe_kcal_mol": 1.9,
+      "target_mfe_kcal_mol": 1.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "AAGAGCAAGAGAGACAAGAGGC",
+      "target_sense": "GCCTCTTGTCTCTCTTGCTCTT",
+      "aso_mfe_kcal_mol": 1.9,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_donor",
+      "aso_5to3": "CCTCCTTGCCACTCTCATAC",
+      "target_sense": "GTATGAGAGTGGCAAGGAGG",
+      "aso_mfe_kcal_mol": 2.0,
+      "target_mfe_kcal_mol": 1.8,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "GAGCAAGAGAGACAAGAGGC",
+      "target_sense": "GCCTCTTGTCTCTCTTGCTC",
+      "aso_mfe_kcal_mol": 1.9,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_donor",
+      "aso_5to3": "CCTTGCCACTCTCATACCCGAA",
+      "target_sense": "TTCGGGTATGAGAGTGGCAAGG",
+      "aso_mfe_kcal_mol": 1.9,
+      "target_mfe_kcal_mol": 1.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E1",
+      "priority": "high",
+      "aa_range": [
+        1047,
+        1102
+      ],
+      "window_tag": "E1_acceptor",
+      "aso_5to3": "AGCTAAAGAGCAAGAGAGACAA",
+      "target_sense": "TTGTCTCTCTTGCTCTTTAGCT",
+      "aso_mfe_kcal_mol": -0.5,
+      "target_mfe_kcal_mol": -0.5,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GAGAAGAGCATCAGAACT",
+      "target_sense": "AGTTCTGATGCTCTTCTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "AGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCT",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GAAGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCTTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "CTGGAGAAGAGCATCAGAAC",
+      "target_sense": "GTTCTGATGCTCTTCTCCAG",
+      "aso_mfe_kcal_mol": 0.3,
+      "target_mfe_kcal_mol": 0.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "CCTGGAGAAGAGCATCAG",
+      "target_sense": "CTGATGCTCTTCTCCAGG",
+      "aso_mfe_kcal_mol": 0.7,
+      "target_mfe_kcal_mol": 0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_donor",
+      "aso_5to3": "CGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCG",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GAGAAGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCTTCTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GCCTGGAGAAGAGCATCAGAAC",
+      "target_sense": "GTTCTGATGCTCTTCTCCAGGC",
+      "aso_mfe_kcal_mol": 0.6,
+      "target_mfe_kcal_mol": 0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GGAGCCTGGAGAAGAGCA",
+      "target_sense": "TGCTCTTCTCCAGGCTCC",
+      "aso_mfe_kcal_mol": 1.4,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_donor",
+      "aso_5to3": "TTCTCGAAGGTCCATACC",
+      "target_sense": "GGTATGGACCTTCGAGAA",
+      "aso_mfe_kcal_mol": -0.9,
+      "target_mfe_kcal_mol": -0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_acceptor",
+      "aso_5to3": "GGAGCCTGGAGAAGAGCATC",
+      "target_sense": "GATGCTCTTCTCCAGGCTCC",
+      "aso_mfe_kcal_mol": 0.6,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_donor",
+      "aso_5to3": "AAGTTCTCGAAGGTCCATAC",
+      "target_sense": "GTATGGACCTTCGAGAACTT",
+      "aso_mfe_kcal_mol": 1.0,
+      "target_mfe_kcal_mol": 1.2,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_donor",
+      "aso_5to3": "TTCTCGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCGAGAA",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E2",
+      "priority": "medium",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E2_donor",
+      "aso_5to3": "CTCGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCGAG",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GTGGGAAGAAAGACAATA",
+      "target_sense": "TATTGTCTTTCTTCCCAC",
+      "aso_mfe_kcal_mol": 2.0,
+      "target_mfe_kcal_mol": 2.2,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "CTGGTGGGAAGAAAGACAAT",
+      "target_sense": "ATTGTCTTTCTTCCCACCAG",
+      "aso_mfe_kcal_mol": 1.4,
+      "target_mfe_kcal_mol": 2.0,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GCTGGTGGGAAGAAAGAC",
+      "target_sense": "GTCTTTCTTCCCACCAGC",
+      "aso_mfe_kcal_mol": 2.3,
+      "target_mfe_kcal_mol": 2.5,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "ACAGGCTGGTGGGAAGAA",
+      "target_sense": "TTCTTCCCACCAGCCTGT",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GGCTGGTGGGAAGAAAGACAAT",
+      "target_sense": "ATTGTCTTTCTTCCCACCAGCC",
+      "aso_mfe_kcal_mol": 2.0,
+      "target_mfe_kcal_mol": 2.5,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_donor",
+      "aso_5to3": "ATGTGCCCTCCACCTGTTAC",
+      "target_sense": "GTAACAGGTGGAGGGCACAT",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "ACAGGCTGGTGGGAAGAAAG",
+      "target_sense": "CTTTCTTCCCACCAGCCTGT",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GAAGAAAGACAATATGCC",
+      "target_sense": "GGCATATTGTCTTTCTTC",
+      "aso_mfe_kcal_mol": 2.5,
+      "target_mfe_kcal_mol": 2.5,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_donor",
+      "aso_5to3": "TGCCCTCCACCTGTTACC",
+      "target_sense": "GGTAACAGGTGGAGGGCA",
+      "aso_mfe_kcal_mol": 1.5,
+      "target_mfe_kcal_mol": Infinity,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GGGAAGAAAGACAATATGCC",
+      "target_sense": "GGCATATTGTCTTTCTTCCC",
+      "aso_mfe_kcal_mol": 2.1,
+      "target_mfe_kcal_mol": 2.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_acceptor",
+      "aso_5to3": "GTGGGAAGAAAGACAATATGCC",
+      "target_sense": "GGCATATTGTCTTTCTTCCCAC",
+      "aso_mfe_kcal_mol": 2.1,
+      "target_mfe_kcal_mol": 2.1,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_donor",
+      "aso_5to3": "CTCCACCTGTTACCTGCA",
+      "target_sense": "TGCAGGTAACAGGTGGAG",
+      "aso_mfe_kcal_mol": 1.8,
+      "target_mfe_kcal_mol": 1.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_donor",
+      "aso_5to3": "CCCTCCACCTGTTACCTGCA",
+      "target_sense": "TGCAGGTAACAGGTGGAGGG",
+      "aso_mfe_kcal_mol": 1.8,
+      "target_mfe_kcal_mol": 1.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E3",
+      "priority": "medium",
+      "aa_range": [
+        712,
+        732
+      ],
+      "window_tag": "E3_donor",
+      "aso_5to3": "TGCCCTCCACCTGTTACCTGCA",
+      "target_sense": "TGCAGGTAACAGGTGGAGGGCA",
+      "aso_mfe_kcal_mol": 0.9,
+      "target_mfe_kcal_mol": 0.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GAGAAGAGCATCAGAACT",
+      "target_sense": "AGTTCTGATGCTCTTCTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "AGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCT",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GAAGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCTTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "CTGGAGAAGAGCATCAGAAC",
+      "target_sense": "GTTCTGATGCTCTTCTCCAG",
+      "aso_mfe_kcal_mol": 0.3,
+      "target_mfe_kcal_mol": 0.7,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "CCTGGAGAAGAGCATCAG",
+      "target_sense": "CTGATGCTCTTCTCCAGG",
+      "aso_mfe_kcal_mol": 0.7,
+      "target_mfe_kcal_mol": 0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_donor",
+      "aso_5to3": "CGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCG",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GAGAAGAGCATCAGAACTTGGA",
+      "target_sense": "TCCAAGTTCTGATGCTCTTCTC",
+      "aso_mfe_kcal_mol": 1.2,
+      "target_mfe_kcal_mol": 1.4,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GCCTGGAGAAGAGCATCAGAAC",
+      "target_sense": "GTTCTGATGCTCTTCTCCAGGC",
+      "aso_mfe_kcal_mol": 0.6,
+      "target_mfe_kcal_mol": 0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GGAGCCTGGAGAAGAGCA",
+      "target_sense": "TGCTCTTCTCCAGGCTCC",
+      "aso_mfe_kcal_mol": 1.4,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_donor",
+      "aso_5to3": "TTCTCGAAGGTCCATACC",
+      "target_sense": "GGTATGGACCTTCGAGAA",
+      "aso_mfe_kcal_mol": -0.9,
+      "target_mfe_kcal_mol": -0.9,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_acceptor",
+      "aso_5to3": "GGAGCCTGGAGAAGAGCATC",
+      "target_sense": "GATGCTCTTCTCCAGGCTCC",
+      "aso_mfe_kcal_mol": 0.6,
+      "target_mfe_kcal_mol": 1.6,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_donor",
+      "aso_5to3": "AAGTTCTCGAAGGTCCATAC",
+      "target_sense": "GTATGGACCTTCGAGAACTT",
+      "aso_mfe_kcal_mol": 1.0,
+      "target_mfe_kcal_mol": 1.2,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_donor",
+      "aso_5to3": "TTCTCGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCGAGAA",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    },
+    {
+      "event": "E4",
+      "priority": "low",
+      "aa_range": [
+        1311,
+        1376
+      ],
+      "window_tag": "E4_donor",
+      "aso_5to3": "CTCGAAGGTCCATACCCAAG",
+      "target_sense": "CTTGGGTATGGACCTTCGAG",
+      "aso_mfe_kcal_mol": -0.3,
+      "target_mfe_kcal_mol": -0.3,
+      "verdict": "PASS"
+    }
+  ],
+  "timestamp": "2026-04-22T00:12:32+00:00"
+}

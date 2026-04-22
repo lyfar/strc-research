@@ -3,7 +3,9 @@ title: Delivery — Sonoporation + LNP Through Round Window Membrane
 status: active
 stage: computational-modeling
 priority: secondary
-tags: [delivery, sonoporation, LNP, round-window, non-invasive, ODE]
+tags: [delivery, sonoporation, LNP, round-window, non-invasive, ODE, strc, synthesis, hypothesis]
+date: 2026-04-22
+type: synthesis
 ---
 
 ## Core claim
@@ -67,3 +69,9 @@ Achieved 28-fold reduction in systemic clearance and 33% long-term survival in g
 *Biomed Pharmacother · relevance: 4/10 · lateral*
 
 Meta-analysis of 9 studies: FUS enhanced gene expression 6.34x (95% CI 2.21-18.18) across viral, non-viral, nanoparticle, and exosome vectors. The vector-agnostic nature of FUS enhancement is key — it would likely work with AAV-mini-STRC. At the 6.34x enhancement factor, the required AAV dose for therapeutic OHC transduction could drop proportionally, directly addressing our sensitivity analysis showing endosomal escape as the primary bottleneck. Combined with our Scenario 3 hybrid approach (AAV + LNP top-up), FUS could make the initial AAV dose more efficient.
+
+## Connections
+
+- `[part-of]` [[STRC]]
+- `[synthesizes]` [[Alternative STRC Delivery Hypotheses]]
+- `[see-also]` [[STRC Hypothesis Ranking]]
