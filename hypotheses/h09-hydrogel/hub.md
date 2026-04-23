@@ -1,0 +1,45 @@
+---
+date: 2026-04-23
+type: hypothesis-hub
+tags: [strc, h09]
+status: A-tier
+---
+
+# h09 — Synthetic Peptide Hydrogel HTC
+
+**mech.** Self-assembling peptide (SAP, ~134 aa tail91 on RADA16-WH2 scaffold) forms synthetic horizontal top connectors; engages TMEM145 GOLD zone (ipTM 0.68) + G-actin (ipTM 0.51).
+**delivery.** Ototopical ear drop + LIFU round-window permeation; PKPD window 0.13-1.32 mg; $42/ear GMP via NCL.
+**patient-fit.** Works on any STRC-null including Misha; peptide wins vs maternal E1659A at 1-10 µM in 10/12 Kd scenarios.
+
+## status
+
+A-tier. next: submit 8 Phase 4b AF3 jobs (multi-seed, triple-complex, WH2-ablation, tail84). If triple-complex + σ<0.05 → S-tier candidate.
+
+## evidence
+
+- [[STRC Synthetic Peptide Hydrogel HTC]] — main hypothesis
+- [[STRC Hydrogel HTC Phase 1 Self-Assembly]] — Phase 1-3b: analytical pre-screen → AF3 retool → full-construct validation
+- [[STRC Hydrogel Phase 4 Computational Campaign]] — 8-axis campaign: 4a-4h all complete except 4b AF3 batch
+
+## scripts
+
+research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventory]] § Hypothesis 1, h09-specific rows)
+- `hydrogel_phase1_self_assembly.py`
+- `af3_jobs_2026-04-23b_hydrogel_builder.py` through `af3_jobs_2026-04-23f_hydrogel_phase4b_builder.py` (4 builders)
+- `hydrogel_phase4a_cif_interface_forensics.py` through `hydrogel_phase4h_endogenous_strc_competition.py` (8 scripts)
+- `hydrogel_phase4c_sequence_liabilities.py` — tail91_v2 Cys→Ser variant design
+
+## log
+
+[[h09 log]]
+
+## cross
+
+- [[STRC Mini-STRC Single-Vector Hypothesis]] — h03 is primary AAV path; h09 is independent materials path
+- [[STRC Engineered Homodimer Avidity]] — h26 strengthens h03; h09 is parallel non-AAV track
+
+## Connections
+
+- `[part-of]` [[STRC Hypothesis Ranking]]
+- `[see-also]` [[STRC Hypothesis Ranking Log]]
+- `[about]` [[Misha]]
