@@ -8,6 +8,7 @@ tags: [strc, h03]
 
 ## 2026-04-23
 
+- Misha compound-het stack integration: **S held, scores unchanged**, endpoint framing clarified. h03 for Misha's specific genotype is physically ceiling-capped at MILD (~30-40 dB ABR) — at realistic transduction ε ≤ 0.5, ≥50% of OHCs remain non-transduced and cannot be rescued by AAV (maternal E1659A sub-threshold + paternal null → f_OHC < θ). "Meaningful rescue" endpoint intact (20-30 dB ABR improvement vs 64 dB baseline is clinically huge and matches OTOF trial responder criteria). "Cure" endpoint (NORMAL ≤ 25 dB) requires h01 co-therapy. No compute work needed on h03; this is endpoint semantics. → [[Misha Compound-Het Therapy Stack Model]]
 - S-tier reinforced: AAV-LNP stack model formalises AAV as primary path → [[STRC AAV-LNP Stack PKPD]]
 
 ## 2026-04-22
