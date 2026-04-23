@@ -1,0 +1,78 @@
+{
+  "batch": "hydrogel_phase4g_spps_feasibility",
+  "date": "2026-04-23",
+  "construct": "PEPTIDE_TAIL91 (134 aa, 14.2 kDa)",
+  "direct_spps": {
+    "theoretical_yield_fraction": 0.2395,
+    "theoretical_yield_percent": 23.95,
+    "feasible_as_single_synthesis": true,
+    "verdict": "viable for research only"
+  },
+  "native_chemical_ligation_sites": [
+    {
+      "cys_position": 52,
+      "frag_A": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHLQ",
+      "frag_A_length": 51,
+      "frag_B": "CSEEQLEVLAHLLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "frag_B_length": 83,
+      "preceding_aa": "Q",
+      "frag_A_yield": 0.598956006466161,
+      "frag_B_yield": 0.39985080341762064,
+      "ligation_yield_kent": 0.75,
+      "overall_yield": 0.1796,
+      "overall_yield_percent": 17.96,
+      "research_scale_cost_100mg_usd": 14107,
+      "gmp_scale_cost_per_ear_1000_doses_usd": 42
+    }
+  ],
+  "recommended_ncl_split": {
+    "cys_position": 52,
+    "frag_A": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHLQ",
+    "frag_A_length": 51,
+    "frag_B": "CSEEQLEVLAHLLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+    "frag_B_length": 83,
+    "preceding_aa": "Q",
+    "frag_A_yield": 0.598956006466161,
+    "frag_B_yield": 0.39985080341762064,
+    "ligation_yield_kent": 0.75,
+    "overall_yield": 0.1796,
+    "overall_yield_percent": 17.96,
+    "research_scale_cost_100mg_usd": 14107,
+    "gmp_scale_cost_per_ear_1000_doses_usd": 42
+  },
+  "ecoli_intein_alternative": {
+    "feasibility": "HIGH for small-scale, MODERATE for scale-up",
+    "strategy": "Fusion to GyrA intein C-terminal domain; thiol-induced cleavage yields peptide-thioester directly; optionally NCL in situ or simple protein",
+    "expected_yield_mg_per_L_culture": "5-15 mg/L (typical for intein-tagged peptides)",
+    "aggregation_risk_in_bacteria": "MODERATE \u2014 RADA16 scaffold (pos 24-38, alternating A/D/R) is amyloidogenic at high E. coli cytosol concentrations; mitigate by low-temp induction (16\u00b0C) or inclusion-body refolding",
+    "cost_estimate_research_scale_100mg": "$1200-2000 (culture, purification, intein cleavage) \u2014 2\u00d7 cheaper than NCL",
+    "cost_estimate_gmp_per_ear": "$80-200 per dose at 1000-dose batch",
+    "key_advantage_over_spps": "Encodes \u22655 copies of peptide in single transformation + avoids aspartimide, aggregation during coupling",
+    "disadvantage_vs_spps": "Cannot incorporate non-proteogenic AAs (e.g., Nle, d-AAs); limited post-translational modification access"
+  },
+  "stability_profile": {
+    "length_aa": 134,
+    "mw_kDa": 14.7,
+    "net_charge_at_pH_7": -1.8,
+    "estimated_pI": 4.14,
+    "solubility_prediction": "GOOD \u2014 net positive charge, RADA16 is hydrophilic, no long hydrophobic stretches",
+    "aqueous_stability_4C": "days-weeks (acceptable for clinical formulation with lyophilisation)",
+    "proteolytic_stability_perilymph": "POOR \u2014 9 K/R (trypsin), 6 F/W/Y (chymotrypsin), 13 E/D (GluC); t\u00bd ~30 min without modification",
+    "proteolytic_mitigations": [
+      "d-AA substitution at 3-5 key K/R \u2192 resistant to trypsin, maintains charge",
+      "PEGylation at N-term \u2192 shields 50-70% of protease access",
+      "Cyclisation (head-to-tail or disulfide) \u2192 reduces exopeptidase entry",
+      "Encapsulation in thermogel (poloxamer/PLGA) \u2192 physical protection + slow release"
+    ]
+  },
+  "strategy_recommendations": {
+    "research_milligram_scale": "Direct NCL of 2 fragments at best Cys ligation site \u2014 fastest path to Phase 2c material",
+    "preclinical_gram_scale": "E. coli intein-fusion expression \u2014 best yield/cost at 10-100 g",
+    "clinical_GMP_scale": "Hybrid: E. coli for base peptide, NCL for any non-proteogenic modifications"
+  },
+  "timeline_estimate": {
+    "custom_ncl_peptide_research_grade": "6-8 weeks from order to delivery (e.g., Bachem, GenScript, CPC)",
+    "ecoli_intein_expression_setup": "3-4 months (clone, express, purify, characterise)",
+    "first_wet_lab_Phase_2c_batch": "2-3 months via NCL vendor route"
+  }
+}
