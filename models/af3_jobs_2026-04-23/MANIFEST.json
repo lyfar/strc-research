@@ -1,0 +1,41 @@
+{
+  "generated": "2026-04-23",
+  "builder": "af3_jobs_2026-04-23_builder.py",
+  "purpose": "SpyCatcher Assembly Phase 1b with alternate split at aa 700 (Mini-STRC canonical LRR-to-ARM domain boundary). Prior 2026-04-22 batch split at aa 1074/1075 (Ultra-Mini boundary) and returned marginal MISS on both fold (pTM 0.59 vs 0.60) and binding (ipTM 0.37 vs 0.40). The escape path documented in [[STRC SpyCatcher Assembly Phase 1 Geometry]] is the aa 700 canonical domain boundary: structural biology literature suggests this hinge region has no cross-domain tertiary contacts, so the 130-aa SpyCatcher/SpyTag insertion should be better tolerated.",
+  "source_sequences": {
+    "STRC_full": "UniProt Q7RTU9, 1775 aa (fetched 2026-04-23)",
+    "TMEM145_full": "verified from prior AF3 batches",
+    "SpyCatcher": "original SpyCatcher (Zakeri 2012), 114 aa",
+    "SpyTag": "original SpyTag, 13 aa"
+  },
+  "construct_assembly": {
+    "STRC_SPY_REASSEMBLED_AA700": {
+      "length": 1914,
+      "composition": "STRC_1-700 (700) + GSGSG + SpyCatcher (114) + GG + SpyTag (13) + GSGSG + STRC_701-1775 (1075, = Mini-STRC) = 1914 aa",
+      "rationale": "Mini-STRC (aa 700-1775) is the clinical candidate construct (see [[STRC Mini-STRC Truncation Interface Validation]]). The aa 700 boundary is a natural LRR-to-ARM domain hinge; splitting there isolates the SpyCatcher insertion from both folded subdomains. Compare to aa 1074/1075 split which bisects the ARM-repeat region internally."
+    }
+  },
+  "priority_order": [
+    "strc_spy_reassembled_aa700_fold",
+    "strc_spy_reassembled_aa700_x_tmem145"
+  ],
+  "jobs": {
+    "strc_spy_reassembled_aa700_fold": {
+      "description": "Phase 1b alternate-split SpyCatcher reassembly: STRC 1-700 + GSGSG + SpyCatcher (114) + GG + SpyTag + GSGSG + STRC 701-1775 (Mini-STRC). 1914 aa total. Split at aa 700 = Mini-STRC canonical LRR-to-ARM domain boundary.",
+      "success_criteria": "pTM >= 0.60 for overall chain. Compared to 2026-04-22 batch which missed at pTM 0.59, pass at 0.60+ means the aa 700 boundary tolerates the SpyCatcher insertion better than the aa 1074 boundary did. C-terminal Mini-STRC region (chain positions 840-1914) should adopt the ARM-repeat fold.",
+      "hypothesis_impact": "pass -> SpyCatcher reassembly viable at canonical domain boundary; [[STRC In Situ SpyCatcher Assembly]] B -> A (evidence depth +2, backup to Mini-STRC single-vector). fail (pTM < 0.55) -> SpyCatcher insertion fundamentally incompatible with STRC fold regardless of split point; hypothesis demoted to C."
+    },
+    "strc_spy_reassembled_aa700_x_tmem145": {
+      "description": "aa700-split reassembled construct + TMEM145 full. 1914 + 493 = 2407 aa. Phase 1b: does the reassembled Mini-STRC preserve TMEM145 binding?",
+      "success_criteria": "ipTM >= 0.40 (matches Ultra-Mini baseline). STRC chain interface residues concentrate around native aa 1603-1749 (= chain positions 1742-1888 in the reassembled product). PAE min between chains <= 9 A.",
+      "hypothesis_impact": "pass -> full hypothesis green; Phase 2 cell-based expression + SpyCatcher reaction assay (~$5-10k, 8-12 weeks). fail -> even the canonical domain boundary can't preserve binding with SpyCatcher architecture; kill hypothesis."
+    }
+  },
+  "how_to_submit": "AlphaFold Server (alphafoldserver.com): Import from JSON for each file. Daily limit 20 jobs, this batch uses 2. Seed 42 for reproducibility with 2026-04-22 batch (same seed allows direct pTM/ipTM delta comparison).",
+  "decision_rules": {
+    "fold_pass_binding_pass": "SpyCatcher hypothesis B -> A (evidence depth +2); proceed to Phase 2 wet-lab.",
+    "fold_pass_binding_fail": "Insertion is geometrically OK but interrupts TMEM145 recognition; SpyCatcher B -> C. No further computational escape paths.",
+    "fold_fail": "SpyCatcher architecture fundamentally incompatible with STRC; hypothesis B -> D (killed). Focus on Mini-STRC single-vector.",
+    "both_marginal_again": "If both gates miss by <=0.03 again, the method is at its confidence noise floor; advance to MD-based assessment or wet-lab."
+  }
+}
