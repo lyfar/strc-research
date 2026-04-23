@@ -1,26 +1,92 @@
 {
   "phase": "5c",
-  "timestamp_utc": "2026-04-23T09:40:57+00:00",
+  "approach": "grid-based cavity scan + K1141 stability (fpocket/qhull broken on brew 4.0)",
+  "timestamp_utc": "2026-04-23T09:44:38+00:00",
   "n_snapshots": 20,
-  "static_clusters": [],
-  "md_clusters": [],
+  "global_mean_rmsf_A": 1.234,
+  "k1141_pocket_residues_static": [
+    66,
+    67,
+    68,
+    538,
+    541,
+    542,
+    570,
+    571,
+    572
+  ],
+  "k1141_pocket_mean_rmsf_A": 0.621,
+  "k1141_local_void_volume_A3_series": [
+    745.9,
+    783.0,
+    793.1,
+    718.9,
+    759.4,
+    847.1,
+    789.8,
+    752.6,
+    756.0,
+    833.6,
+    766.1,
+    786.4,
+    850.5,
+    823.5,
+    813.4,
+    816.8,
+    830.2,
+    783.0,
+    776.2,
+    769.5
+  ],
+  "k1141_local_void_volume_mean_A3": 789.8,
+  "k1141_local_void_volume_min_A3": 718.9,
+  "k1141_cavity_mid_frame": {
+    "volume_A3": 31698.0,
+    "n_voxels": 9392,
+    "centre": [
+      1.5588040376572527,
+      -22.176042692955054,
+      9.55175066246294
+    ],
+    "dist_to_K1141_A": 24.97,
+    "n_lining_atoms": 3835
+  },
+  "top_cavities": [
+    {
+      "volume_A3": 31698.0,
+      "n_voxels": 9392,
+      "centre": [
+        1.5588040376572527,
+        -22.176042692955054,
+        9.55175066246294
+      ],
+      "dist_to_K1141_A": 24.97,
+      "n_lining_atoms": 3835
+    }
+  ],
+  "alt_cavities_not_overlap_K1141": [
+    {
+      "volume_A3": 31698.0,
+      "n_voxels": 9392,
+      "centre": [
+        1.5588040376572527,
+        -22.176042692955054,
+        9.55175066246294
+      ],
+      "dist_to_K1141_A": 24.97,
+      "n_lining_atoms": 3835
+    }
+  ],
   "verdict": {
-    "k1141_recovered": false,
-    "k1141_summary": null,
-    "n_cryptic_new": 0,
-    "n_cryptic_upgraded": 0,
-    "top_cryptic_new": [],
-    "top_cryptic_upgraded": []
+    "k1141_pocket_stable": true,
+    "rmsf_ratio_pocket_to_global": 0.503,
+    "has_larger_alt_cavity": false
   },
   "parameters": {
-    "cluster_radius_A": 6.0,
-    "static_distance_threshold_A": 10.0,
-    "persistence_threshold": 10,
-    "drug_score_cryptic_ratio": 2.0,
-    "k1141_centre": [
-      -22.027,
-      -18.547,
-      2.215
-    ]
+    "grid_dx_A": 1.5,
+    "probe_min_A": 2.6,
+    "probe_max_A": 5.0,
+    "directions_buried_threshold": 10,
+    "pocket_residue_cutoff_A": 6.0
   }
 }
