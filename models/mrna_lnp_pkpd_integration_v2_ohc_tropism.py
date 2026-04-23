@@ -33,24 +33,30 @@ ROOT = pathlib.Path("/Users/egorlyfar/Brain/research/strc/models")
 STABILITY = json.loads((ROOT / "mrna_stability_cochlear_results.json").read_text())
 DOSE_RESP = json.loads((ROOT / "rbm24_mrna_dose_response_results.json").read_text())
 
+# ═══════════════════════════════════════════════════════════════════════
+# POST-AUDIT 2026-04-23 — see mrna_lnp_pkpd_integration.py for provenance.
+# Summary: HILL_K/HILL_N/MAX_BOOST are circular ODE fits; STRC_HL_D/RBM24_HL_D
+# are unsourced from primary literature; Gao 2020 PMID 32493791 (COVID paper)
+# was PHANTOM; Sahin 2014 cited below is a wrong-paper-match for UPR threshold.
+# ═══════════════════════════════════════════════════════════════════════
 params = DOSE_RESP["params"]
-HILL_K = params["hill_km"]
-HILL_N = params["hill_n"]
-MAX_BOOST = params["max_boost"]
+HILL_K = params["hill_km"]           # ⚠ CIRCULAR FIT
+HILL_N = params["hill_n"]             # ⚠ CIRCULAR FIT
+MAX_BOOST = params["max_boost"]       # ⚠ CIRCULAR FIT
 THRESHOLD = params["threshold_fold"]
 
 MRNA_HL_UNMOD_H = STABILITY["stability"]["unmod_OHC"]["hl_h"]
 MRNA_HL_M1PSI_H = STABILITY["stability"]["m1psi_OHC"]["hl_h"]
 
-RBM24_HL_D = params["rbm24_hl_d"]
-STRC_HL_D = params["strc_hl_d"]
+RBM24_HL_D = params["rbm24_hl_d"]     # ⚠ UNSOURCED primary lit
+STRC_HL_D = params["strc_hl_d"]       # ⚠ UNSOURCED primary lit
 
-LNP_ENDO_ESCAPE = 0.02
-LNP_UNTARGETED = 0.008
-LNP_REALISTIC_LOW = 0.01            # NEW v2 — 1% OHC tropism, realistic floor
-LNP_REALISTIC_HIGH = 0.03           # NEW v2 — 3% OHC tropism, realistic ceiling
-LNP_COCHLEAR_TROPIC = 0.05          # v1 — aspirational
-LNP_OHC_TARGETED = 0.20             # v1 — sci-fi for current chemistry
+LNP_ENDO_ESCAPE = 0.02     # ⚠ within <10% published range, specific cite missing
+LNP_UNTARGETED = 0.008     # ⚠ unsourced (Gao 2020 PMID was PHANTOM COVID paper)
+LNP_REALISTIC_LOW = 0.01   # NEW v2 — 1% OHC tropism, realistic floor
+LNP_REALISTIC_HIGH = 0.03  # NEW v2 — 3% OHC tropism, realistic ceiling
+LNP_COCHLEAR_TROPIC = 0.05 # v1 — aspirational (correctly flagged)
+LNP_OHC_TARGETED = 0.20    # v1 — hypothetical ligand-targeted
 
 # NEW v2 — ER stress soft ceiling on STRC fold per OHC.
 # 5× endogenous is a MODEL CHOICE, not a measurement. Past the ceiling,
