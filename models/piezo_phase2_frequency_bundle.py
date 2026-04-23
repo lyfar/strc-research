@@ -25,18 +25,29 @@ import matplotlib.pyplot as plt
 EPS0 = 8.854e-12  # F/m
 
 # ----------------------------- Piezo materials -----------------------------
+# d31 RECONCILED with piezo_voltage_budget.py Phase 1 (was −25 pC/N here vs
+# −12 pC/N there — silent 2× split). Conservative β-phase value −12 pC/N
+# adopted per Arkema Piezotech datasheet. Well-poled films may reach −20 to
+# −25 pC/N; not used as default. Provenance: literature-params/piezoelectric-materials.md.
+# Terpolymer d31 ≈ −20 pC/N (was −40 — that's d33, not d31). E_film for
+# terpolymer is a softer estimate with no primary paper; flag as manufacturer
+# estimate only. PLLA d14 treated as equivalent d31 (MODEL APPROXIMATION,
+# not physically correct; PLLA is shear mode).
 MATERIALS = {
-    "PVDF-TrFE (baseline)":     {"d31": -25e-12, "eps_r": 10,  "E_film": 3.0e9},
-    "PVDF-TrFE (thin)":         {"d31": -25e-12, "eps_r": 10,  "E_film": 3.0e9},
-    "PVDF-TrFE terpolymer":     {"d31": -40e-12, "eps_r": 40,  "E_film": 1.2e9},
-    "PLLA":                     {"d14": 10e-12,  "eps_r": 4,   "E_film": 3.5e9},  # d14 shear, treat as eq.
+    "PVDF-TrFE (baseline)":     {"d31": -12e-12, "eps_r": 10,  "E_film": 3.0e9},
+    "PVDF-TrFE (thin)":         {"d31": -12e-12, "eps_r": 10,  "E_film": 3.0e9},
+    "PVDF-TrFE terpolymer":     {"d31": -20e-12, "eps_r": 50,  "E_film": 1.2e9},
+    "PLLA":                     {"d14": 10e-12,  "eps_r": 4,   "E_film": 3.5e9},  # d14 shear ≠ d31
     "ZnO (biocompatible)":      {"d31": -5e-12,  "eps_r": 8,   "E_film": 140e9},
 }
 
-# OHC/membrane constants
-C_OHC_MEM_PER_AREA = 9e-3   # F/m² (0.9 µF/cm², Ashmore 1987)
-R_OHC_MEM_PER_AREA = 1e-3   # Ω·m² (typical specific resistance ~kΩ·cm²)
-V_PRESTIN_THRESHOLD = 10e-3 # V, Santos-Sacchi 1991
+# OHC/membrane constants — C_spec from Gentet 2000 Biophys J 79:314.
+# (Ashmore 1987 established electromotility but did not quantify C_spec.)
+C_OHC_MEM_PER_AREA = 9e-3   # F/m² (0.9 µF/cm², Gentet 2000)
+# R_OHC_MEM_PER_AREA has NO primary OHC-specific citation; taken from generic
+# excitable-membrane textbook range ~kΩ·cm². Flag as unsourced.
+R_OHC_MEM_PER_AREA = 1e-3   # Ω·m² — UNSOURCED textbook estimate
+V_PRESTIN_THRESHOLD = 10e-3 # V, Santos-Sacchi 1991 J Neurosci 11:3096
 
 # ----------------------------- Bundle mechanics -----------------------------
 # OHC tallest stereocilium (base of cochlea)
@@ -48,9 +59,13 @@ I_STEREO = np.pi * R_STEREO**4 / 4  # second moment of area
 # Hinge pivot stiffness (Karavitaki 2010, OHC base): ~1-10 pN·rad for small bundle
 KAPPA_PIVOT = 5e-6          # N/rad (rotational stiffness)
 
-# Reissner membrane and tectorial coupling
-# At 60 dB SPL, TM shear displacement at best-frequency site ≈ 5-30 nm
-# (Gueta 2006, Ren 2011; scales linearly with pressure)
+# TM displacement at 60 dB SPL, CF places. Magnitude range (5–30 nm) broadly
+# consistent with Ghaffari 2007 PNAS 104:16510 ex-vivo, Ren 2002 Nat Neurosci
+# 5:169 in-vivo BM, Gao 2014 Biophys J OCT. "Gueta 2006" in earlier comment
+# was a mis-citation (Gueta 2008 Biophys J 95:4948 reports OHC stereocilia
+# deflection from TM anisotropy, not absolute TM displacement). Frequency
+# scaling here (30 nm apical, 5 nm basal) is physically motivated but not
+# place-by-place measured. Treat as model input with ±50% uncertainty.
 TM_DISP_60dB = {200: 30e-9, 1000: 20e-9, 4000: 10e-9, 8000: 5e-9}   # m
 
 
