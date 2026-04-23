@@ -13,7 +13,9 @@ status: A-tier
 
 ## status
 
-A-tier. next: Phase 5 MD + ensemble MM-GBSA on 3 de-novo leads.
+A-tier held. **Phase 5 MD + ensemble rescoring DELIVERED 2026-04-23** (pipeline on local Mac, 62 ns/day, 2 ns MD + 20 snapshots + Vina re-docking of Phase 4b top-5 leads). Result: **RED-LIGHT — all leads f_PC < 0.10 at therapeutic [L]=10 μM** (best = diflunisal positive 0.083); Phase 4b single-structure was over-optimistic by 0.36-0.92 kcal/mol. See [[STRC h01 Phase 5 MD Ensemble Rescoring 2026-04-23]].
+
+Hypothesis intact — only the current shortlist is insufficient. **Next: Phase 3c v2 expanded virtual screen** — DrugBank FDA library (~2500 approved) + ZINC22 carboxylate tranche (~50 k) + fragment-based screen at K1141 pocket on 5 ensemble-sampled receptor conformers; filter at ensemble ΔG ≤ −7.5 kcal/mol (target Kd ≤ 5 μM → f_PC ≥ 0.67 at [L]=10 μM).
 
 ## evidence
 
@@ -34,7 +36,9 @@ A-tier. next: Phase 5 MD + ensemble MM-GBSA on 3 de-novo leads.
 
 research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventory]] § Hypothesis 1)
 - `pharmacochaperone_target_prep.py` through `pharmacochaperone_phase4g_repurpose_screen.py` (16 scripts)
-- `pharmacochaperone_phase5_md.py` — scaffold, deferred
+- `pharmacochaperone_phase5_md.py` — scaffold (GROMACS-based, superseded by 5a/5b OpenMM)
+- `pharmacochaperone_phase5a_apo_md_smoke.py` — OpenMM + AMBER14SB apo MD, SMOKE + 2 ns production delivered 2026-04-23
+- `pharmacochaperone_phase5b_ensemble_redock.py` — Vina ensemble re-docking on Phase 5a snapshots; f_PC estimates per lead
 
 ## log
 
