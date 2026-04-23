@@ -1,0 +1,437 @@
+{
+  "model": "Ca-oscillation acoustic therapy \u2014 maternal-allele-only PD for Misha",
+  "date": "2026-04-23",
+  "assumptions": {
+    "allele_dosage_maternal_only": 0.5,
+    "partial_rescue_threshold_f": 0.3,
+    "full_rescue_threshold_f": 1.0,
+    "realistic_affinity_penalty_band_x": [
+      3.0,
+      30.0
+    ]
+  },
+  "ranges": {
+    "acoustic_fold": [
+      1.0,
+      1.3,
+      1.6,
+      1.9,
+      2.2,
+      2.6
+    ],
+    "affinity_penalty_x": [
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      10.0,
+      30.0,
+      100.0,
+      300.0,
+      1000.0
+    ]
+  },
+  "sweep": [
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 0.5,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.25,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.1667,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.1,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.05,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0167,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.005,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0017,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.0,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0005,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 0.65,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.325,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.2167,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.13,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.065,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0217,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.0065,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0022,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.3,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0007,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 0.8,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.4,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.2667,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.16,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.08,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0267,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.008,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0027,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.6,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0008,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 0.95,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.475,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.3167,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.19,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.095,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0317,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.0095,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0032,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 1.9,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0009,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 1.1,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": true
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.55,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.3667,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.22,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.11,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0367,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.011,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0037,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.2,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0011,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 1.0,
+      "effective_occupancy": 1.3,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": true
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 2.0,
+      "effective_occupancy": 0.65,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 3.0,
+      "effective_occupancy": 0.4333,
+      "partial_rescue_pass": true,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 5.0,
+      "effective_occupancy": 0.26,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 10.0,
+      "effective_occupancy": 0.13,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 30.0,
+      "effective_occupancy": 0.0433,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 100.0,
+      "effective_occupancy": 0.013,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 300.0,
+      "effective_occupancy": 0.0043,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    },
+    {
+      "acoustic_fold": 2.6,
+      "affinity_penalty_x": 1000.0,
+      "effective_occupancy": 0.0013,
+      "partial_rescue_pass": false,
+      "full_rescue_pass": false
+    }
+  ],
+  "partial_rescue_feasibility_boundary_max_penalty": {
+    "1.0": 1.0,
+    "1.3": 2.0,
+    "1.6": 2.0,
+    "1.9": 3.0,
+    "2.2": 3.0,
+    "2.6": 3.0
+  },
+  "full_rescue_feasibility_boundary_max_penalty": {
+    "1.0": null,
+    "1.3": null,
+    "1.6": null,
+    "1.9": null,
+    "2.2": 1.0,
+    "2.6": 1.0
+  },
+  "realistic_penalty_band_partial_pass_rate": "3/24",
+  "kcal_reference": {
+    "kcal_4_to_fold_penalty": 660.8,
+    "kcal_2_to_fold_penalty": 25.7,
+    "kcal_1_to_fold_penalty": 5.1,
+    "note": "in-silico 8.4 kcal is destabilisation energy (folding), not pure binding; binding penalty alone is typically 3-30x for ARM-repeat missense"
+  }
+}
