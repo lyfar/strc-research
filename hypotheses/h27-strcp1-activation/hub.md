@@ -15,6 +15,16 @@ status: C-tier
 
 C-tier. next: email Holt lab re STRCP1 ribosome-profiling data from STRC mouse work. If Gate 1 passes → A-tier.
 
+<!-- RECENT:START auto-synced from log.md by sync_strc_indices.py — do not hand-edit -->
+
+## recent
+
+- Added to register: C-tier, Mech 2, Deliv 2, Misha 4. Reframes STRCP1 paralog identity as asset not problem → [[STRC STRCP1 Activation Rescue]]
+- Gate 1: translation evidence required (ribosome-profiling / mass-spec). Wet-lab only.
+- `[part-of]` [[h27 hub]]
+
+<!-- RECENT:END -->
+
 ## evidence
 
 - [[STRC STRCP1 Activation Rescue]] — main hypothesis
