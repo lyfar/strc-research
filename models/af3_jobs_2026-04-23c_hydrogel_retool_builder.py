@@ -4,8 +4,19 @@ Build AlphaFold Server submission batch 2026-04-23c — Hydrogel Phase 3 tail re
 
 Phase 2 result (af3_jobs_2026-04-23b_hydrogel): actin interface PASS (ipTM 0.59),
 TMEM145 interface FAIL (ipTM 0.37-0.39) across all 3 candidates with 11-12 aa
-tails derived from STRC aa 1669-1680. MANIFEST decision rule:
-"TMEM145 FAIL + actin PASS -> B stays, retool TMEM145 tail".
+tails. MANIFEST decision rule: "TMEM145 FAIL + actin PASS -> B stays,
+retool TMEM145 tail".
+
+CRITICAL DESIGN BUG DISCOVERED (2026-04-23, Phase 3 builder): Phase 1
+hydrogel_phase1_self_assembly.py and Phase 2 builder labelled the native
+peptide tail "AEDLPEPVPNC" as "derived from STRC aa 1669-1680". This is
+incorrect — AEDLPEPVPNC maps to STRC aa 1454-1465 (verified via UniProt
+Q7RTU9 sequence.find()), which is NEITHER in the GOLD zone (1603-1749)
+NOR in any documented TMEM145 contact cluster (no aa around 1454 appears
+in Ultra-Mini x TMEM145 interface contact list). STRC aa 1669-1680
+actually reads DLALSALLRGQI. Phase 2 TMEM145 FAIL is therefore NOT
+evidence against dual-interface architecture — the Phase 1 design tested
+wrong epitope. Phase 3 here uses correct GOLD-zone sequences.
 
 Phase 3 tests Option A from the retool plan — longer tail with aa 1603-1749
 GOLD-zone context. Six canonical TMEM145 contact clusters exist in GOLD zone
