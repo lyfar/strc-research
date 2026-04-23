@@ -1,0 +1,163 @@
+{
+  "batch": "hydrogel_phase4f_mhc_immunogenicity",
+  "date": "2026-04-23",
+  "construct": "PEPTIDE_TAIL91",
+  "length": 134,
+  "n_alleles_tested": 9,
+  "allele_list": [
+    "DRB1_01_01",
+    "DRB1_03_01",
+    "DRB1_04_01",
+    "DRB1_07_01",
+    "DRB1_11_01",
+    "DRB1_13_01",
+    "DRB1_15_01",
+    "DRB1_08_01",
+    "DRB1_16_01"
+  ],
+  "pop_coverage_percent_estimate": 75,
+  "scoring_threshold": 3.0,
+  "total_binders_all_alleles": 42,
+  "average_binders_per_allele": 4.7,
+  "per_allele_binder_count": {
+    "DRB1_01_01": 10,
+    "DRB1_03_01": 1,
+    "DRB1_04_01": 5,
+    "DRB1_07_01": 4,
+    "DRB1_11_01": 4,
+    "DRB1_13_01": 6,
+    "DRB1_15_01": 3,
+    "DRB1_08_01": 5,
+    "DRB1_16_01": 4
+  },
+  "region_distribution": {
+    "wh2": 1,
+    "gs1": 2,
+    "rada16": 4,
+    "gs2": 1,
+    "tail": 34
+  },
+  "promiscuous_cores_4plus_alleles": [
+    {
+      "pos": 96,
+      "core": "LSALLRGQI",
+      "region": "tail",
+      "strc_aa_if_tail": 1672,
+      "n_alleles_binding": 7,
+      "alleles": [
+        "DRB1_01_01",
+        "DRB1_04_01",
+        "DRB1_07_01",
+        "DRB1_13_01",
+        "DRB1_15_01",
+        "DRB1_08_01",
+        "DRB1_16_01"
+      ],
+      "max_score": 4.0,
+      "mean_score": 3.29
+    },
+    {
+      "pos": 81,
+      "core": "FTEIGTIAA",
+      "region": "tail",
+      "strc_aa_if_tail": 1657,
+      "n_alleles_binding": 6,
+      "alleles": [
+        "DRB1_01_01",
+        "DRB1_04_01",
+        "DRB1_07_01",
+        "DRB1_11_01",
+        "DRB1_15_01",
+        "DRB1_16_01"
+      ],
+      "max_score": 4.0,
+      "mean_score": 3.17
+    },
+    {
+      "pos": 57,
+      "core": "LEVLAHLLV",
+      "region": "tail",
+      "strc_aa_if_tail": 1633,
+      "n_alleles_binding": 5,
+      "alleles": [
+        "DRB1_01_01",
+        "DRB1_04_01",
+        "DRB1_07_01",
+        "DRB1_15_01",
+        "DRB1_16_01"
+      ],
+      "max_score": 3.0,
+      "mean_score": 3.0
+    },
+    {
+      "pos": 56,
+      "core": "QLEVLAHLL",
+      "region": "tail",
+      "strc_aa_if_tail": 1632,
+      "n_alleles_binding": 4,
+      "alleles": [
+        "DRB1_01_01",
+        "DRB1_04_01",
+        "DRB1_07_01",
+        "DRB1_16_01"
+      ],
+      "max_score": 3.0,
+      "mean_score": 3.0
+    }
+  ],
+  "n_promiscuous_cores": 4,
+  "immunogenicity_risk_tier": "MODERATE",
+  "recommended_mutations_for_deimmunisation": [
+    {
+      "position": 96,
+      "region": "tail",
+      "strc_aa": 1672,
+      "core": "LSALLRGQI",
+      "original_P1": "L",
+      "recommended_substitution": "L\u2192S or T",
+      "n_alleles_broken": 7,
+      "note": "Breaks P1 anchor for hydrophobic pockets (9 DRB1 alleles)"
+    },
+    {
+      "position": 81,
+      "region": "tail",
+      "strc_aa": 1657,
+      "core": "FTEIGTIAA",
+      "original_P1": "F",
+      "recommended_substitution": "F\u2192S or T",
+      "n_alleles_broken": 6,
+      "note": "Breaks P1 anchor for hydrophobic pockets (9 DRB1 alleles)"
+    },
+    {
+      "position": 57,
+      "region": "tail",
+      "strc_aa": 1633,
+      "core": "LEVLAHLLV",
+      "original_P1": "L",
+      "recommended_substitution": "L\u2192S or T",
+      "n_alleles_broken": 5,
+      "note": "Breaks P1 anchor for hydrophobic pockets (9 DRB1 alleles)"
+    },
+    {
+      "position": 56,
+      "region": "tail",
+      "strc_aa": 1632,
+      "core": "QLEVLAHLL",
+      "original_P1": "Q",
+      "recommended_substitution": "try P4 substitution (pos+3)",
+      "n_alleles_broken": 4,
+      "note": "Conservative P1 already; target P4"
+    }
+  ],
+  "notes": [
+    "This is a coarse analytical approximation \u2014 NOT a substitute for NetMHCIIpan",
+    "RADA16 scaffold (24-38) is highly repetitive; any binder there will repeat 3-4\u00d7 in the sequence",
+    "Tail region 44-134 contains STRC native sequence \u2014 T-cell tolerance likely exists for self-peptide; immunogenic only for patients with STRC knockout (Misha's paternal del)",
+    "MHC-II binding is necessary but not sufficient for immunogenicity; T-cell receptor engagement + costimulation required for actual ADA response"
+  ],
+  "follow_up_if_high_risk": [
+    "Run NetMHCIIpan 4.3 on full construct (27 alleles)",
+    "Deimmunisation via T-cell-hopping (swap P4 anchor to break multiple alleles)",
+    "Consider non-proteogenic amino acids at key anchors (already in Phase 4c v5 plan)"
+  ]
+}
