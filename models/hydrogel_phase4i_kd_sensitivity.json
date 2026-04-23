@@ -1,0 +1,310 @@
+{
+  "batch": "hydrogel_phase4i_kd_sensitivity",
+  "date": "2026-04-23",
+  "model_assumptions": {
+    "pkpd_params": "Phase 4e post-audit, lit-anchored except K_PROTEOLYSIS",
+    "f_target_conservative": 0.3,
+    "f_target_stretch": 0.6,
+    "toxic_ceiling_perilymph_uM": 100.0,
+    "dose_tolerable_mg": 5.0,
+    "dose_marginal_ceiling_mg": 20.0,
+    "kd_tmem145_grid_M": [
+      1e-08,
+      1e-07,
+      5e-07,
+      2e-06,
+      1e-05
+    ],
+    "kd_wh2_factin_grid_M": [
+      1e-06,
+      5e-06,
+      5e-05,
+      0.0002,
+      0.001
+    ],
+    "notes": [
+      "f = theta_T * theta_W assumes independent binding sites at HTC",
+      "KD_TMEM145 range based on ipSAE placement in Calcineurin family + 10x margin; absolute Kd still wet-lab gated",
+      "KD_WH2_FACTIN range spans optimistic 25x weakening from G-actin to Tbeta4 analog floor 1 mM (10x margin below Tbeta4 low end)",
+      "Dose reflects single intratympanic injection; multi-depot or daily dosing possible but adds compliance burden"
+    ]
+  },
+  "grid_results": [
+    [
+      {
+        "kd_tmem145_uM": 0.01,
+        "kd_wh2_factin_uM": 1.0,
+        "min_L_for_f0.3_uM": 0.443,
+        "dose_for_f0.3_mg": 0.086,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 1.525,
+        "dose_for_f0.6_mg": 0.297,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.01,
+        "kd_wh2_factin_uM": 5.0,
+        "min_L_for_f0.3_uM": 2.157,
+        "dose_for_f0.3_mg": 0.42,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 7.525,
+        "dose_for_f0.6_mg": 1.466,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.01,
+        "kd_wh2_factin_uM": 50.0,
+        "min_L_for_f0.3_uM": 21.443,
+        "dose_for_f0.3_mg": 4.177,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 75.025,
+        "dose_for_f0.6_mg": 14.616,
+        "flag_f0.6": "MARGINAL"
+      },
+      {
+        "kd_tmem145_uM": 0.01,
+        "kd_wh2_factin_uM": 200.0,
+        "min_L_for_f0.3_uM": 85.729,
+        "dose_for_f0.3_mg": 16.701,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 300.025,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      },
+      {
+        "kd_tmem145_uM": 0.01,
+        "kd_wh2_factin_uM": 1000.0,
+        "min_L_for_f0.3_uM": 428.586,
+        "dose_for_f0.3_mg": null,
+        "flag_f0.3": "FAIL_toxic",
+        "min_L_for_f0.6_uM": 1500.025,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      }
+    ],
+    [
+      {
+        "kd_tmem145_uM": 0.09999999999999999,
+        "kd_wh2_factin_uM": 1.0,
+        "min_L_for_f0.3_uM": 0.549,
+        "dose_for_f0.3_mg": 0.107,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 1.736,
+        "dose_for_f0.6_mg": 0.338,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.09999999999999999,
+        "kd_wh2_factin_uM": 5.0,
+        "min_L_for_f0.3_uM": 2.28,
+        "dose_for_f0.3_mg": 0.444,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 7.747,
+        "dose_for_f0.6_mg": 1.509,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.09999999999999999,
+        "kd_wh2_factin_uM": 50.0,
+        "min_L_for_f0.3_uM": 21.571,
+        "dose_for_f0.3_mg": 4.202,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 75.25,
+        "dose_for_f0.6_mg": 14.659,
+        "flag_f0.6": "MARGINAL"
+      },
+      {
+        "kd_tmem145_uM": 0.09999999999999999,
+        "kd_wh2_factin_uM": 200.0,
+        "min_L_for_f0.3_uM": 85.857,
+        "dose_for_f0.3_mg": 16.726,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 300.25,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      },
+      {
+        "kd_tmem145_uM": 0.09999999999999999,
+        "kd_wh2_factin_uM": 1000.0,
+        "min_L_for_f0.3_uM": 428.714,
+        "dose_for_f0.3_mg": null,
+        "flag_f0.3": "FAIL_toxic",
+        "min_L_for_f0.6_uM": 1500.25,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      }
+    ],
+    [
+      {
+        "kd_tmem145_uM": 0.5,
+        "kd_wh2_factin_uM": 1.0,
+        "min_L_for_f0.3_uM": 0.885,
+        "dose_for_f0.3_mg": 0.172,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 2.545,
+        "dose_for_f0.6_mg": 0.496,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.5,
+        "kd_wh2_factin_uM": 5.0,
+        "min_L_for_f0.3_uM": 2.747,
+        "dose_for_f0.3_mg": 0.535,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 8.682,
+        "dose_for_f0.6_mg": 1.691,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 0.5,
+        "kd_wh2_factin_uM": 50.0,
+        "min_L_for_f0.3_uM": 22.127,
+        "dose_for_f0.3_mg": 4.311,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 76.242,
+        "dose_for_f0.6_mg": 14.853,
+        "flag_f0.6": "MARGINAL"
+      },
+      {
+        "kd_tmem145_uM": 0.5,
+        "kd_wh2_factin_uM": 200.0,
+        "min_L_for_f0.3_uM": 86.424,
+        "dose_for_f0.3_mg": 16.836,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 301.248,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      },
+      {
+        "kd_tmem145_uM": 0.5,
+        "kd_wh2_factin_uM": 1000.0,
+        "min_L_for_f0.3_uM": 429.285,
+        "dose_for_f0.3_mg": null,
+        "flag_f0.3": "FAIL_toxic",
+        "min_L_for_f0.6_uM": 1501.25,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      }
+    ],
+    [
+      {
+        "kd_tmem145_uM": 2.0,
+        "kd_wh2_factin_uM": 1.0,
+        "min_L_for_f0.3_uM": 1.77,
+        "dose_for_f0.3_mg": 0.345,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 5.089,
+        "dose_for_f0.6_mg": 0.991,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 2.0,
+        "kd_wh2_factin_uM": 5.0,
+        "min_L_for_f0.3_uM": 4.057,
+        "dose_for_f0.3_mg": 0.79,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 11.774,
+        "dose_for_f0.6_mg": 2.294,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 2.0,
+        "kd_wh2_factin_uM": 50.0,
+        "min_L_for_f0.3_uM": 24.066,
+        "dose_for_f0.3_mg": 4.688,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 79.878,
+        "dose_for_f0.6_mg": 15.561,
+        "flag_f0.6": "MARGINAL"
+      },
+      {
+        "kd_tmem145_uM": 2.0,
+        "kd_wh2_factin_uM": 200.0,
+        "min_L_for_f0.3_uM": 88.508,
+        "dose_for_f0.3_mg": 17.242,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 304.967,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      },
+      {
+        "kd_tmem145_uM": 2.0,
+        "kd_wh2_factin_uM": 1000.0,
+        "min_L_for_f0.3_uM": 431.415,
+        "dose_for_f0.3_mg": null,
+        "flag_f0.3": "FAIL_toxic",
+        "min_L_for_f0.6_uM": 1504.993,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      }
+    ],
+    [
+      {
+        "kd_tmem145_uM": 10.0,
+        "kd_wh2_factin_uM": 1.0,
+        "min_L_for_f0.3_uM": 5.494,
+        "dose_for_f0.3_mg": 1.07,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 17.364,
+        "dose_for_f0.6_mg": 3.383,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 10.0,
+        "kd_wh2_factin_uM": 5.0,
+        "min_L_for_f0.3_uM": 8.85,
+        "dose_for_f0.3_mg": 1.724,
+        "flag_f0.3": "PASS",
+        "min_L_for_f0.6_uM": 25.447,
+        "dose_for_f0.6_mg": 4.957,
+        "flag_f0.6": "PASS"
+      },
+      {
+        "kd_tmem145_uM": 10.0,
+        "kd_wh2_factin_uM": 50.0,
+        "min_L_for_f0.3_uM": 32.34,
+        "dose_for_f0.3_mg": 6.3,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 97.678,
+        "dose_for_f0.6_mg": 19.029,
+        "flag_f0.6": "MARGINAL"
+      },
+      {
+        "kd_tmem145_uM": 10.0,
+        "kd_wh2_factin_uM": 200.0,
+        "min_L_for_f0.3_uM": 98.686,
+        "dose_for_f0.3_mg": 19.225,
+        "flag_f0.3": "MARGINAL",
+        "min_L_for_f0.6_uM": 324.252,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      },
+      {
+        "kd_tmem145_uM": 10.0,
+        "kd_wh2_factin_uM": 1000.0,
+        "min_L_for_f0.3_uM": 442.541,
+        "dose_for_f0.3_mg": null,
+        "flag_f0.3": "FAIL_toxic",
+        "min_L_for_f0.6_uM": 1524.837,
+        "dose_for_f0.6_mg": null,
+        "flag_f0.6": "FAIL_toxic"
+      }
+    ]
+  ],
+  "robustness_stats": {
+    "n_grid_points": 25,
+    "f_0.3_conservative": {
+      "pct_PASS": 56.0,
+      "pct_MARGINAL": 24.0,
+      "pct_FAIL": 20.0,
+      "pct_reachable_PASS_or_MARGINAL": 80.0
+    },
+    "f_0.6_stretch": {
+      "pct_PASS": 40.0,
+      "pct_MARGINAL": 20.0,
+      "pct_FAIL": 40.0,
+      "pct_reachable_PASS_or_MARGINAL": 60.0
+    }
+  },
+  "promotion_verdict": "A_hold_multi_dose_ok: therapy reachable on \u226570% grid but requires marginal doses in parts \u2014 wet-lab Kd narrowing to find operable corner"
+}
