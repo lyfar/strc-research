@@ -3,7 +3,7 @@
   "description": "Hydrogel Phase 2 AF3-Multimer: top-3 SAP candidates x TMEM145 + x G-actin trimer",
   "date_run": "2026-04-23",
   "n_jobs_expected": 6,
-  "n_jobs_present": 5,
+  "n_jobs_present": 6,
   "gate_ipTM": 0.5,
   "jobs": {
     "fold_hydrogel_rada16_wh2_native_x_tmem145": {
@@ -62,8 +62,91 @@
       ]
     },
     "fold_hydrogel_rada16_wh2_native_x_actin": {
-      "status": "MISSING",
-      "job": "fold_hydrogel_rada16_wh2_native_x_actin"
+      "status": "DONE",
+      "job": "fold_hydrogel_rada16_wh2_native_x_actin",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.69,
+      "best_ipTM": 0.58,
+      "best_ranking_score": 0.62,
+      "best_chain_pair_iptm": [
+        [
+          0.24,
+          0.16,
+          0.12,
+          0.11
+        ],
+        [
+          0.16,
+          0.84,
+          0.57,
+          0.53
+        ],
+        [
+          0.12,
+          0.57,
+          0.84,
+          0.58
+        ],
+        [
+          0.11,
+          0.53,
+          0.58,
+          0.84
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          19.5,
+          28.03,
+          27.21
+        ],
+        [
+          22.24,
+          0.76,
+          9.91,
+          11.91
+        ],
+        [
+          24.54,
+          9.94,
+          0.76,
+          9.4
+        ],
+        [
+          24.63,
+          10.34,
+          9.29,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.04,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.08,
+      "all_models_iptm": [
+        [
+          0,
+          0.58
+        ],
+        [
+          1,
+          0.58
+        ],
+        [
+          2,
+          0.58
+        ],
+        [
+          3,
+          0.58
+        ],
+        [
+          4,
+          0.57
+        ]
+      ]
     },
     "fold_hydrogel_rada16_wh2_cmut_x_tmem145": {
       "status": "DONE",
@@ -354,9 +437,9 @@
     "rada16_wh2_native": {
       "tmem145_ipTM": 0.39,
       "tmem145_verdict": "FAIL",
-      "actin_ipTM": null,
-      "actin_verdict": "MISSING",
-      "overall": "INCOMPLETE (missing: actin)"
+      "actin_ipTM": 0.58,
+      "actin_verdict": "PASS",
+      "overall": "TMEM145_FAIL_ACTIN_PASS"
     },
     "rada16_wh2_cmut": {
       "tmem145_ipTM": 0.37,
