@@ -86,7 +86,8 @@ def run_fpocket(pdb: Path, work_dir: Path) -> list[Pocket]:
     # fpocket writes into {input_dir}/{input_stem}_out/ by default; copy PDB
     # into work_dir so we don't pollute snapshot_dir
     local_pdb = work_dir / pdb.name
-    shutil.copyfile(pdb, local_pdb)
+    if pdb.resolve() != local_pdb.resolve():
+        shutil.copyfile(pdb, local_pdb)
     r = subprocess.run(
         ["fpocket", "-f", str(local_pdb)],
         capture_output=True, text=True, timeout=300,
