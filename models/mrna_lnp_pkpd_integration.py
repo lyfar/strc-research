@@ -60,26 +60,43 @@ STABILITY = json.loads((ROOT / "mrna_stability_cochlear_results.json").read_text
 DOSE_RESP = json.loads((ROOT / "rbm24_mrna_dose_response_results.json").read_text())
 
 # ═══════════════════════════════════════════════════════════════════════
-# POST-AUDIT 2026-04-23 — parameter provenance summary.
+# POST-AUDIT 2026-04-23 v2 — parameter provenance with primary citations.
 #
-# HILL_K=200, HILL_N=2, MAX_BOOST=3 are ⚠ CIRCULAR FITS — values set so the
-# ODE model hits "therapeutic" at a reasonable dose; no published RBM24→STRC
-# splicing dose-response experiment in OHCs exists. Cannot fail by construction.
+# ─────────────────────────── Hill-coupling constants ──────────────────
+# HILL_K=200, HILL_N=2, MAX_BOOST=3 remain ⚠ CIRCULAR FIT (unchanged).
+#   No primary-lit measurement of RBM24→STRC splicing dose-response in
+#   OHCs exists. Sun 2026 Neuron (PMC/doi to add) establishes *qualitative*
+#   splicing control but publishes no titration curve. Values set so ODE
+#   hits "therapeutic" at a reasonable dose; by construction cannot fail.
+#   Sensitivity analysis across HILL_K ∈ [50, 500], MAX_BOOST ∈ [1.5, 5]
+#   would bound model output; NOT run in current results.
 #
-# STRC_HL_D=14, RBM24_HL_D=2 are ⚠ UNSOURCED from primary literature.
-# Plausible magnitudes (ECM proteins and RBPs) but no cochlea-specific paper.
-# Traced to rbm24_mrna_dose_response_results.json; generating script not present.
+# ─────────────────────────── Protein half-lives (lit-anchored) ─────────
+# STRC_HL_D = 14 days: lit-ANCHORED ESTIMATE within stereocilia-slow-
+#   turnover regime, NOT an STRC-specific measurement.
+#   Anchor: Zhang et al. 2012 Nature 481:520 "Multi-isotope imaging mass
+#   spectrometry reveals slow protein turnover in hair-cell stereocilia"
+#   (PMID 22246323; doi 10.1038/nature10745) — <10 %/day bulk stereocilia
+#   protein incorporation → bulk t½ > ~7 d; actin shaft stable over 150 d.
+#   Closest specific measurement: GPSM2 t½ 9–10 d at stereocilia tips
+#   (Mauriac & Barr-Gillespie 2024 PNAS 121:e2405455121; PMID 39320919).
+#   True STRC t½ unknown; 14 d is order-of-magnitude plausible but could
+#   span 7–150+ d per Zhang 2012 range.
 #
-# LNP_ENDO_ESCAPE=0.02 is ⚠ unsourced specifically but consistent with
-# published <10% endosomal escape range (Patel 2019 PNAS would anchor).
+# RBM24_HL_D = 2 days: lit-ANCHORED median-proteome ESTIMATE, NOT an
+#   RBM24-specific measurement. Anchor: Schwanhäusser et al. 2011 Nature
+#   473:337 "Global quantification of mammalian gene expression control"
+#   (PMID 21593866; doi 10.1038/nature10098) — median protein t½ = 46 h
+#   ≈ 1.9 d in mouse NIH 3T3. OHC-specific RBM24 t½ never measured.
 #
-# LNP_UNTARGETED=0.008 = 96/12,000 OHC ⚠ unsourced specifically; no primary
-# paper pins LNP-to-OHC efficiency. Prior "Gao 2020 PMID 32493791" citation
-# in related notes was PHANTOM (COVID-19 paper). Candidate real sources:
-# Gao 2018 Nature Beethoven (lipid-RNP), Yeh 2018 Nat Biomed Eng (CBE).
-#
-# LNP_COCHLEAR_TROPIC=0.05, LNP_OHC_TARGETED=0.20 are EXPLICITLY HYPOTHETICAL
-# (next-gen / ligand-targeted LNPs). Correctly flagged.
+# ─────────────────────────── LNP parameters ───────────────────────────
+# LNP_ENDO_ESCAPE=0.02 ⚠ consistent with <10 % published range; specific
+#   cite missing.
+# LNP_UNTARGETED=0.008 = 96/12,000 OHC ⚠ no primary paper pins LNP-to-OHC
+#   efficiency. Prior "Gao 2020 PMID 32493791" citation in related notes
+#   was PHANTOM (COVID paper). Candidates: Gao 2018 Nature (lipid-RNP
+#   Beethoven), Yeh 2018 Nat Biomed Eng (CBE cochlear).
+# LNP_COCHLEAR_TROPIC=0.05, LNP_OHC_TARGETED=0.20 explicitly HYPOTHETICAL.
 # ═══════════════════════════════════════════════════════════════════════
 params = DOSE_RESP["params"]
 HILL_K = params["hill_km"]          # ⚠ CIRCULAR FIT
