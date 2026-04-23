@@ -362,15 +362,21 @@ def main():
     plot(results, selectivity)
 
     result = {
+        "_WARNING": (
+            "Phase 3 contains 4 phantom parameters (K_BIND_BASELINE, "
+            "K_OFF_A666, ETA_POLY, SELECT_S). Quantitative dose-coverage "
+            "outputs are NOT defensible. Use for geometry + PK/PD form only. "
+            "See module docstring for full audit 2026-04-23."
+        ),
         "parameters": {
             "N_OHC": N_OHC,
             "N_monolayer_total": int(N_MONOLAYER_TOTAL),
             "NP_diam_nm": NP_DIAM_NM,
             "NP_footprint_nm2": float(NP_FOOTPRINT_NM2),
             "V_perilymph_mL": V_PERILYMPH_ML,
-            "k_bind_baseline_sinv": K_BIND_BASELINE,
-            "eta_polymerisation": ETA_POLY,
-            "A666_selectivity": SELECT_S,
+            "k_bind_baseline_sinv_PHANTOM": K_BIND_BASELINE,
+            "eta_polymerisation_PHANTOM": ETA_POLY,
+            "selectivity_fold_PHANTOM": SELECT_S,
         },
         "selectivity": selectivity,
         "scenarios": results,
@@ -379,9 +385,10 @@ def main():
     out_json = OUT_DIR / "piezo_phase3_delivery.json"
     out_json.write_text(json.dumps(result, indent=2, default=str))
 
-    print("=== Piezo Phase 3 Delivery Feasibility ===\n")
+    print("=== Piezo Phase 3 Delivery Feasibility ===")
+    print("⚠ SCAFFOLD ONLY — phantom parameters (see module docstring)\n")
     print(f"Monolayer target (mouse):        {N_MONOLAYER_TOTAL:.2e} NPs")
-    print(f"A666 selectivity to OHC:          {selectivity['fraction_dose_to_OHC']*100:.1f}%")
+    print(f"Selectivity to OHC (PHANTOM):    {selectivity['fraction_dose_to_OHC']*100:.1f}%")
     print()
     print(f"{'Scenario':<24}{'f_cap':>10}{'f_cap×S':>12}{'min-single':>14}{'min-12mo':>14}{'ag@max':>10}")
     print("-" * 90)

@@ -1,13 +1,14 @@
 {
+  "_WARNING": "Phase 3 contains 4 phantom parameters (K_BIND_BASELINE, K_OFF_A666, ETA_POLY, SELECT_S). Quantitative dose-coverage outputs are NOT defensible. Use for geometry + PK/PD form only. See module docstring for full audit 2026-04-23.",
   "parameters": {
     "N_OHC": 3000,
     "N_monolayer_total": 424413181,
     "NP_diam_nm": 15.0,
     "NP_footprint_nm2": 176.71458676442586,
     "V_perilymph_mL": 0.001,
-    "k_bind_baseline_sinv": 5e-05,
-    "eta_polymerisation": 0.7,
-    "A666_selectivity": 80
+    "k_bind_baseline_sinv_PHANTOM": 5e-05,
+    "eta_polymerisation_PHANTOM": 0.7,
+    "selectivity_fold_PHANTOM": 80
   },
   "selectivity": {
     "N_OHC_sites": 424413181,
