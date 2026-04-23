@@ -61,10 +61,16 @@ class Material:
         return self.d31 / (self.eps_r * EPS_0)
 
 
+# d31 / eps_r values: Arkema Piezotech PVDF-TrFE datasheet (manufacturer);
+# BaTiO3 values: textbook (bulk ceramic). PLLA d14 (shear) approximated as d31 —
+# MODEL APPROXIMATION (PLLA is shear-mode, not transverse). See
+# literature-params/piezoelectric-materials.md for provenance.
 MATERIALS = [
     Material("PVDF-TrFE (70/30, beta)", d31=-12e-12, eps_r=10.0, biocompat="proven"),
+    # Terpolymer d31: manufacturer-reported d33 ≈ 40 pC/N; d31 typically lower.
+    # Use conservative −20 pC/N; true d31 composition-dependent, not primary-lit backed.
     Material("P(VDF-TrFE-CFE) terpolymer", d31=-20e-12, eps_r=50.0, biocompat="less data"),
-    Material("PLLA (biodegradable)", d31=-8e-12, eps_r=3.0, biocompat="proven"),
+    Material("PLLA (biodegradable, d14 approx.)", d31=-8e-12, eps_r=3.0, biocompat="proven"),
     Material("BaTiO3 (reference only)", d31=-78e-12, eps_r=1200.0, biocompat="toxic Ba release"),
 ]
 
@@ -75,11 +81,17 @@ MATERIALS = [
 
 @dataclass
 class Cochlea:
-    # OHC membrane specific capacitance (Ashmore 1987; Gentet 2000)
+    # OHC specific membrane capacitance 0.9 µF/cm² — Gentet et al. 2000
+    # Biophys J 79:314–320. (Ashmore 1987 J Physiol 388:323 established
+    # OHC electromotility but did not quantify C_spec.)
     C_spec_membrane: float = 9e-3   # F/m²  == 0.9 µF/cm²
-    # Prestin activation threshold (Santos-Sacchi 1991, 2006; Ashmore 2008)
+    # Prestin NLC voltage sensitivity — Santos-Sacchi 1991 J Neurosci 11:3096.
+    # V_threshold_mV = signal-modulation amplitude assumed sufficient for
+    # amplification. NLC operates −150 to +50 mV; this is a model simplification.
     V_threshold_mV: float = 10.0
-    V_saturation_mV: float = 70.0
+    # V_saturation_mV: no direct primary citation found. Flag as model ceiling
+    # until Santos-Sacchi saturation data are sourced (literature-params/piezoelectric-materials.md).
+    V_saturation_mV: float = 70.0  # UNSOURCED — model ceiling only
 
 
 # ============================================================
