@@ -79,10 +79,13 @@ def pocket_ca_coords(pdb_path: Path) -> np.ndarray:
     Uses OpenMM (hybrid36-safe). Returns (9, 3) array indexed by residue
     position in K1141_POCKET_RESIDUES."""
     from openmm.app import PDBFile
+    from openmm import unit
     pdb = PDBFile(str(pdb_path))
-    # Map sequential residue index → Cα coords (after strip_water_ions
-    # gives sequential residue IDs 1..N)
-    # NB: pdb_path here is ALREADY the stripped protein PDB (1..701 residues)
+    # Get positions in Å as N×3 ndarray
+    pos_ang = np.array([
+        [p.x, p.y, p.z] if hasattr(p, "x") else [p[0], p[1], p[2]]
+        for p in pdb.positions.value_in_unit(unit.angstrom)
+    ])
     ca: dict[int, np.ndarray] = {}
     res_counter = 0
     for chain in pdb.topology.chains():
@@ -92,16 +95,7 @@ def pocket_ca_coords(pdb_path: Path) -> np.ndarray:
             res_counter += 1
             for atom in res.atoms():
                 if atom.name == "CA":
-                    p = pdb.positions[atom.index]
-                    ca[res_counter] = np.array([
-                        p.x.value_in_unit(p.unit) * 10,
-                        p.y.value_in_unit(p.unit) * 10,
-                        p.z.value_in_unit(p.unit) * 10,
-                    ]) if hasattr(p, "x") else np.array([
-                        p[0].value_in_unit(p[0].unit) * 10,
-                        p[1].value_in_unit(p[1].unit) * 10,
-                        p[2].value_in_unit(p[2].unit) * 10,
-                    ])
+                    ca[res_counter] = pos_ang[atom.index]
                     break
     coords = np.stack([ca[r] for r in K1141_POCKET_RESIDUES if r in ca], axis=0)
     return coords
