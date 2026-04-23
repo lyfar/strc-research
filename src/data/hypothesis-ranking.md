@@ -107,6 +107,8 @@ SORT hypothesis_num ASC
 ```
 
 
+- [[2026-04-23-digest]] — latest literature-watch auto-digest (1 new paper, 45 filtered)
+
 ## Legacy synthesis pages (pre-hub structure)
 
 Older flat synthesis notes from 2026-04-21/22, superseded by the `h{N}/hub.md` structure but kept for historical context:
