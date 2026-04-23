@@ -1,0 +1,97 @@
+{
+  "batch": "misha_compound_het_stack_model",
+  "date": "2026-04-23",
+  "patient": "Misha (paternal 98kb STRC del + maternal E1659A)",
+  "misha_baseline_abr_dB": 64.0,
+  "model_assumptions": {
+    "per_OHC_ceiling": 1.0,
+    "abr_transfer_rmse_dB": 2.11,
+    "abr_transfer_source": "abr_transfer_model.py (Bredberg 1968, Schuknecht&Gacek 1993, Sun 2024)",
+    "f_mat_scenarios": {
+      "severe_E1659A_loss": 0.1,
+      "moderate_E1659A_loss": 0.25,
+      "mild_E1659A_loss": 0.4
+    },
+    "epsilon_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "A_grid": [
+      0.3,
+      0.6,
+      1.0
+    ],
+    "f_PC_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "scenarios": {
+    "severe_E1659A_loss": {
+      "f_mat_untreated": 0.1,
+      "baseline_abr_no_therapy_dB": 76.5,
+      "grid_size": 90,
+      "n_reaching_NORMAL": 0,
+      "pct_reaching_NORMAL": 0.0,
+      "n_reaching_MILD_or_NORMAL": 36,
+      "pct_reaching_MILD_or_NORMAL": 40.0,
+      "h03_monotherapy_achieves_NORMAL": false,
+      "h03_min_epsilon_for_NORMAL": null,
+      "h01_monotherapy_achieves_NORMAL": false,
+      "h01_min_fPC_for_NORMAL": null,
+      "n_stack_solutions_NORMAL": 0,
+      "n_low_burden_stack_NORMAL": 0,
+      "sample_low_burden_NORMAL_solutions": [],
+      "stack_enables_NORMAL": false
+    },
+    "moderate_E1659A_loss": {
+      "f_mat_untreated": 0.25,
+      "baseline_abr_no_therapy_dB": 65.6,
+      "grid_size": 90,
+      "n_reaching_NORMAL": 0,
+      "pct_reaching_NORMAL": 0.0,
+      "n_reaching_MILD_or_NORMAL": 39,
+      "pct_reaching_MILD_or_NORMAL": 43.3,
+      "h03_monotherapy_achieves_NORMAL": false,
+      "h03_min_epsilon_for_NORMAL": null,
+      "h01_monotherapy_achieves_NORMAL": false,
+      "h01_min_fPC_for_NORMAL": null,
+      "n_stack_solutions_NORMAL": 0,
+      "n_low_burden_stack_NORMAL": 0,
+      "sample_low_burden_NORMAL_solutions": [],
+      "stack_enables_NORMAL": false
+    },
+    "mild_E1659A_loss": {
+      "f_mat_untreated": 0.4,
+      "baseline_abr_no_therapy_dB": 57.9,
+      "grid_size": 90,
+      "n_reaching_NORMAL": 0,
+      "pct_reaching_NORMAL": 0.0,
+      "n_reaching_MILD_or_NORMAL": 44,
+      "pct_reaching_MILD_or_NORMAL": 48.9,
+      "h03_monotherapy_achieves_NORMAL": false,
+      "h03_min_epsilon_for_NORMAL": null,
+      "h01_monotherapy_achieves_NORMAL": false,
+      "h01_min_fPC_for_NORMAL": null,
+      "n_stack_solutions_NORMAL": 0,
+      "n_low_burden_stack_NORMAL": 0,
+      "sample_low_burden_NORMAL_solutions": [],
+      "stack_enables_NORMAL": false
+    }
+  },
+  "nobel_argument": {
+    "stack_strictly_enables_NORMAL_in_all_f_mat_scenarios": false,
+    "per_scenario_stack_uniquely_enables_NORMAL": {
+      "severe_E1659A_loss": false,
+      "moderate_E1659A_loss": false,
+      "mild_E1659A_loss": false
+    }
+  }
+}
