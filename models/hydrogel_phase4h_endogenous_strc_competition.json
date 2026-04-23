@@ -1,0 +1,453 @@
+{
+  "batch": "hydrogel_phase4h_endogenous_strc_competition",
+  "date": "2026-04-23",
+  "patient_context": {
+    "misha_genotype": "compound het: paternal 98 kb del + maternal E1659A",
+    "only_maternal_allele_produces_protein": true,
+    "e1659a_functional_status_unknown": "AlphaMissense 0.996 (likely pathogenic), REVEL 0.68, but protein stability unmeasured; pharmacochaperone hypothesis assumes misfolding"
+  },
+  "biology_parameters": {
+    "wt_strc_tmem145_kd_M": 1e-08,
+    "peptide_tmem145_kd_M": 1e-07,
+    "e1659a_kd_scenarios_M": {
+      "wt_like_10_nM": 1e-08,
+      "mild_3x_weaker_30_nM": 3e-08,
+      "moderate_10x_weaker_100_nM": 1e-07,
+      "severe_100x_weaker_1_uM": 1e-06,
+      "catastrophic_1000x_weaker_10_uM": 1e-05,
+      "nonfunctional_100000x_weaker_1_mM": 0.001
+    },
+    "strc_local_ohc_upper_estimate_M": 3.5e-07,
+    "strc_local_ohc_lower_estimate_M": 5e-08,
+    "tmem145_total_ohc_M": 5e-06
+  },
+  "key_dose_table": [
+    {
+      "peptide_uM": 0.1,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.027,
+      "theta_e1659a": 0.946,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.143,
+      "theta_e1659a": 0.714,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.073,
+      "theta_e1659a": 0.854,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.273,
+      "theta_e1659a": 0.455,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.182,
+      "theta_e1659a": 0.636,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.4,
+      "theta_e1659a": 0.2,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.426,
+      "theta_e1659a": 0.149,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.488,
+      "theta_e1659a": 0.024,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.491,
+      "theta_e1659a": 0.017,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.499,
+      "theta_e1659a": 0.002,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.5,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 0.1,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.5,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.217,
+      "theta_e1659a": 0.761,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.625,
+      "theta_e1659a": 0.312,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.441,
+      "theta_e1659a": 0.515,
+      "displacement_achieved": false
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.789,
+      "theta_e1659a": 0.132,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.69,
+      "theta_e1659a": 0.241,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.87,
+      "theta_e1659a": 0.043,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.881,
+      "theta_e1659a": 0.031,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.905,
+      "theta_e1659a": 0.005,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.906,
+      "theta_e1659a": 0.003,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.909,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.909,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 1.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.909,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.735,
+      "theta_e1659a": 0.257,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.943,
+      "theta_e1659a": 0.047,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.888,
+      "theta_e1659a": 0.104,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.974,
+      "theta_e1659a": 0.016,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.957,
+      "theta_e1659a": 0.033,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.985,
+      "theta_e1659a": 0.005,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.987,
+      "theta_e1659a": 0.003,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.99,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.99,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.99,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.99,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 10.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.99,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.965,
+      "theta_e1659a": 0.034,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "wt_like_10_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.994,
+      "theta_e1659a": 0.005,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.987,
+      "theta_e1659a": 0.012,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "mild_3x_weaker_30_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.997,
+      "theta_e1659a": 0.002,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.996,
+      "theta_e1659a": 0.003,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "moderate_10x_weaker_100_nM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "severe_100x_weaker_1_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "catastrophic_1000x_weaker_10_uM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_upper",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    },
+    {
+      "peptide_uM": 100.0,
+      "scenario": "nonfunctional_100000x_weaker_1_mM",
+      "strc_scenario": "misha_lower",
+      "theta_peptide": 0.999,
+      "theta_e1659a": 0.0,
+      "displacement_achieved": true
+    }
+  ],
+  "displacement_threshold_peptide_uM": {
+    "wt_like_10_nM_misha_upper": "7.01 \u03bcM",
+    "wt_like_10_nM_misha_lower": "1.01 \u03bcM",
+    "mild_3x_weaker_30_nM_misha_upper": "2.37 \u03bcM",
+    "mild_3x_weaker_30_nM_misha_lower": "0.33 \u03bcM",
+    "moderate_10x_weaker_100_nM_misha_upper": "0.71 \u03bcM",
+    "moderate_10x_weaker_100_nM_misha_lower": "0.10 \u03bcM",
+    "severe_100x_weaker_1_uM_misha_upper": "0.07 \u03bcM",
+    "severe_100x_weaker_1_uM_misha_lower": "0.01 \u03bcM",
+    "catastrophic_1000x_weaker_10_uM_misha_upper": "0.01 \u03bcM",
+    "catastrophic_1000x_weaker_10_uM_misha_lower": "0.01 \u03bcM",
+    "nonfunctional_100000x_weaker_1_mM_misha_upper": "0.01 \u03bcM",
+    "nonfunctional_100000x_weaker_1_mM_misha_lower": "0.01 \u03bcM"
+  },
+  "all_null_patient_case": {
+    "0.1_uM": {
+      "theta_peptide": 0.5,
+      "theta_free": 0.5
+    },
+    "1.0_uM": {
+      "theta_peptide": 0.909,
+      "theta_free": 0.091
+    },
+    "10.0_uM": {
+      "theta_peptide": 0.99,
+      "theta_free": 0.01
+    },
+    "100.0_uM": {
+      "theta_peptide": 0.999,
+      "theta_free": 0.001
+    }
+  },
+  "conclusions": {
+    "misha_best_case_e1659a_wt_like": "If maternal E1659A retains WT affinity (Kd 10 nM) and is stable at ~0.35 \u03bcM OHC surface, peptide at 1 \u03bcM perilymph = ~20 \u03bcM local dominates 2:1 over E1659A. Threshold peptide concentration is achievable per Phase 4e (0.3-1 mg dose).",
+    "misha_likely_case_e1659a_partially_impaired": "If E1659A Kd is 10-100\u00d7 weaker than WT (likely given ARM-repeat pocket destabilisation), competition is easy \u2014 0.1 \u03bcM peptide already dominates. Phase 4e 0.1 mg dose sufficient.",
+    "misha_worst_case_e1659a_nonfunctional_stable": "If E1659A is stable but binds TMEM145 at mM Kd (essentially non-functional), there is no competition \u2014 any peptide dose works.",
+    "non_misha_null_null_patients": "Null/null genotype (both alleles produce no protein): no competition, peptide owns TMEM145 from first dose. Simpler therapeutic case."
+  },
+  "implications_for_phase_2c_wet_lab": [
+    "HEK293 / HeLa actin-bundling assay will NOT have endogenous STRC interference \u2014 competition effects will be invisible there",
+    "Competition matters only in OHC co-culture or in vivo \u2014 plan Phase 2d (organoid) or Phase 3 (Shanghai Shu Yilai knock-in mouse)",
+    "E1659A functional assay (separate experiment) could resolve Kd \u2014 hybrid computational approach: run AF3 on E1659A \u00d7 TMEM145 with 5 seeds, compare ipTM delta vs WT"
+  ]
+}
