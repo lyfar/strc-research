@@ -17,7 +17,7 @@ model asks: what does STACKING h01 (maternal rescue) + h03 (paternal
 replacement) do that either monotherapy cannot?
 
 ═══════════════════════════════════════════════════════════════════════════
-Model
+Model (binary-functional-OHC — corrected from continuous-mean)
 ═══════════════════════════════════════════════════════════════════════════
 
 Per-allele protein-function score (relative to WT = 1.0):
@@ -32,28 +32,33 @@ With pharmacochaperone (PC) rescue fraction f_PC ∈ [0, 1]:
 
   f_mat_treated = f_mat + f_PC × (1 - f_mat)
 
-Cochlea is a mosaic. Without AAV, every OHC expresses both alleles at ~50%
-mRNA each (autosomal diploid, no known allelic imbalance at STRC). So per
-OHC:
+Per-OHC STRC protein level (relative to WT diploid = 1.0):
 
-  f_OHC_native = 0.5 × f_pat_untreated + 0.5 × f_mat_treated
-               = 0.5 × f_mat_treated
+  Non-transduced OHC:  f_OHC = 0.5 × f_pat_untreated + 0.5 × f_mat_treated
+                              = 0.5 × f_mat_treated
+  Transduced OHC:      f_OHC = 0.5 × f_mat_treated + A (clamped 1.0)
 
-With AAV ectopic mini-STRC at transduction efficiency ε ∈ [0.05, 0.5] and
-per-transduced-OHC ectopic expression level A ∈ [0.3, 1.2] relative to WT:
+An OHC is FUNCTIONAL if f_OHC ≥ θ where θ is the STRC-protein threshold for
+bundle formation. Biological anchor: STRC +/- heterozygous carriers (50%
+protein) have normal hearing → θ ≤ 0.5. E1659A homozygotes would have
+~20% protein and ARE deaf → θ > 0.2. Use θ = 0.35 baseline; sensitivity
+analysis over {0.25, 0.35, 0.45}.
 
-  Transduced-OHC:     f_OHC = 0.5 × f_mat_treated + A
-                      (saturate at 1.5 for ceiling; physiologically bounded)
-  Non-transduced-OHC: f_OHC = 0.5 × f_mat_treated
+Cochlea fraction of functional OHCs:
+  F_funct = ε × I(f_OHC_trans ≥ θ) + (1-ε) × I(f_OHC_nontrans ≥ θ)
+  where I is the indicator function.
 
-Cochlea-mean functional STRC:
-  F = ε × f_OHC_trans + (1 - ε) × f_OHC_nontrans
-    = 0.5 × f_mat_treated + ε × A (unclamped form; clamped to 1.0 per-OHC
-                                   and then re-averaged)
+ABR threshold prediction feeds F_funct (fraction of FUNCTIONAL OHCs, the
+correct input semantic) into the lit-calibrated log transfer from
+abr_transfer_model.py (Bredberg 1968, Schuknecht & Gacek 1993, Sun 2024).
+Misha baseline: 64 dB SPL.
 
-ABR threshold prediction uses the lit-calibrated log transfer function from
-abr_transfer_model.py (Bredberg 1968, Schuknecht & Gacek 1993,
-Sun et al. 2024 OTOF Cohort 2 estimates). Misha baseline: 64 dB SPL.
+Critical insight from the model structure: NORMAL hearing (all OHCs
+functional) REQUIRES non-transduced OHCs to be functional, since only
+fraction ε gets the AAV payload. That means the maternal E1659A rescue
+(via f_PC) is the gating lever for NORMAL; AAV provides ceiling-lift
+but cannot push a non-transduced OHC above θ (AAV by definition doesn't
+touch those cells).
 
 ═══════════════════════════════════════════════════════════════════════════
 Outcome classification (WHO/ASHA)
