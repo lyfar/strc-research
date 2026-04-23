@@ -26,35 +26,35 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 ## Active register (2026-04-23)
 
-| # | Hypothesis | Mech | Deliv | Misha | Tier | Next step (≤6 words) | Hub |
-|---|---|---|---|---|---|---|---|
-| 1 | [[STRC Pharmacochaperone Virtual Screen E1659A]] | 3 | 4 | 4 | **A** | Phase 5 MD ensemble MM-GBSA | [[h01 hub]] |
-| 2 | [[STRC Piezoelectric TM Bioelectronic Amplifier]] | 3 | 2 | 5 | **S** | PVDF-TrFE ex-vivo deposition assay | [[h02 hub]] |
-| 3 | [[STRC Mini-STRC Single-Vector Hypothesis]] | 5 | 5 | 4 | **S** | Order gBlock, clone pAAV, coIP | [[h03 hub]] |
-| 4 | [[STRC mRNA-LNP Strategy B Full-Length]] | 3 | 2 | 2 | **B** | Academic/interim if AAV fails | [[h04 hub]] |
-| 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | 3 | 4 | 2 | **A** | SPR/BLI E1659A affinity penalty | [[h05 hub]] |
-| 6 | [[STRC mRNA Therapy Hypothesis]] | 3 | 2 | 2 | **A** | Adjunctive to Strategy B | [[h06 hub]] |
-| 7 | [[Prime Editing for STRC]] | 3 | 2 | 1 | **C** | Wet-lab: ribosome-profiling STRCP1 | [[h07 hub]] |
-| 8 | [[STRC ASO Exon Skipping]] | 2 | 3 | 2 | **C** | Phase 3a morpholino + 3b gapmer | [[h08 hub]] |
-| 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | 5 | 4 | 3 | **A** | Submit 8 AF3 Phase 4b jobs | [[h09 hub]] |
-| 10 | [[STRC In Situ SpyCatcher Assembly]] | 2 | 2 | 2 | **C** | Wet-lab only if #3 fails | [[h10 hub]] |
-| 11 | [[STRC Engineered TECTA Chimera]] | 2 | 2 | 2 | **C** | Alt scaffold deferred, S-tier bandwidth | [[h11 hub]] |
-| 12 | [[Sonogenetic STRC Computational Proof]] | 2 | 2 | 2 | **C** | Speculative, no near-term path | [[h12 hub]] |
-| 13 | [[STRC Programmable Recombinases]] | 2 | 1 | 3 | **C** | Technology-watch only | [[h13 hub]] |
-| 14 | [[STRC Protein Replacement Therapy]] | 2 | 1 | 3 | **C** | No delivery route | [[h14 hub]] |
-| 15 | [[STRC OTOA Paralog Cross-Rescue]] | 2 | 2 | 2 | **D/C** | Chimera dead; upregulation weak | [[h15 hub]] |
-| 16 | [[STRC ZP Domain Prion-Like Seeding]] | 3 | 2 | 1 | **D** | Wrong patient (paternal 98 kb Δ) | [[h16 hub]] |
-| 17 | [[STRC RBM24 Regulatory Hypothesis]] | — | — | — | ref | Rolled into Strategy A | — |
-| 18 | [[STRC Stereocilia Bundle Mechanics Model]] | — | — | — | ref | Supporting model | — |
-| 19 | [[STRC AAV Vector Design]] | — | — | — | ref | Mini-STRC implementation | — |
-| 20 | [[STRC B8 Enhancer Selection]] | — | — | — | ref | AAV pipeline | — |
-| 21 | [[STRC Dual-Vector vs Single-Vector Transduction]] | — | — | — | ref | Engineering layer | — |
-| 22 | [[STRC Anti-AAV Immune Response Model]] | — | — | — | ref | Re-dosing constraint | — |
-| 23 | [[STRC Electrostatic Analysis E1659A]] | — | — | — | ref | Pharmacochaperone input | — |
-| 24 | [[Adult Treatment Window STRC]] | — | — | — | ref | Constraint all mechanisms | — |
-| 25 | [[Alternative STRC Delivery Hypotheses]] | — | — | — | ref | Delivery-layer survey | — |
-| 26 | [[STRC Engineered Homodimer Avidity]] | 4 | 5 | 4 | **A** | Submit Phase 1 AF3 (5 jobs) | [[h26 hub]] |
-| 27 | [[STRC STRCP1 Activation Rescue]] | 2 | 2 | 4 | **C** | Email Holt lab ribosome-profiling | [[h27 hub]] |
+| #   | Hypothesis                                         | Mech | Deliv | Misha | Tier    | Next step (≤6 words)                    | Hub         |
+| --- | -------------------------------------------------- | ---- | ----- | ----- | ------- | --------------------------------------- | ----------- |
+| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 5 MD ensemble MM-GBSA             | [[h01 hub]] |
+| 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]  | 3    | 2     | 5     | **S**   | PVDF-TrFE ex-vivo deposition assay      | [[h02 hub]] |
+| 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]        | 5    | 5     | 4     | **S**   | Order gBlock, clone pAAV, coIP          | [[h03 hub]] |
+| 4   | [[STRC mRNA-LNP Strategy B Full-Length]]           | 3    | 2     | 2     | **B**   | Academic/interim if AAV fails           | [[h04 hub]] |
+| 5   | [[STRC Calcium Oscillation Acoustic Therapy]]      | 3    | 4     | 2     | **A**   | SPR/BLI E1659A affinity penalty         | [[h05 hub]] |
+| 6   | [[STRC mRNA Therapy Hypothesis]]                   | 3    | 2     | 2     | **A**   | Adjunctive to Strategy B                | [[h06 hub]] |
+| 7   | [[Prime Editing for STRC]]                         | 3    | 2     | 1     | **C**   | Wet-lab: ribosome-profiling STRCP1      | [[h07 hub]] |
+| 8   | [[STRC ASO Exon Skipping]]                         | 2    | 3     | 2     | **C**   | Phase 3a morpholino + 3b gapmer         | [[h08 hub]] |
+| 9   | [[STRC Synthetic Peptide Hydrogel HTC]]            | 5    | 4     | 3     | **A**   | Submit 8 AF3 Phase 4b jobs              | [[h09 hub]] |
+| 10  | [[STRC In Situ SpyCatcher Assembly]]               | 2    | 2     | 2     | **C**   | Wet-lab only if #3 fails                | [[h10 hub]] |
+| 11  | [[STRC Engineered TECTA Chimera]]                  | 2    | 2     | 2     | **C**   | Alt scaffold deferred, S-tier bandwidth | [[h11 hub]] |
+| 12  | [[Sonogenetic STRC Computational Proof]]           | 2    | 2     | 2     | **C**   | Speculative, no near-term path          | [[h12 hub]] |
+| 13  | [[STRC Programmable Recombinases]]                 | 2    | 1     | 3     | **C**   | Technology-watch only                   | [[h13 hub]] |
+| 14  | [[STRC Protein Replacement Therapy]]               | 2    | 1     | 3     | **C**   | No delivery route                       | [[h14 hub]] |
+| 15  | [[STRC OTOA Paralog Cross-Rescue]]                 | 2    | 2     | 2     | **D/C** | Chimera dead; upregulation weak         | [[h15 hub]] |
+| 16  | [[STRC ZP Domain Prion-Like Seeding]]              | 3    | 2     | 1     | **D**   | Wrong patient (paternal 98 kb Δ)        | [[h16 hub]] |
+| 17  | [[STRC RBM24 Regulatory Hypothesis]]               | —    | —     | —     | ref     | Rolled into Strategy A                  | —           |
+| 18  | [[STRC Stereocilia Bundle Mechanics Model]]        | —    | —     | —     | ref     | Supporting model                        | —           |
+| 19  | [[STRC AAV Vector Design]]                         | —    | —     | —     | ref     | Mini-STRC implementation                | —           |
+| 20  | [[STRC B8 Enhancer Selection]]                     | —    | —     | —     | ref     | AAV pipeline                            | —           |
+| 21  | [[STRC Dual-Vector vs Single-Vector Transduction]] | —    | —     | —     | ref     | Engineering layer                       | —           |
+| 22  | [[STRC Anti-AAV Immune Response Model]]            | —    | —     | —     | ref     | Re-dosing constraint                    | —           |
+| 23  | [[STRC Electrostatic Analysis E1659A]]             | —    | —     | —     | ref     | Pharmacochaperone input                 | —           |
+| 24  | [[Adult Treatment Window STRC]]                    | —    | —     | —     | ref     | Constraint all mechanisms               | —           |
+| 25  | [[Alternative STRC Delivery Hypotheses]]           | —    | —     | —     | ref     | Delivery-layer survey                   | —           |
+| 26  | [[STRC Engineered Homodimer Avidity]]              | 4    | 5     | 4     | **A**   | Submit Phase 1 AF3 (5 jobs)             | [[h26 hub]] |
+| 27  | [[STRC STRCP1 Activation Rescue]]                  | 2    | 2     | 4     | **C**   | Email Holt lab ribosome-profiling       | [[h27 hub]] |
 
 ## S-tier (active compute now)
 
