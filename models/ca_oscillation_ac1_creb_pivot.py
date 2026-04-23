@@ -58,38 +58,58 @@ BUFFER_CAP = 1000.0         # buffering factor
 K_EXTRUSION_S = 30.0        # /s, PMCA + exchange
 V_APEX_L = 5e-14            # apical volume (50 fL, Lumpkin 2001)
 
-# AC1 kinetics (Wu 2011, Masada 2012)
-K_CA_AC1_NM = 150.0         # K_half [Ca²⁺] for Ca4·CaM-AC1
-N_CA_AC1 = 2.0
-K_AC1_ACT_S = 0.1
-K_AC1_INACT_S = 0.2
-AC1_VMAX_NM_S = 2000.0
+# AC1 kinetics — Willoughby & Cooper 2007 (review, PMID 17615394) + Masada 2012
+# (Biochemistry, PMID 22971080). K_Ca value 150 nM lies in the 100-500 nM EC50
+# range; Hill n=2 matches the 1.5-2.5 range. AC1_VMAX = 2000 nM/s (= 120 µM/min)
+# is ~30-60× higher than membrane-prep Vmax (2-5 µM/min). This is a rate-per-
+# cell-volume normalisation choice, not a measurement; flag as model parameter.
+K_CA_AC1_NM = 150.0         # K_half [Ca²⁺] for Ca4·CaM-AC1 (within lit range)
+N_CA_AC1 = 2.0              # Hill (within 1.5-2.5 lit range)
+K_AC1_ACT_S = 0.1           # activation rate — fitted, no primary source
+K_AC1_INACT_S = 0.2         # inactivation rate — fitted, no primary source
+AC1_VMAX_NM_S = 2000.0      # nM/s — cell-volume normalised; ⚠ not directly measured
 
-# cAMP dynamics — slightly lower basal
-PDE4_VMAX_NM_S = 8000.0
-PDE4_KM_NM = 4000.0
+# cAMP dynamics — PDE4 constants: no specific PMID found for "Houslay 2010".
+# Ranges (10-20 µM/s Vmax, ~4 µM Km) from Houslay lab reviews generally. Flag.
+PDE4_VMAX_NM_S = 8000.0     # ⚠ no specific citation
+PDE4_KM_NM = 4000.0         # ⚠ no specific citation
 CAMP_BASAL_PROD_NM_S = 10.0 # lower basal so silence cAMP is well below K_PKA
 
-# PKA — K raised to 300 nM (physiological holoenzyme dissociation)
-K_CAMP_PKA_NM = 300.0
-N_PKA = 2.0
-K_PKA_ACT_S = 0.5
-K_PKA_INACT_S = 0.3
+# PKA — K_cAMP 300 nM is the in-cell holoenzyme dissociation value,
+# supported by Surdo et al. 2017 (PMID 29074866). In-vitro PKA K_cAMP is
+# ~100 nM; in-cell R2C2 allosterics raise it to ~300 nM. Model uses 300.
+K_CAMP_PKA_NM = 300.0       # Surdo 2017 in-cell
+N_PKA = 2.0                 # standard regulatory-subunit allostery
+K_PKA_ACT_S = 0.5           # fitted
+K_PKA_INACT_S = 0.3         # fitted
 
-# CREB — dephos faster (published t½ 1-3 min in HC)
-K_CREB_PHOS_S = 0.02
-K_CREB_DEPHOS_S = 0.005     # t½ ≈ 2.3 min
+# CREB — Ser133 phosphorylation by PKA (Gonzalez & Montminy 1989 Cell).
+# pCREB dephos t½ ≈ 5-10 min → k ≈ 0.0012-0.0023/s in vivo.
+# Model uses 0.005/s (t½ 2.3 min), 2-4× faster than published. NO primary
+# source for this accelerated rate in hair cells — flagged as model choice.
+# This bumps the fold-change up vs a literal Gonzalez & Montminy rate.
+K_CREB_PHOS_S = 0.02        # fitted
+K_CREB_DEPHOS_S = 0.005     # ⚠ 2-4× faster than literature; model choice
 
-# STRC transcription (CRE-responsive)
-K_STRC_TXN_BASAL_S = 1e-4   # basal transcript pool /s
-K_CREB_CRE_HALF = 0.2       # fractional CREB-P for half-max
-N_CRE = 1.0
-K_TXN_MAX_FOLD = 6.0        # max induction over basal
-STRC_MRNA_DECAY_S = 1e-4    # t½ ≈ 2 hours (Sharma 2018 splicing half-life)
+# STRC transcription (CRE-responsive) — Hill n=1, K_half 0.2 fractional
+# CREB-P: phantom-cited to "Cha et al. 2010" in prior docstring; PMID never
+# confirmed. Retain as model parameters with UNSOURCED flag.
+K_STRC_TXN_BASAL_S = 1e-4   # ⚠ UNSOURCED — basal transcript pool /s
+K_CREB_CRE_HALF = 0.2       # ⚠ UNSOURCED — half-max fractional CREB-P
+N_CRE = 1.0                 # ⚠ UNSOURCED — Hill
+K_TXN_MAX_FOLD = 6.0        # ⚠ UNSOURCED — max induction over basal
+
+# STRC mRNA t½ — UNSOURCED. Prior comment attributed to "Sharma 2018" which
+# does not exist (audit 2026-04-23). Value 1e-4/s → t½ ≈ 2 h is an estimate.
+# rbm24_ode.py uses k_mRNA_deg consistent with t½ ≈ 30 min; scripts disagree
+# 4×. Resolution requires primary STRC mRNA stability measurement (not in lit).
+STRC_MRNA_DECAY_S = 1e-4    # ⚠ UNSOURCED; t½ ≈ 2 h. rbm24 script uses ~30 min.
 
 # STRC protein
-K_TRANSLATION = 5e-4        # /s per mRNA
-K_PROT_DECAY_S = 5e-6       # t½ ≈ 38 hours (long-lived structural protein)
+K_TRANSLATION = 5e-4        # /s per mRNA — fitted
+# STRC protein t½: rbm24 script uses ~30 days; this pivot uses 38 h (k=5e-6).
+# Both unsourced. 20× cross-script inconsistency flagged in audit.
+K_PROT_DECAY_S = 5e-6       # ⚠ UNSOURCED; t½ ≈ 38 h. rbm24 uses t½ ≈ 30 days.
 
 
 # ----------------------------- Stimuli -----------------------------
