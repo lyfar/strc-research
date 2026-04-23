@@ -105,7 +105,8 @@ def run_fpocket(pdb: Path, work_dir: Path) -> list[Pocket]:
     # fpocket writes into {input_dir}/{input_stem}_out/ by default; copy PDB
     # into work_dir so we don't pollute snapshot_dir. Also strip hydrogens —
     # fpocket's qhull Delaunay triangulation fails on H-dense all-atom PDBs.
-    local_pdb = work_dir / pdb.name
+    # Use _nh suffix so we never read-and-write the same path.
+    local_pdb = work_dir / f"{pdb.stem}_nh.pdb"
     n_heavy = strip_hydrogens(pdb, local_pdb)
     if n_heavy < 100:
         log(f"  too few heavy atoms ({n_heavy}) — fpocket skip")
