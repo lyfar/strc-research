@@ -6,6 +6,12 @@ tags: [strc, h01]
 
 # h01 log
 
+## 2026-04-24
+
+- **Phase 3c v3b + 6b**: 0 GREEN / 29 YELLOW / 21 RED on 12,253-ligand ensemble dock. Ceiling mean ΔG −7.28 kcal/mol (Kd 4.57 µM, f_PC 0.34) — 6.6× lower Kd than v2 fenamic (30 µM) via 3-amino-benzofuran-2-COOH scaffold. Crosses MILD-MODERATE adjunct threshold (f_PC 0.30), short of NORMAL (0.50). Top YELLOW cluster tight on benzofuran-2-COOH body + naphthyl/biphenyl tails + CONHOH/tetrazole acid bioisostere + −CF₃. A held. → [[STRC h01 Phase 3c v3b + 5d Delivery 2026-04-24]]
+- **Phase 5d E1659A full-length MD**: delivered 2 ns / 20 snapshots (not planned 10 ns; 14.06 ns/day Metal-OpenCL, production-10ns-ETA was 17.1 h). First MD on actual disease target (1,775-res AF3 E1659A, 651k-atom solvated); closes WT-Ultra-Mini gap. K1141/E1659 mutations verified. A held. → [[STRC h01 Phase 3c v3b + 5d Delivery 2026-04-24]]
+- **Phase 5e mutant-ensemble re-dock LAUNCHED**: 11 ligands (LEGACY_LEADS + V2_HITS + tafamidis-analog) × 20 Phase 5d mutant snapshots × Vina exh=16, box centre per-snapshot from K1141+ring Cα centroid, 18 Å box. Gates v3b YELLOW-on-mutant validity. ~15 min wall. A held, next_step updated.
+
 ## 2026-04-23
 
 - **Phase 4h Tafamidis-Playbook Library drafted**: 30-compound prioritized target list, 5 cores × 6 polar distal subs × 2 acid bioisosteres = 60 combinatorial pruned to top 30. Tier 1 commercial + Tier 2 2-step in-house = 8 compounds orderable this week (tafamidis #5, iododiflunisal #11/#12, benzoxazole-3CN #1, benzoxazole-3OMe #2). 3 Phase 6b covalent warheads (salicylaldehyde imine, α-cyanoacrylate Michael, acyl-hydrazone). Predicted ΔG improvement -0.5 to -2.0 kcal/mol over parent niflumic −6.18. 6-target cochlear channel off-target panel pre-scored (TRPM4/Cx50/BK/KCNQ4/TMEM16A/COX) queued as Phase 6c 30×6 = 180 docks, ~1 h local wall. A held. No empirical data yet; this seeds Phase 3c v4 virtual screen + Phase 8 wet-lab synthesis Stage 1. → [[STRC h01 Phase 4h Tafamidis Playbook Library 2026-04-23]]
