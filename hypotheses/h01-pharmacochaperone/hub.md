@@ -30,10 +30,15 @@ Hypothesis intact; h01 reframed from "NORMAL monotherapy path" to **"MILD-MODERA
 **Phase 8 Wet-Lab Triage SOP DRAFTED 2026-04-23**: 3-gate protocol ready for v3b GREEN scenario. G1 ThermoFluor ΔTm (iododiflunisal positive, mini-STRC-UM-WT + UM-E1659A extended 594-1775, 3-day, ~$3 k), G2 MST Kd 25/37 °C (2-wk, ~$8 k), G3 cryoEM co-complex + HEK293-FL-E1659A-GFP surface rescue flow cytometry (4-wk, ~$25 k) + parallel cochlear-channel tox pre-screen. Decision tree into Phase 9 mouse OHC ex-vivo + IND-enabling CRO tox. See [[STRC h01 Phase 8 Wet-Lab Triage SOP]].
 
 **Next after v3b delivery**:
-1. If GREEN non-covalent hit → Phase 4h MD-scored validation on top-5 + wet-lab triage design.
-2. If GREEN covalent hit → Phase 6c selectivity audit vs proteome-wide Lys pockets (off-target cytotoxicity test).
+1. If GREEN non-covalent hit → Phase 4h MD-scored validation on top-5 (**fenamic parents as chemical probes only per tox audit**) + wet-lab triage per [[STRC h01 Phase 8 Wet-Lab Triage SOP]] on tafamidis-style optimized analog, not parent compound.
+2. If GREEN covalent hit → Phase 6c selectivity audit vs proteome-wide Lys pockets (off-target cytotoxicity test) + cochlear ion-channel panel (TRPM4, Cx50, BK, KCNQ4, TMEM16A).
 3. If YELLOW → Phase 3c v4 fragment-growing on best cluster or Phase 6d different warhead class (thiol-Michael acceptor, isothiocyanate).
 4. If RED → Phase 3c v5 de novo RFdiffusion-pocket ligand design (qualitative pivot).
+
+**Next after Phase 5d + 5e delivery**:
+- If mutant K1141 pocket stable (ΔΔG vs WT < 0.3 kcal/mol, Kd ratio < 2×) → WT-based Phase 3c/5b docking validated; continue medchem optimization on v3b hits.
+- If mutant pocket shifts (ΔΔG > 0.5 kcal/mol OR Kd ratio > 3×) → **Phase 3c v6: re-run virtual screen on mutant ensemble** (v3 library against Phase 5d snapshots) OR pivot to **h11 STRC-dimer interface rescue** if K1141 pocket becomes undruggable in mutant.
+- If mutant ensemble reveals a NEW cryptic pocket absent from WT → Phase 3c v7 new-pocket screen (qualitative expansion).
 
 ## evidence
 
@@ -62,6 +67,8 @@ research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventor
 - `pharmacochaperone_phase3c_v2b_ensemble_dock.py` — 2-stage Vina ensemble dock: Stage 1 breadth (snap_008 exh 8) + Stage 2 ensemble (top-30 × 5 k-means receptor conformers exh 16)
 - `pharmacochaperone_phase3c_v3_fenamic_covalent_library.py` — fenamic-focused expansion library builder (8 anthranilic cores × 57 N-aryl × 5 acid bioisosteres × 8 ring subs + Phase 6b covalent warhead branch); 12,253 ligands output
 - `pharmacochaperone_phase3c_v3b_ensemble_dock.py` — v2b docking pipeline re-pointed to v3 library (Stage 1 checkpoint every 100 lig); IN PROGRESS ETA ~5.7h
+- `pharmacochaperone_phase5d_e1659a_md.py` — OpenMM + AMBER14SB MD on full-length E1659A mutant (job3-mutant.cif, 645k atoms, 2 ns × 20 snap); IN PROGRESS ETA ~3.5h, SMOKE passed 13.86 ns/day
+- `pharmacochaperone_phase5e_mutant_ensemble_redock.py` — Vina ensemble re-dock of LEGACY_LEADS + V2_HITS + tafamidis-analog against Phase 5d mutant snapshots; pocket box centre derived per-snapshot from K1141 + ring Cα centroid; WT-vs-mut ΔΔG comparison against Phase 5b. Scheduled post-Phase 5d delivery
 
 ## log
 
