@@ -1,0 +1,59 @@
+{
+  "generated": "2026-04-23",
+  "builder": "af3_jobs_2026-04-23e_hydrogel_phase3b_builder.py",
+  "hypothesis": "#9 STRC Synthetic Peptide Hydrogel HTC \u2014 Phase 3b full-construct validation",
+  "purpose": "Phase 3b fuses the Phase 3 winning GOLD-zone tails back to the Phase 2 RADA16-WH2 scaffold architecture. Tests whether isolated-tail TMEM145 binding (ipTM 0.63-0.68) is preserved when the tail is attached to the WH2 actin-binder N-terminus + RADA16 self-assembling scaffold. Also tests whether extended tail disturbs WH2 actin engagement from the far N-terminus.",
+  "baselines_for_comparison": {
+    "phase_2_native_full_construct_x_tmem145_WRONG_EPITOPE": 0.39,
+    "phase_2_full_construct_x_actin": "0.58-0.59 (consistent across 3 candidates)",
+    "phase_3_tail_71_solo_x_tmem145": 0.63,
+    "phase_3_tail_91_solo_x_tmem145": 0.68,
+    "ultramini_solo_x_tmem145_full": 0.43,
+    "ultramini_solo_x_tmem145_GOLD_pruned": 0.68
+  },
+  "construct_designs": {
+    "rada16_wh2_tail71": {
+      "length": 114,
+      "composition": "WH2 (18) + GSGSG + RADA16 (15) + GSGSG + tail aa 1640-1710 (71) = 114 aa"
+    },
+    "rada16_wh2_tail91": {
+      "length": 134,
+      "composition": "WH2 (18) + GSGSG + RADA16 (15) + GSGSG + tail aa 1620-1710 (91) = 134 aa"
+    }
+  },
+  "priority_order": [
+    "hydrogel_rada16_wh2_tail71_x_tmem145",
+    "hydrogel_rada16_wh2_tail71_x_actin",
+    "hydrogel_rada16_wh2_tail91_x_tmem145",
+    "hydrogel_rada16_wh2_tail91_x_actin"
+  ],
+  "jobs": {
+    "hydrogel_rada16_wh2_tail71_x_tmem145": {
+      "description": "Full-construct peptide \u00d7 TMEM145. Peptide = WH2 (18) + GSGSG + RADA16 (15) + GSGSG + tail. Length 114 aa. Tail: 71 aa GOLD-zone tail (clusters 3+4+5, ipTM 0.63 solo). Tests whether scaffold fusion preserves the 0.63-0.68 isolated-tail binding.",
+      "success_criteria": "ipTM >= 0.50 on TMEM145 interface",
+      "hypothesis_impact": "pass -> scaffold fusion preserves TMEM145 binding; half of Phase 3b gate clear. fail -> scaffold/linker contaminates the binding surface; try flexible linker or N-terminal tail placement."
+    },
+    "hydrogel_rada16_wh2_tail71_x_actin": {
+      "description": "Full-construct peptide \u00d7 G-actin trimer. Peptide 114 aa. Tail: 71 aa GOLD-zone tail (clusters 3+4+5, ipTM 0.63 solo). Tests whether extended tail (71/91 aa) disturbs WH2 actin-binding from N-terminus.",
+      "success_criteria": "ipTM >= 0.50 on any peptide-actin pair (matches Phase 2 0.58-0.59)",
+      "hypothesis_impact": "pass -> full dual-interface construct works; advance to Phase 2b Martini3 MD + Phase 2c wet-lab actin-bundling assay. fail -> extended tail disrupts WH2 allosterically; try larger linker between RADA16 and tail."
+    },
+    "hydrogel_rada16_wh2_tail91_x_tmem145": {
+      "description": "Full-construct peptide \u00d7 TMEM145. Peptide = WH2 (18) + GSGSG + RADA16 (15) + GSGSG + tail. Length 134 aa. Tail: 91 aa GOLD-zone tail (clusters 2+3+4+5, ipTM 0.68 solo). Tests whether scaffold fusion preserves the 0.63-0.68 isolated-tail binding.",
+      "success_criteria": "ipTM >= 0.50 on TMEM145 interface",
+      "hypothesis_impact": "pass -> scaffold fusion preserves TMEM145 binding; half of Phase 3b gate clear. fail -> scaffold/linker contaminates the binding surface; try flexible linker or N-terminal tail placement."
+    },
+    "hydrogel_rada16_wh2_tail91_x_actin": {
+      "description": "Full-construct peptide \u00d7 G-actin trimer. Peptide 134 aa. Tail: 91 aa GOLD-zone tail (clusters 2+3+4+5, ipTM 0.68 solo). Tests whether extended tail (71/91 aa) disturbs WH2 actin-binding from N-terminus.",
+      "success_criteria": "ipTM >= 0.50 on any peptide-actin pair (matches Phase 2 0.58-0.59)",
+      "hypothesis_impact": "pass -> full dual-interface construct works; advance to Phase 2b Martini3 MD + Phase 2c wet-lab actin-bundling assay. fail -> extended tail disrupts WH2 allosterically; try larger linker between RADA16 and tail."
+    }
+  },
+  "how_to_submit": "AlphaFold Server Import-from-JSON for each file. 4 jobs this batch.",
+  "decision_rules": {
+    "both_pass_both_interfaces": "Hypothesis #9 A-tier CONFIRMED. Full construct validated at AF3 level. Advance to Phase 2b Martini3 CG MD dose-response sweep and Phase 2c wet-lab cell-based actin-bundling assay. Select tail91 for max confidence or tail71 for manufacturability (0.05 ipTM cost vs $200/ear cheaper).",
+    "tmem145_pass_actin_fail": "Extended tail allosterically disturbs WH2 from N-term. Try longer inter-domain linker (GSGSGSGSGS, 10 aa) or alternative WH2 placement (C-terminal instead of N-terminal).",
+    "tmem145_fail_actin_pass": "Scaffold fusion contaminates TMEM145 binding. Try flexible linker between RADA16 and tail (longer GSGSG variants) or C-terminal scaffold placement.",
+    "both_fail": "Scaffold architecture doesn't support full dual-interface peptide. Move to Option B (helical mimetic / miniprotein scaffold replacing RADA16)."
+  }
+}
