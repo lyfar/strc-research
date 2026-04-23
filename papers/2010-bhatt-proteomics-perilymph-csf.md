@@ -1,5 +1,6 @@
 ---
 title: "Proteomics Analysis of Perilymph and Cerebrospinal Fluid in Mouse"
+type: source
 authors: ["Bhatt DL", "Bhatt DL", "Bhatt DL"]
 journal: "Otolaryngology — Head and Neck Surgery"
 date: 2009-04-01

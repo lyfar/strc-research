@@ -1,5 +1,6 @@
 ---
 title: "Multicolored, Sonosensitizer-Optimized Organic Mechanoluminescent Nanoparticles for Functional Sono-Optogenetics"
+type: source
 authors: ["Liu, X", "Wang, W", "Artman, B", "Diao, J", "Zhao, Y", "He, W", "Yu, S", "Tang, KWK", "Yao, M", "Gu, C", "Song, B", "Wang, H"]
 journal: "Journal of the American Chemical Society"
 date: 2026-04-13

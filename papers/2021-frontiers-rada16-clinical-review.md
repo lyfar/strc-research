@@ -1,5 +1,6 @@
 ---
 title: "Clinical Use of the Self-Assembling Peptide RADA16: A Review of Current and Future Trends in Biomedicine"
+type: source
 authors: ["Various"]
 journal: "Frontiers in Bioengineering and Biotechnology"
 date: 2021-06-01

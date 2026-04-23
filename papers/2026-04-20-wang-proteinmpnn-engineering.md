@@ -1,5 +1,6 @@
 ---
 title: "Deep Learning-Enabled Engineering of a Hyper-Stable and Soluble MPB70-83 Antigen for Sensitive Bovine Tuberculosis Surveillance"
+type: source
 authors: ["Wang, Wen-Hao", "Ge, Jia-Zhen", "Xie, Ying-Ying"]
 journal: "Microb Biotechnol"
 date: 2026-04
@@ -27,3 +28,7 @@ ProteinMPNN-guided redesign of the truncation junction and exposed surfaces in m
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41988819/
 - DOI: https://doi.org/10.1111/1751-7915.70348
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

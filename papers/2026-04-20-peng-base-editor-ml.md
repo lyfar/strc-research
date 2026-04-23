@@ -1,5 +1,6 @@
 ---
 title: "Rapid customization of base editors via machine learning-powered combinatorial mutagenesis"
+type: source
 authors: ["Peng, Jiaxing", "Chan, Don C T", "Chu, Hoi Yee", "Fong, John H C", "Lam, Yin Kau", "Cheung, Maggie S H", "Leung, Wing", "Choi, Gigi C G", "Wong, Alan S L"]
 journal: "Mol Cell"
 date: 2026-04-16
@@ -27,3 +28,7 @@ Catalog all known pathogenic STRC point mutations, determine which fall within b
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41997156/
 - DOI: https://doi.org/10.1016/j.molcel.2026.03.030
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

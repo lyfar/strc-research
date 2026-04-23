@@ -1,5 +1,6 @@
 ---
 title: "Cryo-EM reveals a right-handed double-helix dimer architecture of PCDH15 critical for mechanotransduction"
+type: source
 authors: ["Liang, X", "Pathak, R", "Qiu, X", "Dillard, L", "Twomey, EC", "Müller, U"]
 journal: "bioRxiv"
 date: 2026-03-04

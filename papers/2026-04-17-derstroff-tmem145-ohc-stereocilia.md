@@ -1,5 +1,6 @@
 ---
 title: "TMEM145 is a principal component of outer hair cell stereocilia"
+type: source
 authors: ["Derstroff, D", "Flook, M", "Löhnes, A", "Kreye, P", "Newton, S", "Renigunta, V", "Hanemaaijer, S", "Aguilar, C", "Holt, JR", "Bowl, MR", "Oliver, D", "Reimann, K"]
 journal: "Neuron"
 date: 2026-03-31

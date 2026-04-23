@@ -1,5 +1,6 @@
 ---
 title: "Alternative splicing of the Rbm24 gene is essential for cochlear hair cell stereocilia integrity and hearing function in mice"
+type: source
 authors: ["Sun, C", "Zhao, J", "Li, N", "Yao, X", "Wang, Y", "Kim, CH", "Bok, J", "Peng, AW", "Xu, Z"]
 journal: "Proceedings of the National Academy of Sciences"
 date: 2026-04-21

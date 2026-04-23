@@ -1,5 +1,6 @@
 ---
 title: "LinkCraft: An interactive tool for the design of flexible linkers"
+type: source
 authors: ["Pajkos, M", "Barrera, P", "Clerc, I", "Zanon, C", "Bernardo, P", "Cortes, J"]
 journal: "Journal of Molecular Biology"
 date: 2026-04-17
@@ -27,3 +28,7 @@ LinkCraft modeling of the Ultra-Mini-STRC truncation junctions. Ensemble conform
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42001978/
 - DOI: https://doi.org/10.1016/j.jmb.2026.169814
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

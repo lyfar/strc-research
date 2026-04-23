@@ -1,5 +1,6 @@
 ---
 title: "Development of the fluorescent probe CenSpark for labeling centrioles and cilia"
+type: source
 authors: ["Pourroy, Cédric", "Hatzopoulos, Georgios N", "Reymond, Luc"]
 journal: "Nat Chem Biol"
 date: 2026-04-15
@@ -27,3 +28,7 @@ N/A — this is primarily an experimental tool. However, image analysis pipeline
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41986560/
 - DOI: https://doi.org/10.1038/s41589-026-02186-1
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

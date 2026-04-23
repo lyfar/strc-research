@@ -1,5 +1,6 @@
 ---
 title: "A near-infrared regulated programmable multi-mode periosteum scaffold for sequential healing of infected bone defects"
+type: source
 authors: ["Yin, Y", "Cai, Y", "Dang, P", "Zeng, W", "Wang, L", "Yan, X", "Luo, Z", "Liu, W", "Zhu, Y", "Chen, L", "Zhang, C"]
 journal: "Bioactive Materials"
 date: 2026-04-02
@@ -27,3 +28,7 @@ FEM comparison of charge output from pure PVDF-TrFE vs. PVDF/BT composite under 
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42006006/
 - DOI: https://doi.org/10.1016/j.bioactmat.2026.03.046
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

@@ -1,5 +1,6 @@
 ---
 title: "Cilia Dynamics in Primary Ciliary Dyskinesia: A Biophysical Characterization of the RSPH4A Founder Variant"
+type: source
 authors: ["Rosario-Ortiz, Gabriel", "Muñiz-Hernández, José", "Ortiz-Pérez, Natalia M"]
 journal: "Cells"
 date: 2026-03-29
@@ -27,3 +28,7 @@ Develop image analysis algorithms for automated quantification of stereocilia bu
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41972697/
 - DOI: https://doi.org/10.3390/cells15070607
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

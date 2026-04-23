@@ -1,5 +1,6 @@
 ---
 title: "Pharmacokinetic principles in the inner ear: Influence of drug properties on intratympanic applications"
+type: source
 authors: ["Salt AN", "Plontke SK"]
 journal: "Hearing Research"
 date: 2018-03-01

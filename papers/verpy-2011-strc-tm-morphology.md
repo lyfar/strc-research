@@ -1,5 +1,6 @@
 ---
 title: "Stereocilin connects outer-hair-cell stereocilia to one another and to the tectorial membrane"
+type: source
 authors: ["Verpy E", "Weil D", "Leibovici M", "Goodyear RJ", "Hamard G", "Schwander M", "Müller U", "Gillespie PG", "Richardson GP", "Petit C"]
 journal: "Journal of Comparative Neurology"
 date: 2011-03-01

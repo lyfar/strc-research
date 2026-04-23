@@ -1,5 +1,6 @@
 ---
 title: "Guiding Peptide Kinetics via Collective-Variable Tuning of Free-Energy Barriers"
+type: source
 authors: ["Zhilkin, A", "Medaparambath, M", "Mendels, D"]
 journal: "Journal of Chemical Theory and Computation"
 date: 2026-04-20
@@ -27,3 +28,7 @@ HLDA collective variables from WT and E1659A STRC domain MD. Free energy barrier
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42007551/
 - DOI: https://doi.org/10.1021/acs.jctc.6c00418
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

@@ -1,5 +1,6 @@
 ---
 title: "Noninvasive Focal Gene Delivery into the Cerebellum of Non-Human Primates using Focused Ultrasound"
+type: source
 authors: ["Esteban-García, N", "Pineda-Pardo, JA", "Trigo-Damas, I", "Gutiérrez, M", "Castillo-Ortiz, M", "Carrillo, M", "Reinares-Sebastian, A", "Medina-Chavarías, V", "Rachmilevitch, I", "Takada, M", "Obeso, JA", "Blesa, J"]
 journal: "Advanced Science"
 date: 2026-04-20
@@ -27,3 +28,7 @@ Acoustic simulation of FUS focal zone size achievable in the temporal bone at co
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42003738/
 - DOI: https://doi.org/10.1002/advs.75307
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

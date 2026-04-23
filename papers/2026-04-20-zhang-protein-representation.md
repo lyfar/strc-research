@@ -1,5 +1,6 @@
 ---
 title: "A tri-modal contrastive learning framework for protein representation learning"
+type: source
 authors: ["Zhang, Li", "Guo, Han", "Schaffer, Leah"]
 journal: "Cell Rep Methods"
 date: 2026-04-15
@@ -27,3 +28,7 @@ Apply ProteinAligner (or similar multimodal model) to full-length stereocilin an
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41990738/
 - DOI: https://doi.org/10.1016/j.crmeth.2026.101407
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

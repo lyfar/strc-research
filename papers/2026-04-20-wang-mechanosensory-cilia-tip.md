@@ -1,5 +1,6 @@
 ---
 title: "Localized active transport shapes the nanoscopic features at the tip of mechanosensory cilia"
+type: source
 authors: ["Wang, Shan", "Hu, Yue-Ting", "Chen, Yan-Rong"]
 journal: "J Cell Biol"
 date: 2026-05-04
@@ -27,3 +28,7 @@ Brownian dynamics simulation of stereocilin vs. mini-stereocilin diffusion along
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41941305/
 - DOI: https://doi.org/10.1083/jcb.202412213
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

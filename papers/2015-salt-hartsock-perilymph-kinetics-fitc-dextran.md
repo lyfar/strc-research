@@ -1,5 +1,6 @@
 ---
 title: "Perilymph Kinetics of FITC-Dextran Reveals Homeostasis Dominated by the Cochlear Aqueduct and Cerebrospinal Fluid"
+type: source
 authors: ["Salt AN", "Hartsock JJ", "Plontke SK", "DeMott JE", "Riveros A"]
 journal: "Journal of the Association for Research in Otolaryngology"
 date: 2015-08-01

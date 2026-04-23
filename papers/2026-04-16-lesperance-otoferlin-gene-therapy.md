@@ -1,5 +1,6 @@
 ---
 title: "Gene Therapy for Infants and Children With Otoferlin-Related Auditory Neuropathy Spectrum Disorder"
+type: source
 authors: ["Lesperance, Marci M", "Devare, Jenna", "McCreery, Ryan W", "Cushing, Sharon", "Hirose, Keiko"]
 journal: "Ear and Hearing"
 date: 2026-04-14

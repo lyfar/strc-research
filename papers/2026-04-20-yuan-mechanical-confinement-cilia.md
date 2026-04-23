@@ -1,5 +1,6 @@
 ---
 title: "Mechanical confinement balances ECM remodeling in chondrocytes via MAPK and Hedgehog signaling"
+type: source
 authors: ["Yuan, Mu H", "Lust, Suzette T", "Marciano, Daniele"]
 journal: "Biomaterials"
 date: 2026-03-27
@@ -27,3 +28,7 @@ Finite element modeling of OHC mechanical confinement with and without TM attach
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41985400/
 - DOI: https://doi.org/10.1016/j.biomaterials.2026.124171
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

@@ -1,5 +1,6 @@
 ---
 title: "Stiffness and tension gradients of the hair cell's tip-link complex in the mammalian cochlea"
+type: source
 authors: ["Tobin M", "Chaiyasitdhi A", "Michel V", "Michalski N", "Martin P"]
 journal: "eLife"
 date: 2019-04-01

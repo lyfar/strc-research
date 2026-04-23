@@ -1,5 +1,6 @@
 ---
 title: "Dynamic reassembly of peptide RADA16 nanofiber scaffold"
+type: source
 authors: ["Yokoi, H", "Kinoshita, T", "Zhang, S"]
 journal: "PNAS"
 date: 2005-06-14

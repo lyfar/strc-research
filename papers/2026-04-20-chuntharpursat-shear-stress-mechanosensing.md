@@ -1,5 +1,6 @@
 ---
 title: "Sensing of shear stress in vascular endothelial cells - from physiology to pathology"
+type: source
 authors: ["Chuntharpursat-Bon, Eulashini", "Serbanovic-Canic, Jovana", "Sheridan, Mark"]
 journal: "J Cell Sci"
 date: 2026-04-01
@@ -27,3 +28,7 @@ Lumped-parameter mechanical model of the OHC stereocilia bundle with stereocilin
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41969033/
 - DOI: https://doi.org/10.1242/jcs.264456
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

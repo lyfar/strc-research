@@ -1,5 +1,6 @@
 ---
 title: "Focused ultrasound mediated gene therapy for glioblastoma: A preclinical in vivo systematic review and meta-analysis"
+type: source
 authors: ["ElNemer, William", "Lee, David", "Selim, Omar"]
 journal: "Biomed Pharmacother"
 date: 2026-04-08
@@ -27,3 +28,7 @@ Dose-response modeling: given known AAV transduction efficiencies in cochlear st
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41955864/
 - DOI: https://doi.org/10.1016/j.biopha.2026.119325
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

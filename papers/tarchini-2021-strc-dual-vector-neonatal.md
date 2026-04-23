@@ -1,5 +1,6 @@
 ---
 title: "Dual-vector gene therapy restores cochlear amplification and auditory sensitivity in a mouse model of DFNB16 hearing loss"
+type: source
 authors: ["Tarchini B", "Chen ZY", "et al"]
 journal: "Science Advances"
 date: 2021-12-17

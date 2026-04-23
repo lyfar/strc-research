@@ -1,5 +1,6 @@
 ---
 title: "Multicolored, Sonosensitizer-Optimized Organic Mechanoluminescent Nanoparticles for Functional Sono-Optogenetics"
+type: source
 authors: ["Liu, Xiangping", "Wang, Wenliang", "Artman, Brinkley"]
 journal: "J Am Chem Soc"
 date: 2026-04-13
@@ -27,3 +28,7 @@ Acoustic field modeling of the cochlea to determine: (1) whether cochlear mechan
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41974592/
 - DOI: https://doi.org/10.1021/jacs.5c22630
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

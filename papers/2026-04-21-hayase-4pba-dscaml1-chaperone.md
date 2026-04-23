@@ -1,5 +1,6 @@
 ---
 title: "Pharmacological Correction of Aberrant DSCAML1 Localization by 4-Phenylbutyrate Ameliorates Epileptic Phenotypes in a Mouse Model Harboring the Patient-Specific A2105T Mutation"
+type: source
 authors: ["Hayase, Y", "Owa, T", "Hashizume, K", "Suyama, K", "Bolorbat, T", "Sone, M", "Kanno, Y", "Hasegawa, I", "Miyashita, S", "Taya, S", "Hoshino, M"]
 journal: "Genes to Cells"
 date: 2026-05-01
@@ -27,3 +28,8 @@ Molecular dynamics comparison of STRC E1659A misfolding trajectory vs. DSCAML1 A
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42003794/
 - DOI: https://doi.org/10.1111/gtc.70115
+
+## Connections
+
+- `[part-of]` [[research/strc/hypotheses/h01-pharmacochaperone/hub]]
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

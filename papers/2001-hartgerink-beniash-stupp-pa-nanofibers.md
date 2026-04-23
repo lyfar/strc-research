@@ -1,5 +1,6 @@
 ---
 title: "Self-assembly and mineralization of peptide-amphiphile nanofibers"
+type: source
 authors: ["Hartgerink, JD", "Beniash, E", "Stupp, SI"]
 journal: "Science"
 date: 2001-11-23

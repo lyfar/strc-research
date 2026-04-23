@@ -1,5 +1,6 @@
 ---
 title: "Combined Docetaxel-Loaded Perfluorocarbon Nanodroplets with Ultrasound-Mediated Blood-Brain Barrier Disruption for Effective Glioblastoma Treatment in Mice Model"
+type: source
 authors: ["Bérard, Charlotte", "Desgranges, Stéphane", "Dumas, Noé"]
 journal: "Int J Nanomedicine"
 date: 2026-04-11
@@ -27,3 +28,7 @@ Finite element modeling of FUS propagation through temporal bone to the cochlea,
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41993780/
 - DOI: https://doi.org/10.2147/IJN.S571560
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

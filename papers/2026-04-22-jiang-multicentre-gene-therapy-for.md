@@ -1,5 +1,6 @@
 ---
 title: "Multicentre gene therapy for OTOF-related deafness followed up to 2.5 years."
+type: source
 authors: ["Jiang, Luoying", "Cheng, Xiaoting", "Lv, Jun", "Chen, Yuxin", "Chen, Xiaoyun", "Zhai, Rongqun", "Zhang, Liqin", "Han, Lei", "Zhang, Yiling", "Zhang, Juhong"]
 journal: "Nature"
 date: 2026-04-22

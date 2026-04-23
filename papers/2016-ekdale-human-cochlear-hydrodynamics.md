@@ -1,5 +1,6 @@
 ---
 title: "Human Cochlear Hydrodynamics: A High-Resolution μCT-Based Finite Element Study"
+type: source
 authors: ["Ekdale EG"]
 journal: "Journal of Morphology"
 date: 2016-10-01

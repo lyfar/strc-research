@@ -1,5 +1,6 @@
 ---
 title: "Enhanced Piezoelectric Effect in P(VDF-TrFE) through Synergistic Templating by PEDOT:PSS and Paper"
+type: source
 authors: ["Wu, X", "Peiris, MDHC", "Fernando, PS", "Sharma, A", "Dorsainvil, J", "Koh, A", "Smeu, M", "Mativetsky, JM"]
 journal: "ACS Applied Electronic Materials"
 date: 2026-04-14
@@ -27,3 +28,7 @@ MD simulation of PVDF-TrFE nucleation on collagen vs. PEDOT:PSS vs. bare substra
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42004736/
 - DOI: https://doi.org/10.1021/acsaelm.6c00088
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

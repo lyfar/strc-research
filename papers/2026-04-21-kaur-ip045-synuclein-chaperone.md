@@ -1,5 +1,6 @@
 ---
 title: "Targeting Alpha-Synuclein Aggregation With Chemical Chaperone IP-045: An Approach to Parkinson's Disease Therapy"
+type: source
 authors: ["Kaur, N", "Singh, R", "Dhingra, N", "Kaur, T"]
 journal: "Drug Development Research"
 date: 2026-05-01
@@ -27,3 +28,8 @@ Pharmacophore comparison between IP-045 and our indole-3-acetic acid lead. Dock 
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42003184/
 - DOI: https://doi.org/10.1002/ddr.70288
+
+## Connections
+
+- `[part-of]` [[research/strc/hypotheses/h01-pharmacochaperone/hub]]
+- `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

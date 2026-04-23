@@ -1,5 +1,6 @@
 ---
 title: "Generation of human induced pluripotent stem cell lines from a patient with OTOF-related deafness and a carrier relative"
+type: source
 authors: ["Yu, Meirong", "Huang, Yangyiyi", "Lin, Pengfang", "Liu, Amin", "Wang, Yunxiu", "Chen, Jia", "Jiang, Hua", "Chen, Chao", "Liu, Xiao"]
 journal: "Stem Cell Res"
 date: 2026-04-14
@@ -26,3 +27,7 @@ Establishes a disease modeling platform for another autosomal recessive hearing 
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42000544/
 - DOI: https://doi.org/10.1016/j.scr.2026.103988
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

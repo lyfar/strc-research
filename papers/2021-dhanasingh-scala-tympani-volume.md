@@ -1,5 +1,6 @@
 ---
 title: "Cochlear Size Assessment Predicts Scala Tympani Volume and Electrode Insertion Force — Implications in Robotic Assisted Cochlear Implant Surgery"
+type: source
 authors: ["Dhanasingh A", "Swords C", "Bance M", "Van Rompaey V", "Van de Heyning P"]
 journal: "Frontiers in Surgery"
 date: 2021-09-27

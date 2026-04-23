@@ -1,5 +1,6 @@
 ---
 title: "Postnatal Slc26a4 gene therapy improves hearing and structural integrity in a hereditary hearing loss model"
+type: source
 authors: ["Tsai, Yi-Hsiu", "Wu, Peng-Yu", "Chuang, Yu-Chi", "Huang, Chun-Ying", "Takeda, Hiroki", "Hibino, Hiroshi", "Wu, Chen-Chi", "Cheng, Yen-Fu"]
 journal: "The Journal of Clinical Investigation"
 date: 2026-02-17

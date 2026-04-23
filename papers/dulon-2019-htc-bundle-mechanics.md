@@ -1,5 +1,6 @@
 ---
 title: "Cochlear outer hair cell horizontal top connectors mediate mature stereocilia bundle mechanics"
+type: source
 authors: ["Dulon D", "Papal S", "Castilla-Eder C", "Daulat A", "Petit C", "El-Amraoui A"]
 journal: "Science Advances"
 date: 2019-02-22

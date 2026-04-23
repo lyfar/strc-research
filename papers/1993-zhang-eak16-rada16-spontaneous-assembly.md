@@ -1,5 +1,6 @@
 ---
 title: "Spontaneous assembly of a self-complementary oligopeptide to form a stable macroscopic membrane"
+type: source
 authors: ["Zhang, S", "Holmes, T", "Lockshin, C", "Rich, A"]
 journal: "PNAS"
 date: 1993-04-15

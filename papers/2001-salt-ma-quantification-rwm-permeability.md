@@ -1,5 +1,6 @@
 ---
 title: "Quantification of solute entry into cochlear perilymph through the round window membrane"
+type: source
 authors: ["Salt AN", "Ma Y"]
 journal: "Hearing Research"
 date: 2001-04-01

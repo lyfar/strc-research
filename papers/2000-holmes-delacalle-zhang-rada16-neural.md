@@ -1,5 +1,6 @@
 ---
 title: "Extensive neurite outgrowth and active synapse formation on self-assembling peptide scaffolds"
+type: source
 authors: ["Holmes, TC", "de Lacalle, S", "Su, X", "Liu, G", "Rich, A", "Zhang, S"]
 journal: "PNAS"
 date: 2000-06-06

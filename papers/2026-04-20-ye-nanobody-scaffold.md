@@ -1,5 +1,6 @@
 ---
 title: "Integrating Seed-Based Design with Ribosome Display for the Development of Nanobody-like Protein Scaffolds"
+type: source
 authors: ["Ye, Zhujun", "Zhang, Jie", "Shu, Xiangrong"]
 journal: "Biosci Biotechnol Biochem"
 date: 2026-04-17
@@ -27,3 +28,7 @@ Multiple sequence alignment of stereocilin orthologs across species to identify 
 ## Links
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/41995290/
 - DOI: https://doi.org/10.1093/bbb/zbag057
+
+## Connections
+
+- `[source]` auto-indexed 2026-04-20 by [[strc-lit-watch]]

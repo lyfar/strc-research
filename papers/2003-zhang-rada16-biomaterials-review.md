@@ -1,5 +1,6 @@
 ---
 title: "Fabrication of novel biomaterials through molecular self-assembly"
+type: source
 authors: ["Zhang, S"]
 journal: "Nature Biotechnology"
 date: 2003-10-01
