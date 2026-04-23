@@ -33,7 +33,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 | 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]        | 5    | 5     | 4     | **S**   | Order gBlock, clone pAAV, coIP          | [[h03 hub]] |
 | 4   | [[STRC mRNA-LNP Strategy B Full-Length]]           | 3    | 2     | 2     | **B**   | Academic/interim if AAV fails           | [[h04 hub]] |
 | 5   | [[STRC Calcium Oscillation Acoustic Therapy]]      | 3    | 4     | 2     | **A**   | SPR/BLI E1659A affinity penalty         | [[h05 hub]] |
-| 6   | [[STRC mRNA Therapy Hypothesis]]                   | 3    | 2     | 2     | **A**   | Adjunctive to Strategy B                | [[h06 hub]] |
+| 6   | [[STRC mRNA Therapy Hypothesis]]                   | 2    | 2     | 2     | **B**   | Retrieve OHC RBM24 titration lit        | [[h06 hub]] |
 | 7   | [[Prime Editing for STRC]]                         | 3    | 2     | 1     | **C**   | Wet-lab: ribosome-profiling STRCP1      | [[h07 hub]] |
 | 8   | [[STRC ASO Exon Skipping]]                         | 2    | 3     | 2     | **C**   | Phase 3a morpholino + 3b gapmer         | [[h08 hub]] |
 | 9   | [[STRC Synthetic Peptide Hydrogel HTC]]            | 4    | 3     | 3     | **A**   | 4b + blend model + lit-backed re-run    | [[h09 hub]] |
@@ -88,7 +88,7 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 | 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | A | ⚠ **3 critical lit gaps 2026-04-23** | See [[STRC h09 Parameter Provenance Audit 2026-04-23]] |
 | 26 | [[STRC Engineered Homodimer Avidity]] | B | ✅ **FIXED 2026-04-23** | Scripts already clean; prose phantoms (100 nM Kd from ipTM, 1 nM derived, 100-1000× absolute) reframed as ratio-on-unmeasured-baseline; status banner added; blocked at SPR/BLI + Phase-1-AF3-fail |
 | 4 | [[STRC mRNA-LNP Strategy B Full-Length]] | B | ✅ **AUDITED 2026-04-23 Batch 2** | 0 phantoms in scripts. Inherits h06 Hill/t½ risk. All suspicious constants explicitly labeled hypothetical or estimate. |
-| 6 | [[STRC mRNA Therapy Hypothesis]] | A | ✅ **PARTIAL FIX 2026-04-23** | STRC_HL_D + RBM24_HL_D lit-anchored (Zhang 2012 PMID 22246323 + Mauriac 2024 PMID 39320919 + Schwanhäusser 2011 PMID 21593866). Gao 2020 PMID 32493791 PHANTOM documented. Hill K_M/n/max_boost remain CIRCULAR FIT — no OHC splicing dose-response lit exists. See [[STRC h06 Parameter Provenance Audit 2026-04-23]]. |
+| 6 | [[STRC mRNA Therapy Hypothesis]] | **B** (was A) | ✅ **BOUNDS 2026-04-23** | STRC_HL_D + RBM24_HL_D lit-anchored (Zhang 2012 + Mauriac 2024 + Schwanhäusser 2011). Hill K_M/n/max_boost CIRCULAR FIT. **Hill-sensitivity sweep (125-pt grid) shows per-OHC ROBUST but cochlea-mean therapeutic ARCHITECTURALLY IMPOSSIBLE at LNP eff ≤ 20% regardless of Hill params** — Mech 3→2; tier A→B. See [[STRC h06 Hill Sensitivity Sweep 2026-04-23]] + [[STRC h06 Parameter Provenance Audit 2026-04-23]]. |
 | 7 | [[Prime Editing for STRC]] | C | ✅ **7/8 CONFIRMED 2026-04-23 Batch 2** | Same Gao 2020 PMID phantom as h06 (now corrected in prose); other 7 cites verified real (Chen 2024, Chemla 2025, Fang 2021, Villiger 2021, Anzalone 2019, Kim 2023, Zhang 2025). Best-cited note in portfolio. |
 | 8 | [[STRC ASO Exon Skipping]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Cleanest scripts in portfolio. Ensembl REST + SantaLucia 1998 NN (verified exact), 4/4 FDA-PMO precedents confirmed. |
 | 27 | [[STRC STRCP1 Activation Rescue]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Live GTEx API query, zero embedded bio-constants. Correct GENCODE IDs. |
