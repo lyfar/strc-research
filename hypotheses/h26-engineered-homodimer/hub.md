@@ -13,7 +13,7 @@ status: B-tier
 
 ## status
 
-B-tier (was A, 2026-04-23). next: Phase 1c structural review — re-run contact analysis at 5 Å cutoff to identify secondary contact residues outside 1579-1581. If new cluster → Phase 1b double-mutant AF3. If no cluster → C.
+B-tier (was A, 2026-04-23). **Phase 1c DELIVERED 2026-04-23 GREEN**: DBSCAN eps=6.5 Å re-cluster found 3 clusters; Cluster 1 "stump" 1077-1114 (25 residues, 21 Cb-Cb disulfide geometries 4.5-7.5 Å) is entirely outside Phase 1's 1579-1581 target. Native C1081 forms inter-chain Cb-Cb 6.87-7.09 Å with A1078/C1079/S1080 on opposing chain → single A1078C or S1080C engineers inter-chain disulfide. Cluster 2 ARM also has homotypic S1579→C Cb-Cb 6.94 Å (re-opens Phase 1 target with disulfide chemistry). **Phase 1d AF3 triple batch queued** (A1078C / S1080C / S1579C homotypic + A1078W negative control, user-invoked external AF3). Promotion path: Phase 1d ipTM ≥0.50 + homodimer contacts ≥ WT → A-tier → drop-in to h03 Ultra-Mini. See [[STRC h26 Phase 1c Contact Re-Cluster 2026-04-23]].
 
 ## evidence
 
@@ -26,6 +26,7 @@ B-tier (was A, 2026-04-23). next: Phase 1c structural review — re-run contact 
 research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventory]] § h26)
 - `af3_jobs_2026-04-23d_engineered_homodimer_builder.py` — 5 jobs: WT ref + R1581Y + R1581F + S1579W + S1579F
 - `af3_jobs_2026-04-23d_engineered_homodimer_forensics.py` — Phase 1 results parser (4 mutants × 1-2 seeds, gate evaluation)
+- `engineered_homodimer_phase1c_contact_cluster.py` — DBSCAN 6.5 Å spatial re-cluster on Ultra-Mini homodimer inter-chain contacts; per-cluster disulfide Cb-Cb scan 4.5-7.5 Å + mutation candidate ranking (steric / electrostatic / covalent)
 
 ## artifacts
 

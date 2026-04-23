@@ -53,7 +53,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 | 23  | [[STRC Electrostatic Analysis E1659A]]             | —    | —     | —     | ref     | Pharmacochaperone input                      | —           |
 | 24  | [[Adult Treatment Window STRC]]                    | —    | —     | —     | ref     | Constraint all mechanisms                    | —           |
 | 25  | [[Alternative STRC Delivery Hypotheses]]           | —    | —     | —     | ref     | Delivery-layer survey                        | —           |
-| 26  | [[STRC Engineered Homodimer Avidity]]              | 2    | 5     | 4     | **B**   | Phase 1c 5 Å contact re-cluster              | [[h26 hub]] |
+| 26  | [[STRC Engineered Homodimer Avidity]]              | 2    | 5     | 4     | **B**   | Phase 1c GREEN: Phase 1d AF3 A1078C/S1080C/S1579C | [[h26 hub]] |
 | 27  | [[STRC STRCP1 Activation Rescue]]                  | 2    | 2     | 4     | **C**   | Email Holt lab ribosome-profiling            | [[h27 hub]] |
 | 28  | [[Misha Compound-Het Therapy Stack Model]]         | —    | —     | —     | ref     | Clinical plan: parallel h01+h03 stack        | —           |
 
