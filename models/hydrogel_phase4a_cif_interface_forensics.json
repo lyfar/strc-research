@@ -1,0 +1,411 @@
+{
+  "batch": "hydrogel_phase4a_cif_interface_forensics",
+  "date": "2026-04-23",
+  "cutoff_angstrom": 4.5,
+  "construct_designs": {
+    "tail71": {
+      "length": 114,
+      "peptide": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS"
+    },
+    "tail91": {
+      "length": 134,
+      "peptide": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHLQCSEEQLEVLAHLLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS"
+    }
+  },
+  "gold_clusters": {
+    "cluster_2": [
+      1620,
+      1638
+    ],
+    "cluster_3": [
+      1648,
+      1651
+    ],
+    "cluster_4": [
+      1669,
+      1680
+    ],
+    "cluster_5": [
+      1692,
+      1707
+    ]
+  },
+  "raw_results": {
+    "tmem145": {
+      "fold_hydrogel_rada16_wh2_tail71_x_tmem145": {
+        "job_name": "fold_hydrogel_rada16_wh2_tail71_x_tmem145",
+        "construct_len": 114,
+        "peptide_chain": "A",
+        "tmem145_chain": "B",
+        "n_contacts_total": 156,
+        "contacts_by_peptide_region": {
+          "wh2": 82,
+          "gs1": 0,
+          "rada16": 0,
+          "gs2": 0,
+          "tail": 74,
+          "out_of_range": 0
+        },
+        "tail_contacts_by_gold_cluster": {
+          "cluster_2": 0,
+          "cluster_3": 8,
+          "cluster_4": 37,
+          "cluster_5": 11
+        },
+        "tail_contacts_by_non_cluster": {
+          "pre_cluster_2": 0,
+          "linker_23": 4,
+          "linker_34": 12,
+          "linker_45": 2,
+          "post_cluster_5": 0,
+          "unclassified": 0
+        },
+        "n_scaffold_contacts": 0,
+        "scaffold_contact_details": [],
+        "top_10_contacts": [
+          {
+            "peptide": "GLN83",
+            "peptide_region": "tail",
+            "tmem145": "TRP116",
+            "distance": 1.81,
+            "peptide_plddt": 42.6
+          },
+          {
+            "peptide": "CYS11",
+            "peptide_region": "wh2",
+            "tmem145": "CYS93",
+            "distance": 1.97,
+            "peptide_plddt": 69.9
+          },
+          {
+            "peptide": "VAL103",
+            "peptide_region": "tail",
+            "tmem145": "ARG56",
+            "distance": 2.07,
+            "peptide_plddt": 47.9
+          },
+          {
+            "peptide": "GLN108",
+            "peptide_region": "tail",
+            "tmem145": "ARG56",
+            "distance": 2.16,
+            "peptide_plddt": 47.4
+          },
+          {
+            "peptide": "LEU80",
+            "peptide_region": "tail",
+            "tmem145": "SER117",
+            "distance": 2.33,
+            "peptide_plddt": 41.0
+          },
+          {
+            "peptide": "LEU80",
+            "peptide_region": "tail",
+            "tmem145": "GLY135",
+            "distance": 2.41,
+            "peptide_plddt": 41.0
+          },
+          {
+            "peptide": "LYS5",
+            "peptide_region": "wh2",
+            "tmem145": "ASP77",
+            "distance": 2.42,
+            "peptide_plddt": 60.8
+          },
+          {
+            "peptide": "ASP9",
+            "peptide_region": "wh2",
+            "tmem145": "GLU97",
+            "distance": 2.44,
+            "peptide_plddt": 69.8
+          },
+          {
+            "peptide": "LYS13",
+            "peptide_region": "wh2",
+            "tmem145": "ASP142",
+            "distance": 2.47,
+            "peptide_plddt": 45.5
+          },
+          {
+            "peptide": "ALA78",
+            "peptide_region": "tail",
+            "tmem145": "ARG136",
+            "distance": 2.49,
+            "peptide_plddt": 43.8
+          }
+        ],
+        "peptide_plddt_mean_at_tail": 43.4,
+        "peptide_plddt_mean_at_scaffold": 17.9,
+        "peptide_plddt_mean_at_wh2": 50.0
+      },
+      "fold_hydrogel_rada16_wh2_tail91_x_tmem145": {
+        "job_name": "fold_hydrogel_rada16_wh2_tail91_x_tmem145",
+        "construct_len": 134,
+        "peptide_chain": "A",
+        "tmem145_chain": "B",
+        "n_contacts_total": 118,
+        "contacts_by_peptide_region": {
+          "wh2": 93,
+          "gs1": 0,
+          "rada16": 0,
+          "gs2": 0,
+          "tail": 25,
+          "out_of_range": 0
+        },
+        "tail_contacts_by_gold_cluster": {
+          "cluster_2": 0,
+          "cluster_3": 4,
+          "cluster_4": 15,
+          "cluster_5": 5
+        },
+        "tail_contacts_by_non_cluster": {
+          "pre_cluster_2": 0,
+          "linker_23": 1,
+          "linker_34": 0,
+          "linker_45": 0,
+          "post_cluster_5": 0,
+          "unclassified": 0
+        },
+        "n_scaffold_contacts": 0,
+        "scaffold_contact_details": [],
+        "top_10_contacts": [
+          {
+            "peptide": "ASN10",
+            "peptide_region": "wh2",
+            "tmem145": "GLY141",
+            "distance": 1.26,
+            "peptide_plddt": 47.3
+          },
+          {
+            "peptide": "ILE7",
+            "peptide_region": "wh2",
+            "tmem145": "ILE72",
+            "distance": 1.6,
+            "peptide_plddt": 53.8
+          },
+          {
+            "peptide": "ASN10",
+            "peptide_region": "wh2",
+            "tmem145": "ASP142",
+            "distance": 1.63,
+            "peptide_plddt": 47.3
+          },
+          {
+            "peptide": "LYS13",
+            "peptide_region": "wh2",
+            "tmem145": "ASP142",
+            "distance": 1.79,
+            "peptide_plddt": 37.1
+          },
+          {
+            "peptide": "CYS11",
+            "peptide_region": "wh2",
+            "tmem145": "CYS93",
+            "distance": 1.97,
+            "peptide_plddt": 52.5
+          },
+          {
+            "peptide": "ASN10",
+            "peptide_region": "wh2",
+            "tmem145": "ASP41",
+            "distance": 2.22,
+            "peptide_plddt": 47.3
+          },
+          {
+            "peptide": "LYS5",
+            "peptide_region": "wh2",
+            "tmem145": "TRP82",
+            "distance": 2.33,
+            "peptide_plddt": 47.7
+          },
+          {
+            "peptide": "ASP9",
+            "peptide_region": "wh2",
+            "tmem145": "SER140",
+            "distance": 2.45,
+            "peptide_plddt": 51.6
+          },
+          {
+            "peptide": "LEU94",
+            "peptide_region": "tail",
+            "tmem145": "ARG136",
+            "distance": 2.48,
+            "peptide_plddt": 75.7
+          },
+          {
+            "peptide": "VAL122",
+            "peptide_region": "tail",
+            "tmem145": "ASP53",
+            "distance": 2.49,
+            "peptide_plddt": 69.7
+          }
+        ],
+        "peptide_plddt_mean_at_tail": 79.7,
+        "peptide_plddt_mean_at_scaffold": 29.6,
+        "peptide_plddt_mean_at_wh2": 39.9
+      }
+    },
+    "actin": {
+      "fold_hydrogel_rada16_wh2_tail71_x_actin": {
+        "job_name": "fold_hydrogel_rada16_wh2_tail71_x_actin",
+        "construct_len": 114,
+        "peptide_chain": "A",
+        "actin_chains": [
+          "B",
+          "C",
+          "D"
+        ],
+        "n_contacts_total": 13,
+        "n_contacts_wh2": 6,
+        "wh2_share": 0.462,
+        "contacts_by_peptide_region": {
+          "wh2": 6,
+          "gs1": 0,
+          "rada16": 5,
+          "gs2": 0,
+          "tail": 2,
+          "out_of_range": 0
+        },
+        "per_actin_protomer": {
+          "B": {
+            "n_contacts": 8,
+            "n_wh2_contacts": 6,
+            "top_wh2_contacts": [
+              {
+                "peptide": "ARG18",
+                "actin": "GLU93",
+                "distance": 2.26
+              },
+              {
+                "peptide": "ARG18",
+                "actin": "ASP56",
+                "distance": 2.51
+              },
+              {
+                "peptide": "VAL4",
+                "actin": "GLY146",
+                "distance": 3.7
+              },
+              {
+                "peptide": "CYS11",
+                "actin": "ASP25",
+                "distance": 4.31
+              },
+              {
+                "peptide": "ARG18",
+                "actin": "ALA29",
+                "distance": 4.32
+              },
+              {
+                "peptide": "ARG18",
+                "actin": "VAL30",
+                "distance": 4.49
+              }
+            ]
+          },
+          "C": {
+            "n_contacts": 0,
+            "n_wh2_contacts": 0,
+            "top_wh2_contacts": []
+          },
+          "D": {
+            "n_contacts": 5,
+            "n_wh2_contacts": 0,
+            "top_wh2_contacts": []
+          }
+        },
+        "wh2_hydrophobic_positions": [
+          3,
+          4,
+          7,
+          16
+        ],
+        "wh2_sequence": "RQLVKAIPDNCSKSNVSR"
+      },
+      "fold_hydrogel_rada16_wh2_tail91_x_actin": {
+        "job_name": "fold_hydrogel_rada16_wh2_tail91_x_actin",
+        "construct_len": 134,
+        "peptide_chain": "A",
+        "actin_chains": [
+          "B",
+          "C",
+          "D"
+        ],
+        "n_contacts_total": 5,
+        "n_contacts_wh2": 0,
+        "wh2_share": 0.0,
+        "contacts_by_peptide_region": {
+          "wh2": 0,
+          "gs1": 0,
+          "rada16": 0,
+          "gs2": 0,
+          "tail": 5,
+          "out_of_range": 0
+        },
+        "per_actin_protomer": {
+          "B": {
+            "n_contacts": 0,
+            "n_wh2_contacts": 0,
+            "top_wh2_contacts": []
+          },
+          "C": {
+            "n_contacts": 5,
+            "n_wh2_contacts": 0,
+            "top_wh2_contacts": []
+          },
+          "D": {
+            "n_contacts": 0,
+            "n_wh2_contacts": 0,
+            "top_wh2_contacts": []
+          }
+        },
+        "wh2_hydrophobic_positions": [
+          3,
+          4,
+          7,
+          16
+        ],
+        "wh2_sequence": "RQLVKAIPDNCSKSNVSR"
+      }
+    }
+  },
+  "interpretation": {
+    "Q1_tail91_tmem145_uses_gold_zone": {
+      "tail_contact_fraction": 0.212,
+      "gold_cluster_counts": {
+        "cluster_2": 0,
+        "cluster_3": 4,
+        "cluster_4": 15,
+        "cluster_5": 5
+      },
+      "scaffold_contact_fraction": 0.0,
+      "verdict": "OFF_TARGET_BINDING_MODE"
+    },
+    "Q3_why_tail71_fails": {
+      "tail71_tail_frac": 0.474,
+      "tail71_scaffold_frac": 0.0,
+      "tail71_gold_counts": {
+        "cluster_2": 0,
+        "cluster_3": 8,
+        "cluster_4": 37,
+        "cluster_5": 11
+      },
+      "tail91_tail_frac": 0.212,
+      "tail91_scaffold_frac": 0.0,
+      "delta_scaffold_frac": 0.0,
+      "verdict": "WEAK_TAIL_ANCHOR"
+    },
+    "Q2_actin_uses_wh2": {
+      "fold_hydrogel_rada16_wh2_tail71_x_actin": {
+        "n_wh2_contacts": 6,
+        "wh2_share": 0.462,
+        "verdict": "CANONICAL_WH2"
+      },
+      "fold_hydrogel_rada16_wh2_tail91_x_actin": {
+        "n_wh2_contacts": 0,
+        "wh2_share": 0.0,
+        "verdict": "NON_CANONICAL"
+      }
+    }
+  }
+}
