@@ -59,3 +59,23 @@ Critical: IHC stiffness unchanged = tip-link parameters remain valid for HTC-fre
 ## Connections
 
 - `[validates]` [[STRC Stereocilia Bundle Mechanics Model]] — direct k_HTC measurement confirms 60% stiffness loss
+
+## Numbers that matter (2026-04-23 audit)
+
+**Direct AFM measurements confirmed** (mouse, apical turn, P13–P15, Strc+/−/Tecta−/− vs Strc−/−/Tecta−/−):
+
+| Condition | OHC bundle stiffness |
+|---|---|
+| With HTCs | 5.12 ± 0.46 pN/nm |
+| Without HTCs | 2.05 ± 0.15 pN/nm |
+| HTC contribution | 3.07 pN/nm (~60%) |
+
+Developmental series (apical, with HTCs): P9 = 0.92 pN/nm → P15 = 5.4 pN/nm (~6× increase).
+
+**Model parameter cross-check:**
+- `WT_BUNDLE_STIFFNESS_PN_PER_NM = 1400` — **NOT supported.** Dulon 2019 reports 5.12 pN/nm (apical OHC, juvenile mouse). Even scaling to adult basal turn (×5–10×) gives ~25–50 pN/nm, still 28–56× below 1400. The 1400 value is ~150–700× above any published OHC bundle measurement and has no literature basis. **The constant is also never referenced in gate3_bundle_stiffness() — it is dead code.**
+- `K_HTC_PN_PER_NM = 7.5` — Dulon 2019 gives net HTC contribution of 3.07 pN/nm per bundle (~20 stereocilia, ~19 HTC links in a chain) → ~0.16 pN/nm per HTC link. The Kozlov 2011 Nature model uses 20 pN/nm aggregate for bullfrog sacculus. The 7.5 value sits between these two extremes but the Dulon paper does NOT report a per-link value; the model's 7.5 is not directly derivable from this paper.
+- `HTC_PER_STEREOCILIUM = 6` — not reported in Dulon 2019. No TEM connector count data.
+- `HTC_SPACING_NM = 8.0` — not reported in Dulon 2019.
+
+**No SI data was parsed** — PDF of Dulon 2019 not available (Science.org returned 403). Existing note may have been written from PMC full text (accessible). SI may contain connector counts — **not yet checked.**

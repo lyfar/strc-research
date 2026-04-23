@@ -36,3 +36,18 @@ This changes the structural model for mini-STRC design. Stereocilin doesn't sit 
 - `[informs]` [[STRC Mini-STRC Single-Vector Hypothesis]] — TMEM145 as anchor; mini-STRC must preserve binding interface
 - `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — TM attachment depends on TMEM145–stereocilin link
 - `[see-also]` [[Derstroff et al 2026 TMEM145 Paper]] — full analysis note
+
+## Numbers that matter (2026-04-23 audit)
+
+**SPR/BLI Kd for STRC × TMEM145 — NOT found in Derstroff 2026 Neuron.**
+
+Full text and PubMed abstract checked. Methods used for STRC–TMEM145 interaction:
+- Co-immunoprecipitation (CoIP): qualitative, detected interaction, no Kd
+- NanoSPD pull-down assay: qualitative, detected TMEM145–tubby interaction, no Kd
+- AlphaFold Multimer: ipTM 0.79 and 0.71 (computational confidence, not binding affinity)
+
+**The model's claim of Kd = 10 nM has no experimental SPR/BLI source in this paper.** Supplementary contains only Fig S11 (band quantification from CoIP) — no biophysical binding measurements.
+
+**Parallel TMEM145 paper (different group):** Nature Communications 2025, DOI 10.1038/s41467-025-67011-0 — also no SPR/BLI Kd reported. Also uses pull-down and co-IP.
+
+**Bottom line:** No published SPR/BLI Kd for STRC × TMEM145 exists in the literature as of 2026-04-23. The 10 nM figure in the model is **unsourced — either inferred from AF3 ipTM or fabricated**. This is the most critical gap in Phase 1 parameterization.
