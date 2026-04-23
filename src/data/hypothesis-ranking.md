@@ -59,8 +59,10 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 ## S-tier (active compute now)
 
-- **#3 Mini-STRC AAV** — single-dose, null-compatible. Iranfar 2026 + Holt 2021 validated. Regeneron AAV.104 commercial track. Shanghai Shu Yilai knock-in mouse active.
+- **#3 Mini-STRC AAV** — single-dose, null-compatible. Iranfar 2026 + Holt 2021 validated. Regeneron AAV.104 commercial track. Shanghai Shu Yilai knock-in mouse active. **NEW 2026-04-23**: per [[Misha Compound-Het Therapy Stack Model]], ceiling-capped at MILD (30-40 dB ABR) for Misha's compound-het genotype — cannot reach NORMAL alone because non-transduced OHCs retain maternal E1659A + null paternal. "Meaningful rescue" endpoint, not "cure" endpoint.
 - (h02 Piezo demoted S→B after 2026-04-23 post-fix re-run: baseline no longer passes 60 dB after d31 reconcile; A666 ligand phantom; TM mismatch 10⁵× not modelled.)
+
+**Clinical plan for Misha** per [[Misha Compound-Het Therapy Stack Model]]: pursue #1 (PC for maternal E1659A) + #3 (AAV for paternal null) in parallel. h01 is the only monotherapy route to NORMAL (≤ 25 dB ABR); stack provides redundancy and lower drug/AAV burden. Phase 5 MD on #1 is the critical-path compute that produces the f_PC parameter.
 
 ## Kill list (D-tier)
 

@@ -8,6 +8,7 @@ tags: [strc, h01]
 
 ## 2026-04-23
 
+- Misha compound-het stack integration: A held, scores unchanged, **framing strengthened**. Per [[Misha Compound-Het Therapy Stack Model]] binary-functional-OHC model, h01 PC is the **only monotherapy route to NORMAL (≤25 dB ABR) for Misha** — because PC reaches every OHC (including non-transduced ones where h03 AAV by definition does nothing), rescuing maternal E1659A to 0.5 × f_mat_treated ≥ θ. Required f_PC ≥ 0.50 (mild E1659A) to ≥ 0.75 (severe). Phase 5 MD ensemble MM-GBSA priority strengthened — f_PC is the critical-path deliverable. → [[Misha Compound-Het Therapy Stack Model]]
 - Post-audit housekeeping: A held. TPSA docstring in `phase3b_virtual_screen.py` corrected (descriptor-only, not composite scoring; CNS TPSA bracket removed — STRC extracellular). Druggability cross-phase incomparability flagged in Phase 1/2/2b. No fabricated ranges added. → [[STRC h01 Parameter Provenance Audit 2026-04-23]]
 
 ## 2026-04-22
