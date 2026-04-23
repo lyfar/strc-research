@@ -55,6 +55,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 | 25  | [[Alternative STRC Delivery Hypotheses]]           | —    | —     | —     | ref     | Delivery-layer survey                   | —           |
 | 26  | [[STRC Engineered Homodimer Avidity]]              | 2    | 5     | 4     | **B**   | Phase 1c 5 Å contact re-cluster         | [[h26 hub]] |
 | 27  | [[STRC STRCP1 Activation Rescue]]                  | 2    | 2     | 4     | **C**   | Email Holt lab ribosome-profiling       | [[h27 hub]] |
+| 28  | [[Misha Compound-Het Therapy Stack Model]]         | —    | —     | —     | ref     | Clinical plan: parallel h01+h03 stack   | —           |
 
 ## S-tier (active compute now)
 
