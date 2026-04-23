@@ -1,0 +1,543 @@
+{
+  "batch": "af3_jobs_2026-04-22",
+  "date_run": "2026-04-23",
+  "n_jobs": 4,
+  "jobs": {
+    "fold_strc_spy_reassembled_fold": {
+      "hypothesis": "#10 STRC In Situ SpyCatcher Assembly",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.59,
+      "best_ipTM": null,
+      "best_ranking_score": 0.67,
+      "gate_metric": "pTM",
+      "gate_threshold": 0.6,
+      "gate_best_value": 0.59,
+      "gate_margin": -0.010000000000000009,
+      "gate_verdict": "FAIL",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.59,
+          "ipTM": null,
+          "ranking_score": 0.67,
+          "fraction_disordered": 0.16,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.59,
+          "ipTM": null,
+          "ranking_score": 0.66,
+          "fraction_disordered": 0.14,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.58,
+          "ipTM": null,
+          "ranking_score": 0.66,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.59,
+          "ipTM": null,
+          "ranking_score": 0.66,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.58,
+          "ipTM": null,
+          "ranking_score": 0.66,
+          "fraction_disordered": 0.14,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        }
+      ]
+    },
+    "fold_strc_spy_reassembled_x_tmem145": {
+      "hypothesis": "#10 STRC In Situ SpyCatcher Assembly (TMEM145 binding)",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.46,
+      "best_ipTM": 0.37,
+      "best_ranking_score": 0.45,
+      "gate_metric": "ipTM",
+      "gate_threshold": 0.4,
+      "gate_best_value": 0.37,
+      "gate_margin": -0.030000000000000027,
+      "gate_verdict": "FAIL",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.46,
+          "ipTM": 0.37,
+          "ranking_score": 0.45,
+          "fraction_disordered": 0.12,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.51,
+              0.37
+            ],
+            [
+              0.37,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              9.5
+            ],
+            [
+              8.2,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.46,
+          "ipTM": 0.31,
+          "ranking_score": 0.41,
+          "fraction_disordered": 0.13,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.51,
+              0.31
+            ],
+            [
+              0.31,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              9.27
+            ],
+            [
+              9.12,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.46,
+          "ipTM": 0.31,
+          "ranking_score": 0.4,
+          "fraction_disordered": 0.11,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.31
+            ],
+            [
+              0.31,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              9.0
+            ],
+            [
+              9.75,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.46,
+          "ipTM": 0.26,
+          "ranking_score": 0.36,
+          "fraction_disordered": 0.12,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.51,
+              0.26
+            ],
+            [
+              0.26,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              17.16
+            ],
+            [
+              18.18,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.46,
+          "ipTM": 0.23,
+          "ranking_score": 0.33,
+          "fraction_disordered": 0.11,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.23
+            ],
+            [
+              0.23,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              23.56
+            ],
+            [
+              24.77,
+              0.76
+            ]
+          ]
+        }
+      ]
+    },
+    "fold_strc_tecta_chimera_fold": {
+      "hypothesis": "#11 STRC Engineered TECTA Chimera",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.57,
+      "best_ipTM": null,
+      "best_ranking_score": 0.65,
+      "gate_metric": "pTM",
+      "gate_threshold": 0.55,
+      "gate_best_value": 0.57,
+      "gate_margin": 0.019999999999999907,
+      "gate_verdict": "PASS",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.57,
+          "ipTM": null,
+          "ranking_score": 0.65,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.56,
+          "ipTM": null,
+          "ranking_score": 0.65,
+          "fraction_disordered": 0.16,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.56
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.57,
+          "ipTM": null,
+          "ranking_score": 0.64,
+          "fraction_disordered": 0.14,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.56,
+          "ipTM": null,
+          "ranking_score": 0.64,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.56
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.58,
+          "ipTM": null,
+          "ranking_score": 0.63,
+          "fraction_disordered": 0.12,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        }
+      ]
+    },
+    "fold_strc_tecta_chimera_x_tmem145": {
+      "hypothesis": "#11 STRC Engineered TECTA Chimera (TMEM145 binding)",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.42,
+      "best_ipTM": 0.21,
+      "best_ranking_score": 0.3,
+      "gate_metric": "ipTM",
+      "gate_threshold": 0.4,
+      "gate_best_value": 0.21,
+      "gate_margin": -0.19000000000000003,
+      "gate_verdict": "FAIL",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.42,
+          "ipTM": 0.21,
+          "ranking_score": 0.3,
+          "fraction_disordered": 0.1,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.21
+            ],
+            [
+              0.21,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              21.71
+            ],
+            [
+              21.86,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.42,
+          "ipTM": 0.19,
+          "ranking_score": 0.28,
+          "fraction_disordered": 0.1,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.19
+            ],
+            [
+              0.19,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              21.88
+            ],
+            [
+              23.51,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.42,
+          "ipTM": 0.17,
+          "ranking_score": 0.28,
+          "fraction_disordered": 0.12,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.51,
+              0.17
+            ],
+            [
+              0.17,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              25.28
+            ],
+            [
+              24.23,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.42,
+          "ipTM": 0.17,
+          "ranking_score": 0.27,
+          "fraction_disordered": 0.11,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.17
+            ],
+            [
+              0.17,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              25.52
+            ],
+            [
+              23.4,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.42,
+          "ipTM": 0.17,
+          "ranking_score": 0.26,
+          "fraction_disordered": 0.08,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.5,
+              0.17
+            ],
+            [
+              0.17,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              23.93
+            ],
+            [
+              23.36,
+              0.76
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "hypothesis_level": {
+    "#10 SpyCatcher Assembly": {
+      "fold_verdict": "FAIL",
+      "binding_verdict": "FAIL",
+      "fold_best_pTM": 0.59,
+      "binding_best_ipTM": 0.37,
+      "overall": "BOTH_FAIL"
+    },
+    "#11 TECTA Chimera": {
+      "fold_verdict": "PASS",
+      "binding_verdict": "FAIL",
+      "fold_best_pTM": 0.57,
+      "binding_best_ipTM": 0.21,
+      "overall": "FOLD_OK_BINDING_FAIL"
+    }
+  }
+}
