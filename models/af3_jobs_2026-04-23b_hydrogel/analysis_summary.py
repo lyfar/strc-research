@@ -21,10 +21,21 @@ GATE_IPTM = 0.50
 
 
 def extract_job(job_name: str) -> dict:
-    job_dir = RESULTS / job_name
-    if not job_dir.exists():
+    # Check canonical name first, then re-run variants (AF3 sometimes requires
+    # name change on resubmit). For rada16_wh2_native_x_actin the first submit
+    # hit a transient server issue; re-submitted as *_2nndrun_1st_loading.
+    candidates = [job_name, f"{job_name}_2nndrun_1st_loading"]
+    job_dir = None
+    resolved_name = job_name
+    for cand in candidates:
+        p = RESULTS / cand
+        if p.exists():
+            job_dir = p
+            resolved_name = cand
+            break
+    if job_dir is None:
         return {"status": "MISSING", "job": job_name}
-    summaries = sorted(glob.glob(str(job_dir / f"{job_name}_summary_confidences_*.json")))
+    summaries = sorted(glob.glob(str(job_dir / f"{resolved_name}_summary_confidences_*.json")))
     if not summaries:
         return {"status": "EMPTY", "job": job_name}
     models = []
