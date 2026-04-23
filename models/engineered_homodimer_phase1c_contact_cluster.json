@@ -1,0 +1,548 @@
+{
+  "cif": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job-ultramini-homodimer.cif",
+  "contact_cutoff_A": 5.0,
+  "dbscan": {
+    "eps_A": 6.5,
+    "min_pts": 3
+  },
+  "total_inter_chain_residue_pairs": 114,
+  "total_a_side_contact_residues": 49,
+  "n_clusters": 3.0,
+  "n_noise_residues": 4,
+  "clusters": [
+    {
+      "id": 0,
+      "n_residues": 25,
+      "residues_canonical": [
+        1077,
+        1078,
+        1079,
+        1080,
+        1081,
+        1082,
+        1085,
+        1088,
+        1089,
+        1093,
+        1096,
+        1097,
+        1099,
+        1100,
+        1101,
+        1103,
+        1104,
+        1106,
+        1107,
+        1108,
+        1109,
+        1110,
+        1112,
+        1113,
+        1114
+      ],
+      "residue_types": {
+        "1077": "GLY",
+        "1078": "ALA",
+        "1079": "CYS",
+        "1080": "SER",
+        "1081": "CYS",
+        "1082": "LEU",
+        "1085": "GLU",
+        "1088": "ARG",
+        "1089": "LEU",
+        "1093": "GLN",
+        "1096": "ALA",
+        "1097": "LEU",
+        "1099": "GLN",
+        "1100": "THR",
+        "1101": "PHE",
+        "1103": "VAL",
+        "1104": "LYS",
+        "1106": "GLY",
+        "1107": "VAL",
+        "1108": "LYS",
+        "1109": "ASN",
+        "1110": "MET",
+        "1112": "THR",
+        "1113": "THR",
+        "1114": "GLY"
+      },
+      "center_of_mass_A": [
+        -5.12,
+        -5.24,
+        4.37
+      ],
+      "composition": {
+        "hydrophobic": 13,
+        "polar": 7,
+        "neg": 1,
+        "pos": 3,
+        "aromatic": 1
+      },
+      "c2_symmetry_partner_count": 18,
+      "homotypic_pair_count": 2,
+      "disulfide_candidates": [
+        {
+          "A_res": 1077,
+          "A_type": "GLY",
+          "B_res": 1081,
+          "B_type": "CYS",
+          "cb_cb_A": 6.87
+        },
+        {
+          "A_res": 1079,
+          "A_type": "CYS",
+          "B_res": 1081,
+          "B_type": "CYS",
+          "cb_cb_A": 7.09
+        },
+        {
+          "A_res": 1080,
+          "A_type": "SER",
+          "B_res": 1081,
+          "B_type": "CYS",
+          "cb_cb_A": 6.97
+        },
+        {
+          "A_res": 1081,
+          "A_type": "CYS",
+          "B_res": 1077,
+          "B_type": "GLY",
+          "cb_cb_A": 7.17
+        },
+        {
+          "A_res": 1081,
+          "A_type": "CYS",
+          "B_res": 1079,
+          "B_type": "CYS",
+          "cb_cb_A": 7.03
+        },
+        {
+          "A_res": 1081,
+          "A_type": "CYS",
+          "B_res": 1080,
+          "B_type": "SER",
+          "cb_cb_A": 7.3
+        },
+        {
+          "A_res": 1082,
+          "A_type": "LEU",
+          "B_res": 1082,
+          "B_type": "LEU",
+          "cb_cb_A": 6.47
+        },
+        {
+          "A_res": 1088,
+          "A_type": "ARG",
+          "B_res": 1104,
+          "B_type": "LYS",
+          "cb_cb_A": 6.95
+        },
+        {
+          "A_res": 1089,
+          "A_type": "LEU",
+          "B_res": 1104,
+          "B_type": "LYS",
+          "cb_cb_A": 6.77
+        },
+        {
+          "A_res": 1093,
+          "A_type": "GLN",
+          "B_res": 1100,
+          "B_type": "THR",
+          "cb_cb_A": 5.33
+        },
+        {
+          "A_res": 1093,
+          "A_type": "GLN",
+          "B_res": 1103,
+          "B_type": "VAL",
+          "cb_cb_A": 6.3
+        },
+        {
+          "A_res": 1093,
+          "A_type": "GLN",
+          "B_res": 1104,
+          "B_type": "LYS",
+          "cb_cb_A": 6.28
+        },
+        {
+          "A_res": 1097,
+          "A_type": "LEU",
+          "B_res": 1097,
+          "B_type": "LEU",
+          "cb_cb_A": 6.93
+        },
+        {
+          "A_res": 1097,
+          "A_type": "LEU",
+          "B_res": 1100,
+          "B_type": "THR",
+          "cb_cb_A": 5.23
+        },
+        {
+          "A_res": 1100,
+          "A_type": "THR",
+          "B_res": 1093,
+          "B_type": "GLN",
+          "cb_cb_A": 5.34
+        },
+        {
+          "A_res": 1100,
+          "A_type": "THR",
+          "B_res": 1097,
+          "B_type": "LEU",
+          "cb_cb_A": 5.3
+        },
+        {
+          "A_res": 1100,
+          "A_type": "THR",
+          "B_res": 1100,
+          "B_type": "THR",
+          "cb_cb_A": 6.84
+        },
+        {
+          "A_res": 1103,
+          "A_type": "VAL",
+          "B_res": 1093,
+          "B_type": "GLN",
+          "cb_cb_A": 6.36
+        },
+        {
+          "A_res": 1104,
+          "A_type": "LYS",
+          "B_res": 1088,
+          "B_type": "ARG",
+          "cb_cb_A": 7.03
+        },
+        {
+          "A_res": 1104,
+          "A_type": "LYS",
+          "B_res": 1089,
+          "B_type": "LEU",
+          "cb_cb_A": 6.83
+        },
+        {
+          "A_res": 1104,
+          "A_type": "LYS",
+          "B_res": 1093,
+          "B_type": "GLN",
+          "cb_cb_A": 6.29
+        }
+      ],
+      "mutation_candidates": [
+        {
+          "res": 1078,
+          "type": "A",
+          "rationales": [
+            "A->W or A->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1082,
+          "type": "L",
+          "rationales": [
+            "L->W or L->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1088,
+          "type": "R",
+          "rationales": [
+            "R->D/E: relieve electrostatic repulsion vs K1104",
+            "R->D/E: relieve electrostatic repulsion vs K1108"
+          ]
+        },
+        {
+          "res": 1089,
+          "type": "L",
+          "rationales": [
+            "L->W or L->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1096,
+          "type": "A",
+          "rationales": [
+            "A->W or A->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1097,
+          "type": "L",
+          "rationales": [
+            "L->W or L->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1100,
+          "type": "T",
+          "rationales": [
+            "T->C / T->C: inter-chain disulfide (Cb-Cb 6.84 A)"
+          ]
+        },
+        {
+          "res": 1103,
+          "type": "V",
+          "rationales": [
+            "V->W or V->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1104,
+          "type": "K",
+          "rationales": [
+            "K->E: break inter-chain salt bridge (destabilize)",
+            "K->D/E: relieve electrostatic repulsion vs R1088"
+          ]
+        },
+        {
+          "res": 1107,
+          "type": "V",
+          "rationales": [
+            "V->W or V->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1108,
+          "type": "K",
+          "rationales": [
+            "K->D/E: relieve electrostatic repulsion vs R1088"
+          ]
+        }
+      ],
+      "zone_label": "stump_1075_1200",
+      "rank": 1,
+      "phase1_overlap": false
+    },
+    {
+      "id": 2,
+      "n_residues": 16,
+      "residues_canonical": [
+        1529,
+        1530,
+        1532,
+        1547,
+        1549,
+        1550,
+        1551,
+        1552,
+        1556,
+        1578,
+        1579,
+        1580,
+        1581,
+        1585,
+        1587,
+        1590
+      ],
+      "residue_types": {
+        "1529": "LEU",
+        "1530": "GLN",
+        "1532": "GLY",
+        "1547": "ILE",
+        "1549": "VAL",
+        "1550": "ASP",
+        "1551": "TRP",
+        "1552": "GLY",
+        "1556": "THR",
+        "1578": "GLN",
+        "1579": "SER",
+        "1580": "GLY",
+        "1581": "ARG",
+        "1585": "HIS",
+        "1587": "ASP",
+        "1590": "HIS"
+      },
+      "center_of_mass_A": [
+        14.95,
+        -8.16,
+        -6.66
+      ],
+      "composition": {
+        "hydrophobic": 6,
+        "polar": 4,
+        "neg": 2,
+        "aromatic": 1,
+        "pos": 3
+      },
+      "c2_symmetry_partner_count": 10,
+      "homotypic_pair_count": 1,
+      "disulfide_candidates": [
+        {
+          "A_res": 1549,
+          "A_type": "VAL",
+          "B_res": 1581,
+          "B_type": "ARG",
+          "cb_cb_A": 6.9
+        },
+        {
+          "A_res": 1549,
+          "A_type": "VAL",
+          "B_res": 1585,
+          "B_type": "HIS",
+          "cb_cb_A": 4.9
+        },
+        {
+          "A_res": 1550,
+          "A_type": "ASP",
+          "B_res": 1587,
+          "B_type": "ASP",
+          "cb_cb_A": 6.91
+        },
+        {
+          "A_res": 1579,
+          "A_type": "SER",
+          "B_res": 1579,
+          "B_type": "SER",
+          "cb_cb_A": 6.94
+        },
+        {
+          "A_res": 1579,
+          "A_type": "SER",
+          "B_res": 1580,
+          "B_type": "GLY",
+          "cb_cb_A": 6.35
+        },
+        {
+          "A_res": 1579,
+          "A_type": "SER",
+          "B_res": 1581,
+          "B_type": "ARG",
+          "cb_cb_A": 6.87
+        },
+        {
+          "A_res": 1580,
+          "A_type": "GLY",
+          "B_res": 1579,
+          "B_type": "SER",
+          "cb_cb_A": 6.37
+        },
+        {
+          "A_res": 1581,
+          "A_type": "ARG",
+          "B_res": 1549,
+          "B_type": "VAL",
+          "cb_cb_A": 6.9
+        },
+        {
+          "A_res": 1581,
+          "A_type": "ARG",
+          "B_res": 1579,
+          "B_type": "SER",
+          "cb_cb_A": 6.87
+        },
+        {
+          "A_res": 1585,
+          "A_type": "HIS",
+          "B_res": 1549,
+          "B_type": "VAL",
+          "cb_cb_A": 4.93
+        },
+        {
+          "A_res": 1587,
+          "A_type": "ASP",
+          "B_res": 1550,
+          "B_type": "ASP",
+          "cb_cb_A": 6.89
+        }
+      ],
+      "mutation_candidates": [
+        {
+          "res": 1529,
+          "type": "L",
+          "rationales": [
+            "L->W or L->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1547,
+          "type": "I",
+          "rationales": [
+            "I->W or I->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1549,
+          "type": "V",
+          "rationales": [
+            "V->W or V->F: steric bulk disrupts packing"
+          ]
+        },
+        {
+          "res": 1550,
+          "type": "D",
+          "rationales": [
+            "D->R/K: relieve repulsion vs D1587"
+          ]
+        },
+        {
+          "res": 1579,
+          "type": "S",
+          "rationales": [
+            "S->C / S->C: inter-chain disulfide (Cb-Cb 6.94 A)"
+          ]
+        },
+        {
+          "res": 1581,
+          "type": "R",
+          "rationales": [
+            "R->D/E: relieve electrostatic repulsion vs R1581",
+            "R->D/E: relieve electrostatic repulsion vs H1590"
+          ]
+        },
+        {
+          "res": 1587,
+          "type": "D",
+          "rationales": [
+            "D->R/K: relieve repulsion vs D1550"
+          ]
+        },
+        {
+          "res": 1590,
+          "type": "H",
+          "rationales": [
+            "H->D/E: relieve electrostatic repulsion vs R1581"
+          ]
+        }
+      ],
+      "zone_label": "deep_arm_1401_1775",
+      "rank": 2,
+      "phase1_overlap": true
+    },
+    {
+      "id": 1,
+      "n_residues": 4,
+      "residues_canonical": [
+        1128,
+        1129,
+        1130,
+        1131
+      ],
+      "residue_types": {
+        "1128": "THR",
+        "1129": "THR",
+        "1130": "TRP",
+        "1131": "PRO"
+      },
+      "center_of_mass_A": [
+        -10.96,
+        -7.43,
+        4.64
+      ],
+      "composition": {
+        "polar": 2,
+        "aromatic": 1,
+        "hydrophobic": 1
+      },
+      "c2_symmetry_partner_count": 0,
+      "homotypic_pair_count": 0,
+      "disulfide_candidates": [],
+      "mutation_candidates": [],
+      "zone_label": "stump_1075_1200",
+      "rank": 3,
+      "phase1_overlap": false
+    }
+  ],
+  "verdict": "phase_1c_green \u2014 1 cluster(s) outside 1579-1581 with disulfide engineering candidates; queue Phase 1d Cys-engineering AF3"
+}
