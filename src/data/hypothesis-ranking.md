@@ -29,7 +29,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 | #   | Hypothesis                                         | Mech | Deliv | Misha | Tier    | Next step (≤6 words)                    | Hub         |
 | --- | -------------------------------------------------- | ---- | ----- | ----- | ------- | --------------------------------------- | ----------- |
 | 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 5 MD ensemble MM-GBSA             | [[h01 hub]] |
-| 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]  | 3    | 2     | 5     | **S**   | PVDF-TrFE ex-vivo deposition assay      | [[h02 hub]] |
+| 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]  | 2    | 1     | 5     | **B**   | Find real OHC ligand + FEM strain-share | [[h02 hub]] |
 | 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]        | 5    | 5     | 4     | **S**   | Order gBlock, clone pAAV, coIP          | [[h03 hub]] |
 | 4   | [[STRC mRNA-LNP Strategy B Full-Length]]           | 3    | 2     | 2     | **B**   | Academic/interim if AAV fails           | [[h04 hub]] |
 | 5   | [[STRC Calcium Oscillation Acoustic Therapy]]      | 3    | 4     | 2     | **A**   | SPR/BLI E1659A affinity penalty         | [[h05 hub]] |
@@ -58,8 +58,8 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 ## S-tier (active compute now)
 
-- **#2 Piezo TM amplifier** — bypasses STRC via materials science; highest Misha-fit.
 - **#3 Mini-STRC AAV** — single-dose, null-compatible. Iranfar 2026 + Holt 2021 validated. Regeneron AAV.104 commercial track. Shanghai Shu Yilai knock-in mouse active.
+- (h02 Piezo demoted S→B after 2026-04-23 post-fix re-run: baseline no longer passes 60 dB after d31 reconcile; A666 ligand phantom; TM mismatch 10⁵× not modelled.)
 
 ## Kill list (D-tier)
 
@@ -82,7 +82,7 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 | # | Hypothesis | Tier | Lit audit | Notes |
 |---|---|---|---|---|
 | 1 | [[STRC Pharmacochaperone Virtual Screen E1659A]] | A | ✅ **CLEAN 2026-04-23** | 0 phantoms, 1 TPSA range bug to fix, 3 druggability weight inconsistencies. Defensible today. |
-| 2 | [[STRC Piezoelectric TM Bioelectronic Amplifier]] | S | ⚠ **3 phantoms + TM mismatch 2026-04-23** | d31 2× silent split; K_D=10 nM A666 phantom; ETA_POLY fictional; PVDF-TrFE 3 GPa vs TM 24-210 kPa = 10⁵× stiffness mismatch |
+| 2 | [[STRC Piezoelectric TM Bioelectronic Amplifier]] | **B** (was S) | ✅ **FIXED 2026-04-23** | Phantoms pinned as PHANTOM in-code; d31 reconciled to −12 pC/N; TM mismatch flag in JSON; Mech 3→2, Deliv 2→1; see [[STRC h02 Parameter Provenance Audit 2026-04-23]] |
 | 3 | [[STRC Mini-STRC Single-Vector Hypothesis]] | S | 🔒 **DEFERRED by Egor directive 2026-04-23** | Do not audit without re-authorization. Likely inherits STRC×TMEM145 Kd gap. |
 | 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | A | ⚠ **3 phantoms 2026-04-23** | Wu 2011 (doesn't exist), Sharma 2018 (doesn't exist), Krey 2015 mis-cited. 20× STRC t½ cross-script. Phase 3 topological result robust; Phase 1/2 quantitative NOT. |
 | 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | A | ⚠ **3 critical lit gaps 2026-04-23** | See [[STRC h09 Parameter Provenance Audit 2026-04-23]] |
