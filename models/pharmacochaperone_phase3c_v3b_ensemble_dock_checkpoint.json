@@ -1,6 +1,6 @@
 {
   "stage": "1",
-  "progress": 2500,
+  "progress": 2600,
   "total": 12253,
   "results_so_far": [
     {
@@ -15001,6 +15001,606 @@
       "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-F",
       "smiles": "O=C(O)c1c(F)ccnc1Nc1ccsc1",
       "dG": null,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(C(F)(F)F)ccnc1Nc1ccsc1",
+      "dG": -5.766,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-OMe",
+      "smiles": "COc1ccnc(Nc2ccsc2)c1C(=O)O",
+      "dG": -4.864,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)ccnc1Nc1ccsc1",
+      "dG": -4.903,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-Me",
+      "smiles": "Cc1ccnc(Nc2ccsc2)c1C(=O)O",
+      "dG": -5.079,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__COOH__-NO2",
+      "smiles": "O=C(O)c1c([N+](=O)[O-])ccnc1Nc1ccsc1",
+      "dG": -5.133,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-H",
+      "smiles": "c1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.375,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-Cl",
+      "smiles": "Clc1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.648,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-F",
+      "smiles": "Fc1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.618,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-CF3",
+      "smiles": "FC(F)(F)c1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.917,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-OMe",
+      "smiles": "COc1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.37,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-OH",
+      "smiles": "Oc1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.371,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-Me",
+      "smiles": "Cc1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.711,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1cnc(Nc2ccsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.935,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccnc1Nc1ccsc1",
+      "dG": -5.377,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)ccnc1Nc1ccsc1",
+      "dG": -5.448,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)ccnc1Nc1ccsc1",
+      "dG": -5.57,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(C(F)(F)F)ccnc1Nc1ccsc1",
+      "dG": -5.965,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-OMe",
+      "smiles": "COc1ccnc(Nc2ccsc2)c1C(=O)NO",
+      "dG": -5.363,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)ccnc1Nc1ccsc1",
+      "dG": -5.336,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-Me",
+      "smiles": "Cc1ccnc(Nc2ccsc2)c1C(=O)NO",
+      "dG": -5.516,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c([N+](=O)[O-])ccnc1Nc1ccsc1",
+      "dG": -5.597,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccnc1Nc1ccsc1",
+      "dG": -5.121,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)ccnc1Nc1ccsc1",
+      "dG": -5.128,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)ccnc1Nc1ccsc1",
+      "dG": -5.36,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(C(F)(F)F)ccnc1Nc1ccsc1",
+      "dG": -6.036,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccnc(Nc2ccsc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.336,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)ccnc1Nc1ccsc1",
+      "dG": -5.221,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccnc(Nc2ccsc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.355,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__3-thienyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c([N+](=O)[O-])ccnc1Nc1ccsc1",
+      "dG": -5.401,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-H",
+      "smiles": "O=C(O)c1cccnc1Nc1ccoc1",
+      "dG": -4.886,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-Cl",
+      "smiles": "O=C(O)c1c(Cl)ccnc1Nc1ccoc1",
+      "dG": -4.954,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-F",
+      "smiles": "O=C(O)c1c(F)ccnc1Nc1ccoc1",
+      "dG": -5.011,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(C(F)(F)F)ccnc1Nc1ccoc1",
+      "dG": -5.763,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-OMe",
+      "smiles": "COc1ccnc(Nc2ccoc2)c1C(=O)O",
+      "dG": -4.973,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)ccnc1Nc1ccoc1",
+      "dG": -4.855,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-Me",
+      "smiles": "Cc1ccnc(Nc2ccoc2)c1C(=O)O",
+      "dG": -5.126,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__COOH__-NO2",
+      "smiles": "O=C(O)c1c([N+](=O)[O-])ccnc1Nc1ccoc1",
+      "dG": -5.113,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-H",
+      "smiles": "c1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.355,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-Cl",
+      "smiles": "Clc1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.364,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-F",
+      "smiles": "Fc1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.478,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-CF3",
+      "smiles": "FC(F)(F)c1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.878,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-OMe",
+      "smiles": "COc1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.452,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-OH",
+      "smiles": "Oc1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.331,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-Me",
+      "smiles": "Cc1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.77,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1cnc(Nc2ccoc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.911,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccnc1Nc1ccoc1",
+      "dG": -5.265,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)ccnc1Nc1ccoc1",
+      "dG": -5.453,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)ccnc1Nc1ccoc1",
+      "dG": -5.545,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(C(F)(F)F)ccnc1Nc1ccoc1",
+      "dG": -5.998,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-OMe",
+      "smiles": "COc1ccnc(Nc2ccoc2)c1C(=O)NO",
+      "dG": -5.423,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)ccnc1Nc1ccoc1",
+      "dG": -5.325,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-Me",
+      "smiles": "Cc1ccnc(Nc2ccoc2)c1C(=O)NO",
+      "dG": -5.592,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c([N+](=O)[O-])ccnc1Nc1ccoc1",
+      "dG": -5.576,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccnc1Nc1ccoc1",
+      "dG": -5.133,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)ccnc1Nc1ccoc1",
+      "dG": -5.41,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)ccnc1Nc1ccoc1",
+      "dG": -5.34,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(C(F)(F)F)ccnc1Nc1ccoc1",
+      "dG": -5.99,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccnc(Nc2ccoc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.358,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)ccnc1Nc1ccoc1",
+      "dG": -5.005,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccnc(Nc2ccoc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.333,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-furyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c([N+](=O)[O-])ccnc1Nc1ccoc1",
+      "dG": -5.464,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-H",
+      "smiles": "O=C(O)c1cccnc1Nc1cnsc1",
+      "dG": -4.714,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-Cl",
+      "smiles": "O=C(O)c1c(Cl)ccnc1Nc1cnsc1",
+      "dG": -4.889,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-F",
+      "smiles": "O=C(O)c1c(F)ccnc1Nc1cnsc1",
+      "dG": -4.934,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(C(F)(F)F)ccnc1Nc1cnsc1",
+      "dG": -5.633,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-OMe",
+      "smiles": "COc1ccnc(Nc2cnsc2)c1C(=O)O",
+      "dG": -4.84,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)ccnc1Nc1cnsc1",
+      "dG": -4.686,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-Me",
+      "smiles": "Cc1ccnc(Nc2cnsc2)c1C(=O)O",
+      "dG": -5.017,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__COOH__-NO2",
+      "smiles": "O=C(O)c1c([N+](=O)[O-])ccnc1Nc1cnsc1",
+      "dG": -5.011,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-H",
+      "smiles": "c1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.376,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-Cl",
+      "smiles": "Clc1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.662,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-F",
+      "smiles": "Fc1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.472,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-CF3",
+      "smiles": "FC(F)(F)c1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.706,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-OMe",
+      "smiles": "COc1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.284,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-OH",
+      "smiles": "Oc1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.13,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-Me",
+      "smiles": "Cc1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.84,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1cnc(Nc2cnsc2)c(-c2nnn[nH]2)c1",
+      "dG": -5.776,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccnc1Nc1cnsc1",
+      "dG": -5.218,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)ccnc1Nc1cnsc1",
+      "dG": -5.451,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)ccnc1Nc1cnsc1",
+      "dG": -5.552,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(C(F)(F)F)ccnc1Nc1cnsc1",
+      "dG": -5.65,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-OMe",
+      "smiles": "COc1ccnc(Nc2cnsc2)c1C(=O)NO",
+      "dG": -5.421,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)ccnc1Nc1cnsc1",
+      "dG": -5.323,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-Me",
+      "smiles": "Cc1ccnc(Nc2cnsc2)c1C(=O)NO",
+      "dG": -5.381,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c([N+](=O)[O-])ccnc1Nc1cnsc1",
+      "dG": -5.573,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccnc1Nc1cnsc1",
+      "dG": -5.114,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)ccnc1Nc1cnsc1",
+      "dG": -5.339,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)ccnc1Nc1cnsc1",
+      "dG": -5.277,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(C(F)(F)F)ccnc1Nc1cnsc1",
+      "dG": -6.012,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccnc(Nc2cnsc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.235,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)ccnc1Nc1cnsc1",
+      "dG": -4.934,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccnc(Nc2cnsc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.434,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-thiazolyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c([N+](=O)[O-])ccnc1Nc1cnsc1",
+      "dG": -5.202,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-H",
+      "smiles": "O=C(O)c1cccnc1Nc1cnoc1",
+      "dG": -4.745,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-Cl",
+      "smiles": "O=C(O)c1c(Cl)ccnc1Nc1cnoc1",
+      "dG": -4.865,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-F",
+      "smiles": "O=C(O)c1c(F)ccnc1Nc1cnoc1",
+      "dG": -4.925,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(C(F)(F)F)ccnc1Nc1cnoc1",
+      "dG": -5.647,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-OMe",
+      "smiles": "COc1ccnc(Nc2cnoc2)c1C(=O)O",
+      "dG": -4.923,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)ccnc1Nc1cnoc1",
+      "dG": -4.975,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__2-amino-nicotinic__2-oxazolyl__COOH__-Me",
+      "smiles": "Cc1ccnc(Nc2cnoc2)c1C(=O)O",
+      "dG": -4.967,
       "is_covalent": false
     }
   ]
