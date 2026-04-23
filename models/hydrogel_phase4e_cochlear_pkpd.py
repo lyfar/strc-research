@@ -4,16 +4,32 @@ Hydrogel Phase 4e — cochlear PKPD for tail91 peptide (134 aa).
 
 Two-compartment intra-cochlear model for ototopical delivery:
   C1  Middle-ear depot (topical, gel or solution)
-  C2  Perilymph free peptide (cochlear fluid, 70 μL, seen by TMEM145 on OHC apical surface)
-
-Plus a degraded-amount sink for proteolysis/clearance accounting.
+  C2  Perilymph free peptide (cochlear fluid, 34 μL ST-accessible)
 
 Readout at OHC surface is not a separate compartment — the perilymph [peptide]
 directly sets TMEM145 fractional occupancy via θ = [P] / (Kd + [P]).
 
 Key question: What ototopical dose gives peak perilymph concentration in the
-Phase 4d therapeutic window (1-10 μM — enough for F-actin bundling, not so
-much that G-actin is sequestered)?
+Phase 4d therapeutic window (1-10 μM)?
+
+═══════════════════════════════════════════════════════════════════════════
+POST-AUDIT 2026-04-23 — parameters updated from literature-params/cochlear-pkpd.md:
+  • PERILYMPH_VOL_UL 70 → 34 (Dhanasingh 2021 Front Surg μCT, ST-accessible,
+    n=30 cadaveric; prior 70 μL was unsourced)
+  • K_RWM 0.02 → 0.003 (Stokes-Einstein scaled from TMPA Salt & Ma 2001
+    guinea pig 1.9e-8 cm/s at 200 Da → 14 kDa peptide;
+    prior "Salt 2011" citation was PHANTOM — 6-7× too fast)
+  • K_CLEAR_MIDDLE_EAR 0.35 → 0.7 (Salt & Plontke 2018 Fig 4: gentamicin
+    t½ 70-75 min → k 0.55/h; dex-phosphate t½ 40 min → k 1.0/h; use mid 0.7)
+  • K_PERILYMPH_CLEAR 0.35 → 0.18 (Salt & Hartsock 2015 J ARO — 70 kDa
+    FITC-dextran t½ 230 min. Dominated by cochlear aqueduct ~30 nL/min.)
+  • K_PROTEOLYSIS 1.4 → 0.05 (t½ 14 h). Prior 30-min t½ had no primary
+    source; serpin-rich perilymph (Bhatt 2009: 27.8%) suggests slow
+    proteolysis. ⚠ still unmeasured — flag in output.
+  • KD_TMEM145_M 100 nM — FLAGGED PLACEHOLDER. AF3 ipTM 0.68 has no
+    published Kd mapping (R² ≈ 0.06 protein-protein; Chen 2013 Protein Sci).
+    True Kd unmeasured. See [[STRC TMEM145 Kd Experiment Plan]].
+═══════════════════════════════════════════════════════════════════════════
 """
 
 from __future__ import annotations
@@ -26,19 +42,17 @@ from pathlib import Path
 OUT = Path("/Users/egorlyfar/Brain/research/strc/models/hydrogel_phase4e_cochlear_pkpd.json")
 
 # Peptide properties
-PEPTIDE_MW_KDA = 14.2  # 134 aa
-PERILYMPH_VOL_UL = 70.0  # human cochlea
+PEPTIDE_MW_KDA = 14.2       # 134 aa computed
+PERILYMPH_VOL_UL = 34.0     # Dhanasingh 2021 μCT ST-accessible (was unsourced 70)
 
-# Rate constants (1/h)
-K_CLEAR_MIDDLE_EAR = 0.35  # mucociliary clearance, half-life 2 h
-K_RWM = 0.02               # round window crossing; ~2%/h for 14 kDa peptide (Salt 2011)
-K_PERILYMPH_CLEAR = 0.35   # cochlear aqueduct + perilymph-CSF exchange, half-life 2 h
-K_PROTEOLYSIS = 1.4        # perilymph proteolysis, half-life 30 min (conservative)
-                           # perilymph has fewer proteases than serum, but 30 min is a
-                           # reasonable upper bound for unprotected 134 aa with 9 K/R cuts
+# Rate constants (1/h) — see module docstring for primary sources
+K_CLEAR_MIDDLE_EAR = 0.7    # Salt & Plontke 2018 Fig 4, mid-range
+K_RWM = 0.003               # Stokes-Einstein from TMPA (Salt & Ma 2001)
+K_PERILYMPH_CLEAR = 0.18    # Salt & Hartsock 2015 J ARO, 70 kDa dextran
+K_PROTEOLYSIS = 0.05        # ⚠ UNMEASURED — see docstring
 
-# Target TMEM145 binding Kd (from Phase 3 solo tail91 ipTM 0.68 → Kd ~50-500 nM)
-KD_TMEM145_M = 100e-9   # 100 nM nominal
+# KD_TMEM145_M: PLACEHOLDER. AF3-derived, no primary Kd measurement exists.
+KD_TMEM145_M = 100e-9       # ⚠ PLACEHOLDER — see [[STRC TMEM145 Kd Experiment Plan]]
 
 # Therapeutic window from Phase 4d:
 #   lower bound: 1 μM perilymph → 91% TMEM145 occupancy, sufficient bundling
