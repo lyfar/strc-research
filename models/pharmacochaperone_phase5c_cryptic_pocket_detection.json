@@ -1,7 +1,7 @@
 {
   "phase": "5c",
   "approach": "grid-based cavity scan + K1141 stability (fpocket/qhull broken on brew 4.0)",
-  "timestamp_utc": "2026-04-23T09:45:52+00:00",
+  "timestamp_utc": "2026-04-23T09:46:49+00:00",
   "n_snapshots": 20,
   "global_mean_rmsf_A": 1.234,
   "k1141_pocket_residues_static": [
@@ -40,9 +40,186 @@
   ],
   "k1141_local_void_volume_mean_A3": 789.8,
   "k1141_local_void_volume_min_A3": 718.9,
-  "k1141_cavity_mid_frame": null,
-  "top_cavities": [],
-  "alt_cavities_not_overlap_K1141": [],
+  "k1141_cavity_mid_frame": {
+    "volume_A3": 151.9,
+    "n_voxels": 45,
+    "centre": [
+      -2.0841119191854536,
+      -25.31127125627135,
+      24.739169032707114
+    ],
+    "dist_to_K1141_A": 30.84,
+    "n_lining_atoms": 73
+  },
+  "top_cavities": [
+    {
+      "volume_A3": 151.9,
+      "n_voxels": 45,
+      "centre": [
+        -2.0841119191854536,
+        -25.31127125627135,
+        24.739169032707114
+      ],
+      "dist_to_K1141_A": 30.84,
+      "n_lining_atoms": 73
+    },
+    {
+      "volume_A3": 128.2,
+      "n_voxels": 38,
+      "centre": [
+        -1.924462796378436,
+        -13.356885291359072,
+        22.490923418672022
+      ],
+      "dist_to_K1141_A": 29.02,
+      "n_lining_atoms": 67
+    },
+    {
+      "volume_A3": 101.2,
+      "n_voxels": 30,
+      "centre": [
+        -12.150778585852118,
+        -24.57793792293802,
+        19.972502366040445
+      ],
+      "dist_to_K1141_A": 21.2,
+      "n_lining_atoms": 48
+    },
+    {
+      "volume_A3": 101.2,
+      "n_voxels": 30,
+      "centre": [
+        20.149221414147874,
+        -28.37793792293802,
+        14.872502366040454
+      ],
+      "dist_to_K1141_A": 45.12,
+      "n_lining_atoms": 51
+    },
+    {
+      "volume_A3": 91.1,
+      "n_voxels": 27,
+      "centre": [
+        -14.950778585852118,
+        -13.77793792293802,
+        18.816946810484897
+      ],
+      "dist_to_K1141_A": 18.67,
+      "n_lining_atoms": 49
+    },
+    {
+      "volume_A3": 91.1,
+      "n_voxels": 27,
+      "centre": [
+        -6.56188969696323,
+        -17.16682681182691,
+        15.150280143818229
+      ],
+      "dist_to_K1141_A": 20.21,
+      "n_lining_atoms": 45
+    },
+    {
+      "volume_A3": 84.4,
+      "n_voxels": 25,
+      "centre": [
+        3.22922141414788,
+        -19.397937922938024,
+        19.67250236604045
+      ],
+      "dist_to_K1141_A": 30.71,
+      "n_lining_atoms": 42
+    },
+    {
+      "volume_A3": 74.2,
+      "n_voxels": 22,
+      "centre": [
+        11.299221414147883,
+        -30.11884701384711,
+        23.667956911495
+      ],
+      "dist_to_K1141_A": 41.29,
+      "n_lining_atoms": 48
+    },
+    {
+      "volume_A3": 70.9,
+      "n_voxels": 21,
+      "centre": [
+        -20.665064300137832,
+        -18.563652208652304,
+        35.15821665175473
+      ],
+      "dist_to_K1141_A": 32.97,
+      "n_lining_atoms": 41
+    },
+    {
+      "volume_A3": 70.9,
+      "n_voxels": 21,
+      "centre": [
+        -3.3079214429949775,
+        -7.777937922938022,
+        -2.841783348245264
+      ],
+      "dist_to_K1141_A": 22.18,
+      "n_lining_atoms": 35
+    }
+  ],
+  "alt_cavities_not_overlap_K1141": [
+    {
+      "volume_A3": 151.9,
+      "n_voxels": 45,
+      "centre": [
+        -2.0841119191854536,
+        -25.31127125627135,
+        24.739169032707114
+      ],
+      "dist_to_K1141_A": 30.84,
+      "n_lining_atoms": 73
+    },
+    {
+      "volume_A3": 128.2,
+      "n_voxels": 38,
+      "centre": [
+        -1.924462796378436,
+        -13.356885291359072,
+        22.490923418672022
+      ],
+      "dist_to_K1141_A": 29.02,
+      "n_lining_atoms": 67
+    },
+    {
+      "volume_A3": 101.2,
+      "n_voxels": 30,
+      "centre": [
+        -12.150778585852118,
+        -24.57793792293802,
+        19.972502366040445
+      ],
+      "dist_to_K1141_A": 21.2,
+      "n_lining_atoms": 48
+    },
+    {
+      "volume_A3": 101.2,
+      "n_voxels": 30,
+      "centre": [
+        20.149221414147874,
+        -28.37793792293802,
+        14.872502366040454
+      ],
+      "dist_to_K1141_A": 45.12,
+      "n_lining_atoms": 51
+    },
+    {
+      "volume_A3": 91.1,
+      "n_voxels": 27,
+      "centre": [
+        -14.950778585852118,
+        -13.77793792293802,
+        18.816946810484897
+      ],
+      "dist_to_K1141_A": 18.67,
+      "n_lining_atoms": 49
+    }
+  ],
   "verdict": {
     "k1141_pocket_stable": true,
     "rmsf_ratio_pocket_to_global": 0.503,
@@ -52,7 +229,7 @@
     "grid_dx_A": 1.5,
     "probe_min_A": 2.6,
     "probe_max_A": 4.5,
-    "directions_buried_threshold": 20,
+    "directions_buried_threshold": 16,
     "pocket_residue_cutoff_A": 6.0
   }
 }
