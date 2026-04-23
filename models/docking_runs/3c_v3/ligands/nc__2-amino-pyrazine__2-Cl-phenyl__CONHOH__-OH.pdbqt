@@ -1,0 +1,46 @@
+REMARK  Name = 
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C_2  and  C_5
+REMARK    2  A    between atoms: N_3  and  O_4
+REMARK    3  A    between atoms: C_7  and  O_8
+REMARK    4  A    between atoms: C_11  and  N_12
+REMARK    5  A    between atoms: N_12  and  C_13
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C   UNL     1       1.883   0.404  -0.178  0.00  0.00    +0.171 A 
+ATOM      2  N   UNL     1       2.885  -0.067  -0.992  0.00  0.00    -0.204 NA
+ATOM      3  C   UNL     1       2.498  -1.066  -1.798  0.00  0.00    +0.232 A 
+ATOM      4  C   UNL     1       1.214  -1.575  -1.827  0.00  0.00    +0.180 A 
+ATOM      5  N   UNL     1       0.234  -1.102  -1.020  0.00  0.00    -0.233 NA
+ATOM      6  C   UNL     1       0.566  -0.100  -0.164  0.00  0.00    +0.154 A 
+ENDROOT
+BRANCH   1   8
+ATOM      7  O   UNL     1       1.421   2.309   1.192  0.00  0.00    -0.266 OA
+ATOM      8  C   UNL     1       2.256   1.573   0.671  0.00  0.00    +0.288 C 
+ATOM      9  N   UNL     1       3.609   1.806   0.767  0.00  0.00    -0.192 N 
+ATOM     10  H   UNL     1       4.256   1.369   0.116  0.00  0.00    +0.183 HD
+BRANCH   9  11
+ATOM     11  O   UNL     1       3.992   3.038   1.344  0.00  0.00    -0.295 OA
+ATOM     12  H   UNL     1       3.132   3.418   1.625  0.00  0.00    +0.241 HD
+ENDBRANCH   9  11
+ENDBRANCH   1   8
+BRANCH   3  13
+ATOM     13  O   UNL     1       3.468  -1.550  -2.611  0.00  0.00    -0.491 OA
+ATOM     14  H   UNL     1       4.233  -1.006  -2.356  0.00  0.00    +0.294 HD
+ENDBRANCH   3  13
+BRANCH   6  15
+ATOM     15  N   UNL     1      -0.388   0.359   0.776  0.00  0.00    -0.296 N 
+ATOM     16  H   UNL     1      -0.298   1.369   0.905  0.00  0.00    +0.154 HD
+BRANCH  15  17
+ATOM     17  C   UNL     1      -1.724  -0.093   0.874  0.00  0.00    +0.051 A 
+ATOM     18  C   UNL     1      -2.759   0.800   0.551  0.00  0.00    +0.025 A 
+ATOM     19  C   UNL     1      -4.096   0.392   0.567  0.00  0.00    +0.002 A 
+ATOM     20  C   UNL     1      -4.420  -0.920   0.901  0.00  0.00    +0.002 A 
+ATOM     21  C   UNL     1      -3.409  -1.824   1.223  0.00  0.00    +0.022 A 
+ATOM     22  C   UNL     1      -2.069  -1.418   1.209  0.00  0.00    +0.062 A 
+ATOM     23 CL   UNL     1      -0.883  -2.577   1.712  0.00  0.00    -0.082 Cl
+ENDBRANCH  15  17
+ENDBRANCH   6  15
+TORSDOF 5
