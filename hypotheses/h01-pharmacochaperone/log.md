@@ -6,6 +6,10 @@ tags: [strc, h01]
 
 # h01 log
 
+## 2026-04-23
+
+- Post-audit housekeeping: A held. TPSA docstring in `phase3b_virtual_screen.py` corrected (descriptor-only, not composite scoring; CNS TPSA bracket removed — STRC extracellular). Druggability cross-phase incomparability flagged in Phase 1/2/2b. No fabricated ranges added. → [[STRC h01 Parameter Provenance Audit 2026-04-23]]
+
 ## 2026-04-22
 
 - S → A: mechanism 4→3; STRC extracellular protein, 4PBA ER mechanism mismatch → [[STRC Repurposed FDA Chaperone Branch]]
