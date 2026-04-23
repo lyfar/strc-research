@@ -1,0 +1,75 @@
+{
+  "generated": "2026-04-23",
+  "builder": "af3_jobs_2026-04-23f_hydrogel_phase4b_builder.py",
+  "hypothesis": "#9 STRC Synthetic Peptide Hydrogel HTC \u2014 Phase 4b comprehensive validation",
+  "motivation": "Phase 4a CIF interface forensics revealed single-partner binding artifacts: WH2 binds TMEM145 (not actin) when actin is absent; tail binds actin (not TMEM145) when TMEM145 is absent. This batch runs 4 orthogonal controls to disentangle and de-risk the Phase 3b positive result before committing to wet-lab.",
+  "n_jobs": 8,
+  "ipTM_gate": 0.5,
+  "robustness_criterion_sigma": 0.05,
+  "priority_order": [
+    "hydrogel_tail91_x_tmem145_5seeds",
+    "hydrogel_tail91_x_actin_5seeds",
+    "hydrogel_tail91_x_tmem145_x_actin",
+    "hydrogel_tail71_x_tmem145_x_actin",
+    "hydrogel_tail91_noWH2_x_tmem145",
+    "hydrogel_tail91_noWH2_x_actin",
+    "hydrogel_tail84_x_tmem145",
+    "hydrogel_tail84_x_actin"
+  ],
+  "jobs": {
+    "hydrogel_tail91_x_tmem145_5seeds": {
+      "description": "Multi-seed robustness for Phase 3b tail91 \u00d7 TMEM145 result (ipTM 0.57, seed 42). 5 seeds \u00d7 5 models = 25 structures. Measures \u03c3(ipTM) to verify 0.57 is not a lucky-seed outcome. PASS = median ipTM >= 0.50 AND \u03c3 < 0.05.",
+      "success_criteria": "median ipTM >= 0.50 AND \u03c3(ipTM) across 5 seeds < 0.05",
+      "hypothesis_impact": "Confirms/rejects Phase 3b positive result. Critical for Harvard-grade claim."
+    },
+    "hydrogel_tail91_x_actin_5seeds": {
+      "description": "Multi-seed robustness for Phase 3b tail91 \u00d7 actin trimer (ipTM 0.51, seed 42). 5 seeds \u00d7 5 models. Same PASS criterion.",
+      "success_criteria": "median ipTM >= 0.50 AND \u03c3(ipTM) < 0.05",
+      "hypothesis_impact": "Same as above \u2014 actin interface is the weaker of the two (margin 0.01)."
+    },
+    "hydrogel_tail91_x_tmem145_x_actin": {
+      "description": "5-chain complex: peptide + TMEM145 + G-actin trimer. Addresses Phase 4a finding that single-partner jobs produce cross-binding artifact (WH2 binds TMEM145 when actin is absent). This job forces AF3 to partition: WH2 must pick either TMEM145 or actin, not both. Expected outcome if mechanism is correct: WH2 \u2192 actin, tail \u2192 TMEM145. ipTM read on each pair (chain_pair_iptm) should hold.",
+      "success_criteria": "peptide-TMEM145 chain_pair_iptm >= 0.40 AND peptide-actin >= 0.40",
+      "hypothesis_impact": "The definitive mechanism test. If it passes, Phase 3b binding is real and architecturally correct \u2014 ready for S-tier promotion. If it fails (one partner dominates, the other collapses), we have cross-talk \u2014 demotion warranted."
+    },
+    "hydrogel_tail71_x_tmem145_x_actin": {
+      "description": "Same triple complex with tail71 construct. Phase 4a showed tail71 \u00d7 actin has CORRECT WH2 binding (46% share) but tail91 \u00d7 actin has NO WH2 engagement. The triple complex may vindicate tail71 as the cleaner architecture despite lower single-partner ipTM.",
+      "success_criteria": "peptide-TMEM145 >= 0.40 AND peptide-actin >= 0.40",
+      "hypothesis_impact": "If tail71 triple complex passes while tail91 fails \u2192 flip the carry-forward design to tail71 (shorter, cheaper, cleaner)."
+    },
+    "hydrogel_tail91_noWH2_x_tmem145": {
+      "description": "Negative control: replace WH2 (18 aa) with polyGS spacer of identical length. If tail91 \u00d7 TMEM145 binding (ipTM 0.57) was driven by real tail engagement, this should retain ipTM ~0.5. If driven by WH2 hydrophobic artifact, ipTM should drop to tail-solo level (0.68 of isolated 91 aa tail) \u2014 but with the scaffold still present. Deconvolutes WH2 vs tail contribution.",
+      "success_criteria": "tail-region binding signal isolated",
+      "hypothesis_impact": "Quantifies the 'WH2 contact mass' artifact seen in Phase 4a (78.8% of TMEM145 contacts were WH2). If binding survives ablation, tail is the real driver."
+    },
+    "hydrogel_tail91_noWH2_x_actin": {
+      "description": "Ablation \u00d7 actin: WH2 is canonical G-actin binder. Removing it should collapse actin binding from 0.51 to near-zero. Confirms that without WH2, no actin binding.",
+      "success_criteria": "ipTM < 0.35 (collapse)",
+      "hypothesis_impact": "If actin binding survives WH2 ablation (ipTM stays high), Phase 4a finding that 'tail91 tail binds actin instead of WH2' is confirmed and we need to redesign \u2014 tail has an unintended actin-binding motif. If actin binding collapses, WH2 is the right actin handle and Phase 4a was a single-partner artifact."
+    },
+    "hydrogel_tail84_x_tmem145": {
+      "description": "Intermediate tail length (84 aa, aa 1627-1710 \u2014 drops 7 aa N-term of cluster 2) to find the minimal tail that buffers the scaffold. Phase 3b showed tail71 fails (0.35) and tail91 passes (0.57). 84 aa binary-searches the threshold. If 84 aa passes \u2192 confirms cluster 2 core (aa 1627+) is what matters; if 84 aa fails \u2192 full cluster 2 needed.",
+      "success_criteria": "ipTM >= 0.50",
+      "hypothesis_impact": "Optimises the manufacturability-vs-binding tradeoff: 7 aa shorter = ~5% cheaper SPPS if it still works. Refines Phase 2c peptide design."
+    },
+    "hydrogel_tail84_x_actin": {
+      "description": "84 aa tail \u00d7 actin partner \u2014 confirms actin binding preserved at intermediate length.",
+      "success_criteria": "ipTM >= 0.50",
+      "hypothesis_impact": "Completes the tail-length sweep on the actin axis."
+    }
+  },
+  "how_to_submit": "AlphaFold Server Import-from-JSON for each file. 8 jobs this batch. Seed-list jobs (5seeds) count as 1 AF3 submission but produce 5x models. Triple-complex jobs exceed 1800 aa (134 + 493 + 3\u00d7375 = 1752 \u2014 within 5000 limit).",
+  "expected_learnings": [
+    "Statistical significance of 0.57/0.51 ipTM (robustness)",
+    "Correct partitioning in triple complex (mechanism)",
+    "WH2 vs tail contribution (ablation)",
+    "Minimal tail length for scaffold insulation (optimization)"
+  ],
+  "go_no_go_matrix": {
+    "all_pass": "Hypothesis #9 clears Phase 4 \u2014 advance to Martini3 CG MD (Phase 5) + Phase 2c wet-lab. Promotion candidate from A-tier to tentative-S-tier (pending wet-lab).",
+    "robustness_pass_triple_fail": "Single-partner ipTM is reproducible but mechanism wrong (partners cross-bind). Redesign needed \u2014 likely shorter WH2 variant or C-terminal scaffold placement.",
+    "robustness_fail": "Phase 3b was a seed artifact. Demote back to B-tier pending deeper search.",
+    "ablation_shows_wh2_drives_tmem145": "Tail binding energy was overestimated in Phase 3 solo test. Real tail-only ipTM may be <0.4. Demote to B.",
+    "tail84_pass": "Carry-forward manufacturability-optimum shifts to tail84 (134\u2192127 aa, ~5% cheaper)."
+  }
+}
