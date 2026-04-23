@@ -28,7 +28,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 | #   | Hypothesis                                         | Mech | Deliv | Misha | Tier    | Next step (≤6 words)                         | Hub         |
 | --- | -------------------------------------------------- | ---- | ----- | ----- | ------- | -------------------------------------------- | ----------- |
-| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 3c v3 ZINC22 + fragment-growing niflumic | [[h01 hub]] |
+| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 3c v3b + 6b 12k dock RUNNING (ETA 5.7h) | [[h01 hub]] |
 | 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]  | 2    | 1     | 5     | **B**   | Find real OHC ligand + FEM strain-share      | [[h02 hub]] |
 | 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]        | 5    | 5     | 4     | **S**   | Order gBlock, clone pAAV, coIP               | [[h03 hub]] |
 | 4   | [[STRC mRNA-LNP Strategy B Full-Length]]           | 3    | 2     | 2     | **B**   | Academic/interim if AAV fails                | [[h04 hub]] |

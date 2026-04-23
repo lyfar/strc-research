@@ -54,6 +54,8 @@ research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventor
 - `pharmacochaperone_phase5c_cryptic_pocket_detection.py` — K1141 stability (Cα RMSF, local void volume) + grid-based alt cavity scan on Phase 5a trajectory
 - `pharmacochaperone_phase3c_v2a_library_build.py` — RDKit combinatorial library (25 scaffolds × 10 acid bioisosteres + 29 curated FDA drugs = 667 ligands in PDBQT)
 - `pharmacochaperone_phase3c_v2b_ensemble_dock.py` — 2-stage Vina ensemble dock: Stage 1 breadth (snap_008 exh 8) + Stage 2 ensemble (top-30 × 5 k-means receptor conformers exh 16)
+- `pharmacochaperone_phase3c_v3_fenamic_covalent_library.py` — fenamic-focused expansion library builder (8 anthranilic cores × 57 N-aryl × 5 acid bioisosteres × 8 ring subs + Phase 6b covalent warhead branch); 12,253 ligands output
+- `pharmacochaperone_phase3c_v3b_ensemble_dock.py` — v2b docking pipeline re-pointed to v3 library (Stage 1 checkpoint every 100 lig); IN PROGRESS ETA ~5.7h
 
 ## log
 
