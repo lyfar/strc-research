@@ -28,7 +28,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 | #   | Hypothesis                                         | Mech | Deliv | Misha | Tier    | Next step (≤6 words)                     | Hub         |
 | --- | -------------------------------------------------- | ---- | ----- | ----- | ------- | ---------------------------------------- | ----------- |
-| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 3c v2 expanded screen (5 red)      | [[h01 hub]] |
+| 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 3c v2 expanded screen (K1141 ✅ stable) | [[h01 hub]] |
 | 2   | [[STRC Piezoelectric TM Bioelectronic Amplifier]]  | 2    | 1     | 5     | **B**   | Find real OHC ligand + FEM strain-share  | [[h02 hub]] |
 | 3   | [[STRC Mini-STRC Single-Vector Hypothesis]]        | 5    | 5     | 4     | **S**   | Order gBlock, clone pAAV, coIP           | [[h03 hub]] |
 | 4   | [[STRC mRNA-LNP Strategy B Full-Length]]           | 3    | 2     | 2     | **B**   | Academic/interim if AAV fails            | [[h04 hub]] |
@@ -84,7 +84,7 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 
 | # | Hypothesis | Tier | Lit audit | Notes |
 |---|---|---|---|---|
-| 1 | [[STRC Pharmacochaperone Virtual Screen E1659A]] | A | ✅ **FIXED 2026-04-23** + ⚠ **Phase 5 RED 2026-04-23** | 0 phantoms; housekeeping closed. **Phase 5 MD ensemble rescoring (Phase 5a 2 ns MD on local Mac 62 ns/day + Phase 5b Vina re-docking of Phase 4b leads + diflunisal on 20 snapshots): all f_PC at 10 μM < 0.10 (best diflunisal 0.083); Phase 4b single-structure was over-optimistic by 0.36-0.92 kcal/mol.** None clear f_PC ≥ 0.50 NORMAL threshold. Scores unchanged; shortlist insufficient, hypothesis intact. Next: Phase 3c v2 expanded screen. See [[STRC h01 Phase 5 MD Ensemble Rescoring 2026-04-23]]. |
+| 1 | [[STRC Pharmacochaperone Virtual Screen E1659A]] | A | ✅ **FIXED 2026-04-23** + ⚠ **Phase 5b RED + Phase 5c GREEN 2026-04-23** | 0 phantoms; housekeeping closed. Phase 5b: all f_PC < 0.10, shortlist insufficient. **Phase 5c cryptic pocket analysis: K1141 site STABLE** (Cα RMSF 0.62 Å vs global 1.23 Å; void volume 719-850 Å³ steady across 20 frames; no alt cavity > 152 Å³ anywhere) — RED-LIGHT is chemistry-limited not site-limited. Scores unchanged; Phase 3c v2 expanded screen on K1141 with ensemble receptor docking is the correct next move. See [[STRC h01 Phase 5 MD Ensemble Rescoring 2026-04-23]] + [[STRC h01 Phase 5c Cryptic Pocket Analysis 2026-04-23]]. |
 | 2 | [[STRC Piezoelectric TM Bioelectronic Amplifier]] | **B** (was S) | ✅ **FIXED 2026-04-23** | Phantoms pinned as PHANTOM in-code; d31 reconciled to −12 pC/N; TM mismatch flag in JSON; Mech 3→2, Deliv 2→1; see [[STRC h02 Parameter Provenance Audit 2026-04-23]] |
 | 3 | [[STRC Mini-STRC Single-Vector Hypothesis]] | S | 🔒 **DEFERRED by Egor directive 2026-04-23** | Do not audit without re-authorization. Likely inherits STRC×TMEM145 Kd gap. |
 | 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | A | ✅ **FIXED 2026-04-23** | Phantoms removed/flagged in-code (Wu 2011, Sharma 2018, Cha 2010, Krey 2015); PKA K_cAMP cite corrected (Surdo 2017); CREB-P dephos 2-4× faster than lit flagged; STRC mRNA/protein t½ cross-script mismatches flagged. Phase 3 topological result robust. Tier A held. See [[STRC h05 Parameter Provenance Audit 2026-04-23]] |
