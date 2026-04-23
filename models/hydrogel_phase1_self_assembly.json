@@ -1,0 +1,267 @@
+{
+  "phase": "1",
+  "hypothesis": "STRC Synthetic Peptide Hydrogel HTC",
+  "date": "2026-04-23",
+  "constants": {
+    "HTC_SPACING_NM": 8.0,
+    "TARGET_F_FOR_30DB": 0.4,
+    "DOSE_MG_TESTED": 10.0,
+    "SCALA_TYMPANI_VOLUME_UL": 70
+  },
+  "candidates_tested": 6,
+  "candidates_passing_all_gates": 5,
+  "results_ranked": [
+    {
+      "name": "RADA16-WH2-native",
+      "sequence": "RQLVKAIPDNCSKSNVSRADARADARADARADAAEDLPEPVPNCA",
+      "length_aa": 45,
+      "molecular_weight_da": 4950.0,
+      "notes": "Original Zhang RADA16 + WH2 actin + native STRC 12-mer TMEM145 anchor. Cys oxidation risk.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 15.75,
+          "realistic_span_nm": 10.24,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": true,
+          "margin_nm": 2.24
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.12,
+          "diffusion_coeff_um2_s": 280.4,
+          "t_to_basal_ohc_min": 66.9,
+          "t_to_apex_hours": 445.8,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 28.86,
+          "local_conc_mM": 2886.0,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 45,
+          "molecular_weight_da": 4950.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 38.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": true,
+      "composite_score": 70.6
+    },
+    {
+      "name": "RADA16-WH2-Cmut",
+      "sequence": "RQLVKAIPDNCSKSNVSRADARADARADARADAAEDLPEPVPNA",
+      "length_aa": 44,
+      "molecular_weight_da": 4840.0,
+      "notes": "RADA16 + WH2 + Cys->Ala TMEM145 anchor. Lower oxidation risk.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 15.4,
+          "realistic_span_nm": 10.01,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": true,
+          "margin_nm": 2.01
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.12,
+          "diffusion_coeff_um2_s": 282.5,
+          "t_to_basal_ohc_min": 66.4,
+          "t_to_apex_hours": 442.5,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 29.516,
+          "local_conc_mM": 2951.59,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 44,
+          "molecular_weight_da": 4840.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 37.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": true,
+      "composite_score": 68.9
+    },
+    {
+      "name": "EAK16-WH2-denovo",
+      "sequence": "RQLVKAIPDNCSKSNVSAEAKAEAKAEAKAEAKEELPEPVPNYK",
+      "length_aa": 44,
+      "molecular_weight_da": 4840.0,
+      "notes": "EAK16 + WH2 + de-novo binder. Lower charge density than RADA16 at pH 7.4.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 15.4,
+          "realistic_span_nm": 10.01,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": true,
+          "margin_nm": 2.01
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.12,
+          "diffusion_coeff_um2_s": 282.5,
+          "t_to_basal_ohc_min": 66.4,
+          "t_to_apex_hours": 442.5,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 29.516,
+          "local_conc_mM": 2951.59,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 44,
+          "molecular_weight_da": 4840.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 37.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": true,
+      "composite_score": 68.9
+    },
+    {
+      "name": "RADA16-Espin-native",
+      "sequence": "DLIKRNFPRSIARADARADARADARADAAEDLPEPVPNA",
+      "length_aa": 39,
+      "molecular_weight_da": 4290.0,
+      "notes": "RADA16 + espin + Cys->Ala 11-mer. Shortest assembled peptide.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 13.65,
+          "realistic_span_nm": 8.87,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": true,
+          "margin_nm": 0.87
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.07,
+          "diffusion_coeff_um2_s": 294.1,
+          "t_to_basal_ohc_min": 63.8,
+          "t_to_apex_hours": 425.0,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 33.3,
+          "local_conc_mM": 3330.0,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 39,
+          "molecular_weight_da": 4290.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 32.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": true,
+      "composite_score": 60.5
+    },
+    {
+      "name": "IEIK13-Espin-denovo",
+      "sequence": "DLIKRNFPRSIAIEIKIEIKIEIKIEELPEPVPNYK",
+      "length_aa": 36,
+      "molecular_weight_da": 3960.0,
+      "notes": "Miroshnikova-tier IEIK13 backbone + espin mini + de-novo TMEM145 binder.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 12.6,
+          "realistic_span_nm": 8.19,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": true,
+          "margin_nm": 0.19
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.04,
+          "diffusion_coeff_um2_s": 302.1,
+          "t_to_basal_ohc_min": 62.1,
+          "t_to_apex_hours": 413.8,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 36.075,
+          "local_conc_mM": 3607.5,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 36,
+          "molecular_weight_da": 3960.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 30.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": true,
+      "composite_score": 55.5
+    },
+    {
+      "name": "KLD12-Fascin-native",
+      "sequence": "LREYKNGSTNAKLDLKLDLKLDLAEDLPEPVPNA",
+      "length_aa": 34,
+      "molecular_weight_da": 3740.0,
+      "notes": "KLD12 backbone (used in spinal cord regen) + fascin mini + Cys->Ala TMEM145 anchor.",
+      "gates": {
+        "g1": {
+          "extended_length_nm": 11.9,
+          "realistic_span_nm": 7.73,
+          "required_span_nm": 8.0,
+          "reaches_htc_span": false,
+          "margin_nm": -0.27
+        },
+        "g2": {
+          "hydrodynamic_radius_nm": 1.02,
+          "diffusion_coeff_um2_s": 307.9,
+          "t_to_basal_ohc_min": 60.9,
+          "t_to_apex_hours": 406.0,
+          "basal_clinic_feasible": true
+        },
+        "g3": {
+          "dose_mg": 10.0,
+          "bulk_conc_mM": 38.197,
+          "local_conc_mM": 3819.71,
+          "Kd_assumed_nM": 100,
+          "occupancy_fraction": 1.0,
+          "f_restored": 0.7,
+          "db_rescue_predicted": 49.0,
+          "meets_target_f_0p4": true
+        },
+        "g4": {
+          "peptide_length_aa": 34,
+          "molecular_weight_da": 3740.0,
+          "dose_mg": 10.0,
+          "spps_cost_usd": 28.0,
+          "manufacturable": true
+        }
+      },
+      "all_pass": false,
+      "composite_score": 54.2
+    }
+  ]
+}
