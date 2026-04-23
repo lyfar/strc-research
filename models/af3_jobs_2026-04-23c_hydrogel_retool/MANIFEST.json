@@ -1,0 +1,69 @@
+{
+  "generated": "2026-04-23",
+  "builder": "af3_jobs_2026-04-23c_hydrogel_retool_builder.py",
+  "purpose": "Hydrogel Phase 3 TMEM145 tail retool AF3 batch. Phase 2 short-peptide tails (11-12 aa from aa 1669-1680) failed TMEM145 gate at ipTM 0.37-0.39 across 3 candidates (Kd=100 nM assumption falsified). Phase 3 Option A: extend tail to span both dominant canonical contact clusters (aa 1669-1680 + aa 1692-1707). Three tail lengths tested: 51, 71, 91 aa (manufacturing SPPS-feasible).",
+  "source_sequences": {
+    "STRC_full": "UniProt Q7RTU9, 1775 aa (fetched 2026-04-23)",
+    "TMEM145_full": "verified from prior AF3 batches"
+  },
+  "canonical_contact_clusters_GOLD_zone": {
+    "cluster_1_1603-1607": "5 residues; not included in any extended tail",
+    "cluster_2_1630-1638": "9 residues; in tail_1620_1710",
+    "cluster_3_1648-1651": "4 residues (loop cap); in tails 1640+1620",
+    "cluster_4_1669-1680": "12 residues DOMINANT; in all extended tails",
+    "cluster_5_1692-1707": "16 residues SECOND DOMINANT; in all extended tails",
+    "cluster_6_1770": "1 residue; not included (C-term tail drift)"
+  },
+  "tails_tested": {
+    "tail_1660_1710": {
+      "length": 51,
+      "description": "51 aa minimal; clusters 4+5 with 10 aa flank each side",
+      "sequence": "IGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS"
+    },
+    "tail_1640_1710": {
+      "length": 71,
+      "description": "71 aa +loop cap; clusters 3+4+5 (adds aa 1648-1651 loop cap)",
+      "sequence": "LVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS"
+    },
+    "tail_1620_1710": {
+      "length": 91,
+      "description": "91 aa wide; clusters 2+3+4+5 (adds aa 1630-1638 second ARM anchor)",
+      "sequence": "FLGTLHLQCSEEQLEVLAHLLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS"
+    }
+  },
+  "priority_order": [
+    "hydrogel_tail_1660_1710_x_tmem145",
+    "hydrogel_tail_1640_1710_x_tmem145",
+    "hydrogel_tail_1620_1710_x_tmem145"
+  ],
+  "jobs": {
+    "hydrogel_tail_1660_1710_x_tmem145": {
+      "description": "Extended STRC-derived tail \u00d7 TMEM145 full. 51 aa minimal; clusters 4+5 with 10 aa flank each side. Tail length 51 aa, total complex 544 aa. Isolated tail test (no RADA16/EAK16 scaffold, no WH2 actin-binder) to separately validate the retooled TMEM145 interface before Phase 3b full-construct fusion.",
+      "success_criteria": "ipTM >= 0.50 (Phase 3 gate, same as Phase 2). Target: beat Phase 2 native 11-mer baseline (ipTM 0.39) by >=0.10. Aspirational: match Ultra-Mini solo \u00d7 TMEM145 baseline (ipTM 0.43).",
+      "hypothesis_impact": "pass (any candidate) -> Phase 3b: fuse winning tail back to RADA16-WH2 scaffold; re-run full-construct \u00d7 TMEM145 AF3. If Phase 3b preserves ipTM at 0.50+, hypothesis #9 B -> A. fail (all three) -> Option A (longer tail) exhausted; move to Option B (helical mimetic / miniprotein) or Option C (different epitope, e.g. aa 1630-1638 cluster 2 alone)."
+    },
+    "hydrogel_tail_1640_1710_x_tmem145": {
+      "description": "Extended STRC-derived tail \u00d7 TMEM145 full. 71 aa +loop cap; clusters 3+4+5 (adds aa 1648-1651 loop cap). Tail length 71 aa, total complex 564 aa. Isolated tail test (no RADA16/EAK16 scaffold, no WH2 actin-binder) to separately validate the retooled TMEM145 interface before Phase 3b full-construct fusion.",
+      "success_criteria": "ipTM >= 0.50 (Phase 3 gate, same as Phase 2). Target: beat Phase 2 native 11-mer baseline (ipTM 0.39) by >=0.10. Aspirational: match Ultra-Mini solo \u00d7 TMEM145 baseline (ipTM 0.43).",
+      "hypothesis_impact": "pass (any candidate) -> Phase 3b: fuse winning tail back to RADA16-WH2 scaffold; re-run full-construct \u00d7 TMEM145 AF3. If Phase 3b preserves ipTM at 0.50+, hypothesis #9 B -> A. fail (all three) -> Option A (longer tail) exhausted; move to Option B (helical mimetic / miniprotein) or Option C (different epitope, e.g. aa 1630-1638 cluster 2 alone)."
+    },
+    "hydrogel_tail_1620_1710_x_tmem145": {
+      "description": "Extended STRC-derived tail \u00d7 TMEM145 full. 91 aa wide; clusters 2+3+4+5 (adds aa 1630-1638 second ARM anchor). Tail length 91 aa, total complex 584 aa. Isolated tail test (no RADA16/EAK16 scaffold, no WH2 actin-binder) to separately validate the retooled TMEM145 interface before Phase 3b full-construct fusion.",
+      "success_criteria": "ipTM >= 0.50 (Phase 3 gate, same as Phase 2). Target: beat Phase 2 native 11-mer baseline (ipTM 0.39) by >=0.10. Aspirational: match Ultra-Mini solo \u00d7 TMEM145 baseline (ipTM 0.43).",
+      "hypothesis_impact": "pass (any candidate) -> Phase 3b: fuse winning tail back to RADA16-WH2 scaffold; re-run full-construct \u00d7 TMEM145 AF3. If Phase 3b preserves ipTM at 0.50+, hypothesis #9 B -> A. fail (all three) -> Option A (longer tail) exhausted; move to Option B (helical mimetic / miniprotein) or Option C (different epitope, e.g. aa 1630-1638 cluster 2 alone)."
+    }
+  },
+  "how_to_submit": "AlphaFold Server Import-from-JSON for each file. Daily limit 20; this batch uses 3. Seed 42 for consistency with prior Hydrogel batches.",
+  "decision_rules": {
+    "any_tail_passes_50": "Phase 3b: fuse winning tail back to RADA16-WH2 scaffold + WH2 actin-binder. Re-run full-construct \u00d7 TMEM145 + G-actin trimer (3 more jobs). If Phase 3b preserves interface -> hypothesis #9 B -> A.",
+    "progressive_pattern": "If 51 aa < 71 aa < 91 aa (monotonic improvement), extend further to 100-120 aa (approaching miniprotein scale, SPPS becomes expensive but still feasible).",
+    "plateau_pattern": "If all three tails cluster near Ultra-Mini baseline 0.43, the ceiling is the isolated peptide nature \u2014 move to Option B (helical mimetic scaffold) to stabilise binding conformation.",
+    "all_fail": "Option A exhausted. Move to Option B (miniprotein scaffold with stapled binding loop) or Option C (cluster 2 aa 1630-1638 epitope alone, different binding site)."
+  },
+  "baselines_for_comparison": {
+    "Ultra-Mini_solo_x_TMEM145": 0.43,
+    "Phase_2_native_11mer": 0.39,
+    "Phase_2_Cmut_11mer": 0.37,
+    "Phase_2_denovo_11mer": 0.37
+  }
+}
