@@ -1,0 +1,532 @@
+{
+  "model": "h09 Phase 4e_v2 blend-strategy scaffold geometry + valency",
+  "literature_anchors": {
+    "RADA16_monomers_per_nm": 4.26,
+    "fibril_length_mean_nm": 615.0,
+    "empirical_tail_limit_preserved_aa": 12,
+    "empirical_tail_limit_monotonic_aa": 50,
+    "our_tail_length_aa": 91,
+    "perilymph_vol_ul_Dhanasingh_2021": 34.0,
+    "stereocilia_spacing_nm_Krey_2016": 9.0
+  },
+  "flags_and_caveats": {
+    "tail91_118aa_vs_empirical_limit_12aa": "Our construct is ~10\u00d7 beyond characterized safe limit. Blend at phi_tail \u2264 0.15 is only defensible design.",
+    "TMEM145_sites_per_bundle_unmeasured": "All valency ratios depend on 10^3-10^4/stereocilium estimate. Primary lit measurement is the S-tier promotion gate.",
+    "assembly_feasibility_extrapolated": "Frontiers 2021 does not characterize blends with >50 aa tails; feasibility flags are extrapolations."
+  },
+  "grid_rows": [
+    {
+      "phi_tail": 0.01,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "PASS",
+      "assembly_note": "\u22645% tail-bearing monomer; \u03b2-sheet scaffold dominated by plain RADA16. Standard Gelain-range blend.",
+      "concentration": {
+        "total_monomer_mM": 5.518459246178467,
+        "plain_monomer_mM": 5.463274653716682,
+        "tail91_monomer_mM": 0.05518459246178467
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 26.199,
+        "tails_per_nm_axis": 0.0426,
+        "mean_gap_along_axis_nm": 23.474178403755868
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 0.213,
+        "tails_per_um_bundle_axis": 213.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 7830143.601312456,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 261.0047867104152,
+        "valency_ratio_tails_per_TMEM145_high": 26.100478671041518,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 332321615804867.25,
+        "per_OHC_if_uniform_distribution": 27693467983.738937,
+        "per_stereocilium_if_uniform": 923115599.4579645,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.064687379283704,
+        "total_peptide_mass_ug_needed": 1545.8966046749701,
+        "ratio_vs_100pct": 15.458966046749701
+      }
+    },
+    {
+      "phi_tail": 0.01,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "PASS",
+      "assembly_note": "\u22645% tail-bearing monomer; \u03b2-sheet scaffold dominated by plain RADA16. Standard Gelain-range blend.",
+      "concentration": {
+        "total_monomer_mM": 11.036918492356934,
+        "plain_monomer_mM": 10.926549307433364,
+        "tail91_monomer_mM": 0.11036918492356934
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 26.199,
+        "tails_per_nm_axis": 0.0426,
+        "mean_gap_along_axis_nm": 23.474178403755868
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 0.213,
+        "tails_per_um_bundle_axis": 213.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 15660287.202624911,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 522.0095734208304,
+        "valency_ratio_tails_per_TMEM145_high": 52.200957342083036,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 664643231609734.5,
+        "per_OHC_if_uniform_distribution": 55386935967.477875,
+        "per_stereocilium_if_uniform": 1846231198.915929,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.064687379283704,
+        "total_peptide_mass_ug_needed": 1545.8966046749701,
+        "ratio_vs_100pct": 15.458966046749701
+      }
+    },
+    {
+      "phi_tail": 0.05,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "PASS",
+      "assembly_note": "\u22645% tail-bearing monomer; \u03b2-sheet scaffold dominated by plain RADA16. Standard Gelain-range blend.",
+      "concentration": {
+        "total_monomer_mM": 4.519774011299435,
+        "plain_monomer_mM": 4.293785310734463,
+        "tail91_monomer_mM": 0.22598870056497178
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 130.995,
+        "tails_per_nm_axis": 0.213,
+        "mean_gap_along_axis_nm": 4.694835680751174
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 1.065,
+        "tails_per_um_bundle_axis": 1065.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 32065543.99986057,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 1068.851466662019,
+        "valency_ratio_tails_per_TMEM145_high": 106.8851466662019,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 1360903954802260.0,
+        "per_OHC_if_uniform_distribution": 113408662900.18834,
+        "per_stereocilium_if_uniform": 3780288763.3396115,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.2649039548022599,
+        "total_peptide_mass_ug_needed": 377.4953079679235,
+        "ratio_vs_100pct": 3.774953079679235
+      }
+    },
+    {
+      "phi_tail": 0.05,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "PASS",
+      "assembly_note": "\u22645% tail-bearing monomer; \u03b2-sheet scaffold dominated by plain RADA16. Standard Gelain-range blend.",
+      "concentration": {
+        "total_monomer_mM": 9.03954802259887,
+        "plain_monomer_mM": 8.587570621468926,
+        "tail91_monomer_mM": 0.45197740112994356
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 130.995,
+        "tails_per_nm_axis": 0.213,
+        "mean_gap_along_axis_nm": 4.694835680751174
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 1.065,
+        "tails_per_um_bundle_axis": 1065.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 64131087.99972114,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 2137.702933324038,
+        "valency_ratio_tails_per_TMEM145_high": 213.7702933324038,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 2721807909604520.0,
+        "per_OHC_if_uniform_distribution": 226817325800.37668,
+        "per_stereocilium_if_uniform": 7560577526.679223,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.2649039548022599,
+        "total_peptide_mass_ug_needed": 377.4953079679235,
+        "ratio_vs_100pct": 3.774953079679235
+      }
+    },
+    {
+      "phi_tail": 0.1,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "WARN",
+      "assembly_note": "5-15%: within reported hybrid range for osteogenic/RGD RADA16 (Gelain group) but tail >50 aa is untested \u2014 viscoelastic decline likely.",
+      "concentration": {
+        "total_monomer_mM": 3.6859565057132326,
+        "plain_monomer_mM": 3.3173608551419096,
+        "tail91_monomer_mM": 0.36859565057132326
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 261.99,
+        "tails_per_nm_axis": 0.426,
+        "mean_gap_along_axis_nm": 2.347417840375587
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 2.13,
+        "tails_per_um_bundle_axis": 2130.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 52300048.728117585,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 1743.3349576039195,
+        "valency_ratio_tails_per_TMEM145_high": 174.33349576039194,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 2219683007740508.8,
+        "per_OHC_if_uniform_distribution": 184973583978.37573,
+        "per_stereocilium_if_uniform": 6165786132.612524,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.43206782159970514,
+        "total_peptide_mass_ug_needed": 231.44514587954274,
+        "ratio_vs_100pct": 2.3144514587954275
+      }
+    },
+    {
+      "phi_tail": 0.1,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "WARN",
+      "assembly_note": "5-15%: within reported hybrid range for osteogenic/RGD RADA16 (Gelain group) but tail >50 aa is untested \u2014 viscoelastic decline likely.",
+      "concentration": {
+        "total_monomer_mM": 7.371913011426465,
+        "plain_monomer_mM": 6.634721710283819,
+        "tail91_monomer_mM": 0.7371913011426465
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 261.99,
+        "tails_per_nm_axis": 0.426,
+        "mean_gap_along_axis_nm": 2.347417840375587
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 2.13,
+        "tails_per_um_bundle_axis": 2130.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 104600097.45623517,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 3486.669915207839,
+        "valency_ratio_tails_per_TMEM145_high": 348.6669915207839,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 4439366015481017.5,
+        "per_OHC_if_uniform_distribution": 369947167956.75146,
+        "per_stereocilium_if_uniform": 12331572265.225048,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.43206782159970514,
+        "total_peptide_mass_ug_needed": 231.44514587954274,
+        "ratio_vs_100pct": 2.3144514587954275
+      }
+    },
+    {
+      "phi_tail": 0.2,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "RISK",
+      "assembly_note": "15-33%: no literature precedent for >50 aa tail at this loading; expect significant viscoelastic decline and possible phase separation.",
+      "concentration": {
+        "total_monomer_mM": 2.6925148088314486,
+        "plain_monomer_mM": 2.154011847065159,
+        "tail91_monomer_mM": 0.5385029617662898
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 523.98,
+        "tails_per_nm_axis": 0.852,
+        "mean_gap_along_axis_nm": 1.1737089201877935
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 4.26,
+        "tails_per_um_bundle_axis": 4260.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 76408202.58448197,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 2546.940086149399,
+        "valency_ratio_tails_per_TMEM145_high": 254.6940086149399,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 3242864835756597.5,
+        "per_OHC_if_uniform_distribution": 270238736313.0498,
+        "per_stereocilium_if_uniform": 9007957877.10166,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.6312331717824449,
+        "total_peptide_mass_ug_needed": 158.42006483535232,
+        "ratio_vs_100pct": 1.5842006483535231
+      }
+    },
+    {
+      "phi_tail": 0.2,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "RISK",
+      "assembly_note": "15-33%: no literature precedent for >50 aa tail at this loading; expect significant viscoelastic decline and possible phase separation.",
+      "concentration": {
+        "total_monomer_mM": 5.385029617662897,
+        "plain_monomer_mM": 4.308023694130318,
+        "tail91_monomer_mM": 1.0770059235325795
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 523.98,
+        "tails_per_nm_axis": 0.852,
+        "mean_gap_along_axis_nm": 1.1737089201877935
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 4.26,
+        "tails_per_um_bundle_axis": 4260.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 152816405.16896394,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 5093.880172298798,
+        "valency_ratio_tails_per_TMEM145_high": 509.3880172298798,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 6485729671513195.0,
+        "per_OHC_if_uniform_distribution": 540477472626.0996,
+        "per_stereocilium_if_uniform": 18015915754.20332,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.6312331717824449,
+        "total_peptide_mass_ug_needed": 158.42006483535232,
+        "ratio_vs_100pct": 1.5842006483535231
+      }
+    },
+    {
+      "phi_tail": 0.33,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "RISK",
+      "assembly_note": "15-33%: no literature precedent for >50 aa tail at this loading; expect significant viscoelastic decline and possible phase separation.",
+      "concentration": {
+        "total_monomer_mM": 1.993898670069587,
+        "plain_monomer_mM": 1.3359121089466233,
+        "tail91_monomer_mM": 0.6579865611229637
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 864.5670000000001,
+        "tails_per_nm_axis": 1.4058,
+        "mean_gap_along_axis_nm": 0.7113387395077536
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 7.029,
+        "tails_per_um_bundle_axis": 7029.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 93361734.34449862,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 3112.0578114832874,
+        "valency_ratio_tails_per_TMEM145_high": 311.20578114832875,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 3962395071082488.0,
+        "per_OHC_if_uniform_distribution": 330199589256.874,
+        "per_stereocilium_if_uniform": 11006652975.229134,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.7712918469483381,
+        "total_peptide_mass_ug_needed": 129.65260866642885,
+        "ratio_vs_100pct": 1.2965260866642885
+      }
+    },
+    {
+      "phi_tail": 0.33,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "RISK",
+      "assembly_note": "15-33%: no literature precedent for >50 aa tail at this loading; expect significant viscoelastic decline and possible phase separation.",
+      "concentration": {
+        "total_monomer_mM": 3.987797340139174,
+        "plain_monomer_mM": 2.6718242178932465,
+        "tail91_monomer_mM": 1.3159731222459274
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 864.5670000000001,
+        "tails_per_nm_axis": 1.4058,
+        "mean_gap_along_axis_nm": 0.7113387395077536
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 7.029,
+        "tails_per_um_bundle_axis": 7029.0
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 186723468.68899724,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 6224.115622966575,
+        "valency_ratio_tails_per_TMEM145_high": 622.4115622966575,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 7924790142164976.0,
+        "per_OHC_if_uniform_distribution": 660399178513.748,
+        "per_stereocilium_if_uniform": 22013305950.458267,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.7712918469483381,
+        "total_peptide_mass_ug_needed": 129.65260866642885,
+        "ratio_vs_100pct": 1.2965260866642885
+      }
+    },
+    {
+      "phi_tail": 0.5,
+      "gel_pct_wv": 1.0,
+      "assembly_flag": "FAIL",
+      "assembly_note": ">33% tail91: extrapolation unsupported; assembly likely collapses per Frontiers 2021 ALK-tag analog.",
+      "concentration": {
+        "total_monomer_mM": 1.4887598630340926,
+        "plain_monomer_mM": 0.7443799315170463,
+        "tail91_monomer_mM": 0.7443799315170463
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 1309.95,
+        "tails_per_nm_axis": 2.13,
+        "mean_gap_along_axis_nm": 0.4694835680751174
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 10.649999999999999,
+        "tails_per_um_bundle_axis": 10649.999999999998
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 105620092.4515282,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 3520.6697483842736,
+        "valency_ratio_tails_per_TMEM145_high": 352.06697483842737,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 4482655947595652.5,
+        "per_OHC_if_uniform_distribution": 373554662299.6377,
+        "per_stereocilium_if_uniform": 12451822076.65459,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.8725621557242816,
+        "total_peptide_mass_ug_needed": 114.60501620883808,
+        "ratio_vs_100pct": 1.1460501620883807
+      }
+    },
+    {
+      "phi_tail": 0.5,
+      "gel_pct_wv": 2.0,
+      "assembly_flag": "FAIL",
+      "assembly_note": ">33% tail91: extrapolation unsupported; assembly likely collapses per Frontiers 2021 ALK-tag analog.",
+      "concentration": {
+        "total_monomer_mM": 2.977519726068185,
+        "plain_monomer_mM": 1.4887598630340926,
+        "tail91_monomer_mM": 1.4887598630340926
+      },
+      "fibril_level": {
+        "tails_per_fibril_mean": 1309.95,
+        "tails_per_nm_axis": 2.13,
+        "mean_gap_along_axis_nm": 0.4694835680751174
+      },
+      "bundle_level": {
+        "tails_per_nm_bundle_axis": 10.649999999999999,
+        "tails_per_um_bundle_axis": 10649.999999999998
+      },
+      "stereocilia_valency": {
+        "shell_area_per_bundle_um2": 235.61944901923448,
+        "shell_vol_per_bundle_um3": 235.61944901923448,
+        "tails_in_shell_per_bundle": 211240184.9030564,
+        "tmem145_sites_per_bundle_low_estimate": 30000.0,
+        "tmem145_sites_per_bundle_high_estimate": 300000.0,
+        "valency_ratio_tails_per_TMEM145_low": 7041.339496768547,
+        "valency_ratio_tails_per_TMEM145_high": 704.1339496768547,
+        "note": "TMEM145 sites per bundle are order-estimate (10^3-10^4/ster). Primary lit measurement missing \u2014 gate to S-tier."
+      },
+      "cochlea_coverage": {
+        "gel_volume_ul": 10.0,
+        "total_tail91_molecules_delivered": 8965311895191305.0,
+        "per_OHC_if_uniform_distribution": 747109324599.2754,
+        "per_stereocilium_if_uniform": 24903644153.30918,
+        "note": "Uniform distribution is optimistic; real delivery has apico-basal gradient (Salt & Plontke 2018)."
+      },
+      "dose_to_match_100ug_tail91": {
+        "mass_fraction_tail91": 0.8725621557242816,
+        "total_peptide_mass_ug_needed": 114.60501620883808,
+        "ratio_vs_100pct": 1.1460501620883807
+      }
+    }
+  ],
+  "recommended_blend": {
+    "phi_tail": 0.05,
+    "gel_pct_wv": 2.0,
+    "assembly_flag": "PASS",
+    "tails_in_shell_per_bundle": 64131087.99972114,
+    "valency_ratio_low_est": 2137.702933324038,
+    "valency_ratio_high_est": 213.7702933324038,
+    "dose_to_match_100ug_pure_tail91": 377.4953079679235
+  }
+}
