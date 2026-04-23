@@ -34,13 +34,21 @@ STABILITY = json.loads((ROOT / "mrna_stability_cochlear_results.json").read_text
 DOSE_RESP = json.loads((ROOT / "rbm24_mrna_dose_response_results.json").read_text())
 
 # ═══════════════════════════════════════════════════════════════════════
-# POST-AUDIT 2026-04-23 — see mrna_lnp_pkpd_integration.py for provenance.
-# Summary: HILL_K/HILL_N/MAX_BOOST are circular ODE fits; STRC_HL_D/RBM24_HL_D
-# are unsourced from primary literature; Gao 2020 PMID 32493791 (COVID paper)
-# was PHANTOM; Sahin 2014 cited below is a wrong-paper-match for UPR threshold.
+# POST-AUDIT 2026-04-23 v2 — see mrna_lnp_pkpd_integration.py for full block.
+# Summary:
+#   HILL_K/HILL_N/MAX_BOOST — CIRCULAR ODE fits (no OHC splicing dose-response).
+#   STRC_HL_D = 14 d, RBM24_HL_D = 2 d — lit-ANCHORED order-of-magnitude
+#     estimates, NOT protein-specific measurements.
+#     Anchors: Zhang 2012 Nature (PMID 22246323; stereocilia <10 %/day
+#     bulk turnover → t½ > 7 d); Mauriac 2024 PNAS (PMID 39320919; GPSM2
+#     t½ 9–10 d); Schwanhäusser 2011 Nature (PMID 21593866; proteome
+#     median t½ ≈ 46 h ≈ 1.9 d).
+#   Gao 2020 PMID 32493791 = PHANTOM (COVID paper, not cochlear LNP).
+#   Sahin 2014 ER_CEILING_FOLD citation = wrong-paper-match (review, not
+#     UPR threshold). ER_CEILING_FOLD = 5 is MODEL HEURISTIC.
 # ═══════════════════════════════════════════════════════════════════════
 params = DOSE_RESP["params"]
-HILL_K = params["hill_km"]           # ⚠ CIRCULAR FIT
+HILL_K = params["hill_km"]           # ⚠ CIRCULAR FIT (no OHC splicing dose-response)
 HILL_N = params["hill_n"]             # ⚠ CIRCULAR FIT
 MAX_BOOST = params["max_boost"]       # ⚠ CIRCULAR FIT
 THRESHOLD = params["threshold_fold"]
@@ -48,8 +56,9 @@ THRESHOLD = params["threshold_fold"]
 MRNA_HL_UNMOD_H = STABILITY["stability"]["unmod_OHC"]["hl_h"]
 MRNA_HL_M1PSI_H = STABILITY["stability"]["m1psi_OHC"]["hl_h"]
 
-RBM24_HL_D = params["rbm24_hl_d"]     # ⚠ UNSOURCED primary lit
-STRC_HL_D = params["strc_hl_d"]       # ⚠ UNSOURCED primary lit
+# Lit-anchored protein-half-life estimates (not protein-specific).
+RBM24_HL_D = params["rbm24_hl_d"]     # ~proteome median (Schwanhäusser 2011)
+STRC_HL_D = params["strc_hl_d"]       # stereocilia regime (Zhang 2012, Mauriac 2024)
 
 LNP_ENDO_ESCAPE = 0.02     # ⚠ within <10% published range, specific cite missing
 LNP_UNTARGETED = 0.008     # ⚠ unsourced (Gao 2020 PMID was PHANTOM COVID paper)
