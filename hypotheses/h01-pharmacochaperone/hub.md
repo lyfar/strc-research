@@ -19,10 +19,15 @@ A-tier held. **Phase 5 MD + ensemble rescoring DELIVERED 2026-04-23** (pipeline 
 
 **Phase 3c v2 expanded virtual screen DELIVERED 2026-04-23**: 667-ligand two-stage ensemble dock (619 combinatorial scaffold × acid bioisostere + 29 curated FDA carboxylates; Stage 1 on snap_008 exh 8 + Stage 2 on top-30 × 5 k-means conformers exh 16; 13 min wall). **Top hits: niflumic-acid / flufenamic / sulfasalazine at Kd ≈ 30 μM, f_PC ≈ 0.125 at [L]=10 μM** — 1.7× tighter Kd than Phase 5b baseline (diflunisal 50 μM) but still RED vs NORMAL threshold. Fenamic-acid family (2-arylaminobenzoic) revealed as new scaffold direction. 0 GREEN / 0 YELLOW / 30 RED. To cross MILD-MODERATE f_PC ≥ 0.30 need ΔG ≈ -7.06 kcal/mol (0.88 below current best). See [[STRC h01 Phase 3c v2 Expanded Screen 2026-04-23]].
 
-Hypothesis intact; h01 reframed from "NORMAL monotherapy path" to **"MILD-MODERATE adjunct lever with conditional NORMAL"**. **Next (ranked by EV)**:
-1. **Phase 3c v3** — ZINC22 bioactives + DrugBank FDA full (~20 k ligands) with ensemble docking + Vina bias-correction for Lys-pocket; ~6-8 h local Mac compute.
-2. **Phase 3c v4** — fragment-growing on niflumic/fenamic core targeting K1141 Lys-NH₃⁺ salt bridge; SMIRKS-reaction enumeration on anthranilic-acid anchor.
-3. **Phase 6b** — reversible covalent warhead strategy (acrylamide, α-keto amide, β-ketoamide) at K1141 Lys ε-NH₂; parallel track.
+Hypothesis intact; h01 reframed from "NORMAL monotherapy path" to **"MILD-MODERATE adjunct lever with conditional NORMAL"**.
+
+**Phase 3c v3b + 6b IN PROGRESS (launched 2026-04-23 10:49 UTC, PID 73601 nohup, ETA ~5.7 h)**: 12,253-ligand fenamic-focused expansion library (8 anthranilic/fenamic cores × 57 N-aryl subs × 5 acid bioisosteres × 8 ring subs = ~11,500 non-covalent + 8 cores × 10 hot aryls × 6 covalent warheads × 2 acids = ~700 covalent warhead analogs). Two-stage ensemble dock identical to Phase 3c v2b. Checkpoint JSON every 100 lig. Expected proof note [[STRC h01 Phase 3c v3b Fenamic + Covalent Screen 2026-04-23]].
+
+**Next after v3b delivery**:
+1. If GREEN non-covalent hit → Phase 4h MD-scored validation on top-5 + wet-lab triage design.
+2. If GREEN covalent hit → Phase 6c selectivity audit vs proteome-wide Lys pockets (off-target cytotoxicity test).
+3. If YELLOW → Phase 3c v4 fragment-growing on best cluster or Phase 6d different warhead class (thiol-Michael acceptor, isothiocyanate).
+4. If RED → Phase 3c v5 de novo RFdiffusion-pocket ligand design (qualitative pivot).
 
 ## evidence
 
