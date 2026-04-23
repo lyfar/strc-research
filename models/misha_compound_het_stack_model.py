@@ -189,9 +189,9 @@ def run_grid(f_mat: float, abr_params, theta: float):
                     "F_functional_fraction": round(F_funct, 3),
                     "abr_dB": round(abr, 1),
                     "category": classify_abr(abr),
-                    "monotherapy_h03_only": (eps > 0 and f_PC == 0.0),
-                    "monotherapy_h01_only": (eps == 0 and f_PC > 0),
-                    "stack_h01_h03": (eps > 0 and f_PC > 0),
+                    "monotherapy_h03_only": bool(eps > 0 and f_PC == 0.0),
+                    "monotherapy_h01_only": bool(eps == 0 and f_PC > 0),
+                    "stack_h01_h03": bool(eps > 0 and f_PC > 0),
                 })
     return rows
 
@@ -260,6 +260,27 @@ def main():
                 )),
         }
 
+    # Theta-sensitivity: is the conclusion robust to the STRC-protein threshold?
+    theta_sens = {}
+    for theta in THETA_SENSITIVITY:
+        inner = {}
+        for name, f_mat in F_MAT_SCENARIOS.items():
+            rows = run_grid(f_mat, abr_params, theta)
+            n_normal = sum(1 for r in rows if r["category"] == "NORMAL")
+            h03_only_normal = [r for r in rows if r["monotherapy_h03_only"]
+                               and r["category"] == "NORMAL"]
+            h01_only_normal = [r for r in rows if r["monotherapy_h01_only"]
+                               and r["category"] == "NORMAL"]
+            stack_normal = [r for r in rows if r["stack_h01_h03"]
+                            and r["category"] == "NORMAL"]
+            inner[name] = {
+                "n_NORMAL": n_normal,
+                "h03_mono_NORMAL_possible": len(h03_only_normal) > 0,
+                "h01_mono_NORMAL_possible": len(h01_only_normal) > 0,
+                "stack_NORMAL_possible": len(stack_normal) > 0,
+            }
+        theta_sens[f"theta_{theta}"] = inner
+
     # Nobel argument synthesis: across f_mat scenarios, is stack strictly
     # more capable than either monotherapy?
     nobel_arg = {
@@ -268,6 +289,14 @@ def main():
         "per_scenario_stack_uniquely_enables_NORMAL": {
             name: s["stack_enables_NORMAL"] for name, s in scenarios.items()
         },
+        "interpretation": (
+            "Because non-transduced OHCs are NOT reached by AAV, NORMAL "
+            "hearing requires pharmacochaperone to rescue the maternal "
+            "E1659A allele to the point where 0.5 × f_mat_treated ≥ theta. "
+            "AAV alone caps at functional-fraction = epsilon; at realistic "
+            "epsilon ≤ 0.5 this is MILD, not NORMAL. Stack is therefore "
+            "NECESSARY not optional for NORMAL-tier outcome in compound het."
+        ),
     }
 
     summary = {
@@ -286,6 +315,7 @@ def main():
             "f_PC_grid": F_PC_GRID.tolist(),
         },
         "scenarios": scenarios,
+        "theta_sensitivity": theta_sens,
         "nobel_argument": nobel_arg,
     }
 
@@ -294,23 +324,30 @@ def main():
     # Human summary
     print("=== Misha Compound-Het Therapy Stack Model ===\n")
     print(f"ABR transfer fit RMSE: {abr_rmse:.2f} dB")
-    print(f"Misha baseline (audiogram): {MISHA_BASELINE_DB} dB\n")
-    print(f"{'Scenario':<24}{'baseline':<10}{'h03-only':<15}{'h01-only':<15}"
-          f"{'stack adds?':<12}{'low-burden stack':<18}")
-    print("─" * 94)
+    print(f"Misha baseline (audiogram): {MISHA_BASELINE_DB} dB")
+    print(f"STRC-protein threshold theta = {THETA_BASELINE}"
+          f" (sensitivity over {THETA_SENSITIVITY})\n")
+    print(f"{'Scenario':<24}{'no-tx ABR':<11}{'h03-only':<14}{'h01-only':<14}"
+          f"{'stack unique?':<14}{'low-burden NORMAL':<18}")
+    print("─" * 95)
     for name, s in scenarios.items():
         h03 = (f"ε≥{s['h03_min_epsilon_for_NORMAL']:.2f}"
                if s['h03_monotherapy_achieves_NORMAL'] else "NO")
         h01 = (f"f_PC≥{s['h01_min_fPC_for_NORMAL']:.2f}"
                if s['h01_monotherapy_achieves_NORMAL'] else "NO")
         stack_note = "YES" if s["stack_enables_NORMAL"] else "no extra"
-        print(f"{name:<24}{s['baseline_abr_no_therapy_dB']:<10.0f}"
-              f"{h03:<15}{h01:<15}{stack_note:<12}"
+        print(f"{name:<24}{s['baseline_abr_no_therapy_dB']:<11.0f}"
+              f"{h03:<14}{h01:<14}{stack_note:<14}"
               f"{s['n_low_burden_stack_NORMAL']:<18d}")
     print()
-    print("Nobel argument: stack strictly enables NORMAL hearing in",
-          sum(1 for s in scenarios.values() if s["stack_enables_NORMAL"]),
-          f"/ {len(scenarios)} plausible f_mat scenarios.\n")
+    print("Theta-sensitivity (is NORMAL reachable across {0.25, 0.35, 0.45}?):")
+    for theta_key, inner in theta_sens.items():
+        norm_reach_n = sum(1 for s in inner.values()
+                          if s["h01_mono_NORMAL_possible"] or
+                          s["h03_mono_NORMAL_possible"] or
+                          s["stack_NORMAL_possible"])
+        print(f"  {theta_key}: NORMAL reachable in {norm_reach_n}/3 scenarios")
+    print()
     print(f"JSON: {OUT}")
 
 
