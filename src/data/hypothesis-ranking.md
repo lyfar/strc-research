@@ -55,18 +55,31 @@ These hypotheses/models feed into the active register above but don't get their 
 
 _All 18 numbered hypotheses (h01–h16, h26, h27) now live in `research/strc/hypotheses/h{N}/hub.md` and render via the Dataview block above. Manual table removed 2026-04-23 — edit hub frontmatter to change tier/score/next-step._
 
-## S-tier (active compute now)
+## S-tier (live)
 
-- **#3 Mini-STRC AAV** — single-dose, null-compatible. Iranfar 2026 + Holt 2021 validated. Regeneron AAV.104 commercial track. Shanghai Shu Yilai knock-in mouse active. **NEW 2026-04-23**: per [[Misha Compound-Het Therapy Stack Model]], ceiling-capped at MILD (30-40 dB ABR) for Misha's compound-het genotype — cannot reach NORMAL alone because non-transduced OHCs retain maternal E1659A + null paternal. "Meaningful rescue" endpoint, not "cure" endpoint.
-- (h02 Piezo demoted S→B after 2026-04-23 post-fix re-run: baseline no longer passes 60 dB after d31 reconcile; A666 ligand phantom; TM mismatch 10⁵× not modelled.)
+```dataview
+TABLE WITHOUT ID
+  link(hypothesis_title) AS "Hypothesis",
+  next_step AS "Next step",
+  file.link AS "Hub"
+FROM "research/strc/hypotheses"
+WHERE type = "hypothesis-hub" AND tier = "S"
+SORT hypothesis_num ASC
+```
 
 **Clinical plan for Misha** per [[Misha Compound-Het Therapy Stack Model]]: pursue #1 (PC for maternal E1659A) + #3 (AAV for paternal null) in parallel. h01 is the only monotherapy route to NORMAL (≤ 25 dB ABR); stack provides redundancy and lower drug/AAV burden. Phase 5 MD on #1 is the critical-path compute that produces the f_PC parameter.
 
-## Kill list (D-tier)
+## Kill list (D-tier, live)
 
-- OTOA chimera — Cα RMSD 13.8 Å.
-- ZP prion-like seeding — requires WT substrate; Misha paternal 98 kb Δ has none.
-- Direct protein replacement — no delivery route.
+```dataview
+TABLE WITHOUT ID
+  link(hypothesis_title) AS "Hypothesis",
+  next_step AS "Reason killed",
+  file.link AS "Hub"
+FROM "research/strc/hypotheses"
+WHERE type = "hypothesis-hub" AND tier = "D"
+SORT hypothesis_num ASC
+```
 
 ## Decision gates
 
