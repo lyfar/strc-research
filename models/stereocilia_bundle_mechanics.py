@@ -191,6 +191,6 @@ Key structural question (NOT modelled — requires experiment):
         "therapy_projections": therapy_results
     }
 
-    with open("/Users/egorlyfar/Brain/sites/strc/models/bundle_mechanics_results.json", "w") as f_out:
+    with open("/Users/egorlyfar/Brain/research/strc/models/bundle_mechanics_results.json", "w") as f_out:
         json.dump(output, f_out, indent=2)
-    print("Results → Brain/sites/strc/models/bundle_mechanics_results.json")
+    print("Results → Brain/research/strc/models/bundle_mechanics_results.json")
