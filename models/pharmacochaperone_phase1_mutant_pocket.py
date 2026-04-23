@@ -260,7 +260,16 @@ def pocket_composition(chain, center: np.ndarray, radius: float) -> Dict:
 
 def druggability_score(comp: Dict, void: Dict) -> Dict:
     """SiteMap-inspired heuristic: volume, hydrophobic ratio, H-bonds.
-    Returns score in [0..1] and interpretation."""
+    Returns score in [0..1] and interpretation.
+
+    NOTE [audit 2026-04-23]: Phase 1 uses weights 0.5/0.3/0.2
+    (vol/hydro/hb). Phase 2 uses 0.40/0.25/0.20/0.15 (vol/hydro/nres/hb).
+    Phase 2b uses 0.30/0.20/0.15/0.15/0.20 (vol/hydro/nres/hb/depth).
+    These reflect different descriptors available per phase — scores are
+    NOT cross-phase comparable. Use each score only within-phase ranking.
+    SiteMap and DoGSiteScorer weight sets are both heuristic; there is no
+    single lit-canonical weighting for custom druggability features.
+    """
     vol = void["void_A3"]
     # Ideal drug pocket: 200-700 Å³ (tiny fragments) or up to 1500 (lead-like)
     if vol < 50:

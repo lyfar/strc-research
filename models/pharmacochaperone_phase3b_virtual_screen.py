@@ -16,13 +16,21 @@ Scoring scheme (each component in [0, 1], composite is weighted mean):
     lipinski_pass     — Rule of 5 (for drug-sized leads)
     hb_donor          — has at least one H-bond donor that can reach a
                         protein carbonyl (backbone O of G1645/F1646/G1647)
-    tpsa              — TPSA in [40, 90] Å² (balanced polarity for CNS-like
-                        delivery into endolymph)
+    tpsa              — Topological Polar Surface Area, computed and stored
+                        as descriptor; NOT used in composite score below.
+                        Retained for downstream filtering/inspection.
+                        Note: STRC is EXTRACELLULAR — the earlier docstring
+                        framing of "CNS-like 40-90 Å²" was incorrect (BBB
+                        irrelevant for otic RWM delivery). Literature for
+                        otic/RWM permeability vs TPSA is thin; no primary
+                        lit-backed range applied here. [audit 2026-04-23]
     qed               — drug-likeness quantitative estimate
 
 Composite drug score D = 0.30*anion + 0.15*anion_aromatic_d +
                          0.15*size_fit + 0.10*ro3 +
                          0.10*lipinski + 0.10*hb_donor + 0.10*qed
+(Note: TPSA and QED-derived `score_qed` above: only score_qed enters the
+composite — TPSA is not. See audit 2026-04-23.)
 
 Library (30 compounds, literature SMILES):
   A. CFTR correctors — closest clinical analogue class (misfolding rescue
