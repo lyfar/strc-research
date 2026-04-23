@@ -1,6 +1,6 @@
 {
   "stage": "1",
-  "progress": 6100,
+  "progress": 6200,
   "total": 12253,
   "results_so_far": [
     {
@@ -36601,6 +36601,606 @@
       "name": "nc__3-amino-benzoic__4-CONH2-phenyl__tetrazole__-CF3",
       "smiles": "NC(=O)c1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1C(F)(F)F",
       "dG": -6.384,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2cccc(-c3nnn[nH]3)c2)ccc1C(N)=O",
+      "dG": -6.576,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__tetrazole__-OH",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1O",
+      "dG": -6.771,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2cccc(-c3nnn[nH]3)c2)ccc1C(N)=O",
+      "dG": -6.688,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__tetrazole__-NO2",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1[N+](=O)[O-]",
+      "dG": -6.402,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-H",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1",
+      "dG": -6.437,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-Cl",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1Cl",
+      "dG": -6.487,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-F",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1F",
+      "dG": -6.598,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-CF3",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1C(F)(F)F",
+      "dG": -6.654,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cc(Nc2cccc(C(=O)NO)c2)ccc1C(N)=O",
+      "dG": -6.333,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-OH",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1O",
+      "dG": -6.61,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cc(Nc2cccc(C(=O)NO)c2)ccc1C(N)=O",
+      "dG": -6.447,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHOH__-NO2",
+      "smiles": "NC(=O)c1ccc(Nc2cccc(C(=O)NO)c2)cc1[N+](=O)[O-]",
+      "dG": -6.329,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccc(Nc2ccc(C(N)=O)cc2)c1",
+      "dG": -6.2,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2ccc(C(N)=O)cc2)ccc1Cl",
+      "dG": -6.321,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2ccc(C(N)=O)cc2)ccc1F",
+      "dG": -6.284,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2ccc(C(N)=O)cc2)ccc1C(F)(F)F",
+      "dG": -6.256,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccc(Nc2ccc(C(N)=O)cc2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -6.106,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2ccc(C(N)=O)cc2)ccc1O",
+      "dG": -6.349,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccc(Nc2ccc(C(N)=O)cc2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -6.12,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__4-CONH2-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2ccc(C(N)=O)cc2)ccc1[N+](=O)[O-]",
+      "dG": -5.9,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-H",
+      "smiles": "O=C(O)c1cccc(Nc2cccc(C(F)(F)F)c2)c1",
+      "dG": -6.382,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-Cl",
+      "smiles": "O=C(O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1Cl",
+      "dG": -6.312,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-F",
+      "smiles": "O=C(O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1F",
+      "dG": -6.416,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-CF3",
+      "smiles": "O=C(O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1C(F)(F)F",
+      "dG": -6.989,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)O",
+      "dG": -6.048,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-OH",
+      "smiles": "O=C(O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1O",
+      "dG": -6.296,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)O",
+      "dG": -6.363,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__COOH__-NO2",
+      "smiles": "O=C(O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.31,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__tetrazole__-H",
+      "smiles": "FC(F)(F)c1cccc(Nc2cccc(-c3nnn[nH]3)c2)c1",
+      "dG": -7.124,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__tetrazole__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1C(F)(F)F",
+      "dG": -6.659,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccc(Nc2cccc(C(F)(F)F)c2)c1",
+      "dG": -6.781,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1Cl",
+      "dG": -6.786,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1F",
+      "dG": -6.977,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1C(F)(F)F",
+      "dG": -7.26,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)NO",
+      "dG": -6.44,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1O",
+      "dG": -6.556,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)NO",
+      "dG": -6.926,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.557,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccc(Nc2cccc(C(F)(F)F)c2)c1",
+      "dG": -6.757,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1Cl",
+      "dG": -6.886,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1F",
+      "dG": -6.554,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1C(F)(F)F",
+      "dG": -6.71,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -6.67,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1O",
+      "dG": -6.908,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(C(F)(F)F)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -6.441,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-CF3-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(C(F)(F)F)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.761,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-H",
+      "smiles": "O=C(O)c1cccc(Nc2cccc(Cl)c2)c1",
+      "dG": -5.679,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-Cl",
+      "smiles": "O=C(O)c1cc(Nc2cccc(Cl)c2)ccc1Cl",
+      "dG": -5.896,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-F",
+      "smiles": "O=C(O)c1cc(Nc2cccc(Cl)c2)ccc1F",
+      "dG": -5.994,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-CF3",
+      "smiles": "O=C(O)c1cc(Nc2cccc(Cl)c2)ccc1C(F)(F)F",
+      "dG": -6.411,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(Cl)c2)cc1C(=O)O",
+      "dG": -5.694,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-OH",
+      "smiles": "O=C(O)c1cc(Nc2cccc(Cl)c2)ccc1O",
+      "dG": -5.617,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(Cl)c2)cc1C(=O)O",
+      "dG": -6.068,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__COOH__-NO2",
+      "smiles": "O=C(O)c1cc(Nc2cccc(Cl)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.093,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__tetrazole__-H",
+      "smiles": "Clc1cccc(Nc2cccc(-c3nnn[nH]3)c2)c1",
+      "dG": -6.398,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__tetrazole__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1Cl",
+      "dG": -6.672,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccc(Nc2cccc(Cl)c2)c1",
+      "dG": -6.176,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(Cl)c2)ccc1Cl",
+      "dG": -6.431,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(Cl)c2)ccc1F",
+      "dG": -6.36,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(Cl)c2)ccc1C(F)(F)F",
+      "dG": -6.732,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(Cl)c2)cc1C(=O)NO",
+      "dG": -5.887,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(Cl)c2)ccc1O",
+      "dG": -5.961,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(Cl)c2)cc1C(=O)NO",
+      "dG": -6.491,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(Cl)c2)ccc1[N+](=O)[O-]",
+      "dG": -5.704,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccc(Nc2cccc(Cl)c2)c1",
+      "dG": -5.802,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(Cl)c2)ccc1Cl",
+      "dG": -5.603,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(Cl)c2)ccc1F",
+      "dG": -5.86,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(Cl)c2)ccc1C(F)(F)F",
+      "dG": -6.264,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(Cl)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -5.819,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(Cl)c2)ccc1O",
+      "dG": -5.635,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(Cl)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -5.696,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-Cl-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(Cl)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.006,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-H",
+      "smiles": "O=C(O)c1cccc(Nc2cccc(F)c2)c1",
+      "dG": -5.823,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-Cl",
+      "smiles": "O=C(O)c1cc(Nc2cccc(F)c2)ccc1Cl",
+      "dG": -5.882,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-F",
+      "smiles": "O=C(O)c1cc(Nc2cccc(F)c2)ccc1F",
+      "dG": -5.952,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-CF3",
+      "smiles": "O=C(O)c1cc(Nc2cccc(F)c2)ccc1C(F)(F)F",
+      "dG": -6.4,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(F)c2)cc1C(=O)O",
+      "dG": -5.761,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-OH",
+      "smiles": "O=C(O)c1cc(Nc2cccc(F)c2)ccc1O",
+      "dG": -5.705,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(F)c2)cc1C(=O)O",
+      "dG": -5.88,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__COOH__-NO2",
+      "smiles": "O=C(O)c1cc(Nc2cccc(F)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.3,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__tetrazole__-H",
+      "smiles": "Fc1cccc(Nc2cccc(-c3nnn[nH]3)c2)c1",
+      "dG": -6.374,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__tetrazole__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(-c3nnn[nH]3)c2)cc1F",
+      "dG": -6.703,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1cccc(Nc2cccc(F)c2)c1",
+      "dG": -6.146,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(F)c2)ccc1Cl",
+      "dG": -6.406,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(F)c2)ccc1F",
+      "dG": -6.404,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(F)c2)ccc1C(F)(F)F",
+      "dG": -6.716,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(F)c2)cc1C(=O)NO",
+      "dG": -5.842,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(F)c2)ccc1O",
+      "dG": -5.992,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(F)c2)cc1C(=O)NO",
+      "dG": -6.398,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1cc(Nc2cccc(F)c2)ccc1[N+](=O)[O-]",
+      "dG": null,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1cccc(Nc2cccc(F)c2)c1",
+      "dG": -5.65,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(F)c2)ccc1Cl",
+      "dG": -5.651,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(F)c2)ccc1F",
+      "dG": -5.883,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(F)c2)ccc1C(F)(F)F",
+      "dG": -6.254,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1ccc(Nc2cccc(F)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -5.911,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(F)c2)ccc1O",
+      "dG": -6.076,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1ccc(Nc2cccc(F)c2)cc1C(=O)NS(C)(=O)=O",
+      "dG": -5.62,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-F-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1cc(Nc2cccc(F)c2)ccc1[N+](=O)[O-]",
+      "dG": -6.082,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-OMe-phenyl__COOH__-H",
+      "smiles": "COc1cccc(Nc2cccc(C(=O)O)c2)c1",
+      "dG": -5.47,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-benzoic__3-OMe-phenyl__COOH__-Cl",
+      "smiles": "COc1cc(Nc2cccc(C(=O)O)c2)ccc1Cl",
+      "dG": -5.759,
       "is_covalent": false
     }
   ]
