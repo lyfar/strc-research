@@ -17,7 +17,12 @@ A-tier held. **Phase 5 MD + ensemble rescoring DELIVERED 2026-04-23** (pipeline 
 
 **Phase 5c cryptic pocket analysis DELIVERED 2026-04-23**: K1141 pocket GREEN-LIGHT on structural stability — Cα RMSF 0.62 Å vs global 1.23 Å (2× more rigid), local void volume 719-850 Å³ across 20 frames (does not collapse), no alt cavity > 152 Å³ on the protein. **Phase 5b RED-LIGHT is chemistry-limited not site-limited.** See [[STRC h01 Phase 5c Cryptic Pocket Analysis 2026-04-23]].
 
-Hypothesis intact — K1141 site confirmed druggable geometry; only the current shortlist chemistry is insufficient. **Next: Phase 3c v2 expanded virtual screen** — DrugBank FDA library (~2500 approved) + ZINC22 carboxylate tranche (~50 k) + fragment-based screen at K1141 pocket on 5 ensemble-sampled receptor conformers from Phase 5a trajectory; filter at ensemble ΔG ≤ −7.5 kcal/mol (target Kd ≤ 5 μM → f_PC ≥ 0.67 at [L]=10 μM).
+**Phase 3c v2 expanded virtual screen DELIVERED 2026-04-23**: 667-ligand two-stage ensemble dock (619 combinatorial scaffold × acid bioisostere + 29 curated FDA carboxylates; Stage 1 on snap_008 exh 8 + Stage 2 on top-30 × 5 k-means conformers exh 16; 13 min wall). **Top hits: niflumic-acid / flufenamic / sulfasalazine at Kd ≈ 30 μM, f_PC ≈ 0.125 at [L]=10 μM** — 1.7× tighter Kd than Phase 5b baseline (diflunisal 50 μM) but still RED vs NORMAL threshold. Fenamic-acid family (2-arylaminobenzoic) revealed as new scaffold direction. 0 GREEN / 0 YELLOW / 30 RED. To cross MILD-MODERATE f_PC ≥ 0.30 need ΔG ≈ -7.06 kcal/mol (0.88 below current best). See [[STRC h01 Phase 3c v2 Expanded Screen 2026-04-23]].
+
+Hypothesis intact; h01 reframed from "NORMAL monotherapy path" to **"MILD-MODERATE adjunct lever with conditional NORMAL"**. **Next (ranked by EV)**:
+1. **Phase 3c v3** — ZINC22 bioactives + DrugBank FDA full (~20 k ligands) with ensemble docking + Vina bias-correction for Lys-pocket; ~6-8 h local Mac compute.
+2. **Phase 3c v4** — fragment-growing on niflumic/fenamic core targeting K1141 Lys-NH₃⁺ salt bridge; SMIRKS-reaction enumeration on anthranilic-acid anchor.
+3. **Phase 6b** — reversible covalent warhead strategy (acrylamide, α-keto amide, β-ketoamide) at K1141 Lys ε-NH₂; parallel track.
 
 ## evidence
 
@@ -42,6 +47,8 @@ research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventor
 - `pharmacochaperone_phase5a_apo_md_smoke.py` — OpenMM + AMBER14SB apo MD, SMOKE + 2 ns production delivered 2026-04-23
 - `pharmacochaperone_phase5b_ensemble_redock.py` — Vina ensemble re-docking on Phase 5a snapshots; f_PC estimates per lead
 - `pharmacochaperone_phase5c_cryptic_pocket_detection.py` — K1141 stability (Cα RMSF, local void volume) + grid-based alt cavity scan on Phase 5a trajectory
+- `pharmacochaperone_phase3c_v2a_library_build.py` — RDKit combinatorial library (25 scaffolds × 10 acid bioisosteres + 29 curated FDA drugs = 667 ligands in PDBQT)
+- `pharmacochaperone_phase3c_v2b_ensemble_dock.py` — 2-stage Vina ensemble dock: Stage 1 breadth (snap_008 exh 8) + Stage 2 ensemble (top-30 × 5 k-means receptor conformers exh 16)
 
 ## log
 
