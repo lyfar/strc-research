@@ -9,6 +9,8 @@ mech: 3
 deliv: 4
 misha_fit: 4
 next_step: "Phase 3c v3b dock + 5d E1659A MD running"
+lit_audit: fixed
+lit_audit_date: 2026-04-23
 ---
 
 # h01 — Pharmacochaperone E1659A

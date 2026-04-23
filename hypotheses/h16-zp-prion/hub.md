@@ -8,6 +8,8 @@ mech: 3
 deliv: 2
 misha_fit: 1
 next_step: "Wrong patient (paternal 98kb Δ)"
+lit_audit: deferred
+lit_audit_date: 2026-04-23
 tags: [strc, h16]
 ---
 

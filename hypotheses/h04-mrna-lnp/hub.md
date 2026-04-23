@@ -8,6 +8,8 @@ mech: 3
 deliv: 2
 misha_fit: 2
 next_step: "Academic/interim if AAV fails"
+lit_audit: fixed
+lit_audit_date: 2026-04-23
 tags: [strc, h04]
 ---
 

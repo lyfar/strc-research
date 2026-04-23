@@ -9,6 +9,8 @@ mech: 5
 deliv: 5
 misha_fit: 4
 next_step: "Order gBlock, clone pAAV, coIP"
+lit_audit: deferred
+lit_audit_date: 2026-04-23
 ---
 
 # h03 — Mini-STRC Single-Vector AAV

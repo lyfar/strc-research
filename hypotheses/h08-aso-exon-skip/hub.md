@@ -8,6 +8,8 @@ mech: 2
 deliv: 3
 misha_fit: 2
 next_step: "Phase 3a morpholino + 3b gapmer"
+lit_audit: fixed
+lit_audit_date: 2026-04-23
 tags: [strc, h08]
 ---
 

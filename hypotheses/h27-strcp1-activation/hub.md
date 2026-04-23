@@ -9,6 +9,8 @@ mech: 2
 deliv: 2
 misha_fit: 4
 next_step: "Email Holt lab ribosome-profiling"
+lit_audit: fixed
+lit_audit_date: 2026-04-23
 ---
 
 # h27 — STRCP1 Activation Rescue

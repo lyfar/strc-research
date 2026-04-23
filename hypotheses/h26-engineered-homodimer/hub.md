@@ -9,6 +9,8 @@ mech: 2
 deliv: 5
 misha_fit: 4
 next_step: "Phase 1d AF3 A1078C/S1080C/S1579C"
+lit_audit: fixed
+lit_audit_date: 2026-04-23
 ---
 
 # h26 — Engineered Homodimer Avidity

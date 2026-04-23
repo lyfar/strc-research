@@ -8,6 +8,7 @@ pubmed_id: "42003794"
 doi: "10.1111/gtc.70115"
 relevance_type: lateral
 relevance_score: 6/10
+hypotheses: [h01]
 tags: [pharmacochaperone, chemical-chaperone, missense, protein-trafficking, 4PBA, cell-surface-localization]
 status: unread
 date_added: 2026-04-21

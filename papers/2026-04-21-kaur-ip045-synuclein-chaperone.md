@@ -8,6 +8,7 @@ pubmed_id: "42003184"
 doi: "10.1002/ddr.70288"
 relevance_type: lateral
 relevance_score: 5/10
+hypotheses: [h01]
 tags: [pharmacochaperone, virtual-screen, chemical-chaperone, protein-aggregation, structure-based-design]
 status: unread
 date_added: 2026-04-21

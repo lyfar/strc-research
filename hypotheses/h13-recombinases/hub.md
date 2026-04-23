@@ -8,6 +8,8 @@ mech: 2
 deliv: 1
 misha_fit: 3
 next_step: "Technology-watch only"
+lit_audit: deferred
+lit_audit_date: 2026-04-23
 tags: [strc, h13]
 ---
 

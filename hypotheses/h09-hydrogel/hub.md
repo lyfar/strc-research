@@ -9,6 +9,8 @@ mech: 4
 deliv: 3
 misha_fit: 3
 next_step: "Phase 2c WH2 bundling + 4b AF3"
+lit_audit: partial
+lit_audit_date: 2026-04-23
 ---
 
 # h09 — Synthetic Peptide Hydrogel HTC
