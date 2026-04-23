@@ -9,14 +9,7 @@ sites: [strc]
 
 > MANDATORY before any STRC work. Read tier table. Update after every proof. Missing update = incomplete work.
 
-Change log: [[STRC Hypothesis Ranking Log]]
-
-## Update protocol (for agents)
-
-1. Every proof's atomic note closes with `## Ranking delta`.
-2. Append 1-line entry to [[STRC Hypothesis Ranking Log]] (date | delta | link). Do NOT add to this file.
-3. Edit table row in place (current state only).
-4. Update per-hypothesis `h{N}/log.md` with 1-line entry.
+**Update protocol:** see [[AGENTS]] §0. TL;DR — `## Ranking delta` in proof note → prepend to `h{N}/log.md` → edit `h{N}/hub.md` frontmatter if tier/score/next-step changed. Dataview re-renders this page automatically. No sync scripts. Architecture: [[Vault Stack and Schemas]].
 
 ## Rubric
 
@@ -24,9 +17,7 @@ Axes 1-5: **Mech** (biology plausible), **Deliv** (cochlear delivery 3-5 yr), **
 
 Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner. B = watch. C = paused, needs external catalyst. D = killed.
 
-## Active register (2026-04-23)
-
-### Active register (auto-rendered from `h{N}/hub.md` frontmatter)
+## Active register (auto-rendered from `h{N}/hub.md` frontmatter)
 
 Canonical view. To change a row — edit the hub's frontmatter (`tier`, `mech`, `deliv`, `misha_fit`, `next_step`), not this file. All 18 numbered hypotheses (h01–h16, h26, h27) are covered. Ref rows (supporting notes, clinical plans) are listed separately below.
 
