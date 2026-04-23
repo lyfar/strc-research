@@ -1,6 +1,6 @@
 {
   "stage": "1",
-  "progress": 7300,
+  "progress": 7400,
   "total": 12253,
   "results_so_far": [
     {
@@ -43801,6 +43801,606 @@
       "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__tetrazole__-CF3",
       "smiles": "FC(F)(F)c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1C(F)(F)F",
       "dG": -6.801,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.444,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__tetrazole__-OH",
+      "smiles": "Oc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.3,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.685,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.391,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1ccncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.25,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.316,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.358,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(Nc2ccc(C(F)(F)F)cc2)cncc1C(F)(F)F",
+      "dG": -6.987,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cncc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NO",
+      "dG": -6.188,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.213,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cncc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NO",
+      "dG": -6.203,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c(Nc2ccc(C(F)(F)F)cc2)cncc1[N+](=O)[O-]",
+      "dG": -6.23,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.004,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -5.99,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.194,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C(F)(F)F)cc2)cncc1C(F)(F)F",
+      "dG": -6.888,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cncc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.158,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cncc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.393,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cncc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.325,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CF3-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C(F)(F)F)cc2)cncc1[N+](=O)[O-]",
+      "dG": -6.176,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-H",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1",
+      "dG": -5.354,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-Cl",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1Cl",
+      "dG": -5.426,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-F",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1F",
+      "dG": -5.698,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-CF3",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1C(F)(F)F",
+      "dG": -5.999,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2C(=O)O)ccc1C#N",
+      "dG": -5.314,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-OH",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1O",
+      "dG": -5.469,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2C(=O)O)ccc1C#N",
+      "dG": -5.693,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__COOH__-NO2",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)O)cc1[N+](=O)[O-]",
+      "dG": -5.481,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-H",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1",
+      "dG": -5.914,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-Cl",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -5.644,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-F",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1F",
+      "dG": -5.741,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-CF3",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.389,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C#N",
+      "dG": -5.55,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-OH",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1O",
+      "dG": -5.597,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1C#N",
+      "dG": -6.197,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__tetrazole__-NO2",
+      "smiles": "N#Cc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -5.683,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-H",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1",
+      "dG": -5.336,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-Cl",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1Cl",
+      "dG": -5.506,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-F",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1F",
+      "dG": -5.657,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-CF3",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1C(F)(F)F",
+      "dG": -6.094,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2C(=O)NO)ccc1C#N",
+      "dG": -5.495,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-OH",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1O",
+      "dG": -5.446,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2C(=O)NO)ccc1C#N",
+      "dG": -5.733,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHOH__-NO2",
+      "smiles": "N#Cc1ccc(Nc2cnccc2C(=O)NO)cc1[N+](=O)[O-]",
+      "dG": -5.692,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccncc1Nc1ccc(C#N)cc1",
+      "dG": -5.338,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cncc1Nc1ccc(C#N)cc1",
+      "dG": -5.649,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cncc1Nc1ccc(C#N)cc1",
+      "dG": -5.58,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C#N)cc2)cncc1C(F)(F)F",
+      "dG": -6.348,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cncc(Nc2ccc(C#N)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.598,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cncc1Nc1ccc(C#N)cc1",
+      "dG": -5.615,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cncc(Nc2ccc(C#N)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.516,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-CN-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C#N)cc2)cncc1[N+](=O)[O-]",
+      "dG": -5.839,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-H",
+      "smiles": "O=C(O)c1ccncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.632,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-Cl",
+      "smiles": "O=C(O)c1c(Cl)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.586,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-F",
+      "smiles": "O=C(O)c1c(F)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.797,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1C(F)(F)F",
+      "dG": -6.07,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-OMe",
+      "smiles": "COc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)O",
+      "dG": -5.492,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.459,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-Me",
+      "smiles": "Cc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)O",
+      "dG": -5.59,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__COOH__-NO2",
+      "smiles": "O=C(O)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1[N+](=O)[O-]",
+      "dG": -5.646,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-Cl",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -6.341,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-F",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1F",
+      "dG": -6.15,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-CF3",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.283,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1[N+](=O)[O-]",
+      "dG": -5.445,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-OH",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1O",
+      "dG": -5.859,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1[N+](=O)[O-]",
+      "dG": -6.31,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2cnccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -5.679,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1ccncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.667,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.84,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.726,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1C(F)(F)F",
+      "dG": -6.434,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NO",
+      "dG": -5.68,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.722,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NO",
+      "dG": -5.695,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1[N+](=O)[O-]",
+      "dG": -5.827,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.296,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.832,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.565,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1C(F)(F)F",
+      "dG": -6.394,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.506,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cncc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.68,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cncc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.761,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NO2-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc([N+](=O)[O-])cc2)cncc1[N+](=O)[O-]",
+      "dG": -5.424,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-H",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1",
+      "dG": -5.189,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-Cl",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1Cl",
+      "dG": -5.431,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-F",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1F",
+      "dG": -5.346,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-CF3",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1C(F)(F)F",
+      "dG": -5.75,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2C(=O)O)ccc1N",
+      "dG": -5.298,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-OH",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1O",
+      "dG": -5.352,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2C(=O)O)ccc1N",
+      "dG": -5.457,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__COOH__-NO2",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)O)cc1[N+](=O)[O-]",
+      "dG": -5.429,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-H",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1",
+      "dG": -5.576,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-Cl",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -5.819,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-F",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1F",
+      "dG": -5.973,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-CF3",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.437,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1N",
+      "dG": -5.781,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-OH",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1O",
+      "dG": -5.896,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2cnccc2-c2nnn[nH]2)ccc1N",
+      "dG": -6.088,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__tetrazole__-NO2",
+      "smiles": "Nc1ccc(Nc2cnccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -6.194,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__3-amino-isonicotinic__4-NH2-phenyl__CONHOH__-H",
+      "smiles": "Nc1ccc(Nc2cnccc2C(=O)NO)cc1",
+      "dG": -5.315,
       "is_covalent": false
     }
   ]
