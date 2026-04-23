@@ -53,7 +53,7 @@ PAD_A = 4.0
 #   - and it is enclosed by protein along ≥ DIRECTIONS_BURIED of 14 cone dirs
 PROBE_MIN_A = 2.6
 PROBE_MAX_A = 4.5
-DIRECTIONS_BURIED = 20  # of 26 probe cones — tighter buried criterion
+DIRECTIONS_BURIED = 16  # of 26 probe cones — ~60% burial
 
 
 def log(msg: str):
