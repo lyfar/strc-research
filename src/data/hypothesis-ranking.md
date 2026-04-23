@@ -86,7 +86,7 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 | 3 | [[STRC Mini-STRC Single-Vector Hypothesis]] | S | 🔒 **DEFERRED by Egor directive 2026-04-23** | Do not audit without re-authorization. Likely inherits STRC×TMEM145 Kd gap. |
 | 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | A | ✅ **FIXED 2026-04-23** | Phantoms removed/flagged in-code (Wu 2011, Sharma 2018, Cha 2010, Krey 2015); PKA K_cAMP cite corrected (Surdo 2017); CREB-P dephos 2-4× faster than lit flagged; STRC mRNA/protein t½ cross-script mismatches flagged. Phase 3 topological result robust. Tier A held. See [[STRC h05 Parameter Provenance Audit 2026-04-23]] |
 | 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | A | ⚠ **3 critical lit gaps 2026-04-23** | See [[STRC h09 Parameter Provenance Audit 2026-04-23]] |
-| 26 | [[STRC Engineered Homodimer Avidity]] | B | ⚠ **empirical fail + unmeasured baseline 2026-04-23** | Scripts clean; hypothesis prose has 3 phantoms; blocked at SPR/BLI measurement of STRC×TMEM145 |
+| 26 | [[STRC Engineered Homodimer Avidity]] | B | ✅ **FIXED 2026-04-23** | Scripts already clean; prose phantoms (100 nM Kd from ipTM, 1 nM derived, 100-1000× absolute) reframed as ratio-on-unmeasured-baseline; status banner added; blocked at SPR/BLI + Phase-1-AF3-fail |
 | 4, 6 | Strategy B, mRNA | B/A | needs audit if promoted | Not scanned; flag before any new compute |
 | 7, 8, 10–17, 27 | PE, ASO, SpyCatcher, TECTA, Sono, Recombinases, STRCP1 activ., ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
 
