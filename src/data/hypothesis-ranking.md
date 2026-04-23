@@ -75,6 +75,23 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 - **→ A**: real progress possible, not highest-leverage today.
 - **→ S**: top 5 max, advances Misha directly, actionable next step.
 
+## Literature-audit status (2026-04-23)
+
+Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computational proof, parameter-provenance must be verified against primary literature. Audit status per hypothesis:
+
+| # | Hypothesis | Tier | Lit audit | Notes |
+|---|---|---|---|---|
+| 1 | [[STRC Pharmacochaperone Virtual Screen E1659A]] | A | **in-progress 2026-04-23** | Sonnet agent scanning |
+| 2 | [[STRC Piezoelectric TM Bioelectronic Amplifier]] | S | **in-progress 2026-04-23** | Sonnet agent scanning |
+| 3 | [[STRC Mini-STRC Single-Vector Hypothesis]] | S | 🔒 **DEFERRED by Egor directive 2026-04-23** | Do not audit without re-authorization. Rationale: avoid destabilizing active S-tier while Holt lab works independently. If params needed for a proof, ASK FIRST. |
+| 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | A | **in-progress 2026-04-23** | Sonnet agent scanning |
+| 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | A | ✅ completed 2026-04-23 | See [[STRC h09 Parameter Provenance Audit 2026-04-23]] |
+| 26 | [[STRC Engineered Homodimer Avidity]] | B | **in-progress 2026-04-23** | Sonnet agent scanning |
+| 4, 6 | Strategy B, mRNA | B/A | needs audit if promoted | Not scanned; flag before any new compute |
+| 7, 8, 10–17, 27 | PE, ASO, SpyCatcher, TECTA, Sono, Recombinases, STRCP1 activ., ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
+
+All 4 scanning agents target `research/strc/models/*.py` scripts belonging to their hypothesis, produce parameter-provenance tables, retrieve missing papers via Anna's Archive + open sources, MinerU-parse into `~/BookLibrary/mineru-output/`, write paper notes into `research/strc/papers/`, and append to `research/strc/literature-params/*.md` topic files.
+
 ## Connections
 
 - `[part-of]` [[STRC Research Portal]]
