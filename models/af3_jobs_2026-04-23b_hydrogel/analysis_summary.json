@@ -1,0 +1,377 @@
+{
+  "batch": "af3_jobs_2026-04-23b_hydrogel",
+  "description": "Hydrogel Phase 2 AF3-Multimer: top-3 SAP candidates x TMEM145 + x G-actin trimer",
+  "date_run": "2026-04-23",
+  "n_jobs_expected": 6,
+  "n_jobs_present": 5,
+  "gate_ipTM": 0.5,
+  "jobs": {
+    "fold_hydrogel_rada16_wh2_native_x_tmem145": {
+      "status": "DONE",
+      "job": "fold_hydrogel_rada16_wh2_native_x_tmem145",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.62,
+      "best_ipTM": 0.39,
+      "best_ranking_score": 0.55,
+      "best_chain_pair_iptm": [
+        [
+          0.24,
+          0.39
+        ],
+        [
+          0.39,
+          0.65
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          4.79
+        ],
+        [
+          4.33,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.23,
+      "best_has_clash": 0.0,
+      "gate_verdict": "FAIL",
+      "gate_margin": -0.11,
+      "all_models_iptm": [
+        [
+          0,
+          0.39
+        ],
+        [
+          1,
+          0.4
+        ],
+        [
+          2,
+          0.39
+        ],
+        [
+          3,
+          0.38
+        ],
+        [
+          4,
+          0.37
+        ]
+      ]
+    },
+    "fold_hydrogel_rada16_wh2_native_x_actin": {
+      "status": "MISSING",
+      "job": "fold_hydrogel_rada16_wh2_native_x_actin"
+    },
+    "fold_hydrogel_rada16_wh2_cmut_x_tmem145": {
+      "status": "DONE",
+      "job": "fold_hydrogel_rada16_wh2_cmut_x_tmem145",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.64,
+      "best_ipTM": 0.37,
+      "best_ranking_score": 0.55,
+      "best_chain_pair_iptm": [
+        [
+          0.25,
+          0.37
+        ],
+        [
+          0.37,
+          0.66
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          4.72
+        ],
+        [
+          3.69,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.25,
+      "best_has_clash": 0.0,
+      "gate_verdict": "FAIL",
+      "gate_margin": -0.13,
+      "all_models_iptm": [
+        [
+          0,
+          0.37
+        ],
+        [
+          1,
+          0.36
+        ],
+        [
+          2,
+          0.36
+        ],
+        [
+          3,
+          0.35
+        ],
+        [
+          4,
+          0.34
+        ]
+      ]
+    },
+    "fold_hydrogel_rada16_wh2_cmut_x_actin": {
+      "status": "DONE",
+      "job": "fold_hydrogel_rada16_wh2_cmut_x_actin",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.69,
+      "best_ipTM": 0.59,
+      "best_ranking_score": 0.62,
+      "best_chain_pair_iptm": [
+        [
+          0.27,
+          0.17,
+          0.13,
+          0.12
+        ],
+        [
+          0.17,
+          0.84,
+          0.57,
+          0.53
+        ],
+        [
+          0.13,
+          0.57,
+          0.84,
+          0.58
+        ],
+        [
+          0.12,
+          0.53,
+          0.58,
+          0.84
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          19.99,
+          28.29,
+          26.59
+        ],
+        [
+          21.42,
+          0.76,
+          9.88,
+          11.86
+        ],
+        [
+          24.29,
+          9.65,
+          0.76,
+          9.52
+        ],
+        [
+          24.61,
+          10.32,
+          9.53,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.04,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.09,
+      "all_models_iptm": [
+        [
+          0,
+          0.59
+        ],
+        [
+          1,
+          0.58
+        ],
+        [
+          2,
+          0.58
+        ],
+        [
+          3,
+          0.58
+        ],
+        [
+          4,
+          0.57
+        ]
+      ]
+    },
+    "fold_hydrogel_eak16_wh2_denovo_x_tmem145": {
+      "status": "DONE",
+      "job": "fold_hydrogel_eak16_wh2_denovo_x_tmem145",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.65,
+      "best_ipTM": 0.37,
+      "best_ranking_score": 0.54,
+      "best_chain_pair_iptm": [
+        [
+          0.23,
+          0.37
+        ],
+        [
+          0.37,
+          0.68
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          5.21
+        ],
+        [
+          3.9,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.23,
+      "best_has_clash": 0.0,
+      "gate_verdict": "FAIL",
+      "gate_margin": -0.13,
+      "all_models_iptm": [
+        [
+          0,
+          0.37
+        ],
+        [
+          1,
+          0.35
+        ],
+        [
+          2,
+          0.35
+        ],
+        [
+          3,
+          0.34
+        ],
+        [
+          4,
+          0.2
+        ]
+      ]
+    },
+    "fold_hydrogel_eak16_wh2_denovo_x_actin": {
+      "status": "DONE",
+      "job": "fold_hydrogel_eak16_wh2_denovo_x_actin",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.69,
+      "best_ipTM": 0.59,
+      "best_ranking_score": 0.63,
+      "best_chain_pair_iptm": [
+        [
+          0.22,
+          0.14,
+          0.1,
+          0.09
+        ],
+        [
+          0.14,
+          0.84,
+          0.58,
+          0.52
+        ],
+        [
+          0.1,
+          0.58,
+          0.84,
+          0.59
+        ],
+        [
+          0.09,
+          0.52,
+          0.59,
+          0.84
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          19.76,
+          28.65,
+          29.18
+        ],
+        [
+          21.68,
+          0.76,
+          9.52,
+          11.87
+        ],
+        [
+          24.22,
+          9.29,
+          0.76,
+          9.51
+        ],
+        [
+          25.82,
+          9.95,
+          9.42,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.04,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.09,
+      "all_models_iptm": [
+        [
+          0,
+          0.59
+        ],
+        [
+          1,
+          0.59
+        ],
+        [
+          2,
+          0.59
+        ],
+        [
+          3,
+          0.58
+        ],
+        [
+          4,
+          0.57
+        ]
+      ]
+    }
+  },
+  "candidate_verdicts": {
+    "rada16_wh2_native": {
+      "tmem145_ipTM": 0.39,
+      "tmem145_verdict": "FAIL",
+      "actin_ipTM": null,
+      "actin_verdict": "MISSING",
+      "overall": "INCOMPLETE (missing: actin)"
+    },
+    "rada16_wh2_cmut": {
+      "tmem145_ipTM": 0.37,
+      "tmem145_verdict": "FAIL",
+      "actin_ipTM": 0.59,
+      "actin_verdict": "PASS",
+      "overall": "TMEM145_FAIL_ACTIN_PASS"
+    },
+    "eak16_wh2_denovo": {
+      "tmem145_ipTM": 0.37,
+      "tmem145_verdict": "FAIL",
+      "actin_ipTM": 0.59,
+      "actin_verdict": "PASS",
+      "overall": "TMEM145_FAIL_ACTIN_PASS"
+    }
+  },
+  "hypothesis_verdict": "B stays (actin handle works; TMEM145 tail falsified, retool tail)"
+}
