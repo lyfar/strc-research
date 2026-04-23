@@ -47,5 +47,4 @@ None yet. Wet-lab gate 1 blocks compute.
 ## Connections
 
 - `[part-of]` [[STRC Hypothesis Ranking]]
-- `[see-also]` [[STRC Hypothesis Ranking Log]]
 - `[about]` [[Misha]]

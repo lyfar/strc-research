@@ -13,7 +13,12 @@ status: B-tier
 
 ## status
 
-B-tier (was A, 2026-04-23). **Phase 1c DELIVERED 2026-04-23 GREEN**: DBSCAN eps=6.5 Å re-cluster found 3 clusters; Cluster 1 "stump" 1077-1114 (25 residues, 21 Cb-Cb disulfide geometries 4.5-7.5 Å) is entirely outside Phase 1's 1579-1581 target. Native C1081 forms inter-chain Cb-Cb 6.87-7.09 Å with A1078/C1079/S1080 on opposing chain → single A1078C or S1080C engineers inter-chain disulfide. Cluster 2 ARM also has homotypic S1579→C Cb-Cb 6.94 Å (re-opens Phase 1 target with disulfide chemistry). **Phase 1d AF3 triple batch queued** (A1078C / S1080C / S1579C homotypic + A1078W negative control, user-invoked external AF3). Promotion path: Phase 1d ipTM ≥0.50 + homodimer contacts ≥ WT → A-tier → drop-in to h03 Ultra-Mini. See [[STRC h26 Phase 1c Contact Re-Cluster 2026-04-23]].
+B-tier. Phase 1 ARM R-R hypothesis falsified; Phase 1c GREEN on secondary stump-cluster 1077-1114 with native C1081 disulfide-engineering geometry. **Next: Phase 1d AF3 triple batch** (A1078C / S1080C / S1579C homotypic + A1078W negative control) — user-invoked external AF3.
+
+## next-step tree
+
+- Phase 1d AF3 PASS on any mutant (ipTM ≥0.50 + homodimer contacts ≥ WT) → **A-tier → drop-in to h03 Ultra-Mini as engineered-avidity variant** (zero payload cost)
+- Phase 1d AF3 FAIL on all → C-tier (disulfide branch killed; no further compute)
 
 <!-- RECENT:START auto-synced from log.md by sync_strc_indices.py — do not hand-edit -->
 
@@ -56,5 +61,4 @@ research/strc/hypotheses/h26-engineered-homodimer/artifacts/phase1_af3_2026-04-2
 ## Connections
 
 - `[part-of]` [[STRC Hypothesis Ranking]]
-- `[see-also]` [[STRC Hypothesis Ranking Log]]
 - `[about]` [[Misha]]

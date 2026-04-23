@@ -58,5 +58,4 @@ research/strc/models/ (legacy pool — see [[STRC Computational Scripts Inventor
 ## Connections
 
 - `[part-of]` [[STRC Hypothesis Ranking]]
-- `[see-also]` [[STRC Hypothesis Ranking Log]]
 - `[about]` [[Misha]]
