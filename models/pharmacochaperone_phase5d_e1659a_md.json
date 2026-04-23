@@ -1,0 +1,42 @@
+{
+  "batch": "pharmacochaperone_phase5d_e1659a_md",
+  "date": "2026-04-23T11:33:42+00:00",
+  "target_cif": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job3-mutant.cif",
+  "chain_used": "A (full-length E1659A STRC mutant)",
+  "mutation_verified": {
+    "K1141": "LYS",
+    "E1659": "ALA"
+  },
+  "residue_range": {
+    "first": 1,
+    "last": 1775,
+    "n_residues": 1775
+  },
+  "force_field": "AMBER14SB + TIP3P, PME, HBond constraints, 2 fs step (identical to Phase 5a for comparability)",
+  "temperature_K": 310,
+  "pressure_bar": 1.0,
+  "ionic_strength_M": 0.15,
+  "run_args": {
+    "ns": 0.05,
+    "snapshots": 2,
+    "platform": "OpenCL"
+  },
+  "result": {
+    "n_atoms_solvated": 645244,
+    "production_ps": 50.0,
+    "n_snapshots": 2,
+    "timing_sec": {
+      "nvt_equil_50ps": 261.1,
+      "npt_equil_50ps": 310.8,
+      "production": 311.6
+    },
+    "ns_per_day_extrap": 13.86,
+    "production_10ns_eta_hours": 17.3,
+    "snapshot_pdb_paths": [
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5d_snapshots/snap_000.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5d_snapshots/snap_001.pdb"
+    ]
+  },
+  "total_elapsed_sec": 1017.0,
+  "interpretation": "ns/day extrapolation: 13.86. System is 645244 atoms vs Phase 5a ~164k. Phase 5e will run Vina ensemble re-dock on these snapshots to compare f_PC(mut) vs f_PC(WT) from Phase 5b."
+}
