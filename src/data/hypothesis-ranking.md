@@ -26,6 +26,27 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 
 ## Active register (2026-04-23)
 
+### Live view (auto-rendered from `h{N}/hub.md` frontmatter)
+
+To change a row — edit the hub's frontmatter (`tier`, `mech`, `deliv`, `misha_fit`, `next_step`), not this file. Rows only appear for hypotheses that have `h{N}/hub.md` with `type: hypothesis-hub`.
+
+```dataview
+TABLE WITHOUT ID
+  hypothesis_num AS "#",
+  link(hypothesis_title) AS "Hypothesis",
+  mech AS "Mech",
+  deliv AS "Deliv",
+  misha_fit AS "Misha",
+  tier AS "Tier",
+  next_step AS "Next step",
+  file.link AS "Hub"
+FROM "research/strc/hypotheses"
+WHERE type = "hypothesis-hub"
+SORT hypothesis_num ASC
+```
+
+### Full register (manual — canonical until all hubs migrated)
+
 | #   | Hypothesis                                         | Mech | Deliv | Misha | Tier    | Next step (≤6 words)                         | Hub         |
 | --- | -------------------------------------------------- | ---- | ----- | ----- | ------- | -------------------------------------------- | ----------- |
 | 1   | [[STRC Pharmacochaperone Virtual Screen E1659A]]   | 3    | 4     | 4     | **A**   | Phase 3c v3b 12k dock + Phase 5d E1659A MD RUNNING; fenamic tox + P8 SOP drafted | [[h01 hub]] |
