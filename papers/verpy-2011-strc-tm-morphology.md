@@ -64,3 +64,14 @@ The apical vs basal gradient matters for Misha specifically:
 
 - `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — age-progression and TM-imprint absence; apical OHCs better preserved
 - `[informs]` [[Adult Treatment Window STRC]] — bundle degeneration timeline supports neonatal intervention urgency
+
+## Numbers that matter (2026-04-23 audit)
+
+**Connector geometry — NOT reported in this paper.** Verpy 2011 is a localization/developmental study only. No TEM connector counts, no HTC spacing measurements, no stiffness data.
+
+- The paper confirms HTC ("horizontal top connectors") are absent in Strc-/- and fail to form (not degraded) throughout development.
+- "Resolution of immunogold labeling not sufficient to enable precise localization of stereocilin within the bands of top connectors."
+- **Source for HTC_PER_STEREOCILIUM = 6 is NOT Verpy 2011.** No count data here.
+- No SPR/BLI, no stiffness numbers.
+
+**Verdict:** Cannot validate any of the four target model parameters from this paper.
