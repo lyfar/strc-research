@@ -1,0 +1,61 @@
+{
+  "generated": "2026-04-23",
+  "builder": "af3_jobs_2026-04-23d_engineered_homodimer_builder.py",
+  "hypothesis": "#26 STRC Engineered Homodimer Avidity \u2014 [[STRC Engineered Homodimer Avidity]]",
+  "purpose": "Phase 1 AF3 test of 4 single-point mutations at the Ultra-Mini weak homodimer interface (ARM 1579-1581). Each mutant tested as homodimer \u00d7 2 TMEM145 \u2014 simultaneously gates (a) dimer stabilisation and (b) preserved TMEM145 binding per subunit. WT reference included for direct delta comparison.",
+  "baselines_for_comparison": {
+    "Ultra-Mini_WT_homodimer": "ipTM 0.28-0.30 (5 models consensus, AF3 weak-positive)",
+    "Ultra-Mini_WT_x_TMEM145_monomer": "ipTM 0.43 (full-length TMEM145 multimer context)",
+    "Ultra-Mini_x_TMEM145_GOLD_pruned": "ipTM 0.68 (Derstroff-style pruning)"
+  },
+  "mutation_candidates": {
+    "AA_at_1579_in_WT": "S",
+    "AA_at_1581_in_WT": "R",
+    "substitutions_tested": [
+      "S1579W (tryptophan \u03c0-stack across C2)",
+      "R1581Y (tyrosine \u03c0-\u03c0 with partner chain L1581)",
+      "S1579F (phenylalanine, shorter-range than W)",
+      "R1581F (F-F stack, symmetric with position 1579)"
+    ]
+  },
+  "jobs": {
+    "engineered_homodimer_WT_ref": {
+      "description": "Ultra-Mini WT_ref homodimer \u00d7 2 TMEM145. 701 \u00d7 2 + 493 \u00d7 2 = 2388 aa total complex. Tests whether single-point mutation at homodimer interface (ARM 1579-1581) stabilises the weak wild-type self-association (AF3 ipTM 0.28-0.30 baseline) while preserving each subunit's TMEM145 binding (ipTM 0.43 monomer baseline).",
+      "success_criteria": "Both criteria required: (1) homodimer self-ipTM (chain-pair A\u2194B) >= 0.50 (up from 0.28-0.30 WT baseline); (2) each Ultra-Mini \u00d7 TMEM145 cross-ipTM >= 0.40 (preserves monomer baseline of 0.43). If chain-pair shows A\u2194C and B\u2194D cross-ipTM >= 0.40 and A\u2194B homodimer >= 0.50, PASS.",
+      "hypothesis_impact": "pass -> #26 Engineered Homodimer Avidity hypothesis elevates to A-tier (min=4). Phase 2: wet-lab SEC-AUC on winning mutant to confirm solution dimer at physiological conc. fail (homodimer still < 0.40) -> single-point mutation insufficient to stabilise; move to double mutant (S1579W + L1581Y) or alternative engineered dimer scaffolds. fail (TMEM145 cross lost) -> mutation allosterically disrupts binding surface; kill specific mutant, try next."
+    },
+    "engineered_homodimer_S1579W": {
+      "description": "Ultra-Mini S1579W homodimer \u00d7 2 TMEM145. 701 \u00d7 2 + 493 \u00d7 2 = 2388 aa total complex. Tests whether single-point mutation at homodimer interface (ARM 1579-1581) stabilises the weak wild-type self-association (AF3 ipTM 0.28-0.30 baseline) while preserving each subunit's TMEM145 binding (ipTM 0.43 monomer baseline).",
+      "success_criteria": "Both criteria required: (1) homodimer self-ipTM (chain-pair A\u2194B) >= 0.50 (up from 0.28-0.30 WT baseline); (2) each Ultra-Mini \u00d7 TMEM145 cross-ipTM >= 0.40 (preserves monomer baseline of 0.43). If chain-pair shows A\u2194C and B\u2194D cross-ipTM >= 0.40 and A\u2194B homodimer >= 0.50, PASS.",
+      "hypothesis_impact": "pass -> #26 Engineered Homodimer Avidity hypothesis elevates to A-tier (min=4). Phase 2: wet-lab SEC-AUC on winning mutant to confirm solution dimer at physiological conc. fail (homodimer still < 0.40) -> single-point mutation insufficient to stabilise; move to double mutant (S1579W + L1581Y) or alternative engineered dimer scaffolds. fail (TMEM145 cross lost) -> mutation allosterically disrupts binding surface; kill specific mutant, try next."
+    },
+    "engineered_homodimer_R1581Y": {
+      "description": "Ultra-Mini R1581Y homodimer \u00d7 2 TMEM145. 701 \u00d7 2 + 493 \u00d7 2 = 2388 aa total complex. Tests whether single-point mutation at homodimer interface (ARM 1579-1581) stabilises the weak wild-type self-association (AF3 ipTM 0.28-0.30 baseline) while preserving each subunit's TMEM145 binding (ipTM 0.43 monomer baseline).",
+      "success_criteria": "Both criteria required: (1) homodimer self-ipTM (chain-pair A\u2194B) >= 0.50 (up from 0.28-0.30 WT baseline); (2) each Ultra-Mini \u00d7 TMEM145 cross-ipTM >= 0.40 (preserves monomer baseline of 0.43). If chain-pair shows A\u2194C and B\u2194D cross-ipTM >= 0.40 and A\u2194B homodimer >= 0.50, PASS.",
+      "hypothesis_impact": "pass -> #26 Engineered Homodimer Avidity hypothesis elevates to A-tier (min=4). Phase 2: wet-lab SEC-AUC on winning mutant to confirm solution dimer at physiological conc. fail (homodimer still < 0.40) -> single-point mutation insufficient to stabilise; move to double mutant (S1579W + L1581Y) or alternative engineered dimer scaffolds. fail (TMEM145 cross lost) -> mutation allosterically disrupts binding surface; kill specific mutant, try next."
+    },
+    "engineered_homodimer_S1579F": {
+      "description": "Ultra-Mini S1579F homodimer \u00d7 2 TMEM145. 701 \u00d7 2 + 493 \u00d7 2 = 2388 aa total complex. Tests whether single-point mutation at homodimer interface (ARM 1579-1581) stabilises the weak wild-type self-association (AF3 ipTM 0.28-0.30 baseline) while preserving each subunit's TMEM145 binding (ipTM 0.43 monomer baseline).",
+      "success_criteria": "Both criteria required: (1) homodimer self-ipTM (chain-pair A\u2194B) >= 0.50 (up from 0.28-0.30 WT baseline); (2) each Ultra-Mini \u00d7 TMEM145 cross-ipTM >= 0.40 (preserves monomer baseline of 0.43). If chain-pair shows A\u2194C and B\u2194D cross-ipTM >= 0.40 and A\u2194B homodimer >= 0.50, PASS.",
+      "hypothesis_impact": "pass -> #26 Engineered Homodimer Avidity hypothesis elevates to A-tier (min=4). Phase 2: wet-lab SEC-AUC on winning mutant to confirm solution dimer at physiological conc. fail (homodimer still < 0.40) -> single-point mutation insufficient to stabilise; move to double mutant (S1579W + L1581Y) or alternative engineered dimer scaffolds. fail (TMEM145 cross lost) -> mutation allosterically disrupts binding surface; kill specific mutant, try next."
+    },
+    "engineered_homodimer_R1581F": {
+      "description": "Ultra-Mini R1581F homodimer \u00d7 2 TMEM145. 701 \u00d7 2 + 493 \u00d7 2 = 2388 aa total complex. Tests whether single-point mutation at homodimer interface (ARM 1579-1581) stabilises the weak wild-type self-association (AF3 ipTM 0.28-0.30 baseline) while preserving each subunit's TMEM145 binding (ipTM 0.43 monomer baseline).",
+      "success_criteria": "Both criteria required: (1) homodimer self-ipTM (chain-pair A\u2194B) >= 0.50 (up from 0.28-0.30 WT baseline); (2) each Ultra-Mini \u00d7 TMEM145 cross-ipTM >= 0.40 (preserves monomer baseline of 0.43). If chain-pair shows A\u2194C and B\u2194D cross-ipTM >= 0.40 and A\u2194B homodimer >= 0.50, PASS.",
+      "hypothesis_impact": "pass -> #26 Engineered Homodimer Avidity hypothesis elevates to A-tier (min=4). Phase 2: wet-lab SEC-AUC on winning mutant to confirm solution dimer at physiological conc. fail (homodimer still < 0.40) -> single-point mutation insufficient to stabilise; move to double mutant (S1579W + L1581Y) or alternative engineered dimer scaffolds. fail (TMEM145 cross lost) -> mutation allosterically disrupts binding surface; kill specific mutant, try next."
+    }
+  },
+  "priority_order": [
+    "engineered_homodimer_WT_ref",
+    "engineered_homodimer_S1579W",
+    "engineered_homodimer_R1581Y",
+    "engineered_homodimer_S1579F",
+    "engineered_homodimer_R1581F"
+  ],
+  "how_to_submit": "AlphaFold Server Import-from-JSON for each file. Daily limit 20; this batch uses 5. Seed 42 for reproducibility vs prior STRC homodimer runs.",
+  "decision_rules": {
+    "any_mutant_passes_both_gates": "Hypothesis #26 B \u2192 A \u2192 phase 2 wet-lab SEC-AUC + HEK293 co-IP for winner. Mutation carried forward as single additional line on top of Mini-STRC clinical candidate (no new AAV payload cost).",
+    "all_mutants_fail_homodimer_gate": "Single-point engineering insufficient. Two options: (a) double mutant S1579W + L1581Y / S1579F + L1581F, (b) pivot to de novo dimer scaffold (e.g. leucine zipper fusion at Ultra-Mini C-term).",
+    "homodimer_passes_but_TMEM145_lost": "Mutation at 1579-1581 allosterically disrupts GOLD-zone binding. Mutation site changes to a more peripheral dimer contact residue identified in [[STRC Homodimer Interface From CIF]] \u2014 require re-analysis of that data with broader contact tolerance."
+  }
+}
