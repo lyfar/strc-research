@@ -3,10 +3,10 @@
   "date": "2026-04-23",
   "model_assumptions": {
     "peptide_mw_kDa": 14.2,
-    "perilymph_volume_uL": 70.0,
-    "middle_ear_clearance_half_life_h": 1.98,
-    "rwm_crossing_percent_per_h": 2.0,
-    "perilymph_clearance_half_life_h": 1.98,
+    "perilymph_volume_uL": 34.0,
+    "middle_ear_clearance_half_life_h": 0.99,
+    "rwm_crossing_percent_per_h": 0.3,
+    "perilymph_clearance_half_life_h": 3.85,
     "proteolysis_half_life_h": 0.5,
     "TMEM145_Kd_M": 1e-07,
     "therapeutic_window_lower_uM": 1.0,
@@ -16,112 +16,112 @@
   "single_dose_scan": {
     "0.1_mg": {
       "dose_mg": 0.1,
-      "peak_perilymph_uM": 0.75752962533705,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.883385953038421,
-      "auc_perilymph_uM_hr": 3.1050234600529514,
+      "peak_perilymph_uM": 0.5133177106678737,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.8369523686327193,
+      "auc_perilymph_uM_hr": 3.842163529431594,
       "duration_above_1uM_h": 0.0,
       "duration_in_therapeutic_window_1_to_10_uM_h": 0.0,
       "duration_above_toxic_100uM_h": 0.0,
-      "apparent_bioavailability_perilymph_24h": 1.972201014832642e-06
+      "apparent_bioavailability_perilymph_24h": 2.5057706928510726e-05
     },
     "0.3_mg": {
       "dose_mg": 0.3,
-      "peak_perilymph_uM": 2.2725884012997444,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.9578519392806529,
-      "auc_perilymph_uM_hr": 9.315070483817866,
-      "duration_above_1uM_h": 3.7293233082706765,
-      "duration_in_therapeutic_window_1_to_10_uM_h": 3.7293233082706765,
+      "peak_perilymph_uM": 1.5399533416546263,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.9390226554256078,
+      "auc_perilymph_uM_hr": 11.526490954325823,
+      "duration_above_1uM_h": 4.69172932330827,
+      "duration_in_therapeutic_window_1_to_10_uM_h": 4.69172932330827,
       "duration_above_toxic_100uM_h": 0.0,
-      "apparent_bioavailability_perilymph_24h": 1.972193910071418e-06
+      "apparent_bioavailability_perilymph_24h": 2.505770700100829e-05
     },
     "1.0_mg": {
       "dose_mg": 1.0,
-      "peak_perilymph_uM": 7.575295526125231,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.9869711857140069,
-      "auc_perilymph_uM_hr": 31.050233940709337,
-      "duration_above_1uM_h": 7.097744360902255,
-      "duration_in_therapeutic_window_1_to_10_uM_h": 7.097744360902255,
+      "peak_perilymph_uM": 5.133175998436237,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.9808911452567464,
+      "auc_perilymph_uM_hr": 38.42162955927976,
+      "duration_above_1uM_h": 10.827067669172932,
+      "duration_in_therapeutic_window_1_to_10_uM_h": 10.827067669172932,
       "duration_above_toxic_100uM_h": 0.0,
-      "apparent_bioavailability_perilymph_24h": 1.9721914946702057e-06
+      "apparent_bioavailability_perilymph_24h": 2.505770707961208e-05
     },
     "3.0_mg": {
       "dose_mg": 3.0,
-      "peak_perilymph_uM": 22.72588578166636,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.9956190090077327,
-      "auc_perilymph_uM_hr": 93.15070509584459,
-      "duration_above_1uM_h": 9.984962406015036,
-      "duration_in_therapeutic_window_1_to_10_uM_h": 9.984962406015036,
+      "peak_perilymph_uM": 15.399533418982914,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.9935481928844693,
+      "auc_perilymph_uM_hr": 115.26490932157954,
+      "duration_above_1uM_h": 15.7593984962406,
+      "duration_in_therapeutic_window_1_to_10_uM_h": 15.7593984962406,
       "duration_above_toxic_100uM_h": 0.0,
-      "apparent_bioavailability_perilymph_24h": 1.9721982026377205e-06
+      "apparent_bioavailability_perilymph_24h": 2.5057707063624868e-05
     },
     "10.0_mg": {
       "dose_mg": 10.0,
-      "peak_perilymph_uM": 75.75295527852724,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.998681659803065,
-      "auc_perilymph_uM_hr": 310.50233930671186,
-      "duration_above_1uM_h": 13.233082706766915,
-      "duration_in_therapeutic_window_1_to_10_uM_h": 6.015037593984961,
+      "peak_perilymph_uM": 51.33175998533157,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.9980556761030825,
+      "auc_perilymph_uM_hr": 384.21629556573026,
+      "duration_above_1uM_h": 21.052631578947366,
+      "duration_in_therapeutic_window_1_to_10_uM_h": 21.052631578947366,
       "duration_above_toxic_100uM_h": 0.0,
-      "apparent_bioavailability_perilymph_24h": 1.9721914961134956e-06
+      "apparent_bioavailability_perilymph_24h": 2.5057707551345842e-05
     },
     "30.0_mg": {
       "dose_mg": 30.0,
-      "peak_perilymph_uM": 227.25885781409903,
-      "time_peak_perilymph_h": 1.0827067669172932,
-      "peak_TMEM145_occupancy": 0.9995601666855586,
-      "auc_perilymph_uM_hr": 931.5070509560059,
-      "duration_above_1uM_h": 16.240601503759397,
-      "duration_in_therapeutic_window_1_to_10_uM_h": 6.13533834586466,
-      "duration_above_toxic_100uM_h": 3.7293233082706765,
-      "apparent_bioavailability_perilymph_24h": 1.972198227062627e-06
+      "peak_perilymph_uM": 153.99533419216968,
+      "time_peak_perilymph_h": 2.406015037593985,
+      "peak_TMEM145_occupancy": 0.9993510510845495,
+      "auc_perilymph_uM_hr": 1152.6490930892148,
+      "duration_above_1uM_h": 25.864661654135336,
+      "duration_in_therapeutic_window_1_to_10_uM_h": 9.984962406015036,
+      "duration_above_toxic_100uM_h": 4.69172932330827,
+      "apparent_bioavailability_perilymph_24h": 2.5057707074949143e-05
     }
   },
   "dose_to_hit_boundaries_mg": {
-    "peak_perilymph_1_uM": 0.132,
-    "peak_perilymph_10_uM": 1.319,
-    "peak_perilymph_100_uM_toxic": 13.193
+    "peak_perilymph_1_uM": 0.195,
+    "peak_perilymph_10_uM": 1.948,
+    "peak_perilymph_100_uM_toxic": 19.478
   },
   "therapeutic_window_width_log": 2.0,
   "multi_dose_7day_at_mid_window": {
-    "daily_dose_mg": 0.417,
+    "daily_dose_mg": 0.616,
     "n_days": 7,
-    "peak_perilymph_uM_in_cycle": 3.1534484999024786,
-    "trough_perilymph_uM_in_cycle": 0.001050131548516322,
-    "fraction_time_above_1uM": 0.2,
-    "fraction_time_in_window_1_to_10_uM": 0.2,
-    "mean_occupancy_steady_state_day7": 0.451
+    "peak_perilymph_uM_in_cycle": 3.178723909150861,
+    "trough_perilymph_uM_in_cycle": 0.03237316586133003,
+    "fraction_time_above_1uM": 0.36,
+    "fraction_time_in_window_1_to_10_uM": 0.36,
+    "mean_occupancy_steady_state_day7": 0.733
   },
   "sensitivity_to_proteolysis_half_life": {
     "10_min": {
-      "peak_perilymph_uM": 1.4881135801961485,
-      "duration_above_1uM_h": 1.6240601503759398,
-      "mean_occupancy_over_24h": 0.341
+      "peak_perilymph_uM": 0.6201139131114668,
+      "duration_above_1uM_h": 0.0,
+      "mean_occupancy_over_24h": 0.142
     },
     "30_min": {
-      "peak_perilymph_uM": 3.179171559849642,
-      "duration_above_1uM_h": 4.691729323308271,
-      "mean_occupancy_over_24h": 0.461
+      "peak_perilymph_uM": 1.2722799990493345,
+      "duration_above_1uM_h": 1.3233082706766917,
+      "mean_occupancy_over_24h": 0.219
     },
     "60_min": {
-      "peak_perilymph_uM": 4.549474015539613,
-      "duration_above_1uM_h": 6.556390977443609,
-      "mean_occupancy_over_24h": 0.537
+      "peak_perilymph_uM": 1.7902126130502287,
+      "duration_above_1uM_h": 2.827067669172932,
+      "mean_occupancy_over_24h": 0.291
     },
     "240_min": {
-      "peak_perilymph_uM": 6.944643055192435,
-      "duration_above_1uM_h": 9.984962406015038,
-      "mean_occupancy_over_24h": 0.684
+      "peak_perilymph_uM": 2.7169495286591743,
+      "duration_above_1uM_h": 6.075187969924811,
+      "mean_occupancy_over_24h": 0.542
     }
   },
   "key_predictions": [
-    "Dose 0.13-1.32 mg hits 1-10 \u03bcM perilymph (Phase 4d therapeutic window)",
-    "At 0.417 mg daily, steady-state perilymph ~mid-window, occupancy > 90% most of day",
-    "Toxic G-actin depletion threshold (100 \u03bcM) requires dose 13.2 mg \u2014 >30\u00d7 above therapeutic, wide safety margin",
+    "Dose 0.19-1.95 mg hits 1-10 \u03bcM perilymph (Phase 4d therapeutic window)",
+    "At 0.616 mg daily, steady-state perilymph ~mid-window, occupancy > 90% most of day",
+    "Toxic G-actin depletion threshold (100 \u03bcM) requires dose 19.5 mg \u2014 >30\u00d7 above therapeutic, wide safety margin",
     "Half-life dominated by proteolysis (30 min assumed); if true t\u00bd < 10 min, PEGylation or d-aa backbone needed"
   ],
   "clinical_translation_comparison": {

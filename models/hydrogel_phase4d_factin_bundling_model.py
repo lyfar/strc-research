@@ -62,31 +62,46 @@ OUT = Path("/Users/egorlyfar/Brain/research/strc/models/hydrogel_phase4d_factin_
 # Physical constants
 AVOGADRO = 6.022e23
 
-# WH2 binding to G-actin (WASP-like, literature)
-# Chereau 2005, Husson 2010 — WH2 Kd to G-actin ~50-500 nM
-WH2_KD_GACTIN_M = 200e-9
+# ═══════════════════════════════════════════════════════════════════════
+# POST-AUDIT 2026-04-23 parameter updates — see literature-params/actin-kinetics.md
+# ═══════════════════════════════════════════════════════════════════════
 
-# WH2 binding to F-actin side (estimated — WH2 occludes subdomain 1 groove
-# which is partly buried in filament; weaker)
-# Typically 5-50× weaker than G-actin
-WH2_KD_FACTIN_M = 5e-6
+# WH2 × G-actin Kd — range 50 nM (WAVE) to 3 μM (WASP V-domain).
+# Chereau 2005 PNAS (SI Table 2 was inaccessible; value inferred from
+# narrative). Dominguez 2016 review confirms 50 nM-3 μM range for WH2 family.
+# Padrick/Kim 2011 reports WASP V-domain × G-actin at 3.1 ± 0.5 μM (fluor.
+# anisotropy) — primary. Current 200 nM is in the mid-range of WAVE-like.
+WH2_KD_GACTIN_M = 200e-9   # Chereau 2005 PNAS + Dominguez 2016 review range
 
-# RADA16 fibril geometry (Zhang, MIT — RADA16-I forms anti-parallel β-sheet
-# ribbons ~10 nm wide, ~4-6 monomers cross-section)
-RADA16_MONOMERS_PER_NM_FIBRIL = 4.35  # 2 per 4.6 Å rise × ... actually ~2/0.46 nm ≈ 4.35
-RADA16_FIBRIL_DIAMETER_NM = 10.0      # cross-section
-RADA16_FIBRILS_PER_CROSSSECTION = 5   # average
+# WH2 × F-actin SIDE-binding: ⚠ NOT MEASURED in any published paper
+# (literature search exhaustive, literature-params/actin-kinetics.md).
+# Closest analog: Tβ4 × F-actin = 5-10 mM (1000-2000× weaker than WH2×G).
+# The 5 μM here assumes a 25× weakening vs G-actin; this is OPTIMISTIC
+# compared to Tβ4 analog. LOAD-BEARING RISK for h09: central therapeutic
+# mechanism (F-actin side-bundling) requires this assumption + avidity
+# from multi-WH2 RADA16 scaffold. Phase 2c wet-lab bundling assay is the
+# only way to resolve.
+WH2_KD_FACTIN_M = 5e-6     # ⚠ LOAD-BEARING unmeasured; Tβ4 analog = 5-10 mM
 
-# F-actin filament geometry (Oda, Namba — 13 subunits / 36 nm pitch)
-FACTIN_SUBUNITS_PER_NM = 13.0 / 36.0  # 0.361 subunits/nm, so ~2.77 nm rise per subunit
-FACTIN_DIAMETER_NM = 7.0              # filament diameter
-FACTIN_PERSISTENCE_NM = 10000.0       # ~10 μm, extremely stiff
+# RADA16 fibril geometry — Yokoi/Kinoshita 2005 PNAS + Zhang lab seminal
+# β-sheet rise. 4.35 peptides/nm consistent with ~4.6 Å rise per pair.
+RADA16_MONOMERS_PER_NM_FIBRIL = 4.35  # Yokoi/Kinoshita/Zhang 2005 PNAS
+RADA16_FIBRIL_DIAMETER_NM = 10.0      # Yokoi 2005 AFM
+RADA16_FIBRILS_PER_CROSSSECTION = 5   # Yokoi 2005 bundling estimate
 
-# Stereocilia target: inter-filament spacing in normal stereocilia = 12 nm
-# (Tilney 1980; electron microscopy of chicken cochlea stereocilia)
-STEREOCILIA_INTER_FILAMENT_NM = 12.0
+# F-actin filament geometry — Oda & Namba 2009 Nature 457:441 cryo-EM
+FACTIN_SUBUNITS_PER_NM = 13.0 / 36.0  # 0.361 subunits/nm
+FACTIN_DIAMETER_NM = 7.0              # Oda & Namba 2009
+FACTIN_PERSISTENCE_NM = 10000.0       # Isambert 1995 — standard textbook
+
+# Stereocilia inter-filament spacing:
+# Native OHC uses plastin-1/fimbrin → 7.9-9.7 nm (Krey 2016 J Cell Biol).
+# Prior value 12 nm corresponds to ESPIN-crosslinked stereocilia — wrong
+# paralog for OHC (OHC expresses plastin-1 + fimbrin, NOT espin dominantly).
+# Updated to 9.0 nm (mid of Krey 2016 range).
+STEREOCILIA_INTER_FILAMENT_NM = 9.0  # Krey 2016 J Cell Biol (was 12 espin)
 STEREOCILIA_FILAMENT_DENSITY_PER_UM2 = 1 / (np.pi * (STEREOCILIA_INTER_FILAMENT_NM * 1e-3)**2) * 1.1
-# Roughly ~2000-3000 F-actin filaments per μm² in a stereocilium cross-section
+# With 9 nm spacing, density is ~4300 filaments/μm² (was ~2400 at 12 nm)
 
 # Peptide concentration ranges (M)
 peptide_conc_range = np.logspace(-7, -3, 50)  # 100 nM to 1 mM
