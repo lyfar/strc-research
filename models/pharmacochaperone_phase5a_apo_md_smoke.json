@@ -1,6 +1,6 @@
 {
   "batch": "pharmacochaperone_phase5a_apo_md_smoke",
-  "date": "2026-04-23T08:27:24+00:00",
+  "date": "2026-04-23T09:17:15+00:00",
   "target_cif": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job-ultramini-x-tmem145-full.cif",
   "chain_used": "A (Ultra-Mini receptor)",
   "force_field": "AMBER14SB + TIP3P, PME, HBond constraints, 2 fs step",
@@ -8,29 +8,44 @@
   "pressure_bar": 1.0,
   "ionic_strength_M": 0.15,
   "run_args": {
-    "ns": 0.1,
-    "snapshots": 5,
+    "ns": 2.0,
+    "snapshots": 20,
     "platform": null
   },
   "result": {
-    "n_atoms_solvated": 164305,
-    "production_ps": 100.0,
-    "n_snapshots": 5,
+    "n_atoms_solvated": 163397,
+    "production_ps": 2000.0,
+    "n_snapshots": 20,
     "timing_sec": {
-      "nvt_equil_50ps": 53.8,
-      "npt_equil_50ps": 63.8,
-      "production": 139.2
+      "nvt_equil_50ps": 52.7,
+      "npt_equil_50ps": 62.5,
+      "production": 2802.3
     },
-    "ns_per_day_extrap": 62.08,
+    "ns_per_day_extrap": 61.66,
     "production_10ns_eta_hours": 3.9,
     "snapshot_pdb_paths": [
       "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_000.pdb",
       "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_001.pdb",
       "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_002.pdb",
       "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_003.pdb",
-      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_004.pdb"
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_004.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_005.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_006.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_007.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_008.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_009.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_010.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_011.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_012.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_013.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_014.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_015.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_016.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_017.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_018.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_019.pdb"
     ]
   },
-  "total_elapsed_sec": 292.2,
-  "interpretation": "ns/day extrapolation: 62.08. 10 ns production would take ~3.9 h. If >24 h on local \u2192 cloud compute recommended for Phase 5b."
+  "total_elapsed_sec": 2953.8,
+  "interpretation": "ns/day extrapolation: 61.66. 10 ns production would take ~3.9 h. If >24 h on local \u2192 cloud compute recommended for Phase 5b."
 }
