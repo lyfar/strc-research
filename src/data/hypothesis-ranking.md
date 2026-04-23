@@ -87,8 +87,12 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 | 5 | [[STRC Calcium Oscillation Acoustic Therapy]] | A | ✅ **FIXED 2026-04-23** | Phantoms removed/flagged in-code (Wu 2011, Sharma 2018, Cha 2010, Krey 2015); PKA K_cAMP cite corrected (Surdo 2017); CREB-P dephos 2-4× faster than lit flagged; STRC mRNA/protein t½ cross-script mismatches flagged. Phase 3 topological result robust. Tier A held. See [[STRC h05 Parameter Provenance Audit 2026-04-23]] |
 | 9 | [[STRC Synthetic Peptide Hydrogel HTC]] | A | ⚠ **3 critical lit gaps 2026-04-23** | See [[STRC h09 Parameter Provenance Audit 2026-04-23]] |
 | 26 | [[STRC Engineered Homodimer Avidity]] | B | ✅ **FIXED 2026-04-23** | Scripts already clean; prose phantoms (100 nM Kd from ipTM, 1 nM derived, 100-1000× absolute) reframed as ratio-on-unmeasured-baseline; status banner added; blocked at SPR/BLI + Phase-1-AF3-fail |
-| 4, 6 | Strategy B, mRNA | B/A | needs audit if promoted | Not scanned; flag before any new compute |
-| 7, 8, 10–17, 27 | PE, ASO, SpyCatcher, TECTA, Sono, Recombinases, STRCP1 activ., ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
+| 4 | [[STRC mRNA-LNP Strategy B Full-Length]] | B | ✅ **AUDITED 2026-04-23 Batch 2** | 0 phantoms in scripts. Inherits h06 Hill/t½ risk. All suspicious constants explicitly labeled hypothetical or estimate. |
+| 6 | [[STRC mRNA Therapy Hypothesis]] | A | ⚠ **1 phantom + circular fits 2026-04-23 Batch 2** | Gao 2020 PMID 32493791 PHANTOM (= COVID paper); Sahin 2014 wrong-paper for UPR threshold; Hill K_M=200, n=2, max_boost=3× circular ODE fits. Scripts updated with flags. |
+| 7 | [[Prime Editing for STRC]] | C | ✅ **7/8 CONFIRMED 2026-04-23 Batch 2** | Same Gao 2020 PMID phantom as h06 (now corrected in prose); other 7 cites verified real (Chen 2024, Chemla 2025, Fang 2021, Villiger 2021, Anzalone 2019, Kim 2023, Zhang 2025). Best-cited note in portfolio. |
+| 8 | [[STRC ASO Exon Skipping]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Cleanest scripts in portfolio. Ensembl REST + SantaLucia 1998 NN (verified exact), 4/4 FDA-PMO precedents confirmed. |
+| 27 | [[STRC STRCP1 Activation Rescue]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Live GTEx API query, zero embedded bio-constants. Correct GENCODE IDs. |
+| 10–17 | SpyCatcher, TECTA, Sono, Recombinases, Protein Replacement, OTOA, ZP-prion, ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
 
 All 4 scanning agents target `research/strc/models/*.py` scripts belonging to their hypothesis, produce parameter-provenance tables, retrieve missing papers via Anna's Archive + open sources, MinerU-parse into `~/BookLibrary/mineru-output/`, write paper notes into `research/strc/papers/`, and append to `research/strc/literature-params/*.md` topic files.
 
