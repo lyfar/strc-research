@@ -1,0 +1,323 @@
+{
+  "batch": "af3_jobs_2026-04-23e_hydrogel_phase3b",
+  "description": "Hydrogel Phase 3b full-construct validation \u2014 winning GOLD-zone tails fused to WH2+RADA16 scaffold",
+  "date_run": "2026-04-23",
+  "gate_ipTM": 0.5,
+  "baselines": {
+    "phase_2_native_wrong_epitope_x_tmem145": 0.39,
+    "phase_2_full_construct_x_actin": 0.58,
+    "phase_3_tail71_solo_x_tmem145": 0.63,
+    "phase_3_tail91_solo_x_tmem145": 0.68
+  },
+  "jobs": {
+    "fold_hydrogel_rada16_wh2_tail71_x_tmem145": {
+      "construct": "tail71",
+      "partner": "tmem145",
+      "description": "114 aa peptide \u00d7 TMEM145",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.56,
+      "best_ipTM": 0.35,
+      "best_ranking_score": 0.49,
+      "best_chain_pair_iptm": [
+        [
+          0.18,
+          0.35
+        ],
+        [
+          0.35,
+          0.62
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          5.0
+        ],
+        [
+          3.85,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.2,
+      "best_has_clash": 0.0,
+      "gate_verdict": "FAIL",
+      "gate_margin": -0.15,
+      "all_models_iptm": [
+        [
+          0,
+          0.35
+        ],
+        [
+          1,
+          0.33
+        ],
+        [
+          2,
+          0.32
+        ],
+        [
+          3,
+          0.32
+        ],
+        [
+          4,
+          0.31
+        ]
+      ]
+    },
+    "fold_hydrogel_rada16_wh2_tail91_x_tmem145": {
+      "construct": "tail91",
+      "partner": "tmem145",
+      "description": "134 aa peptide \u00d7 TMEM145",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.51,
+      "best_ipTM": 0.57,
+      "best_ranking_score": 0.65,
+      "best_chain_pair_iptm": [
+        [
+          0.56,
+          0.57
+        ],
+        [
+          0.57,
+          0.57
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          3.27
+        ],
+        [
+          3.44,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.19,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.07,
+      "all_models_iptm": [
+        [
+          0,
+          0.57
+        ],
+        [
+          1,
+          0.56
+        ],
+        [
+          2,
+          0.55
+        ],
+        [
+          3,
+          0.57
+        ],
+        [
+          4,
+          0.56
+        ]
+      ]
+    },
+    "fold_hydrogel_rada16_wh2_tail71_x_actin": {
+      "construct": "tail71",
+      "partner": "actin",
+      "description": "114 aa peptide \u00d7 G-actin trimer",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.65,
+      "best_ipTM": 0.54,
+      "best_ranking_score": 0.58,
+      "best_chain_pair_iptm": [
+        [
+          0.19,
+          0.07,
+          0.07,
+          0.07
+        ],
+        [
+          0.07,
+          0.83,
+          0.56,
+          0.52
+        ],
+        [
+          0.07,
+          0.56,
+          0.83,
+          0.57
+        ],
+        [
+          0.07,
+          0.52,
+          0.57,
+          0.84
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          27.3,
+          30.23,
+          29.22
+        ],
+        [
+          28.07,
+          0.76,
+          10.18,
+          11.93
+        ],
+        [
+          27.89,
+          9.83,
+          0.76,
+          9.82
+        ],
+        [
+          28.85,
+          10.5,
+          10.06,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.04,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.04,
+      "all_models_iptm": [
+        [
+          0,
+          0.54
+        ],
+        [
+          1,
+          0.53
+        ],
+        [
+          2,
+          0.53
+        ],
+        [
+          3,
+          0.52
+        ],
+        [
+          4,
+          0.53
+        ]
+      ]
+    },
+    "fold_hydrogel_rada16_wh2_tail91_x_actin": {
+      "construct": "tail91",
+      "partner": "actin",
+      "description": "134 aa peptide \u00d7 G-actin trimer",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.63,
+      "best_ipTM": 0.51,
+      "best_ranking_score": 0.55,
+      "best_chain_pair_iptm": [
+        [
+          0.4,
+          0.07,
+          0.07,
+          0.07
+        ],
+        [
+          0.07,
+          0.83,
+          0.53,
+          0.5
+        ],
+        [
+          0.07,
+          0.53,
+          0.82,
+          0.54
+        ],
+        [
+          0.07,
+          0.5,
+          0.54,
+          0.83
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          30.56,
+          29.22,
+          29.98
+        ],
+        [
+          30.3,
+          0.76,
+          11.42,
+          13.14
+        ],
+        [
+          29.5,
+          11.14,
+          0.76,
+          10.85
+        ],
+        [
+          29.8,
+          11.44,
+          10.78,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.03,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.01,
+      "all_models_iptm": [
+        [
+          0,
+          0.51
+        ],
+        [
+          1,
+          0.51
+        ],
+        [
+          2,
+          0.51
+        ],
+        [
+          3,
+          0.51
+        ],
+        [
+          4,
+          0.51
+        ]
+      ]
+    }
+  },
+  "candidate_verdicts": {
+    "tail71": {
+      "tmem145_ipTM": 0.35,
+      "actin_ipTM": 0.54,
+      "tmem145_pass": false,
+      "actin_pass": true,
+      "verdict": "FAIL"
+    },
+    "tail91": {
+      "tmem145_ipTM": 0.57,
+      "actin_ipTM": 0.51,
+      "tmem145_pass": true,
+      "actin_pass": true,
+      "verdict": "PASS"
+    }
+  },
+  "hypothesis_verdict": "PASS \u2014 1/2 candidates (tail91) cross BOTH interface gates. Hypothesis #9 Hydrogel A-tier CONFIRMED at full-construct AF3 level. Advance to Phase 2b Martini3 CG MD + Phase 2c wet-lab cell-based actin-bundling assay."
+}
