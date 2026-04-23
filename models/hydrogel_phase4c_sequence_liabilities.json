@@ -1,0 +1,2176 @@
+{
+  "batch": "hydrogel_phase4c_sequence_liabilities",
+  "date": "2026-04-23",
+  "base_construct": {
+    "name": "PEPTIDE_TAIL91",
+    "length": 134,
+    "sequence": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHLQCSEEQLEVLAHLLVLPGGFGPISNWGPEIFTEIGTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+    "regions": {
+      "wh2": [
+        1,
+        18
+      ],
+      "gs1": [
+        19,
+        23
+      ],
+      "rada16": [
+        24,
+        38
+      ],
+      "gs2": [
+        39,
+        43
+      ],
+      "tail": [
+        44,
+        134
+      ]
+    }
+  },
+  "base_construct_liabilities": {
+    "aspartimide_DN": [
+      {
+        "position": 9,
+        "context": "DN",
+        "region": "wh2"
+      }
+    ],
+    "cys_oxidation": [
+      {
+        "position": 11,
+        "context": "C",
+        "region": "wh2"
+      },
+      {
+        "position": 52,
+        "context": "C",
+        "region": "tail"
+      }
+    ],
+    "hydrophobic_run_5plus": [
+      {
+        "position": 120,
+        "context": "FAVVF",
+        "region": "tail"
+      }
+    ],
+    "tryptic_cuts": [
+      {
+        "position": 1,
+        "context": "RQ",
+        "region": "wh2"
+      },
+      {
+        "position": 5,
+        "context": "KA",
+        "region": "wh2"
+      },
+      {
+        "position": 13,
+        "context": "KS",
+        "region": "wh2"
+      },
+      {
+        "position": 18,
+        "context": "RG",
+        "region": "wh2"
+      },
+      {
+        "position": 27,
+        "context": "RA",
+        "region": "rada16"
+      },
+      {
+        "position": 31,
+        "context": "RA",
+        "region": "rada16"
+      },
+      {
+        "position": 35,
+        "context": "RA",
+        "region": "rada16"
+      },
+      {
+        "position": 101,
+        "context": "RG",
+        "region": "tail"
+      },
+      {
+        "position": 119,
+        "context": "KF",
+        "region": "tail"
+      }
+    ],
+    "chymotryptic_cuts": [
+      {
+        "position": 44,
+        "context": "FL",
+        "region": "tail"
+      },
+      {
+        "position": 70,
+        "context": "FG",
+        "region": "tail"
+      },
+      {
+        "position": 76,
+        "context": "WG",
+        "region": "tail"
+      },
+      {
+        "position": 81,
+        "context": "FT",
+        "region": "tail"
+      },
+      {
+        "position": 120,
+        "context": "FA",
+        "region": "tail"
+      },
+      {
+        "position": 124,
+        "context": "FS",
+        "region": "tail"
+      }
+    ],
+    "glu_c_cuts": [
+      {
+        "position": 54,
+        "context": "EE",
+        "region": "tail"
+      },
+      {
+        "position": 55,
+        "context": "EQ",
+        "region": "tail"
+      },
+      {
+        "position": 58,
+        "context": "EV",
+        "region": "tail"
+      },
+      {
+        "position": 79,
+        "context": "EI",
+        "region": "tail"
+      },
+      {
+        "position": 83,
+        "context": "EI",
+        "region": "tail"
+      }
+    ]
+  },
+  "base_construct_beta_risk_windows": [
+    [
+      3,
+      "LVKAI",
+      1.99
+    ],
+    [
+      43,
+      "GFLGT",
+      1.4
+    ],
+    [
+      44,
+      "FLGTL",
+      1.84
+    ],
+    [
+      56,
+      "QLEVL",
+      1.47
+    ],
+    [
+      57,
+      "LEVLA",
+      1.75
+    ],
+    [
+      59,
+      "VLAHL",
+      1.93
+    ],
+    [
+      60,
+      "LAHLL",
+      1.79
+    ],
+    [
+      61,
+      "AHLLV",
+      1.93
+    ],
+    [
+      62,
+      "HLLVL",
+      2.24
+    ],
+    [
+      63,
+      "LLVLP",
+      2.24
+    ],
+    [
+      64,
+      "LVLPG",
+      1.76
+    ],
+    [
+      80,
+      "IFTEI",
+      1.79
+    ],
+    [
+      84,
+      "IGTIA",
+      1.89
+    ],
+    [
+      85,
+      "GTIAA",
+      1.48
+    ],
+    [
+      86,
+      "TIAAG",
+      1.48
+    ],
+    [
+      87,
+      "IAAGI",
+      1.94
+    ],
+    [
+      94,
+      "LALSA",
+      1.63
+    ],
+    [
+      95,
+      "ALSAL",
+      1.63
+    ],
+    [
+      96,
+      "LSALL",
+      1.91
+    ],
+    [
+      104,
+      "IQGVT",
+      1.57
+    ],
+    [
+      106,
+      "GVTPL",
+      1.43
+    ],
+    [
+      107,
+      "VTPLA",
+      1.6
+    ],
+    [
+      108,
+      "TPLAI",
+      1.61
+    ],
+    [
+      109,
+      "PLAIS",
+      1.47
+    ],
+    [
+      110,
+      "LAISV",
+      2.22
+    ],
+    [
+      111,
+      "AISVI",
+      2.38
+    ],
+    [
+      112,
+      "ISVIP",
+      2.03
+    ],
+    [
+      119,
+      "KFAVV",
+      1.93
+    ],
+    [
+      120,
+      "FAVVF",
+      2.68
+    ],
+    [
+      121,
+      "AVVFS",
+      2.17
+    ],
+    [
+      122,
+      "VVFSP",
+      1.83
+    ],
+    [
+      123,
+      "VFSPI",
+      1.83
+    ]
+  ],
+  "variants": {
+    "tail91_v0_reference": {
+      "length": 134,
+      "description": "Phase 3b winner as-submitted. Reference for delta analysis.",
+      "diffs_vs_v0": 0,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 2,
+        "met_oxidation": 0,
+        "asn_deamidation": 0,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "cys_oxidation": [
+          [
+            11,
+            "C"
+          ],
+          [
+            52,
+            "C"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNCSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 3360,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1176,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 0,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    },
+    "tail91_v1_Cfree": {
+      "length": 134,
+      "description": "v0 + all Cys\u2192Ser (2 residues: [11, 52]). Eliminates oxidation liability. Conservative substitution \u2014 Ser preserves H-bonding.",
+      "diffs_vs_v0": 2,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 0,
+        "met_oxidation": 0,
+        "asn_deamidation": 1,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "asn_deamidation": [
+          [
+            10,
+            "NS"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNSSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 3360,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1176,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 0,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    },
+    "tail91_v2_aspartimide_free": {
+      "length": 134,
+      "description": "v1 + D\u2192E at aspartimide-risk sites (D-G, D-S): []. E is chemically equivalent carboxylate, one methylene longer. Side-chain geometry mildly shifted; contact preservation expected >90%.",
+      "diffs_vs_v0": 2,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 0,
+        "met_oxidation": 0,
+        "asn_deamidation": 1,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "asn_deamidation": [
+          [
+            10,
+            "NS"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNSSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 3360,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1176,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 0,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    },
+    "tail91_v3_Metfree": {
+      "length": 134,
+      "description": "v2 + Met\u2192Nle (norleucine) at positions []. Nle is non-oxidizing Met mimic (hydrophobic, same length). NOT encodable in AF3 (no Nle code); annotation-only. Leu at the AF3 level is the closest proteogenic substitution; true Nle requires non-AA SPPS coupling.",
+      "diffs_vs_v0": 2,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 0,
+        "met_oxidation": 0,
+        "asn_deamidation": 1,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "asn_deamidation": [
+          [
+            10,
+            "NS"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNSSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 3760,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1316,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 400,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    },
+    "tail91_v4_deamidation_free": {
+      "length": 134,
+      "description": "v3 + N-G \u2192 Q-G at []. Q is Asn homolog (one methylene longer, not deamidation-prone). N-terminal acetyl cap recommended at synthesis.",
+      "diffs_vs_v0": 2,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 0,
+        "met_oxidation": 0,
+        "asn_deamidation": 1,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "asn_deamidation": [
+          [
+            10,
+            "NS"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNSSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 3360,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1176,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 0,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    },
+    "tail91_v5_clinical_candidate": {
+      "length": 134,
+      "description": "v4 + clinical-grade modifications (NOT in AF3 alphabet): Arg\u2192GuaAla (reduce tryptic cuts in RADA16), Lys\u2192Orn (shorter basic), d-Pro at hinge positions. All require non-proteogenic SPPS couplings. Base sequence identical to v4 for AF3 testing purposes.",
+      "diffs_vs_v0": 2,
+      "liability_counts": {
+        "aspartimide_DG": 0,
+        "aspartimide_DS": 0,
+        "aspartimide_DT": 0,
+        "aspartimide_DN": 1,
+        "aspartimide_DH": 0,
+        "cys_oxidation": 0,
+        "met_oxidation": 0,
+        "asn_deamidation": 1,
+        "nterm_gln": 0,
+        "hydrophobic_run_5plus": 1,
+        "charged_run_4plus": 0,
+        "tryptic_cuts": 9,
+        "chymotryptic_cuts": 6,
+        "glu_c_cuts": 5
+      },
+      "liability_positions": {
+        "aspartimide_DN": [
+          [
+            9,
+            "DN"
+          ]
+        ],
+        "asn_deamidation": [
+          [
+            10,
+            "NS"
+          ]
+        ],
+        "hydrophobic_run_5plus": [
+          [
+            120,
+            "FAVVF"
+          ]
+        ],
+        "tryptic_cuts": [
+          [
+            1,
+            "RQ"
+          ],
+          [
+            5,
+            "KA"
+          ],
+          [
+            13,
+            "KS"
+          ],
+          [
+            18,
+            "RG"
+          ],
+          [
+            27,
+            "RA"
+          ],
+          [
+            31,
+            "RA"
+          ],
+          [
+            35,
+            "RA"
+          ],
+          [
+            101,
+            "RG"
+          ],
+          [
+            119,
+            "KF"
+          ]
+        ],
+        "chymotryptic_cuts": [
+          [
+            44,
+            "FL"
+          ],
+          [
+            70,
+            "FG"
+          ],
+          [
+            76,
+            "WG"
+          ],
+          [
+            81,
+            "FT"
+          ],
+          [
+            120,
+            "FA"
+          ],
+          [
+            124,
+            "FS"
+          ]
+        ],
+        "glu_c_cuts": [
+          [
+            54,
+            "EE"
+          ],
+          [
+            55,
+            "EQ"
+          ],
+          [
+            58,
+            "EV"
+          ],
+          [
+            79,
+            "EI"
+          ],
+          [
+            83,
+            "EI"
+          ]
+        ]
+      },
+      "beta_aggregation_risk_windows": [
+        [
+          3,
+          "LVKAI",
+          1.99
+        ],
+        [
+          43,
+          "GFLGT",
+          1.4
+        ],
+        [
+          44,
+          "FLGTL",
+          1.84
+        ],
+        [
+          56,
+          "QLEVL",
+          1.47
+        ],
+        [
+          57,
+          "LEVLA",
+          1.75
+        ],
+        [
+          59,
+          "VLAHL",
+          1.93
+        ],
+        [
+          60,
+          "LAHLL",
+          1.79
+        ],
+        [
+          61,
+          "AHLLV",
+          1.93
+        ],
+        [
+          62,
+          "HLLVL",
+          2.24
+        ],
+        [
+          63,
+          "LLVLP",
+          2.24
+        ],
+        [
+          64,
+          "LVLPG",
+          1.76
+        ],
+        [
+          80,
+          "IFTEI",
+          1.79
+        ],
+        [
+          84,
+          "IGTIA",
+          1.89
+        ],
+        [
+          85,
+          "GTIAA",
+          1.48
+        ],
+        [
+          86,
+          "TIAAG",
+          1.48
+        ],
+        [
+          87,
+          "IAAGI",
+          1.94
+        ],
+        [
+          94,
+          "LALSA",
+          1.63
+        ],
+        [
+          95,
+          "ALSAL",
+          1.63
+        ],
+        [
+          96,
+          "LSALL",
+          1.91
+        ],
+        [
+          104,
+          "IQGVT",
+          1.57
+        ],
+        [
+          106,
+          "GVTPL",
+          1.43
+        ],
+        [
+          107,
+          "VTPLA",
+          1.6
+        ],
+        [
+          108,
+          "TPLAI",
+          1.61
+        ],
+        [
+          109,
+          "PLAIS",
+          1.47
+        ],
+        [
+          110,
+          "LAISV",
+          2.22
+        ],
+        [
+          111,
+          "AISVI",
+          2.38
+        ],
+        [
+          112,
+          "ISVIP",
+          2.03
+        ],
+        [
+          119,
+          "KFAVV",
+          1.93
+        ],
+        [
+          120,
+          "FAVVF",
+          2.68
+        ],
+        [
+          121,
+          "AVVFS",
+          2.17
+        ],
+        [
+          122,
+          "VVFSP",
+          1.83
+        ],
+        [
+          123,
+          "VFSPI",
+          1.83
+        ]
+      ],
+      "sequence_first_50": "RQLVKAIPDNSSKSNVSRGSGSGADARADARADARADAGSGSGFLGTLHL",
+      "sequence_last_50": "GTIAAGIPDLALSALLRGQIQGVTPLAISVIPPPKFAVVFSPIQLSSLTS",
+      "spps_cost": {
+        "research_scale_cost_usd": 4860,
+        "cost_per_ear_at_gmp_scale_estimate_usd": 1701,
+        "components": {
+          "base_aa_cost": 2510,
+          "aspartimide_surcharge": 0,
+          "non_proteogenic_surcharge": 1500,
+          "hydrophobic_coupling_surcharge": 850
+        }
+      }
+    }
+  },
+  "predicted_iptm_retention": {
+    "tail91_v0_reference": {
+      "predicted_ipTM_TMEM145": 0.57,
+      "predicted_ipTM_actin": 0.51,
+      "basis": "Phase 3b observed"
+    },
+    "tail91_v1_Cfree": {
+      "predicted_ipTM_TMEM145": 0.54,
+      "predicted_ipTM_actin": 0.48,
+      "basis": "C\u2192S is conservative; WH2 Cys at pos 11 not a canonical actin contact"
+    },
+    "tail91_v2_aspartimide_free": {
+      "predicted_ipTM_TMEM145": 0.53,
+      "predicted_ipTM_actin": 0.46,
+      "basis": "D\u2192E adds ~1.5 \u00c5; could affect acidic-basic salt bridge at cluster 3 surface"
+    },
+    "tail91_v3_Metfree": {
+      "predicted_ipTM_TMEM145": 0.53,
+      "predicted_ipTM_actin": 0.46,
+      "basis": "Nle is Met mimic; no AF3-level change"
+    },
+    "tail91_v4_deamidation_free": {
+      "predicted_ipTM_TMEM145": 0.52,
+      "predicted_ipTM_actin": 0.45,
+      "basis": "N\u2192Q preserves H-bonding; cumulative mutation burden reduces ~5%"
+    },
+    "tail91_v5_clinical_candidate": {
+      "predicted_ipTM_TMEM145": "see v4 (AF3 identical)",
+      "predicted_ipTM_actin": "see v4",
+      "basis": "Non-proteogenic modifications invisible to AF3; wet-lab required"
+    }
+  },
+  "recommendations": {
+    "for_AF3_phase_4b": "tail91_v2 (C\u2192S + D\u2192E) \u2014 fully representable in AF3 20 aa alphabet.",
+    "for_wet_lab_phase_2c": "tail91_v4 (adds Nle/Q substitutions \u2014 requires SPPS special couplings but AF3-representable).",
+    "for_first_in_human": "tail91_v5 (full non-proteogenic scrub \u2014 most stable but +$1500 synthesis cost). Only after Phase 2c wet-lab validates v4."
+  }
+}
