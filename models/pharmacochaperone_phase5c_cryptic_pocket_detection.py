@@ -79,15 +79,37 @@ class Pocket:
     residue_ids: list[int]      # residue numbers lining the pocket
 
 
+def strip_hydrogens(pdb_in: Path, pdb_out: Path) -> int:
+    """fpocket qhull fails on H-heavy PDBs; keep only heavy atoms."""
+    n = 0
+    with open(pdb_in) as fin, open(pdb_out, "w") as fout:
+        for line in fin:
+            if line.startswith(("ATOM", "HETATM")):
+                # Element in cols 77-78, atom name cols 13-16
+                elem = line[76:78].strip()
+                aname = line[12:16].strip()
+                is_h = (elem == "H") or (elem == "" and aname.startswith("H"))
+                if is_h:
+                    continue
+                fout.write(line)
+                n += 1
+            elif line.startswith(("TER", "END", "CRYST1", "REMARK")):
+                fout.write(line)
+    return n
+
+
 def run_fpocket(pdb: Path, work_dir: Path) -> list[Pocket]:
     """Run fpocket, parse info.txt + alpha sphere centres, return list of
     Pocket objects tagged with snap_id from pdb.stem."""
     snap_id = pdb.stem
     # fpocket writes into {input_dir}/{input_stem}_out/ by default; copy PDB
-    # into work_dir so we don't pollute snapshot_dir
+    # into work_dir so we don't pollute snapshot_dir. Also strip hydrogens —
+    # fpocket's qhull Delaunay triangulation fails on H-dense all-atom PDBs.
     local_pdb = work_dir / pdb.name
-    if pdb.resolve() != local_pdb.resolve():
-        shutil.copyfile(pdb, local_pdb)
+    n_heavy = strip_hydrogens(pdb, local_pdb)
+    if n_heavy < 100:
+        log(f"  too few heavy atoms ({n_heavy}) — fpocket skip")
+        return []
     r = subprocess.run(
         ["fpocket", "-f", str(local_pdb)],
         capture_output=True, text=True, timeout=300,
