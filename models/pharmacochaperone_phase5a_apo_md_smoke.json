@@ -1,0 +1,36 @@
+{
+  "batch": "pharmacochaperone_phase5a_apo_md_smoke",
+  "date": "2026-04-23T08:27:24+00:00",
+  "target_cif": "/Users/egorlyfar/Sites/site-strc-egor-lol/public/models/job-ultramini-x-tmem145-full.cif",
+  "chain_used": "A (Ultra-Mini receptor)",
+  "force_field": "AMBER14SB + TIP3P, PME, HBond constraints, 2 fs step",
+  "temperature_K": 310,
+  "pressure_bar": 1.0,
+  "ionic_strength_M": 0.15,
+  "run_args": {
+    "ns": 0.1,
+    "snapshots": 5,
+    "platform": null
+  },
+  "result": {
+    "n_atoms_solvated": 164305,
+    "production_ps": 100.0,
+    "n_snapshots": 5,
+    "timing_sec": {
+      "nvt_equil_50ps": 53.8,
+      "npt_equil_50ps": 63.8,
+      "production": 139.2
+    },
+    "ns_per_day_extrap": 62.08,
+    "production_10ns_eta_hours": 3.9,
+    "snapshot_pdb_paths": [
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_000.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_001.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_002.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_003.pdb",
+      "/Users/egorlyfar/Brain/research/strc/models/artifacts/phase5a_snapshots/snap_004.pdb"
+    ]
+  },
+  "total_elapsed_sec": 292.2,
+  "interpretation": "ns/day extrapolation: 62.08. 10 ns production would take ~3.9 h. If >24 h on local \u2192 cloud compute recommended for Phase 5b."
+}
