@@ -36,62 +36,194 @@
   "scenarios": {
     "severe_E1659A_loss": {
       "f_mat_untreated": 0.1,
-      "baseline_abr_no_therapy_dB": 76.5,
+      "baseline_functional_ohc_fraction": 0.0,
+      "baseline_abr_no_therapy_dB": 87.4,
       "grid_size": 90,
-      "n_reaching_NORMAL": 0,
-      "pct_reaching_NORMAL": 0.0,
-      "n_reaching_MILD_or_NORMAL": 36,
-      "pct_reaching_MILD_or_NORMAL": 40.0,
+      "n_reaching_NORMAL": 36,
+      "pct_reaching_NORMAL": 40.0,
+      "n_reaching_MILD_or_NORMAL": 45,
+      "pct_reaching_MILD_or_NORMAL": 50.0,
       "h03_monotherapy_achieves_NORMAL": false,
       "h03_min_epsilon_for_NORMAL": null,
-      "h01_monotherapy_achieves_NORMAL": false,
-      "h01_min_fPC_for_NORMAL": null,
-      "n_stack_solutions_NORMAL": 0,
+      "h01_monotherapy_achieves_NORMAL": true,
+      "h01_min_fPC_for_NORMAL": 0.75,
+      "n_stack_solutions_NORMAL": 30,
       "n_low_burden_stack_NORMAL": 0,
       "sample_low_burden_NORMAL_solutions": [],
-      "stack_enables_NORMAL": false
+      "stack_enables_NORMAL": true
     },
     "moderate_E1659A_loss": {
       "f_mat_untreated": 0.25,
-      "baseline_abr_no_therapy_dB": 65.6,
+      "baseline_functional_ohc_fraction": 0.0,
+      "baseline_abr_no_therapy_dB": 87.4,
       "grid_size": 90,
-      "n_reaching_NORMAL": 0,
-      "pct_reaching_NORMAL": 0.0,
-      "n_reaching_MILD_or_NORMAL": 39,
-      "pct_reaching_MILD_or_NORMAL": 43.3,
+      "n_reaching_NORMAL": 36,
+      "pct_reaching_NORMAL": 40.0,
+      "n_reaching_MILD_or_NORMAL": 45,
+      "pct_reaching_MILD_or_NORMAL": 50.0,
       "h03_monotherapy_achieves_NORMAL": false,
       "h03_min_epsilon_for_NORMAL": null,
-      "h01_monotherapy_achieves_NORMAL": false,
-      "h01_min_fPC_for_NORMAL": null,
-      "n_stack_solutions_NORMAL": 0,
+      "h01_monotherapy_achieves_NORMAL": true,
+      "h01_min_fPC_for_NORMAL": 0.75,
+      "n_stack_solutions_NORMAL": 30,
       "n_low_burden_stack_NORMAL": 0,
       "sample_low_burden_NORMAL_solutions": [],
-      "stack_enables_NORMAL": false
+      "stack_enables_NORMAL": true
     },
     "mild_E1659A_loss": {
       "f_mat_untreated": 0.4,
-      "baseline_abr_no_therapy_dB": 57.9,
+      "baseline_functional_ohc_fraction": 0.0,
+      "baseline_abr_no_therapy_dB": 87.4,
       "grid_size": 90,
-      "n_reaching_NORMAL": 0,
-      "pct_reaching_NORMAL": 0.0,
-      "n_reaching_MILD_or_NORMAL": 44,
-      "pct_reaching_MILD_or_NORMAL": 48.9,
+      "n_reaching_NORMAL": 54,
+      "pct_reaching_NORMAL": 60.0,
+      "n_reaching_MILD_or_NORMAL": 60,
+      "pct_reaching_MILD_or_NORMAL": 66.7,
       "h03_monotherapy_achieves_NORMAL": false,
       "h03_min_epsilon_for_NORMAL": null,
-      "h01_monotherapy_achieves_NORMAL": false,
-      "h01_min_fPC_for_NORMAL": null,
-      "n_stack_solutions_NORMAL": 0,
-      "n_low_burden_stack_NORMAL": 0,
-      "sample_low_burden_NORMAL_solutions": [],
-      "stack_enables_NORMAL": false
+      "h01_monotherapy_achieves_NORMAL": true,
+      "h01_min_fPC_for_NORMAL": 0.5,
+      "n_stack_solutions_NORMAL": 45,
+      "n_low_burden_stack_NORMAL": 9,
+      "sample_low_burden_NORMAL_solutions": [
+        {
+          "epsilon": 0.1,
+          "A": 0.3,
+          "f_PC": 0.5,
+          "f_nontrans_OHC": 0.35,
+          "f_trans_OHC": 0.65,
+          "F_functional_fraction": 1.0,
+          "abr_dB": 23.1,
+          "category": "NORMAL",
+          "monotherapy_h03_only": false,
+          "monotherapy_h01_only": false,
+          "stack_h01_h03": true
+        },
+        {
+          "epsilon": 0.1,
+          "A": 0.6,
+          "f_PC": 0.5,
+          "f_nontrans_OHC": 0.35,
+          "f_trans_OHC": 0.95,
+          "F_functional_fraction": 1.0,
+          "abr_dB": 23.1,
+          "category": "NORMAL",
+          "monotherapy_h03_only": false,
+          "monotherapy_h01_only": false,
+          "stack_h01_h03": true
+        },
+        {
+          "epsilon": 0.1,
+          "A": 1.0,
+          "f_PC": 0.5,
+          "f_nontrans_OHC": 0.35,
+          "f_trans_OHC": 1.0,
+          "F_functional_fraction": 1.0,
+          "abr_dB": 23.1,
+          "category": "NORMAL",
+          "monotherapy_h03_only": false,
+          "monotherapy_h01_only": false,
+          "stack_h01_h03": true
+        },
+        {
+          "epsilon": 0.2,
+          "A": 0.3,
+          "f_PC": 0.5,
+          "f_nontrans_OHC": 0.35,
+          "f_trans_OHC": 0.65,
+          "F_functional_fraction": 1.0,
+          "abr_dB": 23.1,
+          "category": "NORMAL",
+          "monotherapy_h03_only": false,
+          "monotherapy_h01_only": false,
+          "stack_h01_h03": true
+        },
+        {
+          "epsilon": 0.2,
+          "A": 0.6,
+          "f_PC": 0.5,
+          "f_nontrans_OHC": 0.35,
+          "f_trans_OHC": 0.95,
+          "F_functional_fraction": 1.0,
+          "abr_dB": 23.1,
+          "category": "NORMAL",
+          "monotherapy_h03_only": false,
+          "monotherapy_h01_only": false,
+          "stack_h01_h03": true
+        }
+      ],
+      "stack_enables_NORMAL": true
+    }
+  },
+  "theta_sensitivity": {
+    "theta_0.25": {
+      "severe_E1659A_loss": {
+        "n_NORMAL": 54,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "moderate_E1659A_loss": {
+        "n_NORMAL": 54,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "mild_E1659A_loss": {
+        "n_NORMAL": 72,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      }
+    },
+    "theta_0.35": {
+      "severe_E1659A_loss": {
+        "n_NORMAL": 36,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "moderate_E1659A_loss": {
+        "n_NORMAL": 36,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "mild_E1659A_loss": {
+        "n_NORMAL": 54,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      }
+    },
+    "theta_0.45": {
+      "severe_E1659A_loss": {
+        "n_NORMAL": 18,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "moderate_E1659A_loss": {
+        "n_NORMAL": 18,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      },
+      "mild_E1659A_loss": {
+        "n_NORMAL": 18,
+        "h03_mono_NORMAL_possible": false,
+        "h01_mono_NORMAL_possible": true,
+        "stack_NORMAL_possible": true
+      }
     }
   },
   "nobel_argument": {
-    "stack_strictly_enables_NORMAL_in_all_f_mat_scenarios": false,
+    "stack_strictly_enables_NORMAL_in_all_f_mat_scenarios": true,
     "per_scenario_stack_uniquely_enables_NORMAL": {
-      "severe_E1659A_loss": false,
-      "moderate_E1659A_loss": false,
-      "mild_E1659A_loss": false
-    }
+      "severe_E1659A_loss": true,
+      "moderate_E1659A_loss": true,
+      "mild_E1659A_loss": true
+    },
+    "interpretation": "Because non-transduced OHCs are NOT reached by AAV, NORMAL hearing requires pharmacochaperone to rescue the maternal E1659A allele to the point where 0.5 \u00d7 f_mat_treated \u2265 theta. AAV alone caps at functional-fraction = epsilon; at realistic epsilon \u2264 0.5 this is MILD, not NORMAL. Stack is therefore NECESSARY not optional for NORMAL-tier outcome in compound het."
   }
 }
