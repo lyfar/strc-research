@@ -92,7 +92,9 @@ Per [[feedback_literature_first]] rule + [[AGENTS §0c]]: before any computation
 | 7 | [[Prime Editing for STRC]] | C | ✅ **7/8 CONFIRMED 2026-04-23 Batch 2** | Same Gao 2020 PMID phantom as h06 (now corrected in prose); other 7 cites verified real (Chen 2024, Chemla 2025, Fang 2021, Villiger 2021, Anzalone 2019, Kim 2023, Zhang 2025). Best-cited note in portfolio. |
 | 8 | [[STRC ASO Exon Skipping]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Cleanest scripts in portfolio. Ensembl REST + SantaLucia 1998 NN (verified exact), 4/4 FDA-PMO precedents confirmed. |
 | 27 | [[STRC STRCP1 Activation Rescue]] | C | ✅ **CLEAN 2026-04-23 Batch 2** | Live GTEx API query, zero embedded bio-constants. Correct GENCODE IDs. |
-| 10–17 | SpyCatcher, TECTA, Sono, Recombinases, Protein Replacement, OTOA, ZP-prion, ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
+| 10 | [[STRC In Situ SpyCatcher Assembly]] | C | ✅ **CLEAN 2026-04-23** | No scripts; prose verified (Zakeri 2012 SpyCatcher real; k_on 10³ M⁻¹s⁻¹ consistent). See [[STRC h10 h11 Parameter Provenance Audit 2026-04-23]] |
+| 11 | [[STRC Engineered TECTA Chimera]] | C | ✅ **FIXED 2026-04-23** | No scripts; 1 phantom ("Song 2021" prestin N-glycans) replaced with Matsuda 2004 PMID 15140192 + Zheng 2009 *JARO*. Other cites real (Verpy 2008, Anc80L65, AAV-ie, AAV-PHP.B). See [[STRC h10 h11 Parameter Provenance Audit 2026-04-23]] |
+| 12–17 | Sono, Recombinases, Protein Replacement, OTOA, ZP-prion, ref rows | C/D/ref | needs audit if promoted | Not scanned; flag before any new compute |
 
 All 4 scanning agents target `research/strc/models/*.py` scripts belonging to their hypothesis, produce parameter-provenance tables, retrieve missing papers via Anna's Archive + open sources, MinerU-parse into `~/BookLibrary/mineru-output/`, write paper notes into `research/strc/papers/`, and append to `research/strc/literature-params/*.md` topic files.
 
