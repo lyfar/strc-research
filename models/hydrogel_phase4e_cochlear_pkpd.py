@@ -96,7 +96,8 @@ def simulate_single_dose(dose_mg: float, duration_h: float = 48.0):
     above_toxic = sol.t[peri_uM > TOXIC_THRESHOLD_uM]
     dur_above_toxic = float(above_toxic[-1] - above_toxic[0]) if len(above_toxic) > 1 else 0.0
     # Bioavailability into perilymph: integrated flux_12 over 24 h / dose
-    bioavail = 1 - (float(c1[t_eval.searchsorted(24)]) + float(cdeg[t_eval.searchsorted(24)])) / dose_mg
+    idx24 = min(int(t_eval.searchsorted(24)), len(c1) - 1)
+    bioavail = 1 - (float(c1[idx24]) + float(cdeg[idx24])) / dose_mg
     auc_peri = float(np.trapezoid(peri_uM, sol.t))
     return {
         "dose_mg": dose_mg,
