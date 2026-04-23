@@ -6,7 +6,8 @@ Rationale: Phase 1 (CaMKII vs CaN model) gave wrong directionality because
 CaN saturated before CaMKII at the [Ca²⁺] range relevant for OHCs (100-1000 nM).
 
 AC1 (Ca/CaM-stimulated adenylyl cyclase type 1) is the dominant Ca-responsive
-AC in neurons and cochlear hair cells (Wu 2011, Visel 2006).
+AC in neurons; AC isoform expression in cochlear OHCs is inferred from
+transcriptomic data, not functionally characterised.
 Its activation is strictly Ca²⁺-dependent (via Ca4·CaM), giving a MONOTONIC
 Ca → cAMP → PKA → CREB → transcription cascade.
 
@@ -21,13 +22,23 @@ Variables (7):
   STRC_mRNA(t)    mol  — CRE-responsive transcript (basal + CREB-driven)
   STRC_prot(t)    mol  — protein pool (translation + degradation)
 
-References:
-  Wu et al. 2011 (AC1 kinetics): K_Ca = 150 nM, V_max = 2 µM cAMP/s
-  Dessauer 2017 (AC regulation review)
-  Houslay 2010 (PDE4 in epithelia): V_max ~ 10-20 µM/s, K_m ~ 4 µM
-  Zaccolo 2007 (cAMP-PKA kinetics): K_cAMP = 100 nM, Hill n=2
-  Gonzalez & Montminy 1989 (CREB-P dephosphorylation): t½ ≈ 5-10 min
-  Cha et al. 2010 (CREB-responsive promoter): Hill n=1, K_CREB ≈ 0.2 fractional
+References — post-2026-04-23 audit. Phantom citations removed:
+  Masada et al. 2012 Biochemistry (PMID 22971080): AC1 Ca/CaM kinetics mechanism.
+  Willoughby & Cooper 2007 Physiol Rev (PMID 17615394): AC1 Ca-EC50 100-500 nM,
+    Hill 1.5-2.5, AC1 Vmax 2-5 µM/min in membrane prep (model 2 µM/s is
+    ~60× higher; flagged — likely cell-volume normalisation issue).
+  Gonzalez & Montminy 1989 Cell: CREB Ser133 phosphorylation by PKA.
+    pCREB dephos t½ ≈ 5-10 min → k = 0.0012-0.0023/s in vivo (model uses
+    0.005/s, 2-4× faster; flagged — no primary source for faster rate).
+  Surdo et al. 2017 PMID 29074866: in-cell PKA activation K_cAMP ≈ 300 nM
+    (prior docstring claim of "Zaccolo 2007 K_cAMP=100 nM" is in-vitro; model
+    uses 300 nM which is the correct in-cell value).
+  Stemmer & Klee 1994 Biochemistry (PMID 8204620): CaN Ca EC50 600-1300 nM,
+    Hill n=2.8-3.0 (Phase 1 model n=4 slightly steep — OK for robustness).
+  REMOVED (phantom): "Wu 2011" AC1 kinetics — no such paper exists.
+  REMOVED (phantom): "Sharma 2018" STRC splicing t½ — no such paper exists.
+  REMOVED (unverified): "Cha et al. 2010" CREB promoter — PMID unconfirmed.
+  REMOVED (unverified): "Houslay 2010" PDE4 constants — specific PMID missing.
 """
 
 from __future__ import annotations
