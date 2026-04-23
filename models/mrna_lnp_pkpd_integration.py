@@ -59,22 +59,44 @@ ROOT = pathlib.Path("/Users/egorlyfar/Brain/research/strc/models")
 STABILITY = json.loads((ROOT / "mrna_stability_cochlear_results.json").read_text())
 DOSE_RESP = json.loads((ROOT / "rbm24_mrna_dose_response_results.json").read_text())
 
+# ═══════════════════════════════════════════════════════════════════════
+# POST-AUDIT 2026-04-23 — parameter provenance summary.
+#
+# HILL_K=200, HILL_N=2, MAX_BOOST=3 are ⚠ CIRCULAR FITS — values set so the
+# ODE model hits "therapeutic" at a reasonable dose; no published RBM24→STRC
+# splicing dose-response experiment in OHCs exists. Cannot fail by construction.
+#
+# STRC_HL_D=14, RBM24_HL_D=2 are ⚠ UNSOURCED from primary literature.
+# Plausible magnitudes (ECM proteins and RBPs) but no cochlea-specific paper.
+# Traced to rbm24_mrna_dose_response_results.json; generating script not present.
+#
+# LNP_ENDO_ESCAPE=0.02 is ⚠ unsourced specifically but consistent with
+# published <10% endosomal escape range (Patel 2019 PNAS would anchor).
+#
+# LNP_UNTARGETED=0.008 = 96/12,000 OHC ⚠ unsourced specifically; no primary
+# paper pins LNP-to-OHC efficiency. Prior "Gao 2020 PMID 32493791" citation
+# in related notes was PHANTOM (COVID-19 paper). Candidate real sources:
+# Gao 2018 Nature Beethoven (lipid-RNP), Yeh 2018 Nat Biomed Eng (CBE).
+#
+# LNP_COCHLEAR_TROPIC=0.05, LNP_OHC_TARGETED=0.20 are EXPLICITLY HYPOTHETICAL
+# (next-gen / ligand-targeted LNPs). Correctly flagged.
+# ═══════════════════════════════════════════════════════════════════════
 params = DOSE_RESP["params"]
-HILL_K = params["hill_km"]
-HILL_N = params["hill_n"]
-MAX_BOOST = params["max_boost"]
+HILL_K = params["hill_km"]          # ⚠ CIRCULAR FIT
+HILL_N = params["hill_n"]            # ⚠ CIRCULAR FIT
+MAX_BOOST = params["max_boost"]      # ⚠ CIRCULAR FIT — no exp. STRC splicing ceiling
 THRESHOLD = params["threshold_fold"]
 
 MRNA_HL_UNMOD_H = STABILITY["stability"]["unmod_OHC"]["hl_h"]
 MRNA_HL_M1PSI_H = STABILITY["stability"]["m1psi_OHC"]["hl_h"]
 
-RBM24_HL_D = params["rbm24_hl_d"]
-STRC_HL_D = params["strc_hl_d"]
+RBM24_HL_D = params["rbm24_hl_d"]    # ⚠ UNSOURCED — no OHC-RBM24 t½ measurement
+STRC_HL_D = params["strc_hl_d"]      # ⚠ UNSOURCED — no stereocilin t½ measurement
 
-LNP_ENDO_ESCAPE = 0.02
-LNP_UNTARGETED = 0.008
-LNP_COCHLEAR_TROPIC = 0.05
-LNP_OHC_TARGETED = 0.20
+LNP_ENDO_ESCAPE = 0.02    # ⚠ within published <10% range, specific cite missing
+LNP_UNTARGETED = 0.008    # ⚠ unsourced specifically (prior "Gao 2020" was PHANTOM)
+LNP_COCHLEAR_TROPIC = 0.05  # hypothetical next-gen
+LNP_OHC_TARGETED = 0.20     # hypothetical ligand-LNP
 
 K_TRANSLATE = 1.0
 K_STRC_BASAL = np.log(2) / (STRC_HL_D * 24.0 * 3600.0)
