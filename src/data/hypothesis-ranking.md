@@ -36,7 +36,7 @@ Tier heuristic: `min(Mech, Deliv, Misha-fit)`. S = top 5 active. A = backburner.
 | 6   | [[STRC mRNA Therapy Hypothesis]]                   | 3    | 2     | 2     | **A**   | Adjunctive to Strategy B                | [[h06 hub]] |
 | 7   | [[Prime Editing for STRC]]                         | 3    | 2     | 1     | **C**   | Wet-lab: ribosome-profiling STRCP1      | [[h07 hub]] |
 | 8   | [[STRC ASO Exon Skipping]]                         | 2    | 3     | 2     | **C**   | Phase 3a morpholino + 3b gapmer         | [[h08 hub]] |
-| 9   | [[STRC Synthetic Peptide Hydrogel HTC]]            | 5    | 4     | 3     | **A**   | Submit 8 AF3 Phase 4b jobs              | [[h09 hub]] |
+| 9   | [[STRC Synthetic Peptide Hydrogel HTC]]            | 4    | 3     | 3     | **A**   | 4b + blend model + lit-backed re-run    | [[h09 hub]] |
 | 10  | [[STRC In Situ SpyCatcher Assembly]]               | 2    | 2     | 2     | **C**   | Wet-lab only if #3 fails                | [[h10 hub]] |
 | 11  | [[STRC Engineered TECTA Chimera]]                  | 2    | 2     | 2     | **C**   | Alt scaffold deferred, S-tier bandwidth | [[h11 hub]] |
 | 12  | [[Sonogenetic STRC Computational Proof]]           | 2    | 2     | 2     | **C**   | Speculative, no near-term path          | [[h12 hub]] |

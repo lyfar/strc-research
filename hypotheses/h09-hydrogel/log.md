@@ -8,6 +8,7 @@ tags: [strc, h09]
 
 ## 2026-04-23
 
+- Parameter provenance audit: 3 critical gaps (118 aa tail, WH2×F-actin Kd, STRC×TMEM145 Kd); 7 phantom/wrong values; Mech 5→4 Deliv 4→3 (A held); triple promotion gate to S → [[STRC h09 Parameter Provenance Audit 2026-04-23]]
 - Phase 3b full-construct: tail91 PASSES TMEM145 0.57 + actin 0.51; tail71 FAILS TMEM145 catastrophically (0.35) → [[STRC Hydrogel HTC Phase 1 Self-Assembly]]
 - B → A: mechanism 3→5; Phase 3 tail retool ipTM 0.68 = Ultra-Mini GOLD baseline → [[STRC Hydrogel HTC Phase 1 Self-Assembly]]
 - Phase 4 8-axis campaign: Delivery 3→4; PKPD window 0.13-1.32 mg; $42/ear GMP; MODERATE immunogenicity → [[STRC Hydrogel Phase 4 Computational Campaign]]
