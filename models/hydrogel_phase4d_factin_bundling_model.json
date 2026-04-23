@@ -1,0 +1,754 @@
+{
+  "batch": "hydrogel_phase4d_factin_bundling_model",
+  "date": "2026-04-23",
+  "parameters": {
+    "WH2_Kd_Gactin_M": 2e-07,
+    "WH2_Kd_Factin_M_estimated": 5e-06,
+    "RADA16_peptides_per_nm_fibril": 4.35,
+    "stereocilia_target_crosslinks_per_um": 10,
+    "gactin_pool_ohc_M": 5e-05
+  },
+  "key_concentration_results": {
+    "100 nM (literature Kd)": {
+      "concentration_M": 1e-07,
+      "bundling_at_average_density": {
+        "p_bound": 0.0196,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 0.2098,
+        "expected_crosslinks_per_um_fibril": 20.98
+      },
+      "bundling_at_max_density": {
+        "p_bound": 0.0196,
+        "N_eff_peptides_per_10nm": 217.5,
+        "prob_two_plus_bound": 0.9279,
+        "expected_crosslinks_per_um_fibril": 92.79
+      },
+      "gactin_sequestration_fraction": 0.002
+    },
+    "1 \u03bcM (clinical-minimum floor)": {
+      "concentration_M": 1e-06,
+      "bundling_at_average_density": {
+        "p_bound": 0.1667,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 0.9965,
+        "expected_crosslinks_per_um_fibril": 99.65
+      },
+      "bundling_at_max_density": {
+        "p_bound": 0.1667,
+        "N_eff_peptides_per_10nm": 217.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "gactin_sequestration_fraction": 0.0199
+    },
+    "10 \u03bcM (Phase 2c wet-lab default)": {
+      "concentration_M": 1e-05,
+      "bundling_at_average_density": {
+        "p_bound": 0.6667,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "bundling_at_max_density": {
+        "p_bound": 0.6667,
+        "N_eff_peptides_per_10nm": 217.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "gactin_sequestration_fraction": 0.199
+    },
+    "100 \u03bcM (topical max before solubility limit)": {
+      "concentration_M": 0.0001,
+      "bundling_at_average_density": {
+        "p_bound": 0.9524,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "bundling_at_max_density": {
+        "p_bound": 0.9524,
+        "N_eff_peptides_per_10nm": 217.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "gactin_sequestration_fraction": 0.996
+    },
+    "1 mM (supersaturation)": {
+      "concentration_M": 0.001,
+      "bundling_at_average_density": {
+        "p_bound": 0.995,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "bundling_at_max_density": {
+        "p_bound": 0.995,
+        "N_eff_peptides_per_10nm": 217.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      },
+      "gactin_sequestration_fraction": 0.9998
+    }
+  },
+  "minimum_concentration_for_10_crosslinks_per_um_M": 1e-07,
+  "sensitivity_to_Kd_estimate": {
+    "optimistic (stronger binder)": {
+      "kd_factin_M": 5.000000000000001e-07,
+      "bundling_at_10uM": {
+        "p_bound": 0.9524,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      }
+    },
+    "nominal": {
+      "kd_factin_M": 5e-06,
+      "bundling_at_10uM": {
+        "p_bound": 0.6667,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 1.0,
+        "expected_crosslinks_per_um_fibril": 100.0
+      }
+    },
+    "pessimistic (weaker binder)": {
+      "kd_factin_M": 5e-05,
+      "bundling_at_10uM": {
+        "p_bound": 0.1667,
+        "N_eff_peptides_per_10nm": 43.5,
+        "prob_two_plus_bound": 0.9965,
+        "expected_crosslinks_per_um_fibril": 99.65
+      }
+    }
+  },
+  "heatmap_crosslinks_per_um": {
+    "conc_M_axis": [
+      1e-07,
+      1.2067926406393288e-07,
+      1.4563484775012443e-07,
+      1.757510624854793e-07,
+      2.1209508879201927e-07,
+      2.559547922699533e-07,
+      3.0888435964774783e-07,
+      3.727593720314938e-07,
+      4.498432668969444e-07,
+      5.428675439323859e-07,
+      6.55128556859551e-07,
+      7.906043210907702e-07,
+      9.540954763499944e-07,
+      1.151395399326448e-06,
+      1.389495494373136e-06,
+      1.6768329368110065e-06,
+      2.0235896477251557e-06,
+      2.4420530945486497e-06,
+      2.94705170255181e-06,
+      3.5564803062231285e-06,
+      4.291934260128778e-06,
+      5.179474679231212e-06,
+      6.250551925273976e-06,
+      7.543120063354607e-06,
+      9.102981779915228e-06,
+      1.0985411419875572e-05,
+      1.3257113655901082e-05,
+      1.5998587196060572e-05,
+      1.9306977288832496e-05,
+      2.3299518105153718e-05,
+      2.8117686979742253e-05,
+      3.39322177189533e-05,
+      4.094915062380419e-05,
+      4.9417133613238384e-05,
+      5.9636233165946365e-05,
+      7.196856730011514e-05,
+      8.68511373751352e-05,
+      0.00010481131341546853,
+      0.00012648552168552957,
+      0.0001526417967175232,
+      0.00018420699693267144,
+      0.00022229964825261933,
+      0.00026826957952797245,
+      0.00032374575428176434,
+      0.0003906939937054613,
+      0.000471486636345739,
+      0.0005689866029018293,
+      0.0006866488450042998,
+      0.0008286427728546842,
+      0.001
+    ],
+    "peptide_density_per_nm_axis": [
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0
+    ],
+    "values": [
+      [
+        5.78,
+        11.67,
+        18.48,
+        25.69,
+        32.95,
+        39.99,
+        46.67,
+        52.89,
+        58.59
+      ],
+      [
+        7.97,
+        15.7,
+        24.29,
+        33.03,
+        41.47,
+        49.34,
+        56.51,
+        62.92,
+        68.56
+      ],
+      [
+        10.88,
+        20.81,
+        31.34,
+        41.54,
+        50.93,
+        59.27,
+        66.51,
+        72.67,
+        77.84
+      ],
+      [
+        14.66,
+        27.12,
+        39.58,
+        50.98,
+        60.88,
+        69.17,
+        75.96,
+        81.42,
+        85.73
+      ],
+      [
+        19.47,
+        34.65,
+        48.81,
+        60.9,
+        70.68,
+        78.34,
+        84.17,
+        88.54,
+        91.77
+      ],
+      [
+        25.43,
+        43.29,
+        58.63,
+        70.67,
+        79.64,
+        86.09,
+        90.61,
+        93.73,
+        95.85
+      ],
+      [
+        32.59,
+        52.76,
+        68.44,
+        79.59,
+        87.1,
+        91.98,
+        95.09,
+        97.02,
+        98.21
+      ],
+      [
+        40.87,
+        62.57,
+        77.56,
+        87.02,
+        92.68,
+        95.95,
+        97.79,
+        98.81,
+        99.36
+      ],
+      [
+        50.02,
+        72.1,
+        85.34,
+        92.59,
+        96.36,
+        98.25,
+        99.17,
+        99.61,
+        99.82
+      ],
+      [
+        59.64,
+        80.67,
+        91.35,
+        96.29,
+        98.45,
+        99.37,
+        99.75,
+        99.9,
+        99.96
+      ],
+      [
+        69.15,
+        87.73,
+        95.47,
+        98.4,
+        99.45,
+        99.82,
+        99.94,
+        99.98,
+        99.99
+      ],
+      [
+        77.91,
+        92.98,
+        97.94,
+        99.42,
+        99.84,
+        99.96,
+        99.99,
+        100.0,
+        100.0
+      ],
+      [
+        85.35,
+        96.43,
+        99.2,
+        99.83,
+        99.96,
+        99.99,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        91.12,
+        98.42,
+        99.74,
+        99.96,
+        99.99,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        95.14,
+        99.4,
+        99.93,
+        99.99,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        97.63,
+        99.81,
+        99.99,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        98.98,
+        99.95,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.62,
+        99.99,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.88,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.97,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        99.99,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ]
+    ]
+  },
+  "bundling_gate_pass": true,
+  "clinically_achievable_gate_pass": true,
+  "sequestration_safe_gate_pass": false,
+  "verdict": "PARTIAL \u2014 bundling works but G-actin sequestration exceeds 30% at needed dose. Reduce WH2 affinity or use F-actin-only binder.",
+  "wet_lab_predictions_phase_2c": {
+    "HEK293_GFP_actin_10uM_peptide": "Punctate co-localisation expected in fluorescence microscopy within 30 min. Bundles should form at crosslink density ~100.0/\u03bcm. Negative control: WH2-ablated variant (Phase 4b job 6) should show diffuse actin.",
+    "TIRF_single_filament_10uM_peptide": "F-actin filaments should bundle into thick cables within 5-15 min. Measurable by TIRF imaging of Alexa647-actin.",
+    "critical_concentration_for_bundling": "0.1 \u03bcM"
+  },
+  "risk_flags": [
+    "WH2 is canonically a G-ACTIN sequestering motif, not an F-actin side-binder. Our model assumes WH2 retains weak F-actin affinity (Kd 5 \u03bcM) \u2014 this must be verified in Phase 2c.",
+    "If WH2 truly cannot bind F-actin side, hypothesis fails regardless of ipTM \u2014 switch to fascin/espin/plastin-derived F-actin binder.",
+    "G-actin monomer sequestration at 100 \u03bcM peptide dose: ~99.6% of free G-actin pool \u2014 could stress OHC actin turnover. Monitor via phalloidin staining in Phase 2c."
+  ]
+}
