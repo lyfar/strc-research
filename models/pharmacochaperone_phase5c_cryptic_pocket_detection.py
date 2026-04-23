@@ -52,8 +52,8 @@ PAD_A = 4.0
 #   - and < PROBE_MAX (buried, not bulk solvent),
 #   - and it is enclosed by protein along ≥ DIRECTIONS_BURIED of 14 cone dirs
 PROBE_MIN_A = 2.6
-PROBE_MAX_A = 5.0
-DIRECTIONS_BURIED = 10  # of 14 probe cones
+PROBE_MAX_A = 4.5
+DIRECTIONS_BURIED = 20  # of 26 probe cones — tighter buried criterion
 
 
 def log(msg: str):
@@ -163,9 +163,9 @@ def voxel_cavity_scan(coords: np.ndarray, k1141: np.ndarray) -> dict:
     # step along dir and check distance to tree until hit or 8 Å exceeded.
     # To keep it fast: step 7 times at 1.2 Å, mark direction as "buried" if
     # any step finds a heavy atom within 2.0 Å.
-    STEP = 1.2
-    NSTEPS = 7
-    HIT_R = 2.0
+    STEP = 1.0
+    NSTEPS = 6
+    HIT_R = 1.8
     buried_count = np.zeros(len(cand_pts), dtype=int)
     for d_vec in dirs:
         hit = np.zeros(len(cand_pts), dtype=bool)
