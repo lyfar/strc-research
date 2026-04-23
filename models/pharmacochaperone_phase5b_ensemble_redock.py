@@ -82,27 +82,74 @@ def log(msg: str):
     print(f"[{ts}] {msg}", flush=True)
 
 
+STANDARD_AA_3 = {
+    "ALA", "ARG", "ASN", "ASP", "CYS", "GLN", "GLU", "GLY", "HIS", "ILE",
+    "LEU", "LYS", "MET", "PHE", "PRO", "SER", "THR", "TRP", "TYR", "VAL",
+    "HID", "HIE", "HIP", "CYX", "ASH", "GLH", "LYN",  # AMBER-protonation variants
+}
+
+
 def strip_water_ions_to_pdb(pdb_in: Path, pdb_out: Path) -> int:
-    """Keep only standard protein AAs (ATOM + chain A). Return num atoms kept."""
-    from Bio.PDB import PDBParser, PDBIO, Select
-    from Bio.PDB.Polypeptide import is_aa
+    """
+    Keep only standard protein residues on chain A. Handles OpenMM hybrid36
+    residue numbering (which Biopython PDBParser cannot parse for large systems).
+    Writes sequentially renumbered residues 1..N so downstream obabel/Vina
+    tools see standard integer resSeq.
+    """
+    from openmm.app import PDBFile, Topology
+    from openmm import unit, Vec3
 
-    class OnlyProtChainA(Select):
-        def accept_chain(self, c):
-            return c.id == "A"
+    pdb = PDBFile(str(pdb_in))
+    top = pdb.topology
+    positions = pdb.positions
 
-        def accept_residue(self, r):
-            return is_aa(r, standard=True)
+    # Select protein atoms on chain A
+    keep_atom_indices = []
+    for chain in top.chains():
+        if chain.id != "A":
+            continue
+        for residue in chain.residues():
+            if residue.name.strip().upper() not in STANDARD_AA_3:
+                continue
+            for atom in residue.atoms():
+                keep_atom_indices.append(atom.index)
 
-    parser = PDBParser(QUIET=True)
-    struct = parser.get_structure("s", str(pdb_in))
-    io = PDBIO()
-    io.set_structure(struct)
-    io.save(str(pdb_out), select=OnlyProtChainA())
-    # count atoms in new file
-    n = sum(1 for line in pdb_out.read_text().splitlines()
-            if line.startswith(("ATOM", "HETATM")))
-    return n
+    # Build new topology with renumbered residues
+    new_top = Topology()
+    new_chain = new_top.addChain("A")
+    new_positions = []
+    seen_atom_to_new = {}
+    res_counter = 0
+    prev_res_id = None
+    new_res = None
+    for chain in top.chains():
+        if chain.id != "A":
+            continue
+        for residue in chain.residues():
+            if residue.name.strip().upper() not in STANDARD_AA_3:
+                continue
+            res_counter += 1
+            new_res = new_top.addResidue(
+                residue.name, new_chain, id=str(res_counter))
+            for atom in residue.atoms():
+                new_atom = new_top.addAtom(atom.name, atom.element, new_res)
+                seen_atom_to_new[atom.index] = new_atom
+                new_positions.append(positions[atom.index])
+
+    # Bonds (only those between kept atoms)
+    for b in top.bonds():
+        a1, a2 = b[0], b[1]
+        if a1.index in seen_atom_to_new and a2.index in seen_atom_to_new:
+            new_top.addBond(seen_atom_to_new[a1.index],
+                            seen_atom_to_new[a2.index])
+
+    # Convert list of Quantity Vec3 -> single Quantity of list (openmm expected form)
+    new_positions_q = unit.Quantity(
+        [p.value_in_unit(unit.nanometer) for p in new_positions],
+        unit.nanometer)
+    with open(pdb_out, "w") as fh:
+        PDBFile.writeFile(new_top, new_positions_q, fh, keepIds=True)
+    return len(keep_atom_indices)
 
 
 def pdb_to_pdbqt(pdb_in: Path, pdbqt_out: Path) -> None:
