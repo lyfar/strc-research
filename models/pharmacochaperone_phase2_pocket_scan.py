@@ -195,7 +195,14 @@ def lining_residues(pocket_pts: np.ndarray, chain, cutoff: float = 5.0):
 
 def druggability(volume_A3: float, hydrophobic_frac: float, nres: int,
                  donors: int, acceptors: int):
-    """DoGSiteScorer-inspired heuristic (simplified, 0..1)."""
+    """DoGSiteScorer-inspired heuristic (simplified, 0..1).
+
+    NOTE [audit 2026-04-23]: Phase 2 weights 0.40/0.25/0.20/0.15
+    (vol/hydro/nres/hb) differ from Phase 1 (0.5/0.3/0.2, no nres) and
+    Phase 2b (includes depth). Scores NOT cross-phase comparable.
+    Volume optimum 300 Å³ with σ=200 differs from Phase 1 (stepwise,
+    peak 200-600) and Phase 2b (250 Å³, σ=150). Use within-phase only.
+    """
     v_opt = 300.0  # peak at 300 Å³
     v_score = np.exp(-((volume_A3 - v_opt) ** 2) / (2 * 200.0 ** 2))
     # hydrophobic 0.4–0.7 optimal

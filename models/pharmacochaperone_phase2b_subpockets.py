@@ -170,6 +170,15 @@ def lining_residues(pocket_pts: np.ndarray, chain, cutoff: float = 4.5):
 
 
 def druggability(vol, hydro_frac, nres, donors, acceptors, depth_mean):
+    """Subpocket druggability (includes depth descriptor, 0..1).
+
+    NOTE [audit 2026-04-23]: Phase 2b weights 0.30/0.20/0.15/0.15/0.20
+    (vol/hydro/nres/hb/depth) differ from Phase 1 (0.5/0.3/0.2) and
+    Phase 2 (no depth component). Scores NOT cross-phase comparable.
+    Depth component d_score = depth_mean/3.5 is a burial-favouring term
+    specific to subpocket ranking; upstream phases don't compute burial.
+    Use within-phase only.
+    """
     v_opt = 250.0
     v_score = np.exp(-((vol - v_opt) ** 2) / (2 * 150.0 ** 2))
     if 0.4 <= hydro_frac <= 0.7:
