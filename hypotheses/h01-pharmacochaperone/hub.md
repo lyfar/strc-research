@@ -11,6 +11,18 @@ misha_fit: 4
 next_step: "Phase 3c v3b dock + 5d E1659A MD running"
 lit_audit: fixed
 lit_audit_date: 2026-04-23
+active_runs:
+  - phase: "3c-v3b"
+    name: "fenamic+covalent 12k-ligand dock"
+    pid: 73601
+    eta: "2026-04-24 ~05:10 local"
+  - phase: "5d"
+    name: "E1659A full-length mutant MD"
+    pid: 28875
+    eta: "2026-04-23 ~23:00 local"
+  - phase: "5e"
+    name: "mutant-ensemble re-dock (scaffold ready)"
+    eta: "post-5d + post-v3b-Stage-2"
 ---
 
 # h01 — Pharmacochaperone E1659A
@@ -25,9 +37,14 @@ A-tier. Reframed from "NORMAL monotherapy" → **"MILD-MODERATE adjunct lever wi
 
 ## active compute
 
-- **Phase 3c v3b + 6b** fenamic+covalent 12 253-ligand dock (PID 73601 nohup, ETA ~05:10 local 2026-04-24)
-- **Phase 5d** E1659A full-length mutant MD (PID 28875 nohup, ETA ~23:00 local 2026-04-23)
-- **Phase 5e** mutant-ensemble re-dock script ready; runs post-5d + post-v3b-Stage-2
+```dataviewjs
+const runs = dv.current().active_runs
+if (!runs || runs.length === 0) dv.paragraph("_(no active runs)_")
+else dv.table(
+  ["Phase", "Job", "PID", "ETA"],
+  runs.map(r => [r.phase, r.name, r.pid ?? "—", r.eta ?? "—"])
+)
+```
 
 ## next-step tree
 
