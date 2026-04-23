@@ -24,17 +24,13 @@ status: S-tier
 
 S-tier. next: order Ultra-Mini gBlock; clone pAAV B8-IgK-Ultra-Mini-WPRE3-bGH; Phase 4 HEK coIP.
 
-<!-- RECENT:START auto-synced from log.md by sync_strc_indices.py — do not hand-edit -->
+## Recent activity
 
-## recent
-
-- Misha compound-het stack integration: **S held, scores unchanged**, endpoint framing clarified. h03 for Misha's specific genotype is physically ceiling-capped at MILD (~30-40 dB ABR) — at realistic transduction ε ≤ 0.5, ≥50% of OHCs remain non-transduced and cannot be rescued by AAV (maternal E1659A sub-threshold + paternal null → f_OHC < θ). "Meaningful rescue" endpoint intact (20-30 dB ABR improvement vs 64 dB baseline is clinically huge and matches OTOF trial responder criteria). "Cure" endpoint (NORMAL ≤ 25 dB) requires h01 co-therapy. No compute work needed on h03; this is endpoint semantics. → [[Misha Compound-Het Therapy Stack Model]]
-- S-tier reinforced: AAV-LNP stack model formalises AAV as primary path → [[STRC AAV-LNP Stack PKPD]]
-- S-tier reinforced: Iranfar 2026 CTM + Holt 2021 Science Advances + Regeneron AAV.104 → [[STRC Gene Therapy Landscape 2026]]
-- Delivery 4→5 confirmed: all 3 AF3 gates closed (GOLD 0.68, homodimer, TMEM145 0.43) → [[STRC Mini-STRC Truncation Interface Validation]]
-- Mech 4→5: Ultra-Mini sub-Å RMSD at TMEM145; unlocks 2.6 kb AAV headroom → [[STRC Mini-STRC Truncation Interface Validation]]
-
-<!-- RECENT:END -->
+```dataviewjs
+const p = dv.page(dv.current().file.folder + "/log.md")
+if (p && p.file.lists.length) dv.list(p.file.lists.slice(0, 5).map(l => l.text))
+else dv.paragraph("_(no log entries)_")
+```
 
 ## evidence
 

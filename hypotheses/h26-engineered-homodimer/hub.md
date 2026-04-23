@@ -27,17 +27,13 @@ B-tier. Phase 1 ARM R-R hypothesis falsified; Phase 1c GREEN on secondary stump-
 - Phase 1d AF3 PASS on any mutant (ipTM ≥0.50 + homodimer contacts ≥ WT) → **A-tier → drop-in to h03 Ultra-Mini as engineered-avidity variant** (zero payload cost)
 - Phase 1d AF3 FAIL on all → C-tier (disulfide branch killed; no further compute)
 
-<!-- RECENT:START auto-synced from log.md by sync_strc_indices.py — do not hand-edit -->
+## Recent activity
 
-## recent
-
-- Phase 1c contact re-cluster: **GREEN**. DBSCAN eps=6.5 Å on Ultra-Mini homodimer CIF found 3 clusters. **Cluster 1 "stump" 1077-1114 (25 residues, 21 Cb-Cb disulfide geometries) ENTIRELY outside Phase 1 target 1579-1581.** Native C1079+C1081 on both chains sit 6.87-7.09 Å from A1078/S1080 on opposing chain → single A1078C or S1080C engineers inter-chain disulfide without changing cystine count. Cluster 2 ARM has homotypic S1579C/S1579C at Cb-Cb 6.94 Å (re-opens Phase 1 target with disulfide chemistry). B held pending Phase 1d AF3 triple batch (A1078C + S1080C + S1579C homotypic + A1078W negative control). Promotion path: Phase 1d ipTM ≥0.50 + homodimer contacts ≥ WT → A-tier → drop into h03 Ultra-Mini as engineered-avidity variant (zero payload cost). → [[STRC h26 Phase 1c Contact Re-Cluster 2026-04-23]]
-- Added to register: A-tier, Mech 4, Deliv 5, Misha 4. R-R repulsion at ARM 1579-1581 identified as dimer destabilizer → [[STRC Engineered Homodimer Avidity]]
-- Phase 1 AF3 batch built: 5 jobs (WT + 4 single-point mutants × 2 TMEM145), awaiting submission → [[STRC Engineered Homodimer Avidity]]
-- Phase 1 AF3 returned 4 mutants (WT_ref not downloaded): all FAIL homodimer gate (mean 0.15-0.19 vs WT 0.28-0.30); 3/4 also destroy TMEM145 binding → [[STRC Engineered Homodimer Phase 1 Results]]
-- Tier A → B. Mech 4→3. R-R repulsion falsified by R1581F (arg removed, homodimer still weak) → [[STRC Engineered Homodimer Phase 1 Results]]
-
-<!-- RECENT:END -->
+```dataviewjs
+const p = dv.page(dv.current().file.folder + "/log.md")
+if (p && p.file.lists.length) dv.list(p.file.lists.slice(0, 5).map(l => l.text))
+else dv.paragraph("_(no log entries)_")
+```
 
 ## evidence
 
