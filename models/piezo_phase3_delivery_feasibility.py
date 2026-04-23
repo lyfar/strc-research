@@ -1,34 +1,56 @@
 """
 Piezo Phase 3 — Delivery feasibility for OHC-apical conformal PVDF-TrFE film.
 
-Phase 2 verdict: the hypothesis needs film deposition with curvature
-R ≤ 100 nm on the OHC apical membrane (coverage ≥ 60% for V_wall ≥ 10 mV
-across the speech-band audiogram). Phase 3 asks: **what delivery
-scenario actually achieves that coverage?**
+⚠ PARAMETER PROVENANCE WARNING — read before using numeric outputs.
+Several constants below are NOT backed by primary literature and were
+carried over from earlier model drafts. Treat this entire script as a
+**geometry + PK/PD scaffold**, not a quantitative prediction:
 
-Model layers (all light-weight analytical; no ODE black box):
+  • A666 prestin-binding peptide — PHANTOM. No "Zou 2015" paper exists
+    describing A666. Targeted delivery ligand for OHC apical membrane
+    is a research gap; prestin-specific extracellular peptides have
+    not been published to our knowledge (2026-04-23 audit).
+    → K_OFF_A666, K_D ≈ 10 nM values are fabricated.
+
+  • SELECT_S = 80 (fold selectivity OHC vs IHC/support) — PHANTOM.
+    No primary source. Kept as model parameter to illustrate the
+    *form* of the selectivity equation, not a measured ratio.
+
+  • ETA_POLY = 0.7 (in-situ VDF/TrFE polymerisation efficiency) —
+    PHANTOM. No primary paper reports cochlear in-situ polymerisation
+    of VDF/TrFE. Range "0.6-0.8" in earlier comment was invented.
+
+  • K_BIND_BASELINE derives Berg-Purcell diffusion-to-sink (real
+    physics) but multiplies by an arbitrary "A666 contact probability"
+    of 10% — this multiplier has no source.
+
+What *is* defensible in this script:
+  • Cochlear geometry (N_OHC, A_apical, NP monolayer budget)
+  • Stokes-Einstein D_NP for 15 nm particle in water
+  • Berg-Purcell rate constant form 4πDR
+  • Perilymph volume 1 µL (mouse); RWM bolus t½ ~30 min
+    (Salt & Plontke cochlear-fluid simulator)
+  • Hydrogel IT t½ ~24 h (Salt review on sustained RWM release)
+
+CONCLUSION: Phase 3 in its current form CANNOT support a delivery-feasibility
+claim. Re-run after (a) an actual OHC-targeting ligand is identified
+with measured Kd, and (b) VDF/TrFE in-situ polymerisation is demonstrated
+ex vivo on cochlear-cell culture.
+
+──────────────────────────────────────────────────────────────────────
+
+Model layers (kept for reference; outputs are UPPER BOUNDS / SCAFFOLD):
 
   1. Capture-efficiency model (per dose, per scenario):
          f_captured = k_bind / (k_bind + k_clear)
-     where k_bind is the mass-transport-limited binding rate of
-     A666-functionalised PVDF-TrFE NPs to OHC-apical prestin sites,
-     and k_clear is the perilymph clearance rate.
 
-     Four scenarios (literature-anchored τ values):
+     Three scenarios (k_clear literature-anchored; k_bind unvalidated):
         A. Bolus intratympanic (IT)          t½_clear = 30 min
         B. Hydrogel IT (chitosan-GP)         t½_clear = 24 h
         C. Direct intracochlear injection    t½_clear = 24 h, k_bind ×10
-        D. Repeated monthly × 12 months      additive capture
 
-  2. Selectivity gate (A666 peptide specificity):
-         S = 80 (published for prestin-binding peptides, Zou 2015)
-         f_OHC = S·N_OHC / (S·N_OHC + N_offtarget)
-     Reports fraction of captured NPs that land on OHC vs. other cells.
-
-  3. Polymerisation efficiency:
-         η_poly = 0.5 (conservative; in-situ VDF/TrFE polymerisation
-                       on A666-captured NP templates)
-     Final effective film coverage = θ × η_poly.
+  2. Selectivity gate — FORM ONLY, coefficient PHANTOM.
+  3. Polymerisation efficiency — PHANTOM.
 
   4. Voltage gate (from Phase 2 wall-curvature model):
          V_wall(SPL, coverage) = V_wall_100(SPL) × coverage
@@ -94,11 +116,14 @@ K_BIND_DIFF = 4 * np.pi * D_NP * R_OHC_CM * N_OHC / V_CM3
 # Plus A666 contact probability (~10% at each encounter) = 5.7e-5
 # BUT once A666 binds, k_off is slow (~1e-4), so effective net = ~5e-5
 
-K_BIND_BASELINE = 5e-5    # s^-1 after A666 encounter probability
-K_OFF_A666 = 1e-4         # s^-1 (for off-rate; K_D ≈ 10 nM on bound state)
+# ⚠ PHANTOM PARAMETERS — see module docstring for full provenance audit.
+# Kept as named constants so downstream code reflects "model scaffold"
+# status rather than "measured". Re-run Phase 3 only after real ligand + Kd.
+K_BIND_BASELINE = 5e-5    # s^-1 — PHANTOM (Berg-Purcell × arbitrary 10% contact)
+K_OFF_A666 = 1e-4         # s^-1 — PHANTOM (A666 peptide does not exist in lit)
 
-ETA_POLY = 0.7      # in-situ VDF/TrFE polymerisation efficiency (literature 0.6-0.8)
-SELECT_S = 80
+ETA_POLY = 0.7      # PHANTOM — no primary source for in-situ VDF/TrFE polymerisation
+SELECT_S = 80       # PHANTOM — no primary source; prestin-specific ligand unpublished
 
 
 def scenario_params():
