@@ -53,15 +53,19 @@ LNP_COCHLEAR_TROPIC = 0.05          # v1 — aspirational
 LNP_OHC_TARGETED = 0.20             # v1 — sci-fi for current chemistry
 
 # NEW v2 — ER stress soft ceiling on STRC fold per OHC.
-# 5× endogenous is the upper bound before unfolded-protein-response kicks in
-# for chronic exogenous-mRNA-driven protein production. Past that, BiP/Grp78
-# binds nascent stereocilin, ATF6/IRE1/PERK arms activate, translation rate
-# drops globally (PERK/eIF2α), and the cell prioritizes folding over output.
-# Source: chronic-mRNA UPR literature in muscle and liver (Sahin 2014,
-# Hadas 2019); cochlea-specific data is missing but OHC ER capacity is
-# almost certainly LOWER than hepatocytes given OHC's small cytoplasm and
-# heavy mechanical load.
-ER_CEILING_FOLD = 5.0
+# 5× endogenous is a MODEL CHOICE, not a measurement. Past the ceiling,
+# BiP/Grp78 binds nascent stereocilin, ATF6/IRE1/PERK arms activate,
+# translation rate drops globally (PERK/eIF2α), and the cell prioritizes
+# folding over output.
+#
+# ⚠ POST-AUDIT 2026-04-23: Prior citation "Sahin 2014" was a wrong-paper-match.
+# Sahin/Karikó/Türeci 2014 (Nat Rev Drug Discov 13:759) is a broad mRNA
+# therapeutics review and does NOT establish a 5× UPR threshold. "Hadas 2019"
+# PMID was not verified as UPR-threshold related. No primary paper establishes
+# a specific fold-change threshold for UPR activation from exogenous mRNA in
+# cochlea or any tissue as of this writing. 5× is a conservative engineering
+# heuristic, NOT a measured threshold.
+ER_CEILING_FOLD = 5.0  # ⚠ MODEL HEURISTIC — no primary-lit UPR threshold
 
 # Soft-cap activation threshold: regimens with peak per-OHC fold above this
 # fraction of ER_CEILING_FOLD are flagged as "approaching ER stress".
