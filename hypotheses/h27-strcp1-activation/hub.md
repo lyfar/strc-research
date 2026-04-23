@@ -2,6 +2,13 @@
 date: 2026-04-23
 type: hypothesis-hub
 tags: [strc, h27]
+hypothesis_num: 27
+hypothesis_title: "STRC STRCP1 Activation Rescue"
+tier: "C"
+mech: 2
+deliv: 2
+misha_fit: 4
+next_step: "Email Holt lab ribosome-profiling"
 status: C-tier
 ---
 

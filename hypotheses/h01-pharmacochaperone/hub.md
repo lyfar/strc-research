@@ -2,6 +2,13 @@
 date: 2026-04-23
 type: hypothesis-hub
 tags: [strc, h01]
+hypothesis_num: 1
+hypothesis_title: "STRC Pharmacochaperone Virtual Screen E1659A"
+tier: "A"
+mech: 3
+deliv: 4
+misha_fit: 4
+next_step: "Phase 3c v3b dock + 5d E1659A MD running"
 status: A-tier
 ---
 

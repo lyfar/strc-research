@@ -2,6 +2,13 @@
 date: 2026-04-23
 type: hypothesis-hub
 tags: [strc, h09]
+hypothesis_num: 9
+hypothesis_title: "STRC Synthetic Peptide Hydrogel HTC"
+tier: "A"
+mech: 4
+deliv: 3
+misha_fit: 3
+next_step: "Phase 2c WH2 bundling + 4b AF3"
 status: A-tier
 ---
 

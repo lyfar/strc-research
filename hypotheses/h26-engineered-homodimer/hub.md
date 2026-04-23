@@ -2,6 +2,13 @@
 date: 2026-04-23
 type: hypothesis-hub
 tags: [strc, h26]
+hypothesis_num: 26
+hypothesis_title: "STRC Engineered Homodimer Avidity"
+tier: "B"
+mech: 2
+deliv: 5
+misha_fit: 4
+next_step: "Phase 1d AF3 A1078C/S1080C/S1579C"
 status: B-tier
 ---
 

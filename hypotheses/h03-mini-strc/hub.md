@@ -2,6 +2,13 @@
 date: 2026-04-23
 type: hypothesis-hub
 tags: [strc, h03]
+hypothesis_num: 3
+hypothesis_title: "STRC Mini-STRC Single-Vector Hypothesis"
+tier: "S"
+mech: 5
+deliv: 5
+misha_fit: 4
+next_step: "Order gBlock, clone pAAV, coIP"
 status: S-tier
 ---
 
