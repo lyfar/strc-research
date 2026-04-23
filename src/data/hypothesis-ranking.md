@@ -106,6 +106,20 @@ WHERE type = "hypothesis-hub"
 SORT hypothesis_num ASC
 ```
 
+
+## Legacy synthesis pages (pre-hub structure)
+
+Older flat synthesis notes from 2026-04-21/22, superseded by the `h{N}/hub.md` structure but kept for historical context:
+
+- [[delivery]] — sonoporation + LNP through round window (now in h04-mrna-lnp)
+- [[dual-vector]] — dual vs single vector math (now referenced by h03-mini-strc)
+- [[electrostatics]] — E1659A electrostatic analysis (reference tier)
+- [[immune]] — anti-AAV antibodies + re-dosing (supporting)
+- [[mini-strc]] — mini-STRC synthesis (now h03-mini-strc)
+- [[prime-editing]] — prime editing feasibility (now h07-prime-editing)
+- [[sonogenetics]] — sound-activated gene expression (now h12-sonogenetic)
+
+
 ## Connections
 
 - `[part-of]` [[STRC Research Portal]]
