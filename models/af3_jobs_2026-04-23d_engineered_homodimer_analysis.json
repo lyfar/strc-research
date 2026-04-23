@@ -1,0 +1,1359 @@
+{
+  "gates": {
+    "homodimer_AB": 0.5,
+    "tmem145_per_subunit": 0.4
+  },
+  "baselines": {
+    "WT_homodimer_iptm": [
+      0.28,
+      0.3
+    ],
+    "WT_monomer_x_TMEM145_iptm": 0.43
+  },
+  "runs": {
+    "R1581F": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.34,
+          "ptm": 0.42,
+          "ranking_score": 0.42,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.46,
+          "umini_tmem_BD": 0.43,
+          "umini_tmem_AD_cross": 0.18,
+          "umini_tmem_BC_cross": 0.18,
+          "tmem_tmem_CD": 0.2
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.34,
+          "ptm": 0.43,
+          "ranking_score": 0.41,
+          "homodimer_AB": 0.19,
+          "umini_tmem_AC": 0.48,
+          "umini_tmem_BD": 0.44,
+          "umini_tmem_AD_cross": 0.17,
+          "umini_tmem_BC_cross": 0.17,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.34,
+          "ptm": 0.42,
+          "ranking_score": 0.4,
+          "homodimer_AB": 0.18,
+          "umini_tmem_AC": 0.46,
+          "umini_tmem_BD": 0.44,
+          "umini_tmem_AD_cross": 0.16,
+          "umini_tmem_BC_cross": 0.17,
+          "tmem_tmem_CD": 0.13
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.32,
+          "ptm": 0.42,
+          "ranking_score": 0.4,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.46,
+          "umini_tmem_BD": 0.43,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.16
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.33,
+          "ptm": 0.42,
+          "ranking_score": 0.4,
+          "homodimer_AB": 0.19,
+          "umini_tmem_AC": 0.45,
+          "umini_tmem_BD": 0.43,
+          "umini_tmem_AD_cross": 0.17,
+          "umini_tmem_BC_cross": 0.17,
+          "tmem_tmem_CD": 0.12
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.19,
+          "mean": 0.176,
+          "sd": 0.0152,
+          "values": [
+            0.16,
+            0.19,
+            0.18,
+            0.16,
+            0.19
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.48,
+          "mean": 0.462,
+          "sd": 0.011,
+          "values": [
+            0.46,
+            0.48,
+            0.46,
+            0.46,
+            0.45
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.44,
+          "mean": 0.434,
+          "sd": 0.0055,
+          "values": [
+            0.43,
+            0.44,
+            0.44,
+            0.43,
+            0.43
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.18,
+          "mean": 0.164,
+          "sd": 0.0152,
+          "values": [
+            0.18,
+            0.17,
+            0.16,
+            0.14,
+            0.17
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.18,
+          "mean": 0.166,
+          "sd": 0.0152,
+          "values": [
+            0.18,
+            0.17,
+            0.17,
+            0.14,
+            0.17
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.2,
+          "mean": 0.146,
+          "sd": 0.0344,
+          "values": [
+            0.2,
+            0.12,
+            0.13,
+            0.16,
+            0.12
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "R1581Y": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.23,
+          "ptm": 0.38,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.15,
+          "umini_tmem_BD": 0.15,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.26
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.23,
+          "ptm": 0.37,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.15,
+          "umini_tmem_BD": 0.15,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.25
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.22,
+          "ptm": 0.39,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.22,
+          "ptm": 0.39,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.17,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.12,
+          "umini_tmem_BC_cross": 0.12,
+          "tmem_tmem_CD": 0.1
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.22,
+          "ptm": 0.39,
+          "ranking_score": 0.29,
+          "homodimer_AB": 0.18,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.12,
+          "umini_tmem_BC_cross": 0.12,
+          "tmem_tmem_CD": 0.1
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.18,
+          "mean": 0.162,
+          "sd": 0.0148,
+          "values": [
+            0.16,
+            0.14,
+            0.16,
+            0.17,
+            0.18
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.2,
+          "mean": 0.18,
+          "sd": 0.0274,
+          "values": [
+            0.15,
+            0.15,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.2,
+          "mean": 0.18,
+          "sd": 0.0274,
+          "values": [
+            0.15,
+            0.15,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.14,
+          "mean": 0.128,
+          "sd": 0.0084,
+          "values": [
+            0.14,
+            0.13,
+            0.13,
+            0.12,
+            0.12
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.14,
+          "mean": 0.128,
+          "sd": 0.0084,
+          "values": [
+            0.14,
+            0.13,
+            0.13,
+            0.12,
+            0.12
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.26,
+          "mean": 0.166,
+          "sd": 0.0817,
+          "values": [
+            0.26,
+            0.25,
+            0.12,
+            0.1,
+            0.1
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579F": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.29,
+          "ptm": 0.41,
+          "ranking_score": 0.36,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.16,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.26,
+          "umini_tmem_BC_cross": 0.26,
+          "tmem_tmem_CD": 0.28
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.28,
+          "ptm": 0.41,
+          "ranking_score": 0.36,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.15,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.25,
+          "umini_tmem_BC_cross": 0.25,
+          "tmem_tmem_CD": 0.29
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.29,
+          "ptm": 0.41,
+          "ranking_score": 0.35,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.16,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.26,
+          "umini_tmem_BC_cross": 0.26,
+          "tmem_tmem_CD": 0.29
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.29,
+          "ptm": 0.41,
+          "ranking_score": 0.35,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.16,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.26,
+          "umini_tmem_BC_cross": 0.26,
+          "tmem_tmem_CD": 0.27
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.29,
+          "ptm": 0.41,
+          "ranking_score": 0.35,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.16,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.26,
+          "umini_tmem_BC_cross": 0.25,
+          "tmem_tmem_CD": 0.27
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.16,
+          "mean": 0.152,
+          "sd": 0.0045,
+          "values": [
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.16
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.16,
+          "mean": 0.158,
+          "sd": 0.0045,
+          "values": [
+            0.16,
+            0.15,
+            0.16,
+            0.16,
+            0.16
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.16,
+          "mean": 0.16,
+          "sd": 0.0,
+          "values": [
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.16
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.26,
+          "mean": 0.258,
+          "sd": 0.0045,
+          "values": [
+            0.26,
+            0.25,
+            0.26,
+            0.26,
+            0.26
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.26,
+          "mean": 0.256,
+          "sd": 0.0055,
+          "values": [
+            0.26,
+            0.25,
+            0.26,
+            0.26,
+            0.25
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.29,
+          "mean": 0.28,
+          "sd": 0.01,
+          "values": [
+            0.28,
+            0.29,
+            0.29,
+            0.27,
+            0.27
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579F_restart": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.23,
+          "ptm": 0.39,
+          "ranking_score": 0.32,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.21,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.23,
+          "ptm": 0.39,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.22,
+          "ptm": 0.38,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.19,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.13
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.23,
+          "ptm": 0.39,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.17,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.24
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.23,
+          "ptm": 0.39,
+          "ranking_score": 0.3,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.2,
+          "umini_tmem_BD": 0.19,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.12
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.17,
+          "mean": 0.16,
+          "sd": 0.0071,
+          "values": [
+            0.16,
+            0.16,
+            0.15,
+            0.17,
+            0.16
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.21,
+          "mean": 0.202,
+          "sd": 0.0045,
+          "values": [
+            0.21,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.2,
+          "mean": 0.196,
+          "sd": 0.0055,
+          "values": [
+            0.2,
+            0.2,
+            0.19,
+            0.2,
+            0.19
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.14,
+          "mean": 0.138,
+          "sd": 0.0045,
+          "values": [
+            0.14,
+            0.14,
+            0.13,
+            0.14,
+            0.14
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.14,
+          "mean": 0.138,
+          "sd": 0.0045,
+          "values": [
+            0.14,
+            0.14,
+            0.13,
+            0.14,
+            0.14
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.24,
+          "mean": 0.146,
+          "sd": 0.0527,
+          "values": [
+            0.12,
+            0.12,
+            0.13,
+            0.24,
+            0.12
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579W": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.24,
+          "ptm": 0.38,
+          "ranking_score": 0.32,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.17,
+          "umini_tmem_BD": 0.17,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.26
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.24,
+          "ptm": 0.38,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.17,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.26
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.22,
+          "ptm": 0.39,
+          "ranking_score": 0.31,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.21,
+          "umini_tmem_BD": 0.2,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.24,
+          "ptm": 0.38,
+          "ranking_score": 0.3,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.16,
+          "umini_tmem_BD": 0.16,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.25
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.23,
+          "ptm": 0.37,
+          "ranking_score": 0.28,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.15,
+          "umini_tmem_BD": 0.15,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.25
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.15,
+          "mean": 0.142,
+          "sd": 0.0045,
+          "values": [
+            0.15,
+            0.14,
+            0.14,
+            0.14,
+            0.14
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.21,
+          "mean": 0.172,
+          "sd": 0.0228,
+          "values": [
+            0.17,
+            0.17,
+            0.21,
+            0.16,
+            0.15
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.2,
+          "mean": 0.168,
+          "sd": 0.0192,
+          "values": [
+            0.17,
+            0.16,
+            0.2,
+            0.16,
+            0.15
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.13,
+          "mean": 0.13,
+          "sd": 0.0,
+          "values": [
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.13
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.13,
+          "mean": 0.13,
+          "sd": 0.0,
+          "values": [
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.13
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.26,
+          "mean": 0.228,
+          "sd": 0.0606,
+          "values": [
+            0.26,
+            0.26,
+            0.12,
+            0.25,
+            0.25
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579W_restart": {
+      "n_models": 5,
+      "per_model": [
+        {
+          "model": 0,
+          "iptm_global": 0.32,
+          "ptm": 0.42,
+          "ranking_score": 0.4,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.43,
+          "umini_tmem_BD": 0.41,
+          "umini_tmem_AD_cross": 0.18,
+          "umini_tmem_BC_cross": 0.18,
+          "tmem_tmem_CD": 0.22
+        },
+        {
+          "model": 1,
+          "iptm_global": 0.32,
+          "ptm": 0.41,
+          "ranking_score": 0.4,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.43,
+          "umini_tmem_BD": 0.41,
+          "umini_tmem_AD_cross": 0.17,
+          "umini_tmem_BC_cross": 0.17,
+          "tmem_tmem_CD": 0.21
+        },
+        {
+          "model": 2,
+          "iptm_global": 0.32,
+          "ptm": 0.41,
+          "ranking_score": 0.39,
+          "homodimer_AB": 0.15,
+          "umini_tmem_AC": 0.45,
+          "umini_tmem_BD": 0.42,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.12
+        },
+        {
+          "model": 3,
+          "iptm_global": 0.32,
+          "ptm": 0.41,
+          "ranking_score": 0.39,
+          "homodimer_AB": 0.14,
+          "umini_tmem_AC": 0.45,
+          "umini_tmem_BD": 0.42,
+          "umini_tmem_AD_cross": 0.14,
+          "umini_tmem_BC_cross": 0.14,
+          "tmem_tmem_CD": 0.18
+        },
+        {
+          "model": 4,
+          "iptm_global": 0.32,
+          "ptm": 0.41,
+          "ranking_score": 0.38,
+          "homodimer_AB": 0.16,
+          "umini_tmem_AC": 0.45,
+          "umini_tmem_BD": 0.42,
+          "umini_tmem_AD_cross": 0.13,
+          "umini_tmem_BC_cross": 0.13,
+          "tmem_tmem_CD": 0.13
+        }
+      ],
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.16,
+          "mean": 0.154,
+          "sd": 0.0089,
+          "values": [
+            0.16,
+            0.16,
+            0.15,
+            0.14,
+            0.16
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.45,
+          "mean": 0.442,
+          "sd": 0.011,
+          "values": [
+            0.43,
+            0.43,
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.42,
+          "mean": 0.416,
+          "sd": 0.0055,
+          "values": [
+            0.41,
+            0.41,
+            0.42,
+            0.42,
+            0.42
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.18,
+          "mean": 0.15,
+          "sd": 0.0235,
+          "values": [
+            0.18,
+            0.17,
+            0.13,
+            0.14,
+            0.13
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.18,
+          "mean": 0.15,
+          "sd": 0.0235,
+          "values": [
+            0.18,
+            0.17,
+            0.13,
+            0.14,
+            0.13
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.22,
+          "mean": 0.172,
+          "sd": 0.0455,
+          "values": [
+            0.22,
+            0.21,
+            0.12,
+            0.18,
+            0.13
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    }
+  },
+  "combined_by_mutant": {
+    "R1581F": {
+      "n_models_combined": 5,
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.19,
+          "mean": 0.176,
+          "sd": 0.0152,
+          "values": [
+            0.16,
+            0.19,
+            0.18,
+            0.16,
+            0.19
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.48,
+          "mean": 0.462,
+          "sd": 0.011,
+          "values": [
+            0.46,
+            0.48,
+            0.46,
+            0.46,
+            0.45
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.44,
+          "mean": 0.434,
+          "sd": 0.0055,
+          "values": [
+            0.43,
+            0.44,
+            0.44,
+            0.43,
+            0.43
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.18,
+          "mean": 0.164,
+          "sd": 0.0152,
+          "values": [
+            0.18,
+            0.17,
+            0.16,
+            0.14,
+            0.17
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.18,
+          "mean": 0.166,
+          "sd": 0.0152,
+          "values": [
+            0.18,
+            0.17,
+            0.17,
+            0.14,
+            0.17
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.2,
+          "mean": 0.146,
+          "sd": 0.0344,
+          "values": [
+            0.2,
+            0.12,
+            0.13,
+            0.16,
+            0.12
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "R1581Y": {
+      "n_models_combined": 5,
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.18,
+          "mean": 0.162,
+          "sd": 0.0148,
+          "values": [
+            0.16,
+            0.14,
+            0.16,
+            0.17,
+            0.18
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.2,
+          "mean": 0.18,
+          "sd": 0.0274,
+          "values": [
+            0.15,
+            0.15,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.2,
+          "mean": 0.18,
+          "sd": 0.0274,
+          "values": [
+            0.15,
+            0.15,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.14,
+          "mean": 0.128,
+          "sd": 0.0084,
+          "values": [
+            0.14,
+            0.13,
+            0.13,
+            0.12,
+            0.12
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.14,
+          "mean": 0.128,
+          "sd": 0.0084,
+          "values": [
+            0.14,
+            0.13,
+            0.13,
+            0.12,
+            0.12
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.26,
+          "mean": 0.166,
+          "sd": 0.0817,
+          "values": [
+            0.26,
+            0.25,
+            0.12,
+            0.1,
+            0.1
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579F": {
+      "n_models_combined": 10,
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.17,
+          "mean": 0.156,
+          "sd": 0.007,
+          "values": [
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.16,
+            0.16,
+            0.16,
+            0.15,
+            0.17,
+            0.16
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.21,
+          "mean": 0.18,
+          "sd": 0.0236,
+          "values": [
+            0.16,
+            0.15,
+            0.16,
+            0.16,
+            0.16,
+            0.21,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.2,
+          "mean": 0.178,
+          "sd": 0.0193,
+          "values": [
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.16,
+            0.2,
+            0.2,
+            0.19,
+            0.2,
+            0.19
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.26,
+          "mean": 0.198,
+          "sd": 0.0634,
+          "values": [
+            0.26,
+            0.25,
+            0.26,
+            0.26,
+            0.26,
+            0.14,
+            0.14,
+            0.13,
+            0.14,
+            0.14
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.26,
+          "mean": 0.197,
+          "sd": 0.0624,
+          "values": [
+            0.26,
+            0.25,
+            0.26,
+            0.26,
+            0.25,
+            0.14,
+            0.14,
+            0.13,
+            0.14,
+            0.14
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.29,
+          "mean": 0.213,
+          "sd": 0.0792,
+          "values": [
+            0.28,
+            0.29,
+            0.29,
+            0.27,
+            0.27,
+            0.12,
+            0.12,
+            0.13,
+            0.24,
+            0.12
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "S1579W": {
+      "n_models_combined": 10,
+      "aggregate": {
+        "homodimer_AB": {
+          "max": 0.16,
+          "mean": 0.148,
+          "sd": 0.0092,
+          "values": [
+            0.15,
+            0.14,
+            0.14,
+            0.14,
+            0.14,
+            0.16,
+            0.16,
+            0.15,
+            0.14,
+            0.16
+          ]
+        },
+        "umini_tmem_AC": {
+          "max": 0.45,
+          "mean": 0.307,
+          "sd": 0.1433,
+          "values": [
+            0.17,
+            0.17,
+            0.21,
+            0.16,
+            0.15,
+            0.43,
+            0.43,
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "umini_tmem_BD": {
+          "max": 0.42,
+          "mean": 0.292,
+          "sd": 0.1314,
+          "values": [
+            0.17,
+            0.16,
+            0.2,
+            0.16,
+            0.15,
+            0.41,
+            0.41,
+            0.42,
+            0.42,
+            0.42
+          ]
+        },
+        "umini_tmem_AD_cross": {
+          "max": 0.18,
+          "mean": 0.14,
+          "sd": 0.0189,
+          "values": [
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.18,
+            0.17,
+            0.13,
+            0.14,
+            0.13
+          ]
+        },
+        "umini_tmem_BC_cross": {
+          "max": 0.18,
+          "mean": 0.14,
+          "sd": 0.0189,
+          "values": [
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.13,
+            0.18,
+            0.17,
+            0.13,
+            0.14,
+            0.13
+          ]
+        },
+        "tmem_tmem_CD": {
+          "max": 0.26,
+          "mean": 0.2,
+          "sd": 0.0585,
+          "values": [
+            0.26,
+            0.26,
+            0.12,
+            0.25,
+            0.25,
+            0.22,
+            0.21,
+            0.12,
+            0.18,
+            0.13
+          ]
+        }
+      },
+      "gate_decision": {
+        "any_model_passes_all_gates": false,
+        "mean_passes_all_gates": false,
+        "PASS_strict": false,
+        "PASS_lenient_any_model": false,
+        "per_model_pass_flags": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    }
+  }
+}
