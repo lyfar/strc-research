@@ -13,7 +13,12 @@ status: A-tier
 
 ## status
 
-A-tier. next: submit 8 Phase 4b AF3 jobs (multi-seed, triple-complex, WH2-ablation, tail84). If triple-complex + σ<0.05 → S-tier candidate.
+A-tier. next priority reordered per [[STRC h09 Phase 4i Kd Sensitivity Sweep 2026-04-23]]:
+1. **Phase 2c WH2 bundling** (HEK293 GFP-actin confocal) — gate #1, dominates therapeutic window
+2. Phase 4b AF3 submission (8 jobs built, awaiting external AF3 server) — triple-complex + σ<0.05 needed
+3. TMEM145 SPR/BLI — gate #2, already in operable ipSAE-narrowed band
+
+S-tier promotion path: WH2 Kd wet-lab narrowing into PASS zone (< 50 μM) + 4b triple-complex σ<0.05 → S candidate.
 
 ## evidence
 
