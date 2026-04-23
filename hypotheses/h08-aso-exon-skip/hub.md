@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h08 hub
+tags:
+- strc
+- h08
 hypothesis_num: 8
-hypothesis_title: "STRC ASO Exon Skipping"
-tier: "C"
+hypothesis_title: STRC ASO Exon Skipping
+tier: C
 mech: 2
 deliv: 3
 misha_fit: 2
-next_step: "Phase 3a morpholino + 3b gapmer"
+next_step: Phase 3a morpholino + 3b gapmer
 lit_audit: fixed
 lit_audit_date: 2026-04-23
-tags: [strc, h08]
 ---
 
 Stub hub. Details in [[STRC ASO Exon Skipping]]. State lives in frontmatter above.

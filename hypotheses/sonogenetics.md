@@ -1,12 +1,24 @@
 ---
-title: Sonogenetics — Sound-Activated Gene Expression
-status: active
-stage: computational-modeling
-priority: secondary
-tags: [sonogenetics, mechanosensitive, NFAT, calcium, promoter, ODE, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Sonogenetics — Sound-Activated Gene Expression
+tags:
+- sonogenetics
+- mechanosensitive
+- NFAT
+- calcium
+- promoter
+- ODE
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: active
+priority: secondary
+stage: computational-modeling
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -53,5 +65,5 @@ Developed nanoparticles that convert focused ultrasound into tunable light emiss
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[Sonogenetic STRC Computational Proof]]
+- [[Sonogenetic STRC Computational Proof]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

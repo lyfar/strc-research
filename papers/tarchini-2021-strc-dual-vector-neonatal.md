@@ -66,6 +66,6 @@ This is the experiment the field needs — and the data Misha's program needs.
 
 ## Connections
 
-- `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — TM crown reformation from full-KO baseline at P1
-- `[informs]` [[STRC Dual-Vector vs Single-Vector Transduction]] — published baseline (59% OHC, 50–60 dB gain) for the dual-vector arm
-- `[informs]` [[Adult Treatment Window STRC]] — only existing STRC gene therapy data, P1 only
+- [[STRC Stereocilia Bundle Mechanics Model]] — TM crown reformation from full-KO baseline at P1
+- [[STRC Dual-Vector vs Single-Vector Transduction]] — published baseline (59% OHC, 50–60 dB gain) for the dual-vector arm
+- [[Adult Treatment Window STRC]] — only existing STRC gene therapy data, P1 only

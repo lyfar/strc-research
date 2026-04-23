@@ -46,5 +46,5 @@ Simulation fitting yielded the canonical parameter set for the WUSTL Cochlear Fl
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PERILYMPH_CLEAR baseline (guinea pig 60 min t½); K_RWM is not from this paper
-- `[cited by]` [[2018-salt-plontke-pharmacokinetic-principles-inner-ear]]
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PERILYMPH_CLEAR baseline (guinea pig 60 min t½); K_RWM is not from this paper
+- [[2018-salt-plontke-pharmacokinetic-principles-inner-ear]]

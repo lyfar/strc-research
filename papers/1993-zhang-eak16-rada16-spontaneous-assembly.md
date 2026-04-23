@@ -37,7 +37,7 @@ Establishes the RADA16 scaffold as the backbone for h09's synthetic horizontal t
 
 ## Connections
 
-- `[informs]` [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — foundational scaffold paper; fibril dimensions
-- `[informs]` [[STRC Phase 4d F-actin Bundling Model]] — supports proteolytic stability claim but provides no rate data
+- [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — foundational scaffold paper; fibril dimensions
+- [[STRC Phase 4d F-actin Bundling Model]] — supports proteolytic stability claim but provides no rate data
 - `[see-also]` [[Yokoi 2005 RADA16 Reassembly]] — fibril geometry AFM follow-up
 - `[see-also]` [[Paravastu 2014 RADA16 Molecular Structure]] — atomic structure NMR follow-up

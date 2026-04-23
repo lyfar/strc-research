@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h11 hub
+tags:
+- strc
+- h11
 hypothesis_num: 11
-hypothesis_title: "STRC Engineered TECTA Chimera"
-tier: "C"
+hypothesis_title: STRC Engineered TECTA Chimera
+tier: C
 mech: 2
 deliv: 2
 misha_fit: 2
-next_step: "Alt scaffold deferred"
+next_step: Alt scaffold deferred
 lit_audit: fixed
 lit_audit_date: 2026-04-23
-tags: [strc, h11]
 ---
 
 Stub hub. Details in [[STRC Engineered TECTA Chimera]]. State lives in frontmatter above.

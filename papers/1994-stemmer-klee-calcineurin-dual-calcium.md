@@ -30,6 +30,6 @@ The RBM24 ODE model uses `Kd_CaN = 500 nM` and `n_CaN_Hill = 4.0`. Stemmer & Kle
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — CaN kinetics in RBM24 ODE
+- [[STRC Calcium Oscillation Acoustic Therapy]] — CaN kinetics in RBM24 ODE
 - `[see-also]` [[1998-dolmetsch-calcium-oscillations-gene-expression]] — downstream of CaN
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

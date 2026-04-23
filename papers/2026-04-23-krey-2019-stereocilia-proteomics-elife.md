@@ -49,9 +49,9 @@ cochlear-specific in its critical role).
 
 ## Connections
 
-- `[actin copy number source for]` [[Hydrogel Phase 4d F-actin Bundling Model]] — provides
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — provides
   200,000 actin/stereocilium baseline for [F-actin] calculation
-- `[informs]` [[STRC Normal OHC Concentration Parameter]] — STRC_NORMAL_OHC_M needs own
+- [[STRC Normal OHC Concentration Parameter]] — STRC_NORMAL_OHC_M needs own
   source; this paper doesn't cover STRC
-- `[stereocilia proteomics]` [[Barr-Gillespie Lab Stereocilia Atlas]] — anchor paper for
+- [[Barr-Gillespie Lab Stereocilia Atlas]] — anchor paper for
   quantitative hair cell proteomics

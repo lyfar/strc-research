@@ -38,5 +38,5 @@ PMC open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC4417094/
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PERILYMPH_CLEAR; 2h model value is between guinea pig fast-MW (60 min) and dextran-slow (230 min) — plausible but not directly measured for 14 kDa peptide
-- `[informs]` [[2001-salt-ma-quantification-rwm-permeability]] — context for ST clearance parameter
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PERILYMPH_CLEAR; 2h model value is between guinea pig fast-MW (60 min) and dextran-slow (230 min) — plausible but not directly measured for 14 kDa peptide
+- [[2001-salt-ma-quantification-rwm-permeability]] — context for ST clearance parameter

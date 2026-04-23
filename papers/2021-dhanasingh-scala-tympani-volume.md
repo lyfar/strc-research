@@ -37,5 +37,5 @@ PMC open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC8514755/
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — PERILYMPH_VOL_UL discrepancy; 34 μL (ST only) vs 93 μL (total) vs 70 μL (model, unsourced)
-- `[informs]` [[STRC Hypothesis Ranking]] — h09 PK volume parameter
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — PERILYMPH_VOL_UL discrepancy; 34 μL (ST only) vs 93 μL (total) vs 70 μL (model, unsourced)
+- [[STRC Hypothesis Ranking]] — h09 PK volume parameter

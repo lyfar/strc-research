@@ -42,5 +42,5 @@ None noted.
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PROTEOLYSIS justification; paper supports that perilymph is protease-inhibitor-rich, but does NOT give t½ for a 14 kDa peptide
-- `[informs]` [[STRC Hypothesis Ranking]] — h09 proteolytic stability in cochlea
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_PROTEOLYSIS justification; paper supports that perilymph is protease-inhibitor-rich, but does NOT give t½ for a 14 kDa peptide
+- [[STRC Hypothesis Ranking]] — h09 proteolytic stability in cochlea

@@ -57,5 +57,5 @@ PMC open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC6133771/
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_CLEAR_MIDDLE_EAR parameter; this paper does NOT support 2h half-life
-- `[informs]` [[STRC Hypothesis Ranking]] — h09 cochlear PK basis
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — K_CLEAR_MIDDLE_EAR parameter; this paper does NOT support 2h half-life
+- [[STRC Hypothesis Ranking]] — h09 cochlear PK basis

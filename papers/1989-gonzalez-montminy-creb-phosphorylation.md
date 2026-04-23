@@ -31,5 +31,5 @@ The citation is real and correct for the CREB phosphorylation mechanism. However
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — CREB dephosphorylation rate
+- [[STRC Calcium Oscillation Acoustic Therapy]] — CREB dephosphorylation rate
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

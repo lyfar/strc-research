@@ -30,6 +30,6 @@ This is the AC1 kinetics reference for the pivot model. The "Wu 2011" citation i
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — AC1 kinetics underpins pivot model
+- [[STRC Calcium Oscillation Acoustic Therapy]] — AC1 kinetics underpins pivot model
 - `[see-also]` [[2007-willoughby-cooper-adenylyl-cyclase-review]] — companion canonical review
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h13 hub
+tags:
+- strc
+- h13
 hypothesis_num: 13
-hypothesis_title: "STRC Programmable Recombinases"
-tier: "C"
+hypothesis_title: STRC Programmable Recombinases
+tier: C
 mech: 2
 deliv: 1
 misha_fit: 3
-next_step: "Technology-watch only"
+next_step: Technology-watch only
 lit_audit: deferred
 lit_audit_date: 2026-04-23
-tags: [strc, h13]
 ---
 
 Stub hub. Details in [[STRC Programmable Recombinases]]. State lives in frontmatter above.

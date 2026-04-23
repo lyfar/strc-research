@@ -1,12 +1,24 @@
 ---
-title: Dual-Vector vs Single-Vector Transduction Analysis
-status: active
-stage: computational-modeling
-priority: supporting
-tags: [aav, dual-vector, single-vector, transduction, statistics, gamma-poisson, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Dual-Vector vs Single-Vector Transduction Analysis
+tags:
+- aav
+- dual-vector
+- single-vector
+- transduction
+- statistics
+- gamma-poisson
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: active
+priority: supporting
+stage: computational-modeling
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -46,5 +58,5 @@ OTOF (~6kb CDS) uses dual-AAV to deliver the full gene, making it the most promi
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[STRC Dual-Vector vs Single-Vector Transduction]]
+- [[STRC Dual-Vector vs Single-Vector Transduction]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

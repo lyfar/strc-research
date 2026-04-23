@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h16 hub
+tags:
+- strc
+- h16
 hypothesis_num: 16
-hypothesis_title: "STRC ZP Domain Prion-Like Seeding"
-tier: "D"
+hypothesis_title: STRC ZP Domain Prion-Like Seeding
+tier: D
 mech: 3
 deliv: 2
 misha_fit: 1
-next_step: "Wrong patient (paternal 98kb Δ)"
+next_step: Wrong patient (paternal 98kb Δ)
 lit_audit: deferred
 lit_audit_date: 2026-04-23
-tags: [strc, h16]
 ---
 
 Stub hub. Details in [[STRC ZP Domain Prion-Like Seeding]]. State lives in frontmatter above.

@@ -41,7 +41,7 @@ AFM length distribution directly supports the model's `fibril_length_nm = 1000` 
 
 ## Connections
 
-- `[informs]` [[STRC Phase 4d F-actin Bundling Model]] — fibril_length_nm = 1000 justified; peptide monomer dims
-- `[informs]` [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — AFM geometry, reassembly kinetics
+- [[STRC Phase 4d F-actin Bundling Model]] — fibril_length_nm = 1000 justified; peptide monomer dims
+- [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — AFM geometry, reassembly kinetics
 - `[see-also]` [[Zhang 1993 EAK16 RADA16 Original Paper]] — original discovery
 - `[see-also]` [[Paravastu 2014 RADA16 Molecular Structure]] — atomic model of packing

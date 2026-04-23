@@ -30,6 +30,6 @@ The RBM24 ODE Phase 1 model is built on the Dolmetsch frequency-decoding concept
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — conceptual basis for RBM24 ODE frequency decoder
+- [[STRC Calcium Oscillation Acoustic Therapy]] — conceptual basis for RBM24 ODE frequency decoder
 - `[see-also]` [[1994-stemmer-klee-calcineurin-dual-calcium]] — calcineurin kinetics
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

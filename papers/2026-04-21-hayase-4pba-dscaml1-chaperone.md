@@ -32,5 +32,5 @@ Molecular dynamics comparison of STRC E1659A misfolding trajectory vs. DSCAML1 A
 
 ## Connections
 
-- `[part-of]` [[research/strc/hypotheses/h01-pharmacochaperone/hub]]
+- `[part-of]` [[h01 hub]]
 - `[source]` auto-indexed 2026-04-21 by [[strc-lit-watch]]

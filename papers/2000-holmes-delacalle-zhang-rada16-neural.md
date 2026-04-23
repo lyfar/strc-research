@@ -38,7 +38,7 @@ Biocompatibility data is directly relevant to the ototopical delivery route. The
 
 ## Connections
 
-- `[informs]` [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — in vivo biocompatibility; no immune response
-- `[informs]` [[STRC Phase 4d F-actin Bundling Model]] — supports safe delivery assumption
+- [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — in vivo biocompatibility; no immune response
+- [[STRC Phase 4d F-actin Bundling Model]] — supports safe delivery assumption
 - `[see-also]` [[Zhang 1993 EAK16 RADA16 Original Paper]] — structural basis
 - `[see-also]` [[Yokoi 2005 RADA16 Reassembly]] — geometry follow-up

@@ -1,11 +1,19 @@
 ---
+date: 2026-04-21
+type: synthesis
+tags:
+- strc
+- synthesis
+- hypothesis
+- reference
+- legacy-hypothesis-sheet
+status: legacy
 hypothesis: STRC Electrostatic Analysis E1659A
 tier: reference
 last_synthesized: 2026-04-21
-date: 2026-04-21
-type: synthesis
-tags: [strc, synthesis, hypothesis, reference]
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 # STRC Electrostatic Analysis E1659A — paper synthesis
 
@@ -21,5 +29,5 @@ CV-FEST framework predicts how point mutations affect protein folding kinetics f
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[STRC Electrostatic Analysis E1659A]]
+- [[STRC Electrostatic Analysis E1659A]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

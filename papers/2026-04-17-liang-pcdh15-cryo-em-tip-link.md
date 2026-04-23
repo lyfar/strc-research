@@ -34,4 +34,4 @@ Stereocilin and PCDH15 are both extracellular proteins that form load-bearing co
 
 ## Connections
 
-- `[informs]` [[STRC Mini-STRC Single-Vector Hypothesis]] — generalizes oligomerization constraint; AF3-Multimer STRC homodimer becomes required step
+- [[STRC Mini-STRC Single-Vector Hypothesis]] — generalizes oligomerization constraint; AF3-Multimer STRC homodimer becomes required step

@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h04 hub
+tags:
+- strc
+- h04
 hypothesis_num: 4
-hypothesis_title: "STRC mRNA-LNP Strategy B Full-Length"
-tier: "B"
+hypothesis_title: STRC mRNA-LNP Strategy B Full-Length
+tier: B
 mech: 3
 deliv: 2
 misha_fit: 2
-next_step: "Academic/interim if AAV fails"
+next_step: Academic/interim if AAV fails
 lit_audit: fixed
 lit_audit_date: 2026-04-23
-tags: [strc, h04]
 ---
 
 Stub hub. Details in [[STRC mRNA-LNP Strategy B Full-Length]]. State lives in frontmatter above.

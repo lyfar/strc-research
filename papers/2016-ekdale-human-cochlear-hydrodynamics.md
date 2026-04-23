@@ -31,5 +31,5 @@ PMC open access: https://pmc.ncbi.nlm.nih.gov/articles/PMC5292244/
 
 ## Connections
 
-- `[primary source]` [[hydrogel_phase4e_cochlear_pkpd]] — provides 93 μL total perilymph as upper bound for PERILYMPH_VOL_UL
-- `[companion]` [[2021-dhanasingh-scala-tympani-volume]] — together bracket the range: 34 μL (ST only) to 93 μL (total)
+- `[source]` [[hydrogel_phase4e_cochlear_pkpd]] — provides 93 μL total perilymph as upper bound for PERILYMPH_VOL_UL
+- [[2021-dhanasingh-scala-tympani-volume]] — together bracket the range: 34 μL (ST only) to 93 μL (total)

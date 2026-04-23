@@ -35,7 +35,7 @@ Most useful as a citation anchor for RADA16's design principles and the claim th
 
 ## Connections
 
-- `[informs]` [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — RADA16 as biomaterial backbone
-- `[informs]` [[STRC Phase 4d F-actin Bundling Model]] — design rules for tail-appended RADA16
+- [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — RADA16 as biomaterial backbone
+- [[STRC Phase 4d F-actin Bundling Model]] — design rules for tail-appended RADA16
 - `[see-also]` [[Zhang 1993 EAK16 RADA16 Original Paper]] — original discovery
 - `[see-also]` [[Yokoi 2005 RADA16 Reassembly]] — structural follow-up

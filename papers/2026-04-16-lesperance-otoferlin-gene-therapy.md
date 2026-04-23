@@ -34,6 +34,6 @@ This is highly relevant to our program: (1) Otoferlin gene therapy is the furthe
 
 ## Connections
 
-- `[informs]` [[STRC Dual-Vector vs Single-Vector Transduction]] — OTOF dual-AAV clinical data used for v3 model recalibration (2.2x)
-- `[informs]` [[STRC Mini-STRC Single-Vector Hypothesis]] — clinical ABR projection calibration
-- `[informs]` [[STRC Anti-AAV Immune Response Model]] — pediatric AAV gene therapy precedent
+- [[STRC Dual-Vector vs Single-Vector Transduction]] — OTOF dual-AAV clinical data used for v3 model recalibration (2.2x)
+- [[STRC Mini-STRC Single-Vector Hypothesis]] — clinical ABR projection calibration
+- [[STRC Anti-AAV Immune Response Model]] — pediatric AAV gene therapy precedent

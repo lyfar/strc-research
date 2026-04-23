@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h10 hub
+tags:
+- strc
+- h10
 hypothesis_num: 10
-hypothesis_title: "STRC In Situ SpyCatcher Assembly"
-tier: "C"
+hypothesis_title: STRC In Situ SpyCatcher Assembly
+tier: C
 mech: 2
 deliv: 2
 misha_fit: 2
-next_step: "Wet-lab only if #3 fails"
+next_step: 'Wet-lab only if #3 fails'
 lit_audit: fixed
 lit_audit_date: 2026-04-23
-tags: [strc, h10]
 ---
 
 Stub hub. Details in [[STRC In Situ SpyCatcher Assembly]]. State lives in frontmatter above.

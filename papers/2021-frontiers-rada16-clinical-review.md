@@ -41,7 +41,7 @@ The 118 aa tail (h09 construct) exceeds the 12-residue functional appendage limi
 
 ## Connections
 
-- `[informs]` [[STRC Phase 4d F-actin Bundling Model]] — K_PROTEOLYSIS flag; gel t½ days not minutes
-- `[informs]` [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — clinical PK; 118 aa tail assembly concern
+- [[STRC Phase 4d F-actin Bundling Model]] — K_PROTEOLYSIS flag; gel t½ days not minutes
+- [[STRC Horizontal Top Connector Hydrogel Hypothesis]] — clinical PK; 118 aa tail assembly concern
 - `[see-also]` [[Yokoi 2005 RADA16 Reassembly]] — fibril geometry
 - `[see-also]` [[Modification Strategies RADA16 PMC9739689]] — tail length limits

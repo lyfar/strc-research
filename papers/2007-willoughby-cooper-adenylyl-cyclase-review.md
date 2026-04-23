@@ -31,6 +31,6 @@ Willoughby & Cooper 2007 is the correct source for the AC1 kinetic rationale in 
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — replaces phantom "Wu 2011"
+- [[STRC Calcium Oscillation Acoustic Therapy]] — replaces phantom "Wu 2011"
 - `[see-also]` [[2012-masada-ac1-ac8-calmodulin-kinetics]] — mechanistic follow-up
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

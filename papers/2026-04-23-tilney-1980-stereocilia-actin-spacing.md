@@ -48,9 +48,9 @@ primary source for inter-filament spacing in mature cochlear stereocilia.
 
 ## Connections
 
-- `[historical source for]` [[Stereocilia Actin Architecture]] — first measurement of
+- [[Stereocilia Actin Architecture]] — first measurement of
   inter-filament spacing in cochlear hair cells
-- `[superseded by for quantitative spacing]` [[Krey 2016 Plastin Stereocilia Spacing]] —
+- [[Krey 2016 Plastin Stereocilia Spacing]] —
   modern FFT-EM measurement; Tilney 1980 = ~10 nm historical, Krey 2016 = 7.9–9.7 nm
-- `[geometry input for]` [[Hydrogel Phase 4d F-actin Bundling Model]] — STEREOCILIA_INTER_FILAMENT_NM
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — STEREOCILIA_INTER_FILAMENT_NM
   parameter should use 9–10 nm for OHC native, 12 nm if espin-dominated

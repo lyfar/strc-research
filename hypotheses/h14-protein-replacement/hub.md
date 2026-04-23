@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h14 hub
+tags:
+- strc
+- h14
 hypothesis_num: 14
-hypothesis_title: "STRC Protein Replacement Therapy"
-tier: "C"
+hypothesis_title: STRC Protein Replacement Therapy
+tier: C
 mech: 2
 deliv: 1
 misha_fit: 3
-next_step: "No delivery route"
+next_step: No delivery route
 lit_audit: deferred
 lit_audit_date: 2026-04-23
-tags: [strc, h14]
 ---
 
 Stub hub. Details in [[STRC Protein Replacement Therapy]]. State lives in frontmatter above.

@@ -34,5 +34,5 @@ This is directly informative for our mini-STRC program in several ways: (1) It d
 
 ## Connections
 
-- `[informs]` [[STRC Mini-STRC Single-Vector Hypothesis]] — postnatal therapeutic-window calibration for clinical projections
-- `[informs]` [[Adult Treatment Window STRC]] — comparable structural-protein gene therapy
+- [[STRC Mini-STRC Single-Vector Hypothesis]] — postnatal therapeutic-window calibration for clinical projections
+- [[Adult Treatment Window STRC]] — comparable structural-protein gene therapy

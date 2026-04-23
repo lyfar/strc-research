@@ -46,9 +46,9 @@ both ends and both nucleotide states.
 
 ## Connections
 
-- `[kinetics benchmark for]` [[Hydrogel Phase 4d F-actin Bundling Model]] — barbed/pointed
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — barbed/pointed
   end rate constants for actin assembly in stereocilia context
-- `[informs]` [[Actin Treadmilling Stereocilia]] — sets rate constants used in tip-turnover
+- [[Actin Treadmilling Stereocilia]] — sets rate constants used in tip-turnover
   estimates
-- `[cited by]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — benchmark for comparison
+- [[STRC H09 WH2 F-actin Bundling Hypothesis]] — benchmark for comparison
   with WH2 on/off rates

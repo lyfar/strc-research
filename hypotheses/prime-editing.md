@@ -1,12 +1,23 @@
 ---
-title: Prime Editing — Fix the Single Mutation In Situ
-status: exploratory
-stage: feasibility-analysis
-priority: alternative
-tags: [prime-editing, base-editing, gene-correction, CRISPR, PE3, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Prime Editing — Fix the Single Mutation In Situ
+tags:
+- prime-editing
+- base-editing
+- gene-correction
+- CRISPR
+- PE3
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: exploratory
+priority: alternative
+stage: feasibility-analysis
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -49,5 +60,5 @@ ML-guided engineering of base editors from only 0.004% of the mutational landsca
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[Prime Editing for STRC]]
+- [[Prime Editing for STRC]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

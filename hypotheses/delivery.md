@@ -1,12 +1,24 @@
 ---
-title: Delivery — Sonoporation + LNP Through Round Window Membrane
-status: active
-stage: computational-modeling
-priority: secondary
-tags: [delivery, sonoporation, LNP, round-window, non-invasive, ODE, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Delivery — Sonoporation + LNP Through Round Window Membrane
+tags:
+- delivery
+- sonoporation
+- LNP
+- round-window
+- non-invasive
+- ODE
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: active
+priority: secondary
+stage: computational-modeling
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -73,5 +85,5 @@ Meta-analysis of 9 studies: FUS enhanced gene expression 6.34x (95% CI 2.21-18.1
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[Alternative STRC Delivery Hypotheses]]
+- [[Alternative STRC Delivery Hypotheses]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

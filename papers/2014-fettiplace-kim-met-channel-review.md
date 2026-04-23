@@ -30,6 +30,6 @@ This review is the correct source for `n_channels = 134` (replacing the phantom 
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — MET channel count (n_channels)
+- [[STRC Calcium Oscillation Acoustic Therapy]] — MET channel count (n_channels)
 - `[see-also]` [[2006-beurg-met-channel-conductance]] — g_MET value
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

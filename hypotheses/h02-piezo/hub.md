@@ -1,14 +1,18 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
-tags: [strc, h02]
+aliases:
+- h02 hub
+tags:
+- strc
+- h02
 hypothesis_num: 2
-hypothesis_title: "STRC Piezoelectric TM Bioelectronic Amplifier"
-tier: "B"
+hypothesis_title: STRC Piezoelectric TM Bioelectronic Amplifier
+tier: B
 mech: 2
 deliv: 1
 misha_fit: 5
-next_step: "Find OHC ligand + FEM strain-share"
+next_step: Find OHC ligand + FEM strain-share
 lit_audit: fixed
 lit_audit_date: 2026-04-23
 ---

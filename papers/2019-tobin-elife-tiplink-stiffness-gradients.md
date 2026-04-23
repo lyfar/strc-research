@@ -69,5 +69,5 @@ Tobin 2019 measures tip-link complex stiffness (K_GS + K_SP). It contains no dat
 
 ## Connections
 
-- `[corrects]` [[STRC Stereocilia Bundle Mechanics Model]] — K_HTC citation wrong; this paper measures tip-link/gating-spring stiffness, not HTC stiffness
-- `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — real OHC bundle stiffness range: 2.5–8.6 pN/nm (juvenile rat 1–4 kHz), NOT 1400 pN/nm
+- [[STRC Stereocilia Bundle Mechanics Model]] — K_HTC citation wrong; this paper measures tip-link/gating-spring stiffness, not HTC stiffness
+- [[STRC Stereocilia Bundle Mechanics Model]] — real OHC bundle stiffness range: 2.5–8.6 pN/nm (juvenile rat 1–4 kHz), NOT 1400 pN/nm

@@ -32,6 +32,6 @@ Confirms both `g_MET = 150e-12 S` and `f_Ca = 0.15` in the RBM24 ODE. These are 
 
 ## Connections
 
-- `[informs]` [[STRC Calcium Oscillation Acoustic Therapy]] — g_MET and f_Ca
+- [[STRC Calcium Oscillation Acoustic Therapy]] — g_MET and f_Ca
 - `[see-also]` [[2019-fettiplace-kim-met-channel-review]] — broader review
 - `[part-of]` [[calcium-oscillation]] (literature-params topic)

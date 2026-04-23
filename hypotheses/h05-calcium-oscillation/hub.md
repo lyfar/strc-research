@@ -1,14 +1,18 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
-tags: [strc, h05]
+aliases:
+- h05 hub
+tags:
+- strc
+- h05
 hypothesis_num: 5
-hypothesis_title: "STRC Calcium Oscillation Acoustic Therapy"
-tier: "A"
+hypothesis_title: STRC Calcium Oscillation Acoustic Therapy
+tier: A
 mech: 3
 deliv: 4
 misha_fit: 2
-next_step: "SPR/BLI E1659A affinity penalty"
+next_step: SPR/BLI E1659A affinity penalty
 lit_audit: fixed
 lit_audit_date: 2026-04-23
 ---

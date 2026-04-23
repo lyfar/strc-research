@@ -38,6 +38,6 @@ Mechanoluminescent nanoparticles delivered via round window injection, combined 
 
 ## Connections
 
-- `[informs]` [[Sonogenetic STRC Computational Proof]] — resolves the implant-free light-delivery problem
+- [[Sonogenetic STRC Computational Proof]] — resolves the implant-free light-delivery problem
 - `[see-also]` [[STRC Mini-STRC Single-Vector Hypothesis]] — enables sonogenetic + mini-STRC convergence path
 - `[see-also]` [[Alternative STRC Delivery Hypotheses]] — adds a sound→light→biology pathway alongside sonoporation

@@ -45,9 +45,9 @@ C-terminal sequence context.
 
 ## Connections
 
-- `[primary source for]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — Tβ4/WH2 Kd values
+- `[source]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — Tβ4/WH2 Kd values
   and F-actin binding data; shows F-actin side-binding is mM-range or absent
-- `[informs]` [[Hydrogel Phase 4d F-actin Bundling Model]] — key constraint on
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — key constraint on
   WH2_KD_FACTIN_M: the 5 μM value in model is 1000× more optimistic than Tβ4 literature
-- `[kinetics reference]` [[Actin Treadmilling Stereocilia]] — Carlier lab is primary
+- [[Actin Treadmilling Stereocilia]] — Carlier lab is primary
   authority on actin dynamics constants

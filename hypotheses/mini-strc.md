@@ -1,12 +1,22 @@
 ---
-title: Mini-STRC Single-Vector Hypothesis
-status: active
-stage: computational-validation
-priority: primary
-tags: [aav, gene-therapy, truncation, mini-gene, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Mini-STRC Single-Vector Hypothesis
+tags:
+- aav
+- gene-therapy
+- truncation
+- mini-gene
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: active
+priority: primary
+stage: computational-validation
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -110,5 +120,5 @@ Endothelial cells use distributed mechanosensor networks (glycocalyx, ion channe
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[STRC Mini-STRC Single-Vector Hypothesis]]
+- [[STRC Mini-STRC Single-Vector Hypothesis]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

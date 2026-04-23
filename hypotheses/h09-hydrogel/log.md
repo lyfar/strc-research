@@ -1,7 +1,12 @@
 ---
+date: '2026-04-24'
 type: hypothesis-log
+aliases:
+- h09 log
+tags:
+- strc
+- h09
 hypothesis: h09
-tags: [strc, h09]
 ---
 
 # h09 log

@@ -1,20 +1,24 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
-tags: [strc, h01]
+aliases:
+- h01 hub
+tags:
+- strc
+- h01
 hypothesis_num: 1
-hypothesis_title: "STRC Pharmacochaperone Virtual Screen E1659A"
-tier: "A"
+hypothesis_title: STRC Pharmacochaperone Virtual Screen E1659A
+tier: A
 mech: 3
 deliv: 4
 misha_fit: 4
-next_step: "Phase 5e mutant re-dock running (v3b YELLOW pocket-stability gate); then Phase 3c v4 fragment-grow on 3-amino-benzofuran-2-COOH scaffold"
+next_step: Phase 5e mutant re-dock running (v3b YELLOW pocket-stability gate); then Phase 3c v4 fragment-grow on 3-amino-benzofuran-2-COOH scaffold
 lit_audit: fixed
 lit_audit_date: 2026-04-23
 active_runs:
-  - phase: "5e"
-    name: "mutant-ensemble re-dock (11 ligs × 20 snaps)"
-    eta: "2026-04-24 ~05:40 local"
+- phase: 5e
+  name: mutant-ensemble re-dock (11 ligs × 20 snaps)
+  eta: 2026-04-24 ~05:40 local
 ---
 
 # h01 — Pharmacochaperone E1659A

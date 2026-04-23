@@ -1,12 +1,23 @@
 ---
-title: Immune Response — Anti-AAV Antibodies and Re-dosing Strategy
-status: active
-stage: computational-modeling
-priority: supporting
-tags: [immune, AAV, neutralizing-antibodies, seroprevalence, re-dosing, strc, synthesis, hypothesis]
 date: 2026-04-22
 type: synthesis
+title: Immune Response — Anti-AAV Antibodies and Re-dosing Strategy
+tags:
+- immune
+- AAV
+- neutralizing-antibodies
+- seroprevalence
+- re-dosing
+- strc
+- synthesis
+- hypothesis
+- legacy-hypothesis-sheet
+status: active
+priority: supporting
+stage: computational-modeling
 ---
+
+> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
 
 ## Core claim
 
@@ -50,5 +61,5 @@ OTOF pediatric trials will generate critical real-world data on immune responses
 ## Connections
 
 - `[part-of]` [[STRC]]
-- `[synthesizes]` [[STRC Anti-AAV Immune Response Model]]
+- [[STRC Anti-AAV Immune Response Model]]
 - `[see-also]` [[STRC Hypothesis Ranking]]

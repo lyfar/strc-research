@@ -64,9 +64,9 @@ the real value is likely 1–100 mM or unmeasurable.
 
 ## Connections
 
-- `[primary source for]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — provides structural
+- `[source]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — provides structural
   rationale and Kd reference range for G-actin binding; establishes F-actin side-binding as
   unmeasured and structurally disfavored
-- `[informs]` [[Hydrogel Phase 4d F-actin Bundling Model]] — WH2_KD_GACTIN_M defensible at
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — WH2_KD_GACTIN_M defensible at
   50–200 nM for favorable WH2 constructs; WH2_KD_FACTIN_M = 5 μM is speculative/optimistic
-- `[structural basis for]` [[WH2 Actin Binding Mechanism]] — barbed-end groove binding
+- [[WH2 Actin Binding Mechanism]] — barbed-end groove binding

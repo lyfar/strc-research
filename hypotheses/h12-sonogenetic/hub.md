@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h12 hub
+tags:
+- strc
+- h12
 hypothesis_num: 12
-hypothesis_title: "Sonogenetic STRC Computational Proof"
-tier: "C"
+hypothesis_title: Sonogenetic STRC Computational Proof
+tier: C
 mech: 2
 deliv: 2
 misha_fit: 2
-next_step: "Speculative; no near-term path"
+next_step: Speculative; no near-term path
 lit_audit: deferred
 lit_audit_date: 2026-04-23
-tags: [strc, h12]
 ---
 
 Stub hub. Details in [[Sonogenetic STRC Computational Proof]]. State lives in frontmatter above.

@@ -59,7 +59,7 @@ Critical: IHC stiffness unchanged = tip-link parameters remain valid for HTC-fre
 
 ## Connections
 
-- `[validates]` [[STRC Stereocilia Bundle Mechanics Model]] — direct k_HTC measurement confirms 60% stiffness loss
+- `[supports]` [[STRC Stereocilia Bundle Mechanics Model]] — direct k_HTC measurement confirms 60% stiffness loss
 
 ## Numbers that matter (2026-04-23 audit)
 

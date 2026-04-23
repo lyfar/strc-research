@@ -63,8 +63,8 @@ The apical vs basal gradient matters for Misha specifically:
 
 ## Connections
 
-- `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — age-progression and TM-imprint absence; apical OHCs better preserved
-- `[informs]` [[Adult Treatment Window STRC]] — bundle degeneration timeline supports neonatal intervention urgency
+- [[STRC Stereocilia Bundle Mechanics Model]] — age-progression and TM-imprint absence; apical OHCs better preserved
+- [[Adult Treatment Window STRC]] — bundle degeneration timeline supports neonatal intervention urgency
 
 ## Numbers that matter (2026-04-23 audit)
 

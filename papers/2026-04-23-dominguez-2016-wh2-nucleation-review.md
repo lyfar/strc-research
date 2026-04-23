@@ -52,8 +52,8 @@ even in tandem — making it further implausible as a standalone F-actin bundler
 
 ## Connections
 
-- `[structural authority for]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — Dominguez is
+- [[STRC H09 WH2 F-actin Bundling Hypothesis]] — Dominguez is
   the domain expert; this review is the most comprehensive source on WH2 biophysics
-- `[informs]` [[Hydrogel Phase 4d F-actin Bundling Model]] — supports flagging
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — supports flagging
   WH2_KD_FACTIN_M = 5 μM as speculative/unsupported
-- `[prior work]` [[Chereau 2005 WH2 Actin PNAS]] — same author's original structural paper
+- [[Chereau 2005 WH2 Actin PNAS]] — same author's original structural paper

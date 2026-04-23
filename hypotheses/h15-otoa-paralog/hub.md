@@ -1,16 +1,20 @@
 ---
 date: 2026-04-23
 type: hypothesis-hub
+aliases:
+- h15 hub
+tags:
+- strc
+- h15
 hypothesis_num: 15
-hypothesis_title: "STRC OTOA Paralog Cross-Rescue"
-tier: "D"
+hypothesis_title: STRC OTOA Paralog Cross-Rescue
+tier: D
 mech: 2
 deliv: 2
 misha_fit: 2
-next_step: "Chimera dead; upregulation weak"
+next_step: Chimera dead; upregulation weak
 lit_audit: deferred
 lit_audit_date: 2026-04-23
-tags: [strc, h15]
 ---
 
 Stub hub. Details in [[STRC OTOA Paralog Cross-Rescue]]. State lives in frontmatter above.

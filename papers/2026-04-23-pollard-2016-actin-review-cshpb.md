@@ -58,9 +58,9 @@ backing. A more conservative estimate would be 10–100 μM or higher.
 
 ## Connections
 
-- `[comprehensive reference for]` [[Hydrogel Phase 4d F-actin Bundling Model]] — Kd ~10 μM
+- [[Hydrogel Phase 4d F-actin Bundling Model]] — Kd ~10 μM
   for ABD-class F-actin binders is best proxy for WH2_KD_FACTIN_M
-- `[informs]` [[STRC H09 WH2 F-actin Bundling Hypothesis]] — WH2 mechanism, profilin
+- [[STRC H09 WH2 F-actin Bundling Hypothesis]] — WH2 mechanism, profilin
   competition, physiological actin monomer concentrations
-- `[supersedes for review purposes]` [[Pollard 1986 Actin Rate Constants]] — contains
+- [[Pollard 1986 Actin Rate Constants]] — contains
   same kinetics plus broader context

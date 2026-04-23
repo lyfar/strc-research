@@ -34,8 +34,8 @@ This changes the structural model for mini-STRC design. Stereocilin doesn't sit 
 
 ## Connections
 
-- `[informs]` [[STRC Mini-STRC Single-Vector Hypothesis]] — TMEM145 as anchor; mini-STRC must preserve binding interface
-- `[informs]` [[STRC Stereocilia Bundle Mechanics Model]] — TM attachment depends on TMEM145–stereocilin link
+- [[STRC Mini-STRC Single-Vector Hypothesis]] — TMEM145 as anchor; mini-STRC must preserve binding interface
+- [[STRC Stereocilia Bundle Mechanics Model]] — TM attachment depends on TMEM145–stereocilin link
 - `[see-also]` [[Derstroff et al 2026 TMEM145 Paper]] — full analysis note
 
 ## Numbers that matter (2026-04-23 audit)
