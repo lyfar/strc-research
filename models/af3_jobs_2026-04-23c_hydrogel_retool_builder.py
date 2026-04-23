@@ -164,12 +164,23 @@ manifest = {
     "builder": "af3_jobs_2026-04-23c_hydrogel_retool_builder.py",
     "purpose": (
         "Hydrogel Phase 3 TMEM145 tail retool AF3 batch. Phase 2 "
-        "short-peptide tails (11-12 aa from aa 1669-1680) failed TMEM145 "
-        "gate at ipTM 0.37-0.39 across 3 candidates (Kd=100 nM assumption "
-        "falsified). Phase 3 Option A: extend tail to span both dominant "
-        "canonical contact clusters (aa 1669-1680 + aa 1692-1707). Three "
-        "tail lengths tested: 51, 71, 91 aa (manufacturing SPPS-feasible)."
+        "short-peptide tails (11-12 aa mis-attributed to aa 1669-1680, "
+        "actually STRC aa 1454-1465 — a NON-contact region) failed TMEM145 "
+        "gate at ipTM 0.37-0.39 across 3 candidates. Phase 3 uses CORRECT "
+        "GOLD-zone sequences spanning the two dominant canonical contact "
+        "clusters (aa 1669-1680 + aa 1692-1707). Three tail lengths "
+        "tested: 51, 71, 91 aa (manufacturing SPPS-feasible)."
     ),
+    "phase1_design_bug": {
+        "claim_in_phase1_note": "native 12-mer AEDLPEPVPNCA derived from STRC aa 1669-1680",
+        "actual_location_of_motif": "STRC aa 1454-1465 (verified via Q7RTU9.find)",
+        "actual_sequence_at_aa_1669_1680": "DLALSALLRGQI",
+        "implication": (
+            "Phase 2 TMEM145 FAIL at ipTM 0.37-0.39 is NOT evidence against "
+            "dual-interface architecture — wrong epitope was tested. First "
+            "honest test of the hypothesis begins with this Phase 3 batch."
+        ),
+    },
     "source_sequences": {
         "STRC_full": "UniProt Q7RTU9, 1775 aa (fetched 2026-04-23)",
         "TMEM145_full": "verified from prior AF3 batches",
