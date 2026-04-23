@@ -7,6 +7,8 @@ status: S-tier
 
 # h03 — Mini-STRC Single-Vector AAV
 
+> 🔒 **LITERATURE AUDIT DEFERRED (2026-04-23, user directive).** Do NOT run a parameter-provenance audit on this hypothesis without explicit re-authorization. Reason: fear of destabilizing the active S-tier path while Holt lab is independently working on the same architecture. If parameters need retrieval for a specific proof, ask Egor first.
+
 **mech.** Ultra-Mini STRC (aa 1075-1775, 2.1 kb CDS) preserves TMEM145-binding pocket and fits single AAV with OHC-specific promoter (B8+WPRE3).
 **delivery.** Anc80L65 AAV; 60-100% cochlear transduction in OTOF trials precedent; single-vector.
 **patient-fit.** Null-compatible (works on paternal 98 kb Δ); Shanghai Shu Yilai c.4976 knock-in mouse active.
