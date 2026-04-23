@@ -95,13 +95,21 @@ class Cochlea:
 
 
 # ============================================================
-# TM displacement model (literature)
-#   Ren 2002 / Olson 2001 / Gao 2014 middle-turn measurements
+# TM displacement model — MODEL SIMPLIFICATION
+#   In-vivo TM displacement at 60 dB SPL: 5–30 nm across CF
+#   (Ren 2002 Nat Neurosci 5:169, Gao et al. 2014 Biophys J, Ghaffari
+#   2007 PNAS 104:16510 ex-vivo). Scripts use anchored log-linear scaling;
+#   true TM motion is highly frequency- and place-dependent (compressive
+#   nonlinearity above ~50–60 dB). Treat output as order-of-magnitude
+#   estimate, not place-specific prediction.
 # ============================================================
 
 def TM_displacement_nm(SPL_dB: float) -> float:
-    """Peak TM displacement at the characteristic-frequency place."""
-    # Anchor: 0.01 nm at 20 dB, linear-in-pressure to 80 dB, compressive above
+    """Peak TM displacement, anchored log-linear. Not place-specific."""
+    # Anchor: 0.01 nm at 20 dB, linear-in-pressure to 80 dB, compressive above.
+    # Anchor is a model choice (no single paper states "0.01 nm at 20 dB");
+    # the ~5–30 nm range at 60 dB emerges from the scaling and matches
+    # Ren/Gao in vivo reports at CF places.
     ref_SPL, ref_disp = 20.0, 0.01
     lin = ref_disp * 10 ** ((SPL_dB - ref_SPL) / 20.0)
     if SPL_dB > 80:
@@ -231,6 +239,24 @@ def analysis() -> dict:
         "baseline_passes_60dB": baseline_pass,
         "any_engineering_path_passes_60dB": any_path_passes,
         "engineering_levers_required_for_60dB": not baseline_pass and any_path_passes,
+        "tm_substrate_mismatch_flag": {
+            "description": (
+                "Model assumes bulk strain in the piezo film equal to "
+                "(TM_disp / R_curv). TM Young's modulus is 24 kPa (apical) "
+                "to 210 kPa (basal) per Masaki 2009 PLOS One 4:e4877; PVDF-TrFE "
+                "Young's modulus is ~3 GPa per Arkema Piezotech datasheet — "
+                "a substrate/film stiffness ratio of 10⁴–10⁵×. "
+                "Real-world TM bending will concentrate in the soft TM and "
+                "very little strain will load the stiff film, reducing V_oc "
+                "by an order of magnitude or more. This model OVERESTIMATES "
+                "V_wall. Correct model requires poroelastic TM + strain-sharing."
+            ),
+            "E_TM_apical_kPa": 24,
+            "E_TM_basal_kPa": 210,
+            "E_PVDF_TrFE_GPa": 3,
+            "stiffness_ratio_film_over_TM": 3e9 / 24e3,  # ≈ 1.25e5
+            "correction_direction": "V_wall values in this analysis are upper bounds",
+        },
     }
 
     return {
