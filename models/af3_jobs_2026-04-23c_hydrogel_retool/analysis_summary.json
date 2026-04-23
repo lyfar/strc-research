@@ -1,0 +1,180 @@
+{
+  "batch": "af3_jobs_2026-04-23c_hydrogel_retool",
+  "description": "Hydrogel Phase 3 tail retool \u2014 correct GOLD-zone epitopes (fixes Phase 1 design bug)",
+  "date_run": "2026-04-23",
+  "gate_ipTM": 0.5,
+  "reference_baseline_ultramini_solo": 0.43,
+  "phase2_baselines_wrong_epitope_invalid": {
+    "rada16_wh2_native (aa 1454-1465 wrong epitope)": 0.39,
+    "rada16_wh2_cmut": 0.37,
+    "eak16_wh2_denovo": 0.37
+  },
+  "jobs": {
+    "fold_hydrogel_tail_1660_1710_x_tmem145": {
+      "description": "51 aa minimal; clusters 4+5 with 10 aa flanks",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.53,
+      "best_ipTM": 0.23,
+      "best_ranking_score": 0.36,
+      "best_chain_pair_iptm": [
+        [
+          0.36,
+          0.23
+        ],
+        [
+          0.23,
+          0.56
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          16.46
+        ],
+        [
+          18.7,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.15,
+      "best_has_clash": 0.0,
+      "gate_verdict": "FAIL",
+      "gate_margin": -0.27,
+      "all_models_iptm": [
+        [
+          0,
+          0.23
+        ],
+        [
+          1,
+          0.19
+        ],
+        [
+          2,
+          0.18
+        ],
+        [
+          3,
+          0.17
+        ],
+        [
+          4,
+          0.16
+        ]
+      ]
+    },
+    "fold_hydrogel_tail_1640_1710_x_tmem145": {
+      "description": "71 aa +loop cap; clusters 3+4+5",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.51,
+      "best_ipTM": 0.63,
+      "best_ranking_score": 0.68,
+      "best_chain_pair_iptm": [
+        [
+          0.62,
+          0.63
+        ],
+        [
+          0.63,
+          0.55
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          5.17
+        ],
+        [
+          5.36,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.15,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.13,
+      "all_models_iptm": [
+        [
+          0,
+          0.63
+        ],
+        [
+          1,
+          0.63
+        ],
+        [
+          2,
+          0.59
+        ],
+        [
+          3,
+          0.6
+        ],
+        [
+          4,
+          0.6
+        ]
+      ]
+    },
+    "fold_hydrogel_tail_1620_1710_x_tmem145": {
+      "description": "91 aa wide; clusters 2+3+4+5 (SPPS ceiling)",
+      "status": "DONE",
+      "n_models": 5,
+      "best_model": 0,
+      "best_pTM": 0.5,
+      "best_ipTM": 0.68,
+      "best_ranking_score": 0.71,
+      "best_chain_pair_iptm": [
+        [
+          0.71,
+          0.68
+        ],
+        [
+          0.68,
+          0.54
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          4.0
+        ],
+        [
+          3.58,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.14,
+      "best_has_clash": 0.0,
+      "gate_verdict": "PASS",
+      "gate_margin": 0.18,
+      "all_models_iptm": [
+        [
+          0,
+          0.68
+        ],
+        [
+          1,
+          0.68
+        ],
+        [
+          2,
+          0.67
+        ],
+        [
+          3,
+          0.67
+        ],
+        [
+          4,
+          0.66
+        ]
+      ]
+    }
+  },
+  "hypothesis_verdict": "PASS \u2014 best tail crosses gate (0.68); advance to Phase 3b fuse winning tail to RADA16-WH2 scaffold"
+}
