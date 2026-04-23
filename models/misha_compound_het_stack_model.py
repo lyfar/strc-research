@@ -138,20 +138,30 @@ PER_OHC_CEILING = 1.0   # cell-biology ceiling — one OHC can't do >100% of WT
 ABR_NORMAL_THRESHOLD_DB = 25.0
 ABR_MILD_THRESHOLD_DB = 40.0
 
+# STRC-protein functional threshold θ anchored by:
+#   upper: 0.5 — STRC+/- carriers (50% protein) have normal hearing
+#   lower: 0.20 — E1659A homo would be ~20% protein and deaf (Misha affected)
+THETA_BASELINE = 0.35
+THETA_SENSITIVITY = [0.25, 0.35, 0.45]
+
 
 def f_mat_treated(f_mat: float, f_PC: float) -> float:
     """PC rescue: residual + drug×deficit"""
     return f_mat + f_PC * (1.0 - f_mat)
 
 
-def cochlea_mean_F(epsilon: float, A: float, f_mat_tx: float) -> float:
+def functional_ohc_fraction(epsilon: float, A: float, f_mat_tx: float,
+                            theta: float) -> float:
     """
-    Cochlea-mean functional STRC, clamped per-OHC at PER_OHC_CEILING then
-    re-averaged over transduced and non-transduced fractions.
+    Fraction of OHCs with STRC ≥ theta.
+    Non-transduced: 0.5 × f_mat_treated must clear theta
+    Transduced: min(0.5 × f_mat_treated + A, 1.0) must clear theta
     """
-    f_nontrans = 0.5 * f_mat_tx
-    f_trans = min(0.5 * f_mat_tx + A, PER_OHC_CEILING)
-    return epsilon * f_trans + (1.0 - epsilon) * f_nontrans
+    f_nontrans_OHC = 0.5 * f_mat_tx
+    f_trans_OHC = min(0.5 * f_mat_tx + A, PER_OHC_CEILING)
+    nontrans_functional = 1.0 if f_nontrans_OHC >= theta else 0.0
+    trans_functional = 1.0 if f_trans_OHC >= theta else 0.0
+    return epsilon * trans_functional + (1.0 - epsilon) * nontrans_functional
 
 
 def classify_abr(abr_dB: float) -> str:
@@ -162,19 +172,21 @@ def classify_abr(abr_dB: float) -> str:
     return "SEVERE_PROFOUND"
 
 
-def run_grid(f_mat: float, abr_params):
+def run_grid(f_mat: float, abr_params, theta: float):
     rows = []
     for eps in EPSILON_GRID:
         for A in A_GRID:
             for f_PC in F_PC_GRID:
                 f_m_tx = f_mat_treated(f_mat, f_PC)
-                F = cochlea_mean_F(eps, A, f_m_tx)
-                abr = transduction_to_abr(F, params=abr_params)
+                F_funct = functional_ohc_fraction(eps, A, f_m_tx, theta)
+                abr = transduction_to_abr(F_funct, params=abr_params)
                 rows.append({
                     "epsilon": float(eps),
                     "A": float(A),
                     "f_PC": float(f_PC),
-                    "F_cochlea_mean": round(F, 3),
+                    "f_nontrans_OHC": round(0.5 * f_m_tx, 3),
+                    "f_trans_OHC": round(min(0.5 * f_m_tx + A, 1.0), 3),
+                    "F_functional_fraction": round(F_funct, 3),
                     "abr_dB": round(abr, 1),
                     "category": classify_abr(abr),
                     "monotherapy_h03_only": (eps > 0 and f_PC == 0.0),
@@ -189,7 +201,7 @@ def main():
 
     scenarios = {}
     for name, f_mat in F_MAT_SCENARIOS.items():
-        rows = run_grid(f_mat, abr_params)
+        rows = run_grid(f_mat, abr_params, THETA_BASELINE)
 
         n_total = len(rows)
         n_normal = sum(1 for r in rows if r["category"] == "NORMAL")
@@ -221,10 +233,12 @@ def main():
                              if r["epsilon"] <= 0.30 and r["f_PC"] <= 0.50]
         n_low_burden_normal = len(low_burden_normal)
 
+        baseline_funct = functional_ohc_fraction(0.0, 0.0, f_mat, THETA_BASELINE)
         scenarios[name] = {
             "f_mat_untreated": f_mat,
+            "baseline_functional_ohc_fraction": round(baseline_funct, 3),
             "baseline_abr_no_therapy_dB": round(
-                transduction_to_abr(0.5 * f_mat, params=abr_params), 1),
+                transduction_to_abr(baseline_funct, params=abr_params), 1),
             "grid_size": n_total,
             "n_reaching_NORMAL": n_normal,
             "pct_reaching_NORMAL": round(n_normal / n_total * 100, 1),
