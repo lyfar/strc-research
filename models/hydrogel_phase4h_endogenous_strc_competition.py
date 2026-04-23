@@ -36,11 +36,20 @@ from pathlib import Path
 
 OUT = Path("/Users/egorlyfar/Brain/research/strc/models/hydrogel_phase4h_endogenous_strc_competition.json")
 
-# Biology parameters
-WT_STRC_KD_TMEM145_M = 10e-9   # literature estimate for full-length STRC × TMEM145
-PEPTIDE_KD_TMEM145_M = 100e-9  # Phase 3 solo ipTM 0.68 → ~100 nM
+# ═══════════════════════════════════════════════════════════════════════
+# POST-AUDIT 2026-04-23 — all Kd and OHC-concentration constants here are
+# UNMEASURED placeholders. See [[strc-tmem145-interactions]] — no SPR/BLI/ITC
+# Kd exists for STRC × TMEM145 in any published paper; no STRC copy number
+# per OHC quantified anywhere (Krey 2015 Wilmarth SciData does NOT contain
+# it, despite prior claims). Outputs below are PARAMETRIC on these placeholders.
+# ═══════════════════════════════════════════════════════════════════════
 
-# E1659A Kd scenarios (spans 10 nM WT-equivalent to 10 μM severely impaired)
+# Biology parameters — PLACEHOLDERS (no SPR/BLI/ITC measurements exist).
+WT_STRC_KD_TMEM145_M = 10e-9   # ⚠ PLACEHOLDER — no primary Kd measurement
+PEPTIDE_KD_TMEM145_M = 100e-9  # ⚠ PLACEHOLDER — from AF3 ipTM 0.68, not Kd
+
+# E1659A Kd scenarios: sensitivity scan OK — no single "true" value claimed,
+# the scan IS the output. Keep as-is.
 E1659A_KD_SCENARIOS_M = {
     "wt_like_10_nM": 10e-9,
     "mild_3x_weaker_30_nM": 30e-9,
@@ -50,14 +59,15 @@ E1659A_KD_SCENARIOS_M = {
     "nonfunctional_100000x_weaker_1_mM": 1e-3,
 }
 
-# Local concentrations on OHC surface
-# E1659A STRC expression: compound het, only maternal allele, protein turnover 24h
-# Upper estimate: same density as WT homozygote × 0.5 × 0.7 (protein instability) = 0.35× normal
-# Normal STRC at OHC surface ~1 μM local (within tectorial attachment zone)
-STRC_NORMAL_OHC_M = 1e-6
-MISHA_E1659A_STRC_OHC_M_UPPER = 0.35 * STRC_NORMAL_OHC_M  # if stable
-MISHA_E1659A_STRC_OHC_M_LOWER = 0.05 * STRC_NORMAL_OHC_M  # if unstable
-TMEM145_TOTAL_OHC_M = 5e-6  # local density at OHC apical surface
+# Local concentrations on OHC surface — ALL UNMEASURED placeholders.
+# STRC copy number per OHC has never been quantified. Prior "1 μM local"
+# estimate was derived from an unsourced 15,000 molecules/OHC target
+# (phantom-cited to Krey 2015; no primary source).
+STRC_NORMAL_OHC_M = 1e-6       # ⚠ UNSOURCED — no paper quantifies STRC/OHC
+MISHA_E1659A_STRC_OHC_M_UPPER = 0.35 * STRC_NORMAL_OHC_M  # 0.35× scaling assumption
+MISHA_E1659A_STRC_OHC_M_LOWER = 0.05 * STRC_NORMAL_OHC_M  # 0.05× scaling assumption
+# TMEM145 density on OHC apical surface: no direct quantification in literature.
+TMEM145_TOTAL_OHC_M = 5e-6     # ⚠ UNSOURCED — estimated from stereocilia density
 
 
 def fractional_occupancy_2ligand(peptide_M: float, strc_M: float,
