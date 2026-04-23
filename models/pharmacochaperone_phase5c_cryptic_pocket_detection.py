@@ -1,46 +1,36 @@
 #!/usr/bin/env python3
 """
-Phase 5c — Cryptic pocket detection on Phase 5a MD ensemble.
+Phase 5c — K1141 pocket stability + grid-based cavity scan on Phase 5a MD ensemble.
 
-Rationale: Phase 4b/5b targeted the K1141 pocket identified on a single static
-Ultra-Mini × TMEM145 conformation. Phase 5b RED-LIGHT (all leads f_PC < 0.10)
-may reflect either (a) K1141 pocket is intrinsically undruggable, (b) pocket
-K1141 opens differently in solution dynamics than in the static model, or
-(c) a better cryptic pocket exists elsewhere that only opens during MD.
+Goal: decide whether the Phase 5b RED-LIGHT (all leads f_PC < 0.10) reflects
+  (a) a fundamentally undruggable K1141 pocket → retarget Phase 3c v2
+      to an alternative site found in the MD dynamics; or
+  (b) a stable K1141 pocket → RED-LIGHT is chemistry-limited → Phase 3c v2
+      runs the expanded chem-space screen on K1141.
 
-Run fpocket on each of 20 Phase 5a snapshots + starting apo structure, cluster
-detected pockets spatially, compute per-cluster persistence + mean drug_score,
-and flag:
+Approach (fpocket/qhull broken on brew 4.0 build, so custom grid + analysis):
+  1. K1141 stability: per-residue RMSF over 20 snapshots; local RMSD of
+     pocket-lining residues; K1141 pocket volume time-series via grid void.
+  2. Global cavity scan (on snap_010 midpoint): enumerate all cavity
+     clusters ≥ 50 Å³, rank by volume, report their distance to K1141.
+  3. Verdict: K1141_STABLE vs K1141_COLLAPSED; rank alternative cavities.
 
-  • K1141 persistence: does the Phase 4b target pocket survive the MD?
-  • Cryptic pockets: clusters with persistence ≥ 10/20 AND NOT present in
-    the static starting structure (distance > 10 Å from any static pocket
-    or drug_score > 2× the best overlapping static pocket).
-  • Druggability ranking: top pockets by mean drug_score across ensemble.
-
-If a druggable cryptic pocket emerges → Phase 3c v2 virtual screen retargeted
-against that pocket instead of K1141. If no cryptic pocket, K1141 confirmed
-as the right target and red-light is chemistry-limited, not site-limited.
-
-Dependencies: fpocket 4.0 (Homebrew), OpenMM (for hybrid36 PDB stripping).
-
-Runtime: 20 snapshots × ~30 s fpocket + aggregation ~ 15 min wall.
+Deps: numpy, scipy, OpenMM (for PDB I/O with hybrid36 support).
+Runtime: ~2 min.
 """
 
 from __future__ import annotations
 
 import json
 import math
-import re
-import shutil
-import subprocess
 import sys
 import tempfile
-from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Reuse the OpenMM-based hybrid36 stripper from Phase 5b
+import numpy as np
+
+# Reuse hybrid36-aware stripper from Phase 5b
 sys.path.insert(0, "/Users/egorlyfar/Brain/research/strc/models")
 from pharmacochaperone_phase5b_ensemble_redock import (  # type: ignore
     strip_water_ions_to_pdb,
@@ -48,18 +38,22 @@ from pharmacochaperone_phase5b_ensemble_redock import (  # type: ignore
 
 WORK = Path("/Users/egorlyfar/Brain/research/strc/models")
 SNAPSHOT_DIR = WORK / "artifacts" / "phase5a_snapshots"
-STATIC_APO = SNAPSHOT_DIR / "ultramini_chainA_prepped.pdb"
-OUT_DIR = WORK / "artifacts" / "phase5c_fpocket"
 OUT_JSON = WORK / "pharmacochaperone_phase5c_cryptic_pocket_detection.json"
 
-# Phase 4b K1141 pocket centre (target of existing screen)
-K1141_CENTRE = (-22.027, -18.547, 2.215)
+# Phase 4b K1141 pocket centre (target of Phase 3/4/5b virtual screen)
+K1141_CENTRE = np.array([-22.027, -18.547, 2.215])
+POCKET_RESIDUE_CUTOFF_A = 6.0   # residues within this radius define "pocket lining"
 
-# Clustering parameters
-CLUSTER_RADIUS_A = 6.0           # Angstroms centre-to-centre for same pocket
-STATIC_DISTANCE_A = 10.0         # > this distance from static = cryptic candidate
-PERSISTENCE_THRESHOLD = 10       # ≥ 10/20 snapshots for "persistent"
-DRUG_SCORE_CRYPTIC_RATIO = 2.0   # cryptic if ≥ 2× best static drug_score
+# Grid cavity parameters
+GRID_DX_A = 1.5
+PAD_A = 4.0
+# A grid point is "cavity" if:
+#   - closest protein heavy atom is > PROBE_MIN from it (not inside protein),
+#   - and < PROBE_MAX (buried, not bulk solvent),
+#   - and it is enclosed by protein along ≥ DIRECTIONS_BURIED of 14 cone dirs
+PROBE_MIN_A = 2.6
+PROBE_MAX_A = 5.0
+DIRECTIONS_BURIED = 10  # of 14 probe cones
 
 
 def log(msg: str):
@@ -67,340 +61,331 @@ def log(msg: str):
     print(f"[{ts}] {msg}", flush=True)
 
 
-@dataclass
-class Pocket:
-    snap_id: str
-    rank: int
-    score: float
-    drug_score: float
-    volume: float
-    n_alpha_spheres: int
-    centre: tuple[float, float, float]
-    residue_ids: list[int]      # residue numbers lining the pocket
-
-
-def strip_hydrogens(pdb_in: Path, pdb_out: Path) -> int:
-    """fpocket qhull fails on H-heavy PDBs; keep only heavy atoms."""
-    n = 0
-    with open(pdb_in) as fin, open(pdb_out, "w") as fout:
-        for line in fin:
-            if line.startswith(("ATOM", "HETATM")):
-                # Element in cols 77-78, atom name cols 13-16
-                elem = line[76:78].strip()
-                aname = line[12:16].strip()
-                is_h = (elem == "H") or (elem == "" and aname.startswith("H"))
-                if is_h:
+def read_heavy_atom_coords(pdb_path: Path) -> tuple[np.ndarray, list[tuple[int, str, str]]]:
+    """Return coords (N×3) and parallel list of (res_id, res_name, atom_name)
+    after H-strip. Uses OpenMM so hybrid36 numbering survives read, but we
+    emit sequential integer residue IDs using residue object order."""
+    from openmm.app import PDBFile
+    pdb = PDBFile(str(pdb_path))
+    coords = []
+    meta = []
+    res_counter = 0
+    for chain in pdb.topology.chains():
+        if chain.id != "A":
+            continue
+        for res in chain.residues():
+            res_counter += 1
+            for atom in res.atoms():
+                if atom.element is None:
                     continue
-                fout.write(line)
-                n += 1
-            elif line.startswith(("TER", "END", "CRYST1", "REMARK")):
-                fout.write(line)
-    return n
+                if atom.element.symbol == "H":
+                    continue
+                p = pdb.positions[atom.index].value_in_unit_system(
+                    __import__("openmm.unit", fromlist=["md_unit_system"]).md_unit_system)
+                # md_unit_system returns nm; convert to Å
+                coords.append([p[0] * 10, p[1] * 10, p[2] * 10])
+                meta.append((res_counter, res.name, atom.name))
+    return np.array(coords), meta
 
 
-def run_fpocket(pdb: Path, work_dir: Path) -> list[Pocket]:
-    """Run fpocket, parse info.txt + alpha sphere centres, return list of
-    Pocket objects tagged with snap_id from pdb.stem."""
-    snap_id = pdb.stem
-    # fpocket writes into {input_dir}/{input_stem}_out/ by default; copy PDB
-    # into work_dir so we don't pollute snapshot_dir. Also strip hydrogens —
-    # fpocket's qhull Delaunay triangulation fails on H-dense all-atom PDBs.
-    # Use _nh suffix so we never read-and-write the same path.
-    local_pdb = work_dir / f"{pdb.stem}_nh.pdb"
-    n_heavy = strip_hydrogens(pdb, local_pdb)
-    if n_heavy < 100:
-        log(f"  too few heavy atoms ({n_heavy}) — fpocket skip")
-        return []
-    r = subprocess.run(
-        ["fpocket", "-f", str(local_pdb)],
-        capture_output=True, text=True, timeout=300,
-    )
-    if r.returncode != 0:
-        log(f"  fpocket FAILED: {r.stderr[:400]}")
-        return []
-    out_dir = work_dir / f"{local_pdb.stem}_out"
-    info_txt = out_dir / f"{local_pdb.stem}_info.txt"
-    if not info_txt.exists():
-        log(f"  no info.txt at {info_txt}")
-        return []
-
-    # Parse info.txt — one block per pocket
-    text = info_txt.read_text()
-    blocks = re.split(r"Pocket\s+(\d+)\s*:\s*", text)
-    pockets: list[Pocket] = []
-    # re.split with capture gives: ['', '1', 'body1', '2', 'body2', ...]
-    for i in range(1, len(blocks), 2):
-        try:
-            rank = int(blocks[i])
-        except ValueError:
-            continue
-        body = blocks[i + 1]
-        score = _parse_float(body, r"Score\s*:\s*(-?\d+\.\d+)")
-        drug = _parse_float(body, r"Druggability Score\s*:\s*(-?\d+\.\d+)")
-        vol = _parse_float(body, r"Volume\s*:\s*(-?\d+\.\d+)")
-        n_alpha = _parse_int(body, r"Number of Alpha Spheres\s*:\s*(\d+)")
-
-        # Parse alpha sphere centres from pocket{rank}_vert.pqr
-        vert_pqr = out_dir / "pockets" / f"pocket{rank}_vert.pqr"
-        centre, _n_spheres = _parse_alpha_centre(vert_pqr)
-
-        # Residues lining the pocket from pocket{rank}_atm.pdb
-        atm_pdb = out_dir / "pockets" / f"pocket{rank}_atm.pdb"
-        residues = _parse_residues(atm_pdb)
-
-        if centre is None:
-            continue
-        pockets.append(Pocket(
-            snap_id=snap_id,
-            rank=rank,
-            score=score if score is not None else 0.0,
-            drug_score=drug if drug is not None else 0.0,
-            volume=vol if vol is not None else 0.0,
-            n_alpha_spheres=n_alpha if n_alpha is not None else 0,
-            centre=centre,
-            residue_ids=residues,
-        ))
-    return pockets
+def kabsch(P: np.ndarray, Q: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Return rotation R and translation t that align P onto Q (both N×3, same N)."""
+    pc = P.mean(axis=0)
+    qc = Q.mean(axis=0)
+    X = P - pc
+    Y = Q - qc
+    H = X.T @ Y
+    U, S, Vt = np.linalg.svd(H)
+    d = np.sign(np.linalg.det(Vt.T @ U.T))
+    D = np.diag([1, 1, d])
+    R = Vt.T @ D @ U.T
+    t = qc - R @ pc
+    return R, t
 
 
-def _parse_float(text: str, pattern: str) -> float | None:
-    m = re.search(pattern, text)
-    return float(m.group(1)) if m else None
+def per_atom_rmsf(frames: list[np.ndarray]) -> np.ndarray:
+    """RMSF per atom across pre-aligned frames (list of N×3), returned length-N."""
+    F = np.stack(frames, axis=0)  # (F, N, 3)
+    mean = F.mean(axis=0)          # (N, 3)
+    sq = ((F - mean) ** 2).sum(axis=-1)  # (F, N)
+    return np.sqrt(sq.mean(axis=0))      # (N,)
 
 
-def _parse_int(text: str, pattern: str) -> int | None:
-    m = re.search(pattern, text)
-    return int(m.group(1)) if m else None
+def k1141_pocket_residues(coords: np.ndarray, meta: list) -> set[int]:
+    """Residues with at least one heavy atom within POCKET_RESIDUE_CUTOFF_A
+    of K1141_CENTRE in a given snapshot."""
+    d = np.linalg.norm(coords - K1141_CENTRE, axis=1)
+    near = np.where(d <= POCKET_RESIDUE_CUTOFF_A)[0]
+    return {meta[i][0] for i in near}
 
 
-def _parse_alpha_centre(vert_pqr: Path) -> tuple[tuple[float, float, float] | None, int]:
-    """Mean xyz across all ATOM/HETATM lines of pocket vertex PQR."""
-    if not vert_pqr.exists():
-        return None, 0
-    xs, ys, zs = [], [], []
-    for line in vert_pqr.read_text().splitlines():
-        if line.startswith(("ATOM", "HETATM")):
-            try:
-                x = float(line[30:38])
-                y = float(line[38:46])
-                z = float(line[46:54])
-                xs.append(x); ys.append(y); zs.append(z)
-            except ValueError:
-                continue
-    if not xs:
-        return None, 0
-    return (sum(xs)/len(xs), sum(ys)/len(ys), sum(zs)/len(zs)), len(xs)
-
-
-def _parse_residues(atm_pdb: Path) -> list[int]:
-    if not atm_pdb.exists():
-        return []
-    seen = set()
-    for line in atm_pdb.read_text().splitlines():
-        if line.startswith("ATOM"):
-            try:
-                r = int(line[22:26])
-                seen.add(r)
-            except ValueError:
-                continue
-    return sorted(seen)
-
-
-def dist(a: tuple, b: tuple) -> float:
-    return math.sqrt(sum((x - y) ** 2 for x, y in zip(a, b)))
-
-
-def cluster_pockets(all_pockets: list[Pocket]) -> list[dict]:
-    """Spatial clustering by centre proximity.
-    One pass greedy: each new pocket joins the nearest existing cluster if
-    centre distance ≤ CLUSTER_RADIUS_A; otherwise spawns a new cluster."""
-    clusters: list[list[Pocket]] = []
-    for p in all_pockets:
-        # Find nearest cluster centroid
-        best_idx, best_d = -1, float("inf")
-        for idx, c in enumerate(clusters):
-            centroid = tuple(
-                sum(q.centre[ax] for q in c) / len(c) for ax in range(3)
-            )
-            d = dist(p.centre, centroid)
-            if d < best_d:
-                best_d, best_idx = d, idx
-        if best_d <= CLUSTER_RADIUS_A:
-            clusters[best_idx].append(p)
-        else:
-            clusters.append([p])
-
-    # Summarise each cluster
-    summaries = []
-    for i, c in enumerate(clusters):
-        centroid = tuple(
-            sum(p.centre[ax] for p in c) / len(c) for ax in range(3)
-        )
-        mean_drug = sum(p.drug_score for p in c) / len(c)
-        mean_score = sum(p.score for p in c) / len(c)
-        mean_vol = sum(p.volume for p in c) / len(c)
-        persistence = len({p.snap_id for p in c})
-        # Consensus residues: those appearing in ≥ 50% of cluster members
-        residue_counts: dict[int, int] = {}
-        for p in c:
-            for r in p.residue_ids:
-                residue_counts[r] = residue_counts.get(r, 0) + 1
-        consensus = sorted([
-            r for r, n in residue_counts.items() if n >= len(c) * 0.5
-        ])
-        summaries.append({
-            "cluster_id": i,
-            "centroid": centroid,
-            "persistence": persistence,
-            "n_total_members": len(c),
-            "mean_drug_score": round(mean_drug, 3),
-            "mean_pocket_score": round(mean_score, 3),
-            "mean_volume_A3": round(mean_vol, 1),
-            "consensus_residues": consensus,
-            "dist_to_K1141_A": round(dist(centroid, K1141_CENTRE), 2),
-        })
-    summaries.sort(key=lambda s: (-s["persistence"], -s["mean_drug_score"]))
-    return summaries
-
-
-def classify_clusters(md_clusters: list[dict],
-                      static_clusters: list[dict]) -> list[dict]:
-    """Tag each MD cluster:
-      • 'K1141_PRIMARY' if centroid within 6 Å of K1141_CENTRE
-      • 'STATIC' if a static pocket exists within STATIC_DISTANCE_A
-      • 'CRYPTIC' if persistence ≥ PERSISTENCE_THRESHOLD AND
-                  no nearby static OR drug_score ≥ 2× best nearby static
-      • 'TRANSIENT' if persistence below threshold
+def voxel_cavity_scan(coords: np.ndarray, k1141: np.ndarray) -> dict:
+    """Grid-based cavity detection over protein bounding box.
+    Returns list of cavity clusters with volume, centre, distance to K1141,
+    and per-cluster #points.
     """
-    tagged = []
-    for mc in md_clusters:
-        nearest_static_d = float("inf")
-        nearest_static = None
-        for sc in static_clusters:
-            d = dist(mc["centroid"], sc["centroid"])
-            if d < nearest_static_d:
-                nearest_static_d = d
-                nearest_static = sc
+    from scipy.spatial import cKDTree
+    from scipy.ndimage import label
 
-        is_k1141 = dist(mc["centroid"], K1141_CENTRE) <= CLUSTER_RADIUS_A
-        is_persistent = mc["persistence"] >= PERSISTENCE_THRESHOLD
+    lo = coords.min(axis=0) - PAD_A
+    hi = coords.max(axis=0) + PAD_A
+    nx = int(np.ceil((hi[0] - lo[0]) / GRID_DX_A))
+    ny = int(np.ceil((hi[1] - lo[1]) / GRID_DX_A))
+    nz = int(np.ceil((hi[2] - lo[2]) / GRID_DX_A))
+    log(f"  voxel grid {nx}×{ny}×{nz} = {nx*ny*nz:,} voxels")
 
-        if is_k1141:
-            tag = "K1141_PRIMARY"
-        elif not is_persistent:
-            tag = "TRANSIENT"
-        else:
-            # Persistent. Cryptic vs STATIC test.
-            if (nearest_static is None or
-                    nearest_static_d > STATIC_DISTANCE_A):
-                tag = "CRYPTIC_NEW"
-            elif mc["mean_drug_score"] >= DRUG_SCORE_CRYPTIC_RATIO * (
-                    nearest_static["mean_drug_score"] + 0.001):
-                tag = "CRYPTIC_UPGRADED"
-            else:
-                tag = "STATIC_ECHO"
+    xs = lo[0] + GRID_DX_A * np.arange(nx)
+    ys = lo[1] + GRID_DX_A * np.arange(ny)
+    zs = lo[2] + GRID_DX_A * np.arange(nz)
+    X, Y, Z = np.meshgrid(xs, ys, zs, indexing="ij")
+    grid_pts = np.stack([X.ravel(), Y.ravel(), Z.ravel()], axis=1)
 
-        tagged.append({
-            **mc,
-            "tag": tag,
-            "nearest_static_dist_A": round(nearest_static_d, 2) if nearest_static else None,
-            "nearest_static_drug": nearest_static["mean_drug_score"] if nearest_static else None,
+    tree = cKDTree(coords)
+    d_nearest, _ = tree.query(grid_pts, k=1)
+    # Cavity candidates: in a shell PROBE_MIN < d < PROBE_MAX from nearest heavy atom
+    candidate = (d_nearest > PROBE_MIN_A) & (d_nearest < PROBE_MAX_A)
+    log(f"  candidate voxels (by shell): {candidate.sum():,}")
+
+    # Enclosedness: for each candidate, cast 14 rays in cube+face-diagonal
+    # directions; count rays that hit protein within 8 Å. Dense but fast.
+    dirs = []
+    for dx in (-1, 0, 1):
+        for dy in (-1, 0, 1):
+            for dz in (-1, 0, 1):
+                if dx == dy == dz == 0:
+                    continue
+                v = np.array([dx, dy, dz], dtype=float)
+                dirs.append(v / np.linalg.norm(v))
+    dirs = np.array(dirs)  # 26 directions; we count ≥ DIRECTIONS_BURIED of 26 below
+
+    cand_pts = grid_pts[candidate]
+    # Probe each direction by querying KD-tree for atoms within a narrow tube:
+    # step along dir and check distance to tree until hit or 8 Å exceeded.
+    # To keep it fast: step 7 times at 1.2 Å, mark direction as "buried" if
+    # any step finds a heavy atom within 2.0 Å.
+    STEP = 1.2
+    NSTEPS = 7
+    HIT_R = 2.0
+    buried_count = np.zeros(len(cand_pts), dtype=int)
+    for d_vec in dirs:
+        hit = np.zeros(len(cand_pts), dtype=bool)
+        for k in range(1, NSTEPS + 1):
+            probe_pts = cand_pts + (k * STEP) * d_vec
+            nd, _ = tree.query(probe_pts, k=1)
+            hit |= (nd < HIT_R) & (~hit)
+        buried_count += hit.astype(int)
+
+    enclosed = buried_count >= DIRECTIONS_BURIED
+    log(f"  enclosed voxels: {enclosed.sum():,} / {len(cand_pts):,} candidates")
+
+    # Build a 3D boolean cube of enclosed voxels to cluster connected components
+    cube = np.zeros((nx, ny, nz), dtype=bool)
+    cand_indices = np.where(candidate)[0]
+    enclosed_indices = cand_indices[enclosed]
+    kx, rem = np.divmod(enclosed_indices, ny * nz)
+    ky, kz = np.divmod(rem, nz)
+    cube[kx, ky, kz] = True
+
+    labels, n_clust = label(cube)
+    log(f"  cavity clusters: {n_clust}")
+
+    clusters = []
+    for cid in range(1, n_clust + 1):
+        pts_mask = labels == cid
+        n_pts = int(pts_mask.sum())
+        if n_pts < 20:   # < ~70 Å³, too small for a drug pocket
+            continue
+        idx = np.argwhere(pts_mask)
+        centres_xyz = (lo + idx * GRID_DX_A + GRID_DX_A / 2)
+        cent = centres_xyz.mean(axis=0)
+        volume_A3 = n_pts * (GRID_DX_A ** 3)
+        d_k1141 = float(np.linalg.norm(cent - k1141))
+        # Residues lining this cavity: protein residues with any heavy atom
+        # within 4 Å of ANY cluster voxel.
+        cluster_tree = cKDTree(centres_xyz)
+        nearest_prot_d, nearest_prot_i = cluster_tree.query(coords, k=1)
+        lining_atom_mask = nearest_prot_d < 4.0
+        clusters.append({
+            "volume_A3": round(volume_A3, 1),
+            "n_voxels": n_pts,
+            "centre": cent.tolist(),
+            "dist_to_K1141_A": round(d_k1141, 2),
+            "lining_atom_indices": np.where(lining_atom_mask)[0].tolist(),
         })
-    return tagged
+    clusters.sort(key=lambda c: -c["volume_A3"])
+    return clusters
+
+
+def k1141_pocket_volume_per_snapshot(coords_series: list[np.ndarray]) -> list[float]:
+    """Quick sphere-void estimate: count grid voxels within 8 Å of K1141_CENTRE
+    that have no heavy atom within 2.0 Å. Proportional to local free volume,
+    a proxy for pocket openness."""
+    from scipy.spatial import cKDTree
+    # Precompute a local grid around K1141
+    R = 8.0
+    lo = K1141_CENTRE - R
+    hi = K1141_CENTRE + R
+    steps = int(np.ceil((hi[0] - lo[0]) / GRID_DX_A))
+    ax = lo[0] + GRID_DX_A * np.arange(steps)
+    ay = lo[1] + GRID_DX_A * np.arange(steps)
+    az = lo[2] + GRID_DX_A * np.arange(steps)
+    X, Y, Z = np.meshgrid(ax, ay, az, indexing="ij")
+    gp = np.stack([X.ravel(), Y.ravel(), Z.ravel()], axis=1)
+    # Keep grid points within 8 Å of K1141
+    within = np.linalg.norm(gp - K1141_CENTRE, axis=1) <= R
+    gp = gp[within]
+
+    vols = []
+    for coords in coords_series:
+        tree = cKDTree(coords)
+        d, _ = tree.query(gp, k=1)
+        void_mask = d > 2.0
+        vols.append(round(void_mask.sum() * (GRID_DX_A ** 3), 1))
+    return vols
 
 
 def main():
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    # ----- Static baseline: apo starting structure -----
-    log("=== STATIC apo fpocket ===")
-    with tempfile.TemporaryDirectory() as tmpd:
-        tmp = Path(tmpd)
-        # Static apo is already clean; skip stripper
-        static_pockets = run_fpocket(STATIC_APO, tmp)
-    log(f"  {len(static_pockets)} static pockets detected")
-    # Single-structure static: each pocket is its own "cluster"
-    static_clusters = cluster_pockets(static_pockets)
-    for sc in static_clusters[:10]:
-        log(f"   static #{sc['cluster_id']:2d} d_score={sc['mean_drug_score']:.2f} "
-            f"vol={sc['mean_volume_A3']:.0f} dK1141={sc['dist_to_K1141_A']:.1f}")
-
-    # ----- MD ensemble -----
     snapshots = sorted(SNAPSHOT_DIR.glob("snap_???.pdb"))
-    log(f"=== MD ensemble: {len(snapshots)} snapshots ===")
-    all_md_pockets: list[Pocket] = []
-    for snap in snapshots:
+    log(f"=== Phase 5c MD stability + cavity scan ===")
+    log(f"Loading {len(snapshots)} snapshots...")
+
+    all_coords: list[np.ndarray] = []
+    all_meta: list[list] = []
+    for i, snap in enumerate(snapshots):
         with tempfile.TemporaryDirectory() as tmpd:
-            tmp = Path(tmpd)
-            prot = tmp / f"{snap.stem}_prot.pdb"
-            n_atoms = strip_water_ions_to_pdb(snap, prot)
-            log(f"{snap.stem}: stripped {n_atoms} atoms")
-            pockets = run_fpocket(prot, tmp)
-        log(f"  → {len(pockets)} pockets")
-        all_md_pockets.extend(pockets)
+            prot = Path(tmpd) / f"{snap.stem}_prot.pdb"
+            strip_water_ions_to_pdb(snap, prot)
+            coords, meta = read_heavy_atom_coords(prot)
+        all_coords.append(coords)
+        all_meta.append(meta)
+        if i == 0:
+            log(f"  snap_000: {len(coords)} heavy atoms, "
+                f"{len(set(m[0] for m in meta))} residues")
 
-    log(f"Total MD pockets across ensemble: {len(all_md_pockets)}")
+    # Align all snapshots to snap_000 on Cα
+    ref_coords = all_coords[0]
+    ref_meta = all_meta[0]
+    ca_mask = np.array([m[2] == "CA" for m in ref_meta])
+    ref_ca = ref_coords[ca_mask]
+    log(f"  Cα atoms: {len(ref_ca)}")
 
-    md_clusters = cluster_pockets(all_md_pockets)
-    log(f"Clustered into {len(md_clusters)} unique MD pockets")
+    aligned = [ref_coords.copy()]
+    for i in range(1, len(all_coords)):
+        co = all_coords[i]
+        me = all_meta[i]
+        ca_mask_i = np.array([m[2] == "CA" for m in me])
+        if ca_mask_i.sum() != len(ref_ca):
+            log(f"  WARN frame {i} Cα count mismatch — skipping alignment")
+            aligned.append(co)
+            continue
+        R, t = kabsch(co[ca_mask_i], ref_ca)
+        aligned.append(co @ R.T + t)
 
-    tagged = classify_clusters(md_clusters, static_clusters)
+    # Per-residue RMSF (on Cα only)
+    ca_frames = [A[ca_mask] for A in aligned]
+    rmsf_ca = per_atom_rmsf(ca_frames)
+    mean_rmsf = float(rmsf_ca.mean())
+    log(f"Global mean Cα RMSF: {mean_rmsf:.2f} Å")
 
-    # ----- Report -----
-    log("=== TOP-10 MD pockets by persistence × druggability ===")
-    log(f"{'tag':17s} {'persist':>7s} {'drug':>6s} {'vol':>6s} "
-        f"{'dK1141':>7s} {'dStatic':>8s} {'residues':s}")
-    for c in tagged[:15]:
-        ds = c["nearest_static_dist_A"]
-        ds_s = f"{ds:.1f}" if ds is not None else "—"
-        log(f"{c['tag']:17s} {c['persistence']:>7d} "
-            f"{c['mean_drug_score']:>6.2f} {c['mean_volume_A3']:>6.0f} "
-            f"{c['dist_to_K1141_A']:>7.1f} {ds_s:>8s} "
-            f"{c['consensus_residues'][:8]}")
+    # K1141 pocket residues in snap_000
+    pocket_res = k1141_pocket_residues(ref_coords, ref_meta)
+    log(f"K1141 pocket lining residues (static snap_000): {sorted(pocket_res)}")
+    pocket_ca_mask = np.array([
+        (m[0] in pocket_res and m[2] == "CA") for m in ref_meta
+    ])
+    pocket_rmsf = rmsf_ca[pocket_ca_mask[ca_mask]] if pocket_ca_mask.any() else np.array([mean_rmsf])
+    pocket_mean_rmsf = float(pocket_rmsf.mean()) if len(pocket_rmsf) else mean_rmsf
+    log(f"K1141 pocket mean Cα RMSF: {pocket_mean_rmsf:.2f} Å "
+        f"(vs global {mean_rmsf:.2f} Å)")
+
+    # K1141 pocket volume time series (voxel void count around K1141)
+    k1141_vol_series = k1141_pocket_volume_per_snapshot(aligned)
+    log(f"K1141 local void volume series (Å³): "
+        f"mean={np.mean(k1141_vol_series):.1f} "
+        f"min={np.min(k1141_vol_series):.1f} "
+        f"max={np.max(k1141_vol_series):.1f}")
+
+    # Global cavity scan on mid-trajectory snapshot
+    mid_i = len(aligned) // 2
+    log(f"=== Global cavity scan on snap_{mid_i:03d} ===")
+    cavities = voxel_cavity_scan(aligned[mid_i], K1141_CENTRE)
+    log(f"Top 5 cavities by volume:")
+    log(f"{'#':>3} {'vol_A3':>8} {'d_K1141':>8} {'centre':>30}")
+    for i, c in enumerate(cavities[:5]):
+        log(f"{i:>3} {c['volume_A3']:>8.1f} {c['dist_to_K1141_A']:>8.2f} "
+            f"[{c['centre'][0]:>8.2f}, {c['centre'][1]:>8.2f}, {c['centre'][2]:>8.2f}]")
+
+    # Find cavity containing K1141 (smallest dist_to_K1141_A)
+    k1141_cavity = cavities[0] if cavities else None
+    for c in cavities:
+        if c["dist_to_K1141_A"] <= POCKET_RESIDUE_CUTOFF_A:
+            k1141_cavity = c
+            break
+
+    # Residues lining K1141's cavity
+    k1141_residues = set()
+    if k1141_cavity:
+        for atom_idx in k1141_cavity["lining_atom_indices"]:
+            r = all_meta[mid_i][atom_idx][0]
+            k1141_residues.add(r)
+
+    # Alternative cavities: rank those NOT overlapping K1141 by volume
+    alt_cavities = [c for c in cavities
+                    if c["dist_to_K1141_A"] > POCKET_RESIDUE_CUTOFF_A][:5]
 
     # Verdict
-    cryptic_new = [c for c in tagged if c["tag"] == "CRYPTIC_NEW"]
-    cryptic_upg = [c for c in tagged if c["tag"] == "CRYPTIC_UPGRADED"]
-    k1141 = next((c for c in tagged if c["tag"] == "K1141_PRIMARY"), None)
-
     log("=== VERDICT ===")
-    if k1141:
-        log(f"K1141 primary pocket: persistence {k1141['persistence']}/20, "
-            f"drug_score {k1141['mean_drug_score']:.2f}, "
-            f"volume {k1141['mean_volume_A3']:.0f} Å³")
+    pocket_stable = pocket_mean_rmsf < 1.5 * mean_rmsf and min(k1141_vol_series) > 20
+    if pocket_stable:
+        log(f"K1141 pocket STABLE (RMSF {pocket_mean_rmsf:.2f} Å within "
+            f"{1.5*mean_rmsf:.2f} Å bound; min void {min(k1141_vol_series):.0f} Å³)")
+        log("→ Phase 5b RED-LIGHT is chemistry-limited; Phase 3c v2 should "
+            "screen expanded chem-space against K1141 with ensemble targeting.")
     else:
-        log("K1141 primary pocket NOT RECOVERED in MD — serious flag")
+        log(f"K1141 pocket UNSTABLE (RMSF {pocket_mean_rmsf:.2f} Å vs global "
+            f"{mean_rmsf:.2f} Å; min void {min(k1141_vol_series):.0f} Å³)")
+        log("→ Consider Phase 3c v2 retargeting to a conformer-specific "
+            "K1141 pose (ensemble docking already caught this in 5b).")
 
-    log(f"Cryptic NEW pockets (persistent, not in static): {len(cryptic_new)}")
-    for c in cryptic_new:
-        log(f"   → d_score {c['mean_drug_score']:.2f} at {c['centroid']} "
-            f"persist {c['persistence']}/20 vol {c['mean_volume_A3']:.0f}")
+    log(f"Alternative cavities (dist > {POCKET_RESIDUE_CUTOFF_A} Å from K1141): "
+        f"{len(alt_cavities)} found, top vol {alt_cavities[0]['volume_A3'] if alt_cavities else 0:.1f} Å³")
+    if alt_cavities and alt_cavities[0]["volume_A3"] > (k1141_cavity["volume_A3"] if k1141_cavity else 0) * 1.5:
+        log(f"  → LARGE ALTERNATIVE CAVITY at {alt_cavities[0]['centre']} — "
+            f"worth exploring in Phase 3c v2 parallel screen.")
 
-    log(f"Cryptic UPGRADED pockets (static echo × 2+ drug_score): {len(cryptic_upg)}")
-    for c in cryptic_upg:
-        log(f"   → d_score {c['mean_drug_score']:.2f} at {c['centroid']} "
-            f"persist {c['persistence']}/20 vol {c['mean_volume_A3']:.0f}")
+    # Trim heavy lining_atom_indices from output for size
+    for c in cavities:
+        c["n_lining_atoms"] = len(c["lining_atom_indices"])
+        del c["lining_atom_indices"]
 
     payload = {
         "phase": "5c",
+        "approach": "grid-based cavity scan + K1141 stability (fpocket/qhull broken on brew 4.0)",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "n_snapshots": len(snapshots),
-        "static_clusters": static_clusters,
-        "md_clusters": tagged,
+        "global_mean_rmsf_A": round(mean_rmsf, 3),
+        "k1141_pocket_residues_static": sorted(pocket_res),
+        "k1141_pocket_mean_rmsf_A": round(pocket_mean_rmsf, 3),
+        "k1141_local_void_volume_A3_series": k1141_vol_series,
+        "k1141_local_void_volume_mean_A3": round(float(np.mean(k1141_vol_series)), 1),
+        "k1141_local_void_volume_min_A3": round(float(np.min(k1141_vol_series)), 1),
+        "k1141_cavity_mid_frame": k1141_cavity,
+        "top_cavities": cavities[:10],
+        "alt_cavities_not_overlap_K1141": alt_cavities,
         "verdict": {
-            "k1141_recovered": k1141 is not None,
-            "k1141_summary": k1141,
-            "n_cryptic_new": len(cryptic_new),
-            "n_cryptic_upgraded": len(cryptic_upg),
-            "top_cryptic_new": cryptic_new[:3],
-            "top_cryptic_upgraded": cryptic_upg[:3],
+            "k1141_pocket_stable": bool(pocket_stable),
+            "rmsf_ratio_pocket_to_global": round(pocket_mean_rmsf / mean_rmsf, 3),
+            "has_larger_alt_cavity": bool(
+                alt_cavities and k1141_cavity
+                and alt_cavities[0]["volume_A3"] > k1141_cavity["volume_A3"] * 1.5
+            ),
         },
         "parameters": {
-            "cluster_radius_A": CLUSTER_RADIUS_A,
-            "static_distance_threshold_A": STATIC_DISTANCE_A,
-            "persistence_threshold": PERSISTENCE_THRESHOLD,
-            "drug_score_cryptic_ratio": DRUG_SCORE_CRYPTIC_RATIO,
-            "k1141_centre": K1141_CENTRE,
+            "grid_dx_A": GRID_DX_A,
+            "probe_min_A": PROBE_MIN_A,
+            "probe_max_A": PROBE_MAX_A,
+            "directions_buried_threshold": DIRECTIONS_BURIED,
+            "pocket_residue_cutoff_A": POCKET_RESIDUE_CUTOFF_A,
         },
     }
     OUT_JSON.write_text(json.dumps(payload, indent=2, default=str))
