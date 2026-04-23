@@ -9,7 +9,6 @@ mech: 4
 deliv: 3
 misha_fit: 3
 next_step: "Phase 2c WH2 bundling + 4b AF3"
-status: A-tier
 ---
 
 # h09 — Synthetic Peptide Hydrogel HTC

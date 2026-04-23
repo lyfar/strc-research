@@ -9,22 +9,11 @@ deliv: 2
 misha_fit: 2
 next_step: "Alt scaffold deferred"
 tags: [strc, h11]
-status: C-tier
 ---
 
-# h11 — TECTA Chimera
+Stub hub. Details in [[STRC Engineered TECTA Chimera]]. State lives in frontmatter above.
 
-Stub hub created 2026-04-23 during vault-stack migration. Detailed hypothesis content lives in [[STRC Engineered TECTA Chimera]]; this file exists so the Dataview ranking covers every numbered hypothesis and logs can accumulate here.
-
-## status
-
-C-tier. See [[STRC Engineered TECTA Chimera]] for mech/delivery/patient-fit reasoning and current state.
-
-## active compute
-
-_(none — add PIDs + ETAs here when jobs run)_
-
-## next-step tree
+## next step
 
 Alt scaffold deferred
 

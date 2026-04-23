@@ -9,22 +9,11 @@ deliv: 2
 misha_fit: 2
 next_step: "Speculative; no near-term path"
 tags: [strc, h12]
-status: C-tier
 ---
 
-# h12 — Sonogenetic
+Stub hub. Details in [[Sonogenetic STRC Computational Proof]]. State lives in frontmatter above.
 
-Stub hub created 2026-04-23 during vault-stack migration. Detailed hypothesis content lives in [[Sonogenetic STRC Computational Proof]]; this file exists so the Dataview ranking covers every numbered hypothesis and logs can accumulate here.
-
-## status
-
-C-tier. See [[Sonogenetic STRC Computational Proof]] for mech/delivery/patient-fit reasoning and current state.
-
-## active compute
-
-_(none — add PIDs + ETAs here when jobs run)_
-
-## next-step tree
+## next step
 
 Speculative; no near-term path
 

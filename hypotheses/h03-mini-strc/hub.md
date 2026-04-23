@@ -9,7 +9,6 @@ mech: 5
 deliv: 5
 misha_fit: 4
 next_step: "Order gBlock, clone pAAV, coIP"
-status: S-tier
 ---
 
 # h03 — Mini-STRC Single-Vector AAV

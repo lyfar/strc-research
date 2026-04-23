@@ -9,22 +9,11 @@ deliv: 2
 misha_fit: 1
 next_step: "Wet-lab ribosome-profiling STRCP1"
 tags: [strc, h07]
-status: C-tier
 ---
 
-# h07 — Prime Editing
+Stub hub. Details in [[Prime Editing for STRC]]. State lives in frontmatter above.
 
-Stub hub created 2026-04-23 during vault-stack migration. Detailed hypothesis content lives in [[Prime Editing for STRC]]; this file exists so the Dataview ranking covers every numbered hypothesis and logs can accumulate here.
-
-## status
-
-C-tier. See [[Prime Editing for STRC]] for mech/delivery/patient-fit reasoning and current state.
-
-## active compute
-
-_(none — add PIDs + ETAs here when jobs run)_
-
-## next-step tree
+## next step
 
 Wet-lab ribosome-profiling STRCP1
 

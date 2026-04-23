@@ -9,7 +9,6 @@ mech: 2
 deliv: 2
 misha_fit: 4
 next_step: "Email Holt lab ribosome-profiling"
-status: C-tier
 ---
 
 # h27 — STRCP1 Activation Rescue

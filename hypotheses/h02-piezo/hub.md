@@ -9,7 +9,6 @@ mech: 2
 deliv: 1
 misha_fit: 5
 next_step: "Find OHC ligand + FEM strain-share"
-status: S-tier
 ---
 
 # h02 — Piezoelectric TM Bioelectronic Amplifier

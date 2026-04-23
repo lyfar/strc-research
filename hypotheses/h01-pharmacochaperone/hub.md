@@ -9,7 +9,6 @@ mech: 3
 deliv: 4
 misha_fit: 4
 next_step: "Phase 3c v3b dock + 5d E1659A MD running"
-status: A-tier
 ---
 
 # h01 — Pharmacochaperone E1659A

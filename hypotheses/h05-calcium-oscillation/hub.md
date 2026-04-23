@@ -9,7 +9,6 @@ mech: 3
 deliv: 4
 misha_fit: 2
 next_step: "SPR/BLI E1659A affinity penalty"
-status: A-tier
 ---
 
 # h05 — Calcium Oscillation Acoustic Therapy
