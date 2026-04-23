@@ -1,0 +1,323 @@
+{
+  "batch": "af3_jobs_2026-04-23",
+  "description": "SpyCatcher Assembly Phase 1b \u2014 alternate split at aa 700 (Mini-STRC canonical LRR-to-ARM domain boundary)",
+  "date_run": "2026-04-23",
+  "n_jobs": 2,
+  "jobs": {
+    "fold_strc_spy_reassembled_aa700_fold": {
+      "hypothesis": "#10 STRC In Situ SpyCatcher Assembly (Phase 1b aa700 split)",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.6,
+      "best_ipTM": null,
+      "best_ranking_score": 0.68,
+      "best_chain_pair_iptm": [
+        [
+          0.6
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.16,
+      "best_has_clash": 0.0,
+      "gate_metric": "pTM",
+      "gate_threshold": 0.6,
+      "gate_best_value": 0.6,
+      "gate_margin": 0.0,
+      "gate_verdict": "PASS",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.6,
+          "ipTM": null,
+          "ranking_score": 0.68,
+          "fraction_disordered": 0.16,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.6
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.6,
+          "ipTM": null,
+          "ranking_score": 0.68,
+          "fraction_disordered": 0.16,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.6
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.6,
+          "ipTM": null,
+          "ranking_score": 0.68,
+          "fraction_disordered": 0.16,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.6
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.6,
+          "ipTM": null,
+          "ranking_score": 0.67,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.6
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.59,
+          "ipTM": null,
+          "ranking_score": 0.67,
+          "fraction_disordered": 0.15,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76
+            ]
+          ]
+        }
+      ]
+    },
+    "fold_strc_spy_reassembled_aa700_x_tmem145": {
+      "hypothesis": "#10 STRC In Situ SpyCatcher Assembly (Phase 1b TMEM145 binding)",
+      "n_models": 5,
+      "best_model_ranked": 0,
+      "best_pTM": 0.47,
+      "best_ipTM": 0.35,
+      "best_ranking_score": 0.44,
+      "best_chain_pair_iptm": [
+        [
+          0.52,
+          0.35
+        ],
+        [
+          0.35,
+          0.58
+        ]
+      ],
+      "best_chain_pair_pae_min": [
+        [
+          0.76,
+          10.9
+        ],
+        [
+          14.34,
+          0.76
+        ]
+      ],
+      "best_fraction_disordered": 0.13,
+      "best_has_clash": 0.0,
+      "gate_metric": "ipTM",
+      "gate_threshold": 0.4,
+      "gate_best_value": 0.35,
+      "gate_margin": -0.050000000000000044,
+      "gate_verdict": "FAIL",
+      "all_models": [
+        {
+          "model": 0,
+          "pTM": 0.47,
+          "ipTM": 0.35,
+          "ranking_score": 0.44,
+          "fraction_disordered": 0.13,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.52,
+              0.35
+            ],
+            [
+              0.35,
+              0.58
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              10.9
+            ],
+            [
+              14.34,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 1,
+          "pTM": 0.47,
+          "ipTM": 0.35,
+          "ranking_score": 0.42,
+          "fraction_disordered": 0.1,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.52,
+              0.35
+            ],
+            [
+              0.35,
+              0.57
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              11.22
+            ],
+            [
+              14.19,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 2,
+          "pTM": 0.47,
+          "ipTM": 0.23,
+          "ranking_score": 0.34,
+          "fraction_disordered": 0.13,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.52,
+              0.23
+            ],
+            [
+              0.23,
+              0.54
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              21.44
+            ],
+            [
+              21.09,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 3,
+          "pTM": 0.47,
+          "ipTM": 0.24,
+          "ranking_score": 0.34,
+          "fraction_disordered": 0.09,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.52,
+              0.24
+            ],
+            [
+              0.24,
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              22.37
+            ],
+            [
+              23.51,
+              0.76
+            ]
+          ]
+        },
+        {
+          "model": 4,
+          "pTM": 0.47,
+          "ipTM": 0.23,
+          "ranking_score": 0.33,
+          "fraction_disordered": 0.11,
+          "has_clash": 0.0,
+          "chain_pair_iptm": [
+            [
+              0.51,
+              0.23
+            ],
+            [
+              0.23,
+              0.59
+            ]
+          ],
+          "chain_pair_pae_min": [
+            [
+              0.76,
+              23.46
+            ],
+            [
+              24.15,
+              0.76
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "hypothesis_level": {
+    "#10 SpyCatcher Assembly (Phase 1b)": {
+      "fold_verdict": "PASS",
+      "binding_verdict": "FAIL",
+      "fold_best_pTM": 0.6,
+      "binding_best_ipTM": 0.35,
+      "overall": "FOLD_OK_BINDING_FAIL"
+    }
+  },
+  "phase_1a_vs_1b_delta": {
+    "fold_pTM": {
+      "phase_1a_aa1074": 0.59,
+      "phase_1b_aa700": 0.6,
+      "delta": 0.01
+    },
+    "binding_ipTM": {
+      "phase_1a_aa1074": 0.37,
+      "phase_1b_aa700": 0.35,
+      "delta": -0.02
+    }
+  }
+}
