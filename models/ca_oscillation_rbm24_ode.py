@@ -58,11 +58,14 @@ class Params:
     # --- Ca²⁺ clearance (Mammano 1999: PMCA is fast in OHCs) ---
     k_extrusion: float = 30.0       # /s PMCA+NCX clearance (fast in OHC stereocilia)
 
-    # --- CaMKII (Chao et al. 2010) ---
-    Kd_CaMKII: float = 1e-6         # M, half-max Ca²⁺/CaM binding
+    # --- CaMKII — Chao et al. 2011 Cell (PMID 21458670) structural study. ---
+    # (Earlier docstring cited "Chao 2010" — likely year typo; PMID 21458670
+    # is Cell 2011. Value order-of-magnitude plausible but not an exact
+    # measurement; k_auto and k_dephos below are model-fitted.)
+    Kd_CaMKII: float = 1e-6         # M, half-max Ca²⁺/CaM binding (Chao 2011 range)
     n_CaMKII_Hill: float = 2.0
-    k_auto: float = 0.5             # /s autophosphorylation rate at saturating Ca²⁺
-    k_dephos_CaMKII: float = 0.02   # /s PP1-mediated dephosphorylation (slow)
+    k_auto: float = 0.5             # /s — ⚠ order-of-magnitude only (not measured)
+    k_dephos_CaMKII: float = 0.02   # /s PP1-mediated dephosphorylation (slow, fitted)
 
     # --- Calcineurin (Stemmer & Klee 1994; Dolmetsch 1998) ---
     # NOTE: k_on/k_off ratio tuned so CaN is unsaturated at physiologic Ca²⁺
@@ -87,18 +90,25 @@ class Params:
     strc_inclusion_max: float = 0.94
     k_splice: float = 0.005         # /s splicing update rate (reflects mRNA half-life minutes)
 
-    # --- STRC transcription / translation ---
+    # --- STRC transcription / translation (CALIBRATION PARAMETERS) ---
     # Calibrated so that at STRC_inclusion = 0.40 (no RBM24 nuclear), prot_ss ≈ 3000
-    # and at STRC_inclusion = 0.94 (full RBM24 nuclear), prot_ss ≈ target 15000.
+    # and at STRC_inclusion = 0.94 (full RBM24 nuclear), prot_ss ≈ target_protein.
     # Steady state (linear regime): prot_ss = k_translation × k_txn × incl / (k_mRNA_deg × k_prot_deg)
-    k_txn_basal: float = 4.05e-5    # mRNA molecules/s per full-inclusion unit
-    k_mRNA_deg: float = 0.0004      # /s mRNA degradation (~30 min t½)
-    k_translation: float = 0.02     # proteins per mRNA per second
-    k_prot_deg: float = 2.7e-7      # /s protein degradation (~30 days)
+    # None of these four parameters are directly measured for STRC; they are
+    # joint-fitted to hit the target_protein set-point. Absolute fold-changes
+    # are therefore anchored to target_protein (which is itself unsourced — see below).
+    k_txn_basal: float = 4.05e-5    # ⚠ fitted — mRNA/s per full-inclusion unit
+    k_mRNA_deg: float = 0.0004      # ⚠ fitted — /s; t½ ~30 min. Pivot script uses t½ 2h (4× slower)
+    k_translation: float = 0.02     # ⚠ fitted — proteins per mRNA per second
+    k_prot_deg: float = 2.7e-7      # ⚠ fitted — /s; t½ ~30 days. Pivot script uses 38 h (~20× faster)
 
-    # Target
-    target_protein: int = 15000      # molecules/OHC (functional HTC density, Krey 2015)
-    baseline_steady_prot: int = 3000 # predicted silent/baseline output
+    # Target — STRC copy number per OHC: UNSOURCED.
+    # Prior comment attributed to "Krey 2015" — Krey et al. 2015 Scientific Data
+    # (Wilmarth stereocilia proteome) does not quantify STRC copy number;
+    # the 15,000 figure has no primary-literature basis (audit 2026-04-23).
+    # Retained as model set-point for calibration only.
+    target_protein: int = 15000      # ⚠ UNSOURCED — no paper quantifies STRC/OHC
+    baseline_steady_prot: int = 3000 # ⚠ model anchor for silent/baseline output
 
 
 # ============================================================
@@ -424,7 +434,7 @@ def main():
     print(f"Silence baseline STRC protein: {results['silence_baseline_protein']:.0f} /OHC")
     print(f"Unmodulated 60 dB STRC protein: {results['unmodulated_60dB_protein']:.0f} /OHC")
     print(f"Unmodulated 70 dB STRC protein: {results['unmodulated_70dB_protein']:.0f} /OHC")
-    print(f"Target (Krey 2015): {results['target_protein']} /OHC")
+    print(f"Target (UNSOURCED — no primary source): {results['target_protein']} /OHC")
     print()
     print("Frequency sweep @ 60 dB mean, pulse AM m=0.5:")
     print(f"  {'f (Hz)':>8} | {'Ca peak':>8} | {'CaMKII':>6} | {'CaN':>6} | "
