@@ -1,6 +1,6 @@
 {
   "stage": "1",
-  "progress": 200,
+  "progress": 300,
   "total": 12253,
   "results_so_far": [
     {
@@ -1201,6 +1201,606 @@
       "name": "nc__anthranilic-C2__4-CF3-phenyl__tetrazole__-OMe",
       "smiles": "COc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C(F)(F)F",
       "dG": -6.437,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__tetrazole__-OH",
+      "smiles": "Oc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.663,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.652,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C(F)(F)F",
+      "dG": -6.43,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1ccccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.372,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.691,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.549,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(Nc2ccc(C(F)(F)F)cc2)cccc1C(F)(F)F",
+      "dG": -7.225,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cccc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NO",
+      "dG": -6.332,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.363,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cccc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NO",
+      "dG": -6.695,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c(Nc2ccc(C(F)(F)F)cc2)cccc1[N+](=O)[O-]",
+      "dG": -6.625,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.206,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.678,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.327,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C(F)(F)F)cc2)cccc1C(F)(F)F",
+      "dG": -6.89,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cccc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.275,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cccc1Nc1ccc(C(F)(F)F)cc1",
+      "dG": -6.394,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cccc(Nc2ccc(C(F)(F)F)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.831,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CF3-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C(F)(F)F)cc2)cccc1[N+](=O)[O-]",
+      "dG": -6.754,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-H",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1",
+      "dG": -5.651,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-Cl",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1Cl",
+      "dG": -5.771,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-F",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1F",
+      "dG": -5.768,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-CF3",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1C(F)(F)F",
+      "dG": -6.021,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2C(=O)O)ccc1C#N",
+      "dG": -5.481,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-OH",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1O",
+      "dG": -5.954,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2C(=O)O)ccc1C#N",
+      "dG": -5.786,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__COOH__-NO2",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)O)cc1[N+](=O)[O-]",
+      "dG": -5.923,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-H",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1",
+      "dG": -5.997,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-Cl",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -6.116,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-F",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1F",
+      "dG": -6.106,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-CF3",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.396,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C#N",
+      "dG": -5.939,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-OH",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1O",
+      "dG": -6.21,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1C#N",
+      "dG": -6.172,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__tetrazole__-NO2",
+      "smiles": "N#Cc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -6.085,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-H",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1",
+      "dG": -5.798,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-Cl",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1Cl",
+      "dG": -5.851,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-F",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1F",
+      "dG": -5.901,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-CF3",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1C(F)(F)F",
+      "dG": -6.192,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2C(=O)NO)ccc1C#N",
+      "dG": -5.757,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-OH",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1O",
+      "dG": -6.101,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2C(=O)NO)ccc1C#N",
+      "dG": -5.903,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHOH__-NO2",
+      "smiles": "N#Cc1ccc(Nc2ccccc2C(=O)NO)cc1[N+](=O)[O-]",
+      "dG": -6.001,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccccc1Nc1ccc(C#N)cc1",
+      "dG": -5.772,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cccc1Nc1ccc(C#N)cc1",
+      "dG": -6.25,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cccc1Nc1ccc(C#N)cc1",
+      "dG": -5.885,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C#N)cc2)cccc1C(F)(F)F",
+      "dG": -6.358,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cccc(Nc2ccc(C#N)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.672,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cccc1Nc1ccc(C#N)cc1",
+      "dG": -5.631,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cccc(Nc2ccc(C#N)cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.132,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-CN-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc(C#N)cc2)cccc1[N+](=O)[O-]",
+      "dG": -5.952,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-H",
+      "smiles": "O=C(O)c1ccccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.729,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-Cl",
+      "smiles": "O=C(O)c1c(Cl)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.796,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-F",
+      "smiles": "O=C(O)c1c(F)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.773,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-CF3",
+      "smiles": "O=C(O)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1C(F)(F)F",
+      "dG": -6.443,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-OMe",
+      "smiles": "COc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)O",
+      "dG": -5.483,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-OH",
+      "smiles": "O=C(O)c1c(O)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.561,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-Me",
+      "smiles": "Cc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)O",
+      "dG": -5.906,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__COOH__-NO2",
+      "smiles": "O=C(O)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1[N+](=O)[O-]",
+      "dG": -5.951,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-Cl",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2ccccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -6.241,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-F",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2ccccc2-c2nnn[nH]2)cc1F",
+      "dG": -6.312,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-CF3",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2ccccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.347,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1[N+](=O)[O-]",
+      "dG": -6.132,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-OH",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2ccccc2-c2nnn[nH]2)cc1O",
+      "dG": -6.457,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1[N+](=O)[O-]",
+      "dG": -6.227,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__tetrazole__-NO2",
+      "smiles": "O=[N+]([O-])c1ccc(Nc2ccccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -6.199,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-H",
+      "smiles": "O=C(NO)c1ccccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.892,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-Cl",
+      "smiles": "O=C(NO)c1c(Cl)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -6.181,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-F",
+      "smiles": "O=C(NO)c1c(F)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -6.013,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-CF3",
+      "smiles": "O=C(NO)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1C(F)(F)F",
+      "dG": -6.802,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-OMe",
+      "smiles": "COc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NO",
+      "dG": -5.934,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-OH",
+      "smiles": "O=C(NO)c1c(O)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -6.006,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-Me",
+      "smiles": "Cc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NO",
+      "dG": -6.296,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHOH__-NO2",
+      "smiles": "O=C(NO)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1[N+](=O)[O-]",
+      "dG": -6.207,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-H",
+      "smiles": "CS(=O)(=O)NC(=O)c1ccccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.773,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-Cl",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Cl)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -6.102,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-F",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(F)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.992,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-CF3",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1C(F)(F)F",
+      "dG": -6.778,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-OMe",
+      "smiles": "COc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -5.924,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-OH",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(O)cccc1Nc1ccc([N+](=O)[O-])cc1",
+      "dG": -5.857,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-Me",
+      "smiles": "Cc1cccc(Nc2ccc([N+](=O)[O-])cc2)c1C(=O)NS(C)(=O)=O",
+      "dG": -6.396,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NO2-phenyl__CONHSO2Me__-NO2",
+      "smiles": "CS(=O)(=O)NC(=O)c1c(Nc2ccc([N+](=O)[O-])cc2)cccc1[N+](=O)[O-]",
+      "dG": -6.281,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-H",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1",
+      "dG": -5.472,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-Cl",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1Cl",
+      "dG": -5.742,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-F",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1F",
+      "dG": -5.743,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-CF3",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1C(F)(F)F",
+      "dG": -5.964,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2C(=O)O)ccc1N",
+      "dG": -5.538,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-OH",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1O",
+      "dG": -5.857,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2C(=O)O)ccc1N",
+      "dG": -5.69,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__COOH__-NO2",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)O)cc1[N+](=O)[O-]",
+      "dG": -5.915,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-H",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1",
+      "dG": -5.955,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-Cl",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1Cl",
+      "dG": -6.217,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-F",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1F",
+      "dG": -6.106,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-CF3",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1C(F)(F)F",
+      "dG": -6.509,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-OMe",
+      "smiles": "COc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1N",
+      "dG": -6.042,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-OH",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1O",
+      "dG": -6.202,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-Me",
+      "smiles": "Cc1cc(Nc2ccccc2-c2nnn[nH]2)ccc1N",
+      "dG": -6.082,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__tetrazole__-NO2",
+      "smiles": "Nc1ccc(Nc2ccccc2-c2nnn[nH]2)cc1[N+](=O)[O-]",
+      "dG": -6.13,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__CONHOH__-H",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)NO)cc1",
+      "dG": -5.674,
+      "is_covalent": false
+    },
+    {
+      "name": "nc__anthranilic-C2__4-NH2-phenyl__CONHOH__-Cl",
+      "smiles": "Nc1ccc(Nc2ccccc2C(=O)NO)cc1Cl",
+      "dG": -5.782,
       "is_covalent": false
     }
   ]
