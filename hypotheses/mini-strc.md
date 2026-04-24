@@ -1,5 +1,5 @@
 ---
-date: 2026-04-22
+date: 2026-04-24
 type: synthesis
 title: Mini-STRC Single-Vector Hypothesis
 tags:
@@ -13,52 +13,81 @@ tags:
 - legacy-hypothesis-sheet
 status: active
 priority: primary
-stage: computational-validation
+tier: S
+lit_audit: fixed
+lit_audit_date: 2026-04-24
+stage: clinical-vector-ready
 ---
 
-> Legacy STRC synthesis sheet. Canonical hypothesis state now lives in `research/strc/hypotheses/hXX-*/hub.md`; durable claims live as atomic notes in `notes/`.
+> Canonical hypothesis state now lives in `~/STRC/hypotheses/h03-mini-strc/index.md` (post vault-split 2026-04-24). Full research wiki at [wiki.strc.egor.lol](https://wiki.strc.egor.lol/hypotheses/h03-mini-strc). This page is the legacy synthesis sheet kept in sync for marketing.
 
 ## Core claim
 
-STRC (5,325 bp CDS) is too big for single AAV (4,700 bp limit). Truncating to residues 700–1775 produces a 3,228 bp mini-gene that fits in single AAV with 1,472 bp headroom, retains both LRR domain and C-terminal functional core, and maintains structural integrity.
+STRC (5,325 bp CDS) is too big for single AAV (4,700 bp limit). The **Ultra-Mini construct (aa 1075–1775, 2,106 bp CDS)** preserves the TMEM145-binding C-terminal core and fits into a single AAV with comfortable regulatory headroom. The original Mini construct (aa 700–1775, 3,228 bp CDS) retains more of the protein but leaves much less room for regulatory elements. Ultra-Mini is the current lead architecture; Mini 700–1775 stays as backup.
 
-## Current evidence (all computational)
+## Lead construct — Ultra-Mini 1075–1775
 
-- pTM 0.86 (700–1775 construct), 4% disordered — best fold-to-coverage ratio
-- N-terminal (1–699) is intrinsically disordered: pTM 0.27, 38% unstructured
-- Removing N-terminal improves folding 0.63 → 0.86 (explained by hierarchical constraint propagation, Li et al. 2026)
-- TMEM145 GOLD domain binding preserved: ipTM 0.43 vs 0.47 full-length
-- GPI-anchor signal intact: NetGPI 1.1 confirms omega site S1749
-- Signal peptide: IgK SP scores 99.97% on SignalP 6.0 (vs native 93.4%)
-- Localization confirmed: DeepLoc 2.1 → Extracellular + Lipid anchor (72.1%)
-- Full construct fits AAV: SP + B8 enhancer + CDS + polyA = 4,103 bp (597 bp headroom)
+- CDS 2,106 bp (701 aa), pTM 0.87, 2% disordered
+- TMEM145 GOLD-domain binding preserved: AF3 ipTM 0.68 (vs 0.47 full-length)
+- GPI-anchor signal intact: NetGPI 1.1, omega site S1749
+- Signal peptide: IgK leader scores 99.97% on SignalP 6.0
+- Localization: DeepLoc 2.1 → Extracellular + Lipid anchor (72.1%)
+- CpG depletion: 0 CpG achieved at 3.65% CAI cost (`cpg_depletion_ultra_mini_strc.py`)
 - 5 of 14 N-glycosylation sites retained, all high-confidence (NetNGlyc 1.0: 0.52–0.72)
-- Normal Mode Analysis: N-terminal dynamically decoupled (modes 1-20 localized >92%), subspace overlap 0.905
-- Population variants: 87% of pathogenic variants in retained region (ClinVar, 427 variants)
-- Comparative genomics: birds lack STRC yet hear; Pfam LRR boundary = our cut point
-- CpG hazard: 156 CpGs (4.9x genome avg) — 87% reducible by synonymous swaps at 3% CAI cost
-- ΔΔG confirmed: binding destabilization 8.4 kcal/mol, folding stable +0.9 kcal/mol
-- Precedent: micro-dystrophin (FDA approved) validates mini-gene approach
+- ΔΔG of binding destabilization 8.4 kcal/mol; folding stable +0.9 kcal/mol
 
-## Backup construct
+## Vector architecture (B8 + Ultra-Mini + WPRE3)
 
-Residues 1075–1775: pTM 0.87, 2,597 bp headroom. Better fold but removes 60% of protein — needs functional validation before using.
+Full assembled cassette, 5'-ITR to 3'-ITR:
+
+| Element | Size (bp) | Source |
+|---|---|---|
+| 5' ITR (AAV2) | 145 | Samulski 1987 |
+| B8 OHC-specific enhancer | **706** | Zhao et al. 2025, *Neuron* 113(10):1579–1596 · PMID 40262614 |
+| Kozak + IgK signal peptide | 63 | canonical / Choi 2014 |
+| Ultra-Mini CDS (CpG-depleted) | 2,106 | this project |
+| Stop codon | 3 | — |
+| WPRE3-compact | 219 | Choi et al. 2014, *Mol Brain* 7:17 · PMID 24618276 |
+| bGH polyA | 208 | pAAV-MCS canonical |
+| 3' ITR (AAV2) | 145 | Samulski 1987 |
+| **Total** | **3,565** | 75.9% of 4,700 bp AAV capacity — 1,135 bp spare |
+
+B8 composition (Zhao 2025 Fig 6A / Fig S6A-B): E1P3×2 + E2P2×2 + E2P3×2, with modules E1P3 = 93 bp, E2P2 = 132 bp, E2P3 = 128 bp — contiguous back-calculation 706 bp. Exact cloned sequence including KpnI/XbaI linkers lives in Zhao 2025 Table S2 (SI Excel); treated as a cloning-QC gate before GMP submission.
+
+## Literature audit — closed 2026-04-24
+
+A vault-wide audit on 2026-04-23/25 flagged phantom citations across most hypotheses. For h03 the fixes were:
+
+- B8 enhancer source: "Yoshimura 2018" (phantom) → **Zhao et al. 2025 Neuron, PMID 40262614**
+- Myo15 truncated promoter: "Zhao 2024" (phantom) → **Hu et al. 2024 Research (AAAS), PMID 38665848**
+- WPRE3: "Choi 2014 Cell 157" (wrong journal) → **Choi et al. 2014 Mol Brain 7:17, PMID 24618276**
+- B8 size: script value 587 bp (no literature backing) retracted; set to 706 bp per Zhao 2025 module back-calc
+
+Vector scripts re-run clean with corrected parameters. `lit_audit: partial → fixed`; h03 re-promoted A → S.
+
+## Backup construct — Mini 700–1775
+
+- CDS 3,228 bp (1,076 aa), pTM 0.86, 4% disordered — retains LRR domain
+- N-terminal 1–699 is intrinsically disordered (pTM 0.27, 38% unstructured); removing it improves folding 0.63 → 0.86 (hierarchical constraint propagation, Li et al. 2026)
+- Comparative genomics: birds lack STRC yet hear; Pfam LRR boundary coincides with this cut
+- 87% of pathogenic variants land in the retained region (ClinVar, 427 variants)
+- Fits AAV only with minimal regulatory elements — no room for WPRE3 + B8 together
+- Kept as fallback if Ultra-Mini fails functional validation
 
 ## Open questions (lab required)
 
-- Does mini-STRC localize correctly to stereocilia tips?
-- Does it form horizontal top connectors with tectorial membrane?
-- Does hair cell function recover (ABR, DPOAE in STRC knockout mice)?
+- Does Ultra-Mini localize correctly to stereocilia tips?
+- Does it form horizontal top connectors with the tectorial membrane?
+- Does hair cell function recover (ABR, DPOAE in STRC-knockout mice)?
 - Does loss of 9 N-glycosylation sites affect trafficking in vivo?
 
-## Computational next steps
+## Next steps
 
-- Molecular dynamics (GROMACS/OpenMM) at 37°C to verify fold stability
-- Commercial codon optimization — current CAI 0.711, GC 54.5% (can improve 2-10x expression)
-- AF3 with membrane context and glycan modifications
-- Systematic exon-deletion sweep (29 AF3 jobs) to find structurally dispensable exons
-- HADDOCK/ClusPro docking as orthogonal validation of AF3 interaction predictions
-- CpG depletion — **must do before lab**
+1. Order Ultra-Mini gBlock + B8+WPRE3 cassette
+2. Verify B8 exact cloned sequence against Zhao 2025 Table S2 (KpnI/XbaI linkers)
+3. Clone pAAV B8-IgK-Ultra-Mini-WPRE3-bGH
+4. Phase 4 HEK coIP — does Ultra-Mini pull down TMEM145?
+5. Shanghai Shu Yilai c.4976 knock-in mouse — transduction + ABR rescue
 
 ## Recent Papers
 
