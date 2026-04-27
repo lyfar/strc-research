@@ -1,0 +1,186 @@
+{
+  "updatedDate": "2026-04-27",
+  "source": "/Users/egorlyfar/STRC/hypotheses/*/index.md",
+  "hypotheses": [
+    {
+      "num": 1,
+      "title": "STRC Pharmacochaperone Virtual Screen E1659A",
+      "mech": "4",
+      "deliv": "3",
+      "misha": "4",
+      "tier": "A",
+      "status": "Small-molecule ear drop binds electropositive K1141 pocket on E1659A STRC via Coulomb attraction. Matched-ensemble APBS 2026-04-25: MUT +5.99±1.37 vs WT +1.46±1.55 kT/e (n=20 each), Δ=+4.53±0.46 kT/e = −2.79±0.28 kcal/m…",
+      "nextStep": "Wetlab handoff packet v0.1 delivered 2026-04-27. H01 is ready for assay-scoping RFQ, not lead-candidate nomination. P0 next: send separate RFQs for (1) v5.3 custom synthesis of 1-indanyl_acylsulfonamide_SO2Me_-Cl + adamantyl_acylsulfonamide_SO2Me_-Cl, optional adamantyl_-CF3; (2) STRC 1066-1216 K1141-fragment WT/E1659…"
+    },
+    {
+      "num": 2,
+      "title": "STRC Piezoelectric TM Bioelectronic Amplifier",
+      "mech": "2",
+      "deliv": "1",
+      "misha": "5",
+      "tier": "C",
+      "status": "PVDF-TrFE nanofilm on OHC-apical membrane drives prestin via extracellular piezoelectric field; bypasses native STRC entirely.",
+      "nextStep": "Blocked on literature — V_saturation, OHC membrane resistance, 210 kPa Young's modulus all unsourced; TM displacement 5–30 nm is in-house assumption. No compute advance until primary lit retrieved."
+    },
+    {
+      "num": 3,
+      "title": "STRC Mini-STRC Single-Vector Hypothesis",
+      "mech": "5",
+      "deliv": "5",
+      "misha": "4",
+      "tier": "S",
+      "status": "Truncated STRC (Ultra-Mini 1075-1775) packaged into single AAV for DFNB16 gene therapy — current S-tier lead strategy.",
+      "nextStep": "Order Ultra-Mini gBlock + B8+WPRE3 cassette; clone pAAV B8-IgK-Ultra-Mini-WPRE3-bGH; Phase 4 HEK coIP. Verify B8 exact cloned sequence against Zhao 2025 Table S2 before GMP submission (cloning QC, not design blocker)."
+    },
+    {
+      "num": 4,
+      "title": "STRC mRNA-LNP Strategy B Full-Length",
+      "mech": "3",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "B",
+      "status": "mRNA encoding STRC delivered via cochlear LNP; intraductal dosing avoids AAV packaging limits and enables repeat administration.",
+      "nextStep": "Academic/interim if AAV fails"
+    },
+    {
+      "num": 5,
+      "title": "STRC Calcium Oscillation Acoustic Therapy",
+      "mech": "3",
+      "deliv": "4",
+      "misha": "2",
+      "tier": "C",
+      "status": "Chronic 45-60 dB sound via hearing aid drives AC1-CREB signaling → endogenous STRC upregulation (Touch Grass as therapy).",
+      "nextStep": "Blocked — 6 load-bearing parameters without primary lit (STRC mRNA t½, STRC protein t½, STRC copy #/OHC, CRE K_half, PDE4 Vmax OHC, CaMKII k_auto). Three require own wet-lab. No compute advance until own measurements or literature-absence explicitly documented in each script."
+    },
+    {
+      "num": 6,
+      "title": "STRC mRNA Therapy Hypothesis",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "B",
+      "status": "Protein-replacement via direct mRNA to OHCs with OHC-tropic LNP formulation (variant of h04 emphasising tropism).",
+      "nextStep": "Quantify Sun 2026 RBM24 splicing effect on E1659A maternal allele — ASO Phase 1 cross-reference (2026-sun-rbm24-alternative-splicing-cochlear)"
+    },
+    {
+      "num": 7,
+      "title": "Prime Editing for STRC",
+      "mech": "3",
+      "deliv": "2",
+      "misha": "1",
+      "tier": "C",
+      "status": "PE3b allele-discriminating edit of maternal E1659A locus — killed 2026-04-22 by STRCP1 paralog cross-hybridization on 61/61 pegRNAs.",
+      "nextStep": "Wet-lab ribosome-profiling STRCP1"
+    },
+    {
+      "num": 8,
+      "title": "STRC ASO Exon Skipping",
+      "mech": "2",
+      "deliv": "3",
+      "misha": "2",
+      "tier": "C",
+      "status": "Splice-switching ASO targeting cryptic exons E1-E4 — killed 2026-04-22 by STRCP1 paralog cross on 54/54 candidates.",
+      "nextStep": "Phase 3a morpholino + 3b gapmer"
+    },
+    {
+      "num": 9,
+      "title": "STRC Synthetic Peptide Hydrogel HTC",
+      "mech": "5",
+      "deliv": "4",
+      "misha": "3",
+      "tier": "S",
+      "status": "Self-assembling peptide ear drop forms synthetic horizontal top connectors without gene delivery (SAP hydrogel strategy).",
+      "nextStep": "Phase 4m DELIVERED 2026-04-27: within-family WH2 x G-actin AF3 calibration PASS. Fit R2=0.690; h09 WH2 ipTM=0.60 predicts Kd_G=1.48e-7 M and Tbeta4-scaled Kd_F=1.48 mM (<5 mM gate). Phase 4j conservative case closes: at C_eff=50 mM, N=3 gives Kd_eff=1.30 uM and N=4 gives 38.39 nM, both below 50 uM. Tier tentative-S ->…"
+    },
+    {
+      "num": 10,
+      "title": "STRC In Situ SpyCatcher Assembly",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "C",
+      "status": "Split-SpyCatcher/SpyTag peptide fragments covalently assemble a STRC-equivalent scaffold in perilymph after topical delivery.",
+      "nextStep": "Wet-lab only if #3 fails"
+    },
+    {
+      "num": 11,
+      "title": "STRC Engineered TECTA Chimera",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "C",
+      "status": "Re-engineer the tectorial membrane to anchor to bundles without STRC, via AAV-delivered TECTA chimera to supporting cells.",
+      "nextStep": "Alt scaffold deferred"
+    },
+    {
+      "num": 12,
+      "title": "Sonogenetic STRC Computational Proof",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "C",
+      "status": "Sonogenetic stimulation of OHCs using acoustically-gated ion channels (MscL or TRP variants) to restore mechanotransduction.",
+      "nextStep": "Speculative; no near-term path"
+    },
+    {
+      "num": 13,
+      "title": "STRC Programmable Recombinases",
+      "mech": "2",
+      "deliv": "1",
+      "misha": "3",
+      "tier": "C",
+      "status": "Seamless recombinase-based editing for DFNB16 (Lilly 2026 cochlear recombinase framework adapted to STRC locus).",
+      "nextStep": "Technology-watch only"
+    },
+    {
+      "num": 14,
+      "title": "STRC Protein Replacement Therapy",
+      "mech": "2",
+      "deliv": "1",
+      "misha": "3",
+      "tier": "C",
+      "status": "Direct STRC protein delivery to perilymph via intratympanic injection; bypass genetic intervention entirely.",
+      "nextStep": "No delivery route"
+    },
+    {
+      "num": 15,
+      "title": "STRC OTOA Paralog Cross-Rescue",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "2",
+      "tier": "D",
+      "status": "Upregulate OTOA (STRC paralog) to take over HTC/TM anchor function — chimera avenue killed on Cα RMSD 13.78 Å (ARM region).",
+      "nextStep": "Chimera dead; upregulation weak"
+    },
+    {
+      "num": 16,
+      "title": "STRC ZP Domain Prion-Like Seeding",
+      "mech": "3",
+      "deliv": "2",
+      "misha": "1",
+      "tier": "D",
+      "status": "Low-dose WT STRC templates Misha's folded E1659A monomers into mixed fibrils (prion-like cross-templating seeding therapy).",
+      "nextStep": "Wrong patient (paternal 98kb Δ)"
+    },
+    {
+      "num": 26,
+      "title": "STRC Engineered Homodimer Avidity",
+      "mech": "2",
+      "deliv": "5",
+      "misha": "4",
+      "tier": "B",
+      "status": "Single-point mutation (R1581Y/F, S1579W/F) stabilises weak Ultra-Mini homodimer interface → 100-1000× avidity on Mini-STRC with zero new AAV payload.",
+      "nextStep": "Phase 1d AF3 A1078C/S1080C/S1579C"
+    },
+    {
+      "num": 27,
+      "title": "STRC STRCP1 Activation Rescue",
+      "mech": "2",
+      "deliv": "2",
+      "misha": "4",
+      "tier": "C",
+      "status": "Reframe STRCP1 paralog identity as asset — CRISPRa activates endogenous STRCP1 as STRC backup; Gate 1 = wet-lab ribosome profiling.",
+      "nextStep": "Email Holt lab ribosome-profiling"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ const killedCount = grouped.D.length + grouped['D/C'].length;
     <h2 class="text-lg font-bold mt-1 mb-1">Research Hypotheses</h2>
     <p class="text-xs text-neutral-400 mb-3">
       Rolling rubric for all STRC/DFNB16 hypotheses, Misha-centric. Each scored 1–5 on Mechanism (M), Delivery (D), Misha-fit (F).
-      Tier ≈ min(M, D, F). This page mirrors <code class="text-[10px] bg-white/5 px-1 py-0.5 rounded">~/Brain/notes/STRC Hypothesis Ranking.md</code> — the canonical register.
+      Tier ≈ min(M, D, F). This page mirrors <code class="text-[10px] bg-white/5 px-1 py-0.5 rounded">~/STRC/hypotheses/index.md</code> — the canonical register.
     </p>
     <div class="flex flex-wrap gap-4 text-[11px] font-mono text-neutral-500 mb-6">
       <span>{total} hypotheses</span>
@@ -69,13 +69,8 @@ const killedCount = grouped.D.length + grouped['D/C'].length;
                 <h3 class={`text-sm font-semibold mb-1.5 ${muted ? 'line-through text-neutral-500' : 'text-white group-hover:text-white/90'}`}>
                   {h.title}
                 </h3>
-                {tier !== 'reference' && (
-                  <p class="text-[11px] text-neutral-500 mb-1.5">
-                    <span class="text-neutral-400">Evidence:</span> {h.evidence}
-                  </p>
-                )}
                 <p class="text-[11px] text-neutral-500 mb-1.5">
-                  <span class="text-neutral-400">Status:</span> {h.status}
+                  <span class="text-neutral-400">Summary:</span> {h.status}
                 </p>
                 {h.nextStep && h.nextStep !== '—' && (
                   <p class="text-[11px] text-neutral-500">

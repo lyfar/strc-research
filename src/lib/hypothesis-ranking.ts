@@ -1,4 +1,4 @@
-import rankingMd from '../data/hypothesis-ranking.md?raw';
+import rankingJson from '../data/hypothesis-ranking.json';
 import slugsJson from '../data/hypothesis-slugs.json';
 
 export type Tier = 'S' | 'A' | 'B' | 'C' | 'D' | 'D/C' | 'reference';
@@ -10,7 +10,6 @@ export interface Hypothesis {
   mech: string;
   deliv: string;
   misha: string;
-  evidence: string;
   status: string;
   tier: Tier;
   nextStep: string;
@@ -34,44 +33,23 @@ function normalizeTier(raw: string): Tier {
   return 'reference';
 }
 
-function parseRow(line: string): Hypothesis | null {
-  const cells = line.split('|').map(c => c.trim());
-  if (cells.length < 10) return null;
-  const [, numStr, titleRaw, mech, deliv, misha, evidence, status, tierRaw, nextStep] = cells;
-  const num = parseInt(numStr, 10);
-  if (isNaN(num)) return null;
-  const wikilinkMatch = titleRaw.match(/\[\[([^\]]+)\]\]/);
-  if (!wikilinkMatch) return null;
-  const title = wikilinkMatch[1];
-  const suffix = titleRaw.replace(/\[\[[^\]]+\]\]/, '').trim();
-  const displayTitle = suffix ? `${title} ${suffix}` : title;
-  const slug = slugMap[title] ?? null;
-  return {
-    num,
-    title: displayTitle,
-    slug,
-    mech: cleanCell(mech),
-    deliv: cleanCell(deliv),
-    misha: cleanCell(misha),
-    evidence: cleanCell(evidence),
-    status: cleanCell(status),
-    tier: normalizeTier(tierRaw),
-    nextStep: cleanCell(nextStep),
-  };
-}
-
 export function parseRanking(): {
   hypotheses: Hypothesis[];
   updatedDate: string | null;
 } {
-  const rows: Hypothesis[] = [];
-  for (const line of rankingMd.split('\n')) {
-    if (!/^\|\s*\d+\s*\|/.test(line)) continue;
-    const h = parseRow(line);
-    if (h) rows.push(h);
-  }
-  const dateMatch = rankingMd.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
-  return { hypotheses: rows, updatedDate: dateMatch ? dateMatch[1] : null };
+  const data = rankingJson as {
+    updatedDate: string | null;
+    hypotheses: Array<Omit<Hypothesis, 'slug' | 'tier'> & { tier: string }>;
+  };
+
+  return {
+    updatedDate: data.updatedDate,
+    hypotheses: data.hypotheses.map((h) => ({
+      ...h,
+      slug: slugMap[h.title] ?? null,
+      tier: normalizeTier(h.tier),
+    })),
+  };
 }
 
 export const TIER_ORDER: Tier[] = ['S', 'A', 'B', 'C', 'D/C', 'D', 'reference'];
