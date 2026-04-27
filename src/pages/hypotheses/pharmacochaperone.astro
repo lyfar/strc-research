@@ -3,124 +3,211 @@ import Layout from '../../layouts/Layout.astro';
 
 const lang = 'en';
 
-const scores = [
-  { label: 'Mechanism', value: '4/5', note: 'Mutation-biased K1141 pocket signal is supported by matched APBS, ensemble docking, tauRAMD, and a caveated MM-GBSA smoke.' },
-  { label: 'Delivery', value: '3/5', note: 'Intratympanic exposure can be made plausible by dose, but cochlear distribution and selectivity still need wet validation.' },
-  { label: 'Index fit', value: '4/5', note: 'The first allele is Misha\'s maternal STRC E1659A; the larger claim is a reusable missense-rescue workflow.' },
-  { label: 'Current tier', value: 'A', note: 'Ready for assay-scoping RFQ, not lead-candidate nomination or efficacy language.' },
+const stats = [
+  { label: 'Phase notes', value: '66', note: 'Atomic proof notes filed under the H01 hypothesis workspace.' },
+  { label: 'Runnable scripts', value: '49', note: 'Python / shell scripts for docking, APBS, ADMET, tauRAMD, PBPK, figures, and MM-GBSA.' },
+  { label: 'Artifact families', value: '22', note: 'Named output directories for phase runs, figures, docking sets, ADMET, tauRAMD, and RFQ assets.' },
+  { label: 'Current status', value: 'RFQ', note: 'Computational package is ready for assay-scoping, not clinical translation.' },
 ];
 
-const thesisCards = [
+const methodStack = [
   {
-    title: 'Index case',
-    body: 'Misha defines the first allele, the first protein construct, and the first assay question. That makes H01 concrete instead of abstract.',
+    method: 'Matched WT/MUT structural ensembles',
+    compute: 'Full-length STRC MD snapshots, WT and E1659A, then matched APBS pocket electrostatics.',
+    scale: '20 WT frames + 20 mutant frames',
+    key: 'Mutant pocket formal-anion preference = -2.79 +/- 0.28 kcal/mol; p=6.9e-12.',
   },
   {
-    title: 'Platform thesis',
-    body: 'The repeatable move is allele-to-pocket-to-ligand: find a mutation-exposed stabilizing pocket, design a small molecule, and ask for direct target engagement.',
+    method: 'Fragment and pocket validation',
+    compute: 'AF3 fragment ladder plus K1141 local-geometry checks against the MD-relaxed parent structure.',
+    scale: '8 AF3 jobs, 40 CIFs, 40 confidence files',
+    key: '151-aa E1659A fragment kept K1141-ring RMSD at 0.97 A; pocket pLDDT 78.7.',
   },
   {
-    title: 'Collaborator ask',
-    body: 'The near-term ask is not belief in a cure. It is a bounded experiment that can validate or kill the first allele in synthesis, protein QC, and biophysics.',
+    method: 'Chemistry library design',
+    compute: 'RDKit triage of weak-anion acyl-sulfonamide bioisostere candidates.',
+    scale: '12 designed SMILES, 6 passed filters',
+    key: 'Top-3 v5.3 candidates selected for Boltz-2, Vina, ADMET, and tauRAMD.',
   },
   {
-    title: 'Expansion rule',
-    body: 'Generalization only applies where a missense allele leaves residual, foldable protein and a measurable stabilization or trafficking assay exists.',
+    method: 'Boltz-2 + Vina consensus',
+    compute: 'Protein-ligand cofolding and mutant-ensemble redocking of the v5.3 top-3.',
+    scale: '5 Boltz diffusion seeds x 3 ligands; 20 MD snapshots x 3 ligands in Vina',
+    key: 'Both methods put 1-indanyl_SO2Me_-Cl on the affinity track; all 3 passed ipTM >= 0.50.',
+  },
+  {
+    method: 'Residence-time / tauRAMD',
+    compute: 'Biased-MD ligand escape simulations on STRC and off-target TRPM4.',
+    scale: '25/25 v5.2 STRC unbound; 6/6 TRPM4 unbound; 60/60 v5.3 STRC unbound',
+    key: 'Selectivity rescue did not clear the >5x gate; v5.3 cross-target bound <=2.72x.',
+  },
+  {
+    method: 'Off-target electrostatics',
+    compute: 'APBS pocket-potential resampling across STRC and cochlear ion-channel off-targets.',
+    scale: 'STRC, TRPM4, TMEM16A, KCNQ4, Cx50 panels',
+    key: 'STRC pocket is electropositive, but dominant off-target pocket ceilings remain higher.',
+  },
+  {
+    method: 'Cochlear exposure model',
+    compute: '8-compartment PBPK ODE with intratympanic dose sweep.',
+    scale: '100 uM / 1 mM / 10 mM x fast/default/slow apical uptake',
+    key: '1 mM IT gives 94-97% time above 1 uM in HC_ER without cytosol safety breach in the model.',
+  },
+  {
+    method: 'Endpoint free-energy smoke',
+    compute: 'Repaired matched Amber WT/E1659A complexes, restrained min-relax frames, MMPBSA.py GB scoring.',
+    scale: '6 frames WT + 6 frames E1659A',
+    key: 'E1659A-minus-WT DELTA TOTAL = -2.35 kcal/mol; supportive smoke, not production holo MD.',
   },
 ];
 
-const roadmap = [
+const phaseEvidence = [
   {
     step: '01',
-    title: 'Anchor on an index allele',
-    body: 'Start from a real genotype and biology: STRC E1659A as the first private-allele problem, not an abstract screen.',
+    layer: 'Pocket premise',
+    evidence: 'K1141 pocket profile',
+    measurement: 'Volume 1145 A3; hydrophobic fraction 0.61; pocket-to-ligand volume ratio 2.75.',
+    interpretation: 'Large enough and chemically plausible enough to justify ligand design.',
+    state: 'Supports mechanism',
   },
   {
     step: '02',
-    title: 'Map mutation-biased pockets',
-    body: 'Use structure ensembles, electrostatics, and docking to find pockets where the mutant state creates a stabilizer opportunity.',
+    layer: 'Mutant specificity',
+    evidence: 'Matched-ensemble APBS',
+    measurement: 'WT +1.46 +/- 1.55 kT/e; E1659A +5.99 +/- 1.37; delta +4.53 +/- 0.46 kT/e.',
+    interpretation: 'E1659A creates a statistically strong anion-favouring electrostatic environment.',
+    state: 'Strong computational support',
   },
   {
     step: '03',
-    title: 'Design a tractable chemistry class',
-    body: 'Move away from toxic parent scaffolds toward weak-anion acyl sulfonamides that balance pocket charge, permeability, and ADMET flags.',
+    layer: 'Construct feasibility',
+    evidence: 'AF3 K1141 fragment ladder',
+    measurement: '8 AlphaFold Server jobs; best operational fragment = 151_e1659a, ring RMSD 0.97 A.',
+    interpretation: 'A 1066-1216 fragment is a plausible first biophysics reagent for K1141-pocket assays.',
+    state: 'Ready for expression RFQ',
   },
   {
     step: '04',
-    title: 'Attack computational artifacts',
-    body: 'Separate APBS, Vina, Boltz-2, tauRAMD, and MM-GBSA claims so a single scoring-function artifact cannot carry the story.',
+    layer: 'v5.2 kinetic screen',
+    evidence: 'Production tauRAMD on v5.2 shortlist',
+    measurement: '5 ligands x 5 replicas; 25/25 unbound; within-STRC residence spread 1.7x.',
+    interpretation: 'Residence-time differences exist, but same-head-class kinetic selectivity is too small.',
+    state: 'Constrains claim',
   },
   {
     step: '05',
-    title: 'Run target-engagement wetlab gates',
-    body: 'Synthesize the small set, express WT/E1659A STRC fragment, then test stabilization and direct binding before any rescue claim.',
+    layer: 'Off-target risk',
+    evidence: 'TRPM4 cross-target tauRAMD',
+    measurement: '2 ligands x 3 replicas; TRPM4/STRC residence ratios 1.08x-1.52x.',
+    interpretation: 'Kinetic-selectivity rescue failed for v5.2 by at least a 3x margin versus the >5x gate.',
+    state: 'Negative but useful',
   },
   {
     step: '06',
-    title: 'Move to rescue and selectivity',
-    body: 'Only after direct biophysics: cell trafficking or mature-glycoform rescue, plus cochlear ion-channel and aggregation counterscreens.',
+    layer: 'Exposure model',
+    evidence: 'PBPK dose sweep',
+    measurement: '1 mM IT: 93.8-96.9% of 72 h with HC_ER >= 1 uM; 0% HC_CYT >= 50 uM.',
+    interpretation: 'Exposure is not the main blocker if 1 mM intratympanic dosing is acceptable.',
+    state: 'Supports delivery feasibility',
   },
   {
     step: '07',
-    title: 'Clone the workflow to other alleles',
-    body: 'If the first allele passes, repeat the same gate structure across other missense folding and trafficking diseases.',
+    layer: 'v5.3 chemistry',
+    evidence: 'Acyl-sulfonamide library',
+    measurement: '12 candidates designed; 6/12 passed Lipinski + TPSA <=100 + mono-anion gates.',
+    interpretation: 'Weak-anion head-group pivot produced a tractable next-gen chemistry set.',
+    state: 'Supports next experiment',
+  },
+  {
+    step: '08',
+    layer: 'Affinity ranking',
+    evidence: 'Boltz-2 + Vina v5.3 consensus',
+    measurement: 'Boltz ipTM rank-1 0.645 for 1-indanyl_-Cl; Vina mean rank-1 -0.67 kcal/mol.',
+    interpretation: '1-indanyl_acylsulfonamide_SO2Me_-Cl is the affinity-track compound.',
+    state: 'Lead-track evidence',
+  },
+  {
+    step: '09',
+    layer: 'Conformational robustness',
+    evidence: 'v5.3 mutant-ensemble redock',
+    measurement: '3 ligands x 20 E1659A MD snapshots; 1-indanyl_-Cl rank-1 by mean and median.',
+    interpretation: 'Affinity signal is not just a single static receptor pose.',
+    state: 'Supports affinity track',
+  },
+  {
+    step: '10',
+    layer: 'Developability triage',
+    evidence: 'ADMET-AI top-3',
+    measurement: '2/3 clean on 10 endpoints; 1-indanyl has one borderline CYP3A4 flag at 90.4 vs 90.0 gate.',
+    interpretation: 'Use a two-track lead committee: affinity lead plus ADMET-clean adamantyl backup.',
+    state: 'Actionable tradeoff',
+  },
+  {
+    step: '11',
+    layer: 'v5.3 residence check',
+    evidence: 'STRC tauRAMD n=20 per ligand',
+    measurement: '60/60 unbound; tau means 21.59, 17.46, 15.90 ps; spread 1.358x.',
+    interpretation: 'The class does not generate enough kinetic spread for a selectivity claim, but it remains useful for target-engagement testing.',
+    state: 'Narrows wetlab claim',
+  },
+  {
+    step: '12',
+    layer: 'Orthogonal score smoke',
+    evidence: 'Min-relax MM-GBSA',
+    measurement: 'WT -15.84; E1659A -18.18; E1659A-minus-WT -2.35 kcal/mol.',
+    interpretation: 'An APBS-independent endpoint score preserves the mutant-favouring sign.',
+    state: 'Supportive smoke',
   },
 ];
 
-const evidenceLadder = [
+const scriptGroups = [
   {
-    phase: 'Index biology',
-    signal: 'STRC E1659A maternal allele',
-    interpretation: 'A real patient-originated allele defines the first target, but the page frames it as a proof-of-work for a repeatable workflow.',
-    caveat: 'Private-allele urgency is not the same as broad market proof.',
+    group: 'Pocket electrostatics',
+    scripts: 'APBS / MD phase scripts, Phase 5k WT-vs-mutant ensemble pipeline',
+    output: 'Matched n=20 WT and n=20 E1659A pocket-potential table.',
+    decision: 'Raised mechanism to 4/5.',
   },
   {
-    phase: 'Pocket specificity',
-    signal: 'APBS matched ensemble: delta +4.53 +/- 0.46 kT/e',
-    interpretation: 'The E1659A state favours a formal anion at the K1141 pocket by about -2.79 +/- 0.28 kcal/mol on the Coulomb layer.',
-    caveat: 'Short MD, apo frames, and electrostatics only; not a measured Kd.',
+    group: 'Mutant ensemble docking',
+    scripts: 'phase5e_v2_mutant_redock.py, phase5q_strc_dock_v53.sh',
+    output: '60 v5.3 mutant-snapshot dockings plus aggregate affinity ranks.',
+    decision: 'Selected 1-indanyl_-Cl as affinity-track compound.',
   },
   {
-    phase: 'Druggability',
-    signal: 'K1141 pocket volume 1145 A3',
-    interpretation: 'The pocket is large and hydrophobic enough to justify ligand design rather than stopping at a structural curiosity.',
-    caveat: 'Pocket existence is not proof of productive stabilization.',
+    group: 'Fragment and tauRAMD setup',
+    scripts: 'phase5l_fragment_af3_builder.py, phase5l_selection_gate.py, phase5m_taramd_smoke.py',
+    output: 'AF3 fragment ladder and first 17.9 ps biased-MD unbinding smoke.',
+    decision: 'Validated 151-aa K1141-fragment workflow.',
   },
   {
-    phase: 'Chemistry class',
-    signal: 'v5.3 acyl sulfonamides',
-    interpretation: 'Weak-anion head groups were introduced to reduce off-target cationic-pocket pull while keeping the STRC electrostatic rationale.',
-    caveat: 'No physical compound, solubility data, or purity data yet.',
+    group: 'Production residence time',
+    scripts: 'phase5m_taramd_production.py, phase5m_trpm4_taramd.py, phase5q_strc_taramd_v53.py',
+    output: '91 biased-MD replicas across v5.2 STRC, TRPM4, and v5.3 STRC runs.',
+    decision: 'Kinetic-selectivity rescue not sufficient; target-engagement claim remains testable.',
   },
   {
-    phase: 'Lead committee',
-    signal: 'Two-track shortlist',
-    interpretation: '1-indanyl_-Cl is the affinity-track compound; adamantyl_-Cl is the practical ADMET/kinetic-confidence backup.',
-    caveat: 'No single compound wins every axis.',
+    group: 'Chemistry triage',
+    scripts: 'phase5p_v53_weakanion_library.py, ADMET-AI CLI run, phase9x_v53_alpha_sensitivity.py',
+    output: '12-candidate v5.3 library, ADMET flags, alpha-sensitivity lead committee.',
+    decision: 'Two compounds required for RFQ; one optional comparator.',
   },
   {
-    phase: 'Exposure window',
-    signal: '1 mM IT dose closes HC_ER exposure window in PBPK sweep',
-    interpretation: 'Delivery may be liftable by dose without immediate cytosol safety breach in the model.',
-    caveat: 'Selectivity remains the binding constraint; 10 mM is a safety cliff.',
+    group: 'Delivery and safety window',
+    scripts: 'phase8h_lite/cochlear_pbpk_ode.py, phase8h_lite/cochlear_pbpk_dose_sweep.py',
+    output: '8-compartment cochlear exposure table over 100 uM / 1 mM / 10 mM.',
+    decision: '1 mM IT is the reference modeled dose for future claims.',
   },
   {
-    phase: 'Artifact control',
-    signal: 'tauRAMD bounded selectivity <= 2.72x / 2.33x',
-    interpretation: 'Kinetic-selectivity rescue was checked instead of assumed; the current class does not clear the >5x discrimination gate in silico.',
-    caveat: 'This narrows the claim to target engagement, not therapeutic selectivity.',
+    group: 'Off-target electrostatics',
+    scripts: 'phase8g_v2/apbs_offtarget_rescore.py, phase8g_v3_pocket_max_phi.py',
+    output: 'STRC, TRPM4, TMEM16A, KCNQ4, Cx50 pocket-ceiling comparison.',
+    decision: 'Thermodynamic selectivity is not solved; wet counterscreens are mandatory.',
   },
   {
-    phase: 'Orthogonal physics',
-    signal: 'MM-GBSA smoke: E1659A-minus-WT -2.35 kcal/mol',
-    interpretation: 'A repaired, minimized endpoint smoke preserves the mutant-favouring sign by an APBS-independent route.',
-    caveat: 'Still smoke evidence; production holo MD / FEP / PMF remain paper-grade upgrades.',
-  },
-  {
-    phase: 'Wetlab handoff',
-    signal: 'PLAN_READY_FOR_RFQ',
-    interpretation: 'The clean next step is synthesis + STRC fragment + DSF/nanoDSF + SPR/BLI/MST.',
-    caveat: 'Assay-scoping readiness only.',
+    group: 'Orthogonal free energy',
+    scripts: 'phase9b_matched_holo_input_builder.py, phase9b_mmpbsa_smoke.py, phase9b_minrelax_multiframe_smoke.py',
+    output: 'Matched Amber inputs and 12-frame min-relax MM-GBSA smoke.',
+    decision: 'Supportive sign check; production holo MD remains optional paper-grade upgrade.',
   },
 ];
 
@@ -128,114 +215,91 @@ const compounds = [
   {
     priority: '1',
     name: '1-indanyl_acylsulfonamide_SO2Me_-Cl',
-    role: 'Affinity-track lead',
-    why: 'Boltz, Vina, and n=20 mutant-ensemble docking converge on rank 1.',
-    caveat: 'One borderline CYP3A4 ADMET-AI flag; not the residence-time winner.',
+    track: 'Affinity',
+    evidence: 'Boltz-2 ipTM 0.645; Vina mean -0.67; mut-ensemble rank-1 by mean and median.',
+    risk: 'One borderline CYP3A4 ADMET-AI flag; not the residence-time winner.',
   },
   {
     priority: '2',
     name: 'adamantyl_acylsulfonamide_SO2Me_-Cl',
-    role: 'Practical backup',
-    why: 'ADMET-clean, tight tauRAMD SEM, and robust across alpha sensitivity.',
-    caveat: 'Mutant-ensemble affinity is weaker and more best-pose-dependent.',
+    track: 'Practical backup',
+    evidence: 'ADMET-clean; tight tauRAMD SEM; robust across alpha-sensitivity lead committee.',
+    risk: 'Mutant-ensemble affinity is weaker and more best-pose-dependent.',
   },
   {
     priority: '3',
     name: 'adamantyl_acylsulfonamide_SO2Me_-CF3',
-    role: 'Optional comparator',
-    why: 'ADMET-clean and useful for residence-time comparison inside the same chemistry family.',
-    caveat: 'Wider tau outliers and weaker affinity signal.',
+    track: 'Optional comparator',
+    evidence: 'ADMET-clean; useful residence-time comparator inside same head class.',
+    risk: 'Wider tau outliers and weaker affinity signal.',
   },
 ];
 
-const packages = [
+const wetlabGates = [
   {
-    title: 'Custom synthesis',
-    ask: 'Quote synthesis and QC for the two required v5.3 ligands, with optional CF3 comparator.',
-    pass: 'Identity, purity, solubility, and enough material for biophysics.',
+    gate: '0',
+    question: 'Can the reagents exist?',
+    assay: 'Custom synthesis + STRC 1066-1216 WT/E1659A fragment expression',
+    pass: 'Identity, purity, solubility, monodisperse protein by SDS-PAGE / SEC / identity check.',
   },
   {
-    title: 'STRC fragment reagent',
-    ask: 'Scope STRC 1066-1216 K1141-pocket fragment, WT and E1659A, with His6 and/or AviTag options.',
-    pass: 'Usable monodisperse protein by SDS-PAGE, SEC, identity, and aggregation check.',
+    gate: '1',
+    question: 'Does the ligand stabilize the fragment?',
+    assay: 'DSF or nanoDSF dose response, vehicle-matched',
+    pass: 'Reproducible thermal shift, ideally stronger on E1659A than WT.',
   },
   {
-    title: 'Direct binding and stabilization',
-    ask: 'Run DSF/nanoDSF plus SPR, BLI, or MST with vehicle-matched and reference-surface controls.',
-    pass: 'Dose-dependent stabilization or binding without aggregation-shaped curves.',
-  },
-];
-
-const gates = [
-  ['0', 'Can the reagent be made?', 'Expression, SDS-PAGE, SEC, identity, aggregation', 'Usable WT/E1659A fragment'],
-  ['1', 'Does ligand stabilize the fold?', 'DSF or nanoDSF dose response', 'Reproducible thermal shift vs vehicle'],
-  ['2', 'Is binding direct?', 'SPR, BLI, or MST', 'Dose-dependent Kd, koff, or stoichiometry'],
-  ['2.5', 'Is it an artifact?', 'Aggregation, reactivity, and cochlear ion-channel counterscreens', 'No obvious activity at relevant multiples of Kd'],
-  ['3', 'Does it rescue cells?', 'Full-length E1659A STRC trafficking / mature-glycoform readout', 'Dose-dependent rescue after direct biophysics pass'],
-];
-
-const generalizesTo = [
-  {
-    title: 'Allele-specific missense folding disorders',
-    body: 'Best fit: a mutant protein is still made, partially foldable, and trapped by quality control rather than completely absent.',
+    gate: '2',
+    question: 'Is binding direct?',
+    assay: 'SPR, BLI, or MST with DMSO correction and reference-surface controls',
+    pass: 'Dose-dependent Kd, koff, or stoichiometry without aggregation-shaped curves.',
   },
   {
-    title: 'Genetic hearing-loss folding alleles',
-    body: 'STRC is the first program; SLC26A4 H723R provides an otology precedent for rescuing an ER-retained protein by chaperone logic.',
+    gate: '2.5',
+    question: 'Is the signal clean?',
+    assay: 'Aggregation/reactivity plus hERG, TRPM4, TMEM16A, KCNQ4, BK, Cx50 counterscreens',
+    pass: 'No obvious activity at relevant multiples of measured Kd.',
   },
   {
-    title: 'Membrane, secreted, or extracellular proteins',
-    body: 'Good candidates have a local stabilizing pocket and a direct readout for trafficking, maturation, or surface presentation.',
-  },
-  {
-    title: 'Enzyme pharmacochaperone-like diseases',
-    body: 'Migalastat/Fabry-style precedent shows that small-molecule stabilization can become a real modality when release and site-of-action logic are solved.',
-  },
-  {
-    title: 'Transporter and channel trafficking defects',
-    body: 'CFTR-corrector logic is the broad analogy: rescue a misfolded but functional-enough protein by stabilizing a vulnerable conformational state.',
+    gate: '3',
+    question: 'Does it rescue full-length STRC biology?',
+    assay: 'Full-length E1659A STRC trafficking or mature-glycoform cell readout',
+    pass: 'Dose-dependent rescue after direct biophysics passes.',
   },
 ];
 
-const doesNotGeneralizeTo = [
-  'Null alleles with no recoverable protein product.',
-  'Diseases where loss of function comes from nonsense decay, large deletion, or absent expression.',
-  'Proteins with no accessible pocket, no assayable stabilization readout, or no safe exposure route.',
-  'Cases where a stabilizer would block the protein complex or act as a permanent inhibitor.',
+const expansionCriteria = [
+  'Missense allele, not null or large deletion.',
+  'Residual protein is made and plausibly foldable.',
+  'A local pocket or allosteric stabilizer site can be modeled.',
+  'Target engagement can be measured before cell rescue.',
+  'The stabilizer does not permanently block the protein function it is meant to restore.',
 ];
 ---
 
-<Layout lang={lang} title="H01 STRC Pharmacochaperone Platform">
-  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+<Layout lang={lang} title="H01 STRC Pharmacochaperone Evidence Package">
+  <div class="px-6 pt-6 pb-2 max-w-5xl mx-auto">
     <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
   </div>
 
   <section class="px-6 py-14 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       <div class="flex items-center gap-2 mb-3 flex-wrap">
-        <h1 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">H01 · STRC Pharmacochaperone Platform</h1>
+        <h1 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">H01 · STRC Pharmacochaperone Evidence Package</h1>
         <span class="px-1.5 py-0.5 text-[10px] rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 font-semibold">A-TIER</span>
-        <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">INDEX ALLELE: E1659A</span>
-        <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold">MISSENSE RESCUE</span>
-        <span class="px-1.5 py-0.5 text-[10px] rounded bg-neutral-500/15 text-neutral-400 border border-neutral-500/30 font-semibold">RFQ READY</span>
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">COMPUTATIONAL DOSSIER</span>
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold">WETLAB-GATED</span>
       </div>
 
       <p class="text-neutral-300 text-lg leading-relaxed max-w-3xl mb-8">
-        H01 starts from Misha's maternal STRC E1659A allele, but the program is not a one-child treatment memo. It is the first proof-of-work for a broader pharmacochaperone workflow: turn a private missense allele into a testable pocket, a small ligand set, and a direct target-engagement assay.
+        Patient-originated STRC E1659A pharmacochaperone hypothesis, presented as a computational evidence package. The purpose of this page is to show what was actually computed, which measurements support the hypothesis, and exactly where wetlab validation begins.
       </p>
 
-      <div class="border border-cyan-500/20 bg-cyan-500/[0.04] rounded-lg p-5 mb-8">
-        <div class="text-[10px] uppercase tracking-wider text-cyan-300 font-semibold mb-2">What this page is selling</div>
-        <p class="text-sm text-neutral-300 leading-relaxed">
-          A bounded first experiment for a platform. If synthesis, STRC fragment expression, and direct binding or stabilization pass, H01 becomes evidence that rare missense alleles can be triaged into pharmacochaperone programs. If they fail, the kill is fast, cheap, and informative.
-        </p>
-      </div>
-
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        {scores.map((s) => (
+        {stats.map((s) => (
           <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
             <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-2">{s.label}</div>
-            <div class="text-2xl font-bold text-white mb-2">{s.value}</div>
+            <div class="text-3xl font-bold text-white mb-2">{s.value}</div>
             <p class="text-[11px] text-neutral-500 leading-relaxed">{s.note}</p>
           </div>
         ))}
@@ -244,65 +308,28 @@ const doesNotGeneralizeTo = [
   </section>
 
   <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Index case → platform</h2>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">What was computed</h2>
       <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        The index case gives urgency and specificity. The platform claim comes from making every step repeatable, falsifiable, and portable to the next missense allele.
-      </p>
-      <div class="grid md:grid-cols-2 gap-3">
-        {thesisCards.map((item) => (
-          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-5">
-            <h3 class="text-sm font-semibold text-white mb-3">{item.title}</h3>
-            <p class="text-xs text-neutral-500 leading-relaxed">{item.body}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Platform roadmap</h2>
-      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        The order below is the collaborator-facing order. Some later computations were originally run to support earlier claims; here they are arranged as a decision ladder from index allele to repeatable disease platform.
-      </p>
-      <div class="space-y-3">
-        {roadmap.map((item) => (
-          <div class="grid grid-cols-[3.5rem_1fr] gap-4 border border-white/5 bg-white/[0.02] rounded-lg p-4">
-            <div class="text-xs font-mono text-emerald-400">{item.step}</div>
-            <div>
-              <h3 class="text-sm font-semibold text-white mb-1">{item.title}</h3>
-              <p class="text-xs text-neutral-500 leading-relaxed">{item.body}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">H01 evidence ladder</h2>
-      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        The cleaned order: allele biology, pocket signal, chemistry, exposure, artifact controls, orthogonal physics, then wetlab gates. This avoids making one late support computation look like the original premise.
+        H01 is not one docking score. It is a stack of independent computational checks: structural ensembles, electrostatics, ligand design, protein-ligand cofolding, docking, biased MD, PBPK, ADMET, off-target panels, and endpoint free-energy smoke tests.
       </p>
       <div class="overflow-x-auto border border-white/5 rounded-lg">
         <table class="w-full text-left text-xs">
           <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
             <tr>
-              <th class="px-4 py-3 font-semibold">Layer</th>
-              <th class="px-4 py-3 font-semibold">Signal</th>
-              <th class="px-4 py-3 font-semibold">Meaning</th>
-              <th class="px-4 py-3 font-semibold">Caveat</th>
+              <th class="px-4 py-3 font-semibold">Method</th>
+              <th class="px-4 py-3 font-semibold">Compute</th>
+              <th class="px-4 py-3 font-semibold">Scale</th>
+              <th class="px-4 py-3 font-semibold">Key result</th>
             </tr>
           </thead>
           <tbody>
-            {evidenceLadder.map((item) => (
+            {methodStack.map((item) => (
               <tr class="border-t border-white/5 align-top">
-                <td class="px-4 py-3 text-neutral-300 font-semibold whitespace-nowrap">{item.phase}</td>
-                <td class="px-4 py-3 text-emerald-400 font-mono">{item.signal}</td>
-                <td class="px-4 py-3 text-neutral-500">{item.interpretation}</td>
-                <td class="px-4 py-3 text-neutral-500">{item.caveat}</td>
+                <td class="px-4 py-3 text-neutral-300 font-semibold">{item.method}</td>
+                <td class="px-4 py-3 text-neutral-500">{item.compute}</td>
+                <td class="px-4 py-3 text-neutral-400 font-mono">{item.scale}</td>
+                <td class="px-4 py-3 text-emerald-400">{item.key}</td>
               </tr>
             ))}
           </tbody>
@@ -312,20 +339,62 @@ const doesNotGeneralizeTo = [
   </section>
 
   <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">First RFQ compound set</h2>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Phase-by-phase evidence</h2>
       <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        The right handoff is small on purpose: two required compounds plus one optional comparator, enough to test the platform's first allele without pretending this is a nominated lead series.
+        The phases are ordered as a reader would evaluate the hypothesis: pocket, mutant specificity, reagent feasibility, chemistry, off-targets, exposure, final wetlab handoff.
       </p>
+      <div class="space-y-3">
+        {phaseEvidence.map((item) => (
+          <div class="grid lg:grid-cols-[3rem_9rem_1fr_1fr_8rem] gap-4 border border-white/5 bg-white/[0.02] rounded-lg p-4">
+            <div class="text-xs font-mono text-neutral-500">{item.step}</div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Layer</div>
+              <div class="text-xs text-neutral-300 font-semibold">{item.layer}</div>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">{item.evidence}</div>
+              <div class="text-xs text-emerald-400 font-mono leading-relaxed">{item.measurement}</div>
+            </div>
+            <p class="text-xs text-neutral-500 leading-relaxed">{item.interpretation}</p>
+            <div class="text-[10px] text-cyan-300 uppercase tracking-wider font-semibold">{item.state}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Representative script families</h2>
+      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+        The H01 workspace currently contains 49 runnable Python or shell scripts. This table groups the important families rather than listing every helper and generated work file.
+      </p>
+      <div class="grid md:grid-cols-2 gap-3">
+        {scriptGroups.map((item) => (
+          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-5">
+            <h3 class="text-sm font-semibold text-white mb-2">{item.group}</h3>
+            <p class="text-[11px] text-neutral-500 font-mono leading-relaxed mb-3">{item.scripts}</p>
+            <p class="text-xs text-neutral-500 leading-relaxed mb-2"><span class="text-neutral-400">Output:</span> {item.output}</p>
+            <p class="text-xs text-neutral-500 leading-relaxed"><span class="text-neutral-400">Decision:</span> {item.decision}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Compound set for first wetlab contact</h2>
       <div class="overflow-x-auto border border-white/5 rounded-lg">
         <table class="w-full text-left text-xs">
           <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
             <tr>
               <th class="px-4 py-3 font-semibold">#</th>
               <th class="px-4 py-3 font-semibold">Compound</th>
-              <th class="px-4 py-3 font-semibold">Role</th>
-              <th class="px-4 py-3 font-semibold">Why include</th>
-              <th class="px-4 py-3 font-semibold">Caveat</th>
+              <th class="px-4 py-3 font-semibold">Track</th>
+              <th class="px-4 py-3 font-semibold">Computational evidence</th>
+              <th class="px-4 py-3 font-semibold">Risk</th>
             </tr>
           </thead>
           <tbody>
@@ -333,9 +402,9 @@ const doesNotGeneralizeTo = [
               <tr class="border-t border-white/5 align-top">
                 <td class="px-4 py-3 text-neutral-500 font-mono">{c.priority}</td>
                 <td class="px-4 py-3 text-neutral-300 font-mono break-all">{c.name}</td>
-                <td class="px-4 py-3 text-neutral-300">{c.role}</td>
-                <td class="px-4 py-3 text-neutral-500">{c.why}</td>
-                <td class="px-4 py-3 text-neutral-500">{c.caveat}</td>
+                <td class="px-4 py-3 text-neutral-300">{c.track}</td>
+                <td class="px-4 py-3 text-neutral-500">{c.evidence}</td>
+                <td class="px-4 py-3 text-neutral-500">{c.risk}</td>
               </tr>
             ))}
           </tbody>
@@ -345,43 +414,28 @@ const doesNotGeneralizeTo = [
   </section>
 
   <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Wetlab package</h2>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Wetlab gates</h2>
       <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        Split the first experiment into three independent work packages. A collaborator can price, accept, reject, or modify each one without needing to buy the full therapeutic story.
+        The computational package supports a narrow experimental ask: make the molecules, make the STRC fragment, and test direct stabilization or binding before any cell-rescue or therapeutic claim.
       </p>
-      <div class="grid md:grid-cols-3 gap-3">
-        {packages.map((p) => (
-          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-5">
-            <h3 class="text-sm font-semibold text-white mb-3">{p.title}</h3>
-            <p class="text-xs text-neutral-500 leading-relaxed mb-4"><span class="text-neutral-400">Ask:</span> {p.ask}</p>
-            <p class="text-xs text-neutral-500 leading-relaxed"><span class="text-neutral-400">Pass:</span> {p.pass}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Assay cascade</h2>
       <div class="overflow-x-auto border border-white/5 rounded-lg">
         <table class="w-full text-left text-xs">
           <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
             <tr>
               <th class="px-4 py-3 font-semibold">Gate</th>
               <th class="px-4 py-3 font-semibold">Question</th>
-              <th class="px-4 py-3 font-semibold">Readout</th>
+              <th class="px-4 py-3 font-semibold">Assay</th>
               <th class="px-4 py-3 font-semibold">Pass signal</th>
             </tr>
           </thead>
           <tbody>
-            {gates.map((g) => (
+            {wetlabGates.map((g) => (
               <tr class="border-t border-white/5 align-top">
-                <td class="px-4 py-3 text-neutral-500 font-mono">{g[0]}</td>
-                <td class="px-4 py-3 text-neutral-300">{g[1]}</td>
-                <td class="px-4 py-3 text-neutral-500">{g[2]}</td>
-                <td class="px-4 py-3 text-neutral-500">{g[3]}</td>
+                <td class="px-4 py-3 text-neutral-500 font-mono">{g.gate}</td>
+                <td class="px-4 py-3 text-neutral-300">{g.question}</td>
+                <td class="px-4 py-3 text-neutral-500">{g.assay}</td>
+                <td class="px-4 py-3 text-neutral-500">{g.pass}</td>
               </tr>
             ))}
           </tbody>
@@ -391,62 +445,45 @@ const doesNotGeneralizeTo = [
   </section>
 
   <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Where this can generalize</h2>
-      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
-        The platform is large only if we keep the inclusion criteria sharp. It is not "small molecules for every rare disease"; it is pharmacochaperone triage for proteins that can still be stabilized.
-      </p>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div>
-          <h3 class="text-[10px] uppercase tracking-wider text-emerald-400 font-semibold mb-3">Good expansion territory</h3>
-          <div class="space-y-3">
-            {generalizesTo.map((item) => (
-              <div class="border border-emerald-500/15 bg-emerald-500/[0.03] rounded-lg p-4">
-                <h4 class="text-sm font-semibold text-white mb-2">{item.title}</h4>
-                <p class="text-xs text-neutral-500 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h3 class="text-[10px] uppercase tracking-wider text-red-300 font-semibold mb-3">Do not overextend</h3>
-          <div class="border border-red-500/20 bg-red-500/[0.03] rounded-lg p-5">
-            <ul class="text-xs text-neutral-400 space-y-3 leading-relaxed">
-              {doesNotGeneralizeTo.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
+      <div class="border border-emerald-500/20 bg-emerald-500/[0.04] rounded-lg p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-300 mb-3">What computation supports</h2>
+        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
+          <li>E1659A creates a measurable electrostatic preference at the K1141 pocket.</li>
+          <li>A small weak-anion ligand set is chemically tractable enough to synthesize and test.</li>
+          <li>1 mM intratympanic exposure is plausible in the PBPK model.</li>
+          <li>The first wetlab experiment can be scoped as target engagement, not therapy.</li>
+        </ul>
+      </div>
+      <div class="border border-amber-500/20 bg-amber-500/[0.04] rounded-lg p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-amber-300 mb-3">What remains empirical</h2>
+        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
+          <li>No physical compound has been synthesized yet.</li>
+          <li>No STRC 1066-1216 WT/E1659A reagent has been expressed yet.</li>
+          <li>No DSF/nanoDSF, SPR/BLI/MST, wet selectivity, or cell-rescue data exist yet.</li>
+          <li>Selectivity is the core risk; the computation already shows it cannot be hand-waved.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="px-6 py-12 border-t border-white/5">
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
-      <div class="border border-amber-500/20 bg-amber-500/[0.04] rounded-lg p-5">
-        <h2 class="text-sm font-semibold uppercase tracking-wider text-amber-300 mb-3">Still open</h2>
-        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
-          <li>No physical compound yet.</li>
-          <li>No recombinant STRC K1141-pocket reagent yet.</li>
-          <li>No direct binding, stabilization, wet selectivity, or cell rescue data yet.</li>
-          <li>Production holo MD, FEP/TI, PMF, or QM/MM would strengthen paper-grade computation but should not block first wetlab contact.</li>
-        </ul>
-      </div>
-      <div class="border border-red-500/20 bg-red-500/[0.03] rounded-lg p-5">
-        <h2 class="text-sm font-semibold uppercase tracking-wider text-red-300 mb-3">Do not claim</h2>
-        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
-          <li>No nominated lead candidate.</li>
-          <li>No efficacy claim.</li>
-          <li>No IND-enabling package.</li>
-          <li>No animal or clinical readiness.</li>
-          <li>No claim that the platform applies to null alleles, deletions, or non-folding mechanisms.</li>
-        </ul>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">How this becomes a platform</h2>
+      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+        STRC E1659A is the first worked example. The repeatable platform is the gated workflow: allele selection, pocket/electrostatic proof, chemistry triage, artifact controls, direct target-engagement assay, then cell rescue.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        {expansionCriteria.map((item) => (
+          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
+            <p class="text-xs text-neutral-400 leading-relaxed">{item}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <div class="px-6 py-8 max-w-4xl mx-auto">
+  <div class="px-6 py-8 max-w-5xl mx-auto">
     <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
   </div>
 </Layout>
