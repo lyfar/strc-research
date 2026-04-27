@@ -1,0 +1,246 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lang = 'en';
+
+const scores = [
+  { label: 'Mechanism', value: '4/5', note: 'K1141 pocket and E1659A-favouring electrostatic sign are consistent across APBS, ensemble docking, and smoke MM-GBSA.' },
+  { label: 'Delivery', value: '3/5', note: 'Intratympanic / round-window exposure is plausible, but cochlear distribution and selectivity remain empirical blockers.' },
+  { label: 'Misha-fit', value: '4/5', note: 'Directly targets the maternal E1659A allele; works best as an adjunct to the Mini-STRC replacement track.' },
+  { label: 'Current tier', value: 'A', note: 'Ready for assay-scoping RFQ, not lead-candidate nomination.' },
+];
+
+const evidence = [
+  {
+    title: 'Mutant-selective pocket signal',
+    metric: 'Δ = +4.53 ± 0.46 kT/e',
+    body: 'Matched WT vs E1659A APBS ensemble supports a formal-anion preference at the K1141 pocket, equivalent to roughly -2.79 ± 0.28 kcal/mol.',
+  },
+  {
+    title: 'Druggable pocket geometry',
+    metric: '1145 A3 pocket volume',
+    body: 'K1141 pocket profile clears a Halgren-style druggability read: volume 1145 A3, hydrophobic fraction 0.61, pocket-to-ligand volume ratio 2.75.',
+  },
+  {
+    title: 'Lead-class convergence',
+    metric: 'v5.3 acyl sulfonamides',
+    body: 'Boltz-2, Vina mutant-ensemble ranking, tauRAMD, and ADMET triage narrow the next experiment to two required compounds plus one optional comparator.',
+  },
+  {
+    title: 'Orthogonal MM-GBSA smoke',
+    metric: '-2.35 kcal/mol',
+    body: 'A six-frame min-relax MM-GBSA smoke preserves the E1659A-favouring sign. It is useful robustness evidence, not a replacement for production holo MD.',
+  },
+];
+
+const compounds = [
+  {
+    priority: '1',
+    name: '1-indanyl_acylsulfonamide_SO2Me_-Cl',
+    role: 'Affinity-track lead',
+    why: 'Boltz, Vina, and n=20 mutant-ensemble docking converge on rank 1.',
+    caveat: 'One borderline CYP3A4 ADMET-AI flag; not the residence-time winner.',
+  },
+  {
+    priority: '2',
+    name: 'adamantyl_acylsulfonamide_SO2Me_-Cl',
+    role: 'Practical backup',
+    why: 'ADMET-clean, tight tauRAMD SEM, and robust across alpha sensitivity.',
+    caveat: 'Mutant-ensemble affinity is weaker and more best-pose-dependent.',
+  },
+  {
+    priority: '3',
+    name: 'adamantyl_acylsulfonamide_SO2Me_-CF3',
+    role: 'Optional comparator',
+    why: 'ADMET-clean and useful for residence-time comparison inside the same chemistry family.',
+    caveat: 'Wider tau outliers and weaker affinity signal.',
+  },
+];
+
+const packages = [
+  {
+    title: 'Custom synthesis',
+    ask: 'Quote synthesis and QC for the two required v5.3 ligands, with optional CF3 comparator.',
+    pass: 'Identity, purity, solubility, and enough material for biophysics.',
+  },
+  {
+    title: 'STRC fragment reagent',
+    ask: 'Scope STRC 1066-1216 K1141-pocket fragment, WT and E1659A, with His6 and/or AviTag options.',
+    pass: 'Usable monodisperse protein by SDS-PAGE, SEC, identity, and aggregation check.',
+  },
+  {
+    title: 'Direct binding and stabilization',
+    ask: 'Run DSF/nanoDSF plus SPR, BLI, or MST with vehicle-matched and reference-surface controls.',
+    pass: 'Dose-dependent stabilization or binding without aggregation-shaped curves.',
+  },
+];
+
+const gates = [
+  ['0', 'Can the reagent be made?', 'Expression, SDS-PAGE, SEC, identity, aggregation', 'Usable WT/E1659A fragment'],
+  ['1', 'Does ligand stabilize the fold?', 'DSF or nanoDSF dose response', 'Reproducible thermal shift vs vehicle'],
+  ['2', 'Is binding direct?', 'SPR, BLI, or MST', 'Dose-dependent Kd, koff, or stoichiometry'],
+  ['2.5', 'Is it an artifact?', 'Aggregation, reactivity, and cochlear ion-channel counterscreens', 'No obvious activity at relevant multiples of Kd'],
+  ['3', 'Does it rescue cells?', 'Full-length E1659A STRC trafficking / mature-glycoform readout', 'Dose-dependent rescue after direct biophysics pass'],
+];
+---
+
+<Layout lang={lang} title="H01 Pharmacochaperone E1659A">
+  <div class="px-6 pt-6 pb-2 max-w-4xl mx-auto">
+    <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+
+  <section class="px-6 py-14 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-2 mb-3 flex-wrap">
+        <h1 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">H01 · Pharmacochaperone E1659A</h1>
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 font-semibold">A-TIER</span>
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">RFQ-READY</span>
+        <span class="px-1.5 py-0.5 text-[10px] rounded bg-neutral-500/15 text-neutral-400 border border-neutral-500/30 font-semibold">NOT A LEAD NOMINATION</span>
+      </div>
+
+      <p class="text-neutral-300 text-lg leading-relaxed max-w-3xl mb-8">
+        Small-molecule fold-stabilizer hypothesis for Misha's maternal STRC E1659A allele. The current package is ready for target-engagement assay scoping: synthesize a small v5.3 ligand set, express a K1141-pocket STRC fragment, and measure direct binding or stabilization.
+      </p>
+
+      <div class="border border-emerald-500/20 bg-emerald-500/[0.04] rounded-lg p-5 mb-8">
+        <div class="text-[10px] uppercase tracking-wider text-emerald-400 font-semibold mb-2">Current verdict</div>
+        <p class="text-sm text-neutral-300 leading-relaxed">
+          Send as a feasibility RFQ, not as a therapeutic claim. The computational story is strong enough to ask whether the compounds and protein reagent are physically tractable. It is not strong enough to claim efficacy, nomination, or translational readiness.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {scores.map((s) => (
+          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-2">{s.label}</div>
+            <div class="text-2xl font-bold text-white mb-2">{s.value}</div>
+            <p class="text-[11px] text-neutral-500 leading-relaxed">{s.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Why this is worth testing</h2>
+      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+        H01 is not a single-score docking story. The useful signal is the convergence of mutant-pocket electrostatics, lead-class chemistry, residence-time checks, ADMET triage, and a caveated endpoint free-energy smoke.
+      </p>
+      <div class="grid md:grid-cols-2 gap-3">
+        {evidence.map((item) => (
+          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="text-sm font-semibold text-white">{item.title}</h3>
+              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded px-2 py-1 whitespace-nowrap">{item.metric}</span>
+            </div>
+            <p class="text-xs text-neutral-500 leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Compound set for the first RFQ</h2>
+      <div class="overflow-x-auto border border-white/5 rounded-lg">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+            <tr>
+              <th class="px-4 py-3 font-semibold">#</th>
+              <th class="px-4 py-3 font-semibold">Compound</th>
+              <th class="px-4 py-3 font-semibold">Role</th>
+              <th class="px-4 py-3 font-semibold">Why include</th>
+              <th class="px-4 py-3 font-semibold">Caveat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compounds.map((c) => (
+              <tr class="border-t border-white/5 align-top">
+                <td class="px-4 py-3 text-neutral-500 font-mono">{c.priority}</td>
+                <td class="px-4 py-3 text-neutral-300 font-mono break-all">{c.name}</td>
+                <td class="px-4 py-3 text-neutral-300">{c.role}</td>
+                <td class="px-4 py-3 text-neutral-500">{c.why}</td>
+                <td class="px-4 py-3 text-neutral-500">{c.caveat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">The honest handoff</h2>
+      <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+        The first wetlab package should split into three independent work packages. Any one of them can fail without making the whole scientific question embarrassing; that is why this is an assay-scoping step.
+      </p>
+      <div class="grid md:grid-cols-3 gap-3">
+        {packages.map((p) => (
+          <div class="border border-white/5 bg-white/[0.02] rounded-lg p-5">
+            <h3 class="text-sm font-semibold text-white mb-3">{p.title}</h3>
+            <p class="text-xs text-neutral-500 leading-relaxed mb-4"><span class="text-neutral-400">Ask:</span> {p.ask}</p>
+            <p class="text-xs text-neutral-500 leading-relaxed"><span class="text-neutral-400">Pass:</span> {p.pass}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">Assay cascade</h2>
+      <div class="overflow-x-auto border border-white/5 rounded-lg">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+            <tr>
+              <th class="px-4 py-3 font-semibold">Gate</th>
+              <th class="px-4 py-3 font-semibold">Question</th>
+              <th class="px-4 py-3 font-semibold">Readout</th>
+              <th class="px-4 py-3 font-semibold">Pass signal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gates.map((g) => (
+              <tr class="border-t border-white/5 align-top">
+                <td class="px-4 py-3 text-neutral-500 font-mono">{g[0]}</td>
+                <td class="px-4 py-3 text-neutral-300">{g[1]}</td>
+                <td class="px-4 py-3 text-neutral-500">{g[2]}</td>
+                <td class="px-4 py-3 text-neutral-500">{g[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 border-t border-white/5">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+      <div class="border border-amber-500/20 bg-amber-500/[0.04] rounded-lg p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-amber-300 mb-3">Still open</h2>
+        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
+          <li>No physical compound yet.</li>
+          <li>No recombinant STRC K1141-pocket reagent yet.</li>
+          <li>No direct binding, stabilization, wet selectivity, or cell rescue data yet.</li>
+          <li>Production holo MD / MM-PBSA would strengthen the paper-grade computation, but it should not block first wetlab contact.</li>
+        </ul>
+      </div>
+      <div class="border border-red-500/20 bg-red-500/[0.03] rounded-lg p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-red-300 mb-3">Do not claim</h2>
+        <ul class="text-xs text-neutral-400 space-y-2 leading-relaxed">
+          <li>No nominated lead candidate.</li>
+          <li>No efficacy claim.</li>
+          <li>No IND-enabling package.</li>
+          <li>No animal or clinical readiness. The only current claim is assay-scoping readiness.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="px-6 py-8 max-w-4xl mx-auto">
+    <a href="/hypotheses" class="text-xs text-neutral-500 hover:text-white transition-colors no-underline">← All hypotheses</a>
+  </div>
+</Layout>
