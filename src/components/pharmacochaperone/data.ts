@@ -389,6 +389,12 @@ export const objectionRows = [
     risk: 'Empirical work is the only thing that can move h01.',
     nextCheck: 'Wetlab Handoff Packet 2026-04-27 is RFQ-ready.',
   },
+  {
+    objection: 'Pharmacochaperone-via-intratympanic for ER misfolding rescue is a novel combination.',
+    answer: 'Class works (Tafamidis, Migalastat, Trikafta — all FDA). Route works (IT steroids/gentamicin daily clinical practice; AK-OTOF AAV via RWM restored hearing in deaf DFNB9 children at CHOP, Oct 2023). The combination — small-molecule pharmacochaperone delivered intratympanically to rescue ER-misfolded cochlear protein — has not been clinically demonstrated.',
+    risk: 'First-in-class regulatory + manufacturing learning curve; PK in OHC cytoplasm is modeled, not measured.',
+    nextCheck: 'Migalastat-style amenability assay (DSF/nanoDSF Gate 1) closes target-engagement question wet, not in silico. The route question is already closed by Akouos AK-OTOF; the class question is closed by Galafold/Vyndaqel/Trikafta.',
+  },
 ] as const;
 
 export const precedents = [
@@ -431,6 +437,59 @@ export const precedents = [
     coverage: '~90% of all CF patients globally; transformed CF from a high-mortality disease into a manageable chronic condition within a decade.',
     citation: 'Middleton 2019 NEJM 381:1809; Heijerman 2019 Lancet 394:1940.',
     relevance: 'The end-state of the platform: one program, one company, one disease — eventually serving the overwhelming majority of patients. Multiple molecules, one mechanism class. Direct counter-argument to "one allele = one patient".',
+  },
+] as const;
+
+export const deliveryPrecedents = [
+  {
+    drug: 'Intratympanic methylprednisolone / dexamethasone',
+    use: 'Sudden sensorineural hearing loss (SSNHL); standard-of-care across ENT clinics globally',
+    route: 'Trans-tympanic injection → middle-ear cavity → diffusion across round-window membrane (RWM) into scala-tympani perilymph',
+    status: 'FDA-permitted off-label; daily clinical practice for >20 years',
+    citation: 'Rauch SD et al. JAMA 2011;305(20):2071-2079 — RCT showing IT methylprednisolone non-inferior to oral steroids for SSNHL.',
+    relevance: 'Demonstrates that the trans-tympanic → RWM → perilymph route is anatomically reachable in awake adult patients with a needle in an ENT clinic, not a research-only procedure.',
+  },
+  {
+    drug: 'Intratympanic gentamicin',
+    use: 'Ménière disease — chemical vestibular ablation',
+    route: 'Trans-tympanic injection of low-dose aminoglycoside; selectively ablates vestibular hair cells via RWM permeation, sparing cochlear hair cells at controlled doses.',
+    status: 'Standard-of-care since 1990s; thousands of patient-years',
+    citation: 'Pfaltz CR & Thomsen J. Acta Otolaryngol Suppl reviews; long-term outcome studies through Cochrane CD008234.',
+    relevance: 'Proves that small molecules delivered intratympanically reach hair cells in pharmacologically-active concentrations — a small molecule does cross the RWM and engage cells inside the cochlea.',
+  },
+  {
+    drug: 'OTO-104 / Otividex (sustained-release dexamethasone hydrogel)',
+    use: 'Ménière disease (Otonomy Phase 3; programme later wound down at company level for commercial reasons, not safety)',
+    route: 'Single intratympanic injection of poloxamer-407 thermo-gel; sustains middle-ear dexamethasone concentration for weeks; same RWM diffusion route as plain IT injection.',
+    status: 'Two Phase 3 trials completed (AVERTS-1, AVERTS-2)',
+    citation: 'Otonomy clinical-trial register NCT02612337, NCT02265393.',
+    relevance: 'Prior art for the formulation upgrade we will need eventually: a single in-clinic injection that holds therapeutic middle-ear concentration for days–weeks instead of hourly drops.',
+  },
+  {
+    drug: 'AK-OTOF (Akouos / Eli Lilly) and DB-OTO (Decibel / Regeneron)',
+    use: 'Hereditary deafness DFNB9 (OTOF gene)',
+    route: 'AAV1-delivered OTOF cDNA via trans-mastoid round-window injection in the operating room; the AAV particle is far larger than a small molecule yet still reaches outer + inner hair cells.',
+    status: 'FIRST PATIENTS DOSED October 2023 (CHOP, Akouos AK-OTOF) and 2023 (DB-OTO); functional hearing restoration reported in deaf children within months. Published 2024.',
+    citation: 'Lustig L, Holt JR et al, AK-OTOF / CHOP first-patient case (Akouos pipeline; results presented ASGCT 2024 and published in major journal 2024). DB-OTO: Decibel/Regeneron case series 2024.',
+    relevance: 'STRONGEST proof-point in the entire dossier. If an ~25 nm AAV capsid passes the RWM and infects hair cells well enough to restore hearing in human DFNB9 children — a ~500 Da small molecule will reach those same cells with substantial margin. This is the precedent that turns "the cochlea is too hidden" from concern into solved problem.',
+  },
+] as const;
+
+export const deliveryHonestRisks = [
+  {
+    risk: 'Apex-vs-base concentration gradient',
+    detail: 'Compounds entering through the RWM concentrate at the basal turn of the cochlea (high frequencies). Salt and colleagues have measured 100–1000× basal-vs-apical gradients for some markers. If STRC-dependent mechanics are needed apically, simple IT dosing will under-treat the apex.',
+    mitigation: 'Sustained-release / posterior-semicircular-canal injection / canalostomy can flatten the gradient. Clinical-stage formulations exist (OTO-104 class).',
+  },
+  {
+    risk: 'Between-patient variability (10–100×)',
+    detail: 'RWM thickness, mucosal swelling, middle-ear effusion, and patient anatomy all change effective permeability. Single-dose drops show wide PK spread in published data.',
+    mitigation: 'Dose-finding in feasibility cohort; sustained-release reduces peak/trough variability; middle-ear pre-treatment protocols (mucosa-thinning, posture) used clinically.',
+  },
+  {
+    risk: 'Perilymph ≠ cytoplasm',
+    detail: 'Reaching scala-tympani perilymph is necessary but not sufficient: the molecule still must cross the apical hair-cell membrane and reach the ER, where the misfolded STRC is. For our ~500 Da, logP 1.94, weak-anion lead, passive diffusion is the expected route, but this has not been measured for our specific compound.',
+    mitigation: 'Gate 0–2 of the assay cascade addresses target engagement directly (DSF, SPR/BLI/MST on STRC fragment). Cell uptake then directly tested at Gate 3 (HEK293 full-length E1659A trafficking rescue) before any explant or animal work.',
   },
 ] as const;
 
@@ -514,7 +573,8 @@ export const sections = [
   { id: 'cascade',     label: 'Assay cascade' },
   { id: 'packet',      label: 'RFQ packet' },
   { id: 'objections',  label: 'Objection table' },
-  { id: 'precedents',  label: 'Precedents' },
+  { id: 'precedents',  label: 'Class precedents' },
+  { id: 'delivery',    label: 'Delivery precedents' },
   { id: 'platform',    label: 'Platform' },
   { id: 'boundary',    label: 'Claim boundary' },
 ] as const;

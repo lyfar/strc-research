@@ -1,0 +1,74 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { deliveryPrecedents, deliveryHonestRisks } from './data';
+---
+<section id="delivery" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Delivery precedents — does the drop actually reach the cochlea?"
+      lead="The cochlea is buried in temporal bone, but the middle-ear cavity is accessible to any ENT clinic and the round-window membrane between the two is thin (~70 µm in humans) and permeable. The trans-tympanic → RWM → perilymph route is FDA-permitted, in daily clinical use, and has just been validated in human gene-therapy trials that restored hearing in deaf children."
+    />
+
+    <div class="border border-emerald-500/30 bg-emerald-500/[0.05] rounded-lg p-5 mb-8 max-w-3xl">
+      <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-2">Headline proof point</div>
+      <p class="text-xs text-neutral-200 leading-relaxed mb-2">
+        <strong class="text-white">Akouos AK-OTOF (Eli Lilly) and Decibel DB-OTO (Regeneron)</strong> dosed their first DFNB9 patients in late 2023 via the same round-window route. Both reported functional hearing restoration in genetically deaf children within months. If a ~25 nm AAV capsid delivered through the RWM reaches outer + inner hair cells well enough to restore hearing in humans, a ~500 Da small molecule reaches those same cells with substantial margin.
+      </p>
+      <p class="text-[11px] text-neutral-400 leading-relaxed">
+        Jeffrey Holt (Boston Children's / Harvard) — scientific co-founder of Akouos — is the field's anchor PI for this delivery route. Targeting his group with the h01 dossier is consistent with the existing OTOF programme architecture.
+      </p>
+    </div>
+
+    <div class="space-y-4 mb-10">
+      {deliveryPrecedents.map((p) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg overflow-hidden">
+          <div class="flex items-baseline justify-between flex-wrap gap-3 px-5 py-3 bg-white/[0.03] border-b border-white/5">
+            <h3 class="text-sm font-semibold text-white">{p.drug}</h3>
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono uppercase tracking-wider">{p.status}</span>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 p-5">
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Indication</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{p.use}</p>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Route</div>
+              <p class="text-xs text-neutral-400 leading-relaxed">{p.route}</p>
+            </div>
+            <div class="md:col-span-2">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Citation</div>
+              <p class="text-[11px] text-neutral-500 font-mono leading-relaxed">{p.citation}</p>
+            </div>
+            <div class="md:col-span-2 border-l-2 border-emerald-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1.5">Why it matters for h01</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{p.relevance}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">Honest residual delivery risks</h3>
+    <p class="text-xs text-neutral-500 max-w-3xl mb-4">
+      The route is real, but three specific delivery questions are not closed by precedent alone and remain in scope for the wetlab feasibility package.
+    </p>
+    <div class="space-y-3">
+      {deliveryHonestRisks.map((r) => (
+        <div class="border border-amber-500/20 bg-amber-500/[0.04] rounded-lg p-4 grid md:grid-cols-3 gap-4">
+          <div class="md:col-span-1">
+            <div class="text-[10px] uppercase tracking-wider text-amber-300 font-semibold mb-1.5">Open risk</div>
+            <p class="text-xs text-amber-200 font-semibold leading-relaxed">{r.risk}</p>
+          </div>
+          <div class="md:col-span-1">
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Detail</div>
+            <p class="text-xs text-neutral-300 leading-relaxed">{r.detail}</p>
+          </div>
+          <div class="md:col-span-1 border-l-2 border-emerald-500/40 pl-3">
+            <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1.5">Mitigation / next check</div>
+            <p class="text-xs text-neutral-300 leading-relaxed">{r.mitigation}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
