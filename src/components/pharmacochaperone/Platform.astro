@@ -1,13 +1,74 @@
 ---
 import SectionHeader from './SectionHeader.astro';
-import { expansionCriteria } from './data';
+import { platformPipeline, expansionTracks, expansionCriteria } from './data';
 ---
 <section id="platform" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
   <div class="max-w-5xl mx-auto">
     <SectionHeader
-      title="How this becomes a platform"
-      lead="STRC E1659A is the first worked example. The repeatable platform is the gated workflow: allele selection, pocket/electrostatic proof, chemistry triage, artifact controls, direct target-engagement assay, then cell rescue."
+      title="From one allele to platform"
+      lead="The molecule on this page is allele-specific. The pipeline behind it is not. STRC E1659A is the first worked example. Each new allele either joins the amenable list (passes Gate 1 DSF Δ) or fails cleanly — exactly the Migalastat (Galafold) model that grew from one Fabry allele to ~35–50% of all Fabry patients across 300+ GLA missense variants."
     />
+
+    <div class="border border-cyan-500/20 bg-cyan-500/[0.04] rounded-lg p-5 mb-8 max-w-3xl">
+      <div class="text-[10px] uppercase tracking-wider text-cyan-300 font-semibold mb-2">Plain-language framing</div>
+      <p class="text-xs text-neutral-200 leading-relaxed mb-2">
+        H01 is <strong class="text-white">not</strong> a "treatment for one child." H01 is <strong class="text-white">the first allele</strong> in a pharmacochaperone program that, if the assay cascade works, expands one allele at a time the same way Migalastat, Ivacaftor, and Trikafta did.
+      </p>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        STRC-related hearing loss (DFNB16) is the second-most-common genetic hearing loss after GJB2. The addressable population grows in three nested layers: (1) E1659A homozygous + compound-heterozygous carriers; (2) any STRC missense allele that passes the DSF amenability assay; (3) DFNB-wide pharmacochaperone targets that fit the same pipeline.
+      </p>
+    </div>
+
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">The reusable pipeline</h3>
+    <p class="text-xs text-neutral-500 max-w-3xl mb-4">Five steps. Every step is gene-agnostic and rerunnable on a new allele in under a wall-week of M5 Max compute. The molecule changes per pocket; the steps don't.</p>
+    <div class="space-y-3 mb-10">
+      {platformPipeline.map((p) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg p-4 grid md:grid-cols-[3rem_10rem_1fr_1fr_1fr] gap-4">
+          <div class="flex items-center justify-center w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm font-bold font-mono">{p.n}</div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Step</div>
+            <div class="text-xs text-neutral-200 font-semibold">{p.step}</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Input</div>
+            <p class="text-xs text-neutral-400 leading-relaxed">{p.input}</p>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Output</div>
+            <p class="text-xs text-neutral-400 leading-relaxed">{p.output}</p>
+          </div>
+          <div class="border-l-2 border-emerald-500/40 pl-3">
+            <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1">Reusable as</div>
+            <p class="text-xs text-neutral-300 leading-relaxed">{p.reusable}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">Three expansion tracks</h3>
+    <p class="text-xs text-neutral-500 max-w-3xl mb-4">Three nested horizons for how the same pipeline grows the addressable population beyond E1659A.</p>
+    <div class="grid md:grid-cols-3 gap-4 mb-10">
+      {expansionTracks.map((t) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg p-5">
+          <div class="flex items-baseline justify-between mb-3 gap-2">
+            <h4 class="text-sm font-semibold text-white leading-tight">{t.track}</h4>
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono whitespace-nowrap">{t.horizon}</span>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">{t.scope}</p>
+          <div class="border-t border-white/5 pt-3 mb-3">
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Examples / scope</div>
+            <p class="text-[11px] text-neutral-500 leading-relaxed">{t.examples}</p>
+          </div>
+          <div class="border-l-2 border-emerald-500/40 pl-3">
+            <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1">Outcome</div>
+            <p class="text-[11px] text-neutral-300 leading-relaxed">{t.output}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">Allele-screening criteria</h3>
+    <p class="text-xs text-neutral-500 max-w-3xl mb-4">A new allele enters the program only if all five criteria are met. This filter prevents wasted compute on null alleles or non-druggable pockets.</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
       {expansionCriteria.map((item) => (
         <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">

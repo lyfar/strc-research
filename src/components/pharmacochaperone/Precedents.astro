@@ -1,0 +1,47 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { precedents } from './data';
+---
+<section id="precedents" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Precedents — has anyone done this before?"
+      lead="Yes. Four FDA-approved pharmacochaperone / corrector programs follow exactly the architecture h01 is set up to repeat: matched WT/MUT structural reasoning → small-molecule fold stabilizer → wet amenability assay → allele-by-allele label expansion. The combined precedent class now serves the majority of patients in three orphan diseases (TTR amyloidosis, Fabry, cystic fibrosis)."
+    />
+    <div class="space-y-4">
+      {precedents.map((p) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg overflow-hidden">
+          <div class="flex items-baseline justify-between flex-wrap gap-3 px-5 py-3 bg-white/[0.03] border-b border-white/5">
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <h3 class="text-sm font-semibold text-white">{p.drug}</h3>
+              <span class="text-[11px] text-neutral-400 font-mono">{p.sponsor}</span>
+            </div>
+            <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono uppercase tracking-wider">{p.fda}</span>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 p-5">
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Target</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{p.target}</p>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Mechanism</div>
+              <p class="text-xs text-neutral-400 leading-relaxed">{p.mechanism}</p>
+            </div>
+            <div class="md:col-span-2">
+              <div class="text-[10px] uppercase tracking-wider text-cyan-400 font-semibold mb-1.5">Allele coverage</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{p.coverage}</p>
+            </div>
+            <div class="md:col-span-2">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Citation</div>
+              <p class="text-[11px] text-neutral-500 font-mono leading-relaxed">{p.citation}</p>
+            </div>
+            <div class="md:col-span-2 border-l-2 border-emerald-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1.5">Why it matters for h01</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{p.relevance}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

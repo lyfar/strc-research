@@ -15,9 +15,9 @@ export const stats = [
     note: 'Phase 8h-lite Salt 2001 Stokes-Einstein model: ~60% applied conc at basal turn @ 90 min.',
   },
   {
-    label: 'Lead committee',
-    value: 'α-robust',
-    note: 'Phase 9x: lead ranking stable across kinetic-axis weight α=0.5–2.0 on Boltz/Vina/tauRAMD/ADMET.',
+    label: 'Pipeline platform',
+    value: '1 of N',
+    note: 'E1659A is the first worked example. The pipeline (allele → pocket → APBS → dock → RFQ → DSF) repeats for every STRC missense + extends to other DFNB / proteinopathy targets.',
   },
 ] as const;
 
@@ -391,6 +391,111 @@ export const objectionRows = [
   },
 ] as const;
 
+export const precedents = [
+  {
+    drug: 'Tafamidis (Vyndaqel / Vyndamax)',
+    sponsor: 'Pfizer',
+    fda: 'FDA 2019 (cardiomyopathy); EMA 2011 (polyneuropathy)',
+    target: 'Transthyretin (TTR) tetramer',
+    mechanism: 'Small-molecule stabilizer of the TTR dimer-dimer interface; blocks tetramer dissociation that drives misfolding and amyloid deposition.',
+    coverage: 'Wild-type ATTR + 100+ pathogenic TTR variants (V122I, V30M, T60A, …) — single molecule covers the entire protein-class disease.',
+    citation: 'Coelho 2012 NEJM (Fx-005); Maurer 2018 NEJM ATTR-ACT.',
+    relevance: 'Direct architectural precedent: matched WT/MUT ensemble + Coulomb-aware ligand design + first-in-class FDA approval for a misfolding pharmacochaperone. Used as the design reference in Phase 4h (Tafamidis Playbook Library).',
+  },
+  {
+    drug: 'Migalastat (Galafold)',
+    sponsor: 'Amicus Therapeutics',
+    fda: 'FDA 2018; EMA 2016',
+    target: 'α-galactosidase A (GLA) — Fabry disease',
+    mechanism: 'Allele-specific iminosugar pharmacochaperone that binds the GLA active site, stabilizes folding in the ER, and rescues lysosomal trafficking of misfolded variants.',
+    coverage: 'FDA-approved companion diagnostic (HEK assay) defines an "amenable mutations list" — currently ~35–50% of Fabry patients across 300+ GLA missense variants. The list expands as new variants are tested in vitro.',
+    citation: 'Germain 2016 NEJM 375:545; Wu 2011 Hum Mutat (HEK amenability assay).',
+    relevance: 'Cleanest one-to-one model for h01: one molecule, allele-by-allele clinical expansion via a wet amenability assay (= our Gate 1 DSF/nanoDSF). E1659A is the first STRC entry; the same DSF assay reads other STRC missense alleles into the list.',
+  },
+  {
+    drug: 'Ivacaftor (Kalydeco)',
+    sponsor: 'Vertex Pharmaceuticals',
+    fda: 'FDA 2012 (G551D); label expanded to ~38 gating mutations',
+    target: 'CFTR — cystic fibrosis',
+    mechanism: 'Potentiator of the CFTR ion channel that increases open-channel probability; rescues function of partially-folded CFTR variants at the cell membrane.',
+    coverage: 'Started at ~5% of CF patients (G551D only); grew to ~10% via in-vitro–driven label additions over a decade. Same molecule, expanding allele list.',
+    citation: 'Ramsey 2011 NEJM 365:1663 (STRIVE); De Boeck 2014 (KONNECTION expansion).',
+    relevance: 'Precedent for in-vitro–driven label expansion: a single molecule progressively earns reimbursable indications by passing a defined biochemical assay on each new allele.',
+  },
+  {
+    drug: 'Elexacaftor / Tezacaftor / Ivacaftor (Trikafta / Kaftrio)',
+    sponsor: 'Vertex Pharmaceuticals',
+    fda: 'FDA 2019 (≥12 yr); FDA 2021 (≥6 yr); FDA 2023 (≥2 yr)',
+    target: 'CFTR — cystic fibrosis',
+    mechanism: 'Triple combination of two correctors (folding) + one potentiator. Together they rescue F508del — the dominant misfolding allele — plus 177+ other CFTR mutations.',
+    coverage: '~90% of all CF patients globally; transformed CF from a high-mortality disease into a manageable chronic condition within a decade.',
+    citation: 'Middleton 2019 NEJM 381:1809; Heijerman 2019 Lancet 394:1940.',
+    relevance: 'The end-state of the platform: one program, one company, one disease — eventually serving the overwhelming majority of patients. Multiple molecules, one mechanism class. Direct counter-argument to "one allele = one patient".',
+  },
+] as const;
+
+export const platformPipeline = [
+  {
+    n: '1',
+    step: 'Allele triage',
+    input: 'ClinVar / gnomAD missense list for the target gene; family genotype.',
+    output: 'Candidate alleles ranked by predicted ER-misfolding signature.',
+    reusable: 'Same triage script for every STRC missense and any other DFNB gene.',
+  },
+  {
+    n: '2',
+    step: 'Pocket + electrostatic proof',
+    input: 'AF3 fragment ladder + matched WT/MUT MD ensemble + APBS pocket-potential resampling.',
+    output: 'Δ formal-anion preference (kcal/mol) with effect size and p-value.',
+    reusable: 'Phase 5d/5k pipeline reruns end-to-end on a new allele in <1 wall-week on M5 Max.',
+  },
+  {
+    n: '3',
+    step: 'Coulomb-aware chemistry',
+    input: 'Allele-specific pocket charge profile + Halgren druggability gates.',
+    output: 'Triaged ligand library (Lipinski + TPSA + mono-anion gates) ready for Boltz/Vina/tauRAMD.',
+    reusable: 'Phase 8 v5 library design framework; tafamidis-playbook scaffold rotation per pocket.',
+  },
+  {
+    n: '4',
+    step: 'Lead committee',
+    input: 'Boltz-2 affinity + mutant-ensemble Vina + tauRAMD residence + ADMET-AI.',
+    output: 'Two-track committee (affinity lead + ADMET-clean backup) with α-sensitivity check.',
+    reusable: 'Phase 9x α-sensitivity script generalizes to any per-allele ranking.',
+  },
+  {
+    n: '5',
+    step: 'Wetlab handoff (RFQ)',
+    input: 'Lead committee + protein construct sheet + assay cascade.',
+    output: 'compound_sheet.csv + gap_matrix.csv + rfq_email.md (Wetlab Handoff Packet 2026-04-27).',
+    reusable: 'Same RFQ cascade (Gate 0 → 3) reads every new allele into the amenable list (Migalastat model).',
+  },
+] as const;
+
+export const expansionTracks = [
+  {
+    track: 'STRC missense expansion',
+    horizon: 'Year 1',
+    scope: 'Run the same Phase 5k/5e/8c/9x pipeline on the next STRC missense alleles in ClinVar with predicted K1141-zone or analogous pocket destabilization. Each allele either joins the amenable list (DSF Δ ≥ threshold) or fails cleanly.',
+    examples: 'STRC ClinVar missense set (literature pull required); compound-heterozygous combos with truncating null alleles broaden the addressable population without requiring homozygous missense.',
+    output: 'Per-allele decision: amenable / not amenable, exactly the Migalastat model.',
+  },
+  {
+    track: 'DFNB-wide pharmacochaperone',
+    horizon: 'Year 2–3',
+    scope: 'Apply the pipeline to other DFNB hearing-loss genes where a missense allele creates a dockable pocket and ER misfolding is the disease driver. Targets to triage first: GJB2 (Cx26 missense subset), OTOA, OTOG, OTOF, MYO7A.',
+    examples: 'GJB2 alone is the most common hereditary HL gene globally; even a 10–20% missense subset would dwarf STRC patient numbers.',
+    output: 'A pharmacochaperone platform branded around hereditary HL, not a single allele.',
+  },
+  {
+    track: 'Pocket-driven proteinopathy class',
+    horizon: 'Year 3+',
+    scope: 'The matched-ensemble APBS + Coulomb-aware ligand design framework is gene-agnostic: any monogenic missense disease where the mutation creates a charged pocket destabilization is in scope.',
+    examples: 'Same mechanism class as Tafamidis (TTR), Migalastat (GLA), Trikafta (CFTR). The pipeline is gene-class agnostic.',
+    output: 'Cross-disease platform play; STRC E1659A becomes the published worked example.',
+  },
+] as const;
+
 export const expansionCriteria = [
   'Missense allele, not null or large deletion.',
   'Residual protein is made and plausibly foldable.',
@@ -409,6 +514,7 @@ export const sections = [
   { id: 'cascade',     label: 'Assay cascade' },
   { id: 'packet',      label: 'RFQ packet' },
   { id: 'objections',  label: 'Objection table' },
-  { id: 'platform',    label: 'Platform criteria' },
+  { id: 'precedents',  label: 'Precedents' },
+  { id: 'platform',    label: 'Platform' },
   { id: 'boundary',    label: 'Claim boundary' },
 ] as const;
