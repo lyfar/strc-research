@@ -1,0 +1,35 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { precedentRows } from './data';
+---
+<section id="precedents" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Precedent table"
+      lead="Anti-handwave separation: which bricks are already in the literature, what h09 extrapolates from each one, and what residual risk remains. The unproven h09 bet is the integrated material bridge in the cochlear hair-bundle environment, not the individual bricks."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold w-1/3">Established precedent</th>
+            <th class="px-4 py-3 font-semibold">h09 extrapolation</th>
+            <th class="px-4 py-3 font-semibold">Remaining risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          {precedentRows.map((r) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3">
+                <div class="text-neutral-300 leading-relaxed mb-1.5">{r.established}</div>
+                <div class="text-[10px] uppercase tracking-wider text-cyan-400 font-mono">{r.citation}</div>
+              </td>
+              <td class="px-4 py-3 text-neutral-500 leading-relaxed">{r.extrapolation}</td>
+              <td class="px-4 py-3 text-amber-300/80 leading-relaxed">{r.risk}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

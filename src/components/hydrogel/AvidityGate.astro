@@ -1,0 +1,34 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { avidityRows } from './data';
+---
+<section id="avidity" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Avidity gate"
+      lead="The central mathematical question is whether weak monovalent actin contacts become therapeutically useful when repeated along an assembled peptide scaffold. The current answer is yes under the Phase 4m calibrated floor, with direct binding assays still required."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Run</th>
+            <th class="px-4 py-3 font-semibold">Inputs</th>
+            <th class="px-4 py-3 font-semibold">Output</th>
+            <th class="px-4 py-3 font-semibold">Call</th>
+          </tr>
+        </thead>
+        <tbody>
+          {avidityRows.map((row) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-neutral-300 font-semibold">{row.run}</td>
+              <td class="px-4 py-3 text-neutral-500 font-mono">{row.inputs}</td>
+              <td class="px-4 py-3 text-emerald-400 font-mono">{row.output}</td>
+              <td class="px-4 py-3 text-neutral-500">{row.call}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

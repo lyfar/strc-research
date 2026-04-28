@@ -1,0 +1,34 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { objectionRows } from './data';
+---
+<section id="objections" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Reviewer objection table"
+      lead="Hostile-read checklist run before external review. Each row pairs the strongest objection with the current answer, residual risk, and the smallest concrete check that could move the needle."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold w-1/4">Objection</th>
+            <th class="px-4 py-3 font-semibold">Current answer</th>
+            <th class="px-4 py-3 font-semibold">Residual risk</th>
+            <th class="px-4 py-3 font-semibold">Minimum next check</th>
+          </tr>
+        </thead>
+        <tbody>
+          {objectionRows.map((r) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-amber-200 font-semibold leading-relaxed">{r.objection}</td>
+              <td class="px-4 py-3 text-neutral-300 leading-relaxed">{r.answer}</td>
+              <td class="px-4 py-3 text-amber-300/80 leading-relaxed">{r.risk}</td>
+              <td class="px-4 py-3 text-neutral-500 leading-relaxed">{r.nextCheck}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

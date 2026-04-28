@@ -1,0 +1,32 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { reviewerProfiles, packContents } from './data';
+---
+<section id="ask" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader title="Exact ask" />
+    <div class="border border-white/10 bg-white/[0.03] rounded-lg p-6 max-w-3xl">
+      <p class="text-base text-neutral-200 leading-relaxed mb-4">
+        We are <strong class="text-white">not</strong> asking whether h09 is ready for humans. We are asking whether a synthetic peptide hydrogel that substitutes for missing STRC horizontal top connector mechanics is coherent enough to justify a minimum feasibility package.
+      </p>
+      <p class="text-xs text-neutral-500 leading-relaxed">
+        The five-step package below is intended as the smallest defensible experiment that could either earn h09 a real wetlab program or kill it cleanly.
+      </p>
+    </div>
+
+    <div class="mt-6 grid sm:grid-cols-2 gap-4 max-w-3xl">
+      <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
+        <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-2">Best reviewer profiles</div>
+        <ul class="text-xs text-neutral-300 space-y-1">
+          {reviewerProfiles.map((p) => <li>· {p}</li>)}
+        </ul>
+      </div>
+      <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
+        <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-2">Pack contents</div>
+        <ul class="text-xs text-neutral-300 space-y-1">
+          {packContents.map((c) => <li>· {c}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

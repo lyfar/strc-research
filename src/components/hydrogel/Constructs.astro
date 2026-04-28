@@ -1,0 +1,31 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { constructRows } from './data';
+---
+<section id="constructs" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader title="Construct set" />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Construct</th>
+            <th class="px-4 py-3 font-semibold">Composition</th>
+            <th class="px-4 py-3 font-semibold">Computational evidence</th>
+            <th class="px-4 py-3 font-semibold">Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {constructRows.map((c) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-neutral-300 font-mono">{c.construct}</td>
+              <td class="px-4 py-3 text-neutral-500">{c.composition}</td>
+              <td class="px-4 py-3 text-neutral-500">{c.evidence}</td>
+              <td class="px-4 py-3 text-neutral-500">{c.role}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

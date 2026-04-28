@@ -1,0 +1,29 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { mechanismStack } from './data';
+---
+<section id="mechanism" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Mechanism being tested"
+      lead="H09 is not a gene therapy. It is a local material intervention: deliver a peptide, let it assemble near the stereocilia surface, and use multivalent weak contacts to replace enough STRC top-connector mechanics to matter."
+    />
+    <div class="space-y-3">
+      {mechanismStack.map((item) => (
+        <div class="grid lg:grid-cols-[3rem_9rem_1fr_1fr_8rem] gap-4 border border-white/5 bg-white/[0.02] rounded-lg p-4">
+          <div class="text-xs font-mono text-neutral-500">{item.step}</div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">Layer</div>
+            <div class="text-xs text-neutral-300 font-semibold">{item.layer}</div>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">{item.evidence}</div>
+            <div class="text-xs text-emerald-400 font-mono leading-relaxed">{item.measurement}</div>
+          </div>
+          <p class="text-xs text-neutral-500 leading-relaxed">{item.interpretation}</p>
+          <div class="text-[10px] text-cyan-300 uppercase tracking-wider font-semibold">{item.state}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

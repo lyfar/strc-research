@@ -1,0 +1,34 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { evidenceStack } from './data';
+---
+<section id="evidence" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Phase-by-phase evidence"
+      lead="Promotion to S-tier came only after the weak monovalent WH2/F-actin question was converted into a calibrated avidity model. Phase 4k is shown as a caution; it does not carry the main claim."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Phase</th>
+            <th class="px-4 py-3 font-semibold">Result</th>
+            <th class="px-4 py-3 font-semibold">Evidence</th>
+            <th class="px-4 py-3 font-semibold">Decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          {evidenceStack.map((item) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-neutral-500 font-mono">{item.phase}</td>
+              <td class="px-4 py-3 text-neutral-300 font-semibold">{item.result}</td>
+              <td class="px-4 py-3 text-emerald-400 font-mono">{item.evidence}</td>
+              <td class="px-4 py-3 text-neutral-500">{item.decision}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

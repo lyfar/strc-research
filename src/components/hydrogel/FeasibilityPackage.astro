@@ -1,0 +1,55 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { feasibilitySteps } from './data';
+---
+<section id="feasibility" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader title="Minimum feasibility package" />
+    <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+      Five sequential gates. <strong class="text-neutral-200">Do not run Step N unless Steps 1…N−1 pass.</strong> A clean failure at any gate is still useful: it gives a sharp falsifier and prevents money from being spent on a vague "maybe the model was right" story.
+    </p>
+
+    <div class="space-y-4">
+      {feasibilitySteps.map((s, i) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg overflow-hidden">
+          <div class="flex items-center gap-4 px-5 py-3 bg-white/[0.03] border-b border-white/5">
+            <div class="flex items-center justify-center w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm font-bold font-mono">{s.n}</div>
+            <div class="flex-1">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Step {s.n}</div>
+              <h3 class="text-sm font-semibold text-white">{s.title}</h3>
+            </div>
+            {i < feasibilitySteps.length - 1 && (
+              <div class="hidden md:block text-[10px] text-neutral-600 font-mono uppercase tracking-wider">gates Step {Number(s.n) + 1}</div>
+            )}
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 p-5">
+            <div class="md:col-span-2">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Question</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{s.question}</p>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Materials</div>
+              <p class="text-xs text-neutral-400 leading-relaxed">{s.materials}</p>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Readouts</div>
+              <p class="text-xs text-neutral-400 leading-relaxed">{s.readouts}</p>
+            </div>
+            <div class="border-l-2 border-emerald-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1.5">Pass</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{s.pass}</p>
+            </div>
+            <div class="border-l-2 border-rose-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-rose-300 font-semibold mb-1.5">Stop</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{s.stop}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-[11px] text-neutral-500 mt-6 max-w-3xl leading-relaxed">
+      If Steps 1–4 pass, h09 becomes a legitimate pre-rescue feasibility candidate. If Step 5 also passes, h09 becomes a real experimental rescue hypothesis rather than a computational feasibility concept.
+    </p>
+  </div>
+</section>
