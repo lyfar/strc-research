@@ -1,0 +1,19 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { expansionCriteria } from './data';
+---
+<section id="platform" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="How this becomes a platform"
+      lead="STRC E1659A is the first worked example. The repeatable platform is the gated workflow: allele selection, pocket/electrostatic proof, chemistry triage, artifact controls, direct target-engagement assay, then cell rescue."
+    />
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      {expansionCriteria.map((item) => (
+        <div class="border border-white/5 bg-white/[0.02] rounded-lg p-4">
+          <p class="text-xs text-neutral-400 leading-relaxed">{item}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

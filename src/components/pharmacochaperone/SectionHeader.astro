@@ -1,0 +1,9 @@
+---
+interface Props {
+  title: string;
+  lead?: string;
+}
+const { title, lead } = Astro.props;
+---
+<h2 class="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-3">{title}</h2>
+{lead && <p class="text-sm text-neutral-400 max-w-3xl mb-6">{lead}</p>}

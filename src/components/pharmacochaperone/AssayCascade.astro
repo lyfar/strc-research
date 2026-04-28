@@ -1,0 +1,43 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { assayCascade } from './data';
+---
+<section id="cascade" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader title="Assay cascade" />
+    <p class="text-sm text-neutral-400 max-w-3xl mb-6">
+      Five sequential gates from the Wetlab Handoff Packet (2026-04-27). <strong class="text-neutral-200">Do not run Gate N unless Gate N−1 passes.</strong> A clean failure at any gate is itself useful — the question stops being "should we keep computing?" and becomes "what wetlab measurement closes the next gap?"
+    </p>
+
+    <div class="space-y-4">
+      {assayCascade.map((g, i) => (
+        <div class="border border-white/10 bg-white/[0.02] rounded-lg overflow-hidden">
+          <div class="flex items-center gap-4 px-5 py-3 bg-white/[0.03] border-b border-white/5">
+            <div class="flex items-center justify-center w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm font-bold font-mono">{g.gate}</div>
+            <div class="flex-1">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Gate {g.gate}</div>
+              <h3 class="text-sm font-semibold text-white">{g.question}</h3>
+            </div>
+            {i < assayCascade.length - 1 && (
+              <div class="hidden md:block text-[10px] text-neutral-600 font-mono uppercase tracking-wider">gates Gate {assayCascade[i + 1].gate}</div>
+            )}
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 p-5">
+            <div class="md:col-span-3">
+              <div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1.5">Readout</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{g.readout}</p>
+            </div>
+            <div class="md:col-span-2 border-l-2 border-emerald-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-emerald-300 font-semibold mb-1.5">Pass</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{g.pass}</p>
+            </div>
+            <div class="border-l-2 border-rose-500/40 pl-3">
+              <div class="text-[10px] uppercase tracking-wider text-rose-300 font-semibold mb-1.5">Stop</div>
+              <p class="text-xs text-neutral-300 leading-relaxed">{g.stop}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

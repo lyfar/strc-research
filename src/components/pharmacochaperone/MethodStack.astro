@@ -1,0 +1,34 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { methodStack } from './data';
+---
+<section id="methods" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="What was computed"
+      lead="H01 is not one docking score. It is a stack of independent computational checks: structural ensembles, electrostatics, ligand design, protein-ligand cofolding, docking, biased MD, PBPK, ADMET, off-target panels, and endpoint free-energy smoke tests."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Method</th>
+            <th class="px-4 py-3 font-semibold">Compute</th>
+            <th class="px-4 py-3 font-semibold">Scale</th>
+            <th class="px-4 py-3 font-semibold">Key result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {methodStack.map((item) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-neutral-300 font-semibold">{item.method}</td>
+              <td class="px-4 py-3 text-neutral-500">{item.compute}</td>
+              <td class="px-4 py-3 text-neutral-400 font-mono">{item.scale}</td>
+              <td class="px-4 py-3 text-emerald-400">{item.key}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

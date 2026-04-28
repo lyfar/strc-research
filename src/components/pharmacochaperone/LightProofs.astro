@@ -1,0 +1,35 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { lightProofs } from './data';
+
+const verdictClass: Record<'pass' | 'caution', { border: string; text: string; chip: string }> = {
+  pass:    { border: 'border-emerald-500/40', text: 'text-emerald-300', chip: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+  caution: { border: 'border-amber-500/40',   text: 'text-amber-300',   chip: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+};
+---
+<section id="lite" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Phase 8h-lite — paper-claim closures"
+      lead="Five light-compute proofs (under 1 minute total wall time, no new MD/dock/APBS) closing paper-claim gaps using existing Phase 5d/5k/8e data + RAG-mined literature (Salt 2001, Halgren 2009, Schacht 2008)."
+    />
+    <div class="grid md:grid-cols-2 gap-4">
+      {lightProofs.map((p) => {
+        const v = verdictClass[p.verdictTone];
+        return (
+          <div class={`border ${v.border} bg-white/[0.02] rounded-lg p-5`}>
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center w-7 h-7 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold font-mono">#{p.n}</div>
+                <h3 class="text-sm font-semibold text-white">{p.title}</h3>
+              </div>
+              <span class={`px-1.5 py-0.5 text-[10px] rounded border font-semibold ${v.chip}`}>{p.verdict}</span>
+            </div>
+            <p class="text-[11px] text-neutral-500 italic leading-relaxed mb-2">{p.method}</p>
+            <p class="text-xs text-neutral-300 leading-relaxed">{p.result}</p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

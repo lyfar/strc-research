@@ -1,0 +1,32 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { packetSections } from './data';
+---
+<section id="packet" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="RFQ packet — what to send, what to leave out"
+      lead="Wetlab Handoff Packet 2026-04-27. The blocking gap is reagent generation, not another in-silico pass: production MD/MM-PBSA stays paper-grade support, not a wetlab-contact blocker."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Packet section</th>
+            <th class="px-4 py-3 font-semibold text-emerald-300/80">Include now</th>
+            <th class="px-4 py-3 font-semibold text-rose-300/80">Exclude for now</th>
+          </tr>
+        </thead>
+        <tbody>
+          {packetSections.map((s) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-neutral-300 font-semibold">{s.item}</td>
+              <td class="px-4 py-3 text-neutral-300 leading-relaxed">{s.include}</td>
+              <td class="px-4 py-3 text-neutral-500 leading-relaxed">{s.exclude}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

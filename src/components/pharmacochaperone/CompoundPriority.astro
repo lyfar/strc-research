@@ -1,0 +1,36 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { compounds } from './data';
+---
+<section id="compounds" class="px-6 py-12 border-t border-white/5 scroll-mt-6">
+  <div class="max-w-5xl mx-auto">
+    <SectionHeader
+      title="Compound priority for first wetlab contact"
+      lead="Two-track lead committee: an affinity-led indanyl variant plus an ADMET-clean adamantyl backup. Phase 9x α-sensitivity confirmed the committee decision is robust to kinetic-axis weight choice (α=0.5–2.0)."
+    />
+    <div class="overflow-x-auto border border-white/5 rounded-lg">
+      <table class="w-full text-left text-xs">
+        <thead class="bg-white/[0.03] text-neutral-500 uppercase tracking-wider">
+          <tr>
+            <th class="px-4 py-3 font-semibold">#</th>
+            <th class="px-4 py-3 font-semibold">Compound</th>
+            <th class="px-4 py-3 font-semibold">Track</th>
+            <th class="px-4 py-3 font-semibold">Computational evidence</th>
+            <th class="px-4 py-3 font-semibold">Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          {compounds.map((c) => (
+            <tr class="border-t border-white/5 align-top">
+              <td class="px-4 py-3 text-cyan-300 font-mono font-semibold">{c.priority}</td>
+              <td class="px-4 py-3 text-neutral-200 font-mono break-all">{c.name}</td>
+              <td class="px-4 py-3 text-neutral-300">{c.track}</td>
+              <td class="px-4 py-3 text-neutral-500 leading-relaxed">{c.evidence}</td>
+              <td class="px-4 py-3 text-amber-300/80 leading-relaxed">{c.risk}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
