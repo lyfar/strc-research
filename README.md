@@ -1,12 +1,6 @@
 # STRC Research
 
-## MISHA mission
-
-My son Misha has rare genetic hearing loss. I am building an independent AI research lab for rare diseases. Each result that an outside expert can inspect is one step toward a research workflow that could help millions of families.
-
-One rare disease is rare. Rare diseases together are not.
-
-This repository publishes our computational work on STRC-related DFNB16 hearing loss, from variant evidence to gene-therapy hypotheses, so specialists can check it and challenge it.
+This repository publishes computational work on STRC-related DFNB16 hearing loss, from variant evidence to gene-therapy hypotheses, so specialists can check it and challenge it.
 
 ## About
 
